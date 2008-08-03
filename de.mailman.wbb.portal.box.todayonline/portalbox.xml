@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "DTD/package.dtd">
+<data>
+	<import>
+		<portalboxitem name="todayonlinebox">
+			<className>TodayOnlineBox</className>
+			<cacheBuilderClass></cacheBuilderClass>
+			<boxType>1</boxType>
+			<useCache>0</useCache>
+			<sortOrder>99</sortOrder>
+			<boxActivation>1</boxActivation>
+		</portalboxitem>
+	</import>
+</data>

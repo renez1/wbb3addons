@@ -1,0 +1,48 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+<package name="de.mailman.wcf.attachmentManager">
+	<packageinformation>
+		<packagename>AttachmentManager</packagename>
+		<packagedescription>Attachment Verwaltung.</packagedescription>
+		<isUnique>1</isUnique>
+		<version>1.0.0</version>
+		<date>2008-02-07</date>
+		<standalone>0</standalone>
+		<plugin>com.woltlab.wcf</plugin>
+	</packageinformation>
+
+	<authorinformation>
+		<author>MailMan</author>
+		<authorurl>http://wbb3addons.ump2002.net</authorurl>
+	</authorinformation>
+
+	<requiredpackages>
+        <requiredPackage minversion="1.0.0">com.woltlab.wcf</requiredPackage>
+	</requiredpackages>
+
+	<instructions type="install">
+		<files>files.tar</files>
+		<templates>templates.tar</templates>
+		<acptemplates>acptemplates.tar</acptemplates>
+		<groupoptions>groupoptions.xml</groupoptions>
+		<options>options.xml</options>
+		<acpmenu>acpmenu.xml</acpmenu>
+        <usercpmenu>usercpmenu.xml</usercpmenu>
+        <pagelocation>pagelocation.xml</pagelocation>
+		<languages languagecode="de">de.xml</languages>
+        <languages languagecode="de-informal">de-informal.xml</languages>
+        <languages languagecode="en">en.xml</languages>
+	</instructions>
+<!--
+	<instructions type="update" fromversion="1.0.2">
+		<files>files.tar</files>
+		<templates>templates.tar</templates>
+		<acptemplates>acptemplates.tar</acptemplates>
+		<acpmenu>acpmenu.xml</acpmenu>
+		<options>options.xml</options>
+		<languages languagecode="de">de.xml</languages>
+        <languages languagecode="de-informal">de-informal.xml</languages>
+        <languages languagecode="en">en.xml</languages>
+	</instructions>
+-->
+</package>

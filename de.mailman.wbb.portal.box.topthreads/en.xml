@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="en">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.topthreads.title"><![CDATA[Top Threads]]></item>
+		<item name="wbb.portal.box.topthreads.nothreads"><![CDATA[No threads in list]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.topthreads.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.category.portal.box.topthreads"><![CDATA[Top Threads]]></item>
+
+		<item name="wcf.acp.option.topthreads_count"><![CDATA[Number of threads]]></item>
+		<item name="wcf.acp.option.topthreads_count.description"><![CDATA[Threads with the most number of replies]]></item>
+
+		<item name="wcf.acp.option.topthreads_titlelength"><![CDATA[Length of the topic title]]></item>
+		<item name="wcf.acp.option.topthreads_titlelength.description"><![CDATA[Maximum length of the topic title (0 = disabled)]]></item>
+
+		<item name="wcf.acp.option.topthreads_hits"><![CDATA[View number of replies]]></item>
+		<item name="wcf.acp.option.topthreads_hits.description"><![CDATA[]]></item>
+
+		<item name="wcf.acp.option.topthreads_sbcolor_acp"><![CDATA[Second background color]]></item>
+        <item name="wcf.acp.option.topthreads_sbcolor_acp.description"><![CDATA[Default = 2.]]></item>
+	</category>
+</language>

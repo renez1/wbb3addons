@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE import SYSTEM "DTD/import.dtd">
+<data>	
+	<import>
+		<eventlistener>
+			<eventClassName>UserProfileEditForm</eventClassName>
+			<eventName>assignVariables</eventName>
+			<listenerClassFile>lib/system/event/listener/UserProfileEditFormPersonalBoxListener.class.php</listenerClassFile>
+		</eventlistener>
+	</import>
+</data>

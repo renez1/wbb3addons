@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="hr">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.topthreadviews.title"><![CDATA[Top Temen Hits]]></item>
+		<item name="wbb.portal.box.topthreadviews.nothreads"><![CDATA[Ne postoje teme na popisu]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.topthreadviews.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.category.portal.box.topthreadviews"><![CDATA[Top Temen Hits]]></item>
+
+		<item name="wcf.acp.option.topthreadviews_count"><![CDATA[Broj Tema]]></item>
+		<item name="wcf.acp.option.topthreadviews_count.description"><![CDATA[Upišite ovdje broj tema, koji želite prikazati u box-u.]]></item>
+
+		<item name="wcf.acp.option.topthreadviews_titlelength"><![CDATA[Dužina naslova teme]]></item>
+		<item name="wcf.acp.option.topthreadviews_titlelength.description"><![CDATA[Maximale Zeichenlänge des Thementitels (0 = deaktiviert).]]></item>
+
+		<item name="wcf.acp.option.topthreadviews_hits"><![CDATA[Hits prikazati]]></item>
+		<item name="wcf.acp.option.topthreadviews_hits.description"><![CDATA[Aktivirajte ovu opciju kako bi prikazali broj hitova pored naslova teme.]]></item>
+
+		<item name="wcf.acp.option.topthreadviews_sbcolor_acp"><![CDATA[Druga boja pozadine]]></item>
+        <item name="wcf.acp.option.topthreadviews_sbcolor_acp.description"><![CDATA[Boja &quot;1&quot; za deaktivaciju. Standardno = 2.]]></item>
+	</category>
+</language>

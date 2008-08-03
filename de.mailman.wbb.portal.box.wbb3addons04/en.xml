@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="en">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.wbb3addonsBox04.title"><![CDATA[wBB3-Add-Ons Box 4]]></item>
+	</category>
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.user.board.canViewWbb3addonsBox04"><![CDATA[Can view the &raquo;wBB3-Add-Ons Box 4&laquo; Box]]></item>
+		<item name="wcf.acp.group.option.user.board.canViewWbb3addonsBox04.description"><![CDATA[]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.wbb3addonsBox04"><![CDATA[wBB3-Add-Ons Box 4]]></item>
+		<item name="wcf.acp.option.category.portal.box.wbb3addonsBox04.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.wbb3addonsBox04_title"><![CDATA[Title]]></item>
+		<item name="wcf.acp.option.wbb3addonsBox04_title.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.wbb3addonsBox04_value"><![CDATA[Content]]></item>
+		<item name="wcf.acp.option.wbb3addonsBox04_value.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.wbb3addonsBox04_php"><![CDATA[PHP-Code]]></item>
+		<item name="wcf.acp.option.wbb3addonsBox04_php.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.wbb3addonsBox04_boxOpened"><![CDATA[Box permanently opened]]></item>
+		<item name="wcf.acp.option.wbb3addonsBox04_boxOpened.description"><![CDATA[]]></item>
+	</category>
+</language>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "DTD/package.dtd">
+<data>
+	<import>
+		<portalboxitem name="personalbox">
+			<className>PersonalBox</className>
+			<cacheBuilderClass></cacheBuilderClass>
+			<boxType>2</boxType>
+			<useCache>0</useCache>
+			<sortOrder>0</sortOrder>
+			<boxActivation>1</boxActivation>
+		</portalboxitem>
+	</import>
+</data>

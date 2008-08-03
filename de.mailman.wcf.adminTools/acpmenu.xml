@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE import SYSTEM "DTD/import.dtd">
+
+<data>
+	<import>
+		<acpmenuitem name="wcf.acp.menu.link.adminTools">
+			<parent>wcf.acp.menu.link.system</parent>
+			<permissions>admin.system.adminTools.canView</permissions>
+		</acpmenuitem>
+		<acpmenuitem name="wcf.acp.menu.link.adminTools.main">
+			<parent>wcf.acp.menu.link.adminTools</parent>
+			<showorder>1</showorder>
+		</acpmenuitem>
+		<acpmenuitem name="wcf.acp.menu.link.adminTools.links">
+			<parent>wcf.acp.menu.link.adminTools</parent>
+			<showorder>2</showorder>
+		</acpmenuitem>
+		<acpmenuitem name="wcf.acp.menu.link.adminTools.userLinks">
+			<parent>wcf.acp.menu.link.adminTools</parent>
+			<showorder>3</showorder>
+		</acpmenuitem>
+
+		<acpmenuitem name="wcf.acp.menu.link.adminTools.toolBox">
+			<parent>wcf.acp.menu.link.adminTools.main</parent>
+			<link>index.php?form=AdminToolsToolBox</link>
+			<icon>icon/adminToolsToolBoxM.png</icon>
+			<showorder>1</showorder>
+			<permissions>admin.system.adminTools.canView</permissions>
+		</acpmenuitem>
+
+		<acpmenuitem name="wcf.acp.menu.link.adminTools.cron">
+			<parent>wcf.acp.menu.link.adminTools.main</parent>
+			<link>index.php?form=AdminToolsCron</link>
+			<icon>icon/cronjobsM.png</icon>
+			<showorder>2</showorder>
+			<permissions>admin.system.adminTools.canView</permissions>
+		</acpmenuitem>
+
+		<acpmenuitem name="wcf.acp.menu.link.adminTools.lostAndFound">
+			<parent>wcf.acp.menu.link.adminTools.main</parent>
+			<link>index.php?form=AdminToolsLostAndFound</link>
+			<icon>icon/searchM.png</icon>
+			<showorder>3</showorder>
+			<permissions>admin.system.adminTools.canView</permissions>
+		</acpmenuitem>
+
+		<acpmenuitem name="wcf.acp.menu.link.adminTools.phpInfo">
+			<parent>wcf.acp.menu.link.adminTools.main</parent>
+			<link>index.php?page=AdminToolsPhpInfo</link>
+			<icon>icon/adminToolsPhpM.png</icon>
+			<showorder>4</showorder>
+			<permissions>admin.system.adminTools.canView</permissions>
+		</acpmenuitem>
+
+
+		<acpmenuitem name="wcf.acp.menu.link.adminTools.linkSettings">
+			<parent>wcf.acp.menu.link.adminTools.links</parent>
+			<link>index.php?form=AdminToolsLinkSettings</link>
+			<icon>icon/adminToolsLinkSettingsM.png</icon>
+			<showorder>1</showorder>
+			<permissions>admin.system.adminTools.canView</permissions>
+		</acpmenuitem>
+	</import>
+</data>

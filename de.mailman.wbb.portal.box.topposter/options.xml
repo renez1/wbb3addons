@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTD/options.dtd">
+<data>
+	<import>
+		<categories>
+			<category name="portal.box.topposter">
+				<parent>portal</parent>
+			</category>
+		</categories>
+		<options>
+			<option name="topposter_count">
+				<categoryname>portal.box.topposter</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue>10</defaultvalue>
+			</option>
+			<option name="topposter_sbcolor_acp">
+				<categoryname>portal.box.topposter</categoryname>
+				<optiontype>select</optiontype>
+				<defaultvalue>2</defaultvalue>
+				<selectoptions><![CDATA[1
+										2
+										3]]></selectoptions>
+			</option>
+		</options>
+	</import>
+</data>

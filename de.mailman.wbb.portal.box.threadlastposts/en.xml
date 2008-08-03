@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="en">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.threadlastpostsbox.title"><![CDATA[Last posts]]></item>
+		<item name="wbb.portal.box.threadlastpostsbox.noposts"><![CDATA[No postings in list]]></item>
+	</category>
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.user.board.canViewThreadLastPostsBox"><![CDATA[Can view the &raquo;Letzte Beiträge&laquo; Box]]></item>
+		<item name="wcf.acp.group.option.user.board.canViewThreadLastPostsBox.description"><![CDATA[]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.threadlastpostsbox"><![CDATA[Last posts]]></item>
+		<item name="wcf.acp.option.category.portal.box.threadlastpostsbox.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.threadlastpostsbox_threadid"><![CDATA[Thread-ID]]></item>
+		<item name="wcf.acp.option.threadlastpostsbox_threadid.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.threadlastpostsbox_limit"><![CDATA[Number of postings]]></item>
+		<item name="wcf.acp.option.threadlastpostsbox_limit.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.threadlastpostsbox_titlelength"><![CDATA[Length of the topic title]]></item>
+		<item name="wcf.acp.option.threadlastpostsbox_titlelength.description"><![CDATA[Maximum length of the topic title (0 = disabled).]]></item>
+		<item name="wcf.acp.option.threadlastpostsbox_sbcolor"><![CDATA[Second background color]]></item>
+        <item name="wcf.acp.option.threadlastpostsbox_sbcolor.description"><![CDATA[Default = 2.]]></item>
+	</category>
+</language>

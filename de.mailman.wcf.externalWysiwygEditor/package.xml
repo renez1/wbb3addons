@@ -1,0 +1,27 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+<package name="de.mailman.wcf.externalWysiwygEditor">
+	<packageinformation>
+		<packagename>Externer Wysiwyg-Editor</packagename>
+		<packagedescription>Ein Editor, den fast niemand benötigt :)</packagedescription>
+		<isUnique>1</isUnique>
+		<version>1.0.0</version>
+		<date>2008-02-07</date>
+		<standalone>0</standalone>
+		<plugin>com.woltlab.wcf</plugin>
+	</packageinformation>
+
+	<authorinformation>
+		<author>MailMan</author>
+		<authorurl>http://wbb3addons.ump2002.net</authorurl>
+	</authorinformation>
+
+	<requiredpackages>
+        <requiredPackage minversion="1.0.0">com.woltlab.wcf</requiredPackage>
+	</requiredpackages>
+
+	<instructions type="install">
+		<files>files.tar</files>
+		<templates>templates.tar</templates>
+	</instructions>
+</package>

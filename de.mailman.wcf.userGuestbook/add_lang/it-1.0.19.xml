@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language languagecode="it">
+    <category name="wcf.user.guestbook">
+        <item name="wcf.user.guestbook.title"><![CDATA[libro degli ospiti di &raquo;{$user->username}&laquo;]]></item>
+        <item name="wcf.user.guestbook.header"><![CDATA[libro degli ospiti di &raquo;{$user->username}&laquo;
+&bull; voci: {#$cntEntries} &bull; visite: {#$cntViews} &bull; ultimi visitatori: {@$lastVisitor} {@$visitorLastVisit|time}]]></item>
+        <item name="wcf.user.guestbook.own"><![CDATA[il mio libro degli ospiti]]></item>
+        <item name="wcf.user.guestbook.newEntry"><![CDATA[nuovo entrata]]></item>
+        <item name="wcf.user.guestbook.fromUser"><![CDATA[di {if $entry.username}<a href="index.php?page=User&amp;userID={$entry.fromUserID}">{@$entry.username}</a>{else}{@$entry.fromUsername}{/if}]]></item>
+        <item name="wcf.user.guestbook.yourEntry"><![CDATA[tuo entrata]]></item>
+        <item name="wcf.user.guestbook.preview"><![CDATA[anteprima]]></item>
+        <item name="wcf.user.guestbook.noEntry"><![CDATA[Non vi è ancora alcuna nota!]]></item>
+        <item name="wcf.user.guestbook.deleteEntry"><![CDATA[eliminare]]></item>
+        <item name="wcf.user.guestbook.confirmDelete"><![CDATA[Vuoi eliminare la voce?]]></item>
+        <item name="wcf.user.guestbook.confirmDeleteComment"><![CDATA[Se si desidera eliminare commento?]]></item>
+        <item name="wcf.user.guestbook.infoMessage"><![CDATA[Hanno un nuovo libro degli ospiti di entrata.]]></item>
+        <item name="wcf.user.guestbook.infoMessages"><![CDATA[Hai nuovo libro {$newEntries} degli ospiti voci.]]></item>
+        <item name="wcf.user.guestbook.pm.subject"><![CDATA[Il libro degli ospiti, entrata]]></item>
+        <item name="wcf.user.guestbook.pm.message"><![CDATA[Ciao {$username},
+
+Ho appena completato un nuovo contributo nel tuo scrapbook.
+
+
+Questo messaggio è stato generato automaticamente.]]></item>
+
+    	<item name="wcf.user.guestbook.pmComment.subject"><![CDATA[Il libro degli ospiti, commento]]></item>
+    	<item name="wcf.user.guestbook.pmComment.message"><![CDATA[Ciao {$username},
+
+Ho appena completato un libro degli ospiti contributo di voi nel mio libro degli ospiti commenti.
+
+Questo messaggio è stato generato automaticamente.]]></item>
+        <item name="wcf.user.guestbook.pmAdminNotifier.subject"><![CDATA[Bot libro degli ospiti: Entrata in {$username}]]></item>
+        <item name="wcf.user.guestbook.pmAdminNotifier.message"><![CDATA[Ciao {$moderator},
+
+{$fromusername} ha una nuova iscrizione nel libro degli ospiti di ($username}.
+
+Questo messaggio è stato generato automaticamente.]]></item>
+
+        <item name="wcf.user.guestbook.pmCommentAdminNotifier.subject"><![CDATA[Bot libro degli ospiti: commento {$username}]]></item>
+        <item name="wcf.user.guestbook.pmCommentAdminNotifier.message"><![CDATA[Ciao {$moderator},
+
+{$username} Nel suo libro degli ospiti una voce da {$fromusername} commenti.
+
+Questo messaggio è stato generato automaticamente.]]></item>
+
+        <item name="wcf.user.guestbook.editEntry"><![CDATA[Modifica]]></item>
+        <item name="wcf.user.guestbook.addComment"><![CDATA[Commento]]></item>
+    	<item name="wcf.user.guestbook.editComment"><![CDATA[Modifica commento]]></item>
+    	<item name="wcf.user.guestbook.deleteComment"><![CDATA[Elimina commento]]></item>
+        <item name="wcf.user.guestbook.commentTitle"><![CDATA[Recensito {@$entry.commentTime|time}]]></item>
+        <item name="wcf.user.guestbook.entry"><![CDATA[Valutazione scritturale]]></item>
+        <item name="wcf.user.guestbook.lastEdit"><![CDATA[Ultima modifica: {@$entry.updateUser} {@$entry.updateTime|time}]]></item>
+
+        <item name="wcf.user.guestbook.list.title"><![CDATA[elenco degli ospiti]]></item>
+        <item name="wcf.user.guestbook.list.listHeader"><![CDATA[Esso {if $cntEntries != 1}sono {$cntEntries} libro degli ospiti{else}libro degli ospiti è di 1{/if} disponibile]]></item>
+        <item name="wcf.user.guestbook.list.username"><![CDATA[utente]]></item>
+        <item name="wcf.user.guestbook.list.userLastVisit"><![CDATA[Ultimo accesso]]></item>
+        <item name="wcf.user.guestbook.list.avatar"><![CDATA[Avatar]]></item>
+        <item name="wcf.user.guestbook.list.lastEntryUser"><![CDATA[Ultimo ingresso di]]></item>
+        <item name="wcf.user.guestbook.list.lastEntry"><![CDATA[Ultimo post su]]></item>
+        <item name="wcf.user.guestbook.list.entries"><![CDATA[Entrata's]]></item>
+        <item name="wcf.user.guestbook.list.newEntries"><![CDATA[nuovo Entrata's]]></item>
+        <item name="wcf.user.guestbook.list.views"><![CDATA[opinioni]]></item>
+        <item name="wcf.user.guestbook.list.lastVisitor"><![CDATA[Ultima visita]]></item>
+        <item name="wcf.user.guestbook.list.visitorLastVisit"><![CDATA[Ultima visita a]]></item>
+        <item name="wcf.user.guestbook.list.empty"><![CDATA[Non ci sono voci.]]></item>
+        <item name="wcf.user.guestbook.list.ownEntries"><![CDATA[Questo libro contiene voci da voi]]></item>
+        <item name="wcf.user.guestbook.list.userLastComment"><![CDATA[Ultimo commento]]></item>
+    </category>
+
+    <category name="wcf.user.profile">
+        <item name="wcf.user.profile.menu.link.guestbook"><![CDATA[libro degli ospiti]]></item>
+    </category>
+
+    <category name="wcf.acp.option">
+        <item name="wcf.acp.option.category.userGuestbook"><![CDATA[Valutazione utente libro]]></item>
+        <item name="wcf.acp.option.category.userGuestbook.description"><![CDATA[]]></item>
+        <item name="wcf.acp.option.category.userGuestbook.general"><![CDATA[Impostazioni generali]]></item>
+        <item name="wcf.acp.option.category.userGuestbook.general.description"><![CDATA[]]></item>
+        <item name="wcf.acp.option.category.userGuestbook.topics"><![CDATA[Temi]]></item>
+        <item name="wcf.acp.option.category.userGuestbook.topics.description"><![CDATA[]]></item>
+
+        <item name="wcf.acp.option.userGuestbook_itemsPerPage"><![CDATA[Entrata per pagina]]></item>
+        <item name="wcf.acp.option.userGuestbook_itemsPerPage.description"><![CDATA[Numero di ospiti libro record per pagina.]]></item>
+        <item name="wcf.acp.option.userGuestbook_post_maxlength"><![CDATA[Massimo di caratteri di lunghezza]]></item>
+        <item name="wcf.acp.option.userGuestbook_post_maxlength.description"><![CDATA[Quanti caratteri può un libro degli ospiti entrata massimo contenere?]]></item>
+        <item name="wcf.acp.option.userGuestbook_showInSidebar"><![CDATA[Libro ospiti Link l'entrata in lista]]></item>
+        <item name="wcf.acp.option.userGuestbook_showInSidebar.description"><![CDATA[Visualizza il link (grafica) per il libro degli ospiti, nella barra laterale del contributo elenco.]]></item>
+        <item name="wcf.acp.option.userGuestbook_showEntryImages"><![CDATA[Graphic prima contributo titoli]]></item>
+        <item name="wcf.acp.option.userGuestbook_showEntryImages.description"><![CDATA[Visualizza un grafico prima di ogni contributo a titolo.]]></item>
+
+		<item name="wcf.acp.option.userGuestbook_pmNotifierUgrp"><![CDATA[Benutzergruppen informieren]]></item>
+        <item name="wcf.acp.option.userGuestbook_pmNotifierUgrp.description"><![CDATA[Gruppi di utenti ID kommasepariert! Invia a circa le nuove voci visitatori libro / - commenti PN uno a tutti i og Gruppi di utenti.]]></item>
+        <item name="wcf.acp.option.userGuestbook_pmNotifierUser"><![CDATA[Informazioni utente]]></item>
+        <item name="wcf.acp.option.userGuestbook_pmNotifierUser.description"><![CDATA[ID utente kommasepariert! Invia in nuovi ospiti libro - voci /- commenti PN uno a tutti i og Utente.]]></item>
+    </category>
+
+    <category name="wcf.acp.group">
+        <item name="wcf.acp.group.option.category.user.guestbook"><![CDATA[libro degli ospiti]]></item>
+        <item name="wcf.acp.group.option.category.user.guestbook.description"><![CDATA[Valutazione delle impostazioni per i libri]]></item>
+        <item name="wcf.acp.group.option.category.user.guestbook.listView"><![CDATA[L'elenco degli ospiti]]></item>
+        <item name="wcf.acp.group.option.category.user.guestbook.listView.description"><![CDATA[]]></item>
+
+        <item name="wcf.acp.group.option.user.guestbook.canRead"><![CDATA[lettura diritto]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canRead.description"><![CDATA[Gli utenti di questo gruppo di utenti devono clienti in tutti i libri letti.]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canViewList"><![CDATA[il libro degli ospiti può vista elenco]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canViewList.description"><![CDATA[Gli utenti di questo gruppo di utenti ospiti possono elenco di libri.]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canViewListMenuButton"><![CDATA[Valutazione libro elenco vista pulsante]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canViewListMenuButton.description"><![CDATA[Gli utenti di questo gruppo di utenti di visualizzare il pulsante del menu  &quot;Valutazione libro&quot;.]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canViewMembersListTab"><![CDATA[Valutazione elenco di libri nella scheda i membri 'elenco]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canViewMembersListTab.description"><![CDATA[Gli utenti di questo gruppo di utenti di vedere la scheda &quot;Valutazione libro&quot; nei membri 'elenco.]]></item>
+
+        <item name="wcf.acp.group.option.user.guestbook.canWrite"><![CDATA[Scrivi diritti]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canWrite.description"><![CDATA[Gli utenti di questo gruppo di utenti possono scrivere tutti gli ospiti libri.]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canUseOwn"><![CDATA[Proprio libro degli ospiti]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canUseOwn.description"><![CDATA[Gli utenti di questo gruppo di utenti può disporre di un proprio libro degli ospiti.]]></item>
+
+        <item name="wcf.acp.group.option.user.guestbook.canEditOwnEntries"><![CDATA[Possono modificare le loro voci]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canEditOwnEntries.description"><![CDATA[Gli utenti di questo gruppo di utenti possono possedere le voci dei clienti in tutti i libri entro il termine di editing. [Tempo in secondi, -1 per infinito, 0 = disabilitato]]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canEditOwnGuestbook"><![CDATA[In grado di tutte le voci nel proprio libro degli ospiti di editing]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canEditOwnGuestbook.description"><![CDATA[Gli utenti di questo gruppo di utenti, tutte le voci nel proprio libro degli ospiti di editing.]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canComment"><![CDATA[Può voci commento]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canComment.description"><![CDATA[Gli utenti di questo gruppo di utenti maggio proprie voci nel libro degli ospiti commento.]]></item>
+
+        <item name="wcf.acp.group.option.category.mod.guestbook"><![CDATA[libro degli ospiti]]></item>
+        <item name="wcf.acp.group.option.category.mod.guestbook.description"><![CDATA[Valutazione delle impostazioni per i libri]]></item>
+        <item name="wcf.acp.group.option.mod.guestbook.canDeleteEntrys"><![CDATA[Può estera posti]]></item>
+        <item name="wcf.acp.group.option.mod.guestbook.canDeleteEntrys.description"><![CDATA[Membri di questo gruppo di ospiti stranieri possono eliminare le voci]]></item>
+
+	        <item name="wcf.acp.group.option.mod.guestbook.canEditAll"><![CDATA[Possibile modificare tutte le voci]]></item>
+        <item name="wcf.acp.group.option.mod.guestbook.canEditAll.description"><![CDATA[Gli utenti di questo gruppo di utenti, tutte le voci dei clienti in tutti i libri di editing.]]></item>
+        <item name="wcf.acp.group.option.mod.guestbook.canLock"><![CDATA[Cliente può prenotare blocco]]></item>
+        <item name="wcf.acp.group.option.mod.guestbook.canLock.description"><![CDATA[Gli utenti di questo gruppo di utenti deve cliente libri blocco.]]></item>
+
+        <item name="wcf.acp.group.option.user.guestbook.listView.showAvatar"><![CDATA[Avatar vista]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showAvatar.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showUserLastVisit"><![CDATA[Data ultima visita del proprietario del libro degli ospiti mostrano]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showUserLastVisit.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showLastEntryUser"><![CDATA[Nome utente l'ultimo libro degli ospiti documenti d'ingresso]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showLastEntryUser.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showLastEntryDate"><![CDATA[La data di ultimo libro degli ospiti documenti d'ingresso]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showLastEntryDate.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showNumOfEntries"><![CDATA[Numero di voci di libro degli ospiti]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showNumOfEntries.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showNumOfNewEntries"><![CDATA[Numero di nuovi (non letti) libro degli ospiti voci]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showNumOfNewEntries.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showNumOfViews"><![CDATA[Numero di ospiti visualizzazioni libro mostra]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showNumOfViews.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showLastVisitor"><![CDATA[Nome utente degli ultimi visitatore vista]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showLastVisitor.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showLastVisitDate"><![CDATA[La data di fine ultimo visitatore]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showLastVisitDate.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showUserLastComment"><![CDATA[Data di ultima revisione annunci]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showUserLastComment.description"><![CDATA[]]></item>
+    </category>
+
+    <category name="wcf.user.option">
+        <item name="wcf.user.option.category.settings.userGuestbook"><![CDATA[libro degli ospiti]]></item>
+        <item name="wcf.user.option.category.settings.userGuestbook.description"><![CDATA[]]></item>
+        <item name="wcf.user.option.category.settings.userGuestbook.global"><![CDATA[impostazioni]]></item>
+        <item name="wcf.user.option.category.settings.userGuestbook.global.description"><![CDATA[]]></item>
+
+        <item name="wcf.user.option.userGuestbook_enable"><![CDATA[Attivare il libro degli ospiti]]></item>
+        <item name="wcf.user.option.userGuestbook_enable.description"><![CDATA[Selezionare questa opzione se altri utenti possono leggere il tuo libro degli ospiti.]]></item>
+
+        <item name="wcf.user.option.userGuestbook_enable_posting"><![CDATA[Voci permettono]]></item>
+        <item name="wcf.user.option.userGuestbook_enable_posting.description"><![CDATA[Selezionare questa opzione se altri utenti nel tuo visitatore.]]></item>
+
+        <item name="wcf.user.option.userGuestbook_sendInfo"><![CDATA[Attivare la casella di messaggio]]></item>
+        <item name="wcf.user.option.userGuestbook_sendInfo.description"><![CDATA[Selezionare questa opzione se ogni nuovo ingresso di MessageBox desiderio di essere informati.]]></item>
+
+        <item name="wcf.user.option.userGuestbook_sendPM"><![CDATA[PN attivare]]></item>
+        <item name="wcf.user.option.userGuestbook_sendPM.description"><![CDATA[Selezionare questa opzione se ogni nuovo ingresso riceverà un messaggio privato.]]></item>
+
+    	<item name="wcf.user.option.userGuestbook_sendCommentPM"><![CDATA[PN per attivare i commenti]]></item>
+    	<item name="wcf.user.option.userGuestbook_sendCommentPM.description"><![CDATA[Selezionare questa opzione se ogni nuovo commento un messaggio privato desidera ricevere.]]></item>
+    </category>
+
+    <category name="wcf.header.menu">
+        <item name="wcf.header.menu.userGuestbook"><![CDATA[Valutazione libro]]></item>
+    </category>
+
+    <category name="wcf.usersOnline">
+        <item name="wcf.usersOnline.location.userGuestbookList"><![CDATA[Elenco degli ospiti]]></item>
+        <item name="wcf.usersOnline.location.userGuestbookView"><![CDATA[Libro degli ospiti di {$username}]]></item>
+        <item name="wcf.usersOnline.location.userGuestbookAddEntry"><![CDATA[Nuovo libro degli ospiti in entrata {$username} creare]]></item>
+    </category>
+</language>

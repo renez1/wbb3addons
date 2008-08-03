@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTD/options.dtd">
+<data>
+	<import>
+		<categories>
+			<category name="portal.box.todayonlinebox">
+				<parent>portal</parent>
+			</category>
+		</categories>
+		<options>
+			<option name="todayonlinebox_showonlineuser_acp">
+				<categoryname>portal.box.todayonlinebox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+		    </option>
+			<option name="todayonlinebox_showstats_acp">
+				<categoryname>portal.box.todayonlinebox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+		    </option>
+			<option name="todayonlinebox_showlegend_acp">
+				<categoryname>portal.box.todayonlinebox</categoryname>
+				<optiontype>select</optiontype>
+				<defaultvalue>wio</defaultvalue>
+				<selectoptions><![CDATA[off:wcf.acp.option.todayonlinebox_showlegend_acp.off
+wio:wcf.acp.option.todayonlinebox_showlegend_acp.wio
+wwo:wcf.acp.option.todayonlinebox_showlegend_acp.wwo
+stat:wcf.acp.option.todayonlinebox_showlegend_acp.stat]]></selectoptions>
+			</option>
+			<option name="todayonlinebox_showtime_acp">
+				<categoryname>portal.box.todayonlinebox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
+        </options>
+	</import>
+</data>

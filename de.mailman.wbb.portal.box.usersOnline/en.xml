@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="en">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.usersOnlineBox.title"><![CDATA[&raquo;Who is online?&laquo;-Box]]></item>
+	</category>
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.user.board.canViewUsersOnlineBox"><![CDATA[Can view the &raquo;Who is online?&laquo;-Box]]></item>
+		<item name="wcf.acp.group.option.user.board.canViewUsersOnlineBox.description"><![CDATA[]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.usersOnlineBox"><![CDATA[&raquo;Who is online?&laquo;-Box]]></item>
+		<item name="wcf.acp.option.category.portal.box.usersOnlineBox.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_hideGuests"><![CDATA[Hide unregistered users]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_hideGuests.description"><![CDATA[Enabling this option will hide unregistered users in the box.]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_hideRobots"><![CDATA[Hide search engine robots]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_hideRobots.description"><![CDATA[Enabling this option will hide search engine robots in the box.]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_showLegend"><![CDATA[Show legend on top]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_showLegend.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_showLegendBottom"><![CDATA[Show legend on bottom]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_showLegendBottom.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_maxHeight"><![CDATA[Max. height of the box]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_maxHeight.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_boxOpened"><![CDATA[Box permanently opened]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_boxOpened.description"><![CDATA[]]></item>
+	</category>
+</language>

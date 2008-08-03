@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="de">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.teamonlinebox.title"><![CDATA[Team-Online]]></item>
+		<item name="wbb.portal.box.teamonlinebox.nouser"><![CDATA[Keine Benutzer in Liste]]></item>
+		<item name="wbb.portal.box.teamonlinebox.pageTitle"><![CDATA[&raquo;Team-Online&laquo;-Liste]]></item>
+		<item name="wbb.portal.box.teamonlinebox.error"><![CDATA[Sie haben keine Berechtigung die &raquo;Team-Online&laquo;-Liste zu sehen.]]></item>
+	</category>
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.showOnTeamOnlineBox"><![CDATA[Mitglieder dieser Benutzergruppe in der Team-Online-Box anzeigen]]></item>
+		<item name="wcf.acp.group.teamOnlineMarking"><![CDATA[Markierung in der &raquo;Team-Online-Box&laquo;]]></item>
+		<item name="wcf.acp.group.teamOnlineMarking.description"><![CDATA[Hier können Sie die HTML-Formatierung der Anzeige von Benutzergruppen in der Team-Online-Box ändern. &lt;strong&gt;%s&lt;/strong&gt; stellt Mitglieder dieser Gruppe beispielsweise fett dar.]]></item>
+
+		<item name="wcf.acp.group.option.user.board.canSeeTeamOnlineBox"><![CDATA[Kann &raquo;Team-Online-Box&laquo; sehen]]></item>
+		<item name="wcf.acp.group.option.user.board.canSeeTeamOnlineBox.description"><![CDATA[Mitglieder dieser Benutzergruppe können die &raquo;Team-Online-Box&laquo; sehen.]]></item>
+		<item name="wcf.acp.group.option.category.user.board.general"><![CDATA[Allgemein]]></item>
+		<item name="wcf.acp.group.option.category.user.board.general.description"><![CDATA[]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.teamonlinebox"><![CDATA[Team-Online]]></item>
+		<item name="wcf.acp.option.category.portal.box.teamonlinebox.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.teamonlinebox_showcount_acp"><![CDATA[Anzahl anzeigen]]></item>
+        <item name="wcf.acp.option.teamonlinebox_showcount_acp.description"><![CDATA[Zeigt die Anzahl der Online-Benutzer im Boxentitel an.]]></item>
+		<item name="wcf.acp.option.teamonlinebox_showbyline_acp"><![CDATA[Zeilenweise anzeigen]]></item>
+        <item name="wcf.acp.option.teamonlinebox_showbyline_acp.description"><![CDATA[Zeigt die Benutzer zeilenweise an.]]></item>
+		<item name="wcf.acp.option.teamonlinebox_showtime_acp"><![CDATA[Uhrzeit anzeigen]]></item>
+        <item name="wcf.acp.option.teamonlinebox_showtime_acp.description"><![CDATA[Zeigt die Uhrzeit neben dem Benutzernamen an.]]></item>
+		<item name="wcf.acp.option.teamonlinebox_orderby_acp"><![CDATA[Sortierung nach]]></item>
+        <item name="wcf.acp.option.teamonlinebox_orderby_acp.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.teamonlinebox_orderby_acp.lastActivityTime"><![CDATA[letzter Aktivität]]></item>
+		<item name="wcf.acp.option.teamonlinebox_orderby_acp.username"><![CDATA[Benutzername]]></item>
+		<item name="wcf.acp.option.teamonlinebox_sortdesc_acp"><![CDATA[Sortierung in absteigender Reihenfolge]]></item>
+        <item name="wcf.acp.option.teamonlinebox_sortdesc_acp.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.teamonlinebox_sbcolor_acp"><![CDATA[Zweite Hintergrundfarbe]]></item>
+        <item name="wcf.acp.option.teamonlinebox_sbcolor_acp.description"><![CDATA[Farbe &quot;1&quot; zum Deaktivieren. Standard = 2.]]></item>
+	</category>
+
+    <category name="wbb.usersOnline">
+        <item name="wbb.usersOnline.location.teamOnline"><![CDATA[Team-Online]]></item>
+    </category>
+</language>

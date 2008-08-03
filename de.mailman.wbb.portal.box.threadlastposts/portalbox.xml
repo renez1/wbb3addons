@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "DTD/package.dtd">
+<data>
+	<import>
+		<portalboxitem name="threadlastpostsbox">
+			<className>ThreadLastPostsBox</className>
+			<cacheBuilderClass></cacheBuilderClass>
+			<boxType>2</boxType>
+			<useCache>0</useCache>
+			<sortOrder>3</sortOrder>
+			<boxActivation>0</boxActivation>
+		</portalboxitem>
+	</import>
+</data>

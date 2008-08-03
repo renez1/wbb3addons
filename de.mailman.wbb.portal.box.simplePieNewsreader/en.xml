@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="en">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.simplePieNewsreader.title"><![CDATA[Newsreader]]></item>
+	</category>
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.category.user.board.general"><![CDATA[General]]></item>
+		<item name="wcf.acp.group.option.category.user.board.general.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.board.canViewSimplePieNewsreaderBox"><![CDATA[Can view the &raquo;SimplePie Newsreader&laquo; Box]]></item>
+		<item name="wcf.acp.group.option.user.board.canViewSimplePieNewsreaderBox.description"><![CDATA[]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.simplePieNewsreader"><![CDATA[SimplePie Newsreader Box]]></item>
+		<item name="wcf.acp.option.category.portal.box.simplePieNewsreader.description"><![CDATA[http://simplepie.org/]]></item>
+
+		<item name="wcf.acp.option.spnrbox_feeds"><![CDATA[Feed-URLs]]></item>
+		<item name="wcf.acp.option.spnrbox_feeds.description"><![CDATA[One URL per line, e.g. http://wbb3addons.ump2002.net/wbb/index.php?page=Feed&amp;type=Atom]]></item>
+		<item name="wcf.acp.option.spnrbox_numOfFeeds"><![CDATA[Feeds]]></item>
+		<item name="wcf.acp.option.spnrbox_numOfFeeds.description"><![CDATA[Number of entries per feed. Default 5.]]></item>
+		<item name="wcf.acp.option.spnrbox_cacheMin"><![CDATA[Cache min.]]></item>
+		<item name="wcf.acp.option.spnrbox_cacheMin.description"><![CDATA[Set the minimum time (in seconds) for which a feed will be cached. Default 3600.]]></item>
+		<item name="wcf.acp.option.spnrbox_cacheMax"><![CDATA[Cache max.]]></item>
+		<item name="wcf.acp.option.spnrbox_cacheMax.description"><![CDATA[Set the maximum time (in seconds) for which an autodiscovered feed URL will be cached. Default 604800 (7 days).]]></item>
+		<item name="wcf.acp.option.spnrbox_maxLenFeedTitle"><![CDATA[Max. length of the feed title]]></item>
+		<item name="wcf.acp.option.spnrbox_maxLenFeedTitle.description"><![CDATA[Default = 64.]]></item>
+		<item name="wcf.acp.option.spnrbox_showDateNextTitle"><![CDATA[Show the feed date next the feed title]]></item>
+		<item name="wcf.acp.option.spnrbox_showDateNextTitle.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.spnrbox_boxOpened"><![CDATA[Box permanently opened]]></item>
+		<item name="wcf.acp.option.spnrbox_boxOpened.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.spnrbox_sbcolor"><![CDATA[Second backgroundcolor]]></item>
+        <item name="wcf.acp.option.spnrbox_sbcolor.description"><![CDATA[Default = 1.]]></item>
+	</category>
+</language>

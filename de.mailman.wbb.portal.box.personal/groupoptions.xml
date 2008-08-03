@@ -1,0 +1,112 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/options.dtd">
+<data>	
+	<import>
+		<categories>
+            <category name="user.profile.personalbox">
+	            <parent>user.profile</parent>
+            </category>
+		</categories>
+		<options>
+			<option name="user.profile.personalbox.canView">
+				<categoryname>user.profile.personalbox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="user.profile.personalbox.showIP">
+				<categoryname>user.profile.personalbox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+
+			<option name="user.profile.personalbox.cntOwnPosts">
+				<categoryname>user.profile.personalbox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="user.profile.personalbox.cntCurPosts">
+				<categoryname>user.profile.personalbox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="user.profile.personalbox.cntLastPosts">
+				<categoryname>user.profile.personalbox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="user.profile.personalbox.cntSubscriptions">
+				<categoryname>user.profile.personalbox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+
+			<option name="user.profile.personalbox.canSetMaxheight">
+				<categoryname>user.profile.personalbox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="user.profile.personalbox.canSetAvatar">
+				<categoryname>user.profile.personalbox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="user.profile.personalbox.canSetPersonal">
+				<categoryname>user.profile.personalbox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="user.profile.personalbox.canSetCurPosts">
+				<categoryname>user.profile.personalbox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="user.profile.personalbox.canSetPM">
+				<categoryname>user.profile.personalbox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="user.profile.personalbox.canSetIM">
+				<categoryname>user.profile.personalbox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="user.profile.personalbox.canSetUserCP">
+				<categoryname>user.profile.personalbox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="user.profile.personalbox.canSetStyle">
+				<categoryname>user.profile.personalbox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="user.profile.personalbox.canSetMisc">
+				<categoryname>user.profile.personalbox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="user.profile.personalbox.enableWeather">
+				<categoryname>user.profile.personalbox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<enableoptions>user.profile.personalbox.canSetWeather</enableoptions>
+			</option>
+			<option name="user.profile.personalbox.canSetWeather">
+				<categoryname>user.profile.personalbox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<enableoptions>user.profile.personalbox.canSetWeatherZip,user.profile.personalbox.canSetWeatherStyle</enableoptions>
+			</option>
+			<option name="user.profile.personalbox.canSetWeatherZip">
+				<categoryname>user.profile.personalbox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="user.profile.personalbox.canSetWeatherStyle">
+				<categoryname>user.profile.personalbox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+		</options>
+	</import>
+</data>

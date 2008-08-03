@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="de">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.usersOnlineBox.title"><![CDATA[&raquo;Wer ist online?&laquo;-Box]]></item>
+	</category>
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.user.board.canViewUsersOnlineBox"><![CDATA[Kann die &raquo;Wer ist online?&laquo;-Box sehen]]></item>
+		<item name="wcf.acp.group.option.user.board.canViewUsersOnlineBox.description"><![CDATA[Mitglieder dieser Benutzergruppe können die &raquo;Wer ist online?&laquo;-Box sehen.]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.usersOnlineBox"><![CDATA[&raquo;Wer ist online?&laquo;-Box]]></item>
+		<item name="wcf.acp.option.category.portal.box.usersOnlineBox.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_hideGuests"><![CDATA[Unregistrierte Benutzer <strong>nicht</strong> auflisten]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_hideGuests.description"><![CDATA[Falls die Option &quot;Unregistrierte Benutzer auflisten&quot; für die &raquo;Wer ist online?&laquo;-Liste aktiviert ist und unregistrierte Benutzer nicht in der Box angezeigt werden sollen.]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_hideRobots"><![CDATA[Suchmaschinen-Roboter <strong>nicht</strong> auflisten]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_hideRobots.description"><![CDATA[Falls die Option &quot;Suchmaschinen-Roboter auflisten&quot; für die &raquo;Wer ist online?&laquo;-Liste aktiviert ist und Suchmaschinen-Roboter nicht in der Box angezeigt werden sollen.]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_showLegend"><![CDATA[Legende oben anzeigen]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_showLegend.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_showLegendBottom"><![CDATA[Legende unten anzeigen]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_showLegendBottom.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_maxHeight"><![CDATA[Max. Höhe der Box]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_maxHeight.description"><![CDATA[Maximale Höhe der Box.]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_boxOpened"><![CDATA[Box permanent geöffnet]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_boxOpened.description"><![CDATA[Aktivieren Sie diese Option um die Box permanent zu öffnen (Benutzer können die Box dann nicht mehr schließen).]]></item>
+	</category>
+</language>

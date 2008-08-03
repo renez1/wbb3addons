@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="de">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.todayonlinebox.title"><![CDATA[Heute online]]></item>
+		<item name="wbb.portal.box.todayonlinebox.tplTitle"><![CDATA[{if TODAYONLINEBOX_SHOWONLINEUSER_ACP}Heute online{else}Wer war heute online?{/if}]]></item>
+		<item name="wbb.portal.box.todayonlinebox.usersOnline.record"><![CDATA[{if USERS_ONLINE_RECORD > 0}- Rekord: {#USERS_ONLINE_RECORD} Benutzer ({@USERS_ONLINE_RECORD_TIME|date}){/if}]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.todayonlinebox"><![CDATA[Heute online]]></item>
+		<item name="wcf.acp.option.category.portal.box.todayonlinebox.description"><![CDATA[]]></item>
+
+		<item name="wcf.acp.option.todayonlinebox_showonlineuser_acp"><![CDATA[&raquo;Wer ist online?&laquo; anzeigen]]></item>
+		<item name="wcf.acp.option.todayonlinebox_showonlineuser_acp.description"><![CDATA[Aktivieren Sie diese Option wenn Sie auch die aktuellen Online-User anzeigen möchten.]]></item>
+		<item name="wcf.acp.option.todayonlinebox_showstats_acp"><![CDATA[Statistik anzeigen]]></item>
+		<item name="wcf.acp.option.todayonlinebox_showstats_acp.description"><![CDATA[Aktivieren Sie diese Option wenn Sie die Statistik anzeigen möchten.]]></item>
+		<item name="wcf.acp.option.todayonlinebox_showlegend_acp"><![CDATA[Benutzergruppen-Legende anzeigen]]></item>
+		<item name="wcf.acp.option.todayonlinebox_showlegend_acp.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.todayonlinebox_showlegend_acp.off"><![CDATA[deaktiviert]]></item>
+		<item name="wcf.acp.option.todayonlinebox_showlegend_acp.wio"><![CDATA[unterhalb der Online-Benutzer]]></item>
+		<item name="wcf.acp.option.todayonlinebox_showlegend_acp.wwo"><![CDATA[unterhalb von &quot;Wer war online?&quot;]]></item>
+		<item name="wcf.acp.option.todayonlinebox_showlegend_acp.stat"><![CDATA[unterhalb der Statistik]]></item>
+		<item name="wcf.acp.option.todayonlinebox_showtime_acp"><![CDATA[Uhrzeit hinter dem Benutzernamen anzeigen]]></item>
+		<item name="wcf.acp.option.todayonlinebox_showtime_acp.description"><![CDATA[]]></item>
+	</category>
+</language>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE import SYSTEM "DTD/import.dtd">
+
+<data>
+	<import>
+		<acpmenuitem name="wcf.acp.menu.link.attachmentManager">
+			<parent>wcf.acp.menu.link.content</parent>
+			<link>index.php?page=AttachmentManagerAcp</link>
+			<permissions>admin.general.attachmentManager.canView</permissions>
+		</acpmenuitem>
+	</import>
+</data>

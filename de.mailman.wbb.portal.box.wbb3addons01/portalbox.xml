@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "DTD/package.dtd">
+<data>
+	<import>
+		<portalboxitem name="wbb3addonsBox01">
+			<className>wbb3addonsBox01</className>
+			<cacheBuilderClass></cacheBuilderClass>
+			<boxType>1</boxType>
+			<useCache>0</useCache>
+			<sortOrder>1</sortOrder>
+			<boxActivation>0</boxActivation>
+		</portalboxitem>
+	</import>
+</data>

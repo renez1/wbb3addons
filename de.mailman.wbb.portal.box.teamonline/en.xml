@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="en">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.teamonlinebox.title"><![CDATA[Team Online]]></item>
+		<item name="wbb.portal.box.teamonlinebox.nouser"><![CDATA[No users in list]]></item>
+		<item name="wbb.portal.box.teamonlinebox.pageTitle"><![CDATA[&raquo;Team-Online&laquo;-List]]></item>
+		<item name="wbb.portal.box.teamonlinebox.error"><![CDATA[You have no permission to see the &raquo;Team-Online&laquo;-List.]]></item>
+	</category>
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.showOnTeamOnlineBox"><![CDATA[Show user of this user group in the Team-Online-Box]]></item>
+		<item name="wcf.acp.group.teamOnlineMarking"><![CDATA[Marking of the users in the &raquo;Team-Online-Box&laquo;]]></item>
+		<item name="wcf.acp.group.teamOnlineMarking.description"><![CDATA[]]></item>
+
+		<item name="wcf.acp.group.option.user.board.canSeeTeamOnlineBox"><![CDATA[Can see the &raquo;Team-Online-Box&laquo;]]></item>
+		<item name="wcf.acp.group.option.user.board.canSeeTeamOnlineBox.description"><![CDATA[Members of this user group can see the &raquo;Team-Online-Box&laquo;.]]></item>
+		<item name="wcf.acp.group.option.category.user.board.general"><![CDATA[General]]></item>
+		<item name="wcf.acp.group.option.category.user.board.general.description"><![CDATA[]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.teamonlinebox"><![CDATA[Team Online]]></item>
+		<item name="wcf.acp.option.category.portal.box.teamonlinebox.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.teamonlinebox_showcount_acp"><![CDATA[Show number of users]]></item>
+        <item name="wcf.acp.option.teamonlinebox_showcount_acp.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.teamonlinebox_showbyline_acp"><![CDATA[Show users line-by-line]]></item>
+        <item name="wcf.acp.option.teamonlinebox_showbyline_acp.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.teamonlinebox_showtime_acp"><![CDATA[Show time]]></item>
+        <item name="wcf.acp.option.teamonlinebox_showtime_acp.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.teamonlinebox_orderby_acp"><![CDATA[Order by]]></item>
+        <item name="wcf.acp.option.teamonlinebox_orderby_acp.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.teamonlinebox_orderby_acp.lastActivityTime"><![CDATA[last activity]]></item>
+		<item name="wcf.acp.option.teamonlinebox_orderby_acp.username"><![CDATA[Username]]></item>
+		<item name="wcf.acp.option.teamonlinebox_sortdesc_acp"><![CDATA[Assortment in descending order]]></item>
+        <item name="wcf.acp.option.teamonlinebox_sortdesc_acp.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.teamonlinebox_sbcolor_acp"><![CDATA[Second background color]]></item>
+        <item name="wcf.acp.option.teamonlinebox_sbcolor_acp.description"><![CDATA[Default = 2.]]></item>
+	</category>
+
+    <category name="wbb.usersOnline">
+        <item name="wbb.usersOnline.location.teamOnline"><![CDATA[Team Online]]></item>
+    </category>
+</language>
