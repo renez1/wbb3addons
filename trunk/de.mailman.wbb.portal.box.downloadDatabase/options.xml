@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTD/options.dtd">
+<data>
+	<import>
+		<categories>
+			<category name="portal.box.downloadDatabase">
+				<parent>portal</parent>
+				<showorder>20</showorder>
+			</category>
+		</categories>
+		<options>
+			<option name="downloadDatabaseBox_boxOpened">
+				<categoryname>portal.box.downloadDatabase</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+		    </option>
+			<option name="downloadDatabaseBox_title_length">
+				<categoryname>portal.box.downloadDatabase</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue>24</defaultvalue>
+			</option>
+
+			<option name="downloadDatabaseBox_sbcolor">
+				<categoryname>portal.box.downloadDatabase</categoryname>
+				<optiontype>select</optiontype>
+				<defaultvalue>2</defaultvalue>
+				<selectoptions><![CDATA[1
+2
+3]]></selectoptions>
+			</option>
+		</options>
+	</import>
+</data>
