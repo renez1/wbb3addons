@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="de">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.buddiesbox.title"><![CDATA[Freunde-Liste]]></item>
+		<item name="wbb.portal.box.buddiesbox.nouser"><![CDATA[Keine Benutzer in Liste]]></item>
+		<item name="wbb.portal.box.buddiesbox.pm"><![CDATA[Private Nachricht an den Freund senden]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.buddiesbox"><![CDATA[Freunde-Liste]]></item>
+		<item name="wcf.acp.option.category.portal.box.buddiesbox.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.buddiesbox_sbcolor_acp"><![CDATA[Zweite Hintergrundfarbe]]></item>
+        <item name="wcf.acp.option.buddiesbox_sbcolor_acp.description"><![CDATA[Farbe &quot;1&quot; zum Deaktivieren. Standard = 2.]]></item>
+		<item name="wcf.acp.option.buddiesbox_showdel_acp"><![CDATA[Lösch-Button anzeigen]]></item>
+        <item name="wcf.acp.option.buddiesbox_showdel_acp.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.buddiesbox_showusermarking_acp"><![CDATA[Benutzer Online-Markierung verwenden]]></item>
+        <item name="wcf.acp.option.buddiesbox_showusermarking_acp.description"><![CDATA[Wenn diese Option aktiviert ist werden die Freunde in der Box mit der gleichen Markierung wie in der Online-Liste dargestellt.]]></item>
+	</category>
+</language>
