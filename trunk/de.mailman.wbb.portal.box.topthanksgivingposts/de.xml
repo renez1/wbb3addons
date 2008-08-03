@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="de">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.topthanksgivingposts.title"><![CDATA[Top Danksagungen]]></item>
+		<item name="wbb.portal.box.topthanksgivingposts.nothreads"><![CDATA[Keine Themen in Liste]]></item>
+	</category>
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.user.board.canSeeThanksgivingBox"><![CDATA[Kann die &raquo;Danksagung&laquo; Box sehen]]></item>
+		<item name="wcf.acp.group.option.user.board.canSeeThanksgivingBox.description"><![CDATA[Mitglieder dieser Benutzergruppe können die &raquo;Danksagung&laquo; Box sehen.]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.topthanksgivingposts"><![CDATA[Top Danksagungen]]></item>
+		<item name="wcf.acp.option.category.portal.box.topthanksgivingposts.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.topthanksgiving_count_acp"><![CDATA[Anzahl Beiträge]]></item>
+		<item name="wcf.acp.option.topthanksgiving_count_acp.description"><![CDATA[Geben Sie hier die Anzahl der Beiträge an, die in der Box angezeigt werden sollen.]]></item>
+		<item name="wcf.acp.option.topthanksgiving_titlelength_acp"><![CDATA[Länge des Titels]]></item>
+		<item name="wcf.acp.option.topthanksgiving_titlelength_acp.description"><![CDATA[Maximale Zeichenlänge der Beitragstitel (0 = deaktiviert).]]></item>
+		<item name="wcf.acp.option.topthanksgiving_hits_acp"><![CDATA[Anzahl der Danksagungen anzeigen]]></item>
+		<item name="wcf.acp.option.topthanksgiving_hits_acp.description"><![CDATA[Aktivieren Sie diese Option um die Anzahl der Danksagungen neben dem Beitragstitel anzuzeigen.]]></item>
+		<item name="wcf.acp.option.topthanksgiving_sbcolor_acp"><![CDATA[Zweite Hintergrundfarbe]]></item>
+        <item name="wcf.acp.option.topthanksgiving_sbcolor_acp.description"><![CDATA[Farbe &quot;1&quot; zum Deaktivieren. Standard = 2.]]></item>
+	</category>
+</language>

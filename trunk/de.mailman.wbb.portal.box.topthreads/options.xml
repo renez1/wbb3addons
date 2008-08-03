@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTD/options.dtd">
+<data>
+	<import>
+		<categories>
+			<category name="portal.box.topthreads">
+				<parent>portal</parent>
+			</category>
+		</categories>
+		<options>
+			<option name="topthreads_count">
+				<categoryname>portal.box.topthreads</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue>10</defaultvalue>
+			</option>
+			<option name="topthreads_titlelength">
+				<categoryname>portal.box.topthreads</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue>23</defaultvalue>
+			</option>
+			<option name="topthreads_hits">
+				<categoryname>portal.box.topthreads</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
+			<option name="topthreads_sbcolor_acp">
+				<categoryname>portal.box.topthreads</categoryname>
+				<optiontype>select</optiontype>
+				<defaultvalue>2</defaultvalue>
+				<selectoptions><![CDATA[1
+										2
+										3]]></selectoptions>
+			</option>
+		</options>
+	</import>
+</data>

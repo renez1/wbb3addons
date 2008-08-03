@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTD/options.dtd">
+<data>
+	<import>
+		<categories>
+			<category name="portal.box.teamonlinebox">
+				<parent>portal</parent>
+			</category>
+		</categories>
+		<options>
+			<option name="teamonlinebox_showcount_acp">
+				<categoryname>portal.box.teamonlinebox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue><![CDATA[1]]></defaultvalue>
+			</option>
+			<option name="teamonlinebox_showbyline_acp">
+				<categoryname>portal.box.teamonlinebox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue><![CDATA[1]]></defaultvalue>
+			</option>
+			<option name="teamonlinebox_showtime_acp">
+				<categoryname>portal.box.teamonlinebox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue><![CDATA[1]]></defaultvalue>
+			</option>
+			<option name="teamonlinebox_orderby_acp">
+				<categoryname>portal.box.teamonlinebox</categoryname>
+				<optiontype>select</optiontype>
+				<defaultvalue>lastActivityTime</defaultvalue>
+				<selectoptions><![CDATA[lastActivityTime:wcf.acp.option.teamonlinebox_orderby_acp.lastActivityTime
+username:wcf.acp.option.teamonlinebox_orderby_acp.username]]></selectoptions>
+			</option>
+			<option name="teamonlinebox_sortdesc_acp">
+				<categoryname>portal.box.teamonlinebox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue><![CDATA[1]]></defaultvalue>
+			</option>
+			<option name="teamonlinebox_sbcolor_acp">
+				<categoryname>portal.box.teamonlinebox</categoryname>
+				<optiontype>select</optiontype>
+				<defaultvalue>2</defaultvalue>
+				<selectoptions><![CDATA[1
+2
+3]]></selectoptions>
+			</option>
+		</options>
+	</import>
+</data>

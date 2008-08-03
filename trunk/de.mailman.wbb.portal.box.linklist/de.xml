@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="de">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.linklistbox.title"><![CDATA[LinkList]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.linklistbox"><![CDATA[LinkList]]></item>
+		<item name="wcf.acp.option.category.portal.box.linklistbox.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.linklistbox_value"><![CDATA[LinkList]]></item>
+		<item name="wcf.acp.option.linklistbox_value.description"><![CDATA[Je Zeile ein vollständiger Link-Eintrag, der aus <strong>5 Feldern</strong> bestehen muß! Jedes Feld ist per &quot;|&quot; (Pipe) zu trennen!
+		    <br/>1. Feld = Grafik - z.B. {@RELATIVE_WCF_DIR}icon/helpS.png
+		    <br/>2. Feld = URL - z.B. index.php?page=Help
+		    <br/>3. Feld = Titel - z.B. wcf.header.menu.help
+		    <br/>4. Feld = Target (in welchem Fenster der Link geöffnet werden soll) - z.B. &quot;_self&quot; für das aktuelle oder &quot;_blank&quot; für ein neues Fenster
+		    <br/>5. Feld = Rechte - z.B. &quot;user.pm.canUsePm&quot; wenn der Benutzer den Link nur dann sehen soll, wenn er das &quot;Private Nachrichten&quot;-System des Forums nutzen darf.
+		    <br/>Bsp.-Link: {@RELATIVE_WCF_DIR}icon/helpS.png|index.php?page=Help|wcf.header.menu.help|_self|
+		    <br/><br/>Weiterhin können auch Texteinträge vorgenommen werden, welche z.B. als Titel fungieren:
+		    <br/>{SPACER}&lt;div class=&quot;smallFont&quot; style=&quot;text-align:center; font-weight:bold; letter-spacing:.2em;&quot;&gt;&amp;raquo;externe Links&amp;laquo;&lt;/div&gt;{/SPACER}]]></item>
+		<item name="wcf.acp.option.linklistbox_locked"><![CDATA[Box permanent geöffnet]]></item>
+		<item name="wcf.acp.option.linklistbox_locked.description"><![CDATA[Aktivieren Sie diese Option wenn die Box permanent aufgeklappt sein soll (Benutzer können die Box dann nicht mehr schließen).]]></item>
+		<item name="wcf.acp.option.linklistbox_spacer"><![CDATA[Vertikaler Abstand]]></item>
+		<item name="wcf.acp.option.linklistbox_spacer.description"><![CDATA[Vertikaler Abstand zwischen den Links in Pixel. Standard = 1.]]></item>
+	</category>
+</language>

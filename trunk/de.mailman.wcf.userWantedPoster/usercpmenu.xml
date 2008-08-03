@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/userCPMenu.dtd">
+<data>
+	<import>
+		<usercpmenuitem name="wcf.user.usercp.menu.link.profile.wantedPoster">
+			<icon>icon/userWantedPosterS.png</icon>
+			<link>index.php?form=UserWantedPosterEdit</link>
+			<parent>wcf.user.usercp.menu.link.profile</parent>
+			<permissions>user.wantedPoster.canUseWantedPoster</permissions>
+			<showorder>10</showorder>
+		</usercpmenuitem>
+	</import>
+</data>

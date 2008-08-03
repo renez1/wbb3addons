@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!DOCTYPE import SYSTEM "DTD/import.dtd">
+<data>
+	<import>
+		<pagelocation name="wcf.usersOnline.location.attachmentManager">
+			<pattern><![CDATA[index\.php\?page=AttachmentManager.*]]></pattern>
+		</pagelocation>
+	</import>
+</data>

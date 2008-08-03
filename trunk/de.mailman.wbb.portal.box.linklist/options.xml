@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTD/options.dtd">
+<data>
+	<import>
+		<categories>
+			<category name="portal.box.linklistbox">
+				<parent>portal</parent>
+			</category>
+		</categories>
+		<options>
+			<option name="linklistbox_value">
+				<categoryname>portal.box.linklistbox</categoryname>
+				<optiontype>textarea</optiontype>
+				<defaultvalue>{SPACER}&lt;div class=&quot;smallFont&quot; style=&quot;text-align:center; font-weight:bold; letter-spacing:.2em;&quot;&gt;&amp;raquo;interne Links&amp;laquo;&lt;/div&gt;{/SPACER}
+{@RELATIVE_WBB_DIR}icon/acpS.png|./acp/index.php?packageID={@PACKAGE_ID}|wbb.header.userMenu.acp|_blank|admin.general.canUseAcp
+{@RELATIVE_WCF_DIR}icon/helpS.png|index.php?page=Help|wcf.header.menu.help|_self|
+{@RELATIVE_WBB_DIR}icon/teamS.png|index.php?page=Team|wcf.user.team.title|_self|
+{@RELATIVE_WBB_DIR}icon/legalNoticeS.png|index.php?page=LegalNotice|wcf.header.menu.legalNotice|_self|
+
+{SPACER}&lt;div class=&quot;smallFont&quot; style=&quot;text-align:center; font-weight:bold; letter-spacing:.2em;&quot;>&amp;raquo;externe Links&amp;laquo;&lt;/div&gt;{/SPACER}
+{@RELATIVE_WCF_DIR}icon/faviconDarkGreenS.png|http://www.wbb3mods.com/|wbb3mods|_blank|</defaultvalue>
+			</option>
+			<option name="linklistbox_locked">
+				<categoryname>portal.box.linklistbox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<visible>4</visible>
+				<editable>0</editable>
+		    </option>
+			<option name="linklistbox_spacer">
+				<categoryname>portal.box.linklistbox</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
+		</options>
+	</import>
+</data>

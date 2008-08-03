@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="hr">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.topthanksgivinguser.title"><![CDATA[Autori Top Zahvala]]></item>
+		<item name="wbb.portal.box.topthanksgivinguser.nouser"><![CDATA[Ne postoje popis korisnika]]></item>
+	</category>
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.user.board.canSeeThanksgivingUserBox"><![CDATA[Može &raquo;Autori Top Zahvala&laquo; Box vidjeti]]></item>
+		<item name="wcf.acp.group.option.user.board.canSeeThanksgivingUserBox.description"><![CDATA[Korisnici ove korisničke grupe mogu &raquo;Autori Top Zahvala&laquo; Box vidjeti.]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.topthanksgivinguser"><![CDATA[Autori Top Zahvala]]></item>
+		<item name="wcf.acp.option.category.portal.box.topthanksgivinguser.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.topthanksgivinguser_count_acp"><![CDATA[ABroj Autora]]></item>
+		<item name="wcf.acp.option.topthanksgivinguser_count_acp.description"><![CDATA[Upišite ovdje broj autora, koji želite prikazati u box-u.]]></item>
+		<item name="wcf.acp.option.topthanksgivinguser_titlelength_acp"><![CDATA[Dužina korisničkog imena]]></item>
+		<item name="wcf.acp.option.topthanksgivinguser_titlelength_acp.description"><![CDATA[Maksimalna dužina znakova korisničkog imena (0 = deaktivirano).]]></item>
+		<item name="wcf.acp.option.topthanksgivinguser_hits_acp"><![CDATA[Broj zahvala prikazati]]></item>
+		<item name="wcf.acp.option.topthanksgivinguser_hits_acp.description"><![CDATA[Aktivirajte ovu opciju kako bi prikazali broj zahvala pored korisničkog imena.]]></item>
+		<item name="wcf.acp.option.topthanksgivinguser_sbcolor_acp"><![CDATA[Druga pozadinska boja]]></item>
+        <item name="wcf.acp.option.topthanksgivinguser_sbcolor_acp.description"><![CDATA[Boja &quot;1&quot; za deaktivaciju. Standardno = 2.]]></item>
+	</category>
+</language>

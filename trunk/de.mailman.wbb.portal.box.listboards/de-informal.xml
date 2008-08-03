@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="de-informal">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.listboards.title"><![CDATA[Foren-Übersicht]]></item>
+        <item name="wbb.portal.box.listboards.noboards"><![CDATA[Keine Foren vorhanden]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.listboards"><![CDATA[Foren-Übersicht]]></item>
+		<item name="wcf.acp.option.category.portal.box.listboards.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.listboards_show_newposts_acp"><![CDATA[Anzahl neuer Beiträge anzeigen]]></item>
+		<item name="wcf.acp.option.listboards_show_newposts_acp.description"><![CDATA[Zeigt die Anzahl neuer Beiträge neben dem Forentitel an.]]></item>
+		<item name="wcf.acp.option.listboards_mainboard_fontsize_acp"><![CDATA[Schriftgröße Hauptforen]]></item>
+		<item name="wcf.acp.option.listboards_mainboard_fontsize_acp.description"><![CDATA[Standard 1.2em.]]></item>
+		<item name="wcf.acp.option.listboards_mainboard_spacer_acp"><![CDATA[Abstand zwischen den Hauptforen]]></item>
+		<item name="wcf.acp.option.listboards_mainboard_spacer_acp.description"><![CDATA[Wert in Pixel. Standard 5.]]></item>
+		<item name="wcf.acp.option.listboards_subboard_indent_acp"><![CDATA[Einrückung der Unterforen]]></item>
+		<item name="wcf.acp.option.listboards_subboard_indent_acp.description"><![CDATA[Standard &amp;nbsp;&amp;raquo;&amp;nbsp;.]]></item>
+		<item name="wcf.acp.option.listboards_newpost_indent_acp"><![CDATA[Einrückung der Unterforen bei ungelesenen Beiträgen]]></item>
+		<item name="wcf.acp.option.listboards_newpost_indent_acp.description"><![CDATA[Standard &lt;span style=&quot;font-weight:bold; color:Red;&quot;&gt;&amp;nbsp;&amp;raquo;&amp;nbsp;&lt;/span&gt;.]]></item>
+		<item name="wcf.acp.option.listboards_length_acp"><![CDATA[Max. Zeichenlänge Forentitel]]></item>
+		<item name="wcf.acp.option.listboards_length_acp.description"><![CDATA[0 = ungekürzter Titel (deaktiviert). Standard = 30.]]></item>
+		<item name="wcf.acp.option.listboards_levelcut_acp"><![CDATA[Kürzung je Unterebene]]></item>
+		<item name="wcf.acp.option.listboards_levelcut_acp.description"><![CDATA[Kürzung der untergeordneten Forentitel je Ebene. Standard = 2.]]></item>
+		<item name="wcf.acp.option.listboards_maxheight_acp"><![CDATA[Max. Höhe der Box]]></item>
+		<item name="wcf.acp.option.listboards_maxheight_acp.description"><![CDATA[Wert in Pixel. Mindestens 100 oder 0 für die komplette Höhe (standard).]]></item>
+		<item name="wcf.acp.option.listboardsbox_sbcolor_acp"><![CDATA[Zweite Hintergrundfarbe]]></item>
+		<item name="wcf.acp.option.listboardsbox_sbcolor_acp.description"><![CDATA[Farbe &quot;1&quot; zum Deaktivieren. Standard = 2.]]></item>
+	</category>
+
+	<category name="wcf.user.option">
+        <item name="wcf.user.option.category.settings.display.listboards"><![CDATA[Foren-Übersicht Box]]></item>
+
+		<item name="wcf.user.option.listboards_maxheight"><![CDATA[Max. Höhe der Box]]></item>
+		<item name="wcf.user.option.listboards_maxheight.description"><![CDATA[Maximale Höhe der Box in Pixel. Mindestens 100, bzw. 0 für die vom Administrator vorgegebene Einstellung oder 1 für die komplette Höhe.]]></item>
+	</category>
+</language>

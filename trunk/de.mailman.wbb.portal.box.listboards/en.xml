@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="en">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.listboards.title"><![CDATA[Bulletin board overview]]></item>
+        <item name="wbb.portal.box.listboards.noboards"><![CDATA[No boards available]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.listboards"><![CDATA[Bulletin board overview]]></item>
+		<item name="wcf.acp.option.category.portal.box.listboards.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.listboards_show_newposts_acp"><![CDATA[Show new posts]]></item>
+		<item name="wcf.acp.option.listboards_show_newposts_acp.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.listboards_mainboard_fontsize_acp"><![CDATA[Font siize for the bulletin mainboards]]></item>
+		<item name="wcf.acp.option.listboards_mainboard_fontsize_acp.description"><![CDATA[Default 1.2em]]></item>
+		<item name="wcf.acp.option.listboards_mainboard_spacer_acp"><![CDATA[Space between the bulletin main boards]]></item>
+		<item name="wcf.acp.option.listboards_mainboard_spacer_acp.description"><![CDATA[Value in Pixel. Default 5.]]></item>
+		<item name="wcf.acp.option.listboards_subboard_indent_acp"><![CDATA[Indenting of the sub bulletin boards]]></item>
+		<item name="wcf.acp.option.listboards_subboard_indent_acp.description"><![CDATA[Default &amp;nbsp;&amp;raquo;&amp;nbsp;.]]></item>
+		<item name="wcf.acp.option.listboards_newpost_indent_acp"><![CDATA[Indenting of unread sub bulletin boards]]></item>
+		<item name="wcf.acp.option.listboards_newpost_indent_acp.description"><![CDATA[Default &lt;span style=&quot;font-weight:bold; color:Red;&quot;&gt;&amp;nbsp;&amp;raquo;&amp;nbsp;&lt;/span&gt;.]]></item>
+		<item name="wcf.acp.option.listboards_length_acp"><![CDATA[Max. length of board names]]></item>
+		<item name="wcf.acp.option.listboards_length_acp.description"><![CDATA[Default = 30 (0 = disabled)]]></item>
+		<item name="wcf.acp.option.listboards_levelcut_acp"><![CDATA[Shortening for each sub board]]></item>
+		<item name="wcf.acp.option.listboards_levelcut_acp.description"><![CDATA[Default = 2.]]></item>
+		<item name="wcf.acp.option.listboards_maxheight_acp"><![CDATA[Max. height of the box]]></item>
+		<item name="wcf.acp.option.listboards_maxheight_acp.description"><![CDATA[Default = 0 (disabled)]]></item>
+		<item name="wcf.acp.option.listboardsbox_sbcolor_acp"><![CDATA[Second background color]]></item>
+		<item name="wcf.acp.option.listboardsbox_sbcolor_acp.description"><![CDATA[Default = 2.]]></item>
+	</category>
+
+	<category name="wcf.user.option">
+        <item name="wcf.user.option.category.settings.display.listboards"><![CDATA[Bulletin board overview]]></item>
+
+		<item name="wcf.user.option.listboards_maxheight"><![CDATA[Max. height of the box]]></item>
+		<item name="wcf.user.option.listboards_maxheight.description"><![CDATA[Maximum height of the box. Min. 100 or 0 for admin default or 1 for full height).]]></item>
+	</category>
+</language>

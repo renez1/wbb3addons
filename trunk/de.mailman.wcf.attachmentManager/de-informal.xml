@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language languagecode="de-informal">
+	<category name="wcf.user.usercp">
+		<item name="wcf.user.usercp.menu.link.profile.attachmentManager"><![CDATA[AttachmentManager]]></item>
+	</category>
+
+	<category name="wcf.acp.menu">
+		<item name="wcf.acp.menu.link.attachmentManager"><![CDATA[AttachmentManager]]></item>
+	</category>
+
+    <category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.message.attachmentManager"><![CDATA[AttachmentManager]]></item>
+		<item name="wcf.acp.option.category.message.attachmentManager.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.attachmentManager_sortField"><![CDATA[Sortierung]]></item>
+		<item name="wcf.acp.option.attachmentManager_sortField.description"><![CDATA[Bestimme, wonach der AttachmentManager standardmäßig sortieren soll.]]></item>
+		<item name="wcf.acp.option.attachmentManager_sortOrder"><![CDATA[Sortierungsreihenfolge]]></item>
+		<item name="wcf.acp.option.attachmentManager_sortOrder.description"><![CDATA[Gebe hier an, in welcher Reihenfolge sortiert werden soll.]]></item>
+		<item name="wcf.acp.option.attachmentManager_targetWindow"><![CDATA[Zielfenster für Verweise]]></item>
+		<item name="wcf.acp.option.attachmentManager_targetWindow.description"><![CDATA[Gebe hier an, in welchem Fenster die Verweise auf Dateien oder private Nachrichten geöffnet werden sollen.]]></item>
+		<item name="wcf.acp.option.attachmentManager_scaling"><![CDATA[Fehlende Vorschaubilder skalieren]]></item>
+		<item name="wcf.acp.option.attachmentManager_scaling.description"><![CDATA[Wenn keine Vorschaugrafik vorhanden ist wird das komplette Bild geladen und in der Größe der in den Dateianhängen eingestellten Werte angezeigt.]]></item>
+		<item name="wcf.acp.option.attachmentManager_maxLengthUcp"><![CDATA[Max. Zeichenlänge UCP]]></item>
+		<item name="wcf.acp.option.attachmentManager_maxLengthUcp.description"><![CDATA[Maximale Zeichenlänge für Dateinamen im User Control Panel. 0 = deaktiviert (volle Länge)]]></item>
+		<item name="wcf.acp.option.attachmentManager_maxLengthAcp"><![CDATA[Max. Zeichenlänge ACP]]></item>
+		<item name="wcf.acp.option.attachmentManager_maxLengthAcp.description"><![CDATA[Maximale Zeichenlänge für Dateinamen im Admin Control Panel. 0 = deaktiviert (volle Länge)]]></item>
+		<item name="wcf.acp.option.attachmentManager_itemsPerPage"><![CDATA[Attachments je Seite]]></item>
+		<item name="wcf.acp.option.attachmentManager_itemsPerPage.description"><![CDATA[Wieviele Attachments möchtst Du je Seite anzeigen?]]></item>
+        <item name="wcf.acp.option.attachmentManager_sortField.messageType"><![CDATA[Nachrichten Typ]]></item>
+		<item name="wcf.acp.option.attachmentManager_sortField.fileType"><![CDATA[Dateityp]]></item>
+		<item name="wcf.acp.option.attachmentManager_sortField.attachmentName"><![CDATA[Dateiname]]></item>
+		<item name="wcf.acp.option.attachmentManager_sortField.attachmentSize"><![CDATA[Dateigröße]]></item>
+		<item name="wcf.acp.option.attachmentManager_sortField.downloads"><![CDATA[Anzahl der Downloads]]></item>
+		<item name="wcf.acp.option.attachmentManager_sortField.lastDownloadTime"><![CDATA[Datum letzter Download]]></item>
+		<item name="wcf.acp.option.attachmentManager_sortField.uploadTime"><![CDATA[Upload-Datum]]></item>
+		<item name="wcf.acp.option.attachmentManager_sortOrder.asc"><![CDATA[in aufsteigender Reihenfolge]]></item>
+		<item name="wcf.acp.option.attachmentManager_sortOrder.desc"><![CDATA[in absteigender Reihenfolge]]></item>
+		<item name="wcf.acp.option.attachmentManager_targetWindow._blank"><![CDATA[Verweis in einem neuen Fenster öffnen]]></item>
+		<item name="wcf.acp.option.attachmentManager_targetWindow._self"><![CDATA[Verweis im aktuellen Fenster öffnen]]></item>
+    </category>
+
+	<category name="wcf.user.attachmentManager">
+		<item name="wcf.user.attachmentManager.title"><![CDATA[AttachmentManager]]></item>
+		<item name="wcf.user.attachmentManager.empty"><![CDATA[Keine Attachments vorhanden.]]></item>
+		<item name="wcf.user.attachmentManager.list.messageType"><![CDATA[Typ]]></item>
+		<item name="wcf.user.attachmentManager.list.name"><![CDATA[Name]]></item>
+		<item name="wcf.user.attachmentManager.list.fileName"><![CDATA[Datei]]></item>
+		<item name="wcf.user.attachmentManager.list.showThumbnails"><![CDATA[Vorschaugrafiken anzeigen]]></item>
+		<item name="wcf.user.attachmentManager.list.size"><![CDATA[Größe]]></item>
+		<item name="wcf.user.attachmentManager.list.fileType"><![CDATA[Dateityp]]></item>
+		<item name="wcf.user.attachmentManager.list.downloads"><![CDATA[Downloads]]></item>
+		<item name="wcf.user.attachmentManager.list.lastDownload"><![CDATA[Letzter Download]]></item>
+		<item name="wcf.user.attachmentManager.list.upload"><![CDATA[Upload]]></item>
+		<item name="wcf.user.attachmentManager.confirm.delete"><![CDATA[Möchtest Du die ausgewählten Dateianhänge wirklich löschen?]]></item>
+		<item name="wcf.user.attachmentManager.alert.nothingSelected"><![CDATA[Du hast keinen Dateianhang ausgewählt!]]></item>
+		<item name="wcf.user.attachmentManager.info.deleted"><![CDATA[Gelöschte Dateianhänge: {$cntDeleted}]]></item>
+        <item name="wcf.user.attachmentManager.info.totalAttachments"><![CDATA[Attachments insgesamt:]]></item>
+        <item name="wcf.user.attachmentManager.info.totalDownloads"><![CDATA[Downloads insgesamt:]]></item>
+        <item name="wcf.user.attachmentManager.info.totalMemory"><![CDATA[Speicher insgesamt:]]></item>
+        <item name="wcf.user.attachmentManager.info.cntAttachments"><![CDATA[Attachments:]]></item>
+        <item name="wcf.user.attachmentManager.info.cntDownloads"><![CDATA[Downloads:]]></item>
+        <item name="wcf.user.attachmentManager.info.cntMemory"><![CDATA[Speicher:]]></item>
+		<item name="wcf.user.attachmentManager.error.deleted"><![CDATA[Es konnte kein Dateianhang gelöscht werden! Bitte informiere den Administrator wenn dieser Fehler erneut auftritt.]]></item>
+	</category>
+
+    <category name="wcf.acp.attachmentManager">
+        <item name="wcf.acp.attachmentManager.filterTitle"><![CDATA[Filter]]></item>
+        <item name="wcf.acp.attachmentManager.filterUser"><![CDATA[Benutzername]]></item>
+        <item name="wcf.acp.attachmentManager.filterMessageType"><![CDATA[Nachrichten Typ]]></item>
+        <item name="wcf.acp.attachmentManager.filterFileType"><![CDATA[Datei Typ]]></item>
+        <item name="wcf.acp.attachmentManager.filterShowOnlyImages"><![CDATA[Nur Bilder anzeigen]]></item>
+	</category>
+
+	<category name="wcf.acp.group">
+        <item name="wcf.acp.group.option.category.user.profile.attachmentManager"><![CDATA[AttachmentManager]]></item>
+        <item name="wcf.acp.group.option.category.user.profile.attachmentManager.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.profile.attachmentManager.canView"><![CDATA[AttachmentManager Leserechte]]></item>
+		<item name="wcf.acp.group.option.user.profile.attachmentManager.canView.description"><![CDATA[Mitglieder dieser Benutzergruppe können eigene Attachments im AttachmentManager sehen.]]></item>
+		<item name="wcf.acp.group.option.user.profile.attachmentManager.canDelete"><![CDATA[AttachmentManager Schreibrechte]]></item>
+		<item name="wcf.acp.group.option.user.profile.attachmentManager.canDelete.description"><![CDATA[Mitglieder dieser Benutzergruppe können eigene Attachments im AttachmentManager löschen.]]></item>
+
+		<item name="wcf.acp.group.option.admin.general.attachmentManager.canView"><![CDATA[AttachmentManager Leserechte]]></item>
+		<item name="wcf.acp.group.option.admin.general.attachmentManager.canView.description"><![CDATA[Mitglieder dieser Benutzergruppe können alle Attachments im ACP-AttachmentManager sehen.]]></item>
+		<item name="wcf.acp.group.option.admin.general.attachmentManager.canDelete"><![CDATA[AttachmentManager Schreibrechte]]></item>
+		<item name="wcf.acp.group.option.admin.general.attachmentManager.canDelete.description"><![CDATA[Mitglieder dieser Benutzergruppe können alle Attachments im ACP-AttachmentManager löschen.]]></item>
+	</category>
+
+	<category name="wcf.usersOnline">
+		<item name="wcf.usersOnline.location.attachmentManager"><![CDATA[<a href="index.php?page=AttachmentManager{SID_ARG_2ND}">AttachmentManager</a>]]></item>
+	</category>
+</language>
