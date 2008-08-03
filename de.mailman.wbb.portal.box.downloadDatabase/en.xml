@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="en">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.downloadDatabase.title"><![CDATA[Top Downloads]]></item>
+		<item name="wbb.portal.box.downloadDatabase.recentTitle"><![CDATA[&raquo;Recent Downloads&laquo;]]></item>
+		<item name="wbb.portal.box.downloadDatabase.topTitle"><![CDATA[&raquo;Top Downloads&laquo;]]></item>
+        <item name="wbb.portal.box.downloadDatabase.toolTip"><![CDATA[Downloads: {#$file.downloads} - Upload: {@$file.datum|time:"%d.%m.%Y %H:%M"}]]></item>
+	</category>
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.user.board.canViewDownloadDatabaseBox"><![CDATA[Can view the &raquo;Top Downloads&laquo; Box]]></item>
+		<item name="wcf.acp.group.option.user.board.canViewDownloadDatabaseBox.description"><![CDATA[]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.downloadDatabase"><![CDATA[Top Downloads Box]]></item>
+		<item name="wcf.acp.option.category.portal.box.downloadDatabase.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.downloadDatabaseBox_boxOpened"><![CDATA[Box permanently opened]]></item>
+		<item name="wcf.acp.option.downloadDatabaseBox_boxOpened.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.downloadDatabaseBox_title_length"><![CDATA[Max. length of filetitles]]></item>
+		<item name="wcf.acp.option.downloadDatabaseBox_title_length.description"><![CDATA[Default = 24 (0 = disabled)]]></item>
+		<item name="wcf.acp.option.downloadDatabaseBox_sbcolor"><![CDATA[Second backgroundcolor]]></item>
+        <item name="wcf.acp.option.downloadDatabaseBox_sbcolor.description"><![CDATA[Default 2.]]></item>
+	</category>
+</language>
