@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="en">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.lastonlinebox.title"><![CDATA[At last online]]></item>
+		<item name="wbb.portal.box.lastonlinebox.nouser"><![CDATA[No users in list]]></item>
+		<item name="wbb.portal.box.lastonlinebox.onlineinfo"><![CDATA[...from today {#$cntTodayOnline} user{if $cntTodayOnline != 1}s{/if}]]></item>
+		<item name="wbb.portal.box.lastonlinebox.onlineinfotitle"><![CDATA[show all]]></item>
+		<item name="wbb.portal.box.lastonlinebox.sortinfo"><![CDATA[Sort]]></item>
+	</category>
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.user.board.canSeeLastOnlineBox"><![CDATA[Can see the &raquo;At last online&laquo; Box]]></item>
+		<item name="wcf.acp.group.option.user.board.canSeeLastOnlineBox.description"><![CDATA[Members of this user group can see the &raquo;At last online&laquo; Box.]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.lastonlinebox"><![CDATA[At last online]]></item>
+		<item name="wcf.acp.option.category.portal.box.lastonlinebox.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.lastonlinebox_showusermarking_acp"><![CDATA[Show user online marking]]></item>
+		<item name="wcf.acp.option.lastonlinebox_showusermarking_acp.description"><![CDATA[If enabled, the user will be shown with the same marking as in the online-listing.]]></item>
+		<item name="wcf.acp.option.lastonlinebox_numofuser_acp"><![CDATA[Number of user]]></item>
+		<item name="wcf.acp.option.lastonlinebox_numofuser_acp.description"><![CDATA[The number of users, who are to be indicated in the box.]]></item>
+		<item name="wcf.acp.option.lastonlinebox_maxheight"><![CDATA[Max. height of the box.]]></item>
+		<item name="wcf.acp.option.lastonlinebox_maxheight.description"><![CDATA[Default 300.]]></item>
+		<item name="wcf.acp.option.lastonlinebox_sbcolor_acp"><![CDATA[Second background color]]></item>
+        <item name="wcf.acp.option.lastonlinebox_sbcolor_acp.description"><![CDATA[Default = 2.]]></item>
+		<item name="wcf.acp.option.lastonlinebox_showTime_acp"><![CDATA[Show time]]></item>
+        <item name="wcf.acp.option.lastonlinebox_showTime_acp.description"><![CDATA[]]></item>
+	</category>
+</language>
