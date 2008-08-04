@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/userCPMenu.dtd">
+<data>
+    <import>
+        <userprofilemenuitem name="wcf.user.profile.menu.link.guestbook">
+            <link>index.php?page=UserGuestbook&amp;userID=%s</link>
+            <icon>icon/guestbookM.png</icon>
+            <permissions>user.guestbook.canRead</permissions>
+            <showorder>3</showorder>
+        </userprofilemenuitem>
+    </import>
+</data>
