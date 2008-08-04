@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language languagecode="en">
+    <category name="wcf.user.guestbook">
+        <item name="wcf.user.guestbook.title"><![CDATA[Guestbook of &raquo;{$user->username}&laquo;]]></item>
+        <item name="wcf.user.guestbook.header"><![CDATA[Guestbook of &raquo;{$user->username}&laquo;
+&bull; Entries: {#$cntEntries} &bull; Views: {#$cntViews} &bull; Last Visitor: {@$lastVisitor} {@$visitorLastVisit|time}]]></item>
+        <item name="wcf.user.guestbook.own"><![CDATA[My guestbook]]></item>
+        <item name="wcf.user.guestbook.newEntry"><![CDATA[New Entry]]></item>
+        <item name="wcf.user.guestbook.fromUser"><![CDATA[by {if $entry.username}<a href="index.php?page=User&amp;userID={$entry.fromUserID}{SID_ARG_2ND}">{@$entry.username}</a>{else}{@$entry.fromUsername}{/if}]]></item>
+        <item name="wcf.user.guestbook.preview"><![CDATA[Preview]]></item>
+        <item name="wcf.user.guestbook.noEntry"><![CDATA[There is no Entry available!]]></item>
+        <item name="wcf.user.guestbook.deleteEntry"><![CDATA[Delete]]></item>
+        <item name="wcf.user.guestbook.confirmDelete"><![CDATA[Please confirm that you want to delete this entry.]]></item>
+        <item name="wcf.user.guestbook.confirmDeleteComment"><![CDATA[Please confirm that you want to delete this comment.]]></item>
+        <item name="wcf.user.guestbook.infoMessage"><![CDATA[You have a new guestbook entry from {$username}.]]></item>
+        <item name="wcf.user.guestbook.infoMessages"><![CDATA[You have {$newEntries} new guestbook entries.]]></item>
+        <item name="wcf.user.guestbook.pm.subject"><![CDATA[New guestbook entry]]></item>
+        <item name="wcf.user.guestbook.pm.message"><![CDATA[Hi {$username},
+
+I just wrote a new contribution into your guest book.
+
+
+This is an automatically generated notification.]]></item>
+
+        <item name="wcf.user.guestbook.pmComment.subject"><![CDATA[New guestbook comment]]></item>
+        <item name="wcf.user.guestbook.pmComment.message"><![CDATA[Hi {$username},
+
+I just wrote a new comment to your entry in my guest book.
+
+
+This is an automatically generated notification.]]></item>
+
+        <item name="wcf.user.guestbook.pmAdminNotifier.subject"><![CDATA[Guestbook-Bot: Entry at {$username}]]></item>
+        <item name="wcf.user.guestbook.pmAdminNotifier.message"><![CDATA[Hello {$moderator},
+
+{$fromusername} wrote a new entry in the guest book of {$username}.
+
+
+This is an automatically generated notification.]]></item>
+
+        <item name="wcf.user.guestbook.pmCommentAdminNotifier.subject"><![CDATA[Guestbook-Bot: Comment at {$username}]]></item>
+        <item name="wcf.user.guestbook.pmCommentAdminNotifier.message"><![CDATA[Hello {$moderator},
+
+{$username} commented a guest book entry of {$fromusername}.
+
+
+This is an automatically generated notification.]]></item>
+
+        <item name="wcf.user.guestbook.editEntry"><![CDATA[Edit]]></item>
+        <item name="wcf.user.guestbook.addComment"><![CDATA[Commentate]]></item>
+        <item name="wcf.user.guestbook.editComment"><![CDATA[Edit comment]]></item>
+        <item name="wcf.user.guestbook.deleteComment"><![CDATA[Delete comment]]></item>
+        <item name="wcf.user.guestbook.commentTitle"><![CDATA[Commentated {@$entry.commentTime|time}]]></item>
+        <item name="wcf.user.guestbook.entry"><![CDATA[Guestbook entry]]></item>
+        <item name="wcf.user.guestbook.lastEdit"><![CDATA[Last change: {@$entry.updateUser} {@$entry.updateTime|time}]]></item>
+        <item name="wcf.user.guestbook.lock"><![CDATA[Lock]]></item>
+        <item name="wcf.user.guestbook.unlock"><![CDATA[Unlock]]></item>
+        <item name="wcf.user.guestbook.lockMsg"><![CDATA[This guestbook is locked: {@$locked.lockTime|time} - {@$locked.username}.]]></item>
+
+        <item name="wcf.user.guestbook.ttReply"><![CDATA[Add a new guestbook entry to {@$entry.username}]]></item>
+        <item name="wcf.user.guestbook.ttNoReply"><![CDATA[No guest book entry possible]]></item>
+        <item name="wcf.user.guestbook.ttGuestbook"><![CDATA[Guestbook of {@$entry.username}]]></item>
+
+        <item name="wcf.user.guestbook.list.title"><![CDATA[Guestbook list]]></item>
+        <item name="wcf.user.guestbook.list.listHeader"><![CDATA[Number of guestbooks {$cntEntries}]]></item>
+        <item name="wcf.user.guestbook.list.username"><![CDATA[User]]></item>
+        <item name="wcf.user.guestbook.list.userLastVisit"><![CDATA[User last visit]]></item>
+        <item name="wcf.user.guestbook.list.avatar"><![CDATA[Avatar]]></item>
+        <item name="wcf.user.guestbook.list.lastEntryUser"><![CDATA[Last entry from]]></item>
+        <item name="wcf.user.guestbook.list.lastEntry"><![CDATA[Last entry at]]></item>
+        <item name="wcf.user.guestbook.list.entries"><![CDATA[Entries]]></item>
+        <item name="wcf.user.guestbook.list.newEntries"><![CDATA[New entries]]></item>
+        <item name="wcf.user.guestbook.list.views"><![CDATA[Views]]></item>
+        <item name="wcf.user.guestbook.list.lastVisitor"><![CDATA[Last visit from ]]></item>
+        <item name="wcf.user.guestbook.list.visitorLastVisit"><![CDATA[Last visit at]]></item>
+        <item name="wcf.user.guestbook.list.empty"><![CDATA[List is empty.]]></item>
+        <item name="wcf.user.guestbook.list.ownEntries"><![CDATA[This guestbook contains entries of you.]]></item>
+        <item name="wcf.user.guestbook.list.userLastComment"><![CDATA[Last comment]]></item>
+    </category>
+
+    <category name="wcf.user.profile">
+        <item name="wcf.user.profile.menu.link.guestbook"><![CDATA[Guestbook]]></item>
+    </category>
+
+    <category name="wcf.acp.option">
+        <item name="wcf.acp.option.category.userGuestbook"><![CDATA[User Guestbook]]></item>
+        <item name="wcf.acp.option.category.userGuestbook.description"><![CDATA[]]></item>
+        <item name="wcf.acp.option.category.userGuestbook.general"><![CDATA[Common settings]]></item>
+        <item name="wcf.acp.option.category.userGuestbook.general.description"><![CDATA[]]></item>
+        <item name="wcf.acp.option.category.userGuestbook.topics"><![CDATA[Topics]]></item>
+        <item name="wcf.acp.option.category.userGuestbook.topics.description"><![CDATA[]]></item>
+
+        <item name="wcf.acp.option.userGuestbook_itemsPerPage"><![CDATA[Entries per page]]></item>
+        <item name="wcf.acp.option.userGuestbook_itemsPerPage.description"><![CDATA[Number of entries per guestbook page.]]></item>
+        <item name="wcf.acp.option.userGuestbook_post_maxlength"><![CDATA[Maximum length of a guestbook entry]]></item>
+        <item name="wcf.acp.option.userGuestbook_post_maxlength.description"><![CDATA[Define the maximum length of a entry in the guestbook.]]></item>
+        <item name="wcf.acp.option.userGuestbook_showInSidebar"><![CDATA[Show guestbook in contribution list]]></item>
+        <item name="wcf.acp.option.userGuestbook_showInSidebar.description"><![CDATA[Shows the guestbook in the sidebr of the contribution list.]]></item>
+        <item name="wcf.acp.option.userGuestbook_showEntryImages"><![CDATA[Show image before entry titles]]></item>
+        <item name="wcf.acp.option.userGuestbook_showEntryImages.description"><![CDATA[]]></item>
+        <item name="wcf.acp.option.userGuestbook_showReplyLink"><![CDATA[Show answer link]]></item>
+        <item name="wcf.acp.option.userGuestbook_showReplyLink.description"><![CDATA[]]></item>
+        <item name="wcf.acp.option.userGuestbook_showGuestbookLink"><![CDATA[Show guestbook link]]></item>
+        <item name="wcf.acp.option.userGuestbook_showGuestbookLink.description"><![CDATA[]]></item>
+
+        <item name="wcf.acp.option.userGuestbook_pmNotifierUgrp"><![CDATA[PM to user groups at new guestbook entries]]></item>
+        <item name="wcf.acp.option.userGuestbook_pmNotifierUgrp.description"><![CDATA[Comma separated list of usergroup id's.]]></item>
+        <item name="wcf.acp.option.userGuestbook_pmNotifierUser"><![CDATA[PM to user at new guestbook entries]]></item>
+        <item name="wcf.acp.option.userGuestbook_pmNotifierUser.description"><![CDATA[Comma separated list of user id's.]]></item>
+    </category>
+
+    <category name="wcf.acp.group">
+        <item name="wcf.acp.group.option.category.user.guestbook"><![CDATA[Guestbook]]></item>
+        <item name="wcf.acp.group.option.category.user.guestbook.description"><![CDATA[Guestbook settings]]></item>
+        <item name="wcf.acp.group.option.category.user.guestbook.listView"><![CDATA[Gästebuch-Liste]]></item>
+        <item name="wcf.acp.group.option.category.user.guestbook.listView.description"><![CDATA[]]></item>
+
+        <item name="wcf.acp.group.option.user.guestbook.canRead"><![CDATA[Read permission]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canRead.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canViewList"><![CDATA[Guestbook list permission]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canViewList.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canViewListMenuButton"><![CDATA[Show Guestbook menu button]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canViewListMenuButton.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canViewMembersListTab"><![CDATA[Show Guestbook tab in memberlist]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canViewMembersListTab.description"><![CDATA[]]></item>
+
+        <item name="wcf.acp.group.option.user.guestbook.canWrite"><![CDATA[Write permission]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canWrite.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canUseOwn"><![CDATA[Own guestbook]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canUseOwn.description"><![CDATA[]]></item>
+
+        <item name="wcf.acp.group.option.user.guestbook.canEditOwnEntries"><![CDATA[Can edit own entries]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canEditOwnEntries.description"><![CDATA[Time in seconds, -1 for infinitely; 0 = disabled]]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canEditOwnGuestbook"><![CDATA[Can edit all entries in the own guestbook.]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canEditOwnGuestbook.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canComment"><![CDATA[Can commentate entries]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.canComment.description"><![CDATA[]]></item>
+
+        <item name="wcf.acp.group.option.category.mod.guestbook"><![CDATA[Guestbook]]></item>
+        <item name="wcf.acp.group.option.category.mod.guestbook.description"><![CDATA[Guestbook-settings]]></item>
+        <item name="wcf.acp.group.option.mod.guestbook.canDeleteEntrys"><![CDATA[Can delete entrys of other users]]></item>
+        <item name="wcf.acp.group.option.mod.guestbook.canDeleteEntrys.description"><![CDATA[Members of this group can delete entrys of other users]]></item>
+        <item name="wcf.acp.group.option.mod.guestbook.canEditAll"><![CDATA[Can edit all entries]]></item>
+        <item name="wcf.acp.group.option.mod.guestbook.canEditAll.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.mod.guestbook.canLock"><![CDATA[Can lock guestbooks]]></item>
+        <item name="wcf.acp.group.option.mod.guestbook.canLock.description"><![CDATA[]]></item>
+
+        <item name="wcf.acp.group.option.user.guestbook.listView.showAvatar"><![CDATA[Show avatar]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showAvatar.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showUserLastVisit"><![CDATA[Show last date of owner visit]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showUserLastVisit.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showLastEntryUser"><![CDATA[Show last visitor]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showLastEntryUser.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showLastEntryDate"><![CDATA[Show last visit date]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showLastEntryDate.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showNumOfEntries"><![CDATA[Show number of entries]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showNumOfEntries.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showNumOfNewEntries"><![CDATA[Show number of new entries]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showNumOfNewEntries.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showNumOfViews"><![CDATA[Show number of views]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showNumOfViews.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showLastVisitor"><![CDATA[Show last visitor]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showLastVisitor.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showLastVisitDate"><![CDATA[Show last visitor date]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showLastVisitDate.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showUserLastComment"><![CDATA[Show last comment date]]></item>
+        <item name="wcf.acp.group.option.user.guestbook.listView.showUserLastComment.description"><![CDATA[]]></item>
+    </category>
+
+    <category name="wcf.user.option">
+        <item name="wcf.user.option.category.settings.userGuestbook"><![CDATA[Guestbook]]></item>
+        <item name="wcf.user.option.category.settings.userGuestbook.description"><![CDATA[]]></item>
+        <item name="wcf.user.option.category.settings.userGuestbook.global"><![CDATA[Settings]]></item>
+        <item name="wcf.user.option.category.settings.userGuestbook.global.description"><![CDATA[]]></item>
+
+        <item name="wcf.user.option.userGuestbook_enable"><![CDATA[Enable guestbook]]></item>
+        <item name="wcf.user.option.userGuestbook_enable.description"><![CDATA[Read permissions to all users.]]></item>
+
+        <item name="wcf.user.option.userGuestbook_enable_posting"><![CDATA[Write permission]]></item>
+        <item name="wcf.user.option.userGuestbook_enable_posting.description"><![CDATA[]]></item>
+
+        <item name="wcf.user.option.userGuestbook_sendInfo"><![CDATA[Show MessageBox]]></item>
+        <item name="wcf.user.option.userGuestbook_sendInfo.description"><![CDATA[Shows a message box when new guestbook entries available.]]></item>
+
+        <item name="wcf.user.option.userGuestbook_sendPM"><![CDATA[Send PM]]></item>
+        <item name="wcf.user.option.userGuestbook_sendPM.description"><![CDATA[Private Message notification of new guestbook entries.]]></item>
+
+        <item name="wcf.user.option.userGuestbook_sendCommentPM"><![CDATA[Send PM at new comment]]></item>
+        <item name="wcf.user.option.userGuestbook_sendCommentPM.description"><![CDATA[]]></item>
+    </category>
+
+    <category name="wcf.header.menu">
+        <item name="wcf.header.menu.userGuestbook"><![CDATA[Guestbooks]]></item>
+    </category>
+
+    <category name="wcf.usersOnline">
+        <item name="wcf.usersOnline.location.userGuestbookList"><![CDATA[Guestbook list]]></item>
+        <item name="wcf.usersOnline.location.userGuestbookView"><![CDATA[Guestbook of &raquo;{$username}&laquo;]]></item>
+        <item name="wcf.usersOnline.location.userGuestbookAddEntry"><![CDATA[New guestbook entry to &raquo;{$username}&laquo;]]></item>
+    </category>
+</language>
