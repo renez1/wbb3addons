@@ -1,0 +1,140 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/options.dtd">
+<data>	
+	<import>
+		<categories>
+			<category name="user.guestbook">
+				<parent>user</parent>
+				<showorder>10</showorder>
+			</category>
+			<category name="mod.guestbook">
+				<parent>mod</parent>
+				<showorder>10</showorder>
+			</category>
+            <category name="user.guestbook.listView">
+	            <parent>user.guestbook</parent>
+            </category>
+		</categories>
+		
+		<options>
+			<option name="user.guestbook.canRead">
+				<categoryname>user.guestbook</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<enableoptions>user.guestbook.canViewList,user.guestbook.canWrite,user.guestbook.canViewListMenuButton,user.guestbook.canEditOwnEntries,user.guestbook.canUseOwn,user.guestbook.canEditOwnGuestbook,user.guestbook.canComment</enableoptions>
+			</option>
+			<option name="user.guestbook.canViewList">
+				<categoryname>user.guestbook</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<enableoptions>user.guestbook.canViewListMenuButton</enableoptions>
+			</option>
+			<option name="user.guestbook.canViewListMenuButton">
+				<categoryname>user.guestbook</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+
+			<option name="user.guestbook.canWrite">
+				<categoryname>user.guestbook</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<enableoptions>user.guestbook.canUseOwn,user.guestbook.canEditOwnEntries,user.guestbook.canEditOwnGuestbook,user.guestbook.canComment</enableoptions>
+			</option>
+			<option name="user.guestbook.canEditOwnEntries">
+				<categoryname>user.guestbook</categoryname>
+				<optiontype>infiniteinteger</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+
+			<option name="user.guestbook.canUseOwn">
+				<categoryname>user.guestbook</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<enableoptions>user.guestbook.canEditOwnGuestbook,user.guestbook.canComment</enableoptions>
+			</option>
+			<option name="user.guestbook.canEditOwnGuestbook">
+				<categoryname>user.guestbook</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="user.guestbook.canComment">
+				<categoryname>user.guestbook</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+
+
+			<option name="user.guestbook.listView.showAvatar">
+				<categoryname>user.guestbook.listView</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="user.guestbook.listView.showUserLastVisit">
+				<categoryname>user.guestbook.listView</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+            </option>
+			<option name="user.guestbook.listView.showUserLastComment">
+				<categoryname>user.guestbook.listView</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+            </option>
+			<option name="user.guestbook.listView.showLastEntryUser">
+				<categoryname>user.guestbook.listView</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="user.guestbook.listView.showLastEntryDate">
+				<categoryname>user.guestbook.listView</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="user.guestbook.listView.showNumOfEntries">
+				<categoryname>user.guestbook.listView</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="user.guestbook.listView.showNumOfNewEntries">
+				<categoryname>user.guestbook.listView</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="user.guestbook.listView.showNumOfViews">
+				<categoryname>user.guestbook.listView</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="user.guestbook.listView.showLastVisitor">
+				<categoryname>user.guestbook.listView</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="user.guestbook.listView.showLastVisitDate">
+				<categoryname>user.guestbook.listView</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+
+			<option name="mod.guestbook.canDeleteEntrys">
+				<categoryname>mod.guestbook</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="mod.guestbook.canEditAll">
+				<categoryname>mod.guestbook</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="mod.guestbook.canLock">
+				<categoryname>mod.guestbook</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+		</options>
+	</import>
+
+    <delete>
+        <option name="user.guestbook.canEditAll" />
+    </delete>
+</data>

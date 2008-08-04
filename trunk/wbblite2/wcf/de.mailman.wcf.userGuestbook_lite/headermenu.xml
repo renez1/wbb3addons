@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE import SYSTEM "DTD/import.dtd">
+<data>
+	<import>
+		<headermenuitem name="wcf.header.menu.userGuestbook">
+			<icon>icon/guestbookListM.png</icon>
+			<link>index.php?page=UserGuestbookList</link>
+			<showorder>11</showorder>
+			<permissions>user.guestbook.canViewListMenuButton</permissions>
+		</headermenuitem>
+	</import>
+</data>
