@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE import SYSTEM "DTD/import.dtd">
+<data>
+	<import>
+		<cronjob>
+			<classPath>lib/system/cronjob/UserGuestBook.class.php</classPath>
+			<description>Clean up for user guestbooks</description>
+			<startMinute>30</startMinute>
+			<startHour>5</startHour>
+			<startDom>*</startDom>
+			<startMonth>*</startMonth>
+			<startDow>*</startDow>
+			<execMultiple>0</execMultiple>
+			<canbeedited>1</canbeedited>
+			<canbedisabled>1</canbedisabled>
+		</cronjob>
+	</import>
+</data>
