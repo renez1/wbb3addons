@@ -2,7 +2,7 @@
 
 
 = Issue Tracker =
-Jedermann ist dazu eingeladen, sein Problem oder Wunsch zu unseren WBB3-Add-Ons im Issue Tracker zu erfassen. Leider ist ein [https://www.google.com Google-Account] dazu notwendig.
+Jedermann ist dazu eingeladen, sein Problem oder Wunsch zu unseren WBB3-Add-Ons im Issue Tracker zu erfassen. Leider ist ein [https://mail.google.com Google-Account] dazu notwendig.
 Sie können hier Fehler (Bugs) oder auch Ihre Wünsche (Feature Requests) zu unseren Add-Ons erfassen. Wünsche für neue Add-Ons sind selbstverständlich auch willkommen.
 
 ----
