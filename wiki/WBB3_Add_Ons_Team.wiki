@@ -1,4 +1,4 @@
-#summary WBB3-Add-Ons-Team.
+#summary Das Team.
 
 = Wir stellen uns kurz vor =
 
