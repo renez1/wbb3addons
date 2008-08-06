@@ -1,0 +1,15 @@
+#summary WBB3-Add-Ons-Team.
+
+= Wir stellen uns kurz vor =
+
+== nendilo ==
+"Andy", WBB3-Add-On Entwickler, Supporter und vieles mehr...
+[http://wbb3addons.ump2002.net/wbb/index.php?page=User&userID=388 Profil]
+
+== TobiasH87 ==
+"Tobias", WBBLite-Manager, Supporter und vieles mehr...
+[http://wbb3addons.ump2002.net/wbb/index.php?page=User&userID=286 Profil]
+
+== wbb3addons ==
+"Schorsch", WBB3-Add-On Entwickler, Supporter und vieles mehr...
+[http://wbb3addons.ump2002.net/wbb/index.php?page=User&userID=1 Profil]
