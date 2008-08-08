@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="de">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.simplePieNewsreader.title"><![CDATA[Newsreader]]></item>
+		<item name="wbb.portal.box.simplePieNewsreader.feedAdd"><![CDATA[abonnieren]]></item>
+	</category>
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.category.user.board.general"><![CDATA[Allgemein]]></item>
+		<item name="wcf.acp.group.option.category.user.board.general.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.board.canViewSimplePieNewsreaderBox"><![CDATA[Kann die &raquo;SimplePie Newsreader&laquo; Box sehen]]></item>
+		<item name="wcf.acp.group.option.user.board.canViewSimplePieNewsreaderBox.description"><![CDATA[Mitglieder dieser Benutzergruppe können die &raquo;SimplePie Newsreader&laquo; Box sehen.]]></item>
+		<item name="wcf.acp.group.option.user.board.canViewThreadToFeed"><![CDATA[Kann ein Thema zum Feed erstellen]]></item>
+		<item name="wcf.acp.group.option.user.board.canViewThreadToFeed.description"><![CDATA[Im Feed wird eine Verknüpfung erstellt, sodaß der User direkt ein Thema zum Feed eröffnen kann.]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.simplePieNewsreader"><![CDATA[SimplePie Newsreader Box]]></item>
+		<item name="wcf.acp.option.category.portal.box.simplePieNewsreader.description"><![CDATA[http://simplepie.org/]]></item>
+
+		<item name="wcf.acp.option.spnrbox_feeds"><![CDATA[Feed-URLs]]></item>
+		<item name="wcf.acp.option.spnrbox_feeds.description"><![CDATA[Je Zeile eine URL! Z.B. http://wbb3addons.ump2002.net/wbb/index.php?page=Feed&amp;type=Atom]]></item>
+		<item name="wcf.acp.option.spnrbox_numOfFeeds"><![CDATA[Feeds]]></item>
+		<item name="wcf.acp.option.spnrbox_numOfFeeds.description"><![CDATA[Anzahl der anzuzeigenden Beiträge je Feed-URL. Standard 5.]]></item>
+		<item name="wcf.acp.option.spnrbox_cacheMin"><![CDATA[Cache min.]]></item>
+		<item name="wcf.acp.option.spnrbox_cacheMin.description"><![CDATA[Minimale Zeit zur Zwischenspeicherung in Sekunden. Standard 3600.]]></item>
+		<item name="wcf.acp.option.spnrbox_cacheMax"><![CDATA[Cache max.]]></item>
+		<item name="wcf.acp.option.spnrbox_cacheMax.description"><![CDATA[Maximale Zeit zur Zwischenspeicherung in Sekunden. Standard 604800 (7 Tage).<br />
+		    -----<br />
+		    <strong style="color: black;">Beachten:</strong> Werden "Cache min." und "Cache max." auf den Wert 0 gesetzt so werden die Feeds nicht mehr aktualisiert. Das hat den Vorteil das Sie über den Url "DEIN_WBB/index.php?action=NewsreaderCache" Ihre Feeds manuell oder über einen externen Cronjob-Service neu laden können.]]></item>
+		<item name="wcf.acp.option.spnrbox_maxLenFeedTitle"><![CDATA[Max. Zeichenlänge des Feed-Titels]]></item>
+		<item name="wcf.acp.option.spnrbox_maxLenFeedTitle.description"><![CDATA[0 = ungekürzter Titel (deaktiviert). Standard = 64.]]></item>
+		<item name="wcf.acp.option.spnrbox_showDateNextTitle"><![CDATA[Datum neben Feed-Titel anzeigen]]></item>
+		<item name="wcf.acp.option.spnrbox_showDateNextTitle.description"><![CDATA[Zeigt das Feed-Datum neben dem Feed-Titel an.]]></item>
+		<item name="wcf.acp.option.spnrbox_boxOpened"><![CDATA[Box permanent geöffnet]]></item>
+		<item name="wcf.acp.option.spnrbox_boxOpened.description"><![CDATA[Aktivieren Sie diese Option wenn die Box permanent geöffnet sein soll (Benutzer können die Box dann nicht mehr schließen).]]></item>
+		<item name="wcf.acp.option.spnrbox_feedOpened"><![CDATA[Feeds permanent geöffnet]]></item>
+		<item name="wcf.acp.option.spnrbox_feedOpened.description"><![CDATA[Aktivieren Sie diese Option wenn die Feeds permanent geöffnet sein soll (Benutzer können die Feeds dann nicht mehr schließen).]]></item>
+		<item name="wcf.acp.option.spnrbox_feednewsOpened"><![CDATA[Feed-News permanent geöffnet]]></item>
+		<item name="wcf.acp.option.spnrbox_feednewsOpened.description"><![CDATA[Aktivieren Sie diese Option wenn die Feed-News permanent geöffnet sein soll (Benutzer können die Feed-News dann nicht mehr schließen).]]></item>
+		<item name="wcf.acp.option.spnrbox_boxMaxHeight"><![CDATA[Max. Höhe der Box.]]></item>
+		<item name="wcf.acp.option.spnrbox_boxMaxHeight.description"><![CDATA[Max. Höhe der Box in PX. 0 (Standard) = deaktiviert]]></item>
+		<item name="wcf.acp.option.spnrbox_feedAbo"><![CDATA[Direkten Link zur XML anzeigen]]></item>
+		<item name="wcf.acp.option.spnrbox_feedAbo.description"><![CDATA[Wenn Sie diese Option aktivieren hat der User die Möglichkeit den Feed direkt zu abonnieren.]]></item>
+		
+		<item name="wcf.acp.option.spnrbox_feedToThread"><![CDATA[Thema zum Feed erstellen]]></item>
+		<item name="wcf.acp.option.spnrbox_feedToThread.description"><![CDATA[Aktivieren Sie diese Option damit User ein Thema zum Feed erstellen können.]]></item>
+		<item name="wcf.acp.option.spnrbox_feedToThreadBoardID"><![CDATA[Foren auswählen:]]></item>
+		<item name="wcf.acp.option.spnrbox_feedToThreadBoardID.description"><![CDATA[Wählen Sie hier aus in welchen Forem die Themen geschrieben werden können.<br /><strong>Kategorien dienen nur zur strukturellen Ansicht, Links werden nicht angezeigt!</strong>]]></item>
+		
+		<item name="wcf.acp.option.spnrbox_showSocialBookmarks"><![CDATA[Social Bookmarks aktivieren]]></item>
+		<item name="wcf.acp.option.spnrbox_showSocialBookmarks.description"><![CDATA[Aktivieren Sie diese Option um Social Bookmarks in den Feeds anzuzeigen.]]></item>
+		
+		<item name="wcf.acp.option.spnrbox_socialBookmarks"><![CDATA[Social Bookmarks - Anbieter:]]></item>
+		<item name="wcf.acp.option.spnrbox_socialBookmarks.description"><![CDATA[Je Zeile ein vollständiger Link-Eintrag, der aus <strong>5 Feldern</strong> bestehen muß! Jedes Feld ist per &quot;|&quot; (Pipe) zu trennen!<br />
+		    -----<br />
+		    <strong style="color: black;">Beispiel:</strong><br />
+		    <br />1. Feld = Titel - z.B. Mr. Wrong<br />
+		        Der Titel des Social Bookmark - Anbieters.<br />
+		    <br />2. Feld = URL - z.B. http://www.mister-wong.de/index.php?action=addurl&amp;amp;bm_url=<strong>{URL}</strong>&amp;amp;bm_notice=&amp;amp;bm_description=<strong>{TITLE}</strong>&amp;amp;bm_tags=<br />
+		        Wobei die Platzhalter <strong>{URL}</strong> und <strong>{TITLE}</strong> für den Link zum Feed und den Titel des Lesezeichens an den richtigen Positionen einzufügen sind!<br />
+		    <br />3. Feld = Grafik - z.B. bookmarkMrWrong.png<br />
+		        Die Grafik <strong>muß</strong> sich im icon-Verzeichnis deines WBB befinden. (z.B. http://deinehompage.de/wbb/icon/bookmarkMrWrong.png)<br />
+		    <br />4. Feld = Kodierung des Titels - 0 = Nicht kodiert, 1 = Kodiert<br />
+		        Bei den meisten Anbietern müssen Sonderzeichen zur Übermittlung kodiert werden. Setzen Sie dieses Feld auf 1 wenn dies der Fall ist, ansonsten 0.<br />
+		    <br />5. Feld = Kodierung des Url's - 0 = Nicht kodiert, 1 = Kodiert<br />
+		        Siehe Feld 4.<br />
+		    <br />Beispiel-Block: <strong>Mr. Wong</strong>|http://www.mister-wong.de/index.php?action=addurl&amp;amp;bm_url=<strong>{URL}</strong>&amp;amp;bm_notice=&amp;amp;bm_description=<strong>{TITLE}</strong>&amp;amp;bm_tags=|<strong>bookmarkMrWong.png</strong>|<strong>1</strong>|<strong>1</strong><br />
+		    -----<br />
+		    <br />Weitere Anbieter gibt es bei <strong style="cursor: pointer;color: blue;" onclick="window.open('http://wbb3addons.ump2002.net/wbb/index.php?page=Thread&amp;threadID=385')">wbb3addons.ump2002.net</strong> in fertigen Blöcken.]]></item>
+		
+		<item name="wcf.acp.option.spnrbox_sbcolor"><![CDATA[Zweite Hintergrundfarbe]]></item>
+        <item name="wcf.acp.option.spnrbox_sbcolor.description"><![CDATA[Farbe &quot;1&quot; zum Deaktivieren. Standard = 1.]]></item>
+	</category>
+</language>
