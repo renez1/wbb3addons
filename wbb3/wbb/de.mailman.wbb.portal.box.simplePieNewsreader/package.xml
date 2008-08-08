@@ -7,12 +7,12 @@
 		<standalone>0</standalone>
 		<isUnique>1</isUnique>
 		<plugin>com.woltlab.wbb</plugin>
-		<version>1.0.0</version>
-		<date>2008-06-17</date>
+		<version>1.0.1</version>
+		<date>2008-08-07</date>
 	</packageinformation>
 
 	<authorinformation>
-		<author>Nendilo, MailMan</author>
+		<author>Nendilo &amp; MailMan</author>
 		<authorurl>http://wbb3addons.ump2002.net</authorurl>
 	</authorinformation>
 
@@ -31,10 +31,13 @@
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
 	</instructions>
-<!--
 	<instructions type="update" fromversion="1.0.0">
 		<files>files.tar</files>
-		<eventlistener>eventlistener.xml</eventlistener>
+		<templates>templates.tar</templates>
+		<options>options.xml</options>
+		<groupoptions>groupoptions.xml</groupoptions>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="en">en.xml</languages>
 	</instructions>
--->
 </package>

@@ -3,6 +3,7 @@
 <language languagecode="en">
 	<category name="wbb.portal">
 		<item name="wbb.portal.box.simplePieNewsreader.title"><![CDATA[Newsreader]]></item>
+		<item name="wbb.portal.box.simplePieNewsreader.feedAdd"><![CDATA[subscribe]]></item>
 	</category>
 	<category name="wcf.acp.group">
 		<item name="wcf.acp.group.option.category.user.board.general"><![CDATA[General]]></item>
@@ -28,6 +29,25 @@
 		<item name="wcf.acp.option.spnrbox_showDateNextTitle.description"><![CDATA[]]></item>
 		<item name="wcf.acp.option.spnrbox_boxOpened"><![CDATA[Box permanently opened]]></item>
 		<item name="wcf.acp.option.spnrbox_boxOpened.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.spnrbox_feedOpened"><![CDATA[Feed permanently opened]]></item>
+		<item name="wcf.acp.option.spnrbox_feedOpened.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.spnrbox_feednewsOpened"><![CDATA[Feednews permanently opened]]></item>
+		<item name="wcf.acp.option.spnrbox_feednewsOpened.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.spnrbox_boxMaxHeight"><![CDATA[Max. height of the box]]></item>
+		<item name="wcf.acp.option.spnrbox_boxMaxHeight.description"><![CDATA[Max. height of the box in PX. 0 (Default) = disabled]]></item>
+		<item name="wcf.acp.option.spnrbox_feedAbo"><![CDATA[Show direct Url to XML]]></item>
+		<item name="wcf.acp.option.spnrbox_feedAbo.description"><![CDATA[]]></item>
+		
+		<item name="wcf.acp.option.spnrbox_feedToThread"><![CDATA[Add Thread of Feed]]></item>
+		<item name="wcf.acp.option.spnrbox_feedToThread.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.spnrbox_feedToThreadBoardID"><![CDATA[Board:]]></item>
+		<item name="wcf.acp.option.spnrbox_feedToThreadBoardID.description"><![CDATA[]]></item>
+		
+		<item name="wcf.acp.option.spnrbox_showSocialBookmarks"><![CDATA[Enable Social Bookmarks]]></item>
+		<item name="wcf.acp.option.spnrbox_showSocialBookmarks.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.spnrbox_socialBookmarks"><![CDATA[Social Bookmarks - Provider:]]></item>
+		<item name="wcf.acp.option.spnrbox_socialBookmarks.description"><![CDATA[]]></item>
+		
 		<item name="wcf.acp.option.spnrbox_sbcolor"><![CDATA[Second backgroundcolor]]></item>
         <item name="wcf.acp.option.spnrbox_sbcolor.description"><![CDATA[Default = 1.]]></item>
 	</category>

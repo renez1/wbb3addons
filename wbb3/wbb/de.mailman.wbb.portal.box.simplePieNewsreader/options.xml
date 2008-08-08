@@ -10,6 +10,7 @@
 		</categories>
 		<options>
 
+            <!-- FEEDURLs: -->
 			<option name="spnrbox_feeds">
 				<categoryname>portal.box.simplePieNewsreader</categoryname>
 				<optiontype>textarea</optiontype>
@@ -20,11 +21,13 @@ http://rss.focus.de/fol/XML/rss_folnews.xml
 http://www.heise.de/newsticker/heise-atom.xml
 http://youtube.com/rss/global/top_rated.rss</defaultvalue>
 			</option>
+			<!-- ANZAHL DER FEEDS: -->
 			<option name="spnrbox_numOfFeeds">
 				<categoryname>portal.box.simplePieNewsreader</categoryname>
 				<optiontype>integer</optiontype>
 				<defaultvalue>5</defaultvalue>
 			</option>
+			<!-- CACHE MIN. UND MAX.: -->
 			<option name="spnrbox_cacheMin">
 				<categoryname>portal.box.simplePieNewsreader</categoryname>
 				<optiontype>integer</optiontype>
@@ -35,21 +38,47 @@ http://youtube.com/rss/global/top_rated.rss</defaultvalue>
 				<optiontype>integer</optiontype>
 				<defaultvalue>604800</defaultvalue>
 			</option>
+			<!-- MAX. LÄNGE F. FEEDTITEL: -->
 			<option name="spnrbox_maxLenFeedTitle">
 				<categoryname>portal.box.simplePieNewsreader</categoryname>
 				<optiontype>integer</optiontype>
 				<defaultvalue>64</defaultvalue>
 		    </option>
+		    <!-- ANZEIGE DATUM UND UHRZEIT: -->
 			<option name="spnrbox_showDateNextTitle">
 				<categoryname>portal.box.simplePieNewsreader</categoryname>
 				<optiontype>boolean</optiontype>
-				<defaultvalue>1</defaultvalue>
+				<defaultvalue>0</defaultvalue>
 		    </option>
+		    <!-- ANZEIGE FEED ABONNIEREN: -->
+			<option name="spnrbox_feedAbo">
+				<categoryname>portal.box.simplePieNewsreader</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+		    </option>
+		    <!-- BOX, FEEDS, FEEDNEWS PERMANENT GEÖFFNET? -->
 			<option name="spnrbox_boxOpened">
 				<categoryname>portal.box.simplePieNewsreader</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>0</defaultvalue>
 		    </option>
+			<option name="spnrbox_feedOpened">
+				<categoryname>portal.box.simplePieNewsreader</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+		    </option>
+			<option name="spnrbox_feednewsOpened">
+				<categoryname>portal.box.simplePieNewsreader</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+		    </option>
+		    <!-- MAX. HÖHE DER BOX: -->
+			<option name="spnrbox_boxMaxHeight">
+				<categoryname>portal.box.simplePieNewsreader</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue>0</defaultvalue>
+		    </option>
+		    <!-- HINTERGRUND: -->
 			<option name="spnrbox_sbcolor">
 				<categoryname>portal.box.simplePieNewsreader</categoryname>
 				<optiontype>select</optiontype>
@@ -58,6 +87,39 @@ http://youtube.com/rss/global/top_rated.rss</defaultvalue>
 2
 3]]></selectoptions>
 			</option>
+			<!-- THREAD VOM FEED ERSTELLEN: -->
+			<option name="spnrbox_feedToThread">
+				<categoryname>portal.box.simplePieNewsreader</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<enableoptions><![CDATA[spnrbox_feedToThreadBoardID]]></enableoptions>
+		    </option>
+			<option name="spnrbox_feedToThreadBoardID">
+				<categoryname>portal.box.simplePieNewsreader</categoryname>
+				<optiontype>BoardSelect</optiontype>
+				<defaultvalue></defaultvalue>
+		    </option>
+            <!-- SOCIAL BOOKMARKS: -->
+			<option name="spnrbox_showSocialBookmarks">
+				<categoryname>portal.box.simplePieNewsreader</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<enableoptions><![CDATA[spnrbox_socialBookmarks]]></enableoptions>
+		    </option>
+			<option name="spnrbox_socialBookmarks">
+				<categoryname>portal.box.simplePieNewsreader</categoryname>
+				<optiontype>textarea</optiontype>
+				<defaultvalue>Mr. Wong|http://www.mister-wong.de/index.php?action=addurl&amp;bm_url={URL}&amp;bm_notice=&amp;bm_description={TITLE}&amp;bm_tags=|bookmarkMrWong.png|1|1
+Webnews|http://www.webnews.de/einstellen?url={URL}&amp;title={TITLE}|bookmarkWebnews.png|1|1
+Google|http://www.google.com/bookmarks/mark?op=add&amp;hl=de&amp;bkmk={URL}&amp;annotation=&amp;labels=&amp;title={TITLE}|bookmarkGoogle.png|1|1
+Yahoo!|http://myweb2.search.yahoo.com/myresults/bookmarklet?t={TITLE}&amp;d=&amp;tag=&amp;u={URL}|bookmarkYahoo.png|1|1
+Icio|http://www.icio.de/add.php?url={URL}|bookmarkIcio.png|0|1
+Oneview|http://www.oneview.de/quickadd/neu/addBookmark.jsf?URL={URL}&amp;title={TITLE}|bookmarkOneview.png|1|1
+Linkarena|http://linkarena.com/bookmarks/addlink/?url={URL}&amp;title={TITLE}&amp;desc=&amp;tags=|bookmarkLinkarena.png|1|1
+Favoriten|http://www.favoriten.de/url-hinzufuegen.html?bm_url={URL}&amp;bm_title={TITLE}|bookmarkFavoriten.png|1|1
+Folkd|http://www.folkd.com/submit/{URL}|bookmarkFolkd.png|0|0
+SeekXL|http://social-bookmarking.seekxl.de/?add_url={URL}&amp;title={TITLE}|bookmarkSeekxl.png|1|1</defaultvalue>
+		    </option>
 		</options>
 	</import>
 </data>
