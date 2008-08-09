@@ -1,6 +1,8 @@
 #summary Das Team.
 
-= Wir stellen uns kurz vor =
+= Wir stellen uns kurz vor = 
+=== Let's introduce ourself ===
+
 
 == Guillaume ==
 "Guiwald", French Translation Manager.
