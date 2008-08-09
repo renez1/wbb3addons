@@ -53,6 +53,12 @@
 				<defaultvalue>0</defaultvalue>
 		    </option>
 
+			<option name="personalbox_show_profilehits_acp">
+				<categoryname>portal.box.personalbox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+
 			<option name="personalbox_showdisplaylink_acp">
 				<categoryname>portal.box.personalbox</categoryname>
 				<optiontype>boolean</optiontype>
