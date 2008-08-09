@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="fr">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.buddiesbox.title"><![CDATA[Amis]]></item>
+		<item name="wbb.portal.box.buddiesbox.nouser"><![CDATA[Aucun utilisateurs dans la liste]]></item>
+        <item name="wbb.portal.box.buddiesbox.pm"><![CDATA[Envoyer un message à un ami]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.buddiesbox"><![CDATA[Amis]]></item>
+		<item name="wcf.acp.option.category.portal.box.buddiesbox.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.buddiesbox_sbcolor_acp"><![CDATA[Seconde couleur de fond]]></item>
+        <item name="wcf.acp.option.buddiesbox_sbcolor_acp.description"><![CDATA[Défaut = 2.]]></item>
+		<item name="wcf.acp.option.buddiesbox_showdel_acp"><![CDATA[Afficher le bouton de suppression]]></item>
+        <item name="wcf.acp.option.buddiesbox_showdel_acp.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.buddiesbox_showusermarking_acp"><![CDATA[Utiliser le marqueur « Utilisateur en ligne »]]></item>
+        <item name="wcf.acp.option.buddiesbox_showusermarking_acp.description"><![CDATA[]]></item>
+	</category>
+</language>

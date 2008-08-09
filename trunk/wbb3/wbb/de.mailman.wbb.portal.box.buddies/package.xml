@@ -3,7 +3,9 @@
 <package name="de.mailman.wbb.portal.box.buddiesbox">
 	<packageinformation>
 		<packagename lang="de">Portalbox Freunde-Liste</packagename>
+		<packagename lang="fr">Fenêtre du portail « Liste d’amis »</packagename>
 		<packageDescription>Deine Freunde in der Box ;)</packageDescription>
+		<packageDescription lang="fr">Vos amis dans une fenêtre ;)</packageDescription>
 		<standalone>0</standalone>
 		<plugin>com.woltlab.wbb</plugin>
 		<version>1.0.0</version>
@@ -28,5 +30,6 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 </package>
