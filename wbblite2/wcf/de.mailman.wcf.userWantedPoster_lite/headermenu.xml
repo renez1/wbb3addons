@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE import SYSTEM "DTD/import.dtd">
+<data>
+	<import>
+		<headermenuitem name="wcf.header.menu.userWantedPoster">
+			<icon>icon/userWantedPosterListM.png</icon>
+			<link>index.php?page=UserWantedPosterList</link>
+			<showorder>10</showorder>
+			<permissions>user.wantedPoster.canViewHeaderMenu</permissions>
+		</headermenuitem>
+	</import>
+</data>

@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language languagecode="de-informal">
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.category.user.wantedPoster"><![CDATA[Steckbrief]]></item>
+		<item name="wcf.acp.group.option.category.user.wantedPoster.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.category.user.wantedPoster.listView"><![CDATA[Steckbrief-Liste]]></item>
+		<item name="wcf.acp.group.option.category.user.wantedPoster.listView.description"><![CDATA[]]></item>
+
+		<item name="wcf.acp.group.option.user.wantedPoster.canUseWantedPoster"><![CDATA[Kann Steckbrief nutzen]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canUseWantedPoster.description"><![CDATA[Mitglieder dieser Benutzergruppe können einen eigenen Steckbrief erstellen, ändern und löschen.]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canViewWantedPoster"><![CDATA[Kann Steckbriefe sehen]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canViewWantedPoster.description"><![CDATA[Mitglieder dieser Benutzergruppe können Steckbriefe sehen.]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canViewHeaderMenu"><![CDATA[Button im Menü anzeigen]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canViewHeaderMenu.description"><![CDATA[Mitglieder dieser Benutzergruppe einen Menü-Button zur Steckbrief-Liste anzeigen.]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canViewMembersListTab"><![CDATA[Steckbrief-Tab in der Mitgliederliste anzeigen]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canViewMembersListTab.description"><![CDATA[Mitglieder dieser Benutzergruppe sehen den Tab &quot;Steckbriefe&quot; in der Mitgliederliste.]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.maxLength"><![CDATA[Maximale Steckbrieflänge]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.maxLength.description"><![CDATA[Wieviele Zeichen darf ein Steckbrief von Mitgliedern dieser Benutzergruppe maximal haben? (Empfohlen 16384)]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canUseSmilies"><![CDATA[Kann Smileys benutzen]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canUseSmilies.description"><![CDATA[Mitglieder dieser Benutzergruppe können Smileys im Steckbrief benutzen.]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canUseHtml"><![CDATA[Kann HTML benutzen]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canUseHtml.description"><![CDATA[Mitglieder dieser Benutzergruppe können HTML im Steckbrief benutzen.]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canUseBBCodes"><![CDATA[Kann BBCodes benutzen]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canUseBBCodes.description"><![CDATA[Mitglieder dieser Benutzergruppe können BBCodes im Steckbrief benutzen.]]></item>
+
+		<item name="wcf.acp.group.option.user.wantedPoster.canUploadAttachment"><![CDATA[Kann Dateianhänge im Steckbrief benutzen]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canUploadAttachment.description"><![CDATA[Mitglieder dieser Benutzergruppe können Dateien an den Steckbrief anhängen.]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.maxAttachmentSize"><![CDATA[Maximale Dateianhangsgröße]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.maxAttachmentSize.description"><![CDATA[Maximale Größe pro Dateianhang in Byte.]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.allowedAttachmentExtensions"><![CDATA[Erlaubte Dateiendungen]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.allowedAttachmentExtensions.description"><![CDATA[Erlaubte Endungen für Dateianhänge. Pro Zeile eine Dateiendung angeben.]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.maxAttachmentCount"><![CDATA[Maximale Anzahl Dateianhänge]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.maxAttachmentCount.description"><![CDATA[Wieviele Dateianhänge können Mitglieder dieser Benutzergruppe für ihren Steckbrief benutzen?]]></item>
+
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showAvatar"><![CDATA[Avatar anzeigen]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showAvatar.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showCreateDate"><![CDATA[Erstellungsdatum anzeigen]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showCreateDate.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showModDate"><![CDATA[Änderungsdatum anzeigen]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showModDate.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showBytes"><![CDATA[Steckbrief-Größe anzeigen]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showBytes.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showAttachments"><![CDATA[Anzahl der Dateianhänge anzeigen]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showAttachments.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showViews"><![CDATA[Anzahl der Benutzer-Ansichten anzeigen]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showViews.description"><![CDATA[]]></item>
+
+		<item name="wcf.acp.group.option.category.mod.wantedPoster"><![CDATA[Steckbrief]]></item>
+		<item name="wcf.acp.group.option.category.mod.wantedPoster.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.mod.wantedPoster.canDeleteEntries"><![CDATA[Kann Steckbriefe löschen]]></item>
+		<item name="wcf.acp.group.option.mod.wantedPoster.canDeleteEntries.description"><![CDATA[Mitglieder dieser Benutzergruppe können Benutzer Steckbriefe löschen.]]></item>
+		<item name="wcf.acp.group.option.mod.wantedPoster.canLockEntries"><![CDATA[Kann Steckbriefe sperren]]></item>
+		<item name="wcf.acp.group.option.mod.wantedPoster.canLockEntries.description"><![CDATA[Mitglieder dieser Benutzergruppe können Benutzer Steckbriefe sperren.]]></item>
+		<item name="wcf.acp.group.option.mod.wantedPoster.canModifyEntries"><![CDATA[Kann Steckbriefe bearbeiten]]></item>
+		<item name="wcf.acp.group.option.mod.wantedPoster.canModifyEntries.description"><![CDATA[Mitglieder dieser Benutzergruppe können Benutzer Steckbriefe bearbeiten.]]></item>
+
+    	<item name="wcf.acp.group.option.admin.general.wantedPoster.canEdit"><![CDATA[Steckbrief-Vorlagen Rechte]]></item>
+    	<item name="wcf.acp.group.option.admin.general.wantedPoster.canEdit.description"><![CDATA[Kann Steckbrief Templates erstellen, bearbeiten und löschen]]></item>
+	</category>
+
+	<category name="wcf.acp.menu">
+		<item name="wcf.acp.menu.link.wantedPoster"><![CDATA[Steckbrief-Vorlagen]]></item>
+	</category>
+
+    <category name="wcf.acp.option">
+        <item name="wcf.acp.option.category.userWantedPoster"><![CDATA[Benutzer-Steckbrief]]></item>
+        <item name="wcf.acp.option.category.userWantedPoster.description"><![CDATA[]]></item>
+        <item name="wcf.acp.option.category.userWantedPoster.general"><![CDATA[Allgemeine Einstellungen]]></item>
+        <item name="wcf.acp.option.category.userWantedPoster.general.description"><![CDATA[]]></item>
+
+        <item name="wcf.acp.option.userWantedPoster_pmNotifierUgrp"><![CDATA[Benutzergruppen informieren]]></item>
+        <item name="wcf.acp.option.userWantedPoster_pmNotifierUgrp.description"><![CDATA[Benutzergruppen-IDs kommasepariert! Sendet bei neuen/geänderten Steckbrief-Einträgen eine PN an alle o.g. Benutzergruppen.]]></item>
+        <item name="wcf.acp.option.userWantedPoster_pmNotifierUser"><![CDATA[Benutzer informieren]]></item>
+        <item name="wcf.acp.option.userWantedPoster_pmNotifierUser.description"><![CDATA[Benutzer-IDs kommasepariert! Sendet bei neuen/geänderten Steckbrief-Einträgen eine PN an alle o.g. Benutzer.]]></item>
+
+		<item name="wcf.acp.option.userWantedPoster_showInSidebar"><![CDATA[Steckbrief-Link in Beitragsliste anzeigen]]></item>
+		<item name="wcf.acp.option.userWantedPoster_showInSidebar.description"><![CDATA[Zeigt den Link (Grafik) zum Steckbrief in der Sidebar der Beitragsliste an.]]></item>
+	</category>
+
+    <category name="wcf.acp.wantedPoster">
+        <item name="wcf.acp.wantedPoster.title"><![CDATA[Steckbrief Vorlagen]]></item>
+        <item name="wcf.acp.wantedPoster.editTitle"><![CDATA[Steckbrief Vorlage bearbeiten]]></item>
+        <item name="wcf.acp.wantedPoster.addTitle"><![CDATA[Steckbrief Vorlage erstellen]]></item>
+        <item name="wcf.acp.wantedPoster.tplName"><![CDATA[Titel]]></item>
+        <item name="wcf.acp.wantedPoster.tplContent"><![CDATA[Inhalt]]></item>
+        <item name="wcf.acp.wantedPoster.tplPermission"><![CDATA[Die Vorlage beinhaltet]]></item>
+        <item name="wcf.acp.wantedPoster.tplPermission.description"><![CDATA[Wenn eine Vorlage z.B. HTML beinhaltet, steht diese Benutzern die kein HTML verwenden dürfen auch nicht zur Verfügung.]]></item>
+        <item name="wcf.acp.wantedPoster.tplPermSmilies"><![CDATA[Smilies]]></item>
+        <item name="wcf.acp.wantedPoster.tplPermHtml"><![CDATA[HTML]]></item>
+        <item name="wcf.acp.wantedPoster.tplPermBBCodes"><![CDATA[BBCode]]></item>
+        <item name="wcf.acp.wantedPoster.tplCreated"><![CDATA[Erstellt]]></item>
+        <item name="wcf.acp.wantedPoster.tplModified"><![CDATA[Geändert]]></item>
+        <item name="wcf.acp.wantedPoster.tplDelete"><![CDATA[Vorlage löschen]]></item>
+        <item name="wcf.acp.wantedPoster.confirmDelete"><![CDATA[Möchten Sie die Vorlage wirklich löschen?]]></item>
+        <item name="wcf.acp.wantedPoster.tplSelection"><![CDATA[Vorlagen-Auswahl]]></item>
+        <item name="wcf.acp.wantedPoster.tplSelTitle"><![CDATA[Vorlage erstellen/bearbeiten]]></item>
+        <item name="wcf.acp.wantedPoster.tplCreate"><![CDATA[Neue Vorlage erstellen]]></item>
+        <item name="wcf.acp.wantedPoster.tplEnable"><![CDATA[Vorlage aktivieren]]></item>
+        <item name="wcf.acp.wantedPoster.errTplNameExists"><![CDATA[Titel existiert bereits!]]></item>
+        <item name="wcf.acp.wantedPoster.errTplDeleted"><![CDATA[Die Vorlage konnte nicht gelöscht werden!]]></item>
+        <item name="wcf.acp.wantedPoster.errTplSaved"><![CDATA[Die Vorlage konnte nicht gespeichert werden!]]></item>
+        <item name="wcf.acp.wantedPoster.msgTplDeleted"><![CDATA[Die Vorlage wurde erfolgreich gelöscht.]]></item>
+        <item name="wcf.acp.wantedPoster.msgTplSaved"><![CDATA[Die Vorlage wurde erfolgreich gespeichert.]]></item>
+	</category>
+
+	<category name="wcf.user.usercp">
+		<item name="wcf.user.usercp.menu.link.profile.wantedPoster"><![CDATA[Steckbrief]]></item>
+		<item name="wcf.user.usercp.menu.link.profile.wantedPoster.edit"><![CDATA[Steckbrief bearbeiten]]></item>
+	</category>
+
+	<category name="wcf.user.profile">
+		<item name="wcf.user.profile.menu.link.profile"><![CDATA[Profil]]></item>
+		<item name="wcf.user.profile.menu.link.wantedPoster"><![CDATA[Steckbrief]]></item>
+	</category>
+
+	<category name="wcf.user.wantedPoster">
+		<item name="wcf.user.wantedPoster.title"><![CDATA[Steckbrief von &raquo;{$user->username}&laquo;]]></item>
+		<item name="wcf.user.wantedPoster.noEntry"><![CDATA[Der Benutzer {$user->username} hat noch keinen Steckbrief erstellt.]]></item>
+		<item name="wcf.user.wantedPoster.inserted"><![CDATA[Erstellt:]]></item>
+		<item name="wcf.user.wantedPoster.updated"><![CDATA[Zuletzt Geändert:]]></item>
+		<item name="wcf.user.wantedPoster.views"><![CDATA[Anzahl der Steckbrief-Aufrufe:]]></item>
+		<item name="wcf.user.wantedPoster.confirmDelete"><![CDATA[Bitte bestätige den Löschvorgang.]]></item>
+		<item name="wcf.user.wantedPoster.edit"><![CDATA[Bearbeiten]]></item>
+		<item name="wcf.user.wantedPoster.create"><![CDATA[Erstellen]]></item>
+		<item name="wcf.user.wantedPoster.delete"><![CDATA[Löschen]]></item>
+		<item name="wcf.user.wantedPoster.lock"><![CDATA[Sperren]]></item>
+		<item name="wcf.user.wantedPoster.unlock"><![CDATA[Freigeben]]></item>
+		<item name="wcf.user.wantedPoster.lockedMessage"><![CDATA[Dieser Steckbrief wurde am {@$uwpData.lockDate|time:"%d.%m.%Y um %H:%M Uhr"} von {$uwpData.lockUser} gesperrt.]]></item>
+        <item name="wcf.user.wantedPoster.preview"><![CDATA[Neuer Steckbrief]]></item>
+
+		<item name="wcf.user.wantedPoster.list.title"><![CDATA[&raquo;Benutzer Steckbrief&laquo;-Liste]]></item>
+		<item name="wcf.user.wantedPoster.list.listHeader"><![CDATA[Es {if $cntEntries != 1}sind {$cntEntries} Steckbriefe{else}ist 1 Steckbrief{/if} vorhanden]]></item>
+		<item name="wcf.user.wantedPoster.list.username"><![CDATA[Benutzername]]></item>
+		<item name="wcf.user.wantedPoster.list.created"><![CDATA[Erstellt]]></item>
+		<item name="wcf.user.wantedPoster.list.updated"><![CDATA[Geändert]]></item>
+		<item name="wcf.user.wantedPoster.list.views"><![CDATA[Ansichten]]></item>
+		<item name="wcf.user.wantedPoster.list.avatar"><![CDATA[Avatar]]></item>
+		<item name="wcf.user.wantedPoster.list.action"><![CDATA[Aktion]]></item>
+		<item name="wcf.user.wantedPoster.list.entry"><![CDATA[Steckbrief erstellen/bearbeiten]]></item>
+		<item name="wcf.user.wantedPoster.list.empty"><![CDATA[Bisher wurden noch keine Steckbriefe erstellt.]]></item>
+
+		<item name="wcf.user.wantedPoster.list.warningModEdit"><![CDATA[Achtung! Das ist nicht Dein eigener Steckbrief!]]></item>
+
+		<item name="wcf.user.wantedPoster.tplTitle"><![CDATA[Vorlagen]]></item>
+		<item name="wcf.user.wantedPoster.tplTitle.description"><![CDATA[Hier kannst Du Vorlagen für Deinen Steckbrief auswählen.
+		Wenn Du bereits einen Steckbrief erstellt hast, dann sichere diesen unbedingt bevor Du eine Vorlage auswählst!]]></item>
+		<item name="wcf.user.wantedPoster.tplSelect"><![CDATA[Vorlage auswählen]]></item>
+
+        <item name="wcf.user.wantedPoster.pmAdminNotifier.subject"><![CDATA[Steckbrief-Bot: {$username}]]></item>
+        <item name="wcf.user.wantedPoster.pmAdminNotifier.message"><![CDATA[Hallo {$moderator},
+
+der Steckbrief von {$username} wurde bearbeitet.
+
+
+Diese Nachricht wurde automatisch generiert.]]></item>
+	</category>
+
+	<category name="wcf.header.menu">
+		<item name="wcf.header.menu.userWantedPoster"><![CDATA[Steckbriefe]]></item>
+	</category>
+
+	<category name="wcf.usersOnline">
+	    <item name="wcf.usersOnline.location.userWantedPosterList"><![CDATA[Steckbriefliste]]></item>
+		<item name="wcf.usersOnline.location.userWantedPoster"><![CDATA[Steckbrief von &raquo;{$username}&laquo;]]></item>
+		<item name="wcf.usersOnline.location.userWantedPosterEdit"><![CDATA[Steckbrief von &raquo;{$username}&laquo; bearbeiten]]></item>
+	</category>
+</language>

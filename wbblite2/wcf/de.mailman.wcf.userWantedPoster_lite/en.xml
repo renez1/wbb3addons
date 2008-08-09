@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language languagecode="en">
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.category.user.wantedPoster"><![CDATA[Wanted Poster]]></item>
+		<item name="wcf.acp.group.option.category.user.wantedPoster.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.category.user.wantedPoster.listView"><![CDATA[Wanted Poster List]]></item>
+		<item name="wcf.acp.group.option.category.user.wantedPoster.listView.description"><![CDATA[]]></item>
+
+		<item name="wcf.acp.group.option.user.wantedPoster.canUseWantedPoster"><![CDATA[Can use wanted poster]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canUseWantedPoster.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canViewWantedPoster"><![CDATA[Can see wanted poster]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canViewWantedPoster.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canViewHeaderMenu"><![CDATA[Show menu button]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canViewHeaderMenu.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canViewMembersListTab"><![CDATA[Show tab in members list]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canViewMembersListTab.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.maxLength"><![CDATA[Maximale length]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.maxLength.description"><![CDATA[(Default = 16384)]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canUseSmilies"><![CDATA[Can use smileys]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canUseSmilies.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canUseHtml"><![CDATA[Can use HTML]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canUseHtml.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canUseBBCodes"><![CDATA[Can use BBCodes]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canUseBBCodes.description"><![CDATA[]]></item>
+
+		<item name="wcf.acp.group.option.user.wantedPoster.canUploadAttachment"><![CDATA[Can upload attachments]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.canUploadAttachment.description"><![CDATA[Members of this usergroup can upload attachments.]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.maxAttachmentSize"><![CDATA[Maximum attachment size]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.maxAttachmentSize.description"><![CDATA[Please enter the maximum size of attachement files in bytes.]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.allowedAttachmentExtensions"><![CDATA[Allowed file extensions]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.allowedAttachmentExtensions.description"><![CDATA[Please enter the allowed file extensions of attachments. One extension per line.]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.maxAttachmentCount"><![CDATA[Maximum attachments]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.maxAttachmentCount.description"><![CDATA[Please enter the maximum number of attachments that members of this usergroup can upload to their wanted poster.]]></item>
+
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showAvatar"><![CDATA[Show Avatar]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showAvatar.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showCreateDate"><![CDATA[Show create date]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showCreateDate.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showModDate"><![CDATA[Show modify date]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showModDate.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showBytes"><![CDATA[Show size of users wanted poster]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showBytes.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showAttachments"><![CDATA[Show number of attachments]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showAttachments.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showViews"><![CDATA[Show number of views]]></item>
+		<item name="wcf.acp.group.option.user.wantedPoster.listView.showViews.description"><![CDATA[]]></item>
+
+		<item name="wcf.acp.group.option.category.mod.wantedPoster"><![CDATA[Wanted Poster]]></item>
+		<item name="wcf.acp.group.option.category.mod.wantedPoster.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.mod.wantedPoster.canDeleteEntries"><![CDATA[Can delete wanted poster]]></item>
+		<item name="wcf.acp.group.option.mod.wantedPoster.canDeleteEntries.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.mod.wantedPoster.canLockEntries"><![CDATA[Can lock wanted poster]]></item>
+		<item name="wcf.acp.group.option.mod.wantedPoster.canLockEntries.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.mod.wantedPoster.canModifyEntries"><![CDATA[Can modify wanted poster]]></item>
+		<item name="wcf.acp.group.option.mod.wantedPoster.canModifyEntries.description"><![CDATA[]]></item>
+
+    	<item name="wcf.acp.group.option.admin.general.wantedPoster.canEdit"><![CDATA[Can edit User Wanted Poster Templates]]></item>
+    	<item name="wcf.acp.group.option.admin.general.wantedPoster.canEdit.description"><![CDATA[]]></item>
+	</category>
+
+	<category name="wcf.acp.menu">
+		<item name="wcf.acp.menu.link.wantedPoster"><![CDATA[User Wanted Poster Templates]]></item>
+	</category>
+
+    <category name="wcf.acp.option">
+        <item name="wcf.acp.option.category.userWantedPoster"><![CDATA[User Wanted Poster]]></item>
+        <item name="wcf.acp.option.category.userWantedPoster.description"><![CDATA[]]></item>
+        <item name="wcf.acp.option.category.userWantedPoster.general"><![CDATA[Global settings]]></item>
+        <item name="wcf.acp.option.category.userWantedPoster.general.description"><![CDATA[]]></item>
+
+        <item name="wcf.acp.option.userWantedPoster_pmNotifierUgrp"><![CDATA[PM to user groups at new or changed wanted poster entries]]></item>
+        <item name="wcf.acp.option.userWantedPoster_pmNotifierUgrp.description"><![CDATA[Comma separated list of usergroup id's.]]></item>
+        <item name="wcf.acp.option.userWantedPoster_pmNotifierUser"><![CDATA[PM to user at new or changed wanted poster entries]]></item>
+        <item name="wcf.acp.option.userWantedPoster_pmNotifierUser.description"><![CDATA[Comma separated list of user id's.]]></item>
+
+		<item name="wcf.acp.option.userWantedPoster_showInSidebar"><![CDATA[Show user wanted poster in contribution list]]></item>
+		<item name="wcf.acp.option.userWantedPoster_showInSidebar.description"><![CDATA[Shows the user wanted poster in the sidebr of the contribution list.]]></item>
+	</category>
+
+    <category name="wcf.acp.wantedPoster">
+        <item name="wcf.acp.wantedPoster.title"><![CDATA[User Wanted Poster Templates]]></item>
+        <item name="wcf.acp.wantedPoster.editTitle"><![CDATA[Edit User Wanted Poster Templates]]></item>
+        <item name="wcf.acp.wantedPoster.addTitle"><![CDATA[Add User Wanted Poster Templates]]></item>
+        <item name="wcf.acp.wantedPoster.tplName"><![CDATA[Title]]></item>
+        <item name="wcf.acp.wantedPoster.tplContent"><![CDATA[Content]]></item>
+        <item name="wcf.acp.wantedPoster.tplPermission"><![CDATA[Template includes]]></item>
+        <item name="wcf.acp.wantedPoster.tplPermission.description"><![CDATA[e.g. template includes HTML, so only users with permission to use HTML can see this template.]]></item>
+        <item name="wcf.acp.wantedPoster.tplPermSmilies"><![CDATA[Smilies]]></item>
+        <item name="wcf.acp.wantedPoster.tplPermHtml"><![CDATA[HTML]]></item>
+        <item name="wcf.acp.wantedPoster.tplPermBBCodes"><![CDATA[BBCodes]]></item>
+        <item name="wcf.acp.wantedPoster.tplCreated"><![CDATA[Created]]></item>
+        <item name="wcf.acp.wantedPoster.tplModified"><![CDATA[Modified]]></item>
+        <item name="wcf.acp.wantedPoster.tplDelete"><![CDATA[Delete template]]></item>
+        <item name="wcf.acp.wantedPoster.confirmDelete"><![CDATA[Would you like to really delete the template?]]></item>
+        <item name="wcf.acp.wantedPoster.tplSelection"><![CDATA[Template selection]]></item>
+        <item name="wcf.acp.wantedPoster.tplSelTitle"><![CDATA[Create/modify template]]></item>
+        <item name="wcf.acp.wantedPoster.tplCreate"><![CDATA[Create new template]]></item>
+        <item name="wcf.acp.wantedPoster.tplEnable"><![CDATA[Activate template]]></item>
+        <item name="wcf.acp.wantedPoster.errTplNameExists"><![CDATA[Template already exists!]]></item>
+        <item name="wcf.acp.wantedPoster.errTplDeleted"><![CDATA[The template could not be deleted!]]></item>
+        <item name="wcf.acp.wantedPoster.errTplSaved"><![CDATA[The template could not be saved!]]></item>
+        <item name="wcf.acp.wantedPoster.msgTplDeleted"><![CDATA[The template was successfully deleted.]]></item>
+        <item name="wcf.acp.wantedPoster.msgTplSaved"><![CDATA[The template was successfully saved.]]></item>
+	</category>
+
+	<category name="wcf.user.usercp">
+		<item name="wcf.user.usercp.menu.link.profile.wantedPoster"><![CDATA[Wanted Poster]]></item>
+		<item name="wcf.user.usercp.menu.link.profile.wantedPoster.edit"><![CDATA[Edit Wanted Poster]]></item>
+	</category>
+
+	<category name="wcf.user.profile">
+		<item name="wcf.user.profile.menu.link.profile"><![CDATA[Profile]]></item>
+		<item name="wcf.user.profile.menu.link.wantedPoster"><![CDATA[User Wanted Poster]]></item>
+	</category>
+
+	<category name="wcf.user.wantedPoster">
+		<item name="wcf.user.wantedPoster.title"><![CDATA[Wanted Poster of &raquo;{$user->username}&laquo;]]></item>
+		<item name="wcf.user.wantedPoster.noEntry"><![CDATA[No wanted poster available.]]></item>
+		<item name="wcf.user.wantedPoster.inserted"><![CDATA[Created:]]></item>
+		<item name="wcf.user.wantedPoster.updated"><![CDATA[Last changed:]]></item>
+		<item name="wcf.user.wantedPoster.views"><![CDATA[Number of wanted poster visits:]]></item>
+		<item name="wcf.user.wantedPoster.confirmDelete"><![CDATA[Please confirm the deleting process.]]></item>
+		<item name="wcf.user.wantedPoster.edit"><![CDATA[Edit]]></item>
+		<item name="wcf.user.wantedPoster.create"><![CDATA[Create]]></item>
+		<item name="wcf.user.wantedPoster.delete"><![CDATA[Delete]]></item>
+		<item name="wcf.user.wantedPoster.lock"><![CDATA[Lock]]></item>
+		<item name="wcf.user.wantedPoster.unlock"><![CDATA[Unlock]]></item>
+		<item name="wcf.user.wantedPoster.lockedMessage"><![CDATA[This wanted poster has been closed on {@$uwpData.lockDate|time:"%d.%m.%Y at %H:%M o'clock"} of {$uwpData.lockUser}.]]></item>
+        <item name="wcf.user.wantedPoster.preview"><![CDATA[New Wanted Poster]]></item>
+
+		<item name="wcf.user.wantedPoster.list.title"><![CDATA[&raquo;User Wanted Poster&laquo;-List]]></item>
+		<item name="wcf.user.wantedPoster.list.listHeader"><![CDATA[{$cntEntries} user wanted {if $cntEntries != 1}posters{else}poster{/if}]]></item>
+		<item name="wcf.user.wantedPoster.list.username"><![CDATA[Username]]></item>
+		<item name="wcf.user.wantedPoster.list.created"><![CDATA[Created]]></item>
+		<item name="wcf.user.wantedPoster.list.updated"><![CDATA[Updated]]></item>
+		<item name="wcf.user.wantedPoster.list.views"><![CDATA[Views]]></item>
+		<item name="wcf.user.wantedPoster.list.avatar"><![CDATA[Avatar]]></item>
+		<item name="wcf.user.wantedPoster.list.action"><![CDATA[Action]]></item>
+		<item name="wcf.user.wantedPoster.list.entry"><![CDATA[Create/edit your wanted poster]]></item>
+		<item name="wcf.user.wantedPoster.list.empty"><![CDATA[No Wanted Poster were provided.]]></item>
+
+        <item name="wcf.user.wantedPoster.list.warningModEdit"><![CDATA[Note! That is not your own wanted poster!]]></item>
+
+		<item name="wcf.user.wantedPoster.tplTitle"><![CDATA[Templates]]></item>
+		<item name="wcf.user.wantedPoster.tplTitle.description"><![CDATA[Here you can select templates for your wanted poster.
+		If you should have already provided a wanted poster, the template will overwrite it!]]></item>
+		<item name="wcf.user.wantedPoster.tplSelect"><![CDATA[Select a template]]></item>
+
+        <item name="wcf.user.wantedPoster.pmAdminNotifier.subject"><![CDATA[Wanted Poster-Bot: {$username}]]></item>
+        <item name="wcf.user.wantedPoster.pmAdminNotifier.message"><![CDATA[Hello {$moderator},
+
+The wanted poster of {$username} has been changed.
+
+
+This is an automatically generated notification.]]></item>
+	</category>
+
+	<category name="wcf.header.menu">
+		<item name="wcf.header.menu.userWantedPoster"><![CDATA[Wanted Poster]]></item>
+	</category>
+
+	<category name="wcf.usersOnline">
+	    <item name="wcf.usersOnline.location.userWantedPosterList"><![CDATA[Wanted Poster list]]></item>
+		<item name="wcf.usersOnline.location.userWantedPoster"><![CDATA[Wanted poster of &raquo;{$username}&laquo;]]></item>
+		<item name="wcf.usersOnline.location.userWantedPosterEdit"><![CDATA[Editing wanted poster of &raquo;{$username}&laquo;]]></item>
+	</category>
+</language>
