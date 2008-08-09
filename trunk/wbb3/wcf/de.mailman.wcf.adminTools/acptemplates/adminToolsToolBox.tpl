@@ -30,6 +30,10 @@ function savePrefBoard() {
     }
 }
 
+function saveUseroptions() {
+    if(confirm('{lang}wcf.acp.adminTools.confirm{/lang}')) document.forms['ftbUserOption'].submit();
+}
+
 function runJob(job) {
     if(job == 'cache') {
         if(document.forms['ftbCache'].elements['cacheDel'].checked
@@ -125,7 +129,7 @@ function syncSpider() {
             <fieldset>
                 <legend>{lang}wcf.acp.adminTools.toolBox.cache.legend{/lang}</legend>
                 <form method="post" name="ftbCache" action="index.php?form=AdminToolsToolBox">
-                    <div class="formElement" id="cacheDel">
+                    <div class="formCheckBox formElement" id="cacheDelDiv">
                         <div class="formField">
                             <label><input type="checkbox" id="cacheDel" name="cacheDel" value="1"{if $cacheDel} checked="checked"{/if} /> {lang}wcf.acp.adminTools.toolBox.cache.del{/lang}</label>
                         </div>
@@ -137,7 +141,7 @@ function syncSpider() {
                         inlineHelp.register('cacheDel');
                     //]]></script>
 
-                    <div class="formElement" id="cacheTpl">
+                    <div class="formCheckBox formElement" id="cacheTplDiv">
                         <div class="formField">
                             <label><input type="checkbox" id="cacheTpl" name="cacheTpl" value="1"{if $cacheTpl} checked="checked"{/if} /> {lang}wcf.acp.adminTools.toolBox.cache.tpl{/lang}</label>
                         </div>
@@ -149,7 +153,7 @@ function syncSpider() {
                         inlineHelp.register('cacheTpl');
                     //]]></script>
 
-                    <div class="formElement" id="cacheLang">
+                    <div class="formCheckBox formElement" id="cacheLangDiv">
                         <div class="formField">
                             <label><input type="checkbox" id="cacheLang" name="cacheLang" value="1"{if $cacheLang} checked="checked"{/if} /> {lang}wcf.acp.adminTools.toolBox.cache.lang{/lang}</label>
                         </div>
@@ -161,7 +165,7 @@ function syncSpider() {
                         inlineHelp.register('cacheLang');
                     //]]></script>
 
-                    <div class="formElement" id="cacheOpt">
+                    <div class="formCheckBox formElement" id="cacheOptDiv">
                         <div class="formField">
                             <label><input type="checkbox" id="cacheOpt" name="cacheOpt" value="1"{if $cacheOpt} checked="checked"{/if} /> {lang}wcf.acp.adminTools.toolBox.cache.options{/lang}</label>
                         </div>
@@ -173,7 +177,7 @@ function syncSpider() {
                         inlineHelp.register('cacheOpt');
                     //]]></script>
 
-                    <div class="formElement" id="cacheRSS">
+                    <div class="formCheckBox formElement" id="cacheRSSDiv">
                         <div class="formField">
                             <label><input type="checkbox" id="cacheRSS" name="cacheRSS" value="1"{if $cacheRSS} checked="checked"{/if}{if !$spRssExists} disabled="disabled"{/if} /> {lang}wcf.acp.adminTools.toolBox.cache.rss{/lang}</label>
                         </div>
@@ -185,7 +189,7 @@ function syncSpider() {
                         inlineHelp.register('cacheRSS');
                     //]]></script>
 
-                    <div class="formElement" id="progressDB" style="display:none; text-align:right;">
+                    <div class="formElement" id="progressDBDiv" style="display:none; text-align:right;">
                         <div class="formField"><img src="{@RELATIVE_WCF_DIR}icon/adminToolsProgressbar.gif" alt="" /></div>
                     </div>
 
@@ -259,7 +263,7 @@ function syncSpider() {
                         inlineHelp.register('boardTgt');
                     //]]></script>
 
-                    <div class="formElement" id="boardUser">
+                    <div class="formCheckBox formElement" id="boardUserDiv">
                         <div class="formField">
                             <label><input type="checkbox" id="boardUser" name="boardUser" value="1" /> {lang}wcf.acp.adminTools.toolBox.board.user{/lang}</label>
                         </div>
@@ -271,7 +275,7 @@ function syncSpider() {
                         inlineHelp.register('boardUser');
                     //]]></script>
 
-                    <div class="formElement" id="boardGroups">
+                    <div class="formCheckBox formElement" id="boardGroupsDiv">
                         <div class="formField">
                             <label><input type="checkbox" id="boardGroups" name="boardGroups" value="1" /> {lang}wcf.acp.adminTools.toolBox.board.groups{/lang}</label>
                         </div>
@@ -283,7 +287,7 @@ function syncSpider() {
                         inlineHelp.register('boardGroups');
                     //]]></script>
 
-                    <div class="formElement" id="boardMods">
+                    <div class="formCheckBox formElement" id="boardModsDiv">
                         <div class="formField">
                             <label><input type="checkbox" id="boardMods" name="boardMods" value="1" /> {lang}wcf.acp.adminTools.toolBox.board.mods{/lang}</label>
                             {if $errorField == 'boardRights'}
@@ -447,7 +451,7 @@ function syncSpider() {
                         inlineHelp.register('ugrpTgt');
                     //]]></script>
 
-                    <div class="formElement" id="ugrpUser">
+                    <div class="formCheckBox formElement" id="ugrpUserDiv">
                         <div class="formField">
                             <label><input type="checkbox" id="ugrpUser" name="ugrpUser" value="1" /> {lang}wcf.acp.adminTools.toolBox.ugrp.user{/lang}</label>
                             {if $errorField == 'ugrpUser'}
@@ -464,7 +468,7 @@ function syncSpider() {
                         inlineHelp.register('ugrpUser');
                     //]]></script>
 
-                    <div class="formElement" id="ugrpBoards">
+                    <div class="formCheckBox formElement" id="ugrpBoardsDiv">
                         <div class="formField">
                             <label><input type="checkbox" id="ugrpBoards" name="ugrpBoards" value="1" /> {lang}wcf.acp.adminTools.toolBox.ugrp.boards{/lang}</label>
                             {if $errorField == 'ugrpBoards'}
@@ -490,6 +494,94 @@ function syncSpider() {
 
                     <input type="hidden" name="packageID" value="{@PACKAGE_ID}" />
                     <input type="hidden" name="ugrpAction" value="1" />
+                    {@SID_INPUT_TAG}
+                </form>
+            </fieldset>
+
+<!-- USER OPTIONS ************************************** -->
+            <fieldset>
+                <legend>{lang}wcf.acp.adminTools.toolBox.userOption.legend{/lang}</legend>
+                <p class="description">{lang}wcf.acp.adminTools.toolBox.userOption.legend.description{/lang}</p>
+                <form method="post" name="ftbUserOption" action="index.php?form=AdminToolsToolBox">
+                    <div class="formElement" id="optionIDDiv">
+                        <div class="formFieldLabel">
+                            <label for="optionID">{lang}wcf.acp.adminTools.toolBox.userOption.optionID{/lang}</label>
+                        </div>
+                        <div class="formField">
+                            <select name="optionID" id="optionID">
+                                <option value="0"></option>
+                                {if $userOptions|count}
+                                    {foreach from=$userOptions item=option}
+                                        <option value="{$option.optionID}" title="{lang}wcf.user.option.{@$option.optionName}.description{/lang}">{lang}wcf.user.option.{@$option.optionName}{/lang}</option>
+                                    {/foreach}
+                                {/if}
+                            </select>
+                            ({#$userOptions|count})
+                            {if $errorField == 'optionID'}
+                                <p class="innerError">
+                                    {if $errorType == 'empty'}{lang}wcf.global.error.empty{/lang}{/if}
+                                </p>
+                            {/if}
+                        </div>
+                        <div class="formFieldDesc hidden" id="optionIDHelpMessage">
+                            {lang}wcf.acp.adminTools.toolBox.userOption.optionID.description{/lang}
+                        </div>
+                    </div>
+                    <script type="text/javascript">//<![CDATA[
+                        inlineHelp.register('optionID');
+                    //]]></script>
+
+                    <div class="formElement" id="userOptionSetOffDiv">
+                        <div class="formField">
+                            <label><input type="radio" id="userOptionSetOff" name="userOptionSet" value="0" checked="checked" /> {lang}wcf.acp.adminTools.toolBox.userOption.setOff{/lang}</label>
+                        </div>
+                        <div class="formFieldDesc hidden" id="userOptionSetOffHelpMessage">
+                            {lang}wcf.acp.adminTools.toolBox.userOption.setOff.description{/lang}
+                        </div>
+                    </div>
+                    <script type="text/javascript">//<![CDATA[
+                        inlineHelp.register('userOptionSetOff');
+                    //]]></script>
+                    <div class="formElement" id="userOptionSetOnDiv">
+                        <div class="formField">
+                            <label><input type="radio" id="userOptionSetOn" name="userOptionSet" value="0" /> {lang}wcf.acp.adminTools.toolBox.userOption.setOn{/lang}</label>
+                        </div>
+                        <div class="formFieldDesc hidden" id="userOptionSetOnHelpMessage">
+                            {lang}wcf.acp.adminTools.toolBox.userOption.setOn.description{/lang}
+                        </div>
+                    </div>
+                    <script type="text/javascript">//<![CDATA[
+                        inlineHelp.register('userOptionSetOn');
+                    //]]></script>
+
+                    <div class="formElement" id="userOptionExclUgrpsDiv">
+                    	<div class="formFieldLabel">
+                    		<label for="userOptionExclUgrps">{lang}wcf.acp.adminTools.toolBox.userOption.exclUgrps{/lang}</label>
+                    	</div>
+                    	<div class="formField">
+                    		<input type="text" class="inputText" name="userOptionExclUgrps" id="userOptionExclUgrps" value="{if $userOptionExclUgrps|isset}{@$userOptionExclUgrps}{else}{/if}" maxlength="254" />
+                    		{if $errorField == 'userOptionExclUgrps'}
+                    			<div class="innerError">
+                    			    {if $errorType == 'commaSeparatedIntList'}{lang}wcf.acp.adminTools.error.commaSeparatedIntList{/lang}{/if}
+                    			</div>
+                    		{/if}
+                    	</div>
+                    	<div class="formFieldDesc hidden" id="userOptionExclUgrpsHelpMessage">
+                    		{lang}wcf.acp.adminTools.toolBox.userOption.exclUgrps.description{/lang}
+                    	</div>
+                    </div>
+                    <script type="text/javascript">//<![CDATA[
+                    	inlineHelp.register('userOptionExclUgrps');
+                    //]]></script>
+
+                    <div class="smallButtons">
+                        <ul>
+                            <li><a href="javascript:void(0);" onClick="saveUseroptions();"><img src="{@RELATIVE_WCF_DIR}icon/submitS.png" alt="" /> <span>{lang}wcf.acp.adminTools.txt.save{/lang}</span></a></li>
+                        </ul>
+                    </div>
+
+                    <input type="hidden" name="packageID" value="{@PACKAGE_ID}" />
+                    <input type="hidden" name="userOptionAction" value="1" />
                     {@SID_INPUT_TAG}
                 </form>
             </fieldset>

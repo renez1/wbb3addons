@@ -184,6 +184,18 @@
         <item name="wcf.acp.adminTools.toolBox.ugrp.boards"><![CDATA[Foren-Zugriffsrechte kopieren]]></item>
         <item name="wcf.acp.adminTools.toolBox.ugrp.boards.description"><![CDATA[]]></item>
 
+        <item name="wcf.acp.adminTools.toolBox.userOption.legend"><![CDATA[Massenverarbeitung Benutzeroptionen]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userOption.legend.description"><![CDATA[Hier können Sie einige Benutzeroptionen für <strong>alle</strong> Benutzer verändern.
+            <br />Beachten Sie, dass der Benutzer diese Optionen jederzeit wieder ändern kann.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userOption.optionID"><![CDATA[Option]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userOption.optionID.description"><![CDATA[Wählen Sie hier die Option aus, deren Einstellungen Sie verändern möchten.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userOption.setOff"><![CDATA[Option deaktivieren]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userOption.setOff.description"><![CDATA[Deaktiviert die ausgewählte Option für alle Benutzer.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userOption.setOn"><![CDATA[Option aktivieren]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userOption.setOn.description"><![CDATA[Aktiviert die ausgewählte Option für alle Benutzer.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userOption.exclUgrps"><![CDATA[Benutzergruppen ausschließen]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userOption.exclUgrps.description"><![CDATA[Geben Sie hier die <strong>Benutzergruppen-IDs</strong> per Komma getrennt an, deren Benutzeroptionen nicht geändert werden sollen.]]></item>
+
         <item name="wcf.acp.adminTools.toolBox.spider.legend"><![CDATA[Spider]]></item>
         <item name="wcf.acp.adminTools.toolBox.spider.legend.description"><![CDATA[Hier können Sie eigene Suchroboter definieren, welche den Standard-Suchrobotern hinzugefügt werden.]]></item>
         <item name="wcf.acp.adminTools.toolBox.spider.info"><![CDATA[Eigene: {#$spiderCntOwn} &bull; Synchronisert: {#$spiderCntSyn} &bull; Produktiv: {#$spiderCntAll}]]></item>

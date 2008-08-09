@@ -26,6 +26,7 @@ class AdminToolsToolBoxForm extends ACPForm {
     public $errMsg = '';
     public $sucMsg = '';
     public $action = '';
+    public $userOptions = array();
 
 
 	/**
@@ -90,6 +91,8 @@ class AdminToolsToolBoxForm extends ACPForm {
             $this->action = 'prefix';
         } else if(!empty($_POST['ugrpAction'])) {
             $this->action = 'ugrps';
+        } else if(!empty($_POST['userOptionAction'])) {
+            $this->action = 'userOptions';
         }
     }
 
@@ -115,6 +118,9 @@ class AdminToolsToolBoxForm extends ACPForm {
 		    if(empty($_POST['ugrpSrcID']))         throw new UserInputException('ugrpSrc', 'empty');
 		    else if(empty($_POST['ugrpTgtID']))    throw new UserInputException('ugrpTgt', 'empty');
 		    else if($_POST['ugrpTgtID'] == $_POST['ugrpSrcID'])    throw new UserInputException('ugrpTgt', 'equal');
+		} else if($this->action == 'userOptions') {
+		    if(empty($_POST['optionID']))          throw new UserInputException('optionID', 'empty');
+		    else if(!empty($_POST['userOptionExclUgrps']) && !AdminTools::validateCommaSeparatedIntList($_POST['userOptionExclUgrps']))    throw new UserInputException('userOptionExclUgrps', 'commaSeparatedIntList');
 		}
 	}
 
@@ -142,6 +148,9 @@ class AdminToolsToolBoxForm extends ACPForm {
             $this->sucMsg = WCF::getLanguage()->get('wcf.acp.adminTools.success.saved');
     	} else if($this->action == 'ugrps') {
             AdminTools::syncUgrps($_POST);
+            $this->sucMsg = WCF::getLanguage()->get('wcf.acp.adminTools.success.saved');
+    	} else if($this->action == 'userOptions') {
+            AdminTools::saveUserOptions($_POST);
             $this->sucMsg = WCF::getLanguage()->get('wcf.acp.adminTools.success.saved');
     	}
 	}
@@ -181,6 +190,8 @@ class AdminToolsToolBoxForm extends ACPForm {
 		    'boards' => AdminTools::getBoards(),
 		    'prefBoards' => AdminTools::getPrefBoards(),
 		    'ugrps' => AdminTools::getUgrps(),
+		    'userOptions' => AdminTools::getUserOptions(),
+		    'userOptionExclUgrps' => AdminTools::getSetting('userOptionExclUgrps'),
 		    'errMsg' => $this->errMsg,
 		    'sucMsg' => $this->sucMsg
 		));
