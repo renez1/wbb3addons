@@ -20,6 +20,24 @@ class AdminTools {
         }
         return $ret;
 	}
+
+    public function getSetting($atse_name) {
+        $tmp = self::getSettings($atse_name);
+        if(isset($tmp[$atse_name])) $ret = $tmp[$atse_name];
+        else $ret = '';
+        return $ret;
+    }
+
+    public function saveSetting($name, $value) {
+        $name = trim($name);
+        $value = WCF::getDB()->escapeString($value);
+        $sql = "INSERT INTO wcf".WCF_N."_admin_tool_setting"
+               ."\n       (atse_name, atse_value)"
+               ."\nVALUES ('".$name."', '".$value."')"
+               ."\n    ON DUPLICATE KEY UPDATE atse_value = '".$value."'";
+        WCF::getDB()->sendQuery($sql);
+    }
+
 	public function getAcpPackageID($menuItem) {
 	    $ret = 0;
 	    $sql = "SELECT packageID FROM wcf".WCF_N."_acp_menu_item WHERE menuItem = '".$menuItem."'";
@@ -89,13 +107,8 @@ class AdminTools {
         if($settings['cronDbOptimize'] != '1')  $settings['cronDbOptimize'] = '0';
         if($settings['cronDbBackup'] != '1')    $settings['cronDbBackup'] = '0';
 
-        $sqlTpl = "INSERT INTO wcf".WCF_N."_admin_tool_setting"
-               ."\n       (atse_value, atse_name)"
-               ."\nVALUES ('%1\$s', '%2\$s')"
-               ."\n    ON DUPLICATE KEY UPDATE atse_value = '%1\$s'";
         foreach($settings as $k => $v) {
-            $sql = sprintf($sqlTpl, $v, $k);
-            WCF::getDB()->sendQuery($sql);
+            self::saveSetting($k, $v);
         }
     }
 
@@ -186,7 +199,7 @@ class AdminTools {
         }
         return $ret;
     }
-    
+
     public function cronThreadArchive($settings) {
         if(!is_array($settings) || !count($settings)) return;
         if(!empty($settings['cronThreadArchiveDays']) && !empty($settings['cronThreadArchiveSrc']) && !empty($settings['cronThreadArchiveTgt'])) {
@@ -722,6 +735,29 @@ class AdminTools {
         }
     }
 
+    // user options ****************************************
+    public function getUserOptions() {
+        $sql = "SELECT *"
+            ."\n  FROM wcf".WCF_N."_user_option"
+            ."\n WHERE optionType = 'boolean'"
+            ."\n   AND categoryName LIKE 'settings.%'"
+            ."\n ORDER BY optionName";
+        return WCF::getDB()->getResultList($sql);
+    }
+
+    public function saveUserOptions($arg=array()) {
+        if(isset($arg['userOptionSet']) && preg_match('/^[0|1]$/',$arg['userOptionSet']) && !empty($arg['optionID'])) {
+            $set = intval($arg['userOptionSet']);
+            $sql = "UPDATE wcf".WCF_N."_user_option_value"
+                ."\n   SET userOption".$arg['optionID']." = ".$set;
+            if(!empty($arg['userOptionExclUgrps'])) {
+                $sql .= "\n WHERE userID NOT IN (SELECT userID FROM wcf".WCF_N."_user_to_groups WHERE groupID IN (".$arg['userOptionExclUgrps']."))";
+            }
+            if(isset($arg['userOptionExclUgrps'])) self::saveSetting('userOptionExclUgrps', $arg['userOptionExclUgrps']);
+            WCF::getDB()->registerShutdownUpdate($sql);
+        }
+    }
+
     // spiders *********************************************
     public function getSpiders() {
         $sql = "SELECT *"
@@ -892,10 +928,7 @@ class AdminTools {
                 $val = trim($data[$k]);
                 if($val == ';') $val = '';
                 if($val != '' && substr($val, -1) != ';') $val .= ';';
-                $sql = "UPDATE wcf".WCF_N."_admin_tool_setting"
-                    ."\n   SET atse_value = '".WCF::getDB()->escapeString($val)."'"
-                    ."\n WHERE atse_name = 'linkSettings.iframe.".$k."'";
-                WCF::getDB()->sendQuery($sql);
+                self::saveSetting($k, $val);
             }
         }
     }
