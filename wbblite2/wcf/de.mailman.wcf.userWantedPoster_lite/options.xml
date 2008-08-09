@@ -2,13 +2,6 @@
 <!DOCTYPE data SYSTEM "http://www.woltlab.com/DTD/options.dtd">
 <data>
 	<import>
-		<categories>
-			<category name="userWantedPoster"></category>
-			<category name="userWantedPoster.general">
-				<parent>userWantedPoster</parent>
-			</category>
-		</categories>
-
 		<options>
 			<option name="userWantedPoster_showInSidebar">
 				<categoryname>thread.posts</categoryname>
