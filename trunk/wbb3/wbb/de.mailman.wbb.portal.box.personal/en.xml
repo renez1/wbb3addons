@@ -81,6 +81,9 @@
 		<item name="wcf.acp.option.personalbox_show_personal_acp"><![CDATA[Show personal information]]></item>
 		<item name="wcf.acp.option.personalbox_show_personal_acp.description"><![CDATA[Shows e.g.User-Rank, date of registering and amount of postings in this box.]]></item>
 
+		<item name="wcf.acp.option.personalbox_show_profilehits_acp"><![CDATA[Show number of profile calls]]></item>
+		<item name="wcf.acp.option.personalbox_show_profilehits_acp.description"><![CDATA[]]></item>
+
 		<item name="wcf.acp.option.personalbox_show_search_acp"><![CDATA[Show actual postings]]></item>
 		<item name="wcf.acp.option.personalbox_show_search_acp.description"><![CDATA[]]></item>
 		<item name="wcf.acp.option.personalbox_search_days_acp"><![CDATA[Postings of the last n days]]></item>
@@ -183,6 +186,9 @@
 	</category>
 
 	<category name="wcf.user.option">
+        <item name="wcf.user.option.personalbox"><![CDATA[Personal box]]></item>
+        <item name="wcf.user.option.personalbox.description"><![CDATA[]]></item>
+
         <item name="wcf.user.option.category.settings.display.personalbox"><![CDATA[Personal box]]></item>
 
 		<item name="wcf.user.option.personalbox_maxheight"><![CDATA[Maximum box-height]]></item>

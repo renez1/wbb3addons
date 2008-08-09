@@ -24,7 +24,7 @@
         	<div class="containerContent">
                 {if $item.user|isset}
                     <div class="container-{cycle values="$pbFirstBoxColor,$pbSecondBoxColor"}" style="float:none;">
-                        <div class="containerContent" style="text-align:center; float:none;"><a href="index.php?page=User&amp;userID={@$item.user->userID}{@SID_ARG_2ND}">{@$item.user->username}</a></div>
+                        <div class="containerContent" style="text-align:center; float:none;"><a href="index.php?page=User&amp;userID={@$item.user->userID}{@SID_ARG_2ND}">{@$item.user->username}</a>{if $pbShowProfileHits} <span class="smallFont">({#$item.user->profileHits})</span>{/if}</div>
                         {if $pbShowAvatar == true && $item.user->getAvatar()}
 		    				{if $pbAvatarMaxWidth > 0 && $pbAvatarMaxHeight > 0}
 	    						{assign var=dummy value=$item.user->getAvatar()->setMaxSize($pbAvatarMaxWidth, $pbAvatarMaxHeight)}

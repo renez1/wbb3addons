@@ -78,6 +78,9 @@ Se questa opzione è anche il link nella casella.]]></item>
         <item name="wcf.acp.option.personalbox_show_personal_acp"><![CDATA[Informazioni personali]]></item>
         <item name="wcf.acp.option.personalbox_show_personal_acp.description"><![CDATA[Visualizzazione e.g. Utente rat, data di registrazione e il contributo numero nella casella.]]></item>
 
+		<item name="wcf.acp.option.personalbox_show_profilehits_acp"><![CDATA[Visualizza profilo numero di chiamate]]></item>
+		<item name="wcf.acp.option.personalbox_show_profilehits_acp.description"><![CDATA[]]></item>
+
         <item name="wcf.acp.option.personalbox_show_search_acp"><![CDATA[Attuali posti]]></item>
         <item name="wcf.acp.option.personalbox_show_search_acp.description"><![CDATA[]]></item>
         <item name="wcf.acp.option.personalbox_search_days_acp"><![CDATA[Contributi degli ultimi giorni]]></item>
@@ -179,6 +182,9 @@ Se questa opzione è anche il link nella casella.]]></item>
     </category>
 
     <category name="wcf.user.option">
+        <item name="wcf.user.option.personalbox"><![CDATA[Casella personale]]></item>
+        <item name="wcf.user.option.personalbox.description"><![CDATA[]]></item>
+
         <item name="wcf.user.option.category.settings.display.personalbox"><![CDATA[Casella personale]]></item>
 
         <item name="wcf.user.option.personalbox_maxheight"><![CDATA[Altezza della scatola]]></item>

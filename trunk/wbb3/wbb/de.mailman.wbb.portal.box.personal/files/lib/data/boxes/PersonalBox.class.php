@@ -46,6 +46,7 @@ class PersonalBox {
         $pbShowMisc         = false;
         $pbShowWeather      = false;
         $pbShowWeatherCom   = false;
+        $pbShowProfileHits  = false;
 
         // ACP Konstanten...
         if(!defined('PERSONALBOX_CATSPACER_ACP'))       define('PERSONALBOX_CATSPACER_ACP',         $pbCatVertOffset);
@@ -81,7 +82,7 @@ class PersonalBox {
         if(!defined('PERSONALBOX_WEATHER_SHOW_ACP'))    define('PERSONALBOX_WEATHER_SHOW_ACP',      $pbShowWeather);
         if(!defined('PERSONALBOX_WEATHERCOM_SHOW_ACP')) define('PERSONALBOX_WEATHERCOM_SHOW_ACP',   $pbShowWeatherCom);
         if(!defined('PERSONALBOX_SHOW_IM_ACP'))         define('PERSONALBOX_SHOW_IM_ACP',           false);
-        
+        if(!defined('PERSONALBOX_SHOW_PROFILEHITS_ACP')) define('PERSONALBOX_SHOW_PROFILEHITS_ACP', $pbShowProfileHits);
 
 		if(WCF::getUser()->userID != 0) {
             // Include libraries...
@@ -418,7 +419,8 @@ class PersonalBox {
             'pbStyles' => (isset($pbStyles) ? $pbStyles : array()),
             // Instant Messenger by Tatzelwurm
             'imcount' => $imcount,
-            'pbShowIM' => $pbShowIM
+            'pbShowIM' => $pbShowIM,
+            'pbShowProfileHits' => PERSONALBOX_SHOW_PROFILEHITS_ACP
         ));
 	}
 
