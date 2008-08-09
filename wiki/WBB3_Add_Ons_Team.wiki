@@ -3,7 +3,7 @@
 = Wir stellen uns kurz vor =
 
 == Guillaume ==
-French Translation Manager
+French Translation Manager.
 [http://community.woltlab.com/db/index.php?page=User&userID=30839 Profil]
 
 == nendilo ==
