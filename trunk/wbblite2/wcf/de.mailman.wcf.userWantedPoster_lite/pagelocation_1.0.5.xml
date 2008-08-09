@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE import SYSTEM "DTD/import.dtd">
+<data>
+	<import>
+		<pagelocation name="wcf.usersOnline.location.userWantedPosterList">
+			<pattern><![CDATA[index\.php\?page=UserWantedPosterList.*]]></pattern>
+			<classpath>lib/data/page/location/UserWantedPosterLocation.class.php</classpath>
+		</pagelocation>
+		<pagelocation name="wcf.usersOnline.location.userWantedPoster">
+			<pattern><![CDATA[index\.php\?page=UserWantedPoster&.*userID=(\d+)]]></pattern>
+			<classpath>lib/data/page/location/UserWantedPosterLocation.class.php</classpath>
+		</pagelocation>
+		<pagelocation name="wcf.usersOnline.location.userWantedPosterEdit">
+			<pattern><![CDATA[index\.php\?form=UserWantedPosterEdit&.*userID=(\d+)]]></pattern>
+			<classpath>lib/data/page/location/UserWantedPosterLocation.class.php</classpath>
+		</pagelocation>
+	</import>
+	<delete>
+	    <pagelocation name="wbb.usersOnline.location.userWantedPoster"/>
+	    <pagelocation name="wbb.usersOnline.location.userWantedPosterEdit"/>
+	</delete>
+</data>
