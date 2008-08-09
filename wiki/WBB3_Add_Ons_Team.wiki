@@ -2,6 +2,10 @@
 
 = Wir stellen uns kurz vor =
 
+== Guillaume ==
+French Translation Manager
+[http://community.woltlab.com/db/index.php?page=User&userID=30839 Profil]
+
 == nendilo ==
 "Andy", WBB3-Add-On Entwickler, Supporter und vieles mehr...
 [http://wbb3addons.ump2002.net/wbb/index.php?page=User&userID=388 Profil]
