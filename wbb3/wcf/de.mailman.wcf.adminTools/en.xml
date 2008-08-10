@@ -155,8 +155,7 @@
         <item name="wcf.acp.adminTools.toolBox.board.legend"><![CDATA[Copy forum access rights]]></item>
         <item name="wcf.acp.adminTools.toolBox.board.legend.description"><![CDATA[With this function, you can copy forum access rights for users, groups or moderators.]]></item>
         <item name="wcf.acp.adminTools.toolBox.board.source"><![CDATA[Source forum]]></item>
-        <item name="wcf.acp.adminTools.toolBox.board.source.description"><![CDATA[Select the forum, from which you would like to copy rights
-              <br />[0] = Forum, [1] = Category, [2] = External reference.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.board.source.description"><![CDATA[Select the forum, from which you would like to copy rights</item>
         <item name="wcf.acp.adminTools.toolBox.board.target"><![CDATA[Target forum]]></item>
         <item name="wcf.acp.adminTools.toolBox.board.target.description"><![CDATA[<strong>Attention!</strong> All existing values are overwritten.]]></item>
         <item name="wcf.acp.adminTools.toolBox.board.user"><![CDATA[Copy user]]></item>

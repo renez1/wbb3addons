@@ -182,20 +182,25 @@ class AdminTools {
 
     public function cronThreadArchiveGetBoards() {
         $ret = $arcBoards = array();
-        $i = 0;
         $boards = self::getSettings('cronThreadArchiveSrc');
+        require_once(WBB_DIR.'/lib/data/board/Board.class.php');
+        $boardSelect = Board::getBoardSelect(array(), true, true);
         if(!empty($boards['cronThreadArchiveSrc'])) $arcBoards = explode(',', $boards['cronThreadArchiveSrc']);
-        $sql = "SELECT boardID, title FROM wbb".WBB_N."_board WHERE boardType = 0 ORDER BY LOWER(title)";
-        if(count($arcBoards)) {
-            $result = WCF::getDB()->sendQuery($sql);
-    		while($row = WCF::getDB()->fetchArray($result)) {
-    		    $i++;
-    		    $ret[$i] = $row;
-    		    if(in_array($row['boardID'], $arcBoards)) $ret[$i]['SRC'] = true;
-    		    else $ret[$i]['SRC'] = false;
-            }
-        } else {
-            $ret = WCF::getDB()->getResultList($sql);;
+
+        $sql = "SELECT boardID, title"
+            ."\n  FROM wbb".WBB_N."_board"
+            ."\n WHERE boardType != 0";
+        $result = WCF::getDB()->sendQuery($sql);
+        while($row = WCF::getDB()->fetchArray($result)) {
+            if(isset($boardSelect[$row['boardID']])) unset($boardSelect[$row['boardID']]);
+        }
+        $i = 0;
+        foreach($boardSelect as $k => $v) {
+            $ret[$i]['boardID'] = $k;
+            $ret[$i]['title'] = $v;
+            if(in_array($k, $arcBoards)) $ret[$i]['SRC'] = true;
+            else $ret[$i]['SRC'] = false;
+            $i++;
         }
         return $ret;
     }
@@ -446,10 +451,8 @@ class AdminTools {
 
     // boards **********************************************
     public function getBoards() {
-        $sql = "SELECT *"
-            ."\n  FROM wbb".WBB_N."_board"
-            ."\n ORDER BY boardType, LOWER(title)";
-        return WCF::getDB()->getResultList($sql);
+        require_once(WBB_DIR.'/lib/data/board/Board.class.php');
+        return Board::getBoardSelect(array(), true, true);
     }
     public function syncBoard($arg=array()) {
         if(!empty($arg['boardSrcID']) && !empty($arg['boardTgtID']) && $arg['boardSrcID'] != $arg['boardTgtID']) {
@@ -558,14 +561,22 @@ class AdminTools {
 
     // prefixes ********************************************
     public function getPrefBoards() {
-        $sql = "SELECT *"
+        $ret = array();
+        require_once(WBB_DIR.'/lib/data/board/Board.class.php');
+        $boardSelect = Board::getBoardSelect(array(), true, true);
+
+        $sql = "SELECT boardID, title"
             ."\n  FROM wbb".WBB_N."_board"
-            ."\n WHERE prefixes IS NOT NULL"
-            ."\n   AND prefixes != ''"
-            ."\n   AND boardType = 0"
-            ."\n ORDER BY boardType, LOWER(title)";
-        return WCF::getDB()->getResultList($sql);
+            ."\n WHERE prefixes IS NULL"
+            ."\n    OR prefixes = ''";
+        $result = WCF::getDB()->sendQuery($sql);
+        while($row = WCF::getDB()->fetchArray($result)) {
+            if(isset($boardSelect[$row['boardID']])) unset($boardSelect[$row['boardID']]);
+        }
+        foreach($boardSelect as $k => $v) $ret[$k] = $v;
+        return $ret;
     }
+
     public function syncPrefBoard($arg=array()) {
         if(!empty($arg['boardPrefSrcID']) && !empty($arg['boardPrefTgtID']) && $arg['boardPrefSrcID'] != $arg['boardPrefTgtID']) {
             $sql = "SELECT prefixes FROM wbb".WBB_N."_board WHERE boardID = ".$arg['boardPrefSrcID'];
@@ -755,6 +766,8 @@ class AdminTools {
             }
             if(isset($arg['userOptionExclUgrps'])) self::saveSetting('userOptionExclUgrps', $arg['userOptionExclUgrps']);
             WCF::getDB()->registerShutdownUpdate($sql);
+            require_once(WCF_DIR.'lib/system/session/UserSession.class.php');
+            Session::resetSessions();
         }
     }
 
@@ -938,14 +951,19 @@ class AdminTools {
     public function getDiskInfo($pow=3, $dec=2) {
         $ret = array();
         if(function_exists('disk_free_space') && function_exists('disk_total_space')) {
-            $ret['TOTAL_SPACE'] = round(disk_total_space($_SERVER["DOCUMENT_ROOT"]) / pow(1024, $pow), $dec);
-            $ret['FREE_SPACE']  = round(disk_free_space($_SERVER["DOCUMENT_ROOT"]) / pow(1024, $pow), $dec);
-            $ret['USED_SPACE']  = round($ret['TOTAL_SPACE'] - $ret['FREE_SPACE'], $dec);
-            if($ret['TOTAL_SPACE'] > 0) {
-                $ret['FREE_QUOTA'] = round($ret['FREE_SPACE'] * 100 / $ret['TOTAL_SPACE'], $dec);
-                $ret['USED_QUOTA'] = round($ret['USED_SPACE'] * 100 / $ret['TOTAL_SPACE'], $dec);
-            } else {
-                $ret['FREE_QUOTA'] = $ret['USED_QUOTA'] = 0;
+            $root = '';
+            if($tmp = @disk_total_space($_SERVER["DOCUMENT_ROOT"])) $root = $_SERVER["DOCUMENT_ROOT"];
+            else if($tmp = @disk_total_space(WBB_DIR)) $root = WBB_DIR;
+            if($root) {
+                $ret['TOTAL_SPACE'] = round(disk_total_space($root) / pow(1024, $pow), $dec);
+                $ret['FREE_SPACE']  = round(disk_free_space($root) / pow(1024, $pow), $dec);
+                $ret['USED_SPACE']  = round($ret['TOTAL_SPACE'] - $ret['FREE_SPACE'], $dec);
+                if($ret['TOTAL_SPACE'] > 0) {
+                    $ret['FREE_QUOTA'] = round($ret['FREE_SPACE'] * 100 / $ret['TOTAL_SPACE'], $dec);
+                    $ret['USED_QUOTA'] = round($ret['USED_SPACE'] * 100 / $ret['TOTAL_SPACE'], $dec);
+                } else {
+                    $ret['FREE_QUOTA'] = $ret['USED_QUOTA'] = 0;
+                }
             }
         }
         return $ret;
