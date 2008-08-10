@@ -544,7 +544,7 @@ function syncSpider() {
                     //]]></script>
                     <div class="formElement" id="userOptionSetOnDiv">
                         <div class="formField">
-                            <label><input type="radio" id="userOptionSetOn" name="userOptionSet" value="0" /> {lang}wcf.acp.adminTools.toolBox.userOption.setOn{/lang}</label>
+                            <label><input type="radio" id="userOptionSetOn" name="userOptionSet" value="1" /> {lang}wcf.acp.adminTools.toolBox.userOption.setOn{/lang}</label>
                         </div>
                         <div class="formFieldDesc hidden" id="userOptionSetOnHelpMessage">
                             {lang}wcf.acp.adminTools.toolBox.userOption.setOn.description{/lang}
