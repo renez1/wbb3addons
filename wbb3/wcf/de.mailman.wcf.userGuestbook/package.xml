@@ -4,7 +4,9 @@
 <package name="de.mailman.wcf.userGuestBook">
 	<packageInformation>
 		<packageName>Benutzer-Gästebuch</packageName>
+		<packageName language="fr">Livres d’or des utilisateurs</packageName>
 		<packagedescription>Für jeden Benutzer ein eigenes Gästebuch im Profil</packagedescription>
+		<packagedescription language="fr">Un livre d’or pour chaque utilisateur dans leur profil</packagedescription>
 		<isUnique>1</isUnique>
 		<version>1.0.23</version>
 		<date>2008-07-06</date>
@@ -36,6 +38,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 
 	<instructions type="update" fromversion="1.0.14">
@@ -49,6 +52,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.15">
         <sql>update_1.0.19.sql</sql>
@@ -59,6 +63,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.16">
         <sql>update_1.0.19.sql</sql>
@@ -69,6 +74,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.17">
         <sql>update_1.0.19.sql</sql>
@@ -79,6 +85,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.18">
         <sql>update_1.0.19.sql</sql>
@@ -89,6 +96,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.19">
 	    <files>files.tar</files>
@@ -97,6 +105,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.20">
 	    <files>files.tar</files>
@@ -105,11 +114,14 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.21">
 	    <files>files.tar</files>
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.22">
 	    <files>files.tar</files>
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 </package>
