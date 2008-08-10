@@ -216,8 +216,8 @@ function syncSpider() {
                         <div class="formField">
                             <select name="boardSrcID" id="boardSrc">
                                 {if $boards|count}
-                                    {foreach from=$boards item=board}
-                                        <option value="{@$board.boardID}">[{$board.boardType}] {@$board.title}</option>
+                                    {foreach from=$boards key=boardID item=title}
+                                        <option value="{$boardID}">{@$title}</option>
                                     {/foreach}
                                 {/if}
                             </select>
@@ -243,8 +243,8 @@ function syncSpider() {
                         <div class="formField">
                             <select name="boardTgtID" id="boardTgt">
                                 {if $boards|count}
-                                    {foreach from=$boards item=board}
-                                        <option value="{@$board.boardID}">[{$board.boardType}] {@$board.title}</option>
+                                    {foreach from=$boards key=boardID item=title}
+                                        <option value="{$boardID}">{@$title}</option>
                                     {/foreach}
                                 {/if}
                             </select>
@@ -330,8 +330,8 @@ function syncSpider() {
                         <div class="formField">
                             <select name="boardPrefSrcID" id="boardPrefSrc">
                                 {if $prefBoards|count}
-                                    {foreach from=$prefBoards item=board}
-                                        <option value="{@$board.boardID}">{@$board.title}</option>
+                                    {foreach from=$prefBoards key=boardID item=title}
+                                        <option value="{$boardID}">{@$title}</option>
                                     {/foreach}
                                 {/if}
                             </select>
@@ -357,10 +357,8 @@ function syncSpider() {
                         <div class="formField">
                             <select name="boardPrefTgtID" id="boardPrefTgt">
                                 {if $boards|count}
-                                    {foreach from=$boards item=board}
-                                        {if $board.boardType == 0}
-                                            <option value="{@$board.boardID}">{@$board.title}</option>
-                                        {/if}
+                                    {foreach from=$boards key=boardID item=title}
+                                        <option value="{$boardID}">{@$title}</option>
                                     {/foreach}
                                 {/if}
                             </select>

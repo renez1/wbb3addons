@@ -155,8 +155,7 @@
         <item name="wcf.acp.adminTools.toolBox.board.legend"><![CDATA[Foren-Zugriffsrechte kopieren]]></item>
         <item name="wcf.acp.adminTools.toolBox.board.legend.description"><![CDATA[Mit dieser Funktion können Sie die Foren-Zugriffsrechte für Benutzer, Gruppen und Moderatoren kopieren.]]></item>
         <item name="wcf.acp.adminTools.toolBox.board.source"><![CDATA[Quell-Forum]]></item>
-        <item name="wcf.acp.adminTools.toolBox.board.source.description"><![CDATA[Wählen Sie hier das Forum aus, dessen Rechte Sie kopieren möchten.
-            <br />[0] = Forum, [1] = Kategorie, [2] = externer Verweis.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.board.source.description"><![CDATA[Wählen Sie hier das Forum aus, dessen Rechte Sie kopieren möchten.</item>
         <item name="wcf.acp.adminTools.toolBox.board.target"><![CDATA[Ziel-Forum]]></item>
         <item name="wcf.acp.adminTools.toolBox.board.target.description"><![CDATA[<strong>Achtung!</strong> Alle vorhandenen Werte werden überschrieben.]]></item>
         <item name="wcf.acp.adminTools.toolBox.board.user"><![CDATA[Benutzer kopieren]]></item>
