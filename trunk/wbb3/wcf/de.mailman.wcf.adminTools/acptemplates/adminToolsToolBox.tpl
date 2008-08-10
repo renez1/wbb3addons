@@ -209,7 +209,7 @@ function syncSpider() {
                 <legend>{lang}wcf.acp.adminTools.toolBox.board.legend{/lang}</legend>
                 <p class="description">{lang}wcf.acp.adminTools.toolBox.board.legend.description{/lang}</p>
                 <form method="post" name="ftbBoard" action="index.php?form=AdminToolsToolBox">
-                    <div class="formElement" id="boardSrcDiv">
+                    <div class="formElement" id="boardSrcIDDiv">
                         <div class="formFieldLabel">
                             <label for="boardSrc">{lang}wcf.acp.adminTools.toolBox.board.source{/lang}</label>
                         </div>
