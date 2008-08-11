@@ -88,6 +88,7 @@ class SimplePieNewsreaderBox{
                 $feedurl = trim($feedurl);
                 if(empty($feedurl)) continue;
                 $feed->set_feed_url($feedurl);
+                $feed->set_output_encoding(@CHARSET);
                 $feed->init();
                 $feed->handle_content_type();
                 if(!$favicon = $feed->get_favicon()) $favicon = RELATIVE_WBB_DIR.'icon/alternate_favicon.png';
