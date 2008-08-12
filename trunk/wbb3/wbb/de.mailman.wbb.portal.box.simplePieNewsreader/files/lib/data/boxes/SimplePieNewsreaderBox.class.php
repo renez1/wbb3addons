@@ -26,6 +26,7 @@ class SimplePieNewsreaderBox{
             $feed->set_cache_location(WBB_DIR.'lib/data/boxes/SimplePieNewsReader/cache');
             $feed->set_favicon_handler(RELATIVE_WBB_DIR.'lib/data/boxes/SimplePieNewsReader/handler_image.php');
             $feed->set_image_handler(RELATIVE_WBB_DIR.'lib/data/boxes/SimplePieNewsReader/handler_image.php');
+            if(defined('CHARSET')) $feed->set_output_encoding(CHARSET);
 
             if(SPNRBOX_SHOWSOCIALBOOKMARKS){
                 $socialBookmarks = preg_split("/\r?\n/", SPNRBOX_SOCIALBOOKMARKS);
@@ -88,7 +89,6 @@ class SimplePieNewsreaderBox{
                 $feedurl = trim($feedurl);
                 if(empty($feedurl)) continue;
                 $feed->set_feed_url($feedurl);
-                if(defined('CHARSET')) $feed->set_output_encoding(CHARSET);
                 $feed->init();
                 $feed->handle_content_type();
                 if(!$favicon = $feed->get_favicon()) $favicon = RELATIVE_WBB_DIR.'icon/alternate_favicon.png';
