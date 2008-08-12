@@ -19,6 +19,23 @@
 
 		<item name="wcf.acp.option.spnrbox_feeds"><![CDATA[Feed-URLs]]></item>
 		<item name="wcf.acp.option.spnrbox_feeds.description"><![CDATA[Je Zeile eine URL! Z.B. http://wbb3addons.ump2002.net/wbb/index.php?page=Feed&amp;type=Atom]]></item>
+
+		<item name="wcf.acp.option.spnrbox_charset"><![CDATA[Zeichensatz]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.description"><![CDATA[Hier kannst Du einen anderen Zeichensatz auswählen, falls z.B. Probleme mit Umlauten auftreten.]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.default"><![CDATA[Foren-Standard]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.utf8"><![CDATA[UTF-8]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.iso88591"><![CDATA[ISO-8859-1]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.iso885915"><![CDATA[ISO-8859-15]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.cp866"><![CDATA[cp866]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.cp1251"><![CDATA[cp1251]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.cp1252"><![CDATA[cp1252]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.koi8r"><![CDATA[KOI8-R]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.big5"><![CDATA[BIG5]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.gb2312"><![CDATA[GB2312]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.big5hkscs"><![CDATA[BIG5-HKSCS]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.shiftjis"><![CDATA[Shift_JIS]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.eucjp"><![CDATA[EUC-JP]]></item>
+
 		<item name="wcf.acp.option.spnrbox_numOfFeeds"><![CDATA[Feeds]]></item>
 		<item name="wcf.acp.option.spnrbox_numOfFeeds.description"><![CDATA[Anzahl der anzuzeigenden Beiträge je Feed-URL. Standard 5.]]></item>
 		<item name="wcf.acp.option.spnrbox_cacheMin"><![CDATA[Cache min.]]></item>

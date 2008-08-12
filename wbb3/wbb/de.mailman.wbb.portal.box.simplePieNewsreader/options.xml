@@ -21,6 +21,25 @@ http://rss.focus.de/fol/XML/rss_folnews.xml
 http://www.heise.de/newsticker/heise-atom.xml
 http://youtube.com/rss/global/top_rated.rss</defaultvalue>
 			</option>
+
+			<option name="spnrbox_charset">
+				<categoryname>portal.box.simplePieNewsreader</categoryname>
+				<optiontype>select</optiontype>
+				<defaultvalue><![CDATA[default]]></defaultvalue>
+				<selectoptions><![CDATA[default:wcf.acp.option.spnrbox_charset.default
+UTF-8:wcf.acp.option.spnrbox_charset.utf8
+ISO-8859-1:wcf.acp.option.spnrbox_charset.iso88591
+ISO-8859-15:wcf.acp.option.spnrbox_charset.iso885915
+cp866:wcf.acp.option.spnrbox_charset.cp866
+cp1251:wcf.acp.option.spnrbox_charset.cp1251
+cp1252:wcf.acp.option.spnrbox_charset.cp1252
+KOI8-R:wcf.acp.option.spnrbox_charset.koi8r
+BIG5:wcf.acp.option.spnrbox_charset.big5
+GB2312:wcf.acp.option.spnrbox_charset.gb2312
+BIG5-HKSCS:wcf.acp.option.spnrbox_charset.big5hkscs
+Shift_JIS:wcf.acp.option.spnrbox_charset.shiftjis
+EUC-JP:wcf.acp.option.spnrbox_charset.eucjp]]></selectoptions>
+			</option>
 			<!-- ANZAHL DER FEEDS: -->
 			<option name="spnrbox_numOfFeeds">
 				<categoryname>portal.box.simplePieNewsreader</categoryname>
