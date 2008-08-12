@@ -20,6 +20,7 @@ class NewsreaderCacheAction extends AbstractAction {
             $feed->set_cache_duration(0);
             $feed->set_favicon_handler(RELATIVE_WBB_DIR.'lib/data/boxes/SimplePieNewsReader/handler_image.php');
             $feed->set_image_handler(RELATIVE_WBB_DIR.'lib/data/boxes/SimplePieNewsReader/handler_image.php');
+            if(defined('CHARSET')) $feed->set_output_encoding(CHARSET);
             $feed->set_timeout(10);
             $feed->init();
             $feed->handle_content_type();
