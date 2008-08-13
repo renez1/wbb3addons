@@ -9,7 +9,7 @@ class SimplePieNewsreaderBox{
 		$this->spnrbData['boxID'] = $data['boxID'];
 		if(SPNRBOX_BOXOPENED == true) $this->spnrbData['Status'] = 1;
 
-        if(WBBCore::getUser()->getPermission('user.board.canViewSimplePieNewsreaderBox')){
+        if(WBBCore::getUser()->getPermission('user.board.canViewSimplePieNewsreaderBox')) {
             require_once(WBB_DIR.'lib/data/boxes/SimplePieNewsReader/simplepie.inc');
             require_once(WBB_DIR.'lib/data/boxes/SimplePieNewsReader/idna_convert.class.php');
 
@@ -23,9 +23,17 @@ class SimplePieNewsreaderBox{
                 $feed->set_autodiscovery_cache_duration(9999999999);
                 $feed->set_cache_duration(9999999999);
             }
+
+            // CHARSET
+            if(!defined('CHARSET'))         define('CHARSET', 'UTF-8');
+            if(!defined('SPNRBOX_CHARSET')) define('SPNRBOX_CHARSET', 'UTF-8');
+            if(SPNRBOX_CHARSET == 'default') $charset = CHARSET;
+            else $charset = SPNRBOX_CHARSET;
+
             $feed->set_cache_location(WBB_DIR.'lib/data/boxes/SimplePieNewsReader/cache');
             $feed->set_favicon_handler(RELATIVE_WBB_DIR.'lib/data/boxes/SimplePieNewsReader/handler_image.php');
             $feed->set_image_handler(RELATIVE_WBB_DIR.'lib/data/boxes/SimplePieNewsReader/handler_image.php');
+            $feed->set_output_encoding($charset);
 
             if(SPNRBOX_SHOWSOCIALBOOKMARKS){
                 $socialBookmarks = preg_split("/\r?\n/", SPNRBOX_SOCIALBOOKMARKS);
@@ -102,7 +110,7 @@ class SimplePieNewsreaderBox{
                     $iFeed = $item->get_feed();
                     $this->spnrbData['spnrFeeds'][$cntFeedUrl]['iFeed'][$i]['id']           = $i;
                     $this->spnrbData['spnrFeeds'][$cntFeedUrl]['iFeed'][$i]['link']         = $item->get_permalink();
-                    $this->spnrbData['spnrFeeds'][$cntFeedUrl]['iFeed'][$i]['title']        = html_entity_decode($item->get_title(), ENT_QUOTES, @CHARSET);
+                    $this->spnrbData['spnrFeeds'][$cntFeedUrl]['iFeed'][$i]['title']        = html_entity_decode($item->get_title(), ENT_QUOTES, $charset);
                     $this->spnrbData['spnrFeeds'][$cntFeedUrl]['iFeed'][$i]['content']      = $item->get_content();
                     $this->spnrbData['spnrFeeds'][$cntFeedUrl]['iFeed'][$i]['date']         = $item->get_date('d.m.Y - H:i:s');
                     $this->spnrbData['spnrFeeds'][$cntFeedUrl]['iFeed'][$i]['bookmarks']    = array();
@@ -111,8 +119,8 @@ class SimplePieNewsreaderBox{
                         foreach($bookmarks as $bookmark){
                             $search[0] = "/\{TITLE\}/";
                             $search[1] = "/\{URL\}/";
-                            $replace[0] = ($bookmark['bookmarkEncodeTitle'] == 1)   ? rawurlencode(html_entity_decode($item->get_title(), ENT_QUOTES, @CHARSET))       : html_entity_decode($item->get_title());
-                            $replace[1] = ($bookmark['bookmarkEncodeUrl'] == 1)     ? rawurlencode(html_entity_decode($item->get_permalink(), ENT_QUOTES, @CHARSET))   : html_entity_decode($item->get_permalink());
+                            $replace[0] = ($bookmark['bookmarkEncodeTitle'] == 1)   ? rawurlencode(html_entity_decode($item->get_title(), ENT_QUOTES, $charset))       : html_entity_decode($item->get_title());
+                            $replace[1] = ($bookmark['bookmarkEncodeUrl'] == 1)     ? rawurlencode(html_entity_decode($item->get_permalink(), ENT_QUOTES, $charset))   : html_entity_decode($item->get_permalink());
                             $this->spnrbData['spnrFeeds'][$cntFeedUrl]['iFeed'][$i]['bookmarks'][$x]['bookmarkTitle']   = htmlspecialchars($bookmark['bookmarkTitle']);
                             $this->spnrbData['spnrFeeds'][$cntFeedUrl]['iFeed'][$i]['bookmarks'][$x]['bookmarkUrl']     = preg_replace($search, $replace, html_entity_decode($bookmark['bookmarkUrl']));
                             $this->spnrbData['spnrFeeds'][$cntFeedUrl]['iFeed'][$i]['bookmarks'][$x]['bookmarkImg']     = RELATIVE_WBB_DIR."icon/".$bookmark['bookmarkImg'];
