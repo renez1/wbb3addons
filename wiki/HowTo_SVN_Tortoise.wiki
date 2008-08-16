@@ -1,0 +1,32 @@
+#summary SVN mit TortoiseSVN auschecken
+
+== Einleitung ==
+Subversion (SVN) ist eine Versionsverwaltung für Dateien und Verzeichnisse, also ein System, das in der Softwareentwicklung zur Versionierung und für den gemeinsamen Zugriff auf den Quellcode eingesetzt wird.
+Alle Änderungen werden von dem System erfasst und archiviert. Hierbei entsteht mit jedem Einchecken ein neuer Versionsstand und es ist jederzeit möglich auf vorige Versionen zurückzugreifen.
+
+
+== SVN-Client ==
+SVN-Clients gibt es für alle gängigen Betriebssysteme und in den unterschiedlichsten Formen. Standalone, ins Betriebssystem integriert oder einfach Shell basierend.
+Für ein Windows-System empfiehlt sich TortoiseSVN, der sich in den Windows-Explorer integriert.
+
+
+== Arbeitskopie auschecken ==
+Nachdem Sie TortoiseSVN heruntergeladen und installiert haben (Neustart ist erforderlich) kann es los gehen. TortoiseSVN installiert nur die englische Sprache. Wenn Sie eine andere Sprache bevorzugen, können Sie diese auch herunterladen und installieren.
+
+Erstellen Sie z.B. das Verzeichnis "C:\svn_wbb3addons" und klicken Sie anschließend mit der rechten Maustaste auf oder in das leere Verzeichnis. Im Kontext-Menü klicken Sie dann auf "TortoiseSVN" => "auschecken".
+Im sich öffnenden Dialog müssen Sie nur folgenden Wert anpassen:
+ * URL des Projektarchivs => http://wbb3addons.googlecode.com/svn
+TortoiseSVN legt direkt los und nach ein paar Minuten haben Sie alle unsere Sourcen auf Ihrem PC.
+
+
+== Arbeitskopie einchecken ==
+Wenn Sie sich an unseren Projekten beteiligen möchten, egal ob programmiertechnisch oder als Übersetzer, sind Sie jederzeit willkommen. Hierfür benötigen Sie allerdings einen [https://mail.google.com/ Google-Account], welcher selbstverständlich kostenlos ist.
+Falls Sie Interesse zur Mitarbeit haben, dann wenden Sie sich einfach an wbb3addons@gmail.com.
+
+
+----
+== Weiterführende Links ==
+ * [http://subversion.tigris.org/ Subversion Home]
+ * [http://svnbook.red-bean.com/nightly/en/index.html Subversion Book]
+ * [http://tortoisesvn.tigris.org/ TortoiseSVN]
+ * [http://de.wikipedia.org/wiki/Subversion_(Software) Subversion Wikipedia]
