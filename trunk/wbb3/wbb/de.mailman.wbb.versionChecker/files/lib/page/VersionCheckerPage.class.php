@@ -14,7 +14,9 @@ class VersionCheckerPage extends AbstractPage {
 		parent::readParameters();
 		if(!empty($_POST['action']) && $_POST['action'] == 'compare') {
 		    if(!empty($_POST['version1']) && !empty($_POST['version2'])) {
-		        $this->verResult = version_compare($_POST['version1'], $_POST['version2']);
+                require_once(WCF_DIR.'lib/acp/package/Package.class.php');
+		        $this->verResult = Package::compareVersion($_POST['version1'], $_POST['version2']);
+//		        $this->verResult = version_compare($_POST['version1'], $_POST['version2']);
 		        $this->verFirst = $_POST['version1'];
 		        $this->verSecond = $_POST['version2'];
 		    }
