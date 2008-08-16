@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="de">
+	<category name="wbb.versionChecker">
+		<item name="wbb.versionChecker.title"><![CDATA[WBB3 Version Checker]]></item>
+		<item name="wbb.versionChecker.legend"><![CDATA[Versionsprüfung]]></item>
+		<item name="wbb.versionChecker.version1"><![CDATA[Version 1]]></item>
+		<item name="wbb.versionChecker.version1.description"><![CDATA[]]></item>
+		<item name="wbb.versionChecker.version2"><![CDATA[Version 2]]></item>
+		<item name="wbb.versionChecker.version2.description"><![CDATA[]]></item>
+		<item name="wbb.versionChecker.lower"><![CDATA[<strong>&quot;{@$version1}&quot;</strong> <span style="text-decoration:underline;">ist kleiner als</span> <strong>&quot;{@$version2}&quot;]]></item>
+		<item name="wbb.versionChecker.equal"><![CDATA[<strong>&quot;{@$version1}&quot;</strong> <span style="text-decoration:underline;">ist gleich</span> <strong>&quot;{@$version2}&quot;]]></item>
+		<item name="wbb.versionChecker.greater"><![CDATA[<strong>&quot;{@$version1}&quot;</strong> <span style="text-decoration:underline;">ist größer als</span> <strong>&quot;{@$version2}&quot;</strong>]]></item>
+	</category>
+</language>
