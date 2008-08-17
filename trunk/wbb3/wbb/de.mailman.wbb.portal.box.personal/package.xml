@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE package SYSTEM "DTD/package.dtd">
+<!-- $Id$ -->
 <package name="de.mailman.wbb.portal.box.personalbox">
 	<packageinformation>
 		<packagename lang="de">Portalbox &quot;Persönliche Box&quot;</packagename>
@@ -7,8 +8,8 @@
         <isUnique>1</isUnique>
 		<standalone>0</standalone>
 		<plugin>com.woltlab.wbb</plugin>
-		<version>1.0.9</version>
-		<date>2008-08-09</date>
+		<version>1.0.9 PL1</version>
+		<date>2008-08-17</date>
 	</packageinformation>
 
 	<authorinformation>
@@ -121,7 +122,6 @@
 		<languages languagecode="en">en.xml</languages>
 		<languages languagecode="it">it.xml</languages>
 	</instructions>
-
 	<instructions type="update" fromversion="1.0.8">
 	    <files>files.tar</files>
 		<templates>templates.tar</templates>
@@ -130,5 +130,9 @@
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
 		<languages languagecode="it">it.xml</languages>
+	</instructions>
+
+	<instructions type="update" fromversion="1.0.9">
+		<templates>templates.tar</templates>
 	</instructions>
 </package>

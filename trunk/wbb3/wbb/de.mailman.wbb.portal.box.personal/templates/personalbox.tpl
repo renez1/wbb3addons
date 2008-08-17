@@ -1,3 +1,4 @@
+{* $Id$ *}
 {if $this->user->getPermission('user.profile.personalbox.canView')}
     {if !$pbCatVertOffset}{assign var='pbCatVertOffset' value=8}{/if}
     {if !$pbFirstBoxColor}{assign var='pbFirstBoxColor' value=1}{/if}
