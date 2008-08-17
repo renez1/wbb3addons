@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE package SYSTEM "DTD/package.dtd">
+<!-- $Id$ -->
 <data>
 	<import>
 		<portalboxitem name="buddiesbox">
