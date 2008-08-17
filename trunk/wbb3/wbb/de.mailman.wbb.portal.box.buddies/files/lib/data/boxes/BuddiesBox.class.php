@@ -1,4 +1,5 @@
 <?php
+/* $Id$ */
 class BuddiesBox {
 	protected $BuddiesData = array();
 

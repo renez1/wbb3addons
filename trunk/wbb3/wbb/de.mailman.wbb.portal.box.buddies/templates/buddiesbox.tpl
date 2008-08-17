@@ -1,3 +1,4 @@
+{* $Id$ *}
 {if $this->user->userID && $item.buddies|isset}
     {if BUDDIESBOX_SBCOLOR_ACP}
         {assign var='bbSecondBoxColor' value=BUDDIESBOX_SBCOLOR_ACP}
