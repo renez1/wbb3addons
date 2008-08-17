@@ -4,6 +4,7 @@
 	<category name="wbb.portal">
 		<item name="wbb.portal.box.simplePieNewsreader.title"><![CDATA[Newsreader]]></item>
 		<item name="wbb.portal.box.simplePieNewsreader.feedAdd"><![CDATA[abonnieren]]></item>
+		<item name="wbb.portal.box.simplePieNewsreader.emptyNews"><![CDATA[Keine Feeds vorhanden.]]></item>
 	</category>
 	<category name="wcf.acp.group">
 		<item name="wcf.acp.group.option.category.user.board.general"><![CDATA[Allgemein]]></item>
@@ -35,6 +36,17 @@
 		<item name="wcf.acp.option.spnrbox_charset.big5hkscs"><![CDATA[BIG5-HKSCS]]></item>
 		<item name="wcf.acp.option.spnrbox_charset.shiftjis"><![CDATA[Shift_JIS]]></item>
 		<item name="wcf.acp.option.spnrbox_charset.eucjp"><![CDATA[EUC-JP]]></item>
+
+		<item name="wcf.acp.option.spnrbox_filter"><![CDATA[Filter aktivieren]]></item>
+		<item name="wcf.acp.option.spnrbox_filter.description"><![CDATA[Du hast hier die Möglichkeit nur Feeds anzuzeigen die bestimmte Suchbegriffe enthalten.]]></item>
+		<item name="wcf.acp.option.spnrbox_filterWords"><![CDATA[Suchbegriffe]]></item>
+		<item name="wcf.acp.option.spnrbox_filterWords.description"><![CDATA[Gebe hier die Suchbegriffe mit Leerzeichen getrennt ein.]]></item>
+		<item name="wcf.acp.option.spnrbox_filterMode"><![CDATA[Filtermodus]]></item>
+		<item name="wcf.acp.option.spnrbox_filterMode.description"><![CDATA[Wähle hier in welchen Modus gesucht werden soll.]]></item>
+		<item name="wcf.acp.option.spnrbox_filterMode.or"><![CDATA[oder]]></item>
+		<item name="wcf.acp.option.spnrbox_filterMode.and"><![CDATA[und]]></item>
+		<item name="wcf.acp.option.spnrbox_filterClass"><![CDATA[CSS-Klasse]]></item>
+		<item name="wcf.acp.option.spnrbox_filterClass.description"><![CDATA[Hier kannst Du eine CSS-Klasse angeben um Deine Suchbegriffe in den Feeds hervorzuheben.]]></item>
 
 		<item name="wcf.acp.option.spnrbox_numOfFeeds"><![CDATA[Feeds]]></item>
 		<item name="wcf.acp.option.spnrbox_numOfFeeds.description"><![CDATA[Anzahl der anzuzeigenden Beiträge je Feed-URL. Standard 5.]]></item>

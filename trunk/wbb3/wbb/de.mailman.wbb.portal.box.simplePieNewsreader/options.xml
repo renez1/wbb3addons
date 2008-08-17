@@ -40,6 +40,30 @@ BIG5-HKSCS:wcf.acp.option.spnrbox_charset.big5hkscs
 Shift_JIS:wcf.acp.option.spnrbox_charset.shiftjis
 EUC-JP:wcf.acp.option.spnrbox_charset.eucjp]]></selectoptions>
 			</option>
+			<!-- FILTER: -->
+			<option name="spnrbox_filter">
+				<categoryname>portal.box.simplePieNewsreader</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<enableoptions><![CDATA[spnrbox_filterWords,spnrbox_filterMode,spnrbox_filterClass]]></enableoptions>
+		    </option>
+			<option name="spnrbox_filterWords">
+				<categoryname>portal.box.simplePieNewsreader</categoryname>
+				<optiontype>text</optiontype>
+				<defaultvalue>WoltLab Burning Board</defaultvalue>
+			</option>
+			<option name="spnrbox_filterMode">
+				<categoryname>portal.box.simplePieNewsreader</categoryname>
+				<optiontype>radiobuttons</optiontype>
+				<defaultvalue>or</defaultvalue>
+				<selectoptions><![CDATA[or:wcf.acp.option.spnrbox_filterMode.or
+and:wcf.acp.option.spnrbox_filterMode.and]]></selectoptions>
+			</option>
+			<option name="spnrbox_filterClass">
+				<categoryname>portal.box.simplePieNewsreader</categoryname>
+				<optiontype>text</optiontype>
+				<defaultvalue>hightlight</defaultvalue>
+			</option>
 			<!-- ANZAHL DER FEEDS: -->
 			<option name="spnrbox_numOfFeeds">
 				<categoryname>portal.box.simplePieNewsreader</categoryname>

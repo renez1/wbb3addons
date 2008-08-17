@@ -12,9 +12,20 @@ class SimplePieNewsreaderBox{
         if(WBBCore::getUser()->getPermission('user.board.canViewSimplePieNewsreaderBox')) {
             require_once(WBB_DIR.'lib/data/boxes/SimplePieNewsReader/simplepie.inc');
             require_once(WBB_DIR.'lib/data/boxes/SimplePieNewsReader/idna_convert.class.php');
+            
+            // FILTER?
+            if(SPNRBOX_FILTER && (strlen(SPNRBOX_FILTERWORDS) >= 3)){
+                require_once(WBB_DIR.'lib/data/boxes/SimplePieNewsReader/simplepie_filter.php');
+                $feed = new SimplePie_Filter();
+                if(!defined('SPNRBOX_FILTERCLASS')) define('SPNRBOX_FILTERCLASS', 'hightlight');
+                define('SPNRBOX_FILTERON', 1);
+            }
+            else {
+                $feed = new SimplePie();
+                define('SPNRBOX_FILTERON', 0);
+            }
 
-            $bookmarks = array();
-            $feed = new SimplePie();
+            // CACHE
             if(SPNRBOX_CACHEMAX != 0 && SPNRBOX_CACHEMIN != 0){
                 $feed->set_autodiscovery_cache_duration(SPNRBOX_CACHEMAX);
                 $feed->set_cache_duration(SPNRBOX_CACHEMIN);
@@ -35,6 +46,8 @@ class SimplePieNewsreaderBox{
             $feed->set_image_handler(RELATIVE_WBB_DIR.'lib/data/boxes/SimplePieNewsReader/handler_image.php');
             $feed->set_output_encoding($charset);
 
+            // BOOKMARKS
+            $bookmarks = array();
             if(SPNRBOX_SHOWSOCIALBOOKMARKS){
                 $socialBookmarks = preg_split("/\r?\n/", SPNRBOX_SOCIALBOOKMARKS);
                 $cntBookmark = 0;
@@ -59,6 +72,7 @@ class SimplePieNewsreaderBox{
                 }
             }
 
+            // THEMA ZUM FEED
             if(WCF::getUser()->getPermission('user.board.canViewThreadToFeed') && SPNRBOX_FEEDTOTHREAD){
                 require_once(WBB_DIR.'lib/data/board/Board.class.php');
                 $accessibleBoards   = explode(',', Board::getAccessibleBoards());
@@ -98,20 +112,23 @@ class SimplePieNewsreaderBox{
                 $feed->set_feed_url($feedurl);
                 $feed->init();
                 $feed->handle_content_type();
+                if(SPNRBOX_FILTERON) $feed->set_filter(SPNRBOX_FILTERWORDS, SPNRBOX_FILTERMODE);
                 if(!$favicon = $feed->get_favicon()) $favicon = RELATIVE_WBB_DIR.'icon/alternate_favicon.png';
                 $this->spnrbData['spnrFeeds'][$cntFeedUrl]['id']        = $cntFeedUrl;
                 $this->spnrbData['spnrFeeds'][$cntFeedUrl]['link']      = $feed->get_permalink();
                 $this->spnrbData['spnrFeeds'][$cntFeedUrl]['title']     = $feed->get_title();
                 $this->spnrbData['spnrFeeds'][$cntFeedUrl]['favicon']   = $favicon;
                 $this->spnrbData['spnrFeeds'][$cntFeedUrl]['xml']       = $feedurl;
+                $items = $feed->get_items();
+                if(SPNRBOX_FILTERON) $items = $feed->filter($items);
                 $i = 0;
-                foreach($feed->get_items() as $item){
+                foreach($items as $item){
                     if($i >= SPNRBOX_NUMOFFEEDS) break;
                     $iFeed = $item->get_feed();
                     $this->spnrbData['spnrFeeds'][$cntFeedUrl]['iFeed'][$i]['id']           = $i;
                     $this->spnrbData['spnrFeeds'][$cntFeedUrl]['iFeed'][$i]['link']         = $item->get_permalink();
                     $this->spnrbData['spnrFeeds'][$cntFeedUrl]['iFeed'][$i]['title']        = html_entity_decode($item->get_title(), ENT_QUOTES, $charset);
-                    $this->spnrbData['spnrFeeds'][$cntFeedUrl]['iFeed'][$i]['content']      = $item->get_content();
+                    $this->spnrbData['spnrFeeds'][$cntFeedUrl]['iFeed'][$i]['content']      = (SPNRBOX_FILTERON) ? $this->highlight(SPNRBOX_FILTERWORDS, $item->get_content(), SPNRBOX_FILTERCLASS) : $item->get_content();
                     $this->spnrbData['spnrFeeds'][$cntFeedUrl]['iFeed'][$i]['date']         = $item->get_date('d.m.Y - H:i:s');
                     $this->spnrbData['spnrFeeds'][$cntFeedUrl]['iFeed'][$i]['bookmarks']    = array();
                     if(count($bookmarks)){
@@ -145,7 +162,14 @@ class SimplePieNewsreaderBox{
         }
 	}
 
-
+    protected function highlight($wordsToHighlight, $text, $className){
+        $w = addslashes($wordsToHighlight);
+        $w = explode(' ',$w);
+        foreach($w as $word){
+            $text = preg_replace("/((<[^>]*)|$word)/ie", '"\2"=="\1"? "\1":"<span class=\"$className\">\1</span>"', $text);
+        }
+        return $text;
+    }
 
 	protected function getBoxStatus($data){
 		// get box status

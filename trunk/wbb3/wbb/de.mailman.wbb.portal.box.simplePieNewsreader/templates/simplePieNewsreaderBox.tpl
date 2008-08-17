@@ -42,7 +42,11 @@
                                                         <a href="javascript: void(0)" onclick="document.getElementById('feedReaderContent{$feed.id}_{$iFeed.id}').className = 'smallFont';document.getElementById('feedreaderh5_{$feed.id}_{$iFeed.id}').style.fontWeight = 'normal';openList('feedReaderContent{$feed.id}_{$iFeed.id}', true)"><img src="{@RELATIVE_WCF_DIR}icon/minusS.png" style="margin: 0 0 2px;" id="feedReaderContent{$feed.id}_{$iFeed.id}Image" alt="" /></a>
                                                     {/if}
                                                     {if SPNRBOX_MAXLENFEEDTITLE > 0 && $iFeed.title|strlen > SPNRBOX_MAXLENFEEDTITLE}
-                                                        {assign var="fTitle" value=$iFeed.title|substr:0:SPNRBOX_MAXLENFEEDTITLE-3|concat:'…'}
+                                                        {if USE_MBSTRING}
+                                                            {assign var="fTitle" value=$iFeed.title|mb_substr:0:SPNRBOX_MAXLENFEEDTITLE-3|concat:'...'}
+                                                        {else}
+                                                            {assign var="fTitle" value=$iFeed.title|substr:0:SPNRBOX_MAXLENFEEDTITLE-3|concat:'…'}
+                                                        {/if}
                                                     {else}
                                                         {assign var="fTitle" value=$iFeed.title}
                                                     {/if}
@@ -74,8 +78,8 @@
                                                                         {if $boardsForm == "button"}
                                                                             <form action="index.php?form=ThreadAdd&amp;boardID={$item.boards.0.id}{@SID_ARG_2ND}" method="post" accept-charset="{@CHARSET}" style="display: inline;margin: 0;padding: 0;">
                                                                                 <img src="icon/threadNewS.png" alt="{lang}wbb.threadAdd.title{/lang}" /> <input type="submit" name="senden" value="{lang}wbb.threadAdd.title{/lang}" style="cursor: pointer; margin: 0;padding: 0;font: inherit;background: transparent; border: 0 none;color: #666;" onmouseover="this.style.color = '#000';" onmouseout="this.style.color = '#666';" />
-                                                                                <input type="hidden" name="subject" value="Feed: {@$iFeed.title|htmlspecialchars}" />
-                                                                                <input type="hidden" name="text" value="[b][url='{@$iFeed.link|htmlspecialchars}']{@$iFeed.title|htmlspecialchars}[/url][/b]" />
+                                                                                <input type="hidden" name="subject" value="{lang}wcf.pm.subject{/lang} Feed: {@$iFeed.title}" />
+                                                                                <input type="hidden" name="text" value="[b]{lang}wcf.pm.subject{/lang} Feed: [url='{@$iFeed.link|htmlspecialchars}']{@$iFeed.title|htmlspecialchars}[/url][/b]" />
                                                                                 <input type="hidden" name="wysiwygEditorMode" value="{$spnrboxWysiwygEditorMode}" />
                                                                                 <input type="hidden" name="wysiwygEditorHeight" value="{$spnrboxWysiwygEditorHeight}" />
                                                                                 <input type="hidden" name="parseURL" value="{$spnrboxMessageParseURL}" />
@@ -97,8 +101,8 @@
                                                                                             <li style="margin: 0;padding: 0;">
                                                                                                 <form action="index.php?form=ThreadAdd&amp;boardID={$board.id}{@SID_ARG_2ND}" method="post" accept-charset="{@CHARSET}" style="margin: 0;padding: 0;">
                                                                                                     <input type="submit" name="senden" value="{$board.title}" style="display: block;cursor: pointer; margin: 0;padding: 0;font: inherit;font-size: 1em;background: transparent; border: 0 none;color: #666;" onmouseover="this.style.color = '#000';" onmouseout="this.style.color = '#666';" />
-                                                                                                    <input type="hidden" name="subject" value="Feed: {@$iFeed.title|htmlspecialchars}" />
-																									<input type="hidden" name="text" value="[b][url='{@$iFeed.link|htmlspecialchars}']{@$iFeed.title|htmlspecialchars}[/url][/b]" />
+                                                                                                    <input type="hidden" name="subject" value="{lang}wcf.pm.subject{/lang} Feed: {@$iFeed.title}" />
+																									<input type="hidden" name="text" value="[b]{lang}wcf.pm.subject{/lang} Feed: [url='{@$iFeed.link|htmlspecialchars}']{@$iFeed.title|htmlspecialchars}[/url][/b]" />
                                                                                                     <input type="hidden" name="wysiwygEditorMode" value="{$spnrboxWysiwygEditorMode}" />
                                                                                                     <input type="hidden" name="wysiwygEditorHeight" value="{$spnrboxWysiwygEditorHeight}" />
                                                                                                     <input type="hidden" name="parseURL" value="{$spnrboxMessageParseURL}" />
@@ -151,6 +155,10 @@
                                                 {/if}
                                             </li>
                                         {/foreach}
+                                    {else}
+                                        <li>
+                                            {lang}wbb.portal.box.simplePieNewsreader.emptyNews{/lang}
+                                        </li>
                                     {/if}
                                 </ul>
                                 {if !SPNRBOX_FEEDOPENED}
