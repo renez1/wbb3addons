@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/userCPMenu.dtd">
+<!-- $Id$ -->
 <data>
     <import>
         <userprofilemenuitem name="wcf.user.profile.menu.link.guestbook">
