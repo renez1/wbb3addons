@@ -4,6 +4,7 @@
 	<category name="wbb.portal">
 		<item name="wbb.portal.box.simplePieNewsreader.title"><![CDATA[Newsreader]]></item>
 		<item name="wbb.portal.box.simplePieNewsreader.feedAdd"><![CDATA[subscribe]]></item>
+		<item name="wbb.portal.box.simplePieNewsreader.emptyNews"><![CDATA[Feeds empty.]]></item>
 	</category>
 	<category name="wcf.acp.group">
 		<item name="wcf.acp.group.option.category.user.board.general"><![CDATA[General]]></item>
@@ -33,6 +34,17 @@
 		<item name="wcf.acp.option.spnrbox_charset.big5hkscs"><![CDATA[BIG5-HKSCS]]></item>
 		<item name="wcf.acp.option.spnrbox_charset.shiftjis"><![CDATA[Shift_JIS]]></item>
 		<item name="wcf.acp.option.spnrbox_charset.eucjp"><![CDATA[EUC-JP]]></item>
+
+		<item name="wcf.acp.option.spnrbox_filter"><![CDATA[Enable filter]]></item>
+		<item name="wcf.acp.option.spnrbox_filter.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.spnrbox_filterWords"><![CDATA[Search Words]]></item>
+		<item name="wcf.acp.option.spnrbox_filterWords.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.spnrbox_filterMode"><![CDATA[Filtermode]]></item>
+		<item name="wcf.acp.option.spnrbox_filterMode.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.spnrbox_filterMode.or"><![CDATA[or]]></item>
+		<item name="wcf.acp.option.spnrbox_filterMode.and"><![CDATA[and]]></item>
+		<item name="wcf.acp.option.spnrbox_filterClass"><![CDATA[CSS-Class]]></item>
+		<item name="wcf.acp.option.spnrbox_filterClass.description"><![CDATA[]]></item>
 
 		<item name="wcf.acp.option.spnrbox_numOfFeeds"><![CDATA[Feeds]]></item>
 		<item name="wcf.acp.option.spnrbox_numOfFeeds.description"><![CDATA[Number of entries per feed. Default 5.]]></item>
