@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "DTD/language.dtd">
-<!-- SVN-Keywords: $Id: $ -->
+<!-- SVN-Keywords: $Id$ -->
 <language languagecode="de">
 	<category name="wbb.portal">
 		<item name="wbb.portal.box.simplePieNewsreader.title"><![CDATA[Newsreader]]></item>
