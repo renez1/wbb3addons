@@ -1,4 +1,5 @@
 <?php
+/* $Id$ */
 class PersonalBox {
 	protected $BoxData = array();
 
