@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE package SYSTEM "DTD/package.dtd">
+<!-- $Id$ -->
 <package name="de.mailman.wbb.portal.box.simplePieNewsreader">
 	<packageinformation>
 		<packagename lang="de">Portalbox &quot;SimplePie Newsreader&quot;</packagename>

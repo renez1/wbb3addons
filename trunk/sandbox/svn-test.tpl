@@ -1,2 +1,0 @@
-{* $Id$ *}
-SVN-Keywords Test
