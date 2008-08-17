@@ -158,7 +158,7 @@ enable-auto-props = yes
 *.c = svn:eol-style=native;svn:keywords=Date Author Id Revision HeadURL
 *.class = svn:mime-type=application/java
 *.cmd = svn:mime-type=text/plain;svn:eol-style=CRLF
-*.css = svn:mime-type=text/css;svn:eol-style=LF
+*.css = svn:mime-type=text/css;svn:eol-style=LF;svn:keywords=Id
 *.cpp = svn:eol-style=native;svn:keywords=Date Author Id Revision HeadURL
 *.h = svn:eol-style=native;svn:keywords=Date Author Id Revision HeadURL
 *.doc = svn:mime-type=application/msword
@@ -168,7 +168,6 @@ enable-auto-props = yes
 *.ent = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords=Date Revision
 *.exe = svn:mime-type=application/octet-stream
 *.gif = svn:mime-type=image/gif
-
 *.gz = svn:mime-type=application/x-gzip
 *.htm = svn:mime-type=text/html;svn:eol-style=LF
 *.html = svn:mime-type=text/html;svn:eol-style=LF
@@ -198,4 +197,5 @@ enable-auto-props = yes
 *.xsl = svn:mime-type=text/xml;svn:eol-style=native;svn:keywords=Date Revision
 *.zip = svn:mime-type=application/zip
 Makefile = svn:eol-style=native;svn:keywords=Date Author Id Revision HeadURL
+
 }}}
