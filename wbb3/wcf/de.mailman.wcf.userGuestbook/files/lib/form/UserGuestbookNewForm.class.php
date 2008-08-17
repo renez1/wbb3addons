@@ -1,4 +1,5 @@
 <?php
+/* $Id$ */
 require_once(WCF_DIR.'lib/form/MessageForm.class.php');
 require_once(WCF_DIR.'lib/data/user/UserGuestbookData.class.php');
 require_once(WCF_DIR.'lib/page/util/menu/UserCPMenu.class.php');
@@ -53,7 +54,7 @@ class UserGuestbookNewForm extends MessageForm {
 		}
 
         $this->locked = UserGuestbookData::getLockInfo($this->user->userID);
-		// Gästebuch gesperrt?
+		// GÃ¤stebuch gesperrt?
 		if(!empty($this->locked['locked']) && ($this->user->userID != WCF::getUser()->userID || !WCF::getUser()->getPermission('mod.guestbook.canLock'))) {
 			require_once(WCF_DIR.'lib/system/exception/PermissionDeniedException.class.php');
 			$this->exception = true;

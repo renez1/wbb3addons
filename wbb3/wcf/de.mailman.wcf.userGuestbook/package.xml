@@ -1,15 +1,17 @@
 ﻿<?xml version="1.0"?>
 <!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
-
+<!-- $Id$ -->
 <package name="de.mailman.wcf.userGuestBook">
 	<packageInformation>
 		<packageName>Benutzer-Gästebuch</packageName>
 		<packageName language="fr">Livres d’or des utilisateurs</packageName>
+		<packageName language="en">User guestbook</packageName>
 		<packagedescription>Für jeden Benutzer ein eigenes Gästebuch im Profil</packagedescription>
 		<packagedescription language="fr">Un livre d’or pour chaque utilisateur dans leur profil</packagedescription>
+		<packagedescription language="en">For each user a separate guestbook</packagedescription>
 		<isUnique>1</isUnique>
-		<version>1.0.23</version>
-		<date>2008-07-06</date>
+		<version>1.0.23 PL1</version>
+		<date>2008-08-17</date>
 		<standalone>0</standalone>
 		<plugin>com.woltlab.wcf</plugin>
 	</packageInformation>
@@ -122,6 +124,9 @@
 	</instructions>
 	<instructions type="update" fromversion="1.0.22">
 	    <files>files.tar</files>
+		<languages languagecode="fr">fr.xml</languages>
+	</instructions>
+	<instructions type="update" fromversion="1.0.23">
 		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 </package>

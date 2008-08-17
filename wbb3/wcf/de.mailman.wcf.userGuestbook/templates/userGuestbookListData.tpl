@@ -1,3 +1,4 @@
+{* $Id$ *}
     {if $this->user->getPermission('user.guestbook.canViewList') && $ugbData|isset && !$cntEntries|empty}
         <div class="border">
         	{cycle values='container-1,container-2' print=false advance=false}

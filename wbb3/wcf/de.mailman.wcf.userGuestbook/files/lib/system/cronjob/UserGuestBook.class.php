@@ -1,4 +1,5 @@
 <?php
+/* $Id$ */
 require_once (WCF_DIR . 'lib/data/cronjobs/Cronjob.class.php');
 
 /**

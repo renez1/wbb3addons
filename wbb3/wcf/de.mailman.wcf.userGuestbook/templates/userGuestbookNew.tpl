@@ -1,3 +1,4 @@
+{* $Id$ *}
 {include file="documentHeader"}
 <head>
 	<title>{lang}wcf.user.guestbook.title{/lang} - {lang}wcf.user.profile.members{/lang} - {PAGE_TITLE}</title>

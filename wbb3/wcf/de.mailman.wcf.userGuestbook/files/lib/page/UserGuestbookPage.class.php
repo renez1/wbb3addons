@@ -1,4 +1,5 @@
 <?php
+/* $Id$ */
 require_once(WCF_DIR.'lib/page/MultipleLinkPage.class.php');
 require_once(WCF_DIR.'lib/data/user/UserGuestbookData.class.php');
 require_once(WCF_DIR.'lib/data/message/bbcode/MessageParser.class.php');
@@ -45,7 +46,7 @@ class UserGuestbookPage extends MultipleLinkPage {
 			throw new IllegalLinkException();
 		}
 
-		// Gästebuch deaktiviert?
+		// GÃ¤stebuch deaktiviert?
 		if(($this->user->userID != WCF::getUser()->userID && !$this->user->userGuestbook_enable)
 		|| !WCF::getUser()->getPermission('user.guestbook.canRead')
 		|| ($this->user->userID == WCF::getUser()->userID && !WCF::getUser()->getPermission('user.guestbook.canUseOwn'))) {
@@ -71,7 +72,7 @@ class UserGuestbookPage extends MultipleLinkPage {
 	 */
 	public function readData() {
 		parent::readData();
-		// Löschen
+		// LÃ¶schen
 		if(isset($_REQUEST['action'])) {
             if($_REQUEST['action'] == 'delete' && !empty($_REQUEST['id'])) {
             	if($this->user->userID != WCF::getUser()->userID && !WCF::getUser()->getPermission('mod.guestbook.canDeleteEntrys')) {
@@ -113,7 +114,7 @@ class UserGuestbookPage extends MultipleLinkPage {
         $this->lastVisitor      = $stats['lastVisitor'];
         $this->visitorLastVisit = $stats['visitorLastVisit'];
 
-		// Lade Gästebuchdaten
+		// Lade GÃ¤stebuchdaten
 		$userGB = new UserGuestbookData($this->userID);
 		$this->gbData = $userGB->getEntries($this->pageNo, $this->itemsPerPage);
 
