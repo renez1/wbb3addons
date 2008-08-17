@@ -23,6 +23,20 @@ TortoiseSVN legt direkt los und nach ein paar Minuten haben Sie alle unsere Sour
 Wenn Sie sich an unseren Projekten beteiligen möchten, egal ob programmiertechnisch oder als Übersetzer, sind Sie jederzeit willkommen. Hierfür benötigen Sie allerdings einen [https://mail.google.com/ Google-Account], welcher selbstverständlich kostenlos ist.
 Falls Sie Interesse zur Mitarbeit haben, dann wenden Sie sich einfach an wbb3addons@gmail.com.
 
+*Sie können bereits bei uns einchecken?*
+Dann bitten wir folgende Regeln zu beachten:
+ * Dateiformate
+  # Alle Ascii-Dateien sind im Linux-Format zu erstellen/bearbeiten/übertragen.
+  # Wenn Sie TortoiseSVN als Client einsetzen sollte u.a. Config als Referenz verwendet werden.
+
+ * SVN-Keywords
+  # In allen Ascii-Dateien, in SQL-Dateien nicht zwingend erforderlich, sollte das SVN-Keyword $Id$ eingesetzt werden.
+
+ * Kommentare
+  # Beim Einchecken nie den Kommentar vergessen.
+  # Vergessene Kommentare werden mit der Ausgabe eines Kasten Bier geahndet.
+  # Der Kommentar sollte mit dem betroffenen Paketnamen beginnen, z.B. de.mailman.wbb.portal.box.buddies:
+  # Der Kommentar sollte die Änderungen so detailliert wie möglich beinhalten.
 
 ----
 == Weiterführende Links ==
@@ -33,7 +47,7 @@ Falls Sie Interesse zur Mitarbeit haben, dann wenden Sie sich einfach an wbb3add
 
 
 ----
-== Beispiel TortoiseSVN-Config ==
+== TortoiseSVN-Config ==
 {{{
 ### This file configures various client-side behaviors.
 ###
@@ -137,50 +151,51 @@ enable-auto-props = yes
 # *.png = svn:mime-type=image/png
 # *.jpg = svn:mime-type=image/jpeg
 # Makefile = svn:eol-style=native
-*.c = svn:eol-style=native;svn:keywords=Date Author Id Revision HeadURL
-*.cpp = svn:eol-style=native;svn:keywords=Date Author Id Revision HeadURL
-*.h = svn:eol-style=native;svn:keywords=Date Author Id Revision HeadURL
-*.dsp = svn:eol-style=CRLF
-*.dsw = svn:eol-style=CRLF
-*.sh = svn:executable;svn:eol-style=native;svn:keywords=Date Revision
-*.cmd = svn:mime-type=text/plain;svn:eol-style=CRLF
+*.7z = svn:mime-type=application/7z
 *.bat = svn:mime-type=text/plain;svn:eol-style=CRLF
-Makefile = svn:eol-style=native;svn:keywords=Date Author Id Revision HeadURL
-*.obj = svn:mime-type=application/octet-stream
 *.bin = svn:mime-type=application/octet-stream
 *.bmp = svn:mime-type=image/bmp
+*.c = svn:eol-style=native;svn:keywords=Date Author Id Revision HeadURL
 *.class = svn:mime-type=application/java
+*.cmd = svn:mime-type=text/plain;svn:eol-style=CRLF
+*.css = svn:mime-type=text/css;svn:eol-style=LF
+*.cpp = svn:eol-style=native;svn:keywords=Date Author Id Revision HeadURL
+*.h = svn:eol-style=native;svn:keywords=Date Author Id Revision HeadURL
 *.doc = svn:mime-type=application/msword
+*.dsp = svn:eol-style=CRLF
+*.dsw = svn:eol-style=CRLF
+*.dtd = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords=Date Revision
+*.ent = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords=Date Revision
 *.exe = svn:mime-type=application/octet-stream
 *.gif = svn:mime-type=image/gif
+
 *.gz = svn:mime-type=application/x-gzip
+*.htm = svn:mime-type=text/html;svn:eol-style=LF
+*.html = svn:mime-type=text/html;svn:eol-style=LF
 *.jar = svn:mime-type=application/java-archive
+*.java = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords=Date Revision
 *.jelly = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords=Date Revision
 *.jpg = svn:mime-type=image/jpeg
 *.jpeg = svn:mime-type=image/jpeg
+*.js = svn:mime-type=text/plain;svn:eol-style=LF
+*.jsp = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords=Date Revision
+*.obj = svn:mime-type=application/octet-stream
 *.pdf = svn:mime-type=application/pdf
+*.php = svn:mime-type=text/php;svn:eol-style=LF;svn:keywords=Id
 *.png = svn:mime-type=image/png
+*.properties = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords=Date Revision
+*.sh = svn:executable;svn:eol-style=LF;svn:keywords=Id
+*.sql = svn:mime-type=text/sql;svn:eol-style=LF
 *.tgz = svn:mime-type=application/octet-stream
 *.tif = svn:mime-type=image/tiff
 *.tiff = svn:mime-type=image/tiff
-*.zip = svn:mime-type=application/zip
-*.txt = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords=Date Revision
-*.xml = svn:mime-type=text/xml;svn:eol-style=native;svn:keywords=Date Revision
-*.ent = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords=Date Revision
-*.dtd = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords=Date Revision
+*.tpl = svn:mime-type=text/plain;svn:eol-style=LF;svn:keywords=Id
+*.txt = svn:mime-type=text/plain;svn:eol-style=native
 *.vsl = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords=Date Revision
+*.wsdl = svn:mime-type=text/xml;svn:eol-style=native;svn:keywords=Date Revision
+*.xml = svn:mime-type=text/xml;svn:eol-style=LF;svn:keywords=Id
 *.xsd = svn:mime-type=text/xml;svn:eol-style=native;svn:keywords=Date Revision
 *.xsl = svn:mime-type=text/xml;svn:eol-style=native;svn:keywords=Date Revision
-*.wsdl = svn:mime-type=text/xml;svn:eol-style=native;svn:keywords=Date Revision
-*.htm = svn:mime-type=text/html;svn:eol-style=native;svn:keywords=Date Revision
-*.html = svn:mime-type=text/html;svn:eol-style=native;svn:keywords=Date Revision
-*.css = svn:mime-type=text/css;svn:eol-style=native;svn:keywords=Date Revision
-*.js = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords=Date Revision
-*.jsp = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords=Date Revision
-*.txt = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords=Date Revision
-*.java = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords=Date Revision
-*.properties = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords=Date Revision
-*.sql = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords=Date Revision
-*.tpl = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords=Date Revision
-*.php = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords=Date Revision
+*.zip = svn:mime-type=application/zip
+Makefile = svn:eol-style=native;svn:keywords=Date Author Id Revision HeadURL
 }}}
