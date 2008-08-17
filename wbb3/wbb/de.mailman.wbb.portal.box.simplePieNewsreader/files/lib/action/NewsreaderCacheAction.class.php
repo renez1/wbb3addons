@@ -1,4 +1,5 @@
 <?php
+/* $Id$ */
 require_once(WCF_DIR.'lib/action/AbstractAction.class.php');
 require_once(WBB_DIR.'lib/data/boxes/SimplePieNewsReader/simplepie.inc');
 

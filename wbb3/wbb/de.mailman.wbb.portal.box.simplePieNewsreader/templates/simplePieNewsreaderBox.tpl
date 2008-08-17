@@ -1,3 +1,4 @@
+{* $Id$ *}
 {if $this->user->getPermission('user.board.canViewSimplePieNewsreaderBox')}
     {if SPNRBOX_SBCOLOR}
         {assign var='secondBoxColor' value=SPNRBOX_SBCOLOR}
