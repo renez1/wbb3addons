@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<!-- $Id$ -->
+<language languagecode="en">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.profileLastVisitorsBox.title"><![CDATA[Last profile visitor]]></item>
+	</category>
+</language>
