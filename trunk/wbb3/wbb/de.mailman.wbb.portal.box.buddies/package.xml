@@ -4,15 +4,15 @@
 <package name="de.mailman.wbb.portal.box.buddiesbox">
 	<packageinformation>
 		<packagename>Portalbox Freunde-Liste</packagename>
-		<packagename lang="en">Portal box friends</packagename>
-		<packagename lang="fr">Fenêtre du portail « Liste d’amis »</packagename>
-		<packageDescription>Deine Freunde in der Box ;)</packageDescription>
-		<packageDescription lang="de">Your friends in a box ;)</packageDescription>
-		<packageDescription lang="fr">Vos amis dans une fenêtre ;)</packageDescription>
+		<packagedescription>Deine Freunde in der Box ;)</packagedescription>
+		<packagename language="en">Portal box friends</packagename>
+		<packagedescription language="en">Your friends in a box ;)</packagedescription>
+		<packagename language="fr">Fenêtre du portail « Liste d’amis »</packagename>
+		<packagedescription language="fr">Vos amis dans une fenêtre ;)</packagedescription>
 		<standalone>0</standalone>
 		<plugin>com.woltlab.wbb</plugin>
-		<version>1.0.0 PL1</version>
-		<date>2008-08-17</date>
+		<version>1.0.0 PL2</version>
+		<date>2008-08-18</date>
 	</packageinformation>
 
 	<authorinformation>
@@ -37,6 +37,9 @@
 	</instructions>
 
 	<instructions type="update" fromversion="1.0.0">
+		<languages languagecode="fr">fr.xml</languages>
+	</instructions>
+	<instructions type="update" fromversion="1.0.0 PL1">
 		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 </package>

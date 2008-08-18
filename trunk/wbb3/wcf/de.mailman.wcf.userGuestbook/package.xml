@@ -3,12 +3,12 @@
 <!-- $Id$ -->
 <package name="de.mailman.wcf.userGuestBook">
 	<packageInformation>
-		<packageName>Benutzer-Gästebuch</packageName>
-		<packageName language="fr">Livres d’or des utilisateurs</packageName>
-		<packageName language="en">User guestbook</packageName>
+		<packagename>Benutzer-Gästebuch</packagename>
 		<packagedescription>Für jeden Benutzer ein eigenes Gästebuch im Profil</packagedescription>
-		<packagedescription language="fr">Un livre d’or pour chaque utilisateur dans leur profil</packagedescription>
+		<packagename language="en">User guestbook</packagename>
 		<packagedescription language="en">For each user a separate guestbook</packagedescription>
+		<packagename language="fr">Livres d’or des utilisateurs</packagename>
+		<packagedescription language="fr">Un livre d’or pour chaque utilisateur dans leur profil</packagedescription>
 		<isUnique>1</isUnique>
 		<version>1.0.23 PL1</version>
 		<date>2008-08-17</date>
