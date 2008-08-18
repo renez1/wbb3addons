@@ -221,7 +221,7 @@
                                     <tr>
                                         <td><input class="inputImage" type="image" src="{@RELATIVE_WCF_DIR}icon/submitS.png" alt="" style="width:16px; height:16px;" /></td>
                                         <td class="smallFont">
-                                            <input type="hidden" name="page" value="Portal" />
+                                            <input type="hidden" name="page" value="{$pbStyleRedir}" />
                                             <select name="styleID" style="width:{$pbStyleWidth}px;" onChange="this.form.submit();">
                                                 {if $pbStyles|count}
                                                     {foreach from=$pbStyles item=$style}

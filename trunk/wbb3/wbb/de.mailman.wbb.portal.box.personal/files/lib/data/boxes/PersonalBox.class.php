@@ -197,7 +197,7 @@ class PersonalBox {
                 // Style fuer Donnerwetter...
                 if(WCF::getUser()->getPermission('user.profile.personalbox.canSetWeatherStyle') && preg_match("/^1|2$/",WCF::getUser()->personalbox_weather_style)) $pbWeatherStyle = WCF::getUser()->personalbox_weather_style;
                 else if(preg_match("/^1|2$/",PERSONALBOX_WEATHER_STYLE_ACP)) $pbWeatherStyle = PERSONALBOX_WEATHER_STYLE_ACP;
-                
+
                 // wetter.com
                 if(WCF::getUser()->getPermission('user.profile.personalbox.canSetWeather') && WCF::getUser()->personalbox_weathercom_enabled == 'enabled') $pbShowWeatherCom = true;
                 else if(WCF::getUser()->getPermission('user.profile.personalbox.canSetWeather') && WCF::getUser()->personalbox_weathercom_enabled == 'disabled') $pbShowWeatherCom = false;
@@ -383,6 +383,10 @@ class PersonalBox {
             $this->BoxData['user'] = $user;
         }
 
+        // redirect after style change
+        if(!empty($_SERVER['QUERY_STRING']) && preg_match('/page\=portal/i', $_SERVER['QUERY_STRING'])) $pbStyleRedir = 'Portal';
+        else $pbStyleRedir = 'Index';
+
         // Template Variablen zuordnen...
         WCF::getTPL()->assign(array(
             'pbCatVertOffset' => intval(PERSONALBOX_CATSPACER_ACP),
@@ -418,6 +422,7 @@ class PersonalBox {
             'pbWeatherComDay' => $pbWeatherComDay,
             'pbLinks' => (isset($pbLinks) ? $pbLinks : array()),
             'pbStyles' => (isset($pbStyles) ? $pbStyles : array()),
+            'pbStyleRedir' => $pbStyleRedir,
             // Instant Messenger by Tatzelwurm
             'imcount' => $imcount,
             'pbShowIM' => $pbShowIM,
