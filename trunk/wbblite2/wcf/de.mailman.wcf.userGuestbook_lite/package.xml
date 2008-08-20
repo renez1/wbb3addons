@@ -1,13 +1,17 @@
 ﻿<?xml version="1.0"?>
 <!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
-
+<!-- $Id$ -->
 <package name="de.mailman.wcf.userGuestBook.lite">
 	<packageInformation>
-		<packageName>Benutzer-Gästebuch</packageName>
+		<packageName>Benutzer-Gästebuch [WBB Lite 2]</packageName>
+		<packageName language="fr">Livres d’or des utilisateurs</packageName>
+		<packageName language="en">User guestbook [WBB Lite 2]</packageName>
 		<packagedescription>Für jeden Benutzer ein eigenes Gästebuch im Profil</packagedescription>
+		<packagedescription language="fr">Un livre d’or pour chaque utilisateur dans leur profil</packagedescription>
+		<packagedescription language="en">For each user a separate guestbook</packagedescription>
 		<isUnique>1</isUnique>
-		<version>1.0.23</version>
-		<date>2008-07-06</date>
+		<version>1.0.23 PL1</version>
+		<date>2008-08-17</date>
 		<standalone>0</standalone>
 		<plugin>com.woltlab.wcf</plugin>
 	</packageInformation>
@@ -36,6 +40,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 
 	<instructions type="update" fromversion="1.0.13">
@@ -49,6 +54,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.15">
         <sql>update_1.0.19.sql</sql>
@@ -59,6 +65,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.16">
         <sql>update_1.0.19.sql</sql>
@@ -69,6 +76,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.17">
         <sql>update_1.0.19.sql</sql>
@@ -79,6 +87,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.18">
         <sql>update_1.0.19.sql</sql>
@@ -89,6 +98,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.19">
 	    <files>files.tar</files>
@@ -97,6 +107,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.20">
 	    <files>files.tar</files>
@@ -105,11 +116,17 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.21">
 	    <files>files.tar</files>
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.22">
 	    <files>files.tar</files>
+		<languages languagecode="fr">fr.xml</languages>
+	</instructions>
+	<instructions type="update" fromversion="1.0.23">
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 </package>
