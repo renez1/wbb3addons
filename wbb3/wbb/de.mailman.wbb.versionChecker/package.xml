@@ -1,13 +1,16 @@
 <?xml version="1.0"?>
 <!DOCTYPE package SYSTEM "DTD/package.dtd">
+<!-- $Id$ -->
 <package name="de.mailman.wbb.versionChecker">
 	<packageinformation>
-		<packagename lang="de">WBB3 Version Checker</packagename>
+		<packagename>WBB3 Version Checker</packagename>
 		<packageDescription>Nichts magisches, vergleicht nur Versionsnummern.</packageDescription>
+		<packagename language="en">WBB3 Version Checker</packagename>
+		<packageDescription language="en">Nothing magic, compares only version numbers.</packageDescription>
 		<standalone>0</standalone>
 		<plugin>com.woltlab.wbb</plugin>
-		<version>1.0.0 PL1</version>
-		<date>2008-08-16</date>
+		<version>1.0.0 PL2</version>
+		<date>2008-08-23</date>
 	</packageinformation>
 
 	<authorinformation>
@@ -24,9 +27,21 @@
 		<templates>templates.tar</templates>
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="en">en.xml</languages>
 	</instructions>
 
 	<instructions type="update" fromversion="1.0.0">
 		<files>files.tar</files>
+		<templates>templates.tar</templates>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="en">en.xml</languages>
+	</instructions>
+	<instructions type="update" fromversion="1.0.0 PL1">
+		<files>files.tar</files>
+		<templates>templates.tar</templates>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="en">en.xml</languages>
 	</instructions>
 </package>

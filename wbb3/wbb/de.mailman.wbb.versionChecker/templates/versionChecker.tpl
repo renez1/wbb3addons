@@ -1,3 +1,4 @@
+{* $Id$ *}
 {include file="documentHeader"}
 <head>
 	<title>{lang}wbb.versionChecker.title{/lang} - {PAGE_TITLE}</title>

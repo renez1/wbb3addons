@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "DTD/language.dtd">
+<!-- $Id$ -->
 <language languagecode="en">
 	<category name="wbb.versionChecker">
 		<item name="wbb.versionChecker.title"><![CDATA[WBB3 Version Checker]]></item>
