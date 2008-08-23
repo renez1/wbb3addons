@@ -5,6 +5,7 @@ require_once(WCF_DIR.'lib/page/AbstractPage.class.php');
 class VersionCheckerPage extends AbstractPage {
 	public $templateName = 'versionChecker';
 	public $logFile = '';
+	public $logMaxEntries = 100;
 	public $verFirst = '1.0.0';
 	public $verSecond = '1.0.0 PL1';
 	public $verResult = -2;
@@ -22,9 +23,16 @@ class VersionCheckerPage extends AbstractPage {
 		        $this->verFirst = $_POST['version1'];
 		        $this->verSecond = $_POST['version2'];
 		        if($this->logFile) {
-		            if($fh = @fopen(WBB_DIR.'/'.$this->logFile, 'a')) {
-		                $u = (WCF::getUser()->username ? WCF::getUser()->username : 'Guest');
-		                fwrite($fh, TIME_NOW.'||'.$u.'||'.$this->verFirst.'||'.$this->verSecond."\n");
+		            $entries = array();
+                    $u = (WCF::getUser()->username ? WCF::getUser()->username : 'Guest');
+                    $t = TIME_NOW;
+		            if(is_file(WBB_DIR.'/'.$this->logFile)) $entries = file(WBB_DIR.'/'.$this->logFile);
+		            array_push($entries, $t.'||'.date('d.m.Y H:i:s',$t).'||'.$u.'||'.$this->verFirst.'||'.$this->verSecond);
+		            rsort($entries);
+		            if(!empty($this->logMaxEntries) && $this->logMaxEntries > 0) $output = array_slice($entries, 0, $this->logMaxEntries);
+		            else $output = $entries;
+		            if(count($output) && $fh = @fopen(WBB_DIR.'/'.$this->logFile, 'w')) {
+		                foreach($output as $k => $line) fwrite($fh, trim($line)."\n");
 		                fclose($fh);
 		            }
 		        }
