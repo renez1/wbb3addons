@@ -44,7 +44,6 @@
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
 	</instructions>
-	</instructions>
 	<instructions type="update" fromversion="1.0.0 PL2">
 		<files>files.tar</files>
 	</instructions>
