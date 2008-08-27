@@ -43,6 +43,8 @@ dbHost='localhost'
 dbCharset='utf8'
 # Execute SQL from file
 dbExecFile='/var/shares/www-backup.sql'
+# mysqlcheck after backup - e.g. '/usr/bin/mysqlcheck -ao '$dbName
+dbCheck='/usr/bin/mysqlcheck -ao '$dbName
 # Import dump after backup (0 = disabled; 1 = enabled)
 dumpImport=1
 # Dump directory
@@ -256,6 +258,13 @@ if [ $dumpImport -eq 1 -a ! -z "$dumpPath" ]; then
 	else
 		echo "no current db backup available" >> $logFile
 	fi
+fi
+
+if [ ! -z "$dbCheck" -a ! -z "$dbName" ]; then
+	echo "$tSpacer" >> $logFile
+	echo "optimize database..." >> $logFile
+	tmp=$dbCheck" >> $logFile"
+	eval $tmp
 fi
 
 # clear wBB3 cache directories
