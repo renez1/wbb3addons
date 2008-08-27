@@ -1,4 +1,4 @@
-#labels Featured,Phase-Deploy
+#labels HowTo,Incomplete
 Die "Persönliche Box" gibt es hier: [http://wbb3addons.ump2002.net/wbb/index.php?page=Thread&threadID=23 Persönliche Box]
 
 *Einstellungen zur Persönlichen Box:*
