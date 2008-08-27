@@ -1,4 +1,5 @@
 #summary SVN mit TortoiseSVN auschecken
+#labels HowTo,Featured
 
 == Einleitung ==
 Subversion (SVN) ist eine Versionsverwaltung für Dateien und Verzeichnisse, also ein System, das in der Softwareentwicklung zur Versionierung und für den gemeinsamen Zugriff auf den Quellcode eingesetzt wird.
