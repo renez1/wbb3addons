@@ -22,7 +22,7 @@ TortoiseSVN legt direkt los und nach ein paar Minuten haben Sie alle unsere Sour
 
 == Arbeitskopie einchecken ==
 Wenn Sie sich an unseren Projekten beteiligen möchten, egal ob programmiertechnisch oder als Übersetzer, sind Sie jederzeit willkommen. Hierfür benötigen Sie allerdings einen [https://www.google.com/accounts/NewAccount Google-Account].
-Falls Sie also Interesse zur Mitarbeit haben, dann erstellen Sie einfach einen [https://www.google.com/accounts/NewAccount Google-Account] und wenden Sie sich anschließend an wbb3addons@gmail.com.
+Falls Sie also Interesse zur Mitarbeit haben, dann erstellen Sie einfach einen [https://www.google.com/accounts/NewAccount Google-Account] und wenden Sie sich anschließend an wbb3addons@gmail.com ([http://code.google.com/p/wbb3addons/wiki/HowTo_Setup_a_Google_account HowTo Google-Account erstellen]).
 
 *Sie können bereits bei uns einchecken?*
 Dann bitten wir folgende Regeln zu beachten:
