@@ -1,4 +1,5 @@
 <?php
+/* $Id$ */
 class StickyTopicsBox {
 	protected $StickyTopicsData = array();
 
