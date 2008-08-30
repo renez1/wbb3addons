@@ -1,3 +1,4 @@
+{* $Id$ *}
 {if $this->user->getPermission('user.board.canViewStickyTopicsBox')}
     {if STICKYTOPICSBOX_SBCOLOR}
         {assign var='secondBoxColor' value=STICKYTOPICSBOX_SBCOLOR}

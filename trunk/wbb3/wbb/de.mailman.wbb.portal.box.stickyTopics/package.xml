@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE package SYSTEM "DTD/package.dtd">
+<!-- $Id$ -->
 <package name="de.mailman.wbb.portal.box.stickyTopics">
 	<packageinformation>
 		<packagename lang="de">Portalbox &quot;Wichtige Themen&quot;</packagename>
@@ -7,8 +8,8 @@
 		<standalone>0</standalone>
 		<isUnique>1</isUnique>
 		<plugin>com.woltlab.wbb</plugin>
-		<version>1.0.1</version>
-		<date>2008-06-09</date>
+		<version>1.0.1 PL1</version>
+		<date>2008-08-30</date>
 	</packageinformation>
 
 	<authorinformation>
@@ -31,10 +32,19 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="hr">hr.xml</languages> <!-- thx to Dean Baric (kroatisch) -->
+		<languages languagecode="tr">tr.xml</languages> <!-- thx to §@M3T (türkisch) -->
 	</instructions>
 
 	<instructions type="update" fromversion="1.0.0">
 		<files>files.tar</files>
 		<eventlistener>eventlistener.xml</eventlistener>
+	</instructions>
+	<instructions type="update" fromversion="1.0.1">
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="hr">hr.xml</languages> <!-- thx to Dean Baric -->
+		<languages languagecode="tr">tr.xml</languages> <!-- thx to §@M3T -->
 	</instructions>
 </package>
