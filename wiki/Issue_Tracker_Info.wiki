@@ -1,8 +1,8 @@
 #summary Allgemeine Informationen zum Issue Tracker.
-
+#labels Misc
 
 = Issue Tracker =
-Jedermann ist dazu eingeladen, sein Problem oder Wunsch zu unseren WBB3-Add-Ons im Issue Tracker zu erfassen. Leider ist ein [https://mail.google.com Google-Account] dazu notwendig.
+Jedermann ist dazu eingeladen, sein Problem oder Wunsch zu unseren WBB3-Add-Ons im Issue Tracker zu erfassen. Alles was Sie dazu benötigen ist ein [http://code.google.com/p/wbb3addons/wiki/HowTo_Setup_a_Google_account Google-Account].
 Sie können hier Fehler (Bugs) oder auch Ihre Wünsche (Feature Requests) zu unseren Add-Ons erfassen. Wünsche für neue Add-Ons sind selbstverständlich auch willkommen.
 
 ----
