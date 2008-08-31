@@ -3,8 +3,7 @@
 require_once(WCF_DIR.'lib/system/event/EventListener.class.php');
 
 /**
- * AdminTools Event Listener
- *
+ * $Id$
  * @author      MailMan (http://wbb3addons.ump2002.net)
  * @package     de.mailman.wcf.adminTools
  */

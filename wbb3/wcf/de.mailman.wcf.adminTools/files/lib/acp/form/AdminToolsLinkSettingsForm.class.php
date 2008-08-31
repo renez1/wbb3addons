@@ -3,6 +3,7 @@ require_once(WCF_DIR.'lib/acp/form/ACPForm.class.php');
 require_once(WCF_DIR.'lib/acp/adminTools/AdminTools.class.php');
 
 /**
+ * $Id$
  * @author      MailMan (http://wbb3addons.ump2002.net)
  * @package     de.mailman.wcf.adminTools
  */
@@ -90,6 +91,7 @@ class AdminToolsLinkSettingsForm extends ACPForm {
         $this->iFrame = AdminTools::getIframeSettings();
 //        if(!empty($this->menuItemID)) $this->linkCur = AdminTools::getLink($this->menuItemID);
 		WCF::getTPL()->assign(array(
+    		'wbbExists' => AdminTools::wbbExists(),
 		    'menuItemID' => $this->menuItemID,
 		    'linkCur' => $this->linkCur,
 		    'links' => $this->links,

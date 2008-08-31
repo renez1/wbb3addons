@@ -1,3 +1,4 @@
+{* $Id$ *}
 {include file='header'}
 
 {if $target == '_iframe'}

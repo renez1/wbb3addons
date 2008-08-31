@@ -3,8 +3,7 @@ require_once(WCF_DIR.'lib/page/AbstractPage.class.php');
 require_once(WCF_DIR.'lib/acp/adminTools/AdminTools.class.php');
 
 /**
- * AdminTools PHP-Info Class
- *
+ * $Id$
  * @author      MailMan (http://wbb3addons.ump2002.net)
  * @package     de.mailman.wcf.adminTools
  */
@@ -28,6 +27,7 @@ class AdminToolsPhpInfoPage extends AbstractPage {
         }
 
 		WCF::getTPL()->assign(array(
+    		'wbbExists' => AdminTools::wbbExists(),
 			'atPHP' => AdminTools::parsePHPConfig(),
 			'diskInfo' => $this->diskInfo
 		));

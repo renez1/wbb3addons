@@ -3,8 +3,7 @@ require_once(WCF_DIR.'lib/acp/form/ACPForm.class.php');
 require_once(WCF_DIR.'lib/acp/adminTools/AdminTools.class.php');
 
 /**
- * AdminTools ToolBox Class
- *
+ * $Id$
  * @author      MailMan (http://wbb3addons.ump2002.net)
  * @package     de.mailman.wcf.adminTools
  */
@@ -172,9 +171,10 @@ class AdminToolsToolBoxForm extends ACPForm {
     	    $this->spiderCntSyn = $tmp['cntSyn'];
        	    $this->spiderCntAll = $tmp['cntAll'];
         }
-        if(is_dir(WBB_DIR.'lib/data/boxes/SimplePieNewsReader/cache')) $this->spRssExists = true;
+        if(AdminTools::wbbExists() && is_dir(WBB_DIR.'lib/data/boxes/SimplePieNewsReader/cache')) $this->spRssExists = true;
 		parent::assignVariables();
 		WCF::getTPL()->assign(array(
+    		'wbbExists' => AdminTools::wbbExists(),
 		    'cacheDel' => $this->cacheDel,
 		    'cacheTpl' => $this->cacheTpl,
 		    'cacheLang' => $this->cacheLang,

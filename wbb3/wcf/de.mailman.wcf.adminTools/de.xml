@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<!-- $Id$ -->
 <language languagecode="de">
 	<category name="wcf.acp.menu">
 		<item name="wcf.acp.menu.link.adminTools"><![CDATA[Admin Tools]]></item>

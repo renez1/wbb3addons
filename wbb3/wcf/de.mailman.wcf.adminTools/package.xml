@@ -1,35 +1,45 @@
 ﻿<?xml version="1.0"?>
 <!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
 <package name="de.mailman.wcf.adminTools">
-	<packageinformation>
-		<packagename>Admin-Tools</packagename>
-		<packagedescription>Eine Werkzeugsammlung für den Administrator.</packagedescription>
-		<isUnique>1</isUnique>
-		<version>1.1.0</version>
-		<date>2008-08-10</date>
-		<standalone>0</standalone>
-		<plugin>com.woltlab.wcf</plugin>
-	</packageinformation>
+    <packageinformation>
+        <packagename>Admin-Tools</packagename>
+        <packagedescription>Eine Werkzeugsammlung für den Administrator.</packagedescription>
+        <isUnique>1</isUnique>
+        <version>1.2.0</version>
+        <date>2008-08-31</date>
+        <standalone>0</standalone>
+        <plugin>com.woltlab.wcf</plugin>
+    </packageinformation>
 
-	<authorinformation>
-		<author>MailMan</author>
-		<authorurl>http://wbb3addons.ump2002.net</authorurl>
-	</authorinformation>
+    <authorinformation>
+        <author>MailMan</author>
+        <authorurl>http://wbb3addons.ump2002.net</authorurl>
+    </authorinformation>
 
-	<requiredpackages>
+    <requiredpackages>
         <requiredPackage minversion="1.0.5">com.woltlab.wcf</requiredPackage>
-	</requiredpackages>
+    </requiredpackages>
 
-	<instructions type="install">
-		<files>files.tar</files>
-		<sql>install.sql</sql>
-		<acptemplates>acptemplates.tar</acptemplates>
-		<cronjobs>cronjobs.xml</cronjobs>
-		<groupoptions>groupoptions.xml</groupoptions>
-		<acpmenu>acpmenu.xml</acpmenu>
+    <instructions type="install">
+        <files>files.tar</files>
+        <sql>install.sql</sql>
+        <acptemplates>acptemplates.tar</acptemplates>
+        <cronjobs>cronjobs.xml</cronjobs>
+        <groupoptions>groupoptions.xml</groupoptions>
+        <acpmenu>acpmenu.xml</acpmenu>
         <eventlistener>eventlistener.xml</eventlistener>
-		<languages languagecode="de">de.xml</languages>
-		<languages languagecode="de-informal">de-informal.xml</languages>
-		<languages languagecode="en">en.xml</languages>
-	</instructions>
+        <languages languagecode="de">de.xml</languages>
+        <languages languagecode="de-informal">de-informal.xml</languages>
+        <languages languagecode="en">en.xml</languages>
+        <languages languagecode="fr">fr.xml</languages>
+    </instructions>
+
+    <instructions type="update" fromversion="1.1.0">
+        <files>files.tar</files>
+        <acptemplates>acptemplates.tar</acptemplates>
+        <languages languagecode="de">de.xml</languages>
+        <languages languagecode="de-informal">de-informal.xml</languages>
+        <languages languagecode="en">en.xml</languages>
+        <languages languagecode="fr">fr.xml</languages>
+    </instructions>
 </package>

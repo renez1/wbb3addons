@@ -3,8 +3,7 @@ require_once (WCF_DIR.'lib/data/cronjobs/Cronjob.class.php');
 require_once(WCF_DIR.'lib/acp/adminTools/AdminTools.class.php');
 
 /**
- * AdminTools Cronjob Class
- *
+ * $Id$
  * @author      MailMan (http://wbb3addons.ump2002.net)
  * @package     de.mailman.wcf.adminTools
  */

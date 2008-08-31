@@ -1,3 +1,4 @@
+{* $Id$ *}
 {include file='header'}
 
 <script type="text/javascript">
