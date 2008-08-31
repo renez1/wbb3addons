@@ -1,3 +1,4 @@
+/* $Id$ */
 CREATE TABLE `wcf1_admin_tool_setting` (
   `atse_name` varchar(64) NOT NULL,
   `atse_value` varchar(2000) default NULL,

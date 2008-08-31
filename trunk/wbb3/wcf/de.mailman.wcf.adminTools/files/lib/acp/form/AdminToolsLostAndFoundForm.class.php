@@ -3,8 +3,7 @@ require_once(WCF_DIR.'lib/acp/form/ACPForm.class.php');
 require_once(WCF_DIR.'lib/acp/adminTools/AdminTools.class.php');
 
 /**
- * AdminTools Cron Class
- *
+ * $Id$
  * @author      MailMan (http://wbb3addons.ump2002.net)
  * @package     de.mailman.wcf.adminTools
  */
@@ -62,6 +61,7 @@ class AdminToolsLostAndFoundForm extends ACPForm {
 		parent::assignVariables();
 
 		WCF::getTPL()->assign(array(
+    		'wbbExists' => AdminTools::wbbExists(),
             'show' => $this->show,
             'lostAndFoundDel' => AdminTools::getLostAndFound($this->show)
 		));

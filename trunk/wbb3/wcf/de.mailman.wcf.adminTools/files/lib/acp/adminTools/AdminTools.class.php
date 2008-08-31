@@ -1,13 +1,19 @@
 <?php
-
 /**
- * AdminTools Class
- *
+ * $Id$
  * @author      MailMan (http://wbb3addons.ump2002.net)
  * @package     de.mailman.wcf.adminTools
  */
 
 class AdminTools {
+
+    public function wbbExists() {
+        if(!defined('WBB_EXISTS')) {
+            if(!defined('WBB_N') || !defined('WBB_DIR')) define('WBB_EXISTS', false);
+            else define('WBB_EXISTS', true);
+        }
+        return WBB_EXISTS;
+    }
 
 	public function getSettings($atse_name='') {
 	    $ret = array();
@@ -155,6 +161,7 @@ class AdminTools {
     }
 
     public function cronCheckMovedThreads($delDays=0) {
+        if(!self::wbbExists()) return;
         $sql = "INSERT IGNORE INTO wcf".WCF_N."_admin_tool_moved_threads"
             ."\n       (threadID, movedThreadID, checkedTime)"
             ."\nSELECT threadID, movedThreadID, ".TIME_NOW
@@ -181,6 +188,7 @@ class AdminTools {
     }
 
     public function cronThreadArchiveGetBoards() {
+        if(!self::wbbExists()) return;
         $ret = $arcBoards = array();
         $boards = self::getSettings('cronThreadArchiveSrc');
         require_once(WBB_DIR.'/lib/data/board/Board.class.php');
@@ -206,6 +214,7 @@ class AdminTools {
     }
 
     public function cronThreadArchive($settings) {
+        if(!self::wbbExists()) return;
         if(!is_array($settings) || !count($settings)) return;
         if(!empty($settings['cronThreadArchiveDays']) && !empty($settings['cronThreadArchiveSrc']) && !empty($settings['cronThreadArchiveTgt'])) {
             if(!intval($settings['cronThreadArchiveDays']) > 0) return;
@@ -374,14 +383,16 @@ class AdminTools {
                 $sql = "SELECT SUM(banned) AS userLocked, SUM(disableSignature) AS signLocked FROM wcf".WCF_N."_user";
                 $tmp = WCF::getDB()->getFirstRow($sql); foreach($tmp AS $k => $v) { $nStats[$k] = $v; }
                 // threads
-                $sql = "SELECT COUNT(threadID) AS threads, MAX(threadID) AS threadsMax, SUM(views) AS threadViews FROM wbb".WBB_N."_thread";
-                $tmp = WCF::getDB()->getFirstRow($sql); foreach($tmp AS $k => $v) { $nStats[$k] = $v; }
-                $sql = "SELECT COUNT(threadID) AS threadClosed FROM wbb".WBB_N."_thread WHERE isClosed = 1";
-                $tmp = WCF::getDB()->getFirstRow($sql); foreach($tmp AS $k => $v) { $nStats[$k] = $v; }
-                // posts
-                $sql = "SELECT COUNT(postID) AS posts, MAX(postID) AS postsMax FROM wbb".WBB_N."_post";
-                $tmp = WCF::getDB()->getFirstRow($sql); foreach($tmp AS $k => $v) { $nStats[$k] = $v; }
-                // pm
+                if(self::wbbExists()) {
+                    $sql = "SELECT COUNT(threadID) AS threads, MAX(threadID) AS threadsMax, SUM(views) AS threadViews FROM wbb".WBB_N."_thread";
+                    $tmp = WCF::getDB()->getFirstRow($sql); foreach($tmp AS $k => $v) { $nStats[$k] = $v; }
+                    $sql = "SELECT COUNT(threadID) AS threadClosed FROM wbb".WBB_N."_thread WHERE isClosed = 1";
+                    $tmp = WCF::getDB()->getFirstRow($sql); foreach($tmp AS $k => $v) { $nStats[$k] = $v; }
+                    // posts
+                    $sql = "SELECT COUNT(postID) AS posts, MAX(postID) AS postsMax FROM wbb".WBB_N."_post";
+                    $tmp = WCF::getDB()->getFirstRow($sql); foreach($tmp AS $k => $v) { $nStats[$k] = $v; }
+                    // pm
+                }
                 $sql = "SELECT COUNT(pmID) AS pms, MAX(pmID) AS pmsMax FROM wcf".WCF_N."_pm";
                 $tmp = WCF::getDB()->getFirstRow($sql); foreach($tmp AS $k => $v) { $nStats[$k] = $v; }
                 // polls
@@ -420,22 +431,22 @@ class AdminTools {
                     $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.diskUsedSpace'), $pR, " ").self::str_pad($usedSpace, $pL, " ", STR_PAD_LEFT);
                 }
 
-                $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntMembers'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['user'])), $pL, " ", STR_PAD_LEFT);
-                $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntMembersMax'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['userMax'])), $pL, " ", STR_PAD_LEFT);
-                $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntMembersLocked'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['userLocked'])), $pL, " ", STR_PAD_LEFT);
-                $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntSignLocked'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['signLocked'])), $pL, " ", STR_PAD_LEFT);
-                $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntThreads'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['threads'])), $pL, " ", STR_PAD_LEFT);
-                $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntThreadsMax'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['threadsMax'])), $pL, " ", STR_PAD_LEFT);
-                $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntThreadsLocked'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['threadClosed'])), $pL, " ", STR_PAD_LEFT);
-                $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntThreadsView'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['threadViews'])), $pL, " ", STR_PAD_LEFT);
-                $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntPosts'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['posts'])), $pL, " ", STR_PAD_LEFT);
-                $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntPostsMax'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['postsMax'])), $pL, " ", STR_PAD_LEFT);
-                $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntPMs'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['pms'])), $pL, " ", STR_PAD_LEFT);
-                $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntPMsMax'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['pmsMax'])), $pL, " ", STR_PAD_LEFT);
-                $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntPolls'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['polls'])), $pL, " ", STR_PAD_LEFT);
-                $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntAttachments'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['atCnt'])).' ('.$atSize.' MB)', $pL, " ", STR_PAD_LEFT);
-                $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntAvatars'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['avatars'])), $pL, " ", STR_PAD_LEFT);
-                $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntRecord'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['record'])).' ('.DateUtil::formatDate($lang->get('wcf.global.timeFormat'), $nStats['recordTime']).')', $pL, " ", STR_PAD_LEFT);
+                if(isset($nStats['user']))          $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntMembers'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['user'])), $pL, " ", STR_PAD_LEFT);
+                if(isset($nStats['userMax']))       $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntMembersMax'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['userMax'])), $pL, " ", STR_PAD_LEFT);
+                if(isset($nStats['userLocked']))    $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntMembersLocked'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['userLocked'])), $pL, " ", STR_PAD_LEFT);
+                if(isset($nStats['signLocked']))    $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntSignLocked'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['signLocked'])), $pL, " ", STR_PAD_LEFT);
+                if(isset($nStats['threads']))       $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntThreads'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['threads'])), $pL, " ", STR_PAD_LEFT);
+                if(isset($nStats['threadsMax']))    $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntThreadsMax'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['threadsMax'])), $pL, " ", STR_PAD_LEFT);
+                if(isset($nStats['threadClosed']))  $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntThreadsLocked'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['threadClosed'])), $pL, " ", STR_PAD_LEFT);
+                if(isset($nStats['threadViews']))   $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntThreadsView'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['threadViews'])), $pL, " ", STR_PAD_LEFT);
+                if(isset($nStats['posts']))         $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntPosts'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['posts'])), $pL, " ", STR_PAD_LEFT);
+                if(isset($nStats['postsMax']))      $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntPostsMax'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['postsMax'])), $pL, " ", STR_PAD_LEFT);
+                if(isset($nStats['pms']))           $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntPMs'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['pms'])), $pL, " ", STR_PAD_LEFT);
+                if(isset($nStats['pmsMax']))        $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntPMsMax'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['pmsMax'])), $pL, " ", STR_PAD_LEFT);
+                if(isset($nStats['polls']))         $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntPolls'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['polls'])), $pL, " ", STR_PAD_LEFT);
+                if(isset($nStats['atCnt']))         $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntAttachments'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['atCnt'])).' ('.$atSize.' MB)', $pL, " ", STR_PAD_LEFT);
+                if(isset($nStats['avatars']))       $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntAvatars'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['avatars'])), $pL, " ", STR_PAD_LEFT);
+                if(isset($nStats['record']))        $message .= "\n".self::str_pad($lang->get('wcf.acp.adminTools.cron.mail.statsCntRecord'), $pR, " ").self::str_pad(StringUtil::decodeHTML(StringUtil::formatInteger($nStats['record'])).' ('.DateUtil::formatDate($lang->get('wcf.global.timeFormat'), $nStats['recordTime']).')', $pL, " ", STR_PAD_LEFT);
             }
 
             // sendmail ------------------------------------
@@ -451,10 +462,12 @@ class AdminTools {
 
     // boards **********************************************
     public function getBoards() {
+        if(!self::wbbExists()) return array();
         require_once(WBB_DIR.'/lib/data/board/Board.class.php');
         return Board::getBoardSelect(array(), true, true);
     }
     public function syncBoard($arg=array()) {
+        if(!self::wbbExists()) return;
         if(!empty($arg['boardSrcID']) && !empty($arg['boardTgtID']) && $arg['boardSrcID'] != $arg['boardTgtID']) {
             if(!empty($arg['boardUser'])) {
                 $sql = "DELETE FROM wbb".WBB_N."_board_to_user"
@@ -541,7 +554,7 @@ class AdminTools {
                 WCF::getDB()->sendQuery($sql);
             }
 
-            if(!empty($arg['ugrpBoards'])) {
+            if(self::wbbExists() && !empty($arg['ugrpBoards'])) {
                 $sql = "DELETE FROM wbb".WBB_N."_board_to_group"
                     ."\n WHERE groupID = ".$arg['ugrpTgtID'];
                 WCF::getDB()->sendQuery($sql);
@@ -561,6 +574,7 @@ class AdminTools {
 
     // prefixes ********************************************
     public function getPrefBoards() {
+        if(!self::wbbExists()) return array();
         $ret = array();
         require_once(WBB_DIR.'/lib/data/board/Board.class.php');
         $boardSelect = Board::getBoardSelect(array(), true, true);
@@ -578,6 +592,7 @@ class AdminTools {
     }
 
     public function syncPrefBoard($arg=array()) {
+        if(!self::wbbExists()) return;
         if(!empty($arg['boardPrefSrcID']) && !empty($arg['boardPrefTgtID']) && $arg['boardPrefSrcID'] != $arg['boardPrefTgtID']) {
             $sql = "SELECT prefixes FROM wbb".WBB_N."_board WHERE boardID = ".$arg['boardPrefSrcID'];
             list($prefixes) = WCF::getDB()->getFirstRow($sql, MYSQL_NUM);
@@ -594,16 +609,18 @@ class AdminTools {
     // cache ***********************************************
     public function cacheDel($cacheDel, $cacheTpl, $cacheLang, $cacheOpt, $cacheRSS) {
         $ret = array();
+        $cnt = 0;
         if($cacheDel) {
-            $cnt = 0;
-            $dir = WBB_DIR.'cache';
-            if(is_dir($dir)) {
-                chdir($dir);
-                if($dh = opendir($dir)) {
-                    while($file = readdir($dh)) {
-                        if(preg_match("/\.php$/i",$file) && @unlink($file)) $cnt++;
+            if(self::wbbExists()) {
+                $dir = WBB_DIR.'cache';
+                if(is_dir($dir)) {
+                    chdir($dir);
+                    if($dh = opendir($dir)) {
+                        while($file = readdir($dh)) {
+                            if(preg_match("/\.php$/i",$file) && @unlink($file)) $cnt++;
+                        }
+                        closedir($dh);
                     }
-                    closedir($dh);
                 }
             }
             $dir = WCF_DIR.'cache';
@@ -659,7 +676,7 @@ class AdminTools {
             $ret['cacheLang'] = $cnt;
         }
 
-        if($cacheRSS) {
+        if(self::wbbExists() && $cacheRSS) {
             $cnt = 0;
             $dir = WBB_DIR.'lib/data/boxes/SimplePieNewsReader/cache';
             if(is_dir($dir)) {
@@ -674,7 +691,7 @@ class AdminTools {
             $ret['cacheRSS'] = $cnt;
         }
 
-        if($cacheOpt) {
+        if(self::wbbExists() && $cacheOpt) {
             $cnt = 0;
             if(is_file(WBB_DIR.'options.inc.php') && @unlink(WBB_DIR.'options.inc.php')) {
                 $cnt++;
@@ -953,7 +970,7 @@ class AdminTools {
         if(function_exists('disk_free_space') && function_exists('disk_total_space')) {
             $root = '';
             if($tmp = @disk_total_space($_SERVER["DOCUMENT_ROOT"])) $root = $_SERVER["DOCUMENT_ROOT"];
-            else if($tmp = @disk_total_space(WBB_DIR)) $root = WBB_DIR;
+            else if(self::wbbExists() && $tmp = @disk_total_space(WBB_DIR)) $root = WBB_DIR;
             if($root) {
                 $ret['TOTAL_SPACE'] = round(disk_total_space($root) / pow(1024, $pow), $dec);
                 $ret['FREE_SPACE']  = round(disk_free_space($root) / pow(1024, $pow), $dec);

@@ -1,3 +1,4 @@
+{* $Id$ *}
 {include file='header'}
 
 <script type="text/javascript">
@@ -179,7 +180,7 @@ function syncSpider() {
 
                     <div class="formCheckBox formElement" id="cacheRSSDiv">
                         <div class="formField">
-                            <label><input type="checkbox" id="cacheRSS" name="cacheRSS" value="1"{if $cacheRSS} checked="checked"{/if}{if !$spRssExists} disabled="disabled"{/if} /> {lang}wcf.acp.adminTools.toolBox.cache.rss{/lang}</label>
+                            <label><input type="checkbox" id="cacheRSS" name="cacheRSS" value="1"{if $cacheRSS} checked="checked"{/if}{if !$spRssExists || !$wbbExists} disabled="disabled"{/if} /> {lang}wcf.acp.adminTools.toolBox.cache.rss{/lang}</label>
                         </div>
                         <div class="formFieldDesc hidden" id="cacheRSSHelpMessage">
                             {lang}wcf.acp.adminTools.toolBox.cache.rss.description{/lang}
@@ -205,6 +206,7 @@ function syncSpider() {
             </fieldset>
 
 <!-- BOARD PERMISSIONS ********************************* -->
+{if $wbbExists}
             <fieldset>
                 <legend>{lang}wcf.acp.adminTools.toolBox.board.legend{/lang}</legend>
                 <p class="description">{lang}wcf.acp.adminTools.toolBox.board.legend.description{/lang}</p>
@@ -316,10 +318,11 @@ function syncSpider() {
                     {@SID_INPUT_TAG}
                 </form>
             </fieldset>
-
+{/if}
 
 
 <!-- BOARD PREFIXES ************************************ -->
+{if $wbbExists}
             <fieldset>
                 <legend>{lang}wcf.acp.adminTools.toolBox.prefix.legend{/lang}</legend>
                 <form method="post" name="ftbPrefix" action="index.php?form=AdminToolsToolBox">
@@ -388,7 +391,7 @@ function syncSpider() {
                     {@SID_INPUT_TAG}
                 </form>
             </fieldset>
-
+{/if}
 
 <!-- GROUP PERMISSIONS ********************************* -->
             <fieldset>
@@ -465,7 +468,7 @@ function syncSpider() {
                     <script type="text/javascript">//<![CDATA[
                         inlineHelp.register('ugrpUser');
                     //]]></script>
-
+{if $wbbExists}
                     <div class="formCheckBox formElement" id="ugrpBoardsDiv">
                         <div class="formField">
                             <label><input type="checkbox" id="ugrpBoards" name="ugrpBoards" value="1" /> {lang}wcf.acp.adminTools.toolBox.ugrp.boards{/lang}</label>
@@ -482,7 +485,7 @@ function syncSpider() {
                     <script type="text/javascript">//<![CDATA[
                         inlineHelp.register('ugrpBoards');
                     //]]></script>
-
+{/if}
                     <div class="smallButtons">
                         <ul>
                             <li><a href="javascript:void(0);" onClick="saveUgrps();"><img src="{@RELATIVE_WCF_DIR}icon/adminToolsRunCronS.png" alt="" /> <span>{lang}wcf.acp.adminTools.txt.execute{/lang}</span></a></li>

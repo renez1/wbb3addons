@@ -1,3 +1,4 @@
+{* $Id$ *}
 {include file='header'}
 <script type="text/javascript">
 //<![CDATA[
@@ -93,6 +94,7 @@ function runCron(cj) {
     		</fieldset>
 
 <!-- Verweise ****************************************** -->
+{if $wbbExists}
 			<fieldset>
 				<legend>{lang}wcf.acp.adminTools.cron.cronDelMovedThreadDays.legend{/lang}</legend>
 				<div class="formElement" id="cronDelMovedThreadDays">
@@ -115,7 +117,7 @@ function runCron(cj) {
 					inlineHelp.register('cronDelMovedThreadDays');
 				//]]></script>
     		</fieldset>
-
+{/if}
 <!-- PMs *********************************************** -->
 			<fieldset>
 				<legend>{lang}wcf.acp.adminTools.cron.pm.legend{/lang}</legend>
@@ -270,6 +272,7 @@ function runCron(cj) {
     		</fieldset>
 
 <!-- Archiv ******************************************** -->
+{if $wbbExists}
 			<fieldset>
 				<legend>{lang}wcf.acp.adminTools.cron.cronThreadArchive.legend{/lang}</legend>
 				<p class="description">{lang}wcf.acp.adminTools.cron.cronThreadArchive.legend.description{/lang}</p>
@@ -397,6 +400,7 @@ function runCron(cj) {
 					inlineHelp.register('cronThreadArchiveExclDeleted');
 				//]]></script>
     		</fieldset>
+{/if}
 
 <!-- Journal ******************************************* -->
 			<fieldset>
