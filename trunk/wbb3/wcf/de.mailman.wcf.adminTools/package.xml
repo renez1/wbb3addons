@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0"?>
 <!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+<!-- $Id$ -->
 <package name="de.mailman.wcf.adminTools">
     <packageinformation>
         <packagename>Admin-Tools</packagename>
