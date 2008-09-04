@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<!-- $Id$ -->
+<language languagecode="de">
+    <category name="wbb.externalWysiwygEditor">
+        <item name="wbb.externalWysiwygEditor.title"><![CDATA[Externer Wysiwyg-Editor]]></item>
+        <item name="wbb.externalWysiwygEditor.description"><![CDATA[Dieser Editor kann zum Verfassen von Texten genutzt werden wenn kein Wysiwyg-Editor zur Verfügung steht.
+            Bearbeiten Sie den Text im gewünschten Format, prüfen Sie die Vorschau und kopieren Sie den Text dann einfach in das entsprechende Formular.]]></item>
+    </category>
+</language>
