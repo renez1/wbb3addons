@@ -86,14 +86,11 @@ class PMToUserGroupsForm extends ACPForm {
     public function save() {
         parent::save();
 		// save config in session
-        $groups = Group::getAccessibleGroups($this->groupIDs);
-
 		$pmData = WCF::getSession()->getVar('pmData');
 		if($pmData === null) $pmData = array();
 		$pmSessionID = count($pmData);
 		$pmData[$pmSessionID] = array(
 			'groupIDs'  => implode(',', $this->groupIDs),
-			'groups'    => implode(', ', $groups),
 			'limit'     => $this->limit,
 			'subject'   => $this->subject,
 			'text'      => $this->text,
