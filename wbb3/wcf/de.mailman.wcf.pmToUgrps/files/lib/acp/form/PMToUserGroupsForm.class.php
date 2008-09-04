@@ -22,6 +22,7 @@ class PMToUserGroupsForm extends ACPForm {
     public $canUseHtml = false;
     public $canUseBBCodes = false;
     public $maxTextLength = 10000;
+    public $limit = 25;
     public $user;
 
     /**
@@ -29,7 +30,7 @@ class PMToUserGroupsForm extends ACPForm {
      */
     public function readParameters() {
         parent::readParameters();
-        if(defined('RELATIVE_WBB_DIR') && @is_file(RELATIVE_WCF_DIR.'lib/form/ExternalWysiwygEditorForm.class.php')) $this->extWysiwyg = true;
+        if(defined('RELATIVE_WBB_DIR') && @is_file(RELATIVE_WBB_DIR.'lib/form/ExternalWysiwygEditorForm.class.php')) $this->extWysiwyg = true;
         $this->canUseSmilies = WCF::getUser()->getPermission('user.message.canUseSmilies');
         $this->canUseHtml = WCF::getUser()->getPermission('user.message.canUseHtml');
         $this->canUseBBCodes = WCF::getUser()->getPermission('user.message.canUseBBCodes');
@@ -53,6 +54,7 @@ class PMToUserGroupsForm extends ACPForm {
         if(isset($_POST['enableBBCodes'])) $this->enableBBCodes = $_POST['enableBBCodes'];
         if(isset($_POST['showSignature'])) $this->showSignature = $_POST['showSignature'];
 		if(isset($_POST['groupIDs']) && is_array($_POST['groupIDs'])) $this->groupIDs = ArrayUtil::toIntegerArray($_POST['groupIDs']);
+        if(isset($_POST['limit'])) $this->limit = $_POST['limit'];
     }
 
 
@@ -84,11 +86,15 @@ class PMToUserGroupsForm extends ACPForm {
     public function save() {
         parent::save();
 		// save config in session
+        $groups = Group::getAccessibleGroups($this->groupIDs);
+
 		$pmData = WCF::getSession()->getVar('pmData');
 		if($pmData === null) $pmData = array();
 		$pmSessionID = count($pmData);
 		$pmData[$pmSessionID] = array(
 			'groupIDs'  => implode(',', $this->groupIDs),
+			'groups'    => implode(', ', $groups),
+			'limit'     => $this->limit,
 			'subject'   => $this->subject,
 			'text'      => $this->text,
             'enableSmilies' => $this->enableSmilies,
@@ -102,7 +108,7 @@ class PMToUserGroupsForm extends ACPForm {
 
 		// show worker template
 		WCF::getTPL()->assign(array(
-			'pageTitle' => WCF::getLanguage()->get('wcf.acp.user.sendMail.group'),
+			'pageTitle' => WCF::getLanguage()->get('wcf.pmToUgrps.pageTitle'),
 			'url' => 'index.php?action=PMToUserGroups&pmSessionID='.$pmSessionID.'&packageID='.PACKAGE_ID.SID_ARG_2ND_NOT_ENCODED
 		));
 		WCF::getTPL()->display('worker');

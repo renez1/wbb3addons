@@ -36,6 +36,7 @@ class PMToUserGroupsAction extends WorkerAction {
         }
 
         $this->pmData = $pmData[$this->pmSessionID];
+        $this->limit = $this->pmData['limit'];
         $this->username = WCF::getUser()->username;
         $this->userID = intval(WCF::getUser()->userID);
     }
@@ -62,13 +63,36 @@ class PMToUserGroupsAction extends WorkerAction {
         $count = $row['cnt'];
 
         if ($count <= ($this->limit * $this->loop)) {
+            $endTime = TIME_NOW;
+            $lf = "\n";
+            // remove from outbox
+            $sql = "UPDATE wcf".WCF_N."_pm"
+                ."\n   SET saveInOutbox = 0"
+                ."\n WHERE pmID = ".intval($this->pmData['pmID']);
+            WCF::getDB()->sendQuery($sql);
+
+            // log...
+            $log = '';
+            $subject = WCF::getLanguage()->get('wcf.pmToUgrps.log.subject', array('$pmID' => $this->pmData['pmID'])).' '.$this->pmData['subject'];
+            if($this->pmData['enableHtml']) $log .= '<pre>';
+            $log .= WCF::getLanguage()->get('wcf.pmToUgrps.log.started', array('$startTime' => DateUtil::formatDate('%d.%m.%Y %H:%M:%S', $this->pmData['startTime']))).$lf;
+            $log .= WCF::getLanguage()->get('wcf.pmToUgrps.log.finished', array('$endTime' => DateUtil::formatDate('%d.%m.%Y %H:%M:%S', $endTime))).$lf;
+            $log .= WCF::getLanguage()->get('wcf.pmToUgrps.log.recipients', array('$groups' => $this->pmData['groups'], '$count' => StringUtil::formatInteger($count))).$lf;
+            $log .= str_repeat('-', 60).$lf;
+            if($this->pmData['enableHtml']) $log .= '</pre>'.$lf;
+            $log .= $this->pmData['text'];
+            $this->recipientArray = $this->blindCopyArray = array();
+            $this->recipientArray[0]['userID'] = $this->userID;
+            $this->recipientArray[0]['username'] = $this->username;
+            PMEditor::create($this->draft, $this->recipientArray, $this->blindCopyArray, $subject, $log, $this->userID, $this->username, array('enableSmilies' => $this->pmData['enableSmilies'], 'enableHtml' => $this->pmData['enableHtml'], 'enableBBCodes' => $this->pmData['enableBBCodes'], 'showSignature' => false));
+
             // clear session
             $pmData = WCF::getSession()->getVar('pmData');
             unset($pmData[$this->pmSessionID]);
             WCF::getSession()->register('pmData', $pmData);
 
             $this->calcProgress();
-            $msg = WCF::getLanguage()->get('wcf.pmToUgrps.finish', array('$count' => StringUtil::formatInteger($count), '$startTime' => DateUtil::formatShortTime('%H:%M:%S', $this->pmData['startTime']), '$endTime' => DateUtil::formatShortTime('%H:%M:%S', TIME_NOW)));
+            $msg = WCF::getLanguage()->get('wcf.pmToUgrps.finish', array('$count' => StringUtil::formatInteger($count), '$startTime' => DateUtil::formatShortTime('%H:%M:%S', $this->pmData['startTime']), '$endTime' => DateUtil::formatShortTime('%H:%M:%S', $endTime)));
 			$this->finish($msg, 'index.php?form=PMToUserGroups&packageID='.PACKAGE_ID.SID_ARG_2ND_NOT_ENCODED);
         }
 

@@ -23,7 +23,7 @@
         <requiredPackage minversion="1.0.7">com.woltlab.wcf.data.message.pm</requiredPackage>
     </requiredpackages>
 	<optionalpackages>
-		<optionalpackage file="optionals/de.mailman.wcf.externalWysiwygEditor_1.0.1.tar.gz" minversion="1.0.0">de.mailman.wcf.externalWysiwygEditor</optionalpackage>
+		<optionalpackage file="optionals/de.mailman.wbb.externalWysiwygEditor_1.0.0.tar.gz" minversion="1.0.0">de.mailman.wbb.externalWysiwygEditor</optionalpackage>
 	</optionalpackages>
 
     <instructions type="install">

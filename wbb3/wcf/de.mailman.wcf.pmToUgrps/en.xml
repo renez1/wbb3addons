@@ -17,7 +17,14 @@
         <item name="wcf.pmToUgrps.pm.subject"><![CDATA[Subject]]></item>
         <item name="wcf.pmToUgrps.pm.text"><![CDATA[Message]]></item>
         <item name="wcf.pmToUgrps.settings.legend"><![CDATA[Settings]]></item>
+        <item name="wcf.pmToUgrps.pageTitle"><![CDATA[Private message to group members]]></item>
         <item name="wcf.pmToUgrps.finish"><![CDATA[Completed successfully. <br />Outgoing messages: {$count} <br />Started: {$startTime} <br />Finished: {$endTime}]]></item>
         <item name="wcf.pmToUgrps.progress"><![CDATA[In progress: {$loop} ... {$count}]]></item>
+        <item name="wcf.pmToUgrps.log.subject"><![CDATA[Log bulk mailing pmID {$pmID}:]]></item>
+        <item name="wcf.pmToUgrps.log.started"><![CDATA[Started: {$startTime}]]></item>
+        <item name="wcf.pmToUgrps.log.finished"><![CDATA[Finished: {$endTime}]]></item>
+        <item name="wcf.pmToUgrps.log.recipients"><![CDATA[Recipients: {$groups} ({$count})]]></item>
+        <item name="wcf.pmToUgrps.limit"><![CDATA[Number of recipients per process]]></item>
+        <item name="wcf.pmToUgrps.limit.description"><![CDATA[]]></item>
     </category>
 </language>

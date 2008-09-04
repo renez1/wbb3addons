@@ -17,7 +17,14 @@
         <item name="wcf.pmToUgrps.pm.subject"><![CDATA[Betreff]]></item>
         <item name="wcf.pmToUgrps.pm.text"><![CDATA[Nachricht]]></item>
         <item name="wcf.pmToUgrps.settings.legend"><![CDATA[Einstellungen]]></item>
+        <item name="wcf.pmToUgrps.pageTitle"><![CDATA[Private Nachricht an Gruppenmitglieder]]></item>
         <item name="wcf.pmToUgrps.finish"><![CDATA[Vorgang erfolgreich abgeschlossen. <br />Versendete Nachrichten: {$count} <br />Gestartet: {$startTime} <br />Beendet: {$endTime}]]></item>
         <item name="wcf.pmToUgrps.progress"><![CDATA[Vorgang läuft: {$loop} ... {$count}]]></item>
+        <item name="wcf.pmToUgrps.log.subject"><![CDATA[Log Massenversand pmID {$pmID}:]]></item>
+        <item name="wcf.pmToUgrps.log.started"><![CDATA[Gestartet: {$startTime}]]></item>
+        <item name="wcf.pmToUgrps.log.finished"><![CDATA[Beendet: {$endTime}]]></item>
+        <item name="wcf.pmToUgrps.log.recipients"><![CDATA[Empfänger: {$groups} ({$count})]]></item>
+        <item name="wcf.pmToUgrps.limit"><![CDATA[Anzahl Versendungen je Lauf]]></item>
+        <item name="wcf.pmToUgrps.limit.description"><![CDATA[Wählen Sie hier die Anzahl der zu verarbeitenden Empfänger je Prozess (Lauf) aus.]]></item>
     </category>
 </language>
