@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0"?>
 <!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+<!-- $Id$ -->
 <package name="de.mailman.wcf.externalWysiwygEditor">
 	<packageinformation>
 		<packagename>Externer Wysiwyg-Editor</packagename>
 		<packagedescription>Ein Editor, den fast niemand benötigt :)</packagedescription>
 		<isUnique>1</isUnique>
-		<version>1.0.0</version>
-		<date>2008-02-07</date>
+		<version>1.0.1</version>
+		<date>2008-09-03</date>
 		<standalone>0</standalone>
 		<plugin>com.woltlab.wcf</plugin>
 	</packageinformation>
@@ -17,11 +18,16 @@
 	</authorinformation>
 
 	<requiredpackages>
-        <requiredPackage minversion="1.0.0">com.woltlab.wcf</requiredPackage>
+        <requiredPackage minversion="1.0.7">com.woltlab.wcf.form.message</requiredPackage>
 	</requiredpackages>
 
 	<instructions type="install">
 		<files>files.tar</files>
 		<templates>templates.tar</templates>
 	</instructions>
+
+    <instructions type="update" fromversion="1.0.0">
+		<files>files.tar</files>
+		<templates>templates.tar</templates>
+    </instructions>
 </package>

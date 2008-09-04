@@ -1,0 +1,43 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+<!-- $Id$ -->
+<package name="de.mailman.wcf.pmToUgrps">
+    <packageinformation>
+        <packagename>Private Nachrichten Massenversand</packagename>
+        <packagedescription>Private Nachrichten an Benutzergruppen senden.</packagedescription>
+		<packagename language="en">Private Message bulk mailing</packagename>
+		<packagedescription language="en">Sending private messages to user groups.</packagedescription>
+        <isUnique>1</isUnique>
+        <version>1.0.0</version>
+        <date>2008-09-04</date>
+        <standalone>0</standalone>
+        <plugin>com.woltlab.wcf</plugin>
+    </packageinformation>
+
+    <authorinformation>
+        <author>MailMan</author>
+        <authorurl>http://wbb3addons.ump2002.net</authorurl>
+    </authorinformation>
+
+    <requiredpackages>
+        <requiredPackage minversion="1.0.7">com.woltlab.wcf.data.message.pm</requiredPackage>
+    </requiredpackages>
+	<optionalpackages>
+		<optionalpackage file="optionals/de.mailman.wcf.externalWysiwygEditor_1.0.1.tar.gz" minversion="1.0.0">de.mailman.wcf.externalWysiwygEditor</optionalpackage>
+	</optionalpackages>
+
+    <instructions type="install">
+        <files>files.tar</files>
+        <acptemplates>acptemplates.tar</acptemplates>
+        <acpmenu>acpmenu.xml</acpmenu>
+        <groupoptions>groupoptions.xml</groupoptions>
+        <languages languagecode="de">de.xml</languages>
+        <languages languagecode="de-informal">de-informal.xml</languages>
+        <languages languagecode="en">en.xml</languages>
+    </instructions>
+
+<!--
+    <instructions type="update" fromversion="1.0.0">
+    </instructions>
+-->
+</package>

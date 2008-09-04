@@ -3,7 +3,10 @@ require_once(WCF_DIR.'lib/form/MessageForm.class.php');
 require_once(WCF_DIR.'lib/data/message/bbcode/MessageParser.class.php');
 
 /**
- * @author	MailMan
+ * $Id$
+ * @package de.mailman.wcf.pmToUgrps
+ * @author  MailMan (http://wbb3addons.ump2002.net)
+ * example: {@RELATIVE_WBB_DIR}index.php?form=ExternalWysiwygEditor&amp;permissionType=message{@SID_ARG_2ND}
  */
 
 class ExternalWysiwygEditorForm extends MessageForm {

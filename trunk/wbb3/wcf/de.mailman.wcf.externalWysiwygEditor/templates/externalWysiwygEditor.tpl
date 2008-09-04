@@ -1,3 +1,4 @@
+{* $Id$ *}
 {include file="documentHeader"}
 <head>
 	<title>{lang}wcf.wysiwyg.view.wysiwyg{/lang} - {PAGE_TITLE}</title>
@@ -10,12 +11,16 @@
 {include file='header' sandbox=false}
 
 <div id="main">
+    <div class="mainHeadline">
+        <img src="{@RELATIVE_WCF_DIR}icon/externalWysiwygEditorL.png" alt="" />
+        <div class="headlineContainer">
+            <h2>{lang}wcf.wysiwyg.view.wysiwyg{/lang}</h2>
+        </div>
+    </div>
+
     <form method="post" action="index.php?form=ExternalWysiwygEditor{@SID_ARG_2ND}">
         <div class="border tabMenuContent">
         	<div class="container-1">
-                <h3 class="subHeadline">
-                    <img src="{@RELATIVE_WCF_DIR}icon/editM.png" alt="" /> {lang}wcf.wysiwyg.view.wysiwyg{/lang}
-                </h3>
         		{if !$preview|empty}
         			<fieldset>
         				<legend>{lang}wcf.message.preview{/lang}</legend>
