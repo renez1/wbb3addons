@@ -26,5 +26,6 @@
         <item name="wcf.pmToUgrps.log.recipients"><![CDATA[Recipients: {$groups} ({$count})]]></item>
         <item name="wcf.pmToUgrps.limit"><![CDATA[Number of recipients per process]]></item>
         <item name="wcf.pmToUgrps.limit.description"><![CDATA[]]></item>
+        <item name="wcf.pmToUgrps.error.noRecipients"><![CDATA[Wrong user group selected!]]></item>
     </category>
 </language>
