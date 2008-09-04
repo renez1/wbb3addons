@@ -71,13 +71,26 @@ class PMToUserGroupsAction extends WorkerAction {
                 ."\n WHERE pmID = ".intval($this->pmData['pmID']);
             WCF::getDB()->sendQuery($sql);
 
+            // groups...
+            $groups = '';
+            $sql = "SELECT groupName"
+                ."\n  FROM wcf".WCF_N."_group"
+                ."\n WHERE groupID IN (".$this->pmData['groupIDs'].")"
+                ."\n ORDER BY groupName";
+            $result = WCF::getDB()->sendQuery($sql);
+            while($row = WCF::getDB()->fetchArray($result)) {
+                if(!empty($groups)) $groups .= ', ';
+                $groups .= StringUtil::decodeHTML($row['groupName']);
+            }
+
+
             // log...
             $log = '';
             $subject = WCF::getLanguage()->get('wcf.pmToUgrps.log.subject', array('$pmID' => $this->pmData['pmID'])).' '.$this->pmData['subject'];
             if($this->pmData['enableHtml']) $log .= '<pre>';
             $log .= WCF::getLanguage()->get('wcf.pmToUgrps.log.started', array('$startTime' => DateUtil::formatDate('%d.%m.%Y %H:%M:%S', $this->pmData['startTime']))).$lf;
             $log .= WCF::getLanguage()->get('wcf.pmToUgrps.log.finished', array('$endTime' => DateUtil::formatDate('%d.%m.%Y %H:%M:%S', $endTime))).$lf;
-            $log .= WCF::getLanguage()->get('wcf.pmToUgrps.log.recipients', array('$groups' => $this->pmData['groups'], '$count' => StringUtil::formatInteger($count))).$lf;
+            $log .= WCF::getLanguage()->get('wcf.pmToUgrps.log.recipients', array('$groups' => $groups, '$count' => StringUtil::decodeHTML(StringUtil::formatInteger($count)))).$lf;
             $log .= str_repeat('-', 60).$lf;
             if($this->pmData['enableHtml']) $log .= '</pre>'.$lf;
             $log .= $this->pmData['text'];
@@ -92,7 +105,7 @@ class PMToUserGroupsAction extends WorkerAction {
             WCF::getSession()->register('pmData', $pmData);
 
             $this->calcProgress();
-            $msg = WCF::getLanguage()->get('wcf.pmToUgrps.finish', array('$count' => StringUtil::formatInteger($count), '$startTime' => DateUtil::formatShortTime('%H:%M:%S', $this->pmData['startTime']), '$endTime' => DateUtil::formatShortTime('%H:%M:%S', $endTime)));
+            $msg = WCF::getLanguage()->get('wcf.pmToUgrps.finish', array('$count' => StringUtil::decodeHTML(StringUtil::formatInteger($count)), '$startTime' => DateUtil::formatShortTime('%H:%M:%S', $this->pmData['startTime']), '$endTime' => DateUtil::formatShortTime('%H:%M:%S', $endTime)));
 			$this->finish($msg, 'index.php?form=PMToUserGroups&packageID='.PACKAGE_ID.SID_ARG_2ND_NOT_ENCODED);
         }
 
@@ -146,7 +159,7 @@ class PMToUserGroupsAction extends WorkerAction {
         }
         $this->executed();
         $this->calcProgress(($this->limit * $this->loop), $count);
-        $msg = WCF::getLanguage()->get('wcf.pmToUgrps.progress', array('$loop' => StringUtil::formatInteger(($this->limit * $this->loop)), '$count' => StringUtil::formatInteger($count)));
+        $msg = WCF::getLanguage()->get('wcf.pmToUgrps.progress', array('$loop' => StringUtil::decodeHTML(StringUtil::formatInteger(($this->limit * $this->loop))), '$count' => StringUtil::decodeHTML(StringUtil::formatInteger($count))));
         $this->nextLoop($msg, 'index.php?action='.$this->action.'&pmSessionID='.$this->pmSessionID.'&limit='.$this->limit.'&loop='.($this->loop + 1).'&packageID='.PACKAGE_ID.SID_ARG_2ND_NOT_ENCODED);
     }
 }
