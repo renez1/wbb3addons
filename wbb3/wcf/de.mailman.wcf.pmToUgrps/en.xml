@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<!-- $Id$ -->
+<language languagecode="en">
+    <category name="wcf.acp.menu">
+        <item name="wcf.acp.menu.link.group.pmToUgrps"><![CDATA[PM to user groups]]></item>
+    </category>
+    <category name="wcf.acp.group">
+        <item name="wcf.acp.group.option.admin.user.canPMToUserGroups"><![CDATA[Can send private messages to user groups]]></item>
+        <item name="wcf.acp.group.option.admin.user.canPMToUserGroups.description"><![CDATA[]]></item>
+    </category>
+    <category name="wcf.pmToUgrps">
+        <item name="wcf.pmToUgrps.newMessage"><![CDATA[Create new message]]></item>
+        <item name="wcf.pmToUgrps.sendTo.legend"><![CDATA[Send a private message to the members following user groups]]></item>
+        <item name="wcf.pmToUgrps.sendTo.groups"><![CDATA[User groups]]></item>
+        <item name="wcf.pmToUgrps.pm.legend"><![CDATA[Private message]]></item>
+        <item name="wcf.pmToUgrps.pm.subject"><![CDATA[Subject]]></item>
+        <item name="wcf.pmToUgrps.pm.text"><![CDATA[Message]]></item>
+        <item name="wcf.pmToUgrps.settings.legend"><![CDATA[Settings]]></item>
+        <item name="wcf.pmToUgrps.finish"><![CDATA[Completed successfully. <br />Outgoing messages: {$count} <br />Started: {$startTime} <br />Finished: {$endTime}]]></item>
+        <item name="wcf.pmToUgrps.progress"><![CDATA[In progress: {$loop} ... {$count}]]></item>
+    </category>
+</language>
