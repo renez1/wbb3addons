@@ -4,7 +4,7 @@ require_once(WCF_DIR.'lib/data/message/bbcode/MessageParser.class.php');
 
 /**
  * $Id$
- * @package de.mailman.wcf.externalWysiwygEditor
+ * @package de.mailman.wbb.externalWysiwygEditor
  * @author  MailMan (http://wbb3addons.ump2002.net)
  * example: {@RELATIVE_WBB_DIR}index.php?form=ExternalWysiwygEditor&amp;permissionType=message{@SID_ARG_2ND}
  */
