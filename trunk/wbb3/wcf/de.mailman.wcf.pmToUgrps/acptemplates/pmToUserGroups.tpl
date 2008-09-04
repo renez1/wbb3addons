@@ -59,13 +59,6 @@
             		</div>
             		<div class="formField">
             			<textarea name="text" id="text" rows="20" cols="40">{if $text|isset}{$text}{/if}</textarea>
-                    	{if $extWysiwyg}
-                            <div class="smallButtons">
-                                <ul>
-                                    <li><a href="{@RELATIVE_WBB_DIR}index.php?form=ExternalWysiwygEditor&amp;permissionType=message{@SID_ARG_2ND}" target="_blank"><img src="{@RELATIVE_WCF_DIR}icon/externalWysiwygEditorS.png" alt="" /> <span>{lang}wcf.wysiwyg.view.wysiwyg{/lang}</span></a></li>
-                                </ul>
-                            </div>
-                    	{/if}
             			{if $errorField == 'text'}
             				<p class="innerError">
             					{if $errorType == 'empty'}{lang}wcf.global.error.empty{/lang}{/if}
@@ -73,6 +66,13 @@
             					{if $errorType == 'censoredWordsFound'}{lang}wcf.message.error.censoredWordsFound{/lang}{/if}
             				</p>
             			{/if}
+                        {if $extWysiwyg}
+                            <div class="smallButtons">
+                                <ul>
+                                    <li><a href="{@RELATIVE_WBB_DIR}index.php?form=ExternalWysiwygEditor&amp;permissionType=message{@SID_ARG_2ND}" target="_blank"><img src="{@RELATIVE_WBB_DIR}icon/externalWysiwygEditorS.png" alt="" /> <span>{lang}wbb.externalWysiwygEditor.title{/lang}</span></a></li>
+                                </ul>
+                            </div>
+                        {/if}
             		</div>
             	</div>
             </fieldset>
@@ -117,6 +117,39 @@
                         </label>
                     </div>
                 </div>
+
+                <div class="formElement">
+                    <div class="formFieldLabel">
+                        <label for="limit">{lang}wcf.pmToUgrps.limit{/lang}</label>
+                    </div>
+                    <div class="formField">
+                        <select name="limit" id="limit">
+                            <option value="5"> 5</option>
+                            <option value="10"> 10</option>
+                            <option value="15"> 15</option>
+                            <option value="20"> 20</option>
+                            <option value="25" selected="selected"> 25</option>
+                            <option value="50"> 50</option>
+                            <option value="75"> 75</option>
+                            <option value="100"> 100</option>
+                            <option value="150"> 150</option>
+                            <option value="200"> 200</option>
+                            <option value="300"> 300</option>
+                            <option value="400"> 400</option>
+                            <option value="500"> 500</option>
+                            <option value="1000"> 1000</option>
+                        </select>
+                    </div>
+                    <div class="formFieldDesc hidden" id="limitHelpMessage">
+                    	<p>{lang}wcf.pmToUgrps.limit.description{/lang}</p>
+                    </div>
+                </div>
+	            <script type="text/javascript">
+                    //<![CDATA[
+                    inlineHelp.register('limit');
+                    //]]>
+                </script>
+
             </fieldset>
     	</div>
     </div>
