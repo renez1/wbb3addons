@@ -26,5 +26,6 @@
         <item name="wcf.pmToUgrps.log.recipients"><![CDATA[Empfänger: {$groups} ({$count})]]></item>
         <item name="wcf.pmToUgrps.limit"><![CDATA[Anzahl Versendungen je Lauf]]></item>
         <item name="wcf.pmToUgrps.limit.description"><![CDATA[Wähle hier die Anzahl der zu verarbeitenden Empfänger je Prozess (Lauf) aus.]]></item>
+        <item name="wcf.pmToUgrps.error.noRecipients"><![CDATA[Du hast eine Benutzergruppe ausgewählt, die keine private Nachrichten empfangen darf!]]></item>
     </category>
 </language>

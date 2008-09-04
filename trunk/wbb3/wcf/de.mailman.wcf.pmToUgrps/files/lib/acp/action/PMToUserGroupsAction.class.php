@@ -17,7 +17,7 @@ class PMToUserGroupsAction extends WorkerAction {
     public $attachmentsEditor;
     public $preview, $send, $draft;
 	public $action = 'PMToUserGroups';
-	public $username, $userID;
+	public $username, $userID, $pmID;
 
 
     /**
@@ -36,6 +36,7 @@ class PMToUserGroupsAction extends WorkerAction {
         }
 
         $this->pmData = $pmData[$this->pmSessionID];
+        if(!empty($this->pmData['pmID'])) $this->pmID = intval($this->pmData['pmID']);
         $this->limit = $this->pmData['limit'];
         $this->username = WCF::getUser()->username;
         $this->userID = intval(WCF::getUser()->userID);
@@ -62,13 +63,23 @@ class PMToUserGroupsAction extends WorkerAction {
         $row = WCF::getDB()->getFirstRow($sql);
         $count = $row['cnt'];
 
-        if ($count <= ($this->limit * $this->loop)) {
+        if(!$count > 0) {
+            // clear session
+            if(isset($this->pmData)) {
+                $pmData = WCF::getSession()->getVar('pmData');
+                unset($pmData[$this->pmSessionID]);
+                WCF::getSession()->register('pmData', $pmData);
+            }
+			$this->finish('wcf.pmToUgrps.error.noRecipients', 'index.php?form=PMToUserGroups&packageID='.PACKAGE_ID.SID_ARG_2ND_NOT_ENCODED);
+        }
+
+        if($count <= ($this->limit * $this->loop)) {
             $endTime = TIME_NOW;
             $lf = "\n";
             // remove from outbox
             $sql = "UPDATE wcf".WCF_N."_pm"
                 ."\n   SET saveInOutbox = 0"
-                ."\n WHERE pmID = ".intval($this->pmData['pmID']);
+                ."\n WHERE pmID = ".$this->pmID;
             WCF::getDB()->sendQuery($sql);
 
             // groups...
@@ -86,7 +97,7 @@ class PMToUserGroupsAction extends WorkerAction {
 
             // log...
             $log = '';
-            $subject = WCF::getLanguage()->get('wcf.pmToUgrps.log.subject', array('$pmID' => $this->pmData['pmID'])).' '.$this->pmData['subject'];
+            $subject = WCF::getLanguage()->get('wcf.pmToUgrps.log.subject', array('$pmID' => $this->pmID)).' '.$this->pmData['subject'];
             if($this->pmData['enableHtml']) $log .= '<pre>';
             $log .= WCF::getLanguage()->get('wcf.pmToUgrps.log.started', array('$startTime' => DateUtil::formatDate('%d.%m.%Y %H:%M:%S', $this->pmData['startTime']))).$lf;
             $log .= WCF::getLanguage()->get('wcf.pmToUgrps.log.finished', array('$endTime' => DateUtil::formatDate('%d.%m.%Y %H:%M:%S', $endTime))).$lf;
@@ -130,11 +141,12 @@ class PMToUserGroupsAction extends WorkerAction {
         }
 
         if(count($this->blindCopyArray)) {
-            if(empty($this->pmData['pmID'])) {
+            if(empty($this->pmID)) {
                 $tmp = PMEditor::create($this->draft, $this->recipientArray, $this->blindCopyArray, $this->pmData['subject'], $this->pmData['text'], $this->userID, $this->username, array('enableSmilies' => $this->pmData['enableSmilies'], 'enableHtml' => $this->pmData['enableHtml'], 'enableBBCodes' => $this->pmData['enableBBCodes'], 'showSignature' => $this->pmData['showSignature']));
                 if($tmp->pmID) {
+                    $this->pmID = intval($tmp->pmID);
                     $pmData = WCF::getSession()->getVar('pmData');
-                    $pmData[$this->pmSessionID]['pmID'] = $tmp->pmID;
+                    $pmData[$this->pmSessionID]['pmID'] = $this->pmID;
                     WCF::getSession()->register('pmData', $pmData);
                 }
             } else {
@@ -144,7 +156,7 @@ class PMToUserGroupsAction extends WorkerAction {
                     if(!empty($recipientIDs)) $recipientIDs .= ',';
                     $recipientIDs .= $this->blindCopyArray[$k]['userID'];
         			if(!empty($inserts)) $inserts .= ',';
-		        	$inserts .= "\n       (".intval($this->pmData['pmID']).", ".intval($this->blindCopyArray[$k]['userID']).", '".$username."', 1)";
+		        	$inserts .= "\n       (".$this->pmID.", ".intval($this->blindCopyArray[$k]['userID']).", '".$username."', 1)";
                 }
                 if(!empty($recipientIDs) && !empty($inserts)) {
                     $sql = "INSERT IGNORE INTO wcf".WCF_N."_pm_to_user"
