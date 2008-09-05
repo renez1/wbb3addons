@@ -34,11 +34,8 @@
         <languages languagecode="en">en.xml</languages>
     </instructions>
 
+<!--
     <instructions type="update" fromversion="1.0.0">
-        <files>files.tar</files>
-        <acptemplates>acptemplates.tar</acptemplates>
-        <languages languagecode="de">de.xml</languages>
-        <languages languagecode="de-informal">de-informal.xml</languages>
-        <languages languagecode="en">en.xml</languages>
     </instructions>
+-->
 </package>
