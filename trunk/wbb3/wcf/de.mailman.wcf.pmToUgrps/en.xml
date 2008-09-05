@@ -6,8 +6,10 @@
         <item name="wcf.acp.menu.link.group.pmToUgrps"><![CDATA[PM to group members]]></item>
     </category>
     <category name="wcf.acp.group">
-        <item name="wcf.acp.group.option.admin.user.canPMToUserGroups"><![CDATA[Can send private messages to user groups]]></item>
+        <item name="wcf.acp.group.option.admin.user.canPMToUserGroups"><![CDATA[Can send private messages to group members]]></item>
         <item name="wcf.acp.group.option.admin.user.canPMToUserGroups.description"><![CDATA[]]></item>
+        <item name="wcf.acp.group.option.admin.user.pmToUserGroupsLimitDefault"><![CDATA[Number of recipients per process]]></item>
+        <item name="wcf.acp.group.option.admin.user.pmToUserGroupsLimitDefault.description"><![CDATA[Number of recipients per process while sending the bulk mailing.]]></item>
     </category>
     <category name="wcf.pmToUgrps">
         <item name="wcf.pmToUgrps.newMessage"><![CDATA[Private message to group members]]></item>
@@ -23,8 +25,6 @@
         <item name="wcf.pmToUgrps.log.started"><![CDATA[Started: {$startTime}]]></item>
         <item name="wcf.pmToUgrps.log.finished"><![CDATA[Finished: {$endTime}]]></item>
         <item name="wcf.pmToUgrps.log.recipients"><![CDATA[Recipients: {$groups} ({$count})]]></item>
-        <item name="wcf.pmToUgrps.limit"><![CDATA[Number of recipients per process]]></item>
-        <item name="wcf.pmToUgrps.limit.description"><![CDATA[]]></item>
         <item name="wcf.pmToUgrps.error.noRecipients"><![CDATA[Wrong user group selected!]]></item>
     </category>
 </language>

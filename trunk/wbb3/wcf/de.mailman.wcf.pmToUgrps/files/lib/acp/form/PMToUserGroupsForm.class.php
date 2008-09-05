@@ -21,7 +21,6 @@ class PMToUserGroupsForm extends WysiwygCacheloaderForm {
     public $canUseHtml = false;
     public $canUseBBCodes = false;
     public $maxTextLength = 10000;
-    public $limit = 25;
     public $preview, $send, $user;
     /**
      * @see Page::readParameters()
@@ -51,7 +50,6 @@ class PMToUserGroupsForm extends WysiwygCacheloaderForm {
         if(isset($_POST['enableBBCodes'])) $this->enableBBCodes = $_POST['enableBBCodes'];
         if(isset($_POST['showSignature'])) $this->showSignature = $_POST['showSignature'];
         if(isset($_POST['groupIDs']) && is_array($_POST['groupIDs'])) $this->groupIDs = ArrayUtil::toIntegerArray($_POST['groupIDs']);
-        if(isset($_POST['limit'])) $this->limit = $_POST['limit'];
         if(isset($_POST['preview'])) $this->preview = (boolean) $_POST['preview'];
         if(isset($_POST['send'])) $this->send = (boolean) $_POST['send'];
     }
@@ -116,7 +114,6 @@ class PMToUserGroupsForm extends WysiwygCacheloaderForm {
         $pmSessionID = count($pmData);
         $pmData[$pmSessionID] = array(
             'groupIDs'  => implode(',', $this->groupIDs),
-            'limit'     => $this->limit,
             'subject'   => $this->subject,
             'text'      => $this->text,
             'enableSmilies' => $this->enableSmilies,
@@ -155,7 +152,6 @@ class PMToUserGroupsForm extends WysiwygCacheloaderForm {
             'maxTextLength' => $this->maxTextLength,
             'groupIDs'      => $this->groupIDs,
             'groups'        => $this->groups,
-            'limit'         => $this->limit,
             'subject'       => $this->subject,
             'text'          => $this->text,
             'enableSmilies' => $this->enableSmilies,
