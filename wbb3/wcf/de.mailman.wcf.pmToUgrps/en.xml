@@ -9,7 +9,7 @@
         <item name="wcf.acp.group.option.admin.user.canPMToUserGroups"><![CDATA[Can send private messages to group members]]></item>
         <item name="wcf.acp.group.option.admin.user.canPMToUserGroups.description"><![CDATA[]]></item>
         <item name="wcf.acp.group.option.admin.user.pmToUserGroupsLimitDefault"><![CDATA[Number of recipients per process]]></item>
-        <item name="wcf.acp.group.option.admin.user.pmToUserGroupsLimitDefault.description"><![CDATA[Number of recipients per process while sending the bulk mailing.]]></item>
+        <item name="wcf.acp.group.option.admin.user.pmToUserGroupsLimitDefault.description"><![CDATA[Number of recipients per process while sending the bulk mailing. Default = 25.]]></item>
     </category>
     <category name="wcf.pmToUgrps">
         <item name="wcf.pmToUgrps.newMessage"><![CDATA[Private message to group members]]></item>

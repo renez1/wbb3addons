@@ -9,7 +9,7 @@
         <item name="wcf.acp.group.option.admin.user.canPMToUserGroups"><![CDATA[Kann private Nachrichten an Gruppenmitglieder senden]]></item>
         <item name="wcf.acp.group.option.admin.user.canPMToUserGroups.description"><![CDATA[Mitglieder dieser Benutzergruppe können private Nachrichten an Gruppenmitglieder senden.]]></item>
         <item name="wcf.acp.group.option.admin.user.pmToUserGroupsLimitDefault"><![CDATA[Anzahl Versendungen je Lauf]]></item>
-        <item name="wcf.acp.group.option.admin.user.pmToUserGroupsLimitDefault.description"><![CDATA[Wählen Sie hier die Anzahl der zu verarbeitenden Empfänger je Prozess (Lauf) beim Massenversand von PNs aus.]]></item>
+        <item name="wcf.acp.group.option.admin.user.pmToUserGroupsLimitDefault.description"><![CDATA[Geben Sie hier die Anzahl der zu verarbeitenden Empfänger je Prozess (Lauf) beim Massenversand von PNs aus. Standard = 25.]]></item>
     </category>
     <category name="wcf.pmToUgrps">
         <item name="wcf.pmToUgrps.newMessage"><![CDATA[Private Nachricht an Gruppenmitglieder]]></item>
