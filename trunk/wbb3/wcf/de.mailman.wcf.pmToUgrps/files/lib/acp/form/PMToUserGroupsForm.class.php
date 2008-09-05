@@ -155,6 +155,7 @@ class PMToUserGroupsForm extends WysiwygCacheloaderForm {
             'maxTextLength' => $this->maxTextLength,
             'groupIDs'      => $this->groupIDs,
             'groups'        => $this->groups,
+            'limit'         => $this->limit,
             'subject'       => $this->subject,
             'text'          => $this->text,
             'enableSmilies' => $this->enableSmilies,
