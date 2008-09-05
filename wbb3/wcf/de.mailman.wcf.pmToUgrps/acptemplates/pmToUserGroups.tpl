@@ -62,20 +62,20 @@
                     </div>
                     <div class="formField">
                         <select name="limit" id="limit">
-                            <option value="5"> 5</option>
-                            <option value="10"> 10</option>
-                            <option value="15"> 15</option>
-                            <option value="20"> 20</option>
-                            <option value="25" selected="selected"> 25</option>
-                            <option value="50"> 50</option>
-                            <option value="75"> 75</option>
-                            <option value="100"> 100</option>
-                            <option value="150"> 150</option>
-                            <option value="200"> 200</option>
-                            <option value="300"> 300</option>
-                            <option value="400"> 400</option>
-                            <option value="500"> 500</option>
-                            <option value="1000"> 1000</option>
+                            <option value="5"{if $limit == 5} selected="selected"{/if}> 5</option>
+                            <option value="10"{if $limit == 10} selected="selected"{/if}> 10</option>
+                            <option value="15"{if $limit == 15} selected="selected"{/if}> 15</option>
+                            <option value="20"{if $limit == 20} selected="selected"{/if}> 20</option>
+                            <option value="25"{if $limit == 25} selected="selected"{/if}> 25</option>
+                            <option value="50"{if $limit == 50} selected="selected"{/if}> 50</option>
+                            <option value="75"{if $limit == 75} selected="selected"{/if}> 75</option>
+                            <option value="100"{if $limit == 100} selected="selected"{/if}> 100</option>
+                            <option value="150"{if $limit == 150} selected="selected"{/if}> 150</option>
+                            <option value="200"{if $limit == 200} selected="selected"{/if}> 200</option>
+                            <option value="300"{if $limit == 300} selected="selected"{/if}> 300</option>
+                            <option value="400"{if $limit == 400} selected="selected"{/if}> 400</option>
+                            <option value="500"{if $limit == 500} selected="selected"{/if}> 500</option>
+                            <option value="1000"{if $limit == 1000} selected="selected"{/if}> 1000</option>
                         </select>
                     </div>
                     <div class="formFieldDesc hidden" id="limitHelpMessage">
