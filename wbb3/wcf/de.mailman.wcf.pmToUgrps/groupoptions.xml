@@ -10,6 +10,26 @@
 				<defaultvalue>0</defaultvalue>
 				<visible>4</visible>
 			</option>
+			<option name="admin.user.pmToUserGroupsLimitDefault">
+				<categoryname>admin.user.user</categoryname>
+				<optiontype>select</optiontype>
+				<defaultvalue><![CDATA[25]]></defaultvalue>
+				<selectoptions><![CDATA[5
+10
+15
+20
+25
+50
+75
+100
+150
+200
+300
+400
+500
+1000]]></selectoptions>
+			</option>
+
 		</options>
 	</import>
 </data>

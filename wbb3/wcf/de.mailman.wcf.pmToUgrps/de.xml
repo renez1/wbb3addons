@@ -6,8 +6,10 @@
         <item name="wcf.acp.menu.link.group.pmToUgrps"><![CDATA[PN an Gruppenmitglieder]]></item>
     </category>
     <category name="wcf.acp.group">
-        <item name="wcf.acp.group.option.admin.user.canPMToUserGroups"><![CDATA[Kann private Nachrichten an Benutzergruppen senden]]></item>
-        <item name="wcf.acp.group.option.admin.user.canPMToUserGroups.description"><![CDATA[Mitglieder dieser Benutzergruppe können private Nachrichten an Benutzergruppen senden]]></item>
+        <item name="wcf.acp.group.option.admin.user.canPMToUserGroups"><![CDATA[Kann private Nachrichten an Gruppenmitglieder senden]]></item>
+        <item name="wcf.acp.group.option.admin.user.canPMToUserGroups.description"><![CDATA[Mitglieder dieser Benutzergruppe können private Nachrichten an Gruppenmitglieder senden.]]></item>
+        <item name="wcf.acp.group.option.admin.user.pmToUserGroupsLimitDefault"><![CDATA[Anzahl Versendungen je Lauf]]></item>
+        <item name="wcf.acp.group.option.admin.user.pmToUserGroupsLimitDefault.description"><![CDATA[Wählen Sie hier die Anzahl der zu verarbeitenden Empfänger je Prozess (Lauf) beim Massenversand von PNs aus.]]></item>
     </category>
     <category name="wcf.pmToUgrps">
         <item name="wcf.pmToUgrps.newMessage"><![CDATA[Private Nachricht an Gruppenmitglieder]]></item>
@@ -23,8 +25,6 @@
         <item name="wcf.pmToUgrps.log.started"><![CDATA[Gestartet: {$startTime}]]></item>
         <item name="wcf.pmToUgrps.log.finished"><![CDATA[Beendet: {$endTime}]]></item>
         <item name="wcf.pmToUgrps.log.recipients"><![CDATA[Empfänger: {$groups} ({$count})]]></item>
-        <item name="wcf.pmToUgrps.limit"><![CDATA[Anzahl Versendungen je Lauf]]></item>
-        <item name="wcf.pmToUgrps.limit.description"><![CDATA[Wählen Sie hier die Anzahl der zu verarbeitenden Empfänger je Prozess (Lauf) aus.]]></item>
         <item name="wcf.pmToUgrps.error.noRecipients"><![CDATA[Sie haben eine Benutzergruppe ausgewählt, die keine private Nachrichten empfangen darf!]]></item>
     </category>
 </language>

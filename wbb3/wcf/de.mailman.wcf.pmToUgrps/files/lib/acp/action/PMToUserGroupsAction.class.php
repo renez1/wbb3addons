@@ -37,7 +37,8 @@ class PMToUserGroupsAction extends WorkerAction {
 
         $this->pmData = $pmData[$this->pmSessionID];
         if(!empty($this->pmData['pmID'])) $this->pmID = intval($this->pmData['pmID']);
-        $this->limit = $this->pmData['limit'];
+        $this->limit = @intval(WCF::getUser()->getPermission('admin.user.pmToUserGroupsLimitDefault'));
+        if(empty($this->limit)) $this->limit = 25;
         $this->username = WCF::getUser()->username;
         $this->userID = intval(WCF::getUser()->userID);
     }
