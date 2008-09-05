@@ -2,8 +2,11 @@
 require_once (WCF_DIR . 'lib/data/cronjobs/Cronjob.class.php');
 
 /**
- * @author	MailMan
+ * $Id$
+ * @package de.mailman.wcf.userWantedPoster
+ * @author  MailMan (http://wbb3addons.ump2002.net)
  */
+
 class UserWantedPoster implements Cronjob
 {
 	/**

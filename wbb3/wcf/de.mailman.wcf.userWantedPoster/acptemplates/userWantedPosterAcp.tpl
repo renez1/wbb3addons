@@ -1,4 +1,6 @@
 {include file='header'}
+{include file='Wysiwyg'}
+{* $Id$ *}
 	<script language="javascript">
     //<![CDATA[
         function confirmTplDel(fName) {
@@ -27,9 +29,28 @@
 	<p class="success">{@$success}</p>
 {/if}
 
-<div class="border content">
-	<div class="container-1">
+{if $preview|isset}
+	<div class="border">
+		<div class="containerHead">
+			<h3>{lang}wcf.message.preview{/lang}</h3>
+		</div>
+		
+		<div class="message content">
+			<div class="messageInner container-1">
+				{if $subject}
+					<h4>{$subject}</h4>
+				{/if}
+				<div class="messageBody">
+					{@$preview}
+				</div>
+			</div>
+		</div>
+	</div>
+	<br />
+{/if}
 
+<div class="border content">
+    <div class="container-1">
         <form method="post" action="index.php?form=UserWantedPosterAcp" name="selectTemplate">
             <fieldset>
             	<legend>{lang}wcf.acp.wantedPoster.tplSelection{/lang}</legend>
@@ -54,8 +75,8 @@
 
         <form method="post" action="index.php?form=UserWantedPosterAcp" name="uwpTemplate" onSubmit="return confirmTplDel(this.name)">
             <fieldset>
-            	<legend>{lang}wcf.acp.wantedPoster.{if !$tplID|empty}edit{else}add{/if}Title{/lang}</legend>
-                {if !$tplData.templateID|empty}
+            	<legend>{lang}wcf.acp.wantedPoster.tplOptions{/lang}</legend>
+                {if !$tplID|empty}
                     <div class="formElement" id="tplCreatedDiv">
                         <div class="formFieldLabel"><label for="tplCreated">{lang}wcf.acp.wantedPoster.tplCreated{/lang}</label></div>
                         <div class="formField" id="tplCreated">{if $tplData.insertDate|isset}{@$tplData.insertDate|time} &bull; {@$tplData.IUser}{/if}</div>
@@ -65,51 +86,6 @@
                         <div class="formField" id="tplModified">{if $tplData.updateDate|isset}{@$tplData.updateDate|time} &bull; {@$tplData.UUser}{/if}</div>
                     </div>
                 {/if}
-            	<div class="formElement" id="tplNameDiv">
-                    <div class="formFieldLabel">
-                    	<label for="tplName">{lang}wcf.acp.wantedPoster.tplName{/lang}</label>
-                    </div>
-                    <div class="formField">
-                    	<input type="text" class="inputText" name="tplName" id="tplName" value="{if !$tplName|empty}{@$tplName}{/if}" />
-                    	{if $errorField == 'tplName'}
-                    		<p class="innerError">
-                    			{if $errorType == 'empty'}{lang}wcf.global.error.empty{/lang}{/if}
-                    			{if $errorType == 'exists'}{lang}wcf.acp.wantedPoster.errTplNameExists{/lang}{/if}
-                    		</p>
-                    	{/if}
-                    </div>
-                </div>
-
-            	<div class="formElement" id="textDiv">
-                    <div class="formFieldLabel">
-                    	<label for="text">{lang}wcf.acp.wantedPoster.tplContent{/lang}</label>
-                    </div>
-                    <div class="formField">
-                    	<textarea name="text" id="text" rows="15" cols="40">{if !$tplText|empty}{$tplText}{/if}</textarea>
-                    	{if $errorField == 'text'}
-                    		<p class="innerError">
-                    			{if $errorType == 'empty'}{lang}wcf.global.error.empty{/lang}{/if}
-                    		</p>
-                    	{/if}
-                    	{if $extWysiwyg}
-                    	    <img src="{@RELATIVE_WCF_DIR}icon/editM.png" alt="" /> <a href="{@RELATIVE_WBB_DIR}/index.php?form=ExternalWysiwygEditor&permissionType=wantedPoster" target="_blank">{lang}wcf.wysiwyg.view.wysiwyg{/lang}</a>
-                    	{/if}
-                    </div>
-                </div>
-
-            	<div class="formElement" id="uwpPermDiv">
-                    <div class="formFieldLabel">
-                    	<label>{lang}wcf.acp.wantedPoster.tplPermission{/lang}</label>
-                    </div>
-                    <div class="formField">
-                    	<input type="checkbox" name="enableSmilies" value="1"{if !$enableSmilies|empty} checked="checked"{/if}> {lang}wcf.acp.wantedPoster.tplPermSmilies{/lang}
-                    	<br /><input type="checkbox" name="enableHtml" value="1"{if !$enableHtml|empty} checked="checked"{/if}> {lang}wcf.acp.wantedPoster.tplPermHtml{/lang}
-                    	<br /><input type="checkbox" name="enableBBCodes" value="1"{if !$enableBBCodes|empty} checked="checked"{/if}> {lang}wcf.acp.wantedPoster.tplPermBBCodes{/lang}
-                    </div>
-                    <div class="formFieldDesc">
-                    	<p>{lang}wcf.acp.wantedPoster.tplPermission.description{/lang}</p>
-                    </div>
-                </div>
 
                 <div class="formElement" id="enableTplDiv">
                     <div class="formFieldLabel">
@@ -130,16 +106,51 @@
                         </div>
                     </div>
                 {/if}
+                <div class="formElement" id="subjectDiv">
+                    <div class="formFieldLabel">
+                    	<label for="subject">{lang}wcf.acp.wantedPoster.tplName{/lang}</label>
+                    </div>
+                    <div class="formField">
+                    	<input type="text" class="inputText" name="subject" id="subject" value="{if !$subject|empty}{@$subject}{/if}" />
+                    	{if $errorField == 'subject'}
+                    		<p class="innerError">
+                    			{if $errorType == 'empty'}{lang}wcf.global.error.empty{/lang}{/if}
+                    			{if $errorType == 'exists'}{lang}wcf.acp.wantedPoster.errTplNameExists{/lang}{/if}
+                    		</p>
+                    	{/if}
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>{lang}wcf.acp.wantedPoster.template{/lang}</legend>
+            	<div class="formElement{if $errorField == 'text'} formError{/if}" id="editor">
+                    <div class="formFieldLabel">
+                    	<label for="text">{lang}wcf.acp.wantedPoster.tplContent{/lang}</label>
+                    </div>
+                    <div class="formField">
+                    	<textarea name="text" id="text" rows="15" cols="40">{if !$text|empty}{$text}{/if}</textarea>
+            			{if $errorField == 'text'}
+            				<p class="innerError">
+            					{if $errorType == 'empty'}{lang}wcf.global.error.empty{/lang}{/if}
+            					{if $errorType == 'tooLong'}{lang}wcf.message.error.tooLong{/lang}{/if}
+            					{if $errorType == 'censoredWordsFound'}{lang}wcf.message.error.censoredWordsFound{/lang}{/if}
+            				</p>
+            			{/if}
+                    </div>
+                </div>
+                {include file='messageFormTabs'}
             </fieldset>
             <div class="formSubmit">
-            	{@SID_INPUT_TAG}
-            	<input type="submit" name="send" accesskey="s" value="{lang}wcf.global.button.submit{/lang}" />
-            	<input type="reset" name="reset" accesskey="r" value="{lang}wcf.global.button.reset{/lang}" />
+                {@SID_INPUT_TAG}
+                <input type="hidden" name="packageID" value="{@PACKAGE_ID}" />
+                <input type="submit" name="send" accesskey="s" value="{lang}wcf.global.button.submit{/lang}" />
+                <input type="submit" name="preview" accesskey="p" value="{lang}wcf.global.button.preview{/lang}" />
+                <input type="reset" name="reset" accesskey="r" value="{lang}wcf.global.button.reset{/lang}" />
             	<input type="hidden" name="tplID" value="{$tplID}" />
             	<input type="hidden" name="fDo" value="mod" />
             </div>
         </form>
-	</div>
+    </div>
 </div>
-
 {include file='footer'}

@@ -1,3 +1,4 @@
+{* $Id$ *}
 	{capture append=userMessages}
 		{if $errorField}
 			<p class="error">{lang}wcf.global.form.error{/lang}</p>

@@ -5,8 +5,11 @@ require_once(WCF_DIR.'lib/page/util/menu/HeaderMenu.class.php');
 if(!defined('MEMBERS_LIST_USERS_PER_PAGE')) define('MEMBERS_LIST_USERS_PER_PAGE', 20);
 
 /**
- * @author	MailMan
-*/
+ * $Id$
+ * @package de.mailman.wcf.userWantedPoster
+ * @author  MailMan (http://wbb3addons.ump2002.net)
+ */
+
 class UserWantedPosterListPage extends MultipleLinkPage {
 	public $templateName = 'userWantedPosterList';
 	public $uwp;

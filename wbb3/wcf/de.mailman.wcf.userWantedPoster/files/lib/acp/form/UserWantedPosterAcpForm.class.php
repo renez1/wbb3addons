@@ -1,24 +1,30 @@
 <?php
-require_once(WCF_DIR.'lib/acp/form/ACPForm.class.php');
+require_once(WCF_DIR.'lib/acp/form/WysiwygCacheloaderForm.class.php');
 require_once(WCF_DIR.'lib/data/user/UserWantedPosterData.class.php');
 
-class UserWantedPosterAcpForm extends ACPForm {
+/**
+ * $Id$
+ * @package de.mailman.wcf.userWantedPoster
+ * @author  MailMan (http://wbb3addons.ump2002.net)
+ */
+
+class UserWantedPosterAcpForm extends WysiwygCacheloaderForm {
 	public $templateName = 'userWantedPosterAcp';
 	public $thisPage = 'index.php?form=UserWantedPosterAcp';
     public $userID = 0;
 	public $uwp;
 	public $tplID;
-	public $tplName;
+	public $subject;
 	public $text;
     public $enableSmilies;
     public $enableHtml;
     public $enableBBCodes;
     public $enabled;
-    public $extWysiwyg = false;
+    public $preview, $send;
 
     protected function setDefaults() {
         $this->tplID = 0;
-        $this->tplName = '';
+        $this->subject = '';
         $this->text = '';
         $this->enableSmilies = 0;
         $this->enableHtml = 0;
@@ -38,7 +44,6 @@ class UserWantedPosterAcpForm extends ACPForm {
         }
         $this->userID = WCF::getUser()->userID;
         $uwp = new UserWantedPosterData($this->userID);
-        if(@is_file(RELATIVE_WCF_DIR.'/lib/form/ExternalWysiwygEditorForm.class.php')) $this->extWysiwyg = true;
     }
 
 	/**
@@ -47,12 +52,14 @@ class UserWantedPosterAcpForm extends ACPForm {
 	public function readFormParameters() {
 		parent::readFormParameters();
 		if(isset($_POST['tplID'])) $this->tplID = $_POST['tplID'];
-		if(isset($_POST['tplName'])) $this->tplName = $_POST['tplName'];
+		if(isset($_POST['subject'])) $this->subject = $_POST['subject'];
 		if(isset($_POST['text'])) $this->text = $_POST['text'];
 		if(isset($_POST['enableSmilies'])) $this->enableSmilies = $_POST['enableSmilies'];
 		if(isset($_POST['enableHtml'])) $this->enableHtml = $_POST['enableHtml'];
 		if(isset($_POST['enableBBCodes'])) $this->enableBBCodes = $_POST['enableBBCodes'];
 		if(isset($_POST['enabled'])) $this->enabled = $_POST['enabled'];
+        if(isset($_POST['preview'])) $this->preview = (boolean) $_POST['preview'];
+        if(isset($_POST['send'])) $this->send = (boolean) $_POST['send'];
 	}
 
 	/**
@@ -62,8 +69,17 @@ class UserWantedPosterAcpForm extends ACPForm {
         EventHandler::fireAction($this, 'submit');
 		$this->readFormParameters();
         try {
-            $this->validate();
-            $this->save();
+            // preview
+            if ($this->preview) {
+                require_once(WCF_DIR.'lib/data/message/pm/PMEditor.class.php');
+                WCF::getTPL()->assign('preview', PMEditor::createPreview($this->subject, $this->text, $this->enableSmilies, $this->enableHtml, $this->enableBBCodes));
+                $this->validate();
+            }
+            // send message
+            if ($this->send) {
+                $this->validate();
+                $this->save();
+            }
         }
         catch (UserInputException $e) {
         	$this->errorField = $e->getField();
@@ -76,9 +92,9 @@ class UserWantedPosterAcpForm extends ACPForm {
 	 */
 	public function validate() {
 	    if(empty($_POST['fDo']) || $_POST['fDo'] != 'mod' || !empty($_POST['deleteTemplate'])) return;
-        if(empty($this->tplName)) throw new UserInputException('tplName', 'empty');
+        if(empty($this->subject)) throw new UserInputException('subject', 'empty');
         if(empty($this->text)) throw new UserInputException('text', 'empty');
-        if(UserWantedPosterData::templateExists($this->tplID, $this->tplName)) throw new UserInputException('tplName', 'exists');
+        if(UserWantedPosterData::templateExists($this->tplID, $this->subject)) throw new UserInputException('subject', 'exists');
 		parent::validate();
 	}
 
@@ -95,7 +111,7 @@ class UserWantedPosterAcpForm extends ACPForm {
             else WCF::getTPL()->assign('error', WCF::getLanguage()->get('wcf.acp.wantedPoster.errTplDeleted'));
             $this->setDefaults();
 		} else {
-		    $ret = UserWantedPosterData::saveTemplate($this->tplID, $this->tplName, $this->text, $this->enableSmilies, $this->enableHtml, $this->enableBBCodes, $this->enabled);
+		    $ret = UserWantedPosterData::saveTemplate($this->tplID, $this->subject, $this->text, $this->enableSmilies, $this->enableHtml, $this->enableBBCodes, $this->enabled);
 		    if(!empty($ret)) {
     		    if(empty($this->tplID)) $this->tplID = $ret;
     		    WCF::getTPL()->assign('success', WCF::getLanguage()->get('wcf.acp.wantedPoster.msgTplSaved'));
@@ -119,7 +135,7 @@ class UserWantedPosterAcpForm extends ACPForm {
 		parent::assignVariables();
         $tplData = UserWantedPosterData::getTemplate($this->tplID);
 		if(!empty($tplData['templateID']) && empty($_POST['fDo'])) {
-            $this->tplName = $tplData['templateName'];
+            $this->subject = $tplData['templateName'];
             $this->text = $tplData['text'];
             $this->enableSmilies = $tplData['enableSmilies'];
             $this->enableHtml = $tplData['enableHtml'];
@@ -130,16 +146,15 @@ class UserWantedPosterAcpForm extends ACPForm {
 		WCF::getTPL()->assign(array(
 		    'thisPage' => $this->thisPage,
 		    'tplID' => $this->tplID,
-		    'tplName' => $this->tplName,
-		    'tplText' => $this->text,
+		    'subject' => $this->subject,
+		    'text' => $this->text,
 		    'enableSmilies' => $this->enableSmilies,
 		    'enableHtml' => $this->enableHtml,
 		    'enableBBCodes' => $this->enableBBCodes,
 		    'enabled' => $this->enabled,
 		    'tplCount' => UserWantedPosterData::countTemplates(),
 		    'tplList' => UserWantedPosterData::getTemplateList(),
-		    'tplData' => $tplData,
-		    'extWysiwyg' => $this->extWysiwyg
+		    'tplData' => $tplData
 		));
 	}
 
