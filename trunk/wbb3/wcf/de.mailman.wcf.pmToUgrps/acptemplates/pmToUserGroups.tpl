@@ -1,5 +1,6 @@
 {include file='header'}
 {include file='Wysiwyg'}
+{* $Id$ *}
 <div class="mainHeadline">
 	<img src="{@RELATIVE_WCF_DIR}icon/pmNewL.png" alt="" />
 	<div class="headlineContainer">
