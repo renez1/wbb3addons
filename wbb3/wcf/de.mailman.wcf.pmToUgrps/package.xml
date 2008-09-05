@@ -4,12 +4,12 @@
 <package name="de.mailman.wcf.pmToUgrps">
     <packageinformation>
         <packagename>Private Nachrichten Massenversand</packagename>
-        <packagedescription>Private Nachrichten an Benutzergruppen senden.</packagedescription>
+        <packagedescription>Private Nachrichten an Gruppenmitglieder senden.</packagedescription>
 		<packagename language="en">Private Message bulk mailing</packagename>
-		<packagedescription language="en">Sending private messages to user groups.</packagedescription>
+		<packagedescription language="en">Sending private messages to group members.</packagedescription>
         <isUnique>1</isUnique>
-        <version>1.0.0</version>
-        <date>2008-09-04</date>
+        <version>1.0.1</version>
+        <date>2008-09-05</date>
         <standalone>0</standalone>
         <plugin>com.woltlab.wcf</plugin>
     </packageinformation>
@@ -21,10 +21,8 @@
 
     <requiredpackages>
         <requiredPackage minversion="1.0.7">com.woltlab.wcf.data.message.pm</requiredPackage>
+        <requiredPackage minversion="1.0.6" file="required/com.woltlab.community.acp.wysiwyg.tar">com.woltlab.community.acp.wysiwyg</requiredPackage>
     </requiredpackages>
-	<optionalpackages>
-		<optionalpackage file="optionals/de.mailman.wbb.externalWysiwygEditor_1.0.0.tar.gz" minversion="1.0.0">de.mailman.wbb.externalWysiwygEditor</optionalpackage>
-	</optionalpackages>
 
     <instructions type="install">
         <files>files.tar</files>
@@ -36,8 +34,11 @@
         <languages languagecode="en">en.xml</languages>
     </instructions>
 
-<!--
     <instructions type="update" fromversion="1.0.0">
+        <files>files.tar</files>
+        <acptemplates>acptemplates.tar</acptemplates>
+        <languages languagecode="de">de.xml</languages>
+        <languages languagecode="de-informal">de-informal.xml</languages>
+        <languages languagecode="en">en.xml</languages>
     </instructions>
--->
 </package>
