@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<!-- $Id$ -->
 <language languagecode="en">
 	<category name="wcf.acp.group">
 		<item name="wcf.acp.group.option.category.user.wantedPoster"><![CDATA[Wanted Poster]]></item>
@@ -82,6 +83,8 @@
         <item name="wcf.acp.wantedPoster.title"><![CDATA[User Wanted Poster Templates]]></item>
         <item name="wcf.acp.wantedPoster.editTitle"><![CDATA[Edit User Wanted Poster Templates]]></item>
         <item name="wcf.acp.wantedPoster.addTitle"><![CDATA[Add User Wanted Poster Templates]]></item>
+        <item name="wcf.acp.wantedPoster.template"><![CDATA[Template]]></item>
+        <item name="wcf.acp.wantedPoster.tplOptions"><![CDATA[Template options]]></item>
         <item name="wcf.acp.wantedPoster.tplName"><![CDATA[Title]]></item>
         <item name="wcf.acp.wantedPoster.tplContent"><![CDATA[Content]]></item>
         <item name="wcf.acp.wantedPoster.tplPermission"><![CDATA[Template includes]]></item>

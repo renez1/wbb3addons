@@ -1,3 +1,4 @@
+/* $Id$ */
 CREATE TABLE `wcf1_user_wanted_poster` (
   `userID` int(10) unsigned NOT NULL,
   `insertDate` int(10) unsigned NOT NULL default '0',

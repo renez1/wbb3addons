@@ -3,8 +3,11 @@
 require_once(WCF_DIR.'lib/data/message/bbcode/MessageParser.class.php');
 
 /**
- * @author	MailMan
-*/
+ * $Id$
+ * @package de.mailman.wcf.userWantedPoster
+ * @author  MailMan (http://wbb3addons.ump2002.net)
+ */
+
 class UserWantedPosterData {
 
 	protected $userID = 0;

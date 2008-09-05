@@ -1,4 +1,5 @@
 {include file="documentHeader"}
+{* $Id$ *}
 <head>
 	<title>{lang}wcf.user.wantedPoster.title{/lang} - {lang}wcf.user.profile.members{/lang} - {PAGE_TITLE}</title>
 	{include file='headInclude' sandbox=false}

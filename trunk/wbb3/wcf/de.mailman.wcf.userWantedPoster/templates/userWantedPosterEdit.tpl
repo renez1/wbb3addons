@@ -1,4 +1,5 @@
 {include file="documentHeader"}
+{* $Id$ *}
 <head>
 	<title>{lang}wcf.user.wantedPoster.title{/lang} - {PAGE_TITLE}</title>
 

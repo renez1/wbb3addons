@@ -1,3 +1,4 @@
+{* $Id$ *}
 	<ul class="breadCrumbs">
 		<li><a href="index.php?page=Index{@SID_ARG_2ND}"><img src="icon/indexS.png" alt="" /> <span>{PAGE_TITLE}</span></a> &raquo;</li>
 		<li><img src="{@RELATIVE_WCF_DIR}icon/membersS.png" alt="" /> <span>{lang}wcf.user.profile.members{/lang}</span> &raquo;</li>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE import SYSTEM "DTD/import.dtd">
-
+<!-- $Id$ -->
 <data>
 	<import>
 		<acpmenuitem name="wcf.acp.menu.link.wantedPoster">

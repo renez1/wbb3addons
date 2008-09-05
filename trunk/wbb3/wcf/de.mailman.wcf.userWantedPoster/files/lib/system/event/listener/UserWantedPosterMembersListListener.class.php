@@ -2,10 +2,11 @@
 require_once(WCF_DIR.'lib/system/event/EventListener.class.php');
 
 /**
- * Shows the user wanted poster tab on members list page.
- * 
- * @author	MailMan
+ * $Id$
+ * @package de.mailman.wcf.userWantedPoster
+ * @author  MailMan (http://wbb3addons.ump2002.net)
  */
+
 class UserWantedPosterMembersListListener implements EventListener {
 	/**
 	 * @see EventListener::execute()
