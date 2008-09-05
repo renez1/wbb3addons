@@ -3,20 +3,19 @@
 <!-- $Id$ -->
 <language languagecode="de">
     <category name="wcf.acp.menu">
-        <item name="wcf.acp.menu.link.group.pmToUgrps"><![CDATA[PN an Benutzergruppen]]></item>
+        <item name="wcf.acp.menu.link.group.pmToUgrps"><![CDATA[PN an Gruppenmitglieder]]></item>
     </category>
     <category name="wcf.acp.group">
         <item name="wcf.acp.group.option.admin.user.canPMToUserGroups"><![CDATA[Kann private Nachrichten an Benutzergruppen senden]]></item>
         <item name="wcf.acp.group.option.admin.user.canPMToUserGroups.description"><![CDATA[Mitglieder dieser Benutzergruppe können private Nachrichten an Benutzergruppen senden]]></item>
     </category>
     <category name="wcf.pmToUgrps">
-        <item name="wcf.pmToUgrps.newMessage"><![CDATA[Neue Nachricht erstellen]]></item>
-        <item name="wcf.pmToUgrps.sendTo.legend"><![CDATA[Private Nachricht an die Mitglieder folgender Benutzergruppen senden]]></item>
+        <item name="wcf.pmToUgrps.newMessage"><![CDATA[Private Nachricht an Gruppenmitglieder]]></item>
+        <item name="wcf.pmToUgrps.sendTo.legend"><![CDATA[Nachrichtenoptionen]]></item>
         <item name="wcf.pmToUgrps.sendTo.groups"><![CDATA[Benutzergruppen]]></item>
         <item name="wcf.pmToUgrps.pm.legend"><![CDATA[Private Nachricht]]></item>
         <item name="wcf.pmToUgrps.pm.subject"><![CDATA[Betreff]]></item>
         <item name="wcf.pmToUgrps.pm.text"><![CDATA[Nachricht]]></item>
-        <item name="wcf.pmToUgrps.settings.legend"><![CDATA[Einstellungen]]></item>
         <item name="wcf.pmToUgrps.pageTitle"><![CDATA[Private Nachricht an Gruppenmitglieder]]></item>
         <item name="wcf.pmToUgrps.finish"><![CDATA[Vorgang erfolgreich abgeschlossen. <br />Versendete Nachrichten: {$count} <br />Gestartet: {$startTime} <br />Beendet: {$endTime}]]></item>
         <item name="wcf.pmToUgrps.progress"><![CDATA[Vorgang läuft: {$loop} ... {$count}]]></item>
