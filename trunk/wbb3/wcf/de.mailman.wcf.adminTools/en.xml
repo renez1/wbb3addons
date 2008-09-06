@@ -130,10 +130,12 @@
         <item name="wcf.acp.adminTools.cron.mail.statsCntSignLocked"><![CDATA[Blocked signatures:]]></item>
         <item name="wcf.acp.adminTools.cron.mail.statsCntRecord"><![CDATA[Record:]]></item>
 
-        <item name="wcf.acp.adminTools.laf.legend.fs"><![CDATA[wBB-File system]]></item>
+        <item name="wcf.acp.adminTools.laf.legend.fs"><![CDATA[WBB-File system]]></item>
         <item name="wcf.acp.adminTools.laf.legend.fs.description"><![CDATA[Attachments, which exist in the file system, but cannot be found in the database.]]></item>
-        <item name="wcf.acp.adminTools.laf.legend.db"><![CDATA[wBB-Database]]></item>
+        <item name="wcf.acp.adminTools.laf.legend.db"><![CDATA[WBB-Database]]></item>
         <item name="wcf.acp.adminTools.laf.legend.db.description"><![CDATA[Attachments, which are found in the database, but do not exist on the file system.]]></item>
+        <item name="wcf.acp.adminTools.laf.legend.ba"><![CDATA[DB-Backups]]></item>
+        <item name="wcf.acp.adminTools.laf.legend.ba.description"><![CDATA[Saved database dumps.]]></item>
         <item name="wcf.acp.adminTools.laf.empty"><![CDATA[There is no &quot;lost&quot; data found.]]></item>
         <item name="wcf.acp.adminTools.laf.fileName"><![CDATA[File]]></item>
         <item name="wcf.acp.adminTools.laf.fileSize"><![CDATA[Size]]></item>

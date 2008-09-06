@@ -45,9 +45,14 @@ function sellAll() {
 	<div class="largeButtons">
 		<ul>
             {if $show == 'lostAndFoundWbbF'}
+                <li><a href="index.php?form=AdminToolsLostAndFound&amp;show=lostAndFoundWbbB{@SID_ARG_2ND}"><img src="{@RELATIVE_WCF_DIR}icon/searchM.png" alt="" /> <span>{lang}wcf.acp.adminTools.laf.legend.ba{/lang}</span></a></li>
                 <li><a href="index.php?form=AdminToolsLostAndFound&amp;show=lostAndFoundWbbD{@SID_ARG_2ND}"><img src="{@RELATIVE_WCF_DIR}icon/searchM.png" alt="" /> <span>{lang}wcf.acp.adminTools.laf.legend.db{/lang}</span></a></li>
+            {else if $show == 'lostAndFoundWbbD'}
+                <li><a href="index.php?form=AdminToolsLostAndFound&amp;show=lostAndFoundWbbB{@SID_ARG_2ND}"><img src="{@RELATIVE_WCF_DIR}icon/searchM.png" alt="" /> <span>{lang}wcf.acp.adminTools.laf.legend.ba{/lang}</span></a></li>
+                <li><a href="index.php?form=AdminToolsLostAndFound&amp;show=lostAndFoundWbbF{@SID_ARG_2ND}"><img src="{@RELATIVE_WCF_DIR}icon/searchM.png" alt="" /> <span>{lang}wcf.acp.adminTools.laf.legend.fs{/lang}</span></a></li>
             {else}
                 <li><a href="index.php?form=AdminToolsLostAndFound&amp;show=lostAndFoundWbbF{@SID_ARG_2ND}"><img src="{@RELATIVE_WCF_DIR}icon/searchM.png" alt="" /> <span>{lang}wcf.acp.adminTools.laf.legend.fs{/lang}</span></a></li>
+                <li><a href="index.php?form=AdminToolsLostAndFound&amp;show=lostAndFoundWbbD{@SID_ARG_2ND}"><img src="{@RELATIVE_WCF_DIR}icon/searchM.png" alt="" /> <span>{lang}wcf.acp.adminTools.laf.legend.db{/lang}</span></a></li>
             {/if}
 		</ul>
 	</div>
@@ -60,15 +65,19 @@ function sellAll() {
                 <legend style="font-weight:bold;">
                     {if $show == 'lostAndFoundWbbF'}
                         {lang}wcf.acp.adminTools.laf.legend.fs{/lang}
-                    {else}
+                    {else if $show == 'lostAndFoundWbbD'}
                         {lang}wcf.acp.adminTools.laf.legend.db{/lang}
+                    {else}
+                        {lang}wcf.acp.adminTools.laf.legend.ba{/lang}
                     {/if}
                 </legend>
                 <p class="description">
                     {if $show == 'lostAndFoundWbbF'}
                         {lang}wcf.acp.adminTools.laf.legend.fs.description{/lang}
-                    {else}
+                    {else if $show == 'lostAndFoundWbbD'}
                         {lang}wcf.acp.adminTools.laf.legend.db.description{/lang}
+                    {else}
+                        {lang}wcf.acp.adminTools.laf.legend.ba.description{/lang}
                     {/if}
                 </p>
                 <br/>
