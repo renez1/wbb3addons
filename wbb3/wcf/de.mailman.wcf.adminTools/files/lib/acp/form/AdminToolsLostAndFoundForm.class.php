@@ -10,7 +10,7 @@ require_once(WCF_DIR.'lib/acp/adminTools/AdminTools.class.php');
 
 class AdminToolsLostAndFoundForm extends ACPForm {
 	public $templateName = 'adminToolsLostAndFound';
-    public $show = 'lostAndFoundWbbD';
+    public $show = 'lostAndFoundWbbB';
     public $fDo = '';
 
 	/**
@@ -19,6 +19,32 @@ class AdminToolsLostAndFoundForm extends ACPForm {
 	public function readParameters() {
 		parent::readParameters();
         if(!empty($_REQUEST['show'])) $this->show = $_REQUEST['show'];
+
+        if($this->show == 'downloadFile' && !empty($_REQUEST['fileName'])) {
+            WCF::getUser()->checkPermission('admin.system.adminTools.canView');
+			$fileName = basename($_REQUEST['fileName']);
+            if(!@is_file(WCF_DIR.'acp/backup/'.$fileName)) {
+        		WCFACP::getMenu()->setActiveMenuItem('wcf.acp.menu.link.adminTools');
+                require_once(WCF_DIR.'lib/system/exception/IllegalLinkException.class.php');
+			    throw new IllegalLinkException();
+			}
+            // file type
+            header('Content-Type: application/octet-stream');
+            
+            // file name
+            header('Content-Disposition: attachment; filename="'.$fileName.'"');
+            
+            // send file size
+            header('Content-Length: '.filesize(WCF_DIR.'acp/backup/'.$fileName));
+            
+            // no cache headers
+            header('Pragma: no-cache');
+            header('Expires: 0');
+            
+            // send file
+            readfile(WCF_DIR.'acp/backup/'.$fileName);
+            exit;
+        }
 	}
 
 	/**

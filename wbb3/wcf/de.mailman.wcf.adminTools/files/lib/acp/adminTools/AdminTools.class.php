@@ -743,6 +743,21 @@ class AdminTools {
 			    }
             }
         }
+        else if($type == 'lostAndFoundWbbB') {
+            chdir(WCF_DIR.'acp/backup');
+            $dh=opendir(WCF_DIR.'acp/backup');
+            while($file = readdir ($dh)) {
+            	if($file != '.' && $file != '..' && $file != '.htaccess') {
+                    $LOST[$i]['DELVAL'] = urlencode($file);
+                    $LOST[$i]['FILE'] = '<a href="index.php?form=AdminToolsLostAndFound&amp;show=downloadFile&amp;fileName='.$file.'&amp;packageID='.PACKAGE_ID.SID_ARG_2ND_NOT_ENCODED.'">'.$file.'</a>';
+                    $LOST[$i]['SIZE'] = round((filesize($file) / 1024),2).' kB';
+                    $LOST[$i]['TIME'] = filemtime($file);
+                    $LOST[$i]['USER'] = '&raquo;Unbekannt&laquo;';
+                    $i++;
+            	}
+            }
+            closedir($dh);
+        }
         return $LOST;
     }
     public function getLostAndFoundDelete($type, $del=array()) {
@@ -760,6 +775,16 @@ class AdminTools {
             foreach($del as $file) {
                 WCF::getDB()->sendQuery("DELETE FROM wcf".WCF_N."_attachment WHERE attachmentID =".$file);
             }
+        }
+        else if($type == 'lostAndFoundWbbB') {
+            chdir(WCF_DIR.'acp/backup');
+            $dh=opendir(WCF_DIR.'acp/backup');
+            foreach($del as $file) {
+            	$file = urldecode($file);
+            	unlink($file);
+            }
+            rewinddir($dh);
+            closedir($dh);
         }
     }
 
@@ -958,7 +983,7 @@ class AdminTools {
                 $val = trim($data[$k]);
                 if($val == ';') $val = '';
                 if($val != '' && substr($val, -1) != ';') $val .= ';';
-                self::saveSetting($k, $val);
+                self::saveSetting('linkSettings.iframe.'.$k, $val);
             }
         }
     }

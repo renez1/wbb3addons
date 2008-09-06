@@ -130,10 +130,12 @@
         <item name="wcf.acp.adminTools.cron.mail.statsCntSignLocked"><![CDATA[Gesperrte Signaturen:]]></item>
         <item name="wcf.acp.adminTools.cron.mail.statsCntRecord"><![CDATA[Rekord:]]></item>
 
-        <item name="wcf.acp.adminTools.laf.legend.fs"><![CDATA[wBB-Filesystem]]></item>
-        <item name="wcf.acp.adminTools.laf.legend.fs.description"><![CDATA[Attachments, die im wBB-Filesystem existieren aber nicht in der Datenbank eingetragen sind.]]></item>
-        <item name="wcf.acp.adminTools.laf.legend.db"><![CDATA[wBB-Datenbank]]></item>
-        <item name="wcf.acp.adminTools.laf.legend.db.description"><![CDATA[Attachments, die in der wBB-Datenbank existieren aber nicht im Filesystem vorhanden sind.]]></item>
+        <item name="wcf.acp.adminTools.laf.legend.fs"><![CDATA[WBB-Filesystem]]></item>
+        <item name="wcf.acp.adminTools.laf.legend.fs.description"><![CDATA[Attachments, die im WBB-Filesystem existieren aber nicht in der Datenbank eingetragen sind.]]></item>
+        <item name="wcf.acp.adminTools.laf.legend.db"><![CDATA[WBB-Datenbank]]></item>
+        <item name="wcf.acp.adminTools.laf.legend.db.description"><![CDATA[Attachments, die in der WBB-Datenbank existieren aber nicht im Filesystem vorhanden sind.]]></item>
+        <item name="wcf.acp.adminTools.laf.legend.ba"><![CDATA[DB-Backups]]></item>
+        <item name="wcf.acp.adminTools.laf.legend.ba.description"><![CDATA[Gespeicherte Datenbank Dumps.]]></item>
         <item name="wcf.acp.adminTools.laf.empty"><![CDATA[Es sind keine &quot;verlorenen&quot; Dateien vorhanden.]]></item>
         <item name="wcf.acp.adminTools.laf.fileName"><![CDATA[Datei]]></item>
         <item name="wcf.acp.adminTools.laf.fileSize"><![CDATA[Größe]]></item>
