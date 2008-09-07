@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE import SYSTEM "DTD/import.dtd">
+<!-- $Id$ -->
+<data>
+	<import>
+		<cronjob>
+			<classPath>lib/system/cronjob/PMToUserGroupsCronjob.class.php</classPath>
+			<description>Clean up for PN bulk mailings</description>
+			<startMinute>*</startMinute>
+			<startHour>5</startHour>
+			<startDom>*</startDom>
+			<startMonth>*</startMonth>
+			<startDow>*</startDow>
+			<execMultiple>0</execMultiple>
+			<canbeedited>1</canbeedited>
+			<canbedisabled>1</canbedisabled>
+			<active>1</active>
+		</cronjob>
+	</import>
+</data>

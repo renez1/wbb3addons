@@ -21,6 +21,7 @@ class PMToUserGroupsForm extends WysiwygCacheloaderForm {
     public $canUseHtml = false;
     public $canUseBBCodes = false;
     public $maxTextLength = 10000;
+    public $maxLifeTime = 0;
     public $preview, $send, $user;
     /**
      * @see Page::readParameters()
@@ -34,6 +35,7 @@ class PMToUserGroupsForm extends WysiwygCacheloaderForm {
             if($this->canUseSmilies)    $this->enableSmilies = true;
             if($this->canUseBBCodes)    $this->enableBBCodes = true;
             $this->showSignature = true;
+            $this->maxLifeTime = PMTOUSERGROUPS_MAXLIFETIME;
         }
         $this->maxTextLength = WCF::getUser()->getPermission('user.pm.maxLength');
     }
@@ -52,6 +54,7 @@ class PMToUserGroupsForm extends WysiwygCacheloaderForm {
         if(isset($_POST['groupIDs']) && is_array($_POST['groupIDs'])) $this->groupIDs = ArrayUtil::toIntegerArray($_POST['groupIDs']);
         if(isset($_POST['preview'])) $this->preview = (boolean) $_POST['preview'];
         if(isset($_POST['send'])) $this->send = (boolean) $_POST['send'];
+        if(isset($_POST['maxLifeTime'])) $this->maxLifeTime = intval($_POST['maxLifeTime']);
     }
 
     /**
@@ -86,6 +89,7 @@ class PMToUserGroupsForm extends WysiwygCacheloaderForm {
      */
     public function validate() {
         if(!count($this->groupIDs)) throw new UserInputException('groupIDs', 'empty');
+        if(!@is_int($this->maxLifeTime)) throw new UserInputException('maxLifeTime', 'isNoInteger');
         if(empty($this->subject)) throw new UserInputException('subject', 'empty');
         if(empty($this->text)) {
             throw new UserInputException('text', 'empty');
@@ -120,7 +124,8 @@ class PMToUserGroupsForm extends WysiwygCacheloaderForm {
             'enableHtml'    => $this->enableHtml,
             'enableBBCodes' => $this->enableBBCodes,
             'showSignature' => $this->showSignature,
-            'startTime'     => TIME_NOW
+            'startTime'     => TIME_NOW,
+            'maxLifeTime'   => $this->maxLifeTime
         );
         WCF::getSession()->register('pmData', $pmData);
         $this->saved();
@@ -160,7 +165,8 @@ class PMToUserGroupsForm extends WysiwygCacheloaderForm {
             'canUseSmilies' => $this->canUseSmilies,
             'canUseHtml'    => $this->canUseHtml,
             'canUseBBCodes' => $this->canUseBBCodes,
-            'showSignature' => $this->showSignature
+            'showSignature' => $this->showSignature,
+            'maxLifeTime'   => $this->maxLifeTime
         ));
     }
 

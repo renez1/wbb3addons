@@ -8,8 +8,8 @@
 		<packagename language="en">Private Message bulk mailing</packagename>
 		<packagedescription language="en">Sending private messages to group members.</packagedescription>
         <isUnique>1</isUnique>
-        <version>1.0.1</version>
-        <date>2008-09-05</date>
+        <version>1.0.2</version>
+        <date>2008-09-07</date>
         <standalone>0</standalone>
         <plugin>com.woltlab.wcf</plugin>
     </packageinformation>
@@ -27,15 +27,25 @@
     <instructions type="install">
         <files>files.tar</files>
         <acptemplates>acptemplates.tar</acptemplates>
+        <sql>install.sql</sql>
         <acpmenu>acpmenu.xml</acpmenu>
+        <options>options.xml</options>
         <groupoptions>groupoptions.xml</groupoptions>
+        <cronjobs>cronjobs.xml</cronjobs>
         <languages languagecode="de">de.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
     </instructions>
 
-<!--
-    <instructions type="update" fromversion="1.0.0">
+    <instructions type="update" fromversion="1.0.1">
+        <files>files.tar</files>
+        <acptemplates>acptemplates.tar</acptemplates>
+        <sql>install.sql</sql>
+        <options>options.xml</options>
+        <groupoptions>groupoptions.xml</groupoptions>
+        <cronjobs>cronjobs.xml</cronjobs>
+        <languages languagecode="de">de.xml</languages>
+        <languages languagecode="de-informal">de-informal.xml</languages>
+        <languages languagecode="en">en.xml</languages>
     </instructions>
--->
 </package>
