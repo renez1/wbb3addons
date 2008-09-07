@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/options.dtd">
 <!-- $Id$ -->
-<data>	
+<data>
 	<import>
 		<options>
 			<option name="admin.user.canPMToUserGroups">
@@ -10,12 +10,10 @@
 				<defaultvalue>0</defaultvalue>
 				<visible>4</visible>
 			</option>
-			<option name="admin.user.pmToUserGroupsLimitDefault">
-				<categoryname>admin.user.user</categoryname>
-				<optiontype>integer</optiontype>
-				<defaultvalue>25</defaultvalue>
-				<visible>4</visible>
-			</option>
 		</options>
 	</import>
+
+    <delete>
+        <option name="admin.user.pmToUserGroupsLimitDefault" />
+    </delete>
 </data>

@@ -62,6 +62,27 @@
 					</div>
 				</div>
 
+            	<div class="formElement{if $errorField == 'maxLifeTime'} formError{/if}">
+            		<div class="formFieldLabel">
+            			<label for="maxLifeTime">{lang}wcf.pmToUgrps.maxLifeTime{/lang}</label>
+            		</div>
+            		<div class="formField">
+            			<input type="text" class="inputText" name="maxLifeTime" id="maxLifeTime" value="{$maxLifeTime}" />
+            			{if $errorField == 'maxLifeTime'}
+            				<p class="innerError">
+            					{if $errorType == 'empty'}{lang}wcf.global.error.empty{/lang}{/if}
+            					{if $errorType == 'isNoInteger'}{lang}wcf.pmToUgrps.error.isNoInteger{/lang}{/if}
+            				</p>
+            			{/if}
+            		</div>
+					<div class="formFieldDesc hidden" id="maxLifeTimeHelpMessage">
+						{lang}wcf.pmToUgrps.maxLifeTime.description{/lang}
+					</div>
+            	</div>
+				<script type="text/javascript">//<![CDATA[
+					inlineHelp.register('maxLifeTime');
+				//]]></script>
+
             	<div class="formElement{if $errorField == 'subject'} formError{/if}">
             		<div class="formFieldLabel">
             			<label for="subject">{lang}wcf.pmToUgrps.pm.subject{/lang}</label>

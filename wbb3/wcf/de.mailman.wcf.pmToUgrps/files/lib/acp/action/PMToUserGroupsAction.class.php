@@ -37,8 +37,8 @@ class PMToUserGroupsAction extends WorkerAction {
 
         $this->pmData = $pmData[$this->pmSessionID];
         if(!empty($this->pmData['pmID'])) $this->pmID = intval($this->pmData['pmID']);
-        $this->limit = @intval(WCF::getUser()->getPermission('admin.user.pmToUserGroupsLimitDefault'));
-        if(empty($this->limit)) $this->limit = 25;
+        if(defined('PMTOUSERGROUPS_DEFAULTLIMIT') && PMTOUSERGROUPS_DEFAULTLIMIT > 0) $this->limit = PMTOUSERGROUPS_DEFAULTLIMIT;
+        else $this->limit = 25;
         $this->username = WCF::getUser()->username;
         $this->userID = intval(WCF::getUser()->userID);
     }
@@ -149,6 +149,13 @@ class PMToUserGroupsAction extends WorkerAction {
                     $pmData = WCF::getSession()->getVar('pmData');
                     $pmData[$this->pmSessionID]['pmID'] = $this->pmID;
                     WCF::getSession()->register('pmData', $pmData);
+                    $mlt = intval($this->pmData['maxLifeTime']);
+                    if($mlt > 0) $mlt = $this->pmData['startTime'] + (86400 * $mlt);
+                    else $mlt = 0;
+                    $sql = "INSERT IGNORE INTO wcf".WCF_N."_pm_bulk_mailing"
+                        ."\n       (pmID, elapsedTime, time, userID)"
+                        ."\nVALUES (".$this->pmID.", ".$mlt.", ".$this->pmData['startTime'].", ".$this->userID.")";
+                    WCF::getDB()->sendQuery($sql);
                 }
             } else {
                 $recipientIDs = $inserts = '';

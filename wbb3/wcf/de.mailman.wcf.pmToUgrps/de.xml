@@ -5,16 +5,24 @@
     <category name="wcf.acp.menu">
         <item name="wcf.acp.menu.link.group.pmToUgrps"><![CDATA[PN an Gruppenmitglieder]]></item>
     </category>
+    <category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.message.pmToUserGroups"><![CDATA[Private Nachrichten Massenversand]]></item>
+		<item name="wcf.acp.option.category.message.pmToUserGroups.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.pmToUserGroups_defaultLimit"><![CDATA[Anzahl Versendungen je Lauf]]></item>
+		<item name="wcf.acp.option.pmToUserGroups_defaultLimit.description"><![CDATA[Geben Sie hier die Anzahl der zu verarbeitenden Empfänger je Prozess (Lauf) beim Massenversand von PNs an. Standard = 25.]]></item>
+		<item name="wcf.acp.option.pmToUserGroups_maxLifeTime"><![CDATA[Maximale Lebensdauer]]></item>
+		<item name="wcf.acp.option.pmToUserGroups_maxLifeTime.description"><![CDATA[Voreinstellung der Lebensdauer in Tagen, bevor eine Massen-PN komplett gelöscht wird. 0 = deaktiviert.]]></item>
+    </category>
     <category name="wcf.acp.group">
         <item name="wcf.acp.group.option.admin.user.canPMToUserGroups"><![CDATA[Kann private Nachrichten an Gruppenmitglieder senden]]></item>
         <item name="wcf.acp.group.option.admin.user.canPMToUserGroups.description"><![CDATA[Mitglieder dieser Benutzergruppe können private Nachrichten an Gruppenmitglieder senden.]]></item>
-        <item name="wcf.acp.group.option.admin.user.pmToUserGroupsLimitDefault"><![CDATA[Anzahl Versendungen je Lauf]]></item>
-        <item name="wcf.acp.group.option.admin.user.pmToUserGroupsLimitDefault.description"><![CDATA[Geben Sie hier die Anzahl der zu verarbeitenden Empfänger je Prozess (Lauf) beim Massenversand von PNs aus. Standard = 25.]]></item>
     </category>
     <category name="wcf.pmToUgrps">
         <item name="wcf.pmToUgrps.newMessage"><![CDATA[Private Nachricht an Gruppenmitglieder]]></item>
         <item name="wcf.pmToUgrps.sendTo.legend"><![CDATA[Nachrichtenoptionen]]></item>
         <item name="wcf.pmToUgrps.sendTo.groups"><![CDATA[Benutzergruppen]]></item>
+		<item name="wcf.pmToUgrps.maxLifeTime"><![CDATA[Maximale Lebensdauer]]></item>
+		<item name="wcf.pmToUgrps.maxLifeTime.description"><![CDATA[Lebensdauer in Tagen, bevor eine Massen-PN komplett gelöscht wird. 0 = deaktiviert.]]></item>
         <item name="wcf.pmToUgrps.pm.legend"><![CDATA[Private Nachricht]]></item>
         <item name="wcf.pmToUgrps.pm.subject"><![CDATA[Betreff]]></item>
         <item name="wcf.pmToUgrps.pm.text"><![CDATA[Nachricht]]></item>
@@ -26,5 +34,6 @@
         <item name="wcf.pmToUgrps.log.finished"><![CDATA[Beendet: {$endTime}]]></item>
         <item name="wcf.pmToUgrps.log.recipients"><![CDATA[Empfänger: {$groups} ({$count})]]></item>
         <item name="wcf.pmToUgrps.error.noRecipients"><![CDATA[Sie haben eine Benutzergruppe ausgewählt, die keine private Nachrichten empfangen darf!]]></item>
+        <item name="wcf.pmToUgrps.error.isNoInteger"><![CDATA[Ungültige Zahl!]]></item>
     </category>
 </language>
