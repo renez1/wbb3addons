@@ -1,4 +1,5 @@
 {include file='header'}
+{* $Id$ *}
 <script type="text/javascript" src="{@RELATIVE_WCF_DIR}js/MultiPagesLinks.class.js"></script>
 <script type="text/javascript" src="{@RELATIVE_WCF_DIR}js/Suggestion.class.js"></script>
 	<script type="text/javascript">
@@ -109,18 +110,20 @@
                 </div>
             </fieldset>
         </form>
-        <form method="post" name="fThumbnail" action="index.php?page=AttachmentManagerAcp">
-            <img src="{@RELATIVE_WCF_DIR}icon/fileTypeIconPictureM.png" alt="" />
-            <input type="checkbox" name="showThumbnails" value="1"{if !$showThumbnails|empty} checked="checked"{/if} onClick="this.form.submit()" />
-            {lang}wcf.user.attachmentManager.list.showThumbnails{/lang}
-            <input type="hidden" name="fDo" value="switchThumbnails" />
-            <input type="hidden" name="sortField" value="{$sortField}" />
-            <input type="hidden" name="sortOrder" value="{$sortOrder}" />
-            <input type="hidden" name="pageNo" value="{$pageNo}" />
-            <input type="hidden" name="userID" value="{$userID}" />
-            <input type="hidden" name="packageID" value="{@PACKAGE_ID}" />
-            {@SID_INPUT_TAG}
-        </form>
+        {if $wbbExists}
+            <form method="post" name="fThumbnail" action="index.php?page=AttachmentManagerAcp">
+                <img src="{@RELATIVE_WCF_DIR}icon/fileTypeIconPictureM.png" alt="" />
+                <input type="checkbox" name="showThumbnails" value="1"{if !$showThumbnails|empty} checked="checked"{/if} onClick="this.form.submit()" />
+                {lang}wcf.user.attachmentManager.list.showThumbnails{/lang}
+                <input type="hidden" name="fDo" value="switchThumbnails" />
+                <input type="hidden" name="sortField" value="{$sortField}" />
+                <input type="hidden" name="sortOrder" value="{$sortOrder}" />
+                <input type="hidden" name="pageNo" value="{$pageNo}" />
+                <input type="hidden" name="userID" value="{$userID}" />
+                <input type="hidden" name="packageID" value="{@PACKAGE_ID}" />
+                {@SID_INPUT_TAG}
+            </form>
+        {/if}
     </div>
 </div>
 

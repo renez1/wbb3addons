@@ -1,4 +1,5 @@
 {include file="documentHeader"}
+{* $Id$ *}
 <head>
 	<title>{lang}wcf.user.attachmentManager.title{/lang} - {lang}wcf.user.usercp{/lang} - {PAGE_TITLE}</title>
 	{include file='headInclude' sandbox=false}
@@ -99,16 +100,17 @@
                         </div>
                     </fieldset>
                 </form>
-
-                <form method="post" name="fThumbnail" action="index.php?page=AttachmentManager">
-                    <img src="{@RELATIVE_WCF_DIR}icon/fileTypeIconPictureM.png" alt="" />
-                    <input type="checkbox" name="showThumbnails" value="1"{if !$showThumbnails|empty} checked="checked"{/if} onClick="this.form.submit()" />
-                    {lang}wcf.user.attachmentManager.list.showThumbnails{/lang}
-                    <input type="hidden" name="fDo" value="switchThumbnails" />
-                    <input type="hidden" name="sortField" value="{$sortField}" />
-                    <input type="hidden" name="sortOrder" value="{$sortOrder}" />
-                    <input type="hidden" name="pageNo" value="{$pageNo}" />
-                </form>
+                {if $wbbExists}
+                    <form method="post" name="fThumbnail" action="index.php?page=AttachmentManager">
+                        <img src="{@RELATIVE_WCF_DIR}icon/fileTypeIconPictureM.png" alt="" />
+                        <input type="checkbox" name="showThumbnails" value="1"{if !$showThumbnails|empty} checked="checked"{/if} onClick="this.form.submit()" />
+                        {lang}wcf.user.attachmentManager.list.showThumbnails{/lang}
+                        <input type="hidden" name="fDo" value="switchThumbnails" />
+                        <input type="hidden" name="sortField" value="{$sortField}" />
+                        <input type="hidden" name="sortOrder" value="{$sortOrder}" />
+                        <input type="hidden" name="pageNo" value="{$pageNo}" />
+                    </form>
+                {/if}
             {else}
                 {lang}wcf.user.attachmentManager.empty{/lang}
             {/if}

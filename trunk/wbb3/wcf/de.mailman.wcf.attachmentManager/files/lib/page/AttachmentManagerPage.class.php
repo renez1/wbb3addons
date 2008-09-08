@@ -3,6 +3,12 @@ require_once(WCF_DIR.'lib/page/MultipleLinkPage.class.php');
 require_once(WCF_DIR.'lib/data/user/AttachmentManager.class.php');
 require_once(WCF_DIR.'lib/page/util/menu/UserCPMenu.class.php');
 
+/**
+ * $Id$
+ * @author      MailMan (http://wbb3addons.ump2002.net)
+ * @package     de.mailman.wcf.attachmentManager
+ */
+
 class AttachmentManagerPage extends MultipleLinkPage {
 	public $templateName = 'attachmentManager';
 	public $attachments = array();
@@ -19,6 +25,7 @@ class AttachmentManagerPage extends MultipleLinkPage {
 	public $showOnlyMessageType = '';
 	public $showOnlyFileType = '';
 	public $showThumbnails = 0;
+	public $wbbExists = false;
 
 
 	public function __construct() {
@@ -29,6 +36,7 @@ class AttachmentManagerPage extends MultipleLinkPage {
 	 * @see Page::readParameters()
 	 */
 	public function readParameters() {
+        $this->wbbExists = AttachmentManager::wbbExists();
 		parent::readParameters();
         $this->userID = WCF::getUser()->userID;
         if(isset($_REQUEST['sortField']))   $this->sortField    = $_REQUEST['sortField'];
@@ -40,8 +48,8 @@ class AttachmentManagerPage extends MultipleLinkPage {
         else if(WCF::getSession()->getVar('showOnlyFileType'))     $this->showOnlyFileType = WCF::getSession()->getVar('showOnlyFileType');
         if(isset($_REQUEST['showOnlyImages']))   $this->showOnlyImages = $_REQUEST['showOnlyImages'];
         else if(WCF::getSession()->getVar('showOnlyImages'))     $this->showOnlyImages = WCF::getSession()->getVar('showOnlyImages');
-        if(isset($_REQUEST['showThumbnails']))   $this->showThumbnails    = $_REQUEST['showThumbnails'];
-        else if(WCF::getSession()->getVar('showThumbnails'))     $this->showThumbnails = WCF::getSession()->getVar('showThumbnails');
+        if($this->wbbExists && isset($_REQUEST['showThumbnails']))   $this->showThumbnails    = $_REQUEST['showThumbnails'];
+        else if($this->wbbExists && WCF::getSession()->getVar('showThumbnails'))     $this->showThumbnails = WCF::getSession()->getVar('showThumbnails');
 
 		if(isset($_POST['fDo'])) {
             if (!$this->userID) {
@@ -90,6 +98,7 @@ class AttachmentManagerPage extends MultipleLinkPage {
 	public function assignVariables() {
 		parent::assignVariables();
 		WCF::getTPL()->assign(array(
+		    'wbbExists' => $this->wbbExists,
 		    'attachments' => $this->attachments,
 		    'sortField' => $this->sortField,
 		    'sortOrder' => $this->sortOrder,

@@ -1,7 +1,10 @@
 <?php
 /**
- * @author	MailMan
-*/
+ * $Id$
+ * @author      MailMan (http://wbb3addons.ump2002.net)
+ * @package     de.mailman.wcf.attachmentManager
+ */
+
 if(!defined('RET_ERROR')) define('RET_ERROR', 1);
 if(!defined('RET_WARNING')) define('RET_WARNING', 2);
 if(!defined('RET_INFO')) define('RET_INFO', 4);
@@ -38,6 +41,15 @@ class AttachmentManager {
 		'Java' => array('Jar', 'Java', 'Class')//,
 		//'Php' => array('Php', 'Php3', 'Php4', 'Php5', 'Phtml')
 	);
+
+    public function wbbExists() {
+        if(!defined('WBB_EXISTS')) {
+            if(!defined('WBB_N') || !defined('WBB_DIR')) define('WBB_EXISTS', false);
+            else define('WBB_EXISTS', true);
+        }
+        return WBB_EXISTS;
+    }
+
 
     public function getUserByName($username) {
         $username = trim($username);
@@ -185,7 +197,7 @@ class AttachmentManager {
         $result = WCF::getDB()->sendQuery($sql);
         while($row = WCF::getDB()->fetchArray($result)) {
             // username
-            if(empty($row['username']) && $row['messageType'] == 'post') {
+            if(self::wbbExists() && empty($row['username']) && $row['messageType'] == 'post') {
                 $tmp = WCF::getDB()->getFirstRow('SELECT username FROM wbb'.WBB_N.'_post WHERE postID = '.$row['messageID']);
                 if(isset($tmp['username'])) $row['username'] = $tmp['username'];
             } else if(empty($row['username']) && $row['messageType'] == 'pm') {
@@ -214,7 +226,7 @@ class AttachmentManager {
 
             // message type urls
             $row['messageTypeUrl'] = $row['messageType'];
-            if(preg_match('/^(post|pm)$/', $row['messageType'])) {
+            if(self::wbbExists() && preg_match('/^(post|pm)$/', $row['messageType'])) {
                 if($row['messageType'] == 'post') $row['messageTypeUrl'] = '<a href="'.RELATIVE_WBB_DIR.'index.php?page=Thread&postID='.$row['messageID'].'#post'.$row['messageID'].'" target="'.ATTACHMENTMANAGER_TARGETWINDOW.'">'.$row['messageType'].'</a>';
                 else if($ownPM) $row['messageTypeUrl'] = '<a href="'.RELATIVE_WBB_DIR.'index.php?page=PMView&pmID='.$row['messageID'].'#pm'.$row['messageID'].'" target="'.ATTACHMENTMANAGER_TARGETWINDOW.'">'.$row['messageType'].'</a>';
             }
@@ -230,16 +242,19 @@ class AttachmentManager {
                 else $shortFileName = substr($shortFileName, 0, $maxLength);
             }
 
-            if($row['messageType'] == 'pm' && !$ownPM) {
-                $row['attachmentUrl'] = '<span title="'.$row['attachmentName'].'">'.$shortFileName.'</span>';
-            } else if(!empty($showThumbnails) && !empty($row['isImage'])) {
-                if(!empty($row['thumbnailSize'])) {
-                    $row['attachmentUrl'] = '<a href="'.RELATIVE_WBB_DIR.'index.php?page=Attachment&attachmentID='.$row['attachmentID'].'&h='.$row['sha1Hash'].'" target="'.ATTACHMENTMANAGER_TARGETWINDOW.'" style="width:'.ATTACHMENT_THUMBNAIL_WIDTH.'px; height:'.ATTACHMENT_THUMBNAIL_HEIGHT.'px;"><img src="'.RELATIVE_WBB_DIR.'index.php?page=Attachment&attachmentID='.$row['attachmentID'].'&h='.$row['sha1Hash'].'&thumbnail=1" alt="'.$row['attachmentName'].'" title="'.$row['attachmentName'].'" style="max-width:'.ATTACHMENT_THUMBNAIL_WIDTH.'px; max-height:'.ATTACHMENT_THUMBNAIL_HEIGHT.'px;" /></a>';
+            $row['attachmentUrl'] = '<span title="'.$row['attachmentName'].'">'.$shortFileName.'</span>';
+            if(self::wbbExists()) {
+                if($row['messageType'] == 'pm' && !$ownPM) {
+                    $row['attachmentUrl'] = '<span title="'.$row['attachmentName'].'">'.$shortFileName.'</span>';
+                } else if(!empty($showThumbnails) && !empty($row['isImage'])) {
+                    if(!empty($row['thumbnailSize'])) {
+                        $row['attachmentUrl'] = '<a href="'.RELATIVE_WBB_DIR.'index.php?page=Attachment&attachmentID='.$row['attachmentID'].'&h='.$row['sha1Hash'].'" target="'.ATTACHMENTMANAGER_TARGETWINDOW.'" style="width:'.ATTACHMENT_THUMBNAIL_WIDTH.'px; height:'.ATTACHMENT_THUMBNAIL_HEIGHT.'px;"><img src="'.RELATIVE_WBB_DIR.'index.php?page=Attachment&attachmentID='.$row['attachmentID'].'&h='.$row['sha1Hash'].'&thumbnail=1" alt="'.$row['attachmentName'].'" title="'.$row['attachmentName'].'" style="max-width:'.ATTACHMENT_THUMBNAIL_WIDTH.'px; max-height:'.ATTACHMENT_THUMBNAIL_HEIGHT.'px;" /></a>';
+                    } else {
+                        $row['attachmentUrl'] = '<a href="'.RELATIVE_WBB_DIR.'index.php?page=Attachment&attachmentID='.$row['attachmentID'].'&h='.$row['sha1Hash'].'" target="'.ATTACHMENTMANAGER_TARGETWINDOW.'" style="width:'.ATTACHMENT_THUMBNAIL_WIDTH.'px; height:'.ATTACHMENT_THUMBNAIL_HEIGHT.'px;"><img src="'.RELATIVE_WBB_DIR.'index.php?page=Attachment&attachmentID='.$row['attachmentID'].'&h='.$row['sha1Hash'].'" alt="'.$row['attachmentName'].'" title="'.$row['attachmentName'].'" style="max-width:'.ATTACHMENT_THUMBNAIL_WIDTH.'px; max-height:'.ATTACHMENT_THUMBNAIL_HEIGHT.'px;" /></a>';
+                    }
                 } else {
-                    $row['attachmentUrl'] = '<a href="'.RELATIVE_WBB_DIR.'index.php?page=Attachment&attachmentID='.$row['attachmentID'].'&h='.$row['sha1Hash'].'" target="'.ATTACHMENTMANAGER_TARGETWINDOW.'" style="width:'.ATTACHMENT_THUMBNAIL_WIDTH.'px; height:'.ATTACHMENT_THUMBNAIL_HEIGHT.'px;"><img src="'.RELATIVE_WBB_DIR.'index.php?page=Attachment&attachmentID='.$row['attachmentID'].'&h='.$row['sha1Hash'].'" alt="'.$row['attachmentName'].'" title="'.$row['attachmentName'].'" style="max-width:'.ATTACHMENT_THUMBNAIL_WIDTH.'px; max-height:'.ATTACHMENT_THUMBNAIL_HEIGHT.'px;" /></a>';
+                    $row['attachmentUrl'] = '<a href="'.RELATIVE_WBB_DIR.'index.php?page=Attachment&attachmentID='.$row['attachmentID'].'&h='.$row['sha1Hash'].'" target="'.ATTACHMENTMANAGER_TARGETWINDOW.'" title="'.$row['attachmentName'].'">'.$shortFileName.'</a>';
                 }
-            } else {
-                $row['attachmentUrl'] = '<a href="'.RELATIVE_WBB_DIR.'index.php?page=Attachment&attachmentID='.$row['attachmentID'].'&h='.$row['sha1Hash'].'" target="'.ATTACHMENTMANAGER_TARGETWINDOW.'" title="'.$row['attachmentName'].'">'.$shortFileName.'</a>';
             }
 
             $icon = RELATIVE_WCF_DIR.'icon/fileTypeIconDefaultM.png';

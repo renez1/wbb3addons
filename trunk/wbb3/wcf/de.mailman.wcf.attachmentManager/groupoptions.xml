@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0"?>
 <!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/options.dtd">
+<!-- $Id$ -->
 <data>	
 	<import>
 		<categories>
