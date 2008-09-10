@@ -747,7 +747,7 @@ class AdminTools {
             chdir(WCF_DIR.'acp/backup');
             $dh=opendir(WCF_DIR.'acp/backup');
             while($file = readdir ($dh)) {
-            	if($file != '.' && $file != '..' && $file != '.htaccess') {
+            	if($file != '.' && $file != '..' && $file != '.htaccess' && !is_dir($file)) {
                     $LOST[$i]['DELVAL'] = urlencode($file);
                     $LOST[$i]['FILE'] = '<a href="index.php?form=AdminToolsLostAndFound&amp;show=downloadFile&amp;fileName='.$file.'&amp;packageID='.PACKAGE_ID.SID_ARG_2ND_NOT_ENCODED.'">'.$file.'</a>';
                     $LOST[$i]['SIZE'] = round((filesize($file) / 1024),2).' kB';

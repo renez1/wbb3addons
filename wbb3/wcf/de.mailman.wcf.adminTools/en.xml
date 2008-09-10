@@ -141,6 +141,7 @@
         <item name="wcf.acp.adminTools.laf.fileSize"><![CDATA[Size]]></item>
         <item name="wcf.acp.adminTools.laf.fileDate"><![CDATA[Date]]></item>
         <item name="wcf.acp.adminTools.laf.fileUser"><![CDATA[User]]></item>
+        <item name="wcf.acp.adminTools.backup.empty"><![CDATA[There are no backups available.]]></item>
 
         <item name="wcf.acp.adminTools.toolBox.cache.legend"><![CDATA[Cache]]></item>
         <item name="wcf.acp.adminTools.toolBox.cache.del"><![CDATA[Empty cache directory]]></item>

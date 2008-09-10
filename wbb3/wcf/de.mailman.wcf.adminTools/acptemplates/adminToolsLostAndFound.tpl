@@ -106,7 +106,13 @@ function sellAll() {
                         </tbody>
                     </table>
                 {else}
-                    <p class="info">{lang}wcf.acp.adminTools.laf.empty{/lang}</p>
+                    <p class="info">
+                        {if $show == 'lostAndFoundWbbB'}
+                            {lang}wcf.acp.adminTools.backup.empty{/lang}
+                        {else}
+                            {lang}wcf.acp.adminTools.laf.empty{/lang}
+                        {/if}
+                    </p>
                 {/if}
             </fieldset>
         </div>
