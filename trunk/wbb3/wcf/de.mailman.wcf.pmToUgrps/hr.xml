@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<!-- $Id$ -->
+<!-- translated by Dean Barić -->
+<language languagecode="hr">
+	<category name="wcf.acp.menu">
+    	<item name="wcf.acp.menu.link.group.pmToUgrps"><![CDATA[PP na korisnicke grupe]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.message.pmToUserGroups"><![CDATA[Privatne Poruke Korisnicki Grupama]]></item>
+		<item name="wcf.acp.option.category.message.pmToUserGroups.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.pmToUserGroups_defaultLimit"><![CDATA[Broj poruka po procesu]]></item>
+		<item name="wcf.acp.option.pmToUserGroups_defaultLimit.description"><![CDATA[Odaberite ovdje broj na koliko primatelja po procesu želite poslati privatne poruke. Standardno = 25.]]></item>
+		<item name="wcf.acp.option.pmToUserGroups_maxLifeTime"><![CDATA[Maksimalni životni vijek]]></item>
+		<item name="wcf.acp.option.pmToUserGroups_maxLifeTime.description"><![CDATA[Postavke životnog vijeka u danima, prije nego se privatne poruke kompletno izbrišu. 0 = deaktivirano.]]></item>
+	</category>
+	<category name="wcf.acp.group">
+    	<item name="wcf.acp.group.option.admin.user.canPMToUserGroups"><![CDATA[KMože privatne poruke korisnickim grupama slati]]></item>
+    	<item name="wcf.acp.group.option.admin.user.canPMToUserGroups.description"><![CDATA[Korisnici ove korisnicke grupe mogu privatne poruke korisnickim grupama slati.]]></item>
+	</category>
+	<category name="wcf.pmToUgrps">
+    	<item name="wcf.pmToUgrps.newMessage"><![CDATA[Novu Privatnu Poruku korisnickim grupama sastaviti]]></item>
+    	<item name="wcf.pmToUgrps.sendTo.legend"><![CDATA[Postavke Poruke]]></item>
+    	<item name="wcf.pmToUgrps.sendTo.groups"><![CDATA[Korisnicke Grupe]]></item>
+		<item name="wcf.pmToUgrps.maxLifeTime"><![CDATA[Maksimalni životni vijek]]></item>
+		<item name="wcf.pmToUgrps.maxLifeTime.description"><![CDATA[Postavke životnog vijeka u danima, prije nego se privatne poruke kompletno izbrišu. 0 = deaktivirano.]]></item>
+    	<item name="wcf.pmToUgrps.pm.legend"><![CDATA[Privatna Poruka]]></item>
+    	<item name="wcf.pmToUgrps.pm.subject"><![CDATA[Naslov]]></item>
+    	<item name="wcf.pmToUgrps.pm.text"><![CDATA[Poruka]]></item>
+    	<item name="wcf.pmToUgrps.pageTitle"><![CDATA[Privatna Poruka korisnickim grupama]]></item>
+    	<item name="wcf.pmToUgrps.finish"><![CDATA[Proces je uspješno završen. <br />Poslane Poruke: {$count} <br />Zapoceto: {$startTime} <br />Završeno: {$endTime}]]></item>
+    	<item name="wcf.pmToUgrps.progress"><![CDATA[Procesira se: {$loop} ... {$count}]]></item>
+    	<item name="wcf.pmToUgrps.log.subject"><![CDATA[Masovna Privatna Poruka ID {$pmID}:]]></item>
+    	<item name="wcf.pmToUgrps.log.started"><![CDATA[Zapoceto: {$startTime}]]></item>
+    	<item name="wcf.pmToUgrps.log.finished"><![CDATA[Završeno: {$endTime}]]></item>
+    	<item name="wcf.pmToUgrps.log.recipients"><![CDATA[Primaoci: {$groups} ({$count})]]></item>
+    	<item name="wcf.pmToUgrps.error.noRecipients"><![CDATA[Odabrali ste grupu koje ne smije primati privatne poruke!]]></item>
+    	<item name="wcf.pmToUgrps.error.isNoInteger"><![CDATA[Nevažeci Broj!]]></item>
+	</category>
+</language>
