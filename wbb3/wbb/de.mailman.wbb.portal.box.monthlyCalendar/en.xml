@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<!-- $Id$ -->
+<language languagecode="en">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.monthlyCalendar.title"><![CDATA[Monthly calendar]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.monday"><![CDATA[Mo]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.tuesday"><![CDATA[Tu]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.wednesday"><![CDATA[We]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.thursday"><![CDATA[Th]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.friday"><![CDATA[Fr]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.saturday"><![CDATA[Sa]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.sunday"><![CDATA[Su]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_1"><![CDATA[January]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_2"><![CDATA[February]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_3"><![CDATA[March]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_4"><![CDATA[April]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_5"><![CDATA[May]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_6"><![CDATA[June]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_7"><![CDATA[July]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_8"><![CDATA[August]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_9"><![CDATA[September]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_10"><![CDATA[October]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_11"><![CDATA[November]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_12"><![CDATA[December]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.cw"><![CDATA[CW]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.dayOfTheYear"><![CDATA[Day {$doy}]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.birthdays"><![CDATA[Birthdays]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.appointments"><![CDATA[Appointments]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.holidays"><![CDATA[Holidays]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.nextMonth"><![CDATA[Next month]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.prevMonth"><![CDATA[Previous month]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.curMonth"><![CDATA[Current month]]></item>
+	</category>
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.category.user.board.general"><![CDATA[General]]></item>
+		<item name="wcf.acp.group.option.category.user.board.general.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.board.canViewMonthlyCalendarBox"><![CDATA[Can view the &raquo;Monthly calendar&laquo; box]]></item>
+		<item name="wcf.acp.group.option.user.board.canViewMonthlyCalendarBox.description"><![CDATA[]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.monthlyCalendar"><![CDATA[Monthly calendar box]]></item>
+		<item name="wcf.acp.option.category.portal.box.monthlyCalendar.description"><![CDATA[]]></item>
+	</category>
+	<category name="wcf.user.option">
+        <item name="wcf.user.option.category.settings.display.monthlyCalendarBox"><![CDATA[Monthly calendar box]]></item>
+        <item name="wcf.user.option.category.settings.display.monthlyCalendarBox.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showCalendarWeeks"><![CDATA[Show calendar weeks]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showCalendarWeeks.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showAppointments"><![CDATA[Show appointments]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showAppointments.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showHolidays"><![CDATA[Show holidays]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showHolidays.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showBirthdays"><![CDATA[Show birthdays]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showBirthdays.description"><![CDATA[]]></item>
+	</category>
+</language>
