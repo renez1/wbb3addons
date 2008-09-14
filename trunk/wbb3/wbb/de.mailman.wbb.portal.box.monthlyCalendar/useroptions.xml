@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTD/options.dtd">
+<!-- $Id$ -->
+<data>
+	<import>
+		<categories>
+			<category name="settings.display.monthlyCalendarBox">
+				<parent>settings.display</parent>
+				<showorder>0</showorder>
+			</category>
+		</categories>
+		<options>
+			<option name="monthlyCalendarBox">
+				<categoryname>hidden</categoryname>
+				<optiontype>boolean</optiontype>
+				<visible>4</visible>
+				<editable>4</editable>
+				<defaultvalue>1</defaultvalue>
+			</option>
+
+			<option name="monthlyCalendarBox_showCalendarWeeks">
+				<categoryname>settings.display.monthlyCalendarBox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
+			<option name="monthlyCalendarBox_showAppointments">
+				<categoryname>settings.display.monthlyCalendarBox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="monthlyCalendarBox_showHolidays">
+				<categoryname>settings.display.monthlyCalendarBox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
+			<option name="monthlyCalendarBox_showBirthdays">
+				<categoryname>settings.display.monthlyCalendarBox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
+		</options>
+	</import>
+</data>
