@@ -16,8 +16,6 @@
 .mcbColDay, .mcbColCW, .mcbColEmpty {
     font-weight: normal;
     font-size: .85em;
-}
-.mcbColDay, .mcbColCW {
     text-align: right;
     vertical-align: middle;
 }
@@ -43,4 +41,7 @@
     background-image: url("../icon/mcbAppointmentS.png");
     background-position: center right;
     background-repeat: no-repeat;
+}
+.mcbColEmpty {
+    font-size: .8em;
 }

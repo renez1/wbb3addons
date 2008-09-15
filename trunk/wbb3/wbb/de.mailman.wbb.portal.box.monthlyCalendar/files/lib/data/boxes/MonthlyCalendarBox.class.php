@@ -62,11 +62,21 @@ class MonthlyCalendarBox {
             $lastWeekday = strftime('%w', gmmktime(0,0,0,$mcM,$cntDays,$mcY));
             if($firstWeekday == 0) $firstWeekday = 7;
             if($lastWeekday == 0) $lastWeekday = 7;
-            for($i=1;$i<$firstWeekday;$i++) $daysBefore[] = $i;
-            for($i=1;$i<=7-$lastWeekday;$i++) $daysAfter[] = $i;
+            for($i=1;$i<$firstWeekday;$i++) {
+                $time = gmmktime(0,0,0,$mcM, $i - $firstWeekday + 1,$mcY);
+                $daysBefore[$i]['day'] = date('j', $time);
+                $daysBefore[$i]['weekday'] = date('w', $time) + 1;
+            }
+            for($i=1;$i<=7-$lastWeekday;$i++) {
+                $time = gmmktime(0,0,0,$mcM,$i + $cntDays,$mcY);
+                $daysAfter[$i]['day'] = date('j', $time);
+                $daysAfter[$i]['weekday'] = date('w', $time) + 1;
+            }
             for($i=1;$i<=$cntDays;$i++) {
                 $mcDays[$i]['day'] = $i;
-                $doy = date('z',gmmktime(0,0,0,$mcM,$i,$mcY)) + 1;
+                $time = gmmktime(0,0,0,$mcM,$i,$mcY);
+                $doy = date('z', $time) + 1;
+                $mcDays[$i]['weekday'] = date('w', $time) + 1;
                 $mcDays[$i]['birthday'] = false;
                 $mcDays[$i]['date'] = false;
                 $mcDays[$i]['holiday'] = false;
