@@ -32,8 +32,8 @@
                             <th class="{$mcbColDayH}">{lang}wbb.portal.box.monthlyCalendar.wednesday{/lang}</th>
                             <th class="{$mcbColDayH}">{lang}wbb.portal.box.monthlyCalendar.thursday{/lang}</th>
                             <th class="{$mcbColDayH}">{lang}wbb.portal.box.monthlyCalendar.friday{/lang}</th>
-                            <th class="{$mcbColDayH}">{lang}wbb.portal.box.monthlyCalendar.saturday{/lang}</th>
-                            <th class="{$mcbColDayH}">{lang}wbb.portal.box.monthlyCalendar.sunday{/lang}</th>
+                            <th class="{$mcbColDayH} container-3">{lang}wbb.portal.box.monthlyCalendar.saturday{/lang}</th>
+                            <th class="{$mcbColDayH} container-3">{lang}wbb.portal.box.monthlyCalendar.sunday{/lang}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,12 +47,12 @@
                                 {/if}
                             {/if}
                             {if $i == 1 && $daysBefore|count}
-                                {foreach from=$daysBefore item=dummy}
-                                    <td class="mcbColEmpty"></td>
+                                {foreach from=$daysBefore item=db}
+                                    <td class="{if $db.weekday == 1 || $db.weekday == 7}container-3 {/if}light mcbColEmpty">{$db.day}</td>
                                     {counter name="i" print=false}
                                 {/foreach}
                             {/if}
-                            <td class="{if $day.day == $curDay}container-3 mcbColCurDay {/if}{if $day.birthday || $day.date || $day.holiday}mcbAppointment {/if}mcbColDay" title="{@$day.title}">
+                            <td class="{if $day.day == $curDay}container-3 mcbColCurDay {else if $day.weekday == 1 || $day.weekday == 7}container-3 {/if}{if $day.birthday || $day.date || $day.holiday}mcbAppointment {/if}mcbColDay" title="{@$day.title}">
                                 {if $this->user->getPermission('user.calendar.canUseCalendar')}
                                     <a href="index.php?page=CalendarMonth&amp;jumpToDay={@$day.day}&amp;jumpToMonth={$mcM}&amp;jumpToYear={$mcY}{@SID_ARG_2ND}">{@$day.day}</a>
                                 {else if $this->user->getPermission('user.calendar.canEnter')}
@@ -66,8 +66,8 @@
                             {/if}
                         {/foreach}
                         {if $i%7 != 0 && $daysAfter|count}
-                            {foreach from=$daysAfter item=dummy}
-                                <td class="mcbColEmpty"></td>
+                            {foreach from=$daysAfter item=da}
+                                <td class="{if $da.weekday == 1 || $da.weekday == 7}container-3 {/if}light mcbColEmpty">{$da.day}</td>
                             {/foreach}
                             </tr>
                         {/if}
