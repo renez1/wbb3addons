@@ -16,6 +16,7 @@ class AdminToolsCronForm extends ACPForm {
     public $cronDelPmDays = 0;
     public $cronDelPmDaysExclUgrps = '';
     public $cronDelPmDaysExclUser = '';
+    public $cronDelPmDaysExclFolder = 0;
     public $cronDelPmDaysShowInfo = 0;
     public $cronDelPmDaysShowExclInfo = 0;
     public $cronDbAnalyze = 0;
@@ -86,6 +87,7 @@ class AdminToolsCronForm extends ACPForm {
 		if(!isset($_POST['cronDbBackup']))                      $this->cronDbBackup = 0;
 		if(!isset($_POST['cronLogEnabled']))                    $this->cronLogEnabled = 0;
 		if(!isset($_POST['cronStatEnabled']))                   $this->cronStatEnabled = 0;
+		if(!isset($_POST['cronDelPmDaysExclFolder']))           $this->cronDelPmDaysExclFolder = 0;
 		if(!isset($_POST['cronDelPmDaysShowInfo']))             $this->cronDelPmDaysShowInfo = 0;
 		if(!isset($_POST['cronDelPmDaysShowExclInfo']))         $this->cronDelPmDaysShowExclInfo = 0;
 		if(!isset($_POST['cronLogUseAdminEmail']))              $this->cronLogUseAdminEmail = 0;
@@ -140,6 +142,7 @@ class AdminToolsCronForm extends ACPForm {
                 'cronDelPmDays'                     => $this->cronDelPmDays,
                 'cronDelPmDaysExclUgrps'            => $this->cronDelPmDaysExclUgrps,
                 'cronDelPmDaysExclUser'             => $this->cronDelPmDaysExclUser,
+                'cronDelPmDaysExclFolder'           => $this->cronDelPmDaysExclFolder,
                 'cronDelPmDaysShowInfo'             => $this->cronDelPmDaysShowInfo,
                 'cronDelPmDaysShowExclInfo'         => $this->cronDelPmDaysShowExclInfo,
                 'cronLogEnabled'                    => $this->cronLogEnabled,
@@ -196,6 +199,7 @@ class AdminToolsCronForm extends ACPForm {
 		    'cronDbBackup'                      => $this->cronDbBackup,
 		    'cronDelPmDaysExclUgrps'            => $this->cronDelPmDaysExclUgrps,
 		    'cronDelPmDaysExclUser'             => $this->cronDelPmDaysExclUser,
+		    'cronDelPmDaysExclFolder'           => $this->cronDelPmDaysExclFolder,
 		    'cronDelPmDaysShowInfo'             => $this->cronDelPmDaysShowInfo,
 		    'cronDelPmDaysShowExclInfo'         => $this->cronDelPmDaysShowExclInfo,
 		    'cronLogEnabled'                    => $this->cronLogEnabled,

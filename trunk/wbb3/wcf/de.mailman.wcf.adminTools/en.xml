@@ -47,6 +47,8 @@
         <item name="wcf.acp.adminTools.cron.pm.delExclUgrps.description"><![CDATA[Please enter all <strong>Usergroup-IDs</strong> whose Private Messages should not be deleted automatically (comma seperated).]]></item>
         <item name="wcf.acp.adminTools.cron.pm.delExclUser"><![CDATA[Exclude Users]]></item>
         <item name="wcf.acp.adminTools.cron.pm.delExclUser.description"><![CDATA[Please enter all <strong>User-IDs</strong> whose Private Messages should not be deleted automatically (comma seperated).]]></item>
+        <item name="wcf.acp.adminTools.cron.pm.delExclFolder"><![CDATA[Exclude folder]]></item>
+        <item name="wcf.acp.adminTools.cron.pm.delExclFolder.description"><![CDATA[Do not delete Private Messages if a user moved a private message in a folder.]]></item>
         <item name="wcf.acp.adminTools.cron.pm.showExclInfo"><![CDATA[Show Info]]></item>
         <item name="wcf.acp.adminTools.cron.pm.showExclInfo.description"><![CDATA[Shows the info box after how many days Private Messages will be deleted, including the list of users which are excluded from this setting.]]></item>
 

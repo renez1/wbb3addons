@@ -153,6 +153,18 @@ function runCron(cj) {
 					inlineHelp.register('cronDelPmDaysShowInfo');
 				//]]></script>
 
+				<div class="formElement" id="cronDelPmDaysExclFolderDiv">
+					<div class="formField">
+						<label><input type="checkbox" id="cronDelPmDaysExclFolder" name="cronDelPmDaysExclFolder" value="1"{if $cronDelPmDaysExclFolder} checked="checked"{/if} /> {lang}wcf.acp.adminTools.cron.pm.delExclFolder{/lang}</label>
+					</div>
+					<div class="formFieldDesc hidden" id="cronDelPmDaysExclFolderHelpMessage">
+						{lang}wcf.acp.adminTools.cron.pm.delExclFolder.description{/lang}
+					</div>
+				</div>
+				<script type="text/javascript">//<![CDATA[
+					inlineHelp.register('cronDelPmDaysExclFolder');
+				//]]></script>
+
 				<div class="formElement" id="cronDelPmDaysExclUgrpsDiv">
 					<div class="formFieldLabel">
 						<label for="cronDelPmDaysExclUgrps">{lang}wcf.acp.adminTools.cron.pm.delExclUgrps{/lang}</label>

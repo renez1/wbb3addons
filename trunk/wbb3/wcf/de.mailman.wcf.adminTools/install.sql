@@ -11,6 +11,7 @@ INSERT INTO `wcf1_admin_tool_setting` (`atse_name`, `atse_value`) VALUES ('cronD
 INSERT INTO `wcf1_admin_tool_setting` (`atse_name`, `atse_value`) VALUES ('cronDelPmDays', '0');
 INSERT INTO `wcf1_admin_tool_setting` (`atse_name`, `atse_value`) VALUES ('cronDelPmDaysExclUgrps', '');
 INSERT INTO `wcf1_admin_tool_setting` (`atse_name`, `atse_value`) VALUES ('cronDelPmDaysExclUser', '');
+INSERT INTO `wcf1_admin_tool_setting` (`atse_name`, `atse_value`) VALUES ('cronDelPmDaysExclFolder', '0');
 INSERT INTO `wcf1_admin_tool_setting` (`atse_name`, `atse_value`) VALUES ('cronDelPmDaysShowInfo', '0');
 INSERT INTO `wcf1_admin_tool_setting` (`atse_name`, `atse_value`) VALUES ('cronDelPmDaysShowExclInfo', '0');
 INSERT INTO `wcf1_admin_tool_setting` (`atse_name`, `atse_value`) VALUES ('cronLogEnabled', '0');

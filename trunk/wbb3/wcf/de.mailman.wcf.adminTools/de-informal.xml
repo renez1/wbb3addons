@@ -47,6 +47,8 @@
         <item name="wcf.acp.adminTools.cron.pm.delExclUgrps.description"><![CDATA[Gebe hier die <strong>Benutzergruppen-IDs</strong> per Komma getrennt an, deren PNs nicht gelöscht werden sollen.]]></item>
         <item name="wcf.acp.adminTools.cron.pm.delExclUser"><![CDATA[Benutzer ausschließen]]></item>
         <item name="wcf.acp.adminTools.cron.pm.delExclUser.description"><![CDATA[Gebe hier die <strong>Benutzer-IDs</strong> per Komma getrennt an, deren PNs nicht gelöscht werden sollen.]]></item>
+        <item name="wcf.acp.adminTools.cron.pm.delExclFolder"><![CDATA[Ordner ausschließen]]></item>
+        <item name="wcf.acp.adminTools.cron.pm.delExclFolder.description"><![CDATA[Löscht keine PNs, wenn ein Benutzer die PN in einen Ordner verschoben hat.]]></item>
         <item name="wcf.acp.adminTools.cron.pm.showExclInfo"><![CDATA[Info anzeigen]]></item>
         <item name="wcf.acp.adminTools.cron.pm.showExclInfo.description"><![CDATA[Zeigt die Info, dass PNs nach n Tagen gelöscht werden, auch den davon ausgeschlossenen Benutzern an.]]></item>
 
