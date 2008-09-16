@@ -46,6 +46,7 @@ class AdminToolsCronjob implements Cronjob
                 ."\n WHERE time < ".(time() - ($this->atSettings['cronDelPmDays'] * 86400));
             if(!empty($this->atSettings['cronDelPmDaysExclUgrps'])) $sql .= "\n   AND userID NOT IN (SELECT userID FROM wcf".WCF_N."_user_to_groups WHERE groupID IN (".$this->atSettings['cronDelPmDaysExclUgrps']."))";
             if(!empty($this->atSettings['cronDelPmDaysExclUser'])) $sql .= "\n   AND userID NOT IN (".$this->atSettings['cronDelPmDaysExclUser'].")";
+            if(!empty($this->atSettings['cronDelPmDaysExclFolder'])) $sql .= "\n   AND pmID NOT IN (SELECT pmID FROM wcf".WCF_N."_pm_to_user WHERE folderID > 0)";
             $result = WCF::getDB()->sendQuery($sql);
             while($row = WCF::getDB()->fetchArray($result)) {
                 $cnt++;
