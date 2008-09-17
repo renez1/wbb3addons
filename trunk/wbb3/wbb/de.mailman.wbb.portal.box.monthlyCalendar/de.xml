@@ -41,17 +41,28 @@
 	<category name="wcf.acp.option">
 		<item name="wcf.acp.option.category.portal.box.monthlyCalendar"><![CDATA[Monatskalender Box]]></item>
 		<item name="wcf.acp.option.category.portal.box.monthlyCalendar.description"><![CDATA[]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_col_align"><![CDATA[Ausrichtung der Tage]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_col_align.description"><![CDATA[Ausrichtung der Tage (links, mittig, rechts).]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_col_align.left"><![CDATA[Links]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_col_align.center"><![CDATA[Mitte]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_col_align.right"><![CDATA[Rechts]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_show_doy"><![CDATA[Tag des Jahres anzeigen]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_show_doy.description"><![CDATA[Zeigt den Tag n des Jahres als ToolTip an.]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_show_nav"><![CDATA[Navigation anzeigen]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_show_nav.description"><![CDATA[Zeigt die Links Monat vor/zurück in der Box an.]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_show_form"><![CDATA[Monats-/Jahr-Auswahl anzeigen]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_show_form.description"><![CDATA[Zeigt das Formular Monat/Jahr in der Box an.]]></item>
 	</category>
 	<category name="wcf.user.option">
         <item name="wcf.user.option.category.settings.display.monthlyCalendarBox"><![CDATA[Monatskalender Box]]></item>
         <item name="wcf.user.option.category.settings.display.monthlyCalendarBox.description"><![CDATA[]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showCalendarWeeks"><![CDATA[Kalenderwochen anzeigen]]></item>
-		<item name="wcf.user.option.monthlyCalendarBox_showCalendarWeeks.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showCalendarWeeks.description"><![CDATA[Anzeige der Kalenderwochen in der Monatskalender Box.]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showAppointments"><![CDATA[Termine anzeigen]]></item>
-		<item name="wcf.user.option.monthlyCalendarBox_showAppointments.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showAppointments.description"><![CDATA[Anzeige der Termine in der Monatskalender Box.]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showHolidays"><![CDATA[Feiertage anzeigen]]></item>
-		<item name="wcf.user.option.monthlyCalendarBox_showHolidays.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showHolidays.description"><![CDATA[Anzeige der Feiertage in der Monatskalender Box.]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showBirthdays"><![CDATA[Geburtstage anzeigen]]></item>
-		<item name="wcf.user.option.monthlyCalendarBox_showBirthdays.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showBirthdays.description"><![CDATA[Anzeige der Geburtstage in der Monatskalender Box.]]></item>
 	</category>
 </language>
