@@ -4,10 +4,39 @@
 <data>
 	<import>
 		<categories>
-			<category name="portal.box.canViewMonthlyCalendarBox">
+			<category name="portal.box.monthlyCalendar">
 				<parent>portal</parent>
-				<showorder>20</showorder>
 			</category>
 		</categories>
+
+		<options>
+			<option name="monthlyCalendarBox_col_align">
+				<categoryname>portal.box.monthlyCalendar</categoryname>
+				<optiontype>select</optiontype>
+				<defaultvalue>Right</defaultvalue>
+				<selectoptions><![CDATA[Left:wcf.acp.option.monthlyCalendarBox_col_align.left
+Center:wcf.acp.option.monthlyCalendarBox_col_align.center
+Right:wcf.acp.option.monthlyCalendarBox_col_align.right]]></selectoptions>
+			</option>
+			<option name="monthlyCalendarBox_show_doy">
+				<categoryname>portal.box.monthlyCalendar</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+		    </option>
+			<option name="monthlyCalendarBox_show_nav">
+				<categoryname>portal.box.monthlyCalendar</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+		    </option>
+			<option name="monthlyCalendarBox_show_form">
+				<categoryname>portal.box.monthlyCalendar</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+		    </option>
+		</options>
 	</import>
+
+    <delete>
+        <category name="portal.box.canViewMonthlyCalendarBox" />
+    </delete>
 </data>

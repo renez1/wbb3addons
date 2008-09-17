@@ -20,21 +20,30 @@ class MonthlyCalendarBoxHelper {
         $userID = WCF::getUser()->userID;
         if(empty($userID)) return $ret;
 
-        if(WCF::getUser()->getPermission('user.calendar.canUseCalendar')) {
+        if(WBBCore::getUser()->getPermission('user.calendar.canUseCalendar')) {
             $sql = "SELECT cem.subject AS subject, ced.startTime AS startTime"
                 ."\n  FROM wcf".WCF_N."_calendar_event_date ced"
                 ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID)"
                 ."\n WHERE ced.startTime >= ".$sTimestamp
                 ."\n   AND ced.startTime <= ".$eTimestamp
-                ."\n   AND cem.userID = ".$userID;
+                ."\n   AND cem.userID = ".$userID
+                ."\n UNION"
+                ."\nSELECT cem.subject AS subject, ced.startTime AS startTime"
+                ."\n  FROM wcf".WCF_N."_calendar_event_date ced"
+                ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID)"
+                ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_participation cep ON (cep.eventID = ced.eventID)"
+                ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_participation_to_user ceptu ON (ceptu.participationID = cep.participationID)"
+                ."\n WHERE ced.startTime >= ".$sTimestamp
+                ."\n   AND ced.startTime <= ".$eTimestamp
+                ."\n   AND ceptu.userID = ".$userID;
             $result = WBBCore::getDB()->sendQuery($sql);
             while($row = WBBCore::getDB()->fetchArray($result)) {
                 $dd = date('j', $row['startTime']);
-                if(isset($ret[$dd])) $ret[$dd] .= " - ";
+                if(isset($ret[$dd])) $ret[$dd] .= ", ";
                 else $ret[$dd] = '';
                 $ret[$dd] .= StringUtil::encodeHTML($row['subject']);
             }
-        } else if(WCF::getUser()->getPermission('user.calendar.canEnter')) {
+        } else if(WBBCore::getUser()->getPermission('user.calendar.canEnter')) {
             $sql = "SELECT cem.subject AS subject, ce.eventTime AS startTime"
                 ."\n  FROM wcf".WCF_N."_calendar_event ce"
                 ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ce.eventID)"
@@ -44,7 +53,7 @@ class MonthlyCalendarBoxHelper {
             $result = WBBCore::getDB()->sendQuery($sql);
             while($row = WBBCore::getDB()->fetchArray($result)) {
                 $dd = date('j', $row['startTime']);
-                if(isset($ret[$dd])) $ret[$dd] .= " - ";
+                if(isset($ret[$dd])) $ret[$dd] .= ", ";
                 else $ret[$dd] = '';
                 $ret[$dd] .= StringUtil::encodeHTML($row['subject']);
             }
@@ -77,7 +86,7 @@ class MonthlyCalendarBoxHelper {
                 if($y >= $by) {
                     $age = $y - $by;
                     if($age == 0) $age = 1;
-                    if(isset($ret[$bd])) $ret[$bd] .= " - ";
+                    if(isset($ret[$bd])) $ret[$bd] .= ", ";
                     else $ret[$bd] = '';
                     $ret[$bd] .= StringUtil::encodeHTML($row['username']).' ('.$age.')';
                 }

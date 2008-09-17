@@ -41,6 +41,17 @@
 	<category name="wcf.acp.option">
 		<item name="wcf.acp.option.category.portal.box.monthlyCalendar"><![CDATA[Monthly calendar box]]></item>
 		<item name="wcf.acp.option.category.portal.box.monthlyCalendar.description"><![CDATA[]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_col_align"><![CDATA[Alignment of the days]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_col_align.description"><![CDATA[Alignment of days (left, center, right).]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_col_align.left"><![CDATA[Left]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_col_align.center"><![CDATA[Center]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_col_align.right"><![CDATA[Right]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_show_doy"><![CDATA[Show day of year]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_show_doy.description"><![CDATA[]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_show_nav"><![CDATA[Show month navigation]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_show_nav.description"><![CDATA[]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_show_form"><![CDATA[Show month-/year-selection]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_show_form.description"><![CDATA[]]></item>
 	</category>
 	<category name="wcf.user.option">
         <item name="wcf.user.option.category.settings.display.monthlyCalendarBox"><![CDATA[Monthly calendar box]]></item>

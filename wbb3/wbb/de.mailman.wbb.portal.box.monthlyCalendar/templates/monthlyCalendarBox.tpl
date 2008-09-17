@@ -13,9 +13,11 @@
             </div>
             <div class="containerContent">
                 <a name="monthlyCalendarBox"></a>
-                <a href="index.php?page=Portal&amp;mcM={$mcCurM}&amp;mcY={$mcCurY}{@SID_ARG_2ND}#monthlyCalendarBox"><img src="{@RELATIVE_WBB_DIR}icon/mcbCurMonthS.png" alt="" title="{lang}wbb.portal.box.monthlyCalendar.curMonth{/lang}" /></a>
-                {if $this->user->userID}
+                <a href="index.php?page={@$redirTo}&amp;mcM={$mcCurM}&amp;mcY={$mcCurY}{@SID_ARG_2ND}#monthlyCalendarBox"><img src="{@RELATIVE_WBB_DIR}icon/mcbCurMonthS.png" alt="" title="{lang}wbb.portal.box.monthlyCalendar.curMonth{/lang}" /></a>
+                {if $mcbTitleLinkTo == 'UserProfileEdit'}
                     <a href="index.php?form=UserProfileEdit&amp;category=settings.display{@SID_ARG_2ND}">{@$mcbTitle}</a>
+                {else if $mcbTitleLinkTo == 'Calendar'}
+                    <a href="index.php?page=Calendar{@SID_ARG_2ND}">{@$mcbTitle}</a>
                 {else}
                     {@$mcbTitle}
                 {/if}
@@ -43,16 +45,16 @@
                             {if $i%7 == 1}
                                 <tr class="{cycle values="container-1,container-2"}">
                                 {if $mcbShowCW}
-                                    <td class="container-3 mcbColCW">{@$mcbHelper->getCW($mcY, $mcM, $day.day)}</td>
+                                    <td class="container-3 mcbColCW mcbColDay{MONTHLYCALENDARBOX_COL_ALIGN}">{@$mcbHelper->getCW($mcY, $mcM, $day.day)}</td>
                                 {/if}
                             {/if}
                             {if $i == 1 && $daysBefore|count}
                                 {foreach from=$daysBefore item=db}
-                                    <td class="{if $db.weekday == 1 || $db.weekday == 7}container-3 {/if}light mcbColEmpty">{$db.day}</td>
+                                    <td class="{if $db.weekday == 1 || $db.weekday == 7}container-3 {/if}light mcbColEmpty mcbColDay{MONTHLYCALENDARBOX_COL_ALIGN}">{$db.day}</td>
                                     {counter name="i" print=false}
                                 {/foreach}
                             {/if}
-                            <td class="{if $day.day == $curDay}container-3 mcbColCurDay {else if $day.weekday == 1 || $day.weekday == 7}container-3 {/if}{if $day.birthday || $day.date || $day.holiday}mcbAppointment {/if}mcbColDay" title="{@$day.title}">
+                            <td class="{if $day.day == $curDay}container-3 mcbColCurDay {else if $day.weekday == 1 || $day.weekday == 7}container-3 {/if}{if $day.birthday || $day.date || $day.holiday}mcbAppointment mcbAppointment{MONTHLYCALENDARBOX_COL_ALIGN} {/if}mcbColDay mcbColDay{MONTHLYCALENDARBOX_COL_ALIGN}" title="{@$day.title}">
                                 {if $this->user->getPermission('user.calendar.canUseCalendar')}
                                     <a href="index.php?page=CalendarMonth&amp;jumpToDay={@$day.day}&amp;jumpToMonth={$mcM}&amp;jumpToYear={$mcY}{@SID_ARG_2ND}">{@$day.day}</a>
                                 {else if $this->user->getPermission('user.calendar.canEnter')}
@@ -67,27 +69,33 @@
                         {/foreach}
                         {if $i%7 != 0 && $daysAfter|count}
                             {foreach from=$daysAfter item=da}
-                                <td class="{if $da.weekday == 1 || $da.weekday == 7}container-3 {/if}light mcbColEmpty">{$da.day}</td>
+                                <td class="{if $da.weekday == 1 || $da.weekday == 7}container-3 {/if}light mcbColEmpty mcbColDay{MONTHLYCALENDARBOX_COL_ALIGN}">{$da.day}</td>
                             {/foreach}
                             </tr>
                         {/if}
                     </tbody>
                 </table>
-                <div class="border" style="padding: 0 0 1px; margin: 1px 0; text-align: center; vertical-align: middle;">
-                    <form method="get" action="index.php#monthlyCalendarBox">
-                        <a href="index.php?page=Portal&amp;mcM={$mcM - 1}&amp;mcY={$mcY}{@SID_ARG_2ND}#monthlyCalendarBox"><img src="{@RELATIVE_WBB_DIR}icon/mcbPreviousS.png" alt="" title="{lang}wbb.portal.box.monthlyCalendar.prevMonth{/lang}" style="vertical-align: middle; margin: 0; padding: 0;" /></a>
-                        <a href="index.php?page=Portal&amp;mcM={$mcM + 1}&amp;mcY={$mcY}{@SID_ARG_2ND}#monthlyCalendarBox"><img src="{@RELATIVE_WBB_DIR}icon/mcbNextS.png" alt="" title="{lang}wbb.portal.box.monthlyCalendar.nextMonth{/lang}" style="vertical-align: middle; margin: 0; padding: 0;" /></a>
-                        <select name="mcM" style="margin: 1px; 0; padding:0; vertical-align: middle; border: none;">
-                        {foreach from=$months item=month key=k}
-                            <option value="{$k}"{if $mcM == $k} selected="selected"{/if}>{@$month}</option>
-                        {/foreach}
-                        </select>
-                        <input type="text" name="mcY" value="{$mcY}" maxlength="4" class="smallFont" style="width: 30px; margin: 0; padding:0; vertical-align: middle; border: none;" />
-                        <input type="image" class="inputImage" src="{@RELATIVE_WCF_DIR}icon/submitS.png" style="vertical-align: middle; margin: 0; padding:0;" />
-                        <input type="hidden" name="page" value="Portal" />
-                        {@SID_INPUT_TAG}
-                    </form>
-                </div>
+                {if MONTHLYCALENDARBOX_SHOW_NAV || MONTHLYCALENDARBOX_SHOW_FORM}
+                    <div class="border" style="padding: 0 0 1px; margin: 1px 0; text-align: center; vertical-align: middle;">
+                        <form method="get" action="index.php#monthlyCalendarBox">
+                            {if MONTHLYCALENDARBOX_SHOW_NAV}
+                                <a href="index.php?page={@$redirTo}&amp;mcM={$mcM - 1}&amp;mcY={$mcY}{@SID_ARG_2ND}#monthlyCalendarBox"><img src="{@RELATIVE_WBB_DIR}icon/mcbPreviousS.png" alt="" title="{lang}wbb.portal.box.monthlyCalendar.prevMonth{/lang}" style="vertical-align: middle; margin: 0; padding: 0;" /></a>
+                                <a href="index.php?page={@$redirTo}&amp;mcM={$mcM + 1}&amp;mcY={$mcY}{@SID_ARG_2ND}#monthlyCalendarBox"><img src="{@RELATIVE_WBB_DIR}icon/mcbNextS.png" alt="" title="{lang}wbb.portal.box.monthlyCalendar.nextMonth{/lang}" style="vertical-align: middle; margin: 0; padding: 0;" /></a>
+                            {/if}
+                            {if MONTHLYCALENDARBOX_SHOW_FORM}
+                                <select name="mcM" style="margin: 1px; 0; padding:0; vertical-align: middle; border: none;">
+                                {foreach from=$months item=month key=k}
+                                    <option value="{$k}"{if $mcM == $k} selected="selected"{/if}>{@$month}</option>
+                                {/foreach}
+                                </select>
+                                <input type="text" name="mcY" value="{$mcY}" maxlength="4" class="smallFont" style="width: 30px; margin: 0; padding:0; vertical-align: middle; border: none;" />
+                                <input type="image" class="inputImage" src="{@RELATIVE_WCF_DIR}icon/submitS.png" style="vertical-align: middle; margin: 0; padding:0;" />
+                                <input type="hidden" name="page" value="{@$redirTo}" />
+                                {@SID_INPUT_TAG}
+                            {/if}
+                        </form>
+                    </div>
+                {/if}
             </div>
         </div>
     </div>

@@ -16,13 +16,11 @@
 .mcbColDay, .mcbColCW, .mcbColEmpty {
     font-weight: normal;
     font-size: .85em;
-    text-align: right;
     vertical-align: middle;
 }
 .mcbColDay a {
     text-decoration: none;
     display: block;
-    text-align: right !important;
     vertical-align: middle;
 }
 .mcbColDay:hover {
@@ -30,6 +28,15 @@
 	border-style: outset !important;
 	border-color: ActiveCaption !important;
 	padding: 3px 4px 4px 3px !important;
+}
+.mcbColDayLeft, .mcbColDayLeft a {
+    text-align: left !important;
+}
+.mcbColDayCenter, .mcbColDayCenter a {
+    text-align: center !important;
+}
+.mcbColDayRight, .mcbColDayRight a {
+    text-align: right !important;
 }
 .mcbColCurDay {
 	border-width: 1px;
@@ -39,9 +46,19 @@
 }
 .mcbAppointment {
     background-image: url("../icon/mcbAppointmentS.png");
-    background-position: center right;
     background-repeat: no-repeat;
 }
+.mcbAppointmentLeft {
+    background-position: center left !important;
+}
+.mcbAppointmentCenter {
+    background-position: center center !important;
+}
+.mcbAppointmentRight {
+    background-position: center right !important;
+}
+
+
 .mcbColEmpty {
     font-size: .8em;
 }

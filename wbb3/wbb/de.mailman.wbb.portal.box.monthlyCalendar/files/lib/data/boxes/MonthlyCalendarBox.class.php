@@ -16,6 +16,19 @@ class MonthlyCalendarBox {
         $this->BoxData['boxID'] = $data['boxID'];
         $this->mcbHelper = new MonthlyCalendarBoxHelper();
 
+        // misc vars
+        if(!defined('MONTHLYCALENDARBOX_COL_ALIGN'))    define('MONTHLYCALENDARBOX_COL_ALIGN', 'Right');
+        if(!defined('MONTHLYCALENDARBOX_SHOW_DOY'))     define('MONTHLYCALENDARBOX_SHOW_DOY', true);
+        if(!defined('MONTHLYCALENDARBOX_SHOW_NAV'))     define('MONTHLYCALENDARBOX_SHOW_NAV', true);
+        if(!defined('MONTHLYCALENDARBOX_SHOW_FORM'))    define('MONTHLYCALENDARBOX_SHOW_FORM', true);
+        if(!empty($_REQUEST['page'])) $redirTo = $_REQUEST['page'];
+        else $redirTo = 'Portal';
+        $mcbTitleLinkTo = '';
+        if(WBBCore::getUser()->userID) {
+            if(WBBCore::getUser()->getPermission('user.calendar.canUseCalendar') || WBBCore::getUser()->getPermission('user.calendar.canEnter')) $mcbTitleLinkTo = 'Calendar';
+            else $mcbTitleLinkTo = 'UserProfileEdit';
+        }
+
         if(!WBBCore::getUser()->userID || WBBCore::getUser()->monthlyCalendarBox_showCalendarWeeks) $mcbShowCW = true;
         else $mcbShowCW = false;
         if(WBBCore::getUser()->monthlyCalendarBox_showBirthdays) $mcbShowBirthdays = true;
@@ -80,17 +93,21 @@ class MonthlyCalendarBox {
                 $mcDays[$i]['birthday'] = false;
                 $mcDays[$i]['date'] = false;
                 $mcDays[$i]['holiday'] = false;
-                $mcDays[$i]['title'] = WCF::getLanguage()->get('wbb.portal.box.monthlyCalendar.dayOfTheYear', array('$doy' => $doy));
+                if(MONTHLYCALENDARBOX_SHOW_DOY) $mcDays[$i]['title'] = WCF::getLanguage()->get('wbb.portal.box.monthlyCalendar.dayOfTheYear', array('$doy' => $doy));
+                else $mcDays[$i]['title'] = '';
                 if($mcbShowAppointments && isset($dates[$i])) {
-                    $mcDays[$i]['title'] .= ' &bull; '.WCF::getLanguage()->get('wbb.portal.box.monthlyCalendar.appointments').': '.$dates[$i];
+                    if($mcDays[$i]['title']) $mcDays[$i]['title'] .= ' &bull; ';
+                    $mcDays[$i]['title'] .= WCF::getLanguage()->get('wbb.portal.box.monthlyCalendar.appointments').': '.$dates[$i];
                     $mcDays[$i]['date'] = true;
                 }
                 if($mcbShowBirthdays && isset($birthdays[$i])) {
-                    $mcDays[$i]['title'] .= ' &bull; '.WCF::getLanguage()->get('wbb.portal.box.monthlyCalendar.birthdays').': '.$birthdays[$i];
+                    if($mcDays[$i]['title']) $mcDays[$i]['title'] .= ' &bull; ';
+                    $mcDays[$i]['title'] .= WCF::getLanguage()->get('wbb.portal.box.monthlyCalendar.birthdays').': '.$birthdays[$i];
                     $mcDays[$i]['birthday'] = true;
                 }
                 if($mcbShowHolidays && isset($holidays[$i])) {
-                    $mcDays[$i]['title'] .= ' &bull; '.$holidays[$i];
+                    if($mcDays[$i]['title']) $mcDays[$i]['title'] .= ' &bull; ';
+                    $mcDays[$i]['title'] .= $holidays[$i];
                     $mcDays[$i]['holiday'] = true;
                 }
             }
@@ -110,7 +127,9 @@ class MonthlyCalendarBox {
             'mcDays' => $mcDays,
             'daysBefore' => $daysBefore,
             'months' => $months,
-            'mcbShowCW' => $mcbShowCW
+            'mcbShowCW' => $mcbShowCW,
+            'redirTo' => $redirTo,
+            'mcbTitleLinkTo' => $mcbTitleLinkTo
         ));
     }
 
