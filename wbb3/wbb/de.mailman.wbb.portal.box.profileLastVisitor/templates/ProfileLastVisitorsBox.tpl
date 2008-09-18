@@ -12,12 +12,14 @@
         </div>
         <div class="container-1" id="ProfileLastVisitorsBox">
         	<div class="containerContent smallFont">
-        	    {if $visitors|count}
-            	    {foreach from=$visitors item=visitor}
-                	    <div style="float:right;">{@$visitor.time|time:"%d.%m.%y, %H:%M"}</div>
-            	        <div><a href="index.php?page=User&amp;userID={$visitor.userID}">{@$visitor.username}</a></div>
-            	    {/foreach}
-            	{/if}
+        	        {if $visitors|count}
+						{foreach from=$visitors item=visitor}
+                	    	<div style="float:right;">{@$visitor.time|time:"%d.%m.%y, %H:%M"}</div>
+            	        	<div><a href="index.php?page=User&amp;userID={$visitor.userID}">{@$visitor.username}</a></div>
+						{/foreach}
+					{else}
+                    	{lang}wbb.portal.box.profileLastVisitorsBox.noVisitors{/lang}
+					{/if}            	
             </div>
         </div>
     </div>

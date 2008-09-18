@@ -7,8 +7,8 @@
 		<packageDescription>Die letzten Profil-Besucher in einer Box</packageDescription>
 		<standalone>0</standalone>
 		<plugin>com.woltlab.wbb</plugin>
-		<version>1.0.0</version>
-		<date>2008-08-17</date>
+		<version>1.0.1</version>
+		<date>2008-08-27</date>
 	</packageinformation>
 
 	<authorinformation>
@@ -18,7 +18,7 @@
 
 	<requiredpackages>
 		<requiredpackage minversion="1.0.0">de.wbb3mods.wbb.portal</requiredpackage>
-		<requiredpackage minversion="1.2.3">de.mdman.profile.lastvisitors</requiredpackage>
+		<requiredpackage minversion="1.3.0">de.mdman.profile.lastvisitors</requiredpackage>
 	</requiredpackages>
 
 	<instructions type="install">
@@ -29,5 +29,14 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="hr">hr.xml</languages>
+	</instructions>
+	
+	<instructions type="update" fromversion="1.0.0">
+		<templates>templates.tar</templates>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="hr">hr.xml</languages>
 	</instructions>
 </package>
