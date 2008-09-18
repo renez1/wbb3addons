@@ -2,15 +2,15 @@
 <!DOCTYPE data SYSTEM "http://www.woltlab.com/DTD/options.dtd">
 <!-- $Id$ -->
 <data>
-	<import>
-		<options>
-			<option name="ProfileLastVisitorsBox">
-				<categoryname>hidden</categoryname>
-				<optiontype>boolean</optiontype>
-				<visible>4</visible>
-				<editable>4</editable>
-				<defaultvalue>1</defaultvalue>
-			</option>
-		</options>
-	</import>
+    <import>
+        <options>
+            <option name="profileLastVisitorsBox">
+                <categoryname>hidden</categoryname>
+                <optiontype>boolean</optiontype>
+                <visible>4</visible>
+                <editable>4</editable>
+                <defaultvalue>1</defaultvalue>
+            </option>
+        </options>
+    </import>
 </data>

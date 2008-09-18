@@ -2,8 +2,8 @@
 <!DOCTYPE language SYSTEM "DTD/language.dtd">
 <!-- $Id$ -->
 <language languagecode="de-informal">
-	<category name="wbb.portal">
-		<item name="wbb.portal.box.profileLastVisitorsBox.title"><![CDATA[Letzte Profil-Besucher]]></item>
-		<item name="wbb.portal.box.profileLastVisitorsBox.noVisitors"><![CDATA[Keine Profil-Besucher]]></item>
-	</category>
+    <category name="wbb.portal">
+        <item name="wbb.portal.box.profileLastVisitors.title"><![CDATA[Letzte Profil-Besucher]]></item>
+        <item name="wbb.portal.box.profileLastVisitors.noVisitors"><![CDATA[Keine Profil-Besucher]]></item>
+    </category>
 </language>
