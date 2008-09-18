@@ -1,13 +1,13 @@
 <?php
 /* $Id$ */
 class ProfileLastVisitorsBox {
-	protected $ProfileLastVisitorsData = array();
-	public $visitors = array();
+    protected $BoxData = array();
+    public $visitors = array();
 
-	public function __construct($data, $boxname = "") {
-		$this->ProfileLastVisitorsData['templatename'] = "ProfileLastVisitorsBox";
-		$this->getBoxStatus($data);
-		$this->ProfileLastVisitorsData['boxID'] = $data['boxID'];
+    public function __construct($data, $boxname = "") {
+        $this->BoxData['templatename'] = "profileLastVisitorsBox";
+        $this->getBoxStatus($data);
+        $this->BoxData['boxID'] = $data['boxID'];
 
         $sql = "SELECT profile.userID, profile.username, profile.time, user.lastActivityTime"
             ."\n  FROM wcf".WCF_N."_profile_lastvisitors profile"
@@ -17,30 +17,30 @@ class ProfileLastVisitorsBox {
             ."\n LIMIT 0 , ".SHOW_LASTVISITOR_AMOUNT;
         $result = WCF::getDB()->sendQuery($sql);
         while ($row = WCF::getDB()->fetchArray($result)) {
-        	$this->visitors[] = $row;
+            $this->visitors[] = $row;
         }
 
-		WCF::getTPL()->assign(array(
-			'visitors' => $this->visitors
-		));
-	}
+        WCF::getTPL()->assign(array(
+            'visitors' => $this->visitors
+        ));
+    }
 
-	protected function getBoxStatus($data) {
-		// get box status
-		$this->ProfileLastVisitorsData['Status'] = 1;
-		if (WBBCore::getUser()->userID) {
-			$this->ProfileLastVisitorsData['Status'] = intval(WBBCore::getUser()->ProfileLastVisitorsBox);
-		}
-		else {
-			if (WBBCore::getSession()->getVar('ProfileLastVisitorsBox') != false) {
-				$this->ProfileLastVisitorsData['Status'] = WBBCore::getSession()->getVar('ProfileLastVisitorsBox');
-			}
-		}
-	}
+    protected function getBoxStatus($data) {
+        // get box status
+        $this->BoxData['Status'] = 1;
+        if (WBBCore::getUser()->userID) {
+            $this->BoxData['Status'] = intval(WBBCore::getUser()->profileLastVisitorsBox);
+        }
+        else {
+            if (WBBCore::getSession()->getVar('profileLastVisitorsBox') != false) {
+                $this->BoxData['Status'] = WBBCore::getSession()->getVar('profileLastVisitorsBox');
+            }
+        }
+    }
 
-	public function getData() {
-		return $this->ProfileLastVisitorsData;
-	}
+    public function getData() {
+        return $this->BoxData;
+    }
 }
 
 ?>
