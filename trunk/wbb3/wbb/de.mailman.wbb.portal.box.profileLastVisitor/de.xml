@@ -4,5 +4,6 @@
 <language languagecode="de">
 	<category name="wbb.portal">
 		<item name="wbb.portal.box.profileLastVisitorsBox.title"><![CDATA[Letzte Profil-Besucher]]></item>
+		<item name="wbb.portal.box.profileLastVisitorsBox.noVisitors"><![CDATA[Keine Profil-Besucher]]></item>
 	</category>
 </language>

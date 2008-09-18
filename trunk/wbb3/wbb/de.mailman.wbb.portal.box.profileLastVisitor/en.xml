@@ -3,6 +3,7 @@
 <!-- $Id$ -->
 <language languagecode="en">
 	<category name="wbb.portal">
-		<item name="wbb.portal.box.profileLastVisitorsBox.title"><![CDATA[Last profile visitor]]></item>
+		<item name="wbb.portal.box.profileLastVisitorsBox.title"><![CDATA[Last profile visitors]]></item>
+		<item name="wbb.portal.box.profileLastVisitorsBox.noVisitors"><![CDATA[no profile visitors]]></item>
 	</category>
 </language>
