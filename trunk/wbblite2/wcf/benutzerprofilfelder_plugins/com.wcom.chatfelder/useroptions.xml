@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/options.dtd">
+<data>     
+     <import>               
+		<categories>
+			<category name="profil.chat">
+				<icon>icon/userProfileMessengerM.png</icon>
+				<parent>profile</parent>
+				<showorder>25</showorder>
+			</category>
+		</categories>
+          <options>                              
+               <option name="Version">
+                    <categoryname>profil.chat</categoryname>
+					<optiontype>text</optiontype>
+                    <showorder>1</showorder>
+                    <visible>0</visible>                    
+               </option>
+               <option name="URLChat">
+                    <categoryname>profil.chat</categoryname>
+                    <optiontype>text</optiontype>
+					<defaultValue>http://</defaultValue>
+					<validationPattern>^$|^https?://</validationPattern>
+                    <showorder>2</showorder>
+                    <visible>0</visible>
+					<outputClass>UserOptionOutputURL</outputClass>          
+              </option>              
+          </options>
+     </import>
+</data>
