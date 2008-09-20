@@ -114,7 +114,7 @@
                                 </tr>
                                 <tr>
                                     <td><img src="{@RELATIVE_WBB_DIR}icon/boardMarkAsReadS.png" alt="" /></td>
-                                    <td class="smallFont"><a href="index.php?page=Index&action=markAsRead{@SID_ARG_2ND}">{lang}wbb.portal.box.personalbox.markAsRead{/lang}</a></td>
+                                    <td class="smallFont"><a href="index.php?page=Index&action=BoardMarkAllAsRead&page={@$boxCurPage}{@SID_ARG_2ND}">{lang}wbb.portal.box.personalbox.markAsRead{/lang}</a></td>
                                 </tr>
                             </table>
                         </div>
@@ -221,7 +221,7 @@
                                     <tr>
                                         <td><input class="inputImage" type="image" src="{@RELATIVE_WCF_DIR}icon/submitS.png" alt="" style="width:16px; height:16px;" /></td>
                                         <td class="smallFont">
-                                            <input type="hidden" name="page" value="{$pbStyleRedir}" />
+                                            <input type="hidden" name="page" value="{@$boxCurPage}" />
                                             <select name="styleID" style="width:{$pbStyleWidth}px;" onChange="this.form.submit();">
                                                 {if $pbStyles|count}
                                                     {foreach from=$pbStyles item=$style}
