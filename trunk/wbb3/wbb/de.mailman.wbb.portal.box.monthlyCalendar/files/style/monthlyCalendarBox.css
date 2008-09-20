@@ -44,20 +44,19 @@
 	border-color: ActiveCaption !important;
 	font-weight: bold;
 }
-.mcbAppointment {
-    background-image: url("../icon/mcbAppointmentS.png");
+.mcbEventLeft, .mcbEventCenter, .mcbEventRight {
     background-repeat: no-repeat;
 }
-.mcbAppointmentLeft {
+
+.mcbEventLeft {
     background-position: center left !important;
 }
-.mcbAppointmentCenter {
+.mcbEventCenter {
     background-position: center center !important;
 }
-.mcbAppointmentRight {
+.mcbEventRight {
     background-position: center right !important;
 }
-
 
 .mcbColEmpty {
     font-size: .8em;

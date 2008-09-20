@@ -21,6 +21,8 @@ class MonthlyCalendarBox {
         if(!defined('MONTHLYCALENDARBOX_SHOW_DOY'))     define('MONTHLYCALENDARBOX_SHOW_DOY', true);
         if(!defined('MONTHLYCALENDARBOX_SHOW_NAV'))     define('MONTHLYCALENDARBOX_SHOW_NAV', true);
         if(!defined('MONTHLYCALENDARBOX_SHOW_FORM'))    define('MONTHLYCALENDARBOX_SHOW_FORM', true);
+        if(!defined('MONTHLYCALENDARBOX_NAV_BOTTOM'))   define('MONTHLYCALENDARBOX_NAV_BOTTOM', true);
+
         if(!empty($_REQUEST['page'])) $redirTo = $_REQUEST['page'];
         else $redirTo = 'Portal';
         $mcbTitleLinkTo = '';
@@ -91,14 +93,14 @@ class MonthlyCalendarBox {
                 $doy = date('z', $time) + 1;
                 $mcDays[$i]['weekday'] = date('w', $time) + 1;
                 $mcDays[$i]['birthday'] = false;
-                $mcDays[$i]['date'] = false;
+                $mcDays[$i]['appointment'] = false;
                 $mcDays[$i]['holiday'] = false;
                 if(MONTHLYCALENDARBOX_SHOW_DOY) $mcDays[$i]['title'] = WCF::getLanguage()->get('wbb.portal.box.monthlyCalendar.dayOfTheYear', array('$doy' => $doy));
                 else $mcDays[$i]['title'] = '';
                 if($mcbShowAppointments && isset($dates[$i])) {
                     if($mcDays[$i]['title']) $mcDays[$i]['title'] .= ' &bull; ';
                     $mcDays[$i]['title'] .= WCF::getLanguage()->get('wbb.portal.box.monthlyCalendar.appointments').': '.$dates[$i];
-                    $mcDays[$i]['date'] = true;
+                    $mcDays[$i]['appointment'] = true;
                 }
                 if($mcbShowBirthdays && isset($birthdays[$i])) {
                     if($mcDays[$i]['title']) $mcDays[$i]['title'] .= ' &bull; ';
@@ -110,6 +112,7 @@ class MonthlyCalendarBox {
                     $mcDays[$i]['title'] .= $holidays[$i];
                     $mcDays[$i]['holiday'] = true;
                 }
+                if(empty($mcDays[$i]['title'])) $mcDays[$i]['title'] = DateUtil::formatDate(null, $time);
             }
             for($i=1;$i<=12;$i++) $months[$i] = WCF::getLanguage()->get('wbb.portal.box.monthlyCalendar.month_'.$i);
         }
