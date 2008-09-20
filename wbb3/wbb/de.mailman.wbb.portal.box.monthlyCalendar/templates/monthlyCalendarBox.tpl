@@ -16,15 +16,22 @@
                 <a href="index.php?page={@$redirTo}&amp;mcM={$mcCurM}&amp;mcY={$mcCurY}{@SID_ARG_2ND}#monthlyCalendarBox"><img src="{@RELATIVE_WBB_DIR}icon/mcbCurMonthS.png" alt="" title="{lang}wbb.portal.box.monthlyCalendar.curMonth{/lang}" /></a>
                 {if $mcbTitleLinkTo == 'UserProfileEdit'}
                     <a href="index.php?form=UserProfileEdit&amp;category=settings.display{@SID_ARG_2ND}">{@$mcbTitle}</a>
-                {else if $mcbTitleLinkTo == 'Calendar'}
-                    <a href="index.php?page=Calendar{@SID_ARG_2ND}">{@$mcbTitle}</a>
                 {else}
-                    {@$mcbTitle}
+                    {if $this->user->getPermission('user.calendar.canUseCalendar')}
+                        <a href="index.php?page=CalendarMonth&amp;jumpToMonth={$mcM}&amp;jumpToYear={$mcY}{@SID_ARG_2ND}">{@$mcbTitle}</a>
+                    {else if $this->user->getPermission('user.calendar.canEnter')}
+                        <a href="index.php?page=Calendar&amp;month={$mcM}&amp;year={$mcY}{@SID_ARG_2ND}">{@$mcbTitle}</a>
+                    {else}
+                        {@$mcbTitle}
+                    {/if}
                 {/if}
             </div>
         </div>
         <div class="container-1" id="monthlyCalendarBox">
             <div class="containerContent" style="margin:0; padding:0;">
+                {if !MONTHLYCALENDARBOX_NAV_BOTTOM}
+                    {include file=monthlyCalendarNavBox}
+                {/if}
                 <table class="tableList border">
                     <thead>
                         <tr class="tableHead">
@@ -54,11 +61,27 @@
                                     {counter name="i" print=false}
                                 {/foreach}
                             {/if}
-                            <td class="{if $day.day == $curDay}container-3 mcbColCurDay {else if $day.weekday == 1 || $day.weekday == 7}container-3 {/if}{if $day.birthday || $day.date || $day.holiday}mcbAppointment mcbAppointment{MONTHLYCALENDARBOX_COL_ALIGN} {/if}mcbColDay mcbColDay{MONTHLYCALENDARBOX_COL_ALIGN}" title="{@$day.title}">
+                            {if $day.birthday || $day.appointment || $day.holiday}
+                                {if $day.birthday && $day.appointment && $day.holiday} {assign var='mcbIS' value='BHA'}
+                                {else if $day.birthday && $day.appointment} {assign var='mcbIS' value='BA'}
+                                {else if $day.birthday && $day.holiday} {assign var='mcbIS' value='BH'}
+                                {else if $day.holiday && $day.appointment} {assign var='mcbIS' value='HA'}
+                                {else if $day.appointment} {assign var='mcbIS' value='A'}
+                                {else if $day.holiday} {assign var='mcbIS' value='H'}
+                                {else if $day.birthday} {assign var='mcbIS' value='B'}
+                                {else} {assign var='mcbIS' value=''}
+                                {/if}
+                            {else} {assign var='mcbIS' value=''}
+                            {/if}
+                            {if !$mcbIS|empty} {assign var='mcbIMG' value='mcbDay'|concat:$mcbIS}
+                            {else} {assign var='mcbIMG' value=''}
+                            {/if}
+                                
+                            <td class="{if $day.day == $curDay}container-3 mcbColCurDay {else if $day.weekday == 1 || $day.weekday == 7}container-3 {/if}{if !$mcbIMG|empty}mcbEvent{MONTHLYCALENDARBOX_COL_ALIGN} {/if}mcbColDay mcbColDay{MONTHLYCALENDARBOX_COL_ALIGN}"{if !$mcbIMG|empty} style="background-image: url('{@RELATIVE_WBB_DIR}icon/{@$mcbIMG}.png');"{/if} title="{@$day.title}">
                                 {if $this->user->getPermission('user.calendar.canUseCalendar')}
                                     <a href="index.php?page=CalendarMonth&amp;jumpToDay={@$day.day}&amp;jumpToMonth={$mcM}&amp;jumpToYear={$mcY}{@SID_ARG_2ND}">{@$day.day}</a>
                                 {else if $this->user->getPermission('user.calendar.canEnter')}
-                                    <a href="index.php?page=Calendar&amp;view=month&amp;month={$mcM}&amp;year={$mcY}{@SID_ARG_2ND}">{@$day.day}</a>
+                                    <a href="index.php?page=Calendar&amp;view=day&amp;day={@$day.day}&amp;month={$mcM}&amp;year={$mcY}{@SID_ARG_2ND}">{@$day.day}</a>
                                 {else}
                                     {@$day.day}
                                 {/if}
@@ -75,26 +98,8 @@
                         {/if}
                     </tbody>
                 </table>
-                {if MONTHLYCALENDARBOX_SHOW_NAV || MONTHLYCALENDARBOX_SHOW_FORM}
-                    <div class="border" style="padding: 0 0 1px; margin: 1px 0; text-align: center; vertical-align: middle;">
-                        <form method="get" action="index.php#monthlyCalendarBox">
-                            {if MONTHLYCALENDARBOX_SHOW_NAV}
-                                <a href="index.php?page={@$redirTo}&amp;mcM={$mcM - 1}&amp;mcY={$mcY}{@SID_ARG_2ND}#monthlyCalendarBox"><img src="{@RELATIVE_WBB_DIR}icon/mcbPreviousS.png" alt="" title="{lang}wbb.portal.box.monthlyCalendar.prevMonth{/lang}" style="vertical-align: middle; margin: 0; padding: 0;" /></a>
-                                <a href="index.php?page={@$redirTo}&amp;mcM={$mcM + 1}&amp;mcY={$mcY}{@SID_ARG_2ND}#monthlyCalendarBox"><img src="{@RELATIVE_WBB_DIR}icon/mcbNextS.png" alt="" title="{lang}wbb.portal.box.monthlyCalendar.nextMonth{/lang}" style="vertical-align: middle; margin: 0; padding: 0;" /></a>
-                            {/if}
-                            {if MONTHLYCALENDARBOX_SHOW_FORM}
-                                <select name="mcM" style="margin: 1px; 0; padding:0; vertical-align: middle; border: none;">
-                                {foreach from=$months item=month key=k}
-                                    <option value="{$k}"{if $mcM == $k} selected="selected"{/if}>{@$month}</option>
-                                {/foreach}
-                                </select>
-                                <input type="text" name="mcY" value="{$mcY}" maxlength="4" class="smallFont" style="width: 30px; margin: 0; padding:0; vertical-align: middle; border: none;" />
-                                <input type="image" class="inputImage" src="{@RELATIVE_WCF_DIR}icon/submitS.png" style="vertical-align: middle; margin: 0; padding:0;" />
-                                <input type="hidden" name="page" value="{@$redirTo}" />
-                                {@SID_INPUT_TAG}
-                            {/if}
-                        </form>
-                    </div>
+                {if MONTHLYCALENDARBOX_NAV_BOTTOM}
+                    {include file=monthlyCalendarNavBox}
                 {/if}
             </div>
         </div>

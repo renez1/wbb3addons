@@ -52,6 +52,8 @@
 		<item name="wcf.acp.option.monthlyCalendarBox_show_nav.description"><![CDATA[]]></item>
     	<item name="wcf.acp.option.monthlyCalendarBox_show_form"><![CDATA[Show month-/year-selection]]></item>
 		<item name="wcf.acp.option.monthlyCalendarBox_show_form.description"><![CDATA[]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_nav_bottom"><![CDATA[Show navigation below]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_nav_bottom.description"><![CDATA[Shows the navigation menu on the calendar below.]]></item>
 	</category>
 	<category name="wcf.user.option">
         <item name="wcf.user.option.category.settings.display.monthlyCalendarBox"><![CDATA[Monthly calendar box]]></item>
