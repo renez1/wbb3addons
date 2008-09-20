@@ -1,5 +1,13 @@
 {* $Id$ *}
 {if $this->user->getPermission('user.profile.personalbox.canView')}
+    {if !$boxRedirTo|empty}
+        <script type="text/javascript">
+        //<![CDATA[
+        document.location.href=fixURL('index.php?page={@$boxRedirTo}{@SID_ARG_2ND}');
+        //]]>
+        </script>
+    {/if}
+
     {if !$pbCatVertOffset}{assign var='pbCatVertOffset' value=8}{/if}
     {if !$pbFirstBoxColor}{assign var='pbFirstBoxColor' value=1}{/if}
     {if !$pbSecondBoxColor}{assign var='pbSecondBoxColor' value=2}{/if}
@@ -114,7 +122,7 @@
                                 </tr>
                                 <tr>
                                     <td><img src="{@RELATIVE_WBB_DIR}icon/boardMarkAsReadS.png" alt="" /></td>
-                                    <td class="smallFont"><a href="index.php?page=Index&action=BoardMarkAllAsRead&page={@$boxCurPage}{@SID_ARG_2ND}">{lang}wbb.portal.box.personalbox.markAsRead{/lang}</a></td>
+                                    <td class="smallFont"><a href="index.php?page={@$boxCurPage}&action=BoardMarkAllAsRead{@SID_ARG_2ND}">{lang}wbb.portal.box.personalbox.markAsRead{/lang}</a></td>
                                 </tr>
                             </table>
                         </div>

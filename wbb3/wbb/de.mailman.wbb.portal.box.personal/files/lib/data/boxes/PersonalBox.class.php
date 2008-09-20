@@ -14,6 +14,12 @@ class PersonalBox {
         $pbShowIM = false;
         if(!empty($_REQUEST['page'])) $boxCurPage = $_REQUEST['page'];
         else $boxCurPage = 'Portal';
+        if($boxCurPage != 'Index' && isset($_REQUEST['action']) && $_REQUEST['action'] == 'BoardMarkAllAsRead') {
+            self::boardMarkAllAsRead();
+            $boxRedirTo = $boxCurPage;
+        } else {
+            $boxRedirTo = '';
+        }
 
         // DEFAULTS
         $pbCatVertOffset    = 4;
@@ -424,7 +430,8 @@ class PersonalBox {
             'imcount' => $imcount,
             'pbShowIM' => $pbShowIM,
             'pbShowProfileHits' => PERSONALBOX_SHOW_PROFILEHITS_ACP,
-            'boxCurPage' => $boxCurPage
+            'boxCurPage' => $boxCurPage,
+            'boxRedirTo' => $boxRedirTo
         ));
 	}
 
@@ -444,6 +451,24 @@ class PersonalBox {
 	public function getData() {
 		return $this->BoxData;
 	}
+
+    protected function boardMarkAllAsRead() {
+		WCF::getUser()->setLastVisitTime(TIME_NOW + (WCF::getUser()->userID ? VISIT_TIME_FRAME : 0));
+		// update subscriptions
+		if (WCF::getUser()->userID) {
+			$sql = "UPDATE	wbb".WBB_N."_board_subscription
+				SET	emails = 0
+				WHERE	userID = ".WCF::getUser()->userID;
+			WCF::getDB()->registerShutdownUpdate($sql);
+			$sql = "UPDATE	wbb".WBB_N."_thread_subscription
+				SET	emails = 0
+				WHERE	userID = ".WCF::getUser()->userID;
+			WCF::getDB()->registerShutdownUpdate($sql);
+		}
+		// reset session
+        require_once(WCF_DIR.'lib/system/session/UserSession.class.php');
+		WCF::getSession()->resetUserData();
+    }
 }
 
 ?>
