@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package name="com.wcom.boersenfelder">
+  <packageinformation>
+    <packagename><![CDATA[Börsen - Felder]]></packagename>
+    <packagedescription><![CDATA[Fügt im Benutzerprofil Börsen -Felder ein.]]></packagedescription>
+    <version>1.0.0</version>
+    <date>2008-10-17</date>
+    <plugin>com.woltlab.wcf</plugin>
+    <isunique>1</isunique>
+  </packageinformation>
+  
+  <authorinformation>
+    <author>Tobias87</author>
+    <authorURL><![CDATA[http://community.woltlab.com/db/index.php?page=User&userID=1331470]]></authorURL>
+  </authorinformation>
+  
+  <requiredpackages>
+    <requiredpackage>com.woltlab.wcf</requiredpackage>
+  </requiredpackages>
+  
+  <instructions type="install">
+    <files>files.tar</files>
+    <useroptions>useroptions.xml</useroptions>
+    <languages languagecode="de">de.xml</languages>
+    <languages languagecode="de-informal">de-informal.xml</languages>
+    <languages languagecode="en">en.xml</languages>
+  </instructions>
+</package>

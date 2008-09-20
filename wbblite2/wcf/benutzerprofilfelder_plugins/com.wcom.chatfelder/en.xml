@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="en">
+    <category name="wcf.user.option">
+     <item name="wcf.user.option.category.profil.chat"><![CDATA[Chat]]></item>
+     <item name="wcf.user.option.Version"><![CDATA[Version]]></item>  
+     <item name="wcf.user.option.URLChat"><![CDATA[Link to the Chat]]></item>          
+     <item name="wcf.user.option.Version.description"><![CDATA[Please wear your Version here.]]></item>
+     <item name="wcf.user.option.URLChat.description"><![CDATA[Please enter the link here to Chat.]]></item>   
+     </category>      
+</language>

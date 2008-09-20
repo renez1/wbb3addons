@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="de-informal">
+    <category name="wcf.user.option">
+     <item name="wcf.user.option.category.profil.stockexchange"><![CDATA[Börsenprofil]]></item>
+     <item name="wcf.user.option.fonds"><![CDATA[Fonds]]></item>
+	 <item name="wcf.user.option.fonds.description"><![CDATA[Trage hier deine Fonds ein.]]></item>  
+     <item name="wcf.user.option.certificates"><![CDATA[Zertifikate]]></item>          
+     <item name="wcf.user.option.certificates.description"><![CDATA[Trage hier deine Zertifikate ein.]]></item>   
+     <item name="wcf.user.option.shares"><![CDATA[Aktien]]></item>          
+     <item name="wcf.user.option.shares.description"><![CDATA[Trage hier deine Aktien ein.]]></item>
+     <item name="wcf.user.option.broker"><![CDATA[Broker]]></item>          
+     <item name="wcf.user.option.broker.description"><![CDATA[Trage hier deinen Broker ein.]]></item>
+     <item name="wcf.user.option.quelle"><![CDATA[Quelle]]></item>          
+     <item name="wcf.user.option.quelle.description"><![CDATA[Trage hier deine Quelle(n) für Informationen ein.]]></item>
+     <item name="wcf.user.option.experience"><![CDATA[Erfahrung]]></item>          
+     <item name="wcf.user.option.experience.description"><![CDATA[Tragen hier deine Erfahrung ein.]]></item>
+     <item name="wcf.user.option.investorstype"><![CDATA[Anlegertyp ]]></item>          
+     <item name="wcf.user.option.investorstype.description"><![CDATA[Welcher Anlegertyp bist du?]]></item>
+     <item name="wcf.user.option.participation"><![CDATA[geschlossenen Beteiligungen]]></item>          
+     <item name="wcf.user.option.participation.description"><![CDATA[Sind geschlossene Beteiligungen gewünscht? Ja/Nein]]></item>
+     </category>      
+</language>

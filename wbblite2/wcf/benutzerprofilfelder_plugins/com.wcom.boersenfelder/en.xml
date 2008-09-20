@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="en">
+    <category name="wcf.user.option">
+     <item name="wcf.user.option.category.profil.stockexchange"><![CDATA[Stock market profile]]></item>
+     <item name="wcf.user.option.fonds"><![CDATA[Fonds]]></item>
+	 <item name="wcf.user.option.fonds.description"><![CDATA[Put down here your Fonds.]]></item>  
+     <item name="wcf.user.option.certificates"><![CDATA[Certificates]]></item>          
+     <item name="wcf.user.option.certificates.description"><![CDATA[Put down here your certificates.]]></item>   
+     <item name="wcf.user.option.shares"><![CDATA[Shares]]></item>          
+     <item name="wcf.user.option.shares.description"><![CDATA[Put down here your shares.]]></item>
+     <item name="wcf.user.option.broker"><![CDATA[Broker]]></item>          
+     <item name="wcf.user.option.broker.description"><![CDATA[Put down here your broker.]]></item>
+     <item name="wcf.user.option.quelle"><![CDATA[Quelle]]></item>          
+     <item name="wcf.user.option.quelle.description"><![CDATA[Put down here your Quelle for information.]]></item>
+     <item name="wcf.user.option.experience"><![CDATA[Experience]]></item>          
+     <item name="wcf.user.option.experience.description"><![CDATA[Put down here your experience.]]></item>
+     <item name="wcf.user.option.investorstype"><![CDATA[Investor's type]]></item>          
+     <item name="wcf.user.option.investorstype.description"><![CDATA[Which investor's type are it?]]></item>
+     <item name="wcf.user.option.participation"><![CDATA[to closed participation]]></item>          
+     <item name="wcf.user.option.participation.description"><![CDATA[Is closed participation wished? Yes/No]]></item>
+     </category>      
+</language>
