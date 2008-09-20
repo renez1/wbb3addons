@@ -12,6 +12,8 @@ class PersonalBox {
         if(!defined('INSTANTMESSENGER_AKTIV')) define('INSTANTMESSENGER_AKTIV', false);
         $imcount = 0;
         $pbShowIM = false;
+        if(!empty($_REQUEST['page'])) $boxCurPage = $_REQUEST['page'];
+        else $boxCurPage = 'Portal';
 
         // DEFAULTS
         $pbCatVertOffset    = 4;
@@ -383,10 +385,6 @@ class PersonalBox {
             $this->BoxData['user'] = $user;
         }
 
-        // redirect after style change
-        if(!empty($_SERVER['QUERY_STRING']) && preg_match('/page\=portal/i', $_SERVER['QUERY_STRING'])) $pbStyleRedir = 'Portal';
-        else $pbStyleRedir = 'Index';
-
         // Template Variablen zuordnen...
         WCF::getTPL()->assign(array(
             'pbCatVertOffset' => intval(PERSONALBOX_CATSPACER_ACP),
@@ -422,11 +420,11 @@ class PersonalBox {
             'pbWeatherComDay' => $pbWeatherComDay,
             'pbLinks' => (isset($pbLinks) ? $pbLinks : array()),
             'pbStyles' => (isset($pbStyles) ? $pbStyles : array()),
-            'pbStyleRedir' => $pbStyleRedir,
             // Instant Messenger by Tatzelwurm
             'imcount' => $imcount,
             'pbShowIM' => $pbShowIM,
-            'pbShowProfileHits' => PERSONALBOX_SHOW_PROFILEHITS_ACP
+            'pbShowProfileHits' => PERSONALBOX_SHOW_PROFILEHITS_ACP,
+            'boxCurPage' => $boxCurPage
         ));
 	}
 

@@ -8,8 +8,8 @@
         <isUnique>1</isUnique>
 		<standalone>0</standalone>
 		<plugin>com.woltlab.wbb</plugin>
-		<version>1.0.9 PL2</version>
-		<date>2008-08-18</date>
+		<version>1.0.10</version>
+		<date>2008-09-20</date>
 	</packageinformation>
 
 	<authorinformation>
@@ -19,6 +19,7 @@
 
 	<requiredpackages>
 		<requiredpackage minversion="1.0.0">de.wbb3mods.wbb.portal</requiredpackage>
+		<requiredpackage minversion="3.0.8">com.woltlab.wbb</requiredpackage>
 	</requiredpackages>
 
 	<instructions type="install">
@@ -136,6 +137,10 @@
 		<templates>templates.tar</templates>
 	</instructions>
 	<instructions type="update" fromversion="1.0.9 PL1">
+	    <files>files.tar</files>
+		<templates>templates.tar</templates>
+	</instructions>
+	<instructions type="update" fromversion="1.0.9 PL2">
 	    <files>files.tar</files>
 		<templates>templates.tar</templates>
 	</instructions>
