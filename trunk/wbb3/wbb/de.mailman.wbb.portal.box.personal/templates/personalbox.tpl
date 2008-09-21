@@ -1,13 +1,5 @@
 {* $Id$ *}
 {if $this->user->getPermission('user.profile.personalbox.canView')}
-    {if !$boxRedirTo|empty}
-        <script type="text/javascript">
-        //<![CDATA[
-        document.location.href=fixURL('index.php?page={@$boxRedirTo}{@SID_ARG_2ND}');
-        //]]>
-        </script>
-    {/if}
-
     {if !$pbCatVertOffset}{assign var='pbCatVertOffset' value=8}{/if}
     {if !$pbFirstBoxColor}{assign var='pbFirstBoxColor' value=1}{/if}
     {if !$pbSecondBoxColor}{assign var='pbSecondBoxColor' value=2}{/if}
@@ -23,7 +15,7 @@
             </div>
             <div class="containerContent">
                 {if $this->user->userID}
-                    <a href="index.php?form=UserProfileEdit&category=settings.display{@SID_ARG_2ND}">{lang}wbb.portal.box.personalbox.title{/lang}</a>
+                    <a href="index.php?form=UserProfileEdit&amp;category=settings.display{@SID_ARG_2ND}">{lang}wbb.portal.box.personalbox.title{/lang}</a>
                 {else}
                     {lang}wbb.portal.box.personalbox.offlineTitle{/lang}
                 {/if}
@@ -113,16 +105,16 @@
                                     <!-- Guestbook -->
                                     <tr>
                                         <td><img src="{@RELATIVE_WCF_DIR}icon/guestbookS.png" alt="" /></td>
-                                        <td class="smallFont"><a href="index.php?page=userGuestbook&userID={@$this->user->userID}{@SID_ARG_2ND}">{lang}wbb.portal.box.personalbox.guestbook{/lang}</a>{if $item.user->cntGB}: {if $item.user->newGB}<span style="font-weight:bold;">{#$item.user->cntGB}</span>{else}{#$item.user->cntGB}{/if}{/if}</td>
+                                        <td class="smallFont"><a href="index.php?page=userGuestbook&amp;userID={@$this->user->userID}{@SID_ARG_2ND}">{lang}wbb.portal.box.personalbox.guestbook{/lang}</a>{if $item.user->cntGB}: {if $item.user->newGB}<span style="font-weight:bold;">{#$item.user->cntGB}</span>{else}{#$item.user->cntGB}{/if}{/if}</td>
                                     </tr>
                                 {/if}
                                 <tr>
                                     <td><img src="{@RELATIVE_WCF_DIR}icon/userS.png" alt="" /></td>
-                                    <td class="smallFont"><a href="index.php?form=Search&userID={@$this->user->userID}{@SID_ARG_2ND}">{lang}wbb.portal.box.personalbox.egoSearch{/lang}</a>{if $this->user->getPermission('user.profile.personalbox.cntOwnPosts')}: {@$item.user->posts}{/if}</td>
+                                    <td class="smallFont"><a href="index.php?form=Search&amp;userID={@$this->user->userID}{@SID_ARG_2ND}">{lang}wbb.portal.box.personalbox.egoSearch{/lang}</a>{if $this->user->getPermission('user.profile.personalbox.cntOwnPosts')}: {@$item.user->posts}{/if}</td>
                                 </tr>
                                 <tr>
                                     <td><img src="{@RELATIVE_WBB_DIR}icon/boardMarkAsReadS.png" alt="" /></td>
-                                    <td class="smallFont"><a href="index.php?page={@$boxCurPage}&action=BoardMarkAllAsRead{@SID_ARG_2ND}">{lang}wbb.portal.box.personalbox.markAsRead{/lang}</a></td>
+                                    <td class="smallFont"><a href="index.php?action=BoardMarkAllAsRead{@SID_ARG_2ND}">{lang}wbb.portal.box.personalbox.markAsRead{/lang}</a></td>
                                 </tr>
                             </table>
                         </div>
@@ -162,12 +154,12 @@
                                 <colgroup><col style="width:{$pbFirstColWidth}px;" /></colgroup>
                                 <tr>
                                     <td><img src="{@RELATIVE_WCF_DIR}icon/imReadS.png" alt="" /></td>
-                                    <td class="smallFont"><a href="javascript:void(0);" onclick="window.open('index.php?form=InstantMessenger&action=new{@SID_ARG_2ND}','InstantMessage','width={@INSTANTMESSENGER_SENDWIDTH},height={@INSTANTMESSENGER_SENDHIGHT},toolbar=no,scrollbars=yes,left=50,top=50,resizable=yes');return false;" title="{lang}wbb.portal.box.personalbox.pmNew{/lang}">{lang}wbb.portal.box.personalbox.pmNew{/lang}</a></td>
+                                    <td class="smallFont"><a href="javascript:void(0);" onclick="window.open('index.php?form=InstantMessenger&amp;action=new{@SID_ARG_2ND}','InstantMessage','width={@INSTANTMESSENGER_SENDWIDTH},height={@INSTANTMESSENGER_SENDHIGHT},toolbar=no,scrollbars=yes,left=50,top=50,resizable=yes');return false;" title="{lang}wbb.portal.box.personalbox.pmNew{/lang}">{lang}wbb.portal.box.personalbox.pmNew{/lang}</a></td>
                                 </tr>
                             	{if $imcount|isset && $imcount}
                             	<tr>
                                     <td><img src="{@RELATIVE_WCF_DIR}icon/imUnreadS.png" alt="" /></td>
-                                	<td class="smallFont"><a href="javascript:void(0);" onclick="window.open('index.php?page=InstantMessenger&action=read{@SID_ARG_2ND}','InstantMessage','width={@INSTANTMESSENGER_SENDWIDTH},height={@INSTANTMESSENGER_SENDHIGHT},toolbar=no,scrollbars=yes,left=50,top=50,resizable=yes');return false;" title="{lang}wbb.portal.box.personalbox.pmUnread{/lang}">{lang}wbb.portal.box.personalbox.pmUnread{/lang}</a> ({$imcount})</td>
+                                	<td class="smallFont"><a href="javascript:void(0);" onclick="window.open('index.php?page=InstantMessenger&amp;action=read{@SID_ARG_2ND}','InstantMessage','width={@INSTANTMESSENGER_SENDWIDTH},height={@INSTANTMESSENGER_SENDHIGHT},toolbar=no,scrollbars=yes,left=50,top=50,resizable=yes');return false;" title="{lang}wbb.portal.box.personalbox.pmUnread{/lang}">{lang}wbb.portal.box.personalbox.pmUnread{/lang}</a> ({$imcount})</td>
                             	</tr>
                             	{/if}
                             </table>
@@ -202,7 +194,7 @@
                                 {if $pbShowProfileLink == true}
                                     <tr>
                                         <td><img src="{@RELATIVE_WCF_DIR}icon/userProfileDisplayS.png" alt="" /></td>
-                                        <td class="smallFont"><a href="index.php?form=UserProfileEdit&category=settings.display{@SID_ARG_2ND}">{lang}wcf.user.option.category.settings.display{/lang}</a></td>
+                                        <td class="smallFont"><a href="index.php?form=UserProfileEdit&amp;category=settings.display{@SID_ARG_2ND}">{lang}wcf.user.option.category.settings.display{/lang}</a></td>
                                     </tr>
                                 {/if}
 
@@ -222,7 +214,7 @@
 
                                 <tr>
                                     <td><img src="{@RELATIVE_WCF_DIR}icon/userProfilePrivacyS.png" alt="" /></td>
-                                    <td class="smallFont"><a href="index.php?form=UserProfileEdit&category=settings.privacy{@SID_ARG_2ND}">{lang}wcf.user.option.category.settings.privacy{/lang}</a></td>
+                                    <td class="smallFont"><a href="index.php?form=UserProfileEdit&amp;category=settings.privacy{@SID_ARG_2ND}">{lang}wcf.user.option.category.settings.privacy{/lang}</a></td>
                                 </tr>
                                 {if $pbShowStyles == true}
                                     <form action="index.php" method="get">

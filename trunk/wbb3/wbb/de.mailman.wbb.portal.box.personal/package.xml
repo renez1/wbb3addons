@@ -8,8 +8,8 @@
         <isUnique>1</isUnique>
 		<standalone>0</standalone>
 		<plugin>com.woltlab.wbb</plugin>
-		<version>1.0.10</version>
-		<date>2008-09-20</date>
+		<version>1.0.10 PL1</version>
+		<date>2008-09-21</date>
 	</packageinformation>
 
 	<authorinformation>
@@ -143,5 +143,11 @@
 	<instructions type="update" fromversion="1.0.9 PL2">
 	    <files>files.tar</files>
 		<templates>templates.tar</templates>
+		<options>options.xml</options>
+	</instructions>
+	<instructions type="update" fromversion="1.0.10">
+	    <files>files.tar</files>
+		<templates>templates.tar</templates>
+		<options>options.xml</options>
 	</instructions>
 </package>
