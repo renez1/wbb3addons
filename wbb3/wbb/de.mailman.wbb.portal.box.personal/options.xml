@@ -119,8 +119,7 @@
 				<optiontype>textarea</optiontype>
 				<defaultvalue>{SPACER}&lt;div class=&quot;smallFont&quot; style=&quot;text-align:center; font-weight:bold; letter-spacing:.2em;&quot;&gt;&amp;raquo;Sonstiges&amp;laquo;&lt;/div&gt;{/SPACER}
 {@RELATIVE_WCF_DIR}icon/membersS.png|index.php?page=UsersOnline{@SID_ARG_2ND}|wcf.usersOnline.title|_self|user.board.canViewBoard
-{@RELATIVE_WCF_DIR}icon/logoutS.png|index.php?action=UserLogout&amp;u={@USER_ID}{@SID_ARG_2ND}|wbb.header.userMenu.logout|_self|user.board.canViewBoard
-{@RELATIVE_WCF_DIR}icon/faviconDarkGreenS.png|http://www.wbb3mods.com/|wbb3mods|_blank|</defaultvalue>
+{@RELATIVE_WCF_DIR}icon/logoutS.png|index.php?action=UserLogout&amp;t={@SECURITY_TOKEN}{@SID_ARG_2ND}|wbb.header.userMenu.logout|_self|user.board.canViewBoard</defaultvalue>
 			</option>
 
 <!-- DEFAULT SETTINGS -->

@@ -14,12 +14,6 @@ class PersonalBox {
         $pbShowIM = false;
         if(!empty($_REQUEST['page'])) $boxCurPage = $_REQUEST['page'];
         else $boxCurPage = 'Portal';
-        if($boxCurPage != 'Index' && isset($_REQUEST['action']) && $_REQUEST['action'] == 'BoardMarkAllAsRead') {
-            self::boardMarkAllAsRead();
-            $boxRedirTo = $boxCurPage;
-        } else {
-            $boxRedirTo = '';
-        }
 
         // DEFAULTS
         $pbCatVertOffset    = 4;
@@ -178,6 +172,7 @@ class PersonalBox {
                             if(preg_match("/\{\@?RELATIVE_WCF_DIR\}/", $img) && defined('RELATIVE_WCF_DIR')) $img = preg_replace("/{\@?RELATIVE_WCF_DIR\}/", RELATIVE_WCF_DIR, $img);
                             if(preg_match("/\{\@?RELATIVE_WBB_DIR\}/", $url) && defined('RELATIVE_WBB_DIR')) $url = preg_replace("/{\@?RELATIVE_WBB_DIR\}/", RELATIVE_WBB_DIR, $url);
                             if(preg_match("/\{\@?RELATIVE_WCF_DIR\}/", $url) && defined('RELATIVE_WCF_DIR')) $url = preg_replace("/{\@?RELATIVE_WCF_DIR\}/", RELATIVE_WCF_DIR, $url);
+                            if(preg_match("/\{\@?SECURITY_TOKEN\}/", $url) && defined('SECURITY_TOKEN'))     $url = preg_replace("/{\@?SECURITY_TOKEN\}/", SECURITY_TOKEN, $url);
                             if(preg_match("/\{\@?PACKAGE_ID\}/", $url) && defined('PACKAGE_ID')) $url = preg_replace("/{\@?PACKAGE_ID\}/", PACKAGE_ID, $url);
                             if(preg_match("/\{\@?SID_ARG_2ND\}/", $url) && defined('SID_ARG_2ND')) $url = preg_replace("/{\@?SID_ARG_2ND\}/", SID_ARG_2ND, $url);
                             if(preg_match("/\{\@?USER_ID\}/", $url)) $url = preg_replace("/{\@?USER_ID\}/", WCF::getUser()->userID, $url);
@@ -430,8 +425,7 @@ class PersonalBox {
             'imcount' => $imcount,
             'pbShowIM' => $pbShowIM,
             'pbShowProfileHits' => PERSONALBOX_SHOW_PROFILEHITS_ACP,
-            'boxCurPage' => $boxCurPage,
-            'boxRedirTo' => $boxRedirTo
+            'boxCurPage' => $boxCurPage
         ));
 	}
 
@@ -451,24 +445,6 @@ class PersonalBox {
 	public function getData() {
 		return $this->BoxData;
 	}
-
-    protected function boardMarkAllAsRead() {
-		WCF::getUser()->setLastVisitTime(TIME_NOW + (WCF::getUser()->userID ? VISIT_TIME_FRAME : 0));
-		// update subscriptions
-		if (WCF::getUser()->userID) {
-			$sql = "UPDATE	wbb".WBB_N."_board_subscription
-				SET	emails = 0
-				WHERE	userID = ".WCF::getUser()->userID;
-			WCF::getDB()->registerShutdownUpdate($sql);
-			$sql = "UPDATE	wbb".WBB_N."_thread_subscription
-				SET	emails = 0
-				WHERE	userID = ".WCF::getUser()->userID;
-			WCF::getDB()->registerShutdownUpdate($sql);
-		}
-		// reset session
-        require_once(WCF_DIR.'lib/system/session/UserSession.class.php');
-		WCF::getSession()->resetUserData();
-    }
 }
 
 ?>
