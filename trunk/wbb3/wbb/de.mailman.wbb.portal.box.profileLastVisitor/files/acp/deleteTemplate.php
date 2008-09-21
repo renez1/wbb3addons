@@ -1,3 +1,3 @@
 <?php
-@unlink(WBB_DIR.'templates/ProfileLastVisitorBox.tpl');
+unlink(RELATIVE_WBB_DIR.'templates/ProfileLastVisitorsBox.tpl');
 ?>
