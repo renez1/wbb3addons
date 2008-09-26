@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<!-- $Id$ -->
+<language languagecode="en">
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.user.message.canUseBBCodeThreadClosed"><![CDATA[Can use BBCode „Thread closed”.]]></item>
+		<item name="wcf.acp.group.option.user.message.canUseBBCodeThreadClosed.description"><![CDATA[]]></item>
+	</category>
+	<category name="wcf.bbcode">
+	    <item name="wcf.bbcode.threadclosed.title"><![CDATA[Notice: „Thread closed”]]></item>
+		<item name="wcf.bbcode.threadclosed.notice"><![CDATA[Thread closed!!!]]></item>
+	</category>
+</language>
