@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/bbcodes.dtd">
+<!-- $Id$ -->
+<data>
+	<import>
+		<bbcode name="threadmoved">
+			<classname>threadmovedBBCode</classname>
+			<allowedchildren>all</allowedchildren>
+			<wysiwygicon>insertThreadMovedM.png</wysiwygicon>
+			<attributes>
+				<attribute name="0" />
+			</attributes>
+		</bbcode>
+	</import>
+</data>

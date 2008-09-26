@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<!-- $Id$ -->
+<language languagecode="de">
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.user.message.canUseBBCodeThreadMoved"><![CDATA[Kann BBCode „Thema Verschoben” verwenden.]]></item>
+		<item name="wcf.acp.group.option.user.message.canUseBBCodeThreadMoved.description"><![CDATA[Mitglieder dieser Benutzergruppe können den BBCode „Thema Verschoben” verwenden.]]></item>
+	</category>
+	<category name="wcf.bbcode">
+	    <item name="wcf.bbcode.threadmoved.title"><![CDATA[Hinweis: „Thema verschoben”]]></item>
+		<item name="wcf.bbcode.threadmoved.notice"><![CDATA[Thema verschoben!!!]]></item>
+	</category>
+</language>
