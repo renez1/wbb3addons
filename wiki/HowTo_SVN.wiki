@@ -1,9 +1,12 @@
-#summary SVN mit TortoiseSVN auschecken
+#summary HowTo SVN
 #labels HowTo,Featured
 
 == Einleitung ==
 Subversion (SVN) ist eine Versionsverwaltung für Dateien und Verzeichnisse, also ein System, das in der Softwareentwicklung zur Versionierung und für den gemeinsamen Zugriff auf den Quellcode eingesetzt wird.
 Alle Änderungen werden von dem System erfasst und archiviert. Hierbei entsteht mit jedem Einchecken ein neuer Versionsstand und es ist jederzeit möglich auf vorige Versionen zurückzugreifen.
+
+Wenn Sie sich an unseren Projekten beteiligen möchten, egal ob programmiertechnisch oder als Übersetzer, sind Sie jederzeit willkommen. Hierfür benötigen Sie allerdings einen [https://www.google.com/accounts/NewAccount Google-Account].
+Falls Sie also Interesse zur Mitarbeit haben, dann erstellen Sie einfach einen [https://www.google.com/accounts/NewAccount Google-Account] und wenden Sie sich anschließend an wbb3addons@gmail.com ([http://code.google.com/p/wbb3addons/wiki/HowTo_Setup_a_Google_account HowTo Google-Account erstellen]).
 
 
 == SVN-Client ==
@@ -11,7 +14,7 @@ SVN-Clients gibt es für alle gängigen Betriebssysteme und in den unterschiedli
 Für ein Windows-System empfiehlt sich TortoiseSVN, der sich in den Windows-Explorer integriert.
 
 
-== Arbeitskopie auschecken ==
+== Arbeitskopie unter Windows auschecken ==
 Nachdem Sie TortoiseSVN heruntergeladen und installiert haben (Neustart ist erforderlich) kann es los gehen. TortoiseSVN installiert nur die englische Sprache. Wenn Sie eine andere Sprache bevorzugen, können Sie diese auch herunterladen und installieren.
 
 Erstellen Sie z.B. das Verzeichnis "C:\svn_wbb3addons" und klicken Sie anschließend mit der rechten Maustaste auf oder in das leere Verzeichnis. Im Kontext-Menü klicken Sie dann auf "TortoiseSVN" => "auschecken".
@@ -20,18 +23,43 @@ Im sich öffnenden Dialog müssen Sie nur folgenden Wert anpassen:
 TortoiseSVN legt direkt los und nach ein paar Minuten haben Sie alle unsere Sourcen auf Ihrem PC.
 
 
-== Arbeitskopie einchecken ==
-Wenn Sie sich an unseren Projekten beteiligen möchten, egal ob programmiertechnisch oder als Übersetzer, sind Sie jederzeit willkommen. Hierfür benötigen Sie allerdings einen [https://www.google.com/accounts/NewAccount Google-Account].
-Falls Sie also Interesse zur Mitarbeit haben, dann erstellen Sie einfach einen [https://www.google.com/accounts/NewAccount Google-Account] und wenden Sie sich anschließend an wbb3addons@gmail.com ([http://code.google.com/p/wbb3addons/wiki/HowTo_Setup_a_Google_account HowTo Google-Account erstellen]).
+== Arbeitskopie unter Linux auschecken ==
+Syntax: svn checkout [SWITCHES] URL... [PATH]
+In diesem Beispiel liegt die Arbeitskopie in /var/shares/svn_checkout/wbb3addons.
+Wenn Sie nur auschecken möchten, können Sie auf "--username DeinUsername" und "--password DeinPasswort" verzichten, *müssen* aber "*https*" durch "*http*" ersetzen!
 
-*Sie können bereits bei uns einchecken?*
-Dann bitten wir folgende Regeln zu beachten:
+Erstmaliges Checkout:
+svn checkout --username "DeinUsername" --password "DeinPasswort" https://wbb3addons.googlecode.com/svn/ /var/shares/svn_checkout/wbb3addons
+
+Danach sind nur noch "Updates" notwendig.
+svn update --username "DeinUsername" --password "DeinPasswort" https://wbb3addons.googlecode.com/svn/ /var/shares/svn_checkout/wbb3addons
+
+*Tipp:* Um regelmäßig auf dem Laufenden zu bleiben, können Sie das "svn update" auch als Cron-Job einrichten.
+
+
+== Arbeitskopie unter Windows einchecken ==
+Hierzu benötigt es bei TortoiseSVN nur einen rechten Mausklick ins Verzeichnis und danach "Übertragen" aus dem TortoiseSVN-Kontext-Menü auswählen.
+
+
+== Arbeitskopie unter Linux einchecken ==
+Ihre Änderungen erledigen Sie per "svn add DateinameOderVerzeichnis".
+Wenn Sie z.B. die Datei "/var/shares/svn_checkout/wbb3addons/trunk/sandbox/test.txt" geändert oder erstellt haben lautet die Syntax:
+{{{
+svn add /var/shares/svn_checkout/wbb3addons/trunk/sandbox/test.txt
+}}}
+Danach muss die Änderung noch übertragen werden. Dieses erfolgt per "svn commit", z.B.:
+{{{
+svn commit --message "LogInformationen"
+}}}
+
+
+== *Regeln* zum Einchecken Ihrer Arbeitskopie ==
  * Dateiformate
   # Alle Ascii-Dateien sind im Linux-Format zu erstellen/bearbeiten/übertragen.
-  # Wenn Sie TortoiseSVN als Client einsetzen sollte u.a. Config als Referenz verwendet werden.
+  # Unten angegebene "Config" sollte als Referenz verwendet werden.
 
  * SVN-Keywords
-  # In allen Ascii-Dateien, in SQL-Dateien nicht zwingend erforderlich, sollte das SVN-Keyword $Id$ eingesetzt werden.
+  # In allen Ascii-Dateien, in SQL-Dateien nicht zwingend erforderlich, sollte das SVN-Keyword $"Id"$ (ohne Anführungszeichen!) eingesetzt werden.
 
  * Kommentare
   # Beim Einchecken nie den Kommentar vergessen.
@@ -42,13 +70,13 @@ Dann bitten wir folgende Regeln zu beachten:
 ----
 == Weiterführende Links ==
  * [http://subversion.tigris.org/ Subversion Home]
- * [http://svnbook.red-bean.com/nightly/en/index.html Subversion Book]
+ * [http://svnbook.red-bean.com/nightly/de/index.html Subversion Book]
  * [http://tortoisesvn.tigris.org/ TortoiseSVN]
  * [http://de.wikipedia.org/wiki/Subversion_(Software) Subversion Wikipedia]
 
 
 ----
-== TortoiseSVN-Config ==
+== Config ==
 {{{
 ### This file configures various client-side behaviors.
 ###
