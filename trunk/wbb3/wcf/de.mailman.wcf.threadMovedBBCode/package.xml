@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+<!-- $Id$ -->
+<package name="threadmoved.bbcode.button">
+	<packageInformation>
+		<packageName>BBCode ThreadMoved</packageName>
+		<packageDescription>Fügt einen Hinweis (Optional mit Hinweistext) in den Beitrag ein das der Thread verschoben ist.</packageDescription>
+		<isUnique>1</isUnique>
+		<version>1.0.0</version>
+		<date>2008-09-22</date>
+		<plugin>com.woltlab.wcf.data.message.bbcode</plugin>
+	</packageInformation>
+
+	<authorInformation>
+		<author>Nendilo</author>
+		<authorURL>http://wbb3addons.ump2002.net</authorURL>
+	</authorInformation>
+
+	<requiredPackages>
+		<requiredPackage minversion="1.0.0 RC 1">com.woltlab.wcf</requiredPackage>
+		<requiredPackage minversion="1.0.0 RC 1">com.woltlab.wcf.data.message.bbcode</requiredPackage>
+	</requiredPackages>
+
+	<instructions type="install">
+		<files>files.tar</files>
+		<templates>templates.tar</templates>
+		<groupoptions>groupoptions.xml</groupoptions>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="en">en.xml</languages>
+		<bbcodes>bbcodes.xml</bbcodes>
+	</instructions>
+</package>
