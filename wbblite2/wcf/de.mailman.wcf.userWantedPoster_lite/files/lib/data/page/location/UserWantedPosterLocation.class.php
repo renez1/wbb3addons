@@ -1,6 +1,12 @@
 <?php
 require_once(WCF_DIR.'lib/data/page/location/Location.class.php');
 
+/**
+ * $Id$
+ * @package de.mailman.wcf.userWantedPoster
+ * @author  MailMan (http://wbb3addons.ump2002.net)
+ */
+
 class UserWantedPosterLocation implements Location {
 	public $cachedUserIDs = array();
 	public $users = null;

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<!-- $Id$ -->
 <language languagecode="de-informal">
 	<category name="wcf.acp.group">
 		<item name="wcf.acp.group.option.category.user.wantedPoster"><![CDATA[Steckbrief]]></item>
@@ -82,6 +83,8 @@
         <item name="wcf.acp.wantedPoster.title"><![CDATA[Steckbrief Vorlagen]]></item>
         <item name="wcf.acp.wantedPoster.editTitle"><![CDATA[Steckbrief Vorlage bearbeiten]]></item>
         <item name="wcf.acp.wantedPoster.addTitle"><![CDATA[Steckbrief Vorlage erstellen]]></item>
+        <item name="wcf.acp.wantedPoster.template"><![CDATA[Vorlage]]></item>
+        <item name="wcf.acp.wantedPoster.tplOptions"><![CDATA[Vorlagenoptionen]]></item>
         <item name="wcf.acp.wantedPoster.tplName"><![CDATA[Titel]]></item>
         <item name="wcf.acp.wantedPoster.tplContent"><![CDATA[Inhalt]]></item>
         <item name="wcf.acp.wantedPoster.tplPermission"><![CDATA[Die Vorlage beinhaltet]]></item>

@@ -6,7 +6,9 @@ require_once(WCF_DIR.'lib/data/user/UserWantedPosterData.class.php');
 require_once(WCF_DIR.'lib/page/util/menu/HeaderMenu.class.php');
 
 /**
- * @author	MailMan
+ * $Id$
+ * @package de.mailman.wcf.userWantedPoster
+ * @author  MailMan (http://wbb3addons.ump2002.net)
  */
 
 class UserWantedPosterEditForm extends MessageForm {
