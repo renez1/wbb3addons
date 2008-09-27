@@ -64,7 +64,7 @@ class UserWantedPosterAcpForm extends WysiwygCacheloaderForm {
 
 	/**
 	 * @see Form::submit()
-	 */
+  
 	public function submit() {
         EventHandler::fireAction($this, 'submit');
 		$this->readFormParameters();
