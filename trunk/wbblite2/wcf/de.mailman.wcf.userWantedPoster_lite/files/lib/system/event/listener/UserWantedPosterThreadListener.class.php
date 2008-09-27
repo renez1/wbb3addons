@@ -2,9 +2,10 @@
 require_once(WCF_DIR.'lib/system/event/EventListener.class.php');
 
 /**
- * @author	MailMan http://wbb3addons.ump2002.net/
- * @package	de.mailman.wcf.userWantedPoster
-*/
+ * $Id$
+ * @package de.mailman.wcf.userWantedPoster
+ * @author  MailMan (http://wbb3addons.ump2002.net)
+ */
 
 class UserWantedPosterThreadListener implements EventListener {
 
