@@ -86,8 +86,9 @@
 
                     <!-- GUESTs ************************ -->
                     {if $guests|count > 0}
+                        {if $users|count > 0}<br />{/if}
                         {cycle reset=true advance=false print=false}
-                        <h3>{lang}wcf.usersOnline.guests{/lang}</h3>
+                        <div class="smallFont">{lang}wcf.usersOnline.guests{/lang}</div>
                         <table class="tableList border">
                             <thead>
                                 <tr class="tableHead">
@@ -147,8 +148,9 @@
 
                     <!-- SPIDERs *********************** -->
                     {if $spiders|count > 0}
+                        {if $users|count > 0 || $guests|count > 0}<br />{/if}
                         {cycle reset=true advance=false print=false}
-                        <h3>{lang}wcf.usersOnline.spiders{/lang}</h3>
+                        <div class="smallFont">{lang}wcf.usersOnline.spiders{/lang}</div>
                         <table class="tableList border">
                             <thead>
                                 <tr class="tableHead">
