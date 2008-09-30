@@ -1,10 +1,12 @@
 <?php
+/* $Id$ */
 require_once(WCF_DIR.'lib/page/SortablePage.class.php');
 require_once(WCF_DIR.'lib/data/user/usersOnline/UsersOnlineSortedList.class.php');
 
 if(!defined('USERSONLINEBOX_BOXOPENED'))    define('USERSONLINEBOX_BOXOPENED', false);
 if(!defined('USERSONLINEBOX_HIDEGUESTS'))   define('USERSONLINEBOX_HIDEGUESTS', true);
 if(!defined('USERSONLINEBOX_HIDEROBOTS'))   define('USERSONLINEBOX_HIDEROBOTS', true);
+if(!defined('USERSONLINEBOX_SHOWNUMOFUSERNEXTTITLE'))   define('USERSONLINEBOX_SHOWNUMOFUSERNEXTTITLE', true);
 if(!defined('USERSONLINEBOX_SHOWLEGEND'))   define('USERSONLINEBOX_SHOWLEGEND', true);
 if(!defined('USERSONLINEBOX_SHOWLEGENDBOTTOM'))   define('USERSONLINEBOX_SHOWLEGENDBOTTOM', false);
 if(!defined('USERSONLINEBOX_MAXHEIGHT'))    define('USERSONLINEBOX_MAXHEIGHT', 300);
@@ -83,11 +85,7 @@ class usersOnlineBox extends SortablePage {
 			'spiders' => (USERSONLINEBOX_HIDEROBOTS == true ? array() : $this->usersOnlineSortedList->spiders),
 			'canViewIpAddress' => WCF::getUser()->getPermission('admin.general.canViewIpAddress'),
 			'detailedSpiderList' => $this->usersOnlineSortedList->detailedSpiderList,
-			'usersOnlineMarkings' => $this->usersOnlineSortedList->getUsersOnlineMarkings(),
-			'usersOnlineBoxShowLegend' => USERSONLINEBOX_SHOWLEGEND,
-			'usersOnlineBoxShowLegendBottom' => USERSONLINEBOX_SHOWLEGENDBOTTOM,
-			'usersOnlineBoxOpened' => USERSONLINEBOX_BOXOPENED,
-			'usersOnlineBoxHeight' => USERSONLINEBOX_MAXHEIGHT
+			'usersOnlineMarkings' => $this->usersOnlineSortedList->getUsersOnlineMarkings()
 		));
 	}
 

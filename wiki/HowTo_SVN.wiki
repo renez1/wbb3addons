@@ -24,15 +24,15 @@ TortoiseSVN legt direkt los und nach ein paar Minuten haben Sie alle unsere Sour
 
 
 == Arbeitskopie unter Linux auschecken ==
-Syntax: svn checkout [SWITCHES] URL... [PATH]
-In diesem Beispiel liegt die Arbeitskopie in /var/shares/svn_checkout/wbb3addons.
+Syntax: {{{svn checkout [SWITCHES] URL... [PATH]}}}
+In diesem Beispiel liegt die Arbeitskopie in "/var/shares/svn_checkout/wbb3addons".
 Wenn Sie nur auschecken möchten, können Sie auf "--username DeinUsername" und "--password DeinPasswort" verzichten, *müssen* aber "*https*" durch "*http*" ersetzen!
 
 Erstmaliges Checkout:
-svn checkout --username "DeinUsername" --password "DeinPasswort" https://wbb3addons.googlecode.com/svn/ /var/shares/svn_checkout/wbb3addons
+{{{svn checkout --username "DeinUsername" --password "DeinPasswort" https://wbb3addons.googlecode.com/svn/ /var/shares/svn_checkout/wbb3addons}}}
 
 Danach sind nur noch "Updates" notwendig.
-svn update --username "DeinUsername" --password "DeinPasswort" https://wbb3addons.googlecode.com/svn/ /var/shares/svn_checkout/wbb3addons
+{{{svn update --username "DeinUsername" --password "DeinPasswort" https://wbb3addons.googlecode.com/svn/ /var/shares/svn_checkout/wbb3addons}}}
 
 *Tipp:* Um regelmäßig auf dem Laufenden zu bleiben, können Sie das "svn update" auch als Cron-Job einrichten.
 
@@ -44,13 +44,9 @@ Hierzu benötigt es bei TortoiseSVN nur einen rechten Mausklick ins Verzeichnis 
 == Arbeitskopie unter Linux einchecken ==
 Ihre Änderungen erledigen Sie per "svn add DateinameOderVerzeichnis".
 Wenn Sie z.B. die Datei "/var/shares/svn_checkout/wbb3addons/trunk/sandbox/test.txt" geändert oder erstellt haben lautet die Syntax:
-{{{
-svn add /var/shares/svn_checkout/wbb3addons/trunk/sandbox/test.txt
-}}}
+{{{svn add /var/shares/svn_checkout/wbb3addons/trunk/sandbox/test.txt}}}
 Danach muss die Änderung noch übertragen werden. Dieses erfolgt per "svn commit", z.B.:
-{{{
-svn commit --message "LogInformationen"
-}}}
+{{{svn commit --message "LogInformationen"}}}
 
 
 == *Regeln* zum Einchecken Ihrer Arbeitskopie ==
