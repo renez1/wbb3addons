@@ -1,6 +1,5 @@
     {* $Id$ *}
     {if $this->user->getPermission('user.board.canViewUsersOnlineBox')}
-        {cycle values='container-1,container-2' print=false advance=false}
         <div class="border" id="box{$boxID}">
             <div class="containerHead">
                 {if !USERSONLINEBOX_BOXOPENED}
@@ -10,7 +9,7 @@
                 {/if}
                 <div class="containerContent"><a href="index.php?page=UsersOnline{@SID_ARG_2ND}">{lang}wbb.portal.box.usersOnlineBox.title{/lang}</a><a name="usersOnlineBoxTgt"></a>{if USERSONLINEBOX_SHOWNUMOFUSERNEXTTITLE} {lang}wbb.portal.box.usersOnlineBox.title.numOfUser{/lang}{/if}</div>
             </div>
-            <div id="usersOnlineBox">
+            <div class="container-1" id="usersOnlineBox">
                 <div class="containerContent" style="padding-right:5px; padding-bottom:5px;">
                     {if $users|count > 0}
                         <div class="smallFont">
@@ -22,9 +21,11 @@
                     {/if}
 
                     {if USERSONLINEBOX_MAXHEIGHT > 0}<div style="width:100%; max-height:{USERSONLINEBOX_MAXHEIGHT}px; overflow-y:auto; overflow-x:hidden;">{/if}
+                    {cycle values='container-1,container-2' print=false advance=false}
 
                     <!-- USERs ************************* -->
                     {if $users|count > 0}
+                        {cycle reset=true advance=false print=false}
                         <table class="tableList border">
                             <thead>
                                 <tr class="tableHead">
