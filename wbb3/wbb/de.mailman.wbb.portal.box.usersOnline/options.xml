@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<!-- $Id$ -->
 <!DOCTYPE data SYSTEM "http://www.woltlab.com/DTD/options.dtd">
 <data>
 	<import>
@@ -18,6 +19,11 @@
 				<categoryname>portal.box.usersOnlineBox</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>1</defaultvalue>
+			</option>
+			<option name="usersOnlineBox_showNumOfUserNextTitle">
+				<categoryname>portal.box.usersOnlineBox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
 			</option>
 			<option name="usersOnlineBox_showLegend">
 				<categoryname>portal.box.usersOnlineBox</categoryname>

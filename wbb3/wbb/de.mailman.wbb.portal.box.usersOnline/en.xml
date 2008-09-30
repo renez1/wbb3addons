@@ -1,8 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id$ -->
 <!DOCTYPE language SYSTEM "DTD/language.dtd">
 <language languagecode="en">
 	<category name="wbb.portal">
 		<item name="wbb.portal.box.usersOnlineBox.title"><![CDATA[&raquo;Who is online?&laquo;-Box]]></item>
+		<item name="wbb.portal.box.usersOnlineBox.title.numOfUser"><![CDATA[&bull; {#$users|count}]]></item>
 	</category>
 	<category name="wcf.acp.group">
 		<item name="wcf.acp.group.option.user.board.canViewUsersOnlineBox"><![CDATA[Can view the &raquo;Who is online?&laquo;-Box]]></item>
@@ -15,6 +17,8 @@
 		<item name="wcf.acp.option.usersOnlineBox_hideGuests.description"><![CDATA[Enabling this option will hide unregistered users in the box.]]></item>
 		<item name="wcf.acp.option.usersOnlineBox_hideRobots"><![CDATA[Hide search engine robots]]></item>
 		<item name="wcf.acp.option.usersOnlineBox_hideRobots.description"><![CDATA[Enabling this option will hide search engine robots in the box.]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_showNumOfUserNextTitle"><![CDATA[Show count of users next the box title]]></item>
+		<item name="wcf.acp.option.usersOnlineBox_showNumOfUserNextTitle.description"><![CDATA[Shows the number of online users next the box title instead in the box.]]></item>
 		<item name="wcf.acp.option.usersOnlineBox_showLegend"><![CDATA[Show legend on top]]></item>
 		<item name="wcf.acp.option.usersOnlineBox_showLegend.description"><![CDATA[]]></item>
 		<item name="wcf.acp.option.usersOnlineBox_showLegendBottom"><![CDATA[Show legend on bottom]]></item>
