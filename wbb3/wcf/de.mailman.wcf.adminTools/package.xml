@@ -6,8 +6,8 @@
         <packagename>Admin-Tools</packagename>
         <packagedescription>Eine Werkzeugsammlung für den Administrator.</packagedescription>
         <isUnique>1</isUnique>
-        <version>1.2.2</version>
-        <date>2008-09-16</date>
+        <version>1.2.3</version>
+        <date>2008-10-02</date>
         <standalone>0</standalone>
         <plugin>com.woltlab.wcf</plugin>
     </packageinformation>
@@ -18,7 +18,7 @@
     </authorinformation>
 
     <requiredpackages>
-        <requiredPackage minversion="1.0.5">com.woltlab.wcf</requiredPackage>
+        <requiredPackage minversion="1.0.10">com.woltlab.wcf</requiredPackage>
     </requiredpackages>
 
     <instructions type="install">
@@ -37,6 +37,7 @@
     <instructions type="update" fromversion="1.1.0">
         <files>files.tar</files>
         <acptemplates>acptemplates.tar</acptemplates>
+        <cronjobs>cronjobs.xml</cronjobs>
         <languages languagecode="de">de.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
@@ -44,6 +45,7 @@
     <instructions type="update" fromversion="1.2.0">
         <files>files.tar</files>
         <acptemplates>acptemplates.tar</acptemplates>
+        <cronjobs>cronjobs.xml</cronjobs>
         <languages languagecode="de">de.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
@@ -51,6 +53,7 @@
     <instructions type="update" fromversion="1.2.1">
         <files>files.tar</files>
         <acptemplates>acptemplates.tar</acptemplates>
+        <cronjobs>cronjobs.xml</cronjobs>
         <languages languagecode="de">de.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
@@ -58,6 +61,15 @@
     <instructions type="update" fromversion="1.2.1 PL1">
         <files>files.tar</files>
         <acptemplates>acptemplates.tar</acptemplates>
+        <cronjobs>cronjobs.xml</cronjobs>
+        <languages languagecode="de">de.xml</languages>
+        <languages languagecode="de-informal">de-informal.xml</languages>
+        <languages languagecode="en">en.xml</languages>
+    </instructions>
+    <instructions type="update" fromversion="1.2.2">
+        <files>files.tar</files>
+        <acptemplates>acptemplates.tar</acptemplates>
+        <cronjobs>cronjobs.xml</cronjobs>
         <languages languagecode="de">de.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>

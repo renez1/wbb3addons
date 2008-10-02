@@ -213,6 +213,9 @@
         <item name="wcf.acp.adminTools.toolBox.spider.url"><![CDATA[URL]]></item>
         <item name="wcf.acp.adminTools.toolBox.spider.url.description"><![CDATA[Optional link to the search robot.]]></item>
         <item name="wcf.acp.adminTools.toolBox.spider.sync"><![CDATA[Synchronize/Update]]></item>
+        <item name="wcf.acp.adminTools.toolBox.spider.import.legend"><![CDATA[Import spider]]></item>
+        <item name="wcf.acp.adminTools.toolBox.spider.import"><![CDATA[Select file]]></item>
+        <item name="wcf.acp.adminTools.toolBox.spider.import.description"><![CDATA[<strong>Regard!</strong> All existing own spiders will be deleted.]]></item>
 
         <item name="wcf.acp.adminTools.linkSettings.legend"><![CDATA[Add/Edit links]]></item>
         <item name="wcf.acp.adminTools.linkSettings.select"><![CDATA[Select link]]></item>
@@ -268,9 +271,12 @@
         <item name="wcf.acp.adminTools.confirm.delete"><![CDATA[Please confirm the delete operation.]]></item>
         <item name="wcf.acp.adminTools.confirm.cron"><![CDATA[Please confirm the execution of this task.]]></item>
         <item name="wcf.acp.adminTools.confirm.cache"><![CDATA[Are you sure you want to empty the cache directories?]]></item>
+        <item name="wcf.acp.adminTools.confirm.importSpider"><![CDATA[All own spiders will be deleted. Please confirm the operation.]]></item>
 
         <item name="wcf.acp.adminTools.txt.save"><![CDATA[Save]]></item>
         <item name="wcf.acp.adminTools.txt.delete"><![CDATA[Delete]]></item>
         <item name="wcf.acp.adminTools.txt.execute"><![CDATA[Execute]]></item>
+        <item name="wcf.acp.adminTools.txt.export"><![CDATA[Export]]></item>
+        <item name="wcf.acp.adminTools.txt.import"><![CDATA[Import]]></item>
     </category>
 </language>

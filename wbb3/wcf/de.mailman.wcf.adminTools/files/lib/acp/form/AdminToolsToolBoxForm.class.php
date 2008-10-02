@@ -83,6 +83,25 @@ class AdminToolsToolBoxForm extends ACPForm {
                         $this->spiderID = $tmp['spiderID'];
                     }
                 }
+            } else if($this->action == 'spider_export') {
+                $content = 'SPIDERIDENTIFIER;SPIDERNAME;SPIDERURL'."\n";
+                $fileName = 'wbb_admin_tools_spider_export_'.date('YmdHis').'.csv';
+        		$sql = "SELECT spiderIdentifier, spiderName, spiderUrl"
+        		    ."\n  FROM wcf".WCF_N."_admin_tool_spider";
+                $result = WCF::getDB()->sendQuery($sql);
+        		while($row = WCF::getDB()->fetchArray($result)) {
+                    $content .= '"'.$row['spiderIdentifier'].'";"'.$row['spiderName'].'";"'.$row['spiderUrl'].'"'."\n";
+                }
+                // file type
+                header('Content-Type: application/octet-stream');
+                // file name
+                header('Content-Disposition: attachment; filename="'.$fileName.'"');
+                // no cache headers
+                header('Pragma: no-cache');
+                header('Expires: 0');
+                // send file
+                echo $content;
+                exit;
             }
         } else if(!empty($_POST['boardAction'])) {
             $this->action = 'board';
@@ -139,7 +158,9 @@ class AdminToolsToolBoxForm extends ACPForm {
 		    $this->sucMsg = WCF::getLanguage()->get('wcf.acp.adminTools.success.deleted');
 		} else if($this->action == 'spider_sync') {
 		    AdminTools::syncSpider(true);
-		} else if($this->action == 'board') {
+		} else if($this->action == 'spider_import') {
+            self::importSpider();
+        } else if($this->action == 'board') {
             AdminTools::syncBoard($_POST);
             $this->sucMsg = WCF::getLanguage()->get('wcf.acp.adminTools.success.saved');
     	} else if($this->action == 'prefix') {
@@ -209,6 +230,42 @@ class AdminToolsToolBoxForm extends ACPForm {
 
 		// show form
 		parent::show();
+	}
+	
+	private function importSpider() {
+        if(!empty($_FILES['importSpider']['tmp_name']) && is_uploaded_file($_FILES['importSpider']['tmp_name'])) {
+        	$csv = file($_FILES['importSpider']['tmp_name']);
+        	$spiders = array();
+        	$i = 0;
+        	if(count($csv)) {
+        	    foreach($csv as $line) {
+        	        $line = trim($line);
+        	        if(preg_match('/^"/', $line)) {
+        	            $spiderIdentifier = $spiderName = $spiderURL = '';
+        	            list($spiderIdentifier, $spiderName, $spiderURL) = preg_split('/";"/', $line, 3);
+        	            $spiderIdentifier = preg_replace('/^"/', '', $spiderIdentifier);
+        	            if($spiderURL) $spiderURL = preg_replace('/"$/', '', $spiderURL);
+        	            if(!empty($spiderIdentifier) && !empty($spiderName)) {
+        	                $spiders[$i]['spiderIdentifier'] = $spiderIdentifier;
+        	                $spiders[$i]['spiderName'] = $spiderName;
+        	                $spiders[$i]['spiderURL'] = $spiderURL;
+        	                $i++;
+        	            }
+        	        }
+        	    }
+        	}
+        	if(count($spiders)) {
+        	    $sql = "TRUNCATE TABLE wcf".WCF_N."_admin_tool_spider";
+        	    WCF::getDB()->sendQuery($sql);
+        	    foreach($spiders as $k => $v) {
+        	        $sql = "INSERT INTO wcf".WCF_N."_admin_tool_spider"
+        	            ."\n       (spiderIdentifier, spiderName, spiderURL)"
+        	            ."\nVALUES ('".WCF::getDB()->escapeString($v['spiderIdentifier'])."', '".WCF::getDB()->escapeString($v['spiderName'])."', '".WCF::getDB()->escapeString($v['spiderURL'])."')";
+        	        WCF::getDB()->sendQuery($sql);
+        	    }
+        	}
+        	AdminTools::syncSpider(true);
+        }
 	}
 }
 ?>
