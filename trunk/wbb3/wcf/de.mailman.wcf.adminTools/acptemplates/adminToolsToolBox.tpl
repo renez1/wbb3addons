@@ -104,7 +104,19 @@ function syncSpider() {
         return false;
     }
 }
-
+function exportSpider() {
+    document.forms['ftbSpider'].elements['spiderAction'].value = 'export';
+    document.forms['ftbSpider'].submit();
+}
+function importSpider() {
+    if(!document.forms['ftbImportSpider'].elements['importSpider'].value) {
+        return false;
+    } else if(confirm('{lang}wcf.acp.adminTools.confirm.importSpider{/lang}')) {
+        document.forms['ftbImportSpider'].submit();
+    } else {
+        return false;
+    }
+}
 //]]>
 </script>
 
@@ -556,23 +568,23 @@ function syncSpider() {
                     //]]></script>
 
                     <div class="formElement" id="userOptionExclUgrpsDiv">
-                    	<div class="formFieldLabel">
-                    		<label for="userOptionExclUgrps">{lang}wcf.acp.adminTools.toolBox.userOption.exclUgrps{/lang}</label>
-                    	</div>
-                    	<div class="formField">
-                    		<input type="text" class="inputText" name="userOptionExclUgrps" id="userOptionExclUgrps" value="{if $userOptionExclUgrps|isset}{@$userOptionExclUgrps}{else}{/if}" maxlength="254" />
-                    		{if $errorField == 'userOptionExclUgrps'}
-                    			<div class="innerError">
-                    			    {if $errorType == 'commaSeparatedIntList'}{lang}wcf.acp.adminTools.error.commaSeparatedIntList{/lang}{/if}
-                    			</div>
-                    		{/if}
-                    	</div>
-                    	<div class="formFieldDesc hidden" id="userOptionExclUgrpsHelpMessage">
-                    		{lang}wcf.acp.adminTools.toolBox.userOption.exclUgrps.description{/lang}
-                    	</div>
+                        <div class="formFieldLabel">
+                            <label for="userOptionExclUgrps">{lang}wcf.acp.adminTools.toolBox.userOption.exclUgrps{/lang}</label>
+                        </div>
+                        <div class="formField">
+                            <input type="text" class="inputText" name="userOptionExclUgrps" id="userOptionExclUgrps" value="{if $userOptionExclUgrps|isset}{@$userOptionExclUgrps}{else}{/if}" maxlength="254" />
+                            {if $errorField == 'userOptionExclUgrps'}
+                                <div class="innerError">
+                                    {if $errorType == 'commaSeparatedIntList'}{lang}wcf.acp.adminTools.error.commaSeparatedIntList{/lang}{/if}
+                                </div>
+                            {/if}
+                        </div>
+                        <div class="formFieldDesc hidden" id="userOptionExclUgrpsHelpMessage">
+                            {lang}wcf.acp.adminTools.toolBox.userOption.exclUgrps.description{/lang}
+                        </div>
                     </div>
                     <script type="text/javascript">//<![CDATA[
-                    	inlineHelp.register('userOptionExclUgrps');
+                        inlineHelp.register('userOptionExclUgrps');
                     //]]></script>
 
                     <div class="smallButtons">
@@ -681,6 +693,9 @@ function syncSpider() {
                     <div class="smallButtons">
                         <ul>
                             <li><a href="javascript:void(0);" onClick="syncSpider();"><img src="{@RELATIVE_WCF_DIR}icon/adminToolsRunCronS.png" alt="" /> <span>{lang}wcf.acp.adminTools.toolBox.spider.sync{/lang}</span></a></li>
+                            {if !$spiderCntOwn|empty}
+                                <li><a href="javascript:void(0);" onClick="exportSpider();"><img src="{@RELATIVE_WCF_DIR}icon/adminToolsExportS.png" alt="" /> <span>{lang}wcf.acp.adminTools.txt.export{/lang}</span></a></li>
+                            {/if}
                             {if !$spiderID|empty}
                                 <li><a href="javascript:void(0);" onClick="deleteSpider();"><img src="{@RELATIVE_WCF_DIR}icon/deleteS.png" alt="" /> <span>{lang}wcf.acp.adminTools.txt.delete{/lang}</span></a></li>
                             {/if}
@@ -688,6 +703,38 @@ function syncSpider() {
                         </ul>
                     </div>
                 </form>
+
+            <br />
+            <fieldset>
+                <legend>{lang}wcf.acp.adminTools.toolBox.spider.import.legend{/lang}</legend>
+
+                <form enctype="multipart/form-data" method="post" name="ftbImportSpider" action="index.php?form=AdminToolsToolBox#spider">
+                    <div class="formElement" id="importSpiderDiv">
+                        <div class="formFieldLabel">
+                            <label for="importSpider">{lang}wcf.acp.adminTools.toolBox.spider.import{/lang}</label>
+                        </div>
+                        <div class="formField">
+                            <input type="file" id="importSpider" name="importSpider" value="" />
+                        </div>
+                        <div class="formFieldDesc hidden" id="importSpiderHelpMessage">
+                            {lang}wcf.acp.adminTools.toolBox.spider.import.description{/lang}
+                        </div>
+                    </div>
+                    <script type="text/javascript">//<![CDATA[
+                        inlineHelp.register('importSpider');
+                    //]]></script>
+
+                    <input type="hidden" name="spiderAction" value="import">
+                    <input type="hidden" name="packageID" value="{@PACKAGE_ID}">
+                    {@SID_INPUT_TAG}
+                    <div class="smallButtons">
+                        <ul>
+                            <li><a href="javascript:void(0);" onClick="importSpider();"><img src="{@RELATIVE_WCF_DIR}icon/adminToolsImportS.png" alt="" /> <span>{lang}wcf.acp.adminTools.txt.import{/lang}</span></a></li>
+                        </ul>
+                    </div>
+                </form>
+            </fieldset>
+
             </fieldset>
         </div>
     </div>

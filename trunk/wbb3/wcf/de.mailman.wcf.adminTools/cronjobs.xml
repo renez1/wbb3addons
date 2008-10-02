@@ -12,7 +12,7 @@
 			<startMonth>*</startMonth>
 			<startDow>*</startDow>
 			<execMultiple>0</execMultiple>
-			<canbeedited>0</canbeedited>
+			<canbeedited>1</canbeedited>
 			<canbedisabled>1</canbedisabled>
 			<active>0</active>
 		</cronjob>

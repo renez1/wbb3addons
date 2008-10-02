@@ -30,17 +30,13 @@ class AdminToolsLostAndFoundForm extends ACPForm {
 			}
             // file type
             header('Content-Type: application/octet-stream');
-            
             // file name
             header('Content-Disposition: attachment; filename="'.$fileName.'"');
-            
             // send file size
             header('Content-Length: '.filesize(WCF_DIR.'acp/backup/'.$fileName));
-            
             // no cache headers
             header('Pragma: no-cache');
             header('Expires: 0');
-            
             // send file
             readfile(WCF_DIR.'acp/backup/'.$fileName);
             exit;
