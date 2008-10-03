@@ -31,6 +31,8 @@
 		<item name="wbb.portal.box.monthlyCalendar.nextMonth"><![CDATA[Next month]]></item>
 		<item name="wbb.portal.box.monthlyCalendar.prevMonth"><![CDATA[Previous month]]></item>
 		<item name="wbb.portal.box.monthlyCalendar.curMonth"><![CDATA[Current month]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.switchCalendar"><![CDATA[Switch between calendar and appointments]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.noAppointments"><![CDATA[No events entered]]></item>
 	</category>
 	<category name="wcf.acp.group">
 		<item name="wcf.acp.group.option.category.user.board.general"><![CDATA[General]]></item>
@@ -54,6 +56,8 @@
 		<item name="wcf.acp.option.monthlyCalendarBox_show_form.description"><![CDATA[]]></item>
     	<item name="wcf.acp.option.monthlyCalendarBox_nav_bottom"><![CDATA[Show navigation below]]></item>
 		<item name="wcf.acp.option.monthlyCalendarBox_nav_bottom.description"><![CDATA[Shows the navigation menu on the calendar below.]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_maxLen"><![CDATA[Maximum length of the appointment title]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_maxLen.description"><![CDATA[]]></item>
 	</category>
 	<category name="wcf.user.option">
         <item name="wcf.user.option.category.settings.display.monthlyCalendarBox"><![CDATA[Monthly calendar box]]></item>
@@ -62,6 +66,10 @@
 		<item name="wcf.user.option.monthlyCalendarBox_showCalendarWeeks.description"><![CDATA[]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showAppointments"><![CDATA[Show appointments]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showAppointments.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showAppointmentsAsDefault"><![CDATA[Show appointments instead calendar]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showAppointmentsAsDefault.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_maxAppointments"><![CDATA[Maximum number of upcoming appointments]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_maxAppointments.description"><![CDATA[]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showHolidays"><![CDATA[Show holidays]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showHolidays.description"><![CDATA[]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showBirthdays"><![CDATA[Show birthdays]]></item>

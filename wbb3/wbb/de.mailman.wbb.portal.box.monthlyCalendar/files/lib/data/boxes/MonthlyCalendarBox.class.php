@@ -15,30 +15,43 @@ class MonthlyCalendarBox {
         $this->getBoxStatus($data);
         $this->BoxData['boxID'] = $data['boxID'];
         $this->mcbHelper = new MonthlyCalendarBoxHelper();
-
+        $calendarInstalled = false;
+        $mcbAppointments = array();
         // misc vars
         if(!defined('MONTHLYCALENDARBOX_COL_ALIGN'))    define('MONTHLYCALENDARBOX_COL_ALIGN', 'Right');
         if(!defined('MONTHLYCALENDARBOX_SHOW_DOY'))     define('MONTHLYCALENDARBOX_SHOW_DOY', true);
         if(!defined('MONTHLYCALENDARBOX_SHOW_NAV'))     define('MONTHLYCALENDARBOX_SHOW_NAV', true);
         if(!defined('MONTHLYCALENDARBOX_SHOW_FORM'))    define('MONTHLYCALENDARBOX_SHOW_FORM', true);
         if(!defined('MONTHLYCALENDARBOX_NAV_BOTTOM'))   define('MONTHLYCALENDARBOX_NAV_BOTTOM', true);
+        if(!defined('MONTHLYCALENDARBOX_MAXLEN'))       define('MONTHLYCALENDARBOX_MAXLEN', 22);
 
         if(!empty($_REQUEST['page'])) $redirTo = $_REQUEST['page'];
         else $redirTo = 'Portal';
         $mcbTitleLinkTo = '';
         if(WBBCore::getUser()->userID) {
-            if(WBBCore::getUser()->getPermission('user.calendar.canUseCalendar') || WBBCore::getUser()->getPermission('user.calendar.canEnter')) $mcbTitleLinkTo = 'Calendar';
-            else $mcbTitleLinkTo = 'UserProfileEdit';
+            if(WBBCore::getUser()->getPermission('user.calendar.canUseCalendar') || WBBCore::getUser()->getPermission('user.calendar.canEnter')) {
+                $mcbTitleLinkTo = 'Calendar';
+                $calendarInstalled = true;
+            } else {
+                $mcbTitleLinkTo = 'UserProfileEdit';
+            }
         }
 
         if(!WBBCore::getUser()->userID || WBBCore::getUser()->monthlyCalendarBox_showCalendarWeeks) $mcbShowCW = true;
         else $mcbShowCW = false;
         if(WBBCore::getUser()->monthlyCalendarBox_showBirthdays) $mcbShowBirthdays = true;
         else $mcbShowBirthdays = false;
-        if(WBBCore::getUser()->monthlyCalendarBox_showAppointments) $mcbShowAppointments = true;
-        else $mcbShowAppointments = false;
         if(!WBBCore::getUser()->userID || WBBCore::getUser()->monthlyCalendarBox_showHolidays) $mcbShowHolidays = true;
         else $mcbShowHolidays = false;
+
+        $mcbShowAppointments = $mcbShowAppointmentsAsDefault = false;
+        if($calendarInstalled && WBBCore::getUser()->userID) {
+            if(WBBCore::getUser()->monthlyCalendarBox_showAppointments) {
+                $mcbShowAppointments = true;
+                if(WBBCore::getUser()->monthlyCalendarBox_showAppointmentsAsDefault) $mcbShowAppointmentsAsDefault = true;
+                $mcbShowAppointmentsAsDefault = false;
+            }
+        }
 
         $mcDays = $daysBefore = $daysAfter = $calendarWeeks = $birthdays = $dates = $holidays = $months = array();
         $curDay = 0;
@@ -68,7 +81,7 @@ class MonthlyCalendarBox {
         if($mcY == $mcCurY && $mcM == $mcCurM) $curDay = date('j');
         $mcbTitle = WCF::getLanguage()->get('wbb.portal.box.monthlyCalendar.month_'.$mcM).' '.$mcY;
         if($mcbShowBirthdays) $birthdays = $this->mcbHelper->getBirthdays($mcY, $mcM);
-        if($mcbShowAppointments && (WCF::getUser()->getPermission('user.calendar.canUseCalendar') || WCF::getUser()->getPermission('user.calendar.canEnter'))) $dates = $this->mcbHelper->getAppointments($mcY, $mcM);
+        if($mcbShowAppointments) $dates = $this->mcbHelper->getAppointments($mcY, $mcM);
         if($mcbShowHolidays && $mcY >= 1970) $holidays = $this->mcbHelper->getHolidaysDE($mcY, $mcM);
 
         if(WCF::getUser()->getPermission('user.board.canViewMonthlyCalendarBox')) {
@@ -115,6 +128,7 @@ class MonthlyCalendarBox {
                 if(empty($mcDays[$i]['title'])) $mcDays[$i]['title'] = DateUtil::formatDate(null, $time);
             }
             for($i=1;$i<=12;$i++) $months[$i] = WCF::getLanguage()->get('wbb.portal.box.monthlyCalendar.month_'.$i);
+            if($mcbShowAppointments) $mcbAppointments = $this->mcbHelper->getAppointmentList();
         }
         WCF::getSession()->register('monthlyCalendarBoxY', $mcY);
         WCF::getSession()->register('monthlyCalendarBoxM', $mcM);
@@ -132,7 +146,11 @@ class MonthlyCalendarBox {
             'months' => $months,
             'mcbShowCW' => $mcbShowCW,
             'redirTo' => $redirTo,
-            'mcbTitleLinkTo' => $mcbTitleLinkTo
+            'mcbTitleLinkTo' => $mcbTitleLinkTo,
+            'calendarInstalled' => $calendarInstalled,
+            'mcbShowAppointments' => $mcbShowAppointments,
+            'mcbShowAppointmentsAsDefault' => $mcbShowAppointmentsAsDefault,
+            'mcbAppointments' => $mcbAppointments
         ));
     }
 

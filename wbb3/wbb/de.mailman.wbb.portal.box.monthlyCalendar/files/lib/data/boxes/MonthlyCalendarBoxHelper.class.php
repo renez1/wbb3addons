@@ -12,6 +12,72 @@ class MonthlyCalendarBoxHelper {
 		return intval($cw);
 	}
 
+    public function getAppointmentList() {
+        $ret = array();
+        $i = 0;
+        $limit = intval(WBBCore::getUser()->monthlyCalendarBox_maxAppointments);
+        $userID = intval(WCF::getUser()->userID);
+        if(!$limit > 0 || !$userID > 0) return $ret;
+        $m = intval(date('n'));
+        $y = intval(date('Y'));
+        $d = intval(date('j'));
+        $sTimestamp = mktime(0, 0, 0, $m, $d, $y);
+        $eTimestamp = mktime(0, 0, 0, $m, $d+1, $y);
+
+        // WoltLab Calendar...
+        if(WBBCore::getUser()->getPermission('user.calendar.canUseCalendar')) {
+            $sql = "SELECT cem.eventID, cem.subject AS subject, ced.startTime AS startTime, ced.endTime AS endTime"
+                ."\n  FROM wcf".WCF_N."_calendar_event_date ced"
+                ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID)"
+                ."\n WHERE ced.startTime >= ".TIME_NOW
+                ."\n   AND cem.userID = ".$userID
+                ."\n UNION"
+                ."\nSELECT cem.eventID, cem.subject AS subject, ced.startTime AS startTime, ced.endTime AS endTime"
+                ."\n  FROM wcf".WCF_N."_calendar_event_date ced"
+                ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID)"
+                ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_participation cep ON (cep.eventID = ced.eventID)"
+                ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_participation_to_user ceptu ON (ceptu.participationID = cep.participationID)"
+                ."\n WHERE ced.startTime >= ".TIME_NOW
+                ."\n   AND ceptu.userID = ".$userID
+                ."\n ORDER BY startTime"
+                ."\n LIMIT ".$limit;
+            $result = WBBCore::getDB()->sendQuery($sql);
+            while($row = WBBCore::getDB()->fetchArray($result)) {
+                $ret[$i]['eventID'] = $row['eventID'];
+                $ret[$i]['subject'] = $row['subject'];
+                $ret[$i]['startTime'] = $row['startTime'];
+                $ret[$i]['endTime'] = $row['endTime'];
+                if($row['startTime'] >= $sTimestamp && $row['endTime'] <= $eTimestamp) $ret[$i]['today'] = true;
+                else $ret[$i]['today'] = false;
+                $ret[$i]['title'] = DateUtil::formatShortTime('%H.%M', $ret[$i]['startTime'])
+                                  . ' - '.DateUtil::formatShortTime('%H.%M', $ret[$i]['endTime'])
+                                  . ': '.$ret[$i]['subject'];
+                $i++;
+            }
+
+        } else if(WBBCore::getUser()->getPermission('user.calendar.canEnter')) {
+            $sql = "SELECT ce.eventID, cem.subject AS subject, ce.eventTime AS startTime, ce.eventEndTime AS endTime"
+                ."\n  FROM wcf".WCF_N."_calendar_event ce"
+                ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ce.eventID)"
+                ."\n WHERE ce.eventTime >= ".TIME_NOW
+                ."\n   AND cem.userID = ".$userID;
+            $result = WBBCore::getDB()->sendQuery($sql);
+            while($row = WBBCore::getDB()->fetchArray($result)) {
+                $ret[$i]['eventID'] = $row['eventID'];
+                $ret[$i]['subject'] = $row['subject'];
+                $ret[$i]['startTime'] = $row['startTime'];
+                $ret[$i]['endTime'] = $row['endTime'];
+                if($row['startTime'] >= $sTimestamp && $row['endTime'] <= $eTimestamp) $ret[$i]['today'] = true;
+                else $ret[$i]['today'] = false;
+                $ret[$i]['title'] = DateUtil::formatShortTime('%H.%M', $ret[$i]['startTime'])
+                                  . ' - '.DateUtil::formatShortTime('%H.%M', $ret[$i]['endTime'])
+                                  . ': '.$ret[$i]['subject'];
+                $i++;
+            }
+        }
+        return $ret;
+    }
+
     public function getAppointments($y, $m) {
         $month = intval($m);
         $ret = array();
