@@ -13,7 +13,10 @@
             </div>
             <div class="containerContent">
                 <a name="monthlyCalendarBox"></a>
-                <a href="index.php?page={@$redirTo}&amp;mcM={$mcCurM}&amp;mcY={$mcCurY}{@SID_ARG_2ND}#monthlyCalendarBox"><img src="{@RELATIVE_WBB_DIR}icon/mcbCurMonthS.png" alt="" title="{lang}wbb.portal.box.monthlyCalendar.curMonth{/lang}" /></a>
+                <a href="index.php?page={@$redirTo}&amp;mcM={$mcCurM}&amp;mcY={$mcCurY}{@SID_ARG_2ND}#monthlyCalendarBox"><img src="{@RELATIVE_WBB_DIR}icon/mcbCalendarS.png" alt="" title="{lang}wbb.portal.box.monthlyCalendar.curMonth{/lang}" /></a>
+                {if $mcbShowAppointments}
+                    <a href="javascript: void(0)" onclick="switchMcbView()"><img src="{@RELATIVE_WBB_DIR}icon/mcbAppointmentS.png" alt="" title="{lang}wbb.portal.box.monthlyCalendar.switchCalendar{/lang}" /></a>
+                {/if}
                 {if $mcbTitleLinkTo == 'UserProfileEdit'}
                     <a href="index.php?form=UserProfileEdit&amp;category=settings.display{@SID_ARG_2ND}">{@$mcbTitle}</a>
                 {else}
@@ -28,7 +31,7 @@
             </div>
         </div>
         <div class="container-1" id="monthlyCalendarBox">
-            <div class="containerContent" style="margin:0; padding:0;">
+            <div class="containerContent" style="margin:0; padding:0;{if $mcbShowAppointments && $mcbShowAppointmentsAsDefault} display:none;{/if}" id="mcbViewCalendar">
                 {if !MONTHLYCALENDARBOX_NAV_BOTTOM}
                     {include file=monthlyCalendarNavBox}
                 {/if}
@@ -102,11 +105,56 @@
                     {include file=monthlyCalendarNavBox}
                 {/if}
             </div>
+            {if $mcbShowAppointments}
+                <div class="containerContent smallFont" id="mcbViewAppointment"{if !$mcbShowAppointmentsAsDefault} style="display:none;"{/if}>
+                    {if $mcbAppointments|count}
+                        {foreach from=$mcbAppointments item=app}
+                            {if $app.today}
+                                {assign var='dTime' value=$app.startTime|time:"%H.%M"}
+                                {assign var='aDate' value='<span style="font-weight:bold;">'|concat:$dTime:'</span>'}
+                                {assign var='sCut' value=MONTHLYCALENDARBOX_MAXLEN+5}
+                            {else}
+                                {assign var='aDate' value=$app.startTime|time:"%d.%m.%Y"}
+                                {assign var='sCut' value=MONTHLYCALENDARBOX_MAXLEN}
+                            {/if}
+
+                            {if MONTHLYCALENDARBOX_MAXLEN > 0 && $app.subject|strlen > MONTHLYCALENDARBOX_MAXLEN}
+                                {if USE_MBSTRING}{assign var="mcbSubject" value=$app.subject|mb_substr:0:$sCut-3|concat:'...'}
+                                {else}{assign var="mcbSubject" value=$app.subject|substr:0:$sCut-3|concat:'...'}
+                                {/if}
+                            {else}
+                                {assign var="mcbSubject" value=$app.subject}
+                            {/if}
+                            {if $this->user->getPermission('user.calendar.canUseCalendar')}
+                                <p><a href="index.php?page=CalendarEvent&eventID={$app.eventID}{@SID_ARG_2ND}" title="{@$app.title}">{@$aDate}: {@$mcbSubject}</a></p>
+                            {else if $this->user->getPermission('user.calendar.canEnter')}
+                                <p><a href="index.php?page=CalendarViewEvent&eventID={$app.eventID}{@SID_ARG_2ND}" title="{@$app.title}">{@$aDate}: {@$mcbSubject}</a></p>
+                            {else}
+                                {lang}wbb.portal.box.monthlyCalendar.noAppointments{/lang}
+                            {/if}
+                        {/foreach}
+                    {else}
+                        {lang}wbb.portal.box.monthlyCalendar.noAppointments{/lang}
+                    {/if}
+                </div>
+            {/if}
         </div>
     </div>
     <script type="text/javascript">
     //<![CDATA[
     if('{@$item.Status}' != '') initList('monthlyCalendarBox', {@$item.Status});
+
+    {if $mcbShowAppointments}
+        function switchMcbView() {
+            if(document.getElementById('mcbViewCalendar').style.display == 'none') {
+                document.getElementById('mcbViewCalendar').style.display = '';
+                document.getElementById('mcbViewAppointment').style.display = 'none';
+            } else {
+                document.getElementById('mcbViewCalendar').style.display = 'none';
+                document.getElementById('mcbViewAppointment').style.display = '';
+            }
+        }
+    {/if}
     //]]>
     </script>
 {/if}

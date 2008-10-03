@@ -31,6 +31,8 @@
 		<item name="wbb.portal.box.monthlyCalendar.nextMonth"><![CDATA[Monat vor]]></item>
 		<item name="wbb.portal.box.monthlyCalendar.prevMonth"><![CDATA[Monat zurück]]></item>
 		<item name="wbb.portal.box.monthlyCalendar.curMonth"><![CDATA[Aktueller Monat]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.switchCalendar"><![CDATA[Zwischen Kalender- und Terminen umschalten]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.noAppointments"><![CDATA[Keine Termine eingetragen]]></item>
 	</category>
 	<category name="wcf.acp.group">
 		<item name="wcf.acp.group.option.category.user.board.general"><![CDATA[Allgemein]]></item>
@@ -54,6 +56,8 @@
 		<item name="wcf.acp.option.monthlyCalendarBox_show_form.description"><![CDATA[Zeigt das Formular Monat/Jahr in der Box an.]]></item>
     	<item name="wcf.acp.option.monthlyCalendarBox_nav_bottom"><![CDATA[Navigation unten anzeigen]]></item>
 		<item name="wcf.acp.option.monthlyCalendarBox_nav_bottom.description"><![CDATA[Zeigt das Navigationsmenü unterhalb des Kalenders an.]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_maxLen"><![CDATA[Max. Länge des Termintitels]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_maxLen.description"><![CDATA[]]></item>
 	</category>
 	<category name="wcf.user.option">
         <item name="wcf.user.option.category.settings.display.monthlyCalendarBox"><![CDATA[Monatskalender Box]]></item>
@@ -62,6 +66,10 @@
 		<item name="wcf.user.option.monthlyCalendarBox_showCalendarWeeks.description"><![CDATA[Anzeige der Kalenderwochen in der Monatskalender Box.]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showAppointments"><![CDATA[Termine anzeigen]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showAppointments.description"><![CDATA[Anzeige der Termine in der Monatskalender Box.]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showAppointmentsAsDefault"><![CDATA[Terminübersicht standardmäßig anzeigen]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showAppointmentsAsDefault.description"><![CDATA[Wenn Sie diese Option aktivieren, wird die Terminübersicht anstatt der Monatsübersicht standardmäßig angezeigt.]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_maxAppointments"><![CDATA[Max. Anzahl der anstehenden Termine]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_maxAppointments.description"><![CDATA[Wählen Sie hier die Anzahl der anstehenden Termine aus, welche in der Box angezeigt werden sollen.]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showHolidays"><![CDATA[Feiertage anzeigen]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showHolidays.description"><![CDATA[Anzeige der Feiertage in der Monatskalender Box.]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showBirthdays"><![CDATA[Geburtstage anzeigen]]></item>

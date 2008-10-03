@@ -38,6 +38,11 @@ Right:wcf.acp.option.monthlyCalendarBox_col_align.right]]></selectoptions>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>1</defaultvalue>
 		    </option>
+			<option name="monthlyCalendarBox_maxLen">
+				<categoryname>portal.box.monthlyCalendar</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue>22</defaultvalue>
+			</option>
 		</options>
 	</import>
 
