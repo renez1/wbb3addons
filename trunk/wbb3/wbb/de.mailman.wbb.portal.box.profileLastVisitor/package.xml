@@ -19,7 +19,7 @@
     <requiredpackages>
         <requiredpackage minversion="1.0.*">de.wbb3mods.wbb.portal</requiredpackage>
         <requiredpackage minversion="1.3.*">de.mdman.profile.lastvisitors</requiredpackage>
-        <requiredpackage minversion="1.0.*" file="requirements/net.hawkes.pip.deletefile.tar.gz">net.hawkes.pip.deletefile</requiredpackage>	
+        <requiredpackage minversion="1.0.0 RC 3" file="requirements/net.hawkes.pip.deletefile.tar.gz">net.hawkes.pip.deletefile</requiredpackage>	
     </requiredpackages>
 
     <instructions type="install">
