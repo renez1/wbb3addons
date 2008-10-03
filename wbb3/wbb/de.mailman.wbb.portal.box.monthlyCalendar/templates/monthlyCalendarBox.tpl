@@ -126,9 +126,9 @@
                                 {assign var="mcbSubject" value=$app.subject}
                             {/if}
                             {if $this->user->getPermission('user.calendar.canUseCalendar')}
-                                <p><a href="index.php?page=CalendarEvent&eventID={$app.eventID}{@SID_ARG_2ND}" title="{@$app.title}">{@$aDate}: {@$mcbSubject}</a></p>
+                                <p><a href="index.php?page=CalendarEvent&eventID={$app.eventID}{@SID_ARG_2ND}" title="{$app.title}">{@$aDate}: {@$mcbSubject}</a></p>
                             {else if $this->user->getPermission('user.calendar.canEnter')}
-                                <p><a href="index.php?page=CalendarViewEvent&eventID={$app.eventID}{@SID_ARG_2ND}" title="{@$app.title}">{@$aDate}: {@$mcbSubject}</a></p>
+                                <p><a href="index.php?page=CalendarViewEvent&eventID={$app.eventID}{@SID_ARG_2ND}" title="{$app.title}">{@$aDate}: {@$mcbSubject}</a></p>
                             {else}
                                 {lang}wbb.portal.box.monthlyCalendar.noAppointments{/lang}
                             {/if}

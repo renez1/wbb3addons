@@ -22,56 +22,74 @@ class MonthlyCalendarBoxHelper {
         $y = intval(date('Y'));
         $d = intval(date('j'));
         $sTimestamp = mktime(0, 0, 0, $m, $d, $y);
-        $eTimestamp = mktime(0, 0, 0, $m, $d+1, $y);
+        $eTimestamp = $sTimestamp + 86400;
 
         // WoltLab Calendar...
         if(WBBCore::getUser()->getPermission('user.calendar.canUseCalendar')) {
-            $sql = "SELECT cem.eventID, cem.subject AS subject, ced.startTime AS startTime, ced.endTime AS endTime"
+            $sql = "SELECT cem.eventID, cem.subject AS subject, ced.startTime AS startTime, ced.endTime AS endTime, ced.isFullDay AS fullDay"
                 ."\n  FROM wcf".WCF_N."_calendar_event_date ced"
                 ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID)"
-                ."\n WHERE ced.startTime >= ".TIME_NOW
+                ."\n WHERE (ced.startTime >= ".TIME_NOW." OR (ced.isFullDay = 1 AND ced.startTime >= ".$sTimestamp."))"
                 ."\n   AND cem.userID = ".$userID
                 ."\n UNION"
-                ."\nSELECT cem.eventID, cem.subject AS subject, ced.startTime AS startTime, ced.endTime AS endTime"
+                ."\nSELECT cem.eventID, cem.subject AS subject, ced.startTime AS startTime, ced.endTime AS endTime, ced.isFullDay AS fullDay"
                 ."\n  FROM wcf".WCF_N."_calendar_event_date ced"
                 ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID)"
                 ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_participation cep ON (cep.eventID = ced.eventID)"
                 ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_participation_to_user ceptu ON (ceptu.participationID = cep.participationID)"
-                ."\n WHERE ced.startTime >= ".TIME_NOW
+                ."\n WHERE (ced.startTime >= ".TIME_NOW." OR (ced.isFullDay = 1 AND ced.startTime >= ".$sTimestamp."))"
                 ."\n   AND ceptu.userID = ".$userID
                 ."\n ORDER BY startTime"
                 ."\n LIMIT ".$limit;
             $result = WBBCore::getDB()->sendQuery($sql);
             while($row = WBBCore::getDB()->fetchArray($result)) {
+                if(!empty($row['fullDay'])) {
+                    $row['startTime'] = DateUtil::getUTC($row['startTime']);
+                    $row['endTime'] = DateUtil::getUTC($row['endTime']);
+                }
                 $ret[$i]['eventID'] = $row['eventID'];
                 $ret[$i]['subject'] = $row['subject'];
                 $ret[$i]['startTime'] = $row['startTime'];
                 $ret[$i]['endTime'] = $row['endTime'];
                 if($row['startTime'] >= $sTimestamp && $row['endTime'] <= $eTimestamp) $ret[$i]['today'] = true;
                 else $ret[$i]['today'] = false;
-                $ret[$i]['title'] = DateUtil::formatShortTime('%H.%M', $ret[$i]['startTime'])
-                                  . ' - '.DateUtil::formatShortTime('%H.%M', $ret[$i]['endTime'])
-                                  . ': '.$ret[$i]['subject'];
+                $ret[$i]['title'] = DateUtil::formatShortTime('%H.%M', $row['startTime'])
+                                  . ' - '.DateUtil::formatShortTime('%H.%M', $row['endTime'])
+                                  . ': '.$row['subject'];
                 $i++;
             }
 
         } else if(WBBCore::getUser()->getPermission('user.calendar.canEnter')) {
-            $sql = "SELECT ce.eventID, cem.subject AS subject, ce.eventTime AS startTime, ce.eventEndTime AS endTime"
+            $sql = "SELECT ce.eventID, cem.subject AS subject, ce.eventTime AS startTime, ce.eventEndTime AS endTime, ce.isFullDay AS fullDay"
                 ."\n  FROM wcf".WCF_N."_calendar_event ce"
                 ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ce.eventID)"
-                ."\n WHERE ce.eventTime >= ".TIME_NOW
-                ."\n   AND cem.userID = ".$userID;
+                ."\n WHERE (ce.eventTime >= ".TIME_NOW." OR (ce.isFullDay = 1 AND ce.eventTime >= ".$sTimestamp."))"
+                ."\n   AND cem.userID = ".$userID
+                ."\n ORDER BY ce.eventTime"
+                ."\n LIMIT ".$limit;
             $result = WBBCore::getDB()->sendQuery($sql);
             while($row = WBBCore::getDB()->fetchArray($result)) {
+                if($row['fullDay']) {
+                    $tM = intval(date('n', $row['startTime']));
+                    $tY = intval(date('Y', $row['startTime']));
+                    $tD = intval(date('j', $row['startTime']));
+                    $row['startTime'] = mktime(0, 0, 0, $tM, $tD, $tY);
+                    $row['endTime'] = mktime(0, 0, 0, $tM, $tD+1, $tY);
+                } else if(empty($row['endTime'])) {
+                    $row['endTime'] = $row['startTime'];
+                }
                 $ret[$i]['eventID'] = $row['eventID'];
                 $ret[$i]['subject'] = $row['subject'];
                 $ret[$i]['startTime'] = $row['startTime'];
                 $ret[$i]['endTime'] = $row['endTime'];
-                if($row['startTime'] >= $sTimestamp && $row['endTime'] <= $eTimestamp) $ret[$i]['today'] = true;
-                else $ret[$i]['today'] = false;
+                if($row['startTime'] >= $sTimestamp && $row['endTime'] <= $eTimestamp) {
+                    $ret[$i]['today'] = true;
+                } else {
+                    $ret[$i]['today'] = false;
+                }
                 $ret[$i]['title'] = DateUtil::formatShortTime('%H.%M', $ret[$i]['startTime'])
                                   . ' - '.DateUtil::formatShortTime('%H.%M', $ret[$i]['endTime'])
-                                  . ': '.$ret[$i]['subject'];
+                                  . ': '.$row['subject'];
                 $i++;
             }
         }
@@ -81,8 +99,8 @@ class MonthlyCalendarBoxHelper {
     public function getAppointments($y, $m) {
         $month = intval($m);
         $ret = array();
-        $sTimestamp = mktime(0, 0, 0, $m, 1, $y);
-        $eTimestamp = mktime(0, 0, 0, $m+1, 0, $y);
+        $sTimestamp = gmmktime(0, 0, 0, $m, 1, $y);
+        $eTimestamp = gmmktime(0, 0, 0, $m+1, 0, $y);
         $userID = WCF::getUser()->userID;
         if(empty($userID)) return $ret;
 

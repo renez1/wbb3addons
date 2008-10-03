@@ -49,7 +49,6 @@ class MonthlyCalendarBox {
             if(WBBCore::getUser()->monthlyCalendarBox_showAppointments) {
                 $mcbShowAppointments = true;
                 if(WBBCore::getUser()->monthlyCalendarBox_showAppointmentsAsDefault) $mcbShowAppointmentsAsDefault = true;
-                $mcbShowAppointmentsAsDefault = false;
             }
         }
 
@@ -129,6 +128,7 @@ class MonthlyCalendarBox {
             }
             for($i=1;$i<=12;$i++) $months[$i] = WCF::getLanguage()->get('wbb.portal.box.monthlyCalendar.month_'.$i);
             if($mcbShowAppointments) $mcbAppointments = $this->mcbHelper->getAppointmentList();
+            if(!count($mcbAppointments)) $mcbShowAppointmentsAsDefault = false;
         }
         WCF::getSession()->register('monthlyCalendarBoxY', $mcY);
         WCF::getSession()->register('monthlyCalendarBoxM', $mcM);
