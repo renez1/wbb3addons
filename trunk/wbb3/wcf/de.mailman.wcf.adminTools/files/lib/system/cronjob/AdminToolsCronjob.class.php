@@ -28,7 +28,7 @@ class AdminToolsCronjob implements Cronjob
             $sql = "UPDATE wcf".WCF_N."_admin_tool_setting"
                 ."\n   SET atse_value = '".TIME_NOW."'"
                 ."\n WHERE atse_name = 'cronLastRun'";
-            WCF::getDB()->registerShutdownUpdate($sql);
+            WCF::getDB()->sendQuery($sql);
         } else {
             return;
         }
@@ -71,6 +71,11 @@ class AdminToolsCronjob implements Cronjob
 
         // archive
         AdminTools::cronThreadArchive($this->atSettings);
+
+        // cleanup subscriptions
+        if(!empty($this->atSettings['cronCleanUpSubscriptions'])) {
+            AdminTools::cronCleanUpSubscriptions();
+        }
 
         // spider ******************************************
         AdminTools::syncSpider();

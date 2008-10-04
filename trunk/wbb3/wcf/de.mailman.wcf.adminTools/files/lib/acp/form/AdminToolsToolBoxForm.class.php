@@ -26,6 +26,8 @@ class AdminToolsToolBoxForm extends ACPForm {
     public $sucMsg = '';
     public $action = '';
     public $userOptions = array();
+    public $languages = array();
+    public $setLanguageMsg = '';
 
 
 	/**
@@ -111,6 +113,10 @@ class AdminToolsToolBoxForm extends ACPForm {
             $this->action = 'ugrps';
         } else if(!empty($_POST['userOptionAction'])) {
             $this->action = 'userOptions';
+        } else if(!empty($_POST['userDefaultOptionAction'])) {
+            $this->action = 'userDefaultOptions';
+        } else if(!empty($_POST['setLanguageAction'])) {
+            $this->action = 'setLanguage';
         }
     }
 
@@ -139,6 +145,10 @@ class AdminToolsToolBoxForm extends ACPForm {
 		} else if($this->action == 'userOptions') {
 		    if(empty($_POST['optionID']))          throw new UserInputException('optionID', 'empty');
 		    else if(!empty($_POST['userOptionExclUgrps']) && !AdminTools::validateCommaSeparatedIntList($_POST['userOptionExclUgrps']))    throw new UserInputException('userOptionExclUgrps', 'commaSeparatedIntList');
+		} else if($this->action == 'userDefaultOptions') {
+		    if(empty($_POST['optionDefaultID']))    throw new UserInputException('optionDefaultID', 'empty');
+		} else if($this->action == 'setLanguage') {
+		    if(empty($_POST['languageID']))         throw new UserInputException('languageID', 'empty');
 		}
 	}
 
@@ -171,7 +181,16 @@ class AdminToolsToolBoxForm extends ACPForm {
             $this->sucMsg = WCF::getLanguage()->get('wcf.acp.adminTools.success.saved');
     	} else if($this->action == 'userOptions') {
             AdminTools::saveUserOptions($_POST);
+            $this->userOptions = AdminTools::getUserOptions();
             $this->sucMsg = WCF::getLanguage()->get('wcf.acp.adminTools.success.saved');
+    	} else if($this->action == 'userDefaultOptions') {
+            AdminTools::saveUserDefaultOptions($_POST);
+            $this->userOptions = AdminTools::getUserOptions();
+            $this->sucMsg = WCF::getLanguage()->get('wcf.acp.adminTools.success.saved');
+    	} else if($this->action == 'setLanguage') {
+            $cnt = AdminTools::setLanguage($_POST);
+            $this->languages = AdminTools::getLanguages();
+            $this->setLanguageMsg = WCF::getLanguage()->get('wcf.acp.adminTools.toolBox.setLanguage.msg', array('$cnt' => $cnt));
     	}
 	}
 
@@ -193,6 +212,8 @@ class AdminToolsToolBoxForm extends ACPForm {
        	    $this->spiderCntAll = $tmp['cntAll'];
         }
         if(AdminTools::wbbExists() && is_dir(WBB_DIR.'lib/data/boxes/SimplePieNewsReader/cache')) $this->spRssExists = true;
+        if(!count($this->userOptions)) $this->userOptions = AdminTools::getUserOptions();
+        if(!count($this->languages)) $this->languages = AdminTools::getLanguages();
 		parent::assignVariables();
 		WCF::getTPL()->assign(array(
     		'wbbExists' => AdminTools::wbbExists(),
@@ -211,8 +232,10 @@ class AdminToolsToolBoxForm extends ACPForm {
 		    'boards' => AdminTools::getBoards(),
 		    'prefBoards' => AdminTools::getPrefBoards(),
 		    'ugrps' => AdminTools::getUgrps(),
-		    'userOptions' => AdminTools::getUserOptions(),
+		    'userOptions' => $this->userOptions,
 		    'userOptionExclUgrps' => AdminTools::getSetting('userOptionExclUgrps'),
+		    'languages' => $this->languages,
+		    'setLanguageMsg' => $this->setLanguageMsg,
 		    'errMsg' => $this->errMsg,
 		    'sucMsg' => $this->sucMsg
 		));

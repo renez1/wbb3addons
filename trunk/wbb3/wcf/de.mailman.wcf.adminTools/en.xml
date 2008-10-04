@@ -31,6 +31,11 @@
         <item name="wcf.acp.adminTools.cron.cronDelLogDays"><![CDATA[Empty log automatically]]></item>
         <item name="wcf.acp.adminTools.cron.cronDelLogDays.description"><![CDATA[Enter here, after how many days log entries should be deleted. 0 = deactivated.]]></item>
 
+        <item name="wcf.acp.adminTools.cron.cronCleanUpSubscriptions.legend"><![CDATA[Subscriptions]]></item>
+        <item name="wcf.acp.adminTools.cron.cronCleanUpSubscriptions"><![CDATA[Delete invalid Subscriptions]]></item>
+        <item name="wcf.acp.adminTools.cron.cronCleanUpSubscriptions.description"><![CDATA[Deletes the subscriptions of unauthorized (eg due to a change of user group) and deleted users.]]></item>
+        <item name="wcf.acp.adminTools.cron.cronCleanUpSubscriptions.cleaned"><![CDATA[Number of deleted subscriptions: {$cnt}]]></item>
+
         <item name="wcf.acp.adminTools.cron.cronDelMovedThreadDays.legend"><![CDATA[Delete references]]></item>
         <item name="wcf.acp.adminTools.cron.cronDelMovedThreadDays.legend.description"><![CDATA[]]></item>
         <item name="wcf.acp.adminTools.cron.cronDelMovedThreadDays"><![CDATA[Remove automatically after...]]></item>
@@ -200,6 +205,15 @@
         <item name="wcf.acp.adminTools.toolBox.userOption.exclUgrps"><![CDATA[User groups to exclude]]></item>
         <item name="wcf.acp.adminTools.toolBox.userOption.exclUgrps.description"><![CDATA[Enter the user group IDs separated by commas, whose user options should not be changed.]]></item>
 
+        <item name="wcf.acp.adminTools.toolBox.userDefaultOption.legend"><![CDATA[Default settings user options]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userDefaultOption.legend.description"><![CDATA[Here you can change the default settings for new users.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userDefaultOption.optionID"><![CDATA[Option]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userDefaultOption.optionID.description"><![CDATA[Select the option whose default you want to modify.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userDefaultOption.setOff"><![CDATA[Disable option]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userDefaultOption.setOff.description"><![CDATA[]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userDefaultOption.setOn"><![CDATA[Enable option]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userDefaultOption.setOn.description"><![CDATA[]]></item>
+
         <item name="wcf.acp.adminTools.toolBox.spider.legend"><![CDATA[Spider]]></item>
         <item name="wcf.acp.adminTools.toolBox.spider.legend.description"><![CDATA[Here you can define your own search robots, which are added to the standard search robots list.]]></item>
         <item name="wcf.acp.adminTools.toolBox.spider.info"><![CDATA[Own: {#$spiderCntOwn} &bull; Synchronized: {#$spiderCntSyn} &bull; All: {#$spiderCntAll}]]></item>
@@ -216,6 +230,14 @@
         <item name="wcf.acp.adminTools.toolBox.spider.import.legend"><![CDATA[Import spider]]></item>
         <item name="wcf.acp.adminTools.toolBox.spider.import"><![CDATA[Select file]]></item>
         <item name="wcf.acp.adminTools.toolBox.spider.import.description"><![CDATA[<strong>Regard!</strong> All existing own spiders will be deleted.]]></item>
+
+        <item name="wcf.acp.adminTools.toolBox.setLanguage.legend"><![CDATA[Language]]></item>
+        <item name="wcf.acp.adminTools.toolBox.setLanguage.legend.description"><![CDATA[Here you can assign a language to all users.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.setLanguage.languageID"><![CDATA[Select language]]></item>
+        <item name="wcf.acp.adminTools.toolBox.setLanguage.languageID.description"><![CDATA[Choose the language you want to assign all users.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.setLanguage.onlyInvalid"><![CDATA[Only correct languages]]></item>
+        <item name="wcf.acp.adminTools.toolBox.setLanguage.onlyInvalid.description"><![CDATA[Select this option if you only want to update the user whose no or an invalid language is assigned (<strong>recommended!</strong>).]]></item>
+        <item name="wcf.acp.adminTools.toolBox.setLanguage.msg"><![CDATA[Updated User: {$cnt}]]></item>
 
         <item name="wcf.acp.adminTools.linkSettings.legend"><![CDATA[Add/Edit links]]></item>
         <item name="wcf.acp.adminTools.linkSettings.select"><![CDATA[Select link]]></item>

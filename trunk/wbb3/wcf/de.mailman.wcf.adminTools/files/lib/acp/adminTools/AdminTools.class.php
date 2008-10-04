@@ -15,17 +15,17 @@ class AdminTools {
         return WBB_EXISTS;
     }
 
-	public function getSettings($atse_name='') {
-	    $ret = array();
-		$sql = "SELECT atse_name, atse_value"
-		    ."\n  FROM wcf".WCF_N."_admin_tool_setting";
-		if(!empty($atse_name)) $sql .= "\n   WHERE atse_name = '".$atse_name."'";
+    public function getSettings($atse_name='') {
+        $ret = array();
+        $sql = "SELECT atse_name, atse_value"
+            ."\n  FROM wcf".WCF_N."_admin_tool_setting";
+        if(!empty($atse_name)) $sql .= "\n   WHERE atse_name = '".$atse_name."'";
         $result = WCF::getDB()->sendQuery($sql);
-		while($row = WCF::getDB()->fetchArray($result)) {
+        while($row = WCF::getDB()->fetchArray($result)) {
             $ret[$row['atse_name']] = $row['atse_value'];
         }
         return $ret;
-	}
+    }
 
     public function getSetting($atse_name) {
         $tmp = self::getSettings($atse_name);
@@ -44,35 +44,35 @@ class AdminTools {
         WCF::getDB()->sendQuery($sql);
     }
 
-	public function getAcpPackageID($menuItem) {
-	    $ret = 0;
-	    $sql = "SELECT packageID FROM wcf".WCF_N."_acp_menu_item WHERE menuItem = '".$menuItem."'";
-	    list($ret) = WCF::getDB()->getFirstRow($sql, MYSQL_NUM);
-	    return $ret;
-	}
+    public function getAcpPackageID($menuItem) {
+        $ret = 0;
+        $sql = "SELECT packageID FROM wcf".WCF_N."_acp_menu_item WHERE menuItem = '".$menuItem."'";
+        list($ret) = WCF::getDB()->getFirstRow($sql, MYSQL_NUM);
+        return $ret;
+    }
 
     // delete pms ******************************************
     public function deletePMs($pmIDs) {
         require_once(WCF_DIR.'lib/data/message/attachment/AttachmentsEditor.class.php');
 
-		// delete recipients
-		$sql = "DELETE FROM	wcf".WCF_N."_pm_to_user
-			WHERE		pmID IN (".$pmIDs.")";
-		WCF::getDB()->sendQuery($sql);
+        // delete recipients
+        $sql = "DELETE FROM wcf".WCF_N."_pm_to_user
+            WHERE       pmID IN (".$pmIDs.")";
+        WCF::getDB()->sendQuery($sql);
 
-		// delete messages
-		$sql = "DELETE FROM	wcf".WCF_N."_pm
-			WHERE		pmID IN (".$pmIDs.")";
-		WCF::getDB()->sendQuery($sql);
+        // delete messages
+        $sql = "DELETE FROM wcf".WCF_N."_pm
+            WHERE       pmID IN (".$pmIDs.")";
+        WCF::getDB()->sendQuery($sql);
 
-		// delete pm hashes
-		$sql = "DELETE FROM	wcf".WCF_N."_pm_hash
-			WHERE		pmID IN (".$pmIDs.")";
-		WCF::getDB()->registerShutdownUpdate($sql);
+        // delete pm hashes
+        $sql = "DELETE FROM wcf".WCF_N."_pm_hash
+            WHERE       pmID IN (".$pmIDs.")";
+        WCF::getDB()->sendQuery($sql);
 
-		// delete attachments
-		$attachments = new AttachmentsEditor($pmIDs, 'pm');
-		$attachments->deleteAll();
+        // delete attachments
+        $attachments = new AttachmentsEditor($pmIDs, 'pm');
+        $attachments->deleteAll();
     }
 
     // delete inactive user ********************************
@@ -119,14 +119,14 @@ class AdminTools {
     }
 
     public function cronRunDB($analyze=0, $optimize=0, $backup=0) {
-    	if(!empty($analyze) || !empty($optimize)) {
+        if(!empty($analyze) || !empty($optimize)) {
             $tables = WCF::getDB()->getTableNames();
             foreach($tables AS $table) {
                 if(!empty($analyze))  WCF::getDB()->sendQuery('ANALYZE TABLE '.$table);
                 if(!empty($optimize)) WCF::getDB()->sendQuery('OPTIMIZE TABLE '.$table);
             }
-    	}
-    	if(!empty($backup)) self::cronDbBackup();
+        }
+        if(!empty($backup)) self::cronDbBackup();
     }
     public function cronDbBackup() {
         require_once(WCF_DIR.'lib/system/database/DatabaseDumper.class.php');
@@ -135,8 +135,8 @@ class AdminTools {
         $rowCount = 0;
         $tables = array();
         foreach($tablesEx as $table) {
-        	$rowCount += $table['Rows'];
-        	$tables[] = $table['Name'];
+            $rowCount += $table['Rows'];
+            $tables[] = $table['Name'];
         }
         // comment buffer
         $limit = $rowCount + 10000;
@@ -184,7 +184,7 @@ class AdminTools {
 
         $sql = "DELETE FROM wcf".WCF_N."_admin_tool_moved_threads"
             ."\n WHERE threadID NOT IN (SELECT threadID FROM wbb".WBB_N."_thread)";
-        WCF::getDB()->registerShutdownUpdate($sql);
+        WCF::getDB()->sendQuery($sql);
     }
 
     public function cronThreadArchiveGetBoards() {
@@ -233,8 +233,46 @@ class AdminTools {
             if($settings['cronThreadArchiveExclSticky'] != '0') $sql .= "\n   AND isSticky = 0";
             if($settings['cronThreadArchiveExclClosed'] != '0') $sql .= "\n   AND isClosed = 0";
             if($settings['cronThreadArchiveExclDeleted'] != '0') $sql .= "\n   AND isDeleted = 0";
-            WCF::getDB()->registerShutdownUpdate($sql);
+            WCF::getDB()->sendQuery($sql);
         }
+    }
+
+    public function cronCleanUpSubscriptions($quiet = true) {
+        if(!self::wbbExists()) return;
+        $cnt = 0;
+        $sql = "DELETE FROM wbb".WBB_N."_thread_subscription"
+            ."\n WHERE (userID) NOT IN (SELECT userID FROM wbb".WBB_N."_user)";
+        WCF::getDB()->sendQuery($sql);
+        $cnt += WCF::getDB()->getAffectedRows();
+
+        $sql = "DELETE FROM wbb".WBB_N."_board_subscription"
+            ."\n WHERE (userID) NOT IN (SELECT userID FROM wbb".WBB_N."_user)";
+        WCF::getDB()->sendQuery($sql);
+        $cnt += WCF::getDB()->getAffectedRows();
+
+        $sql = "DELETE FROM wbb".WBB_N."_thread_subscription"
+            ."\n WHERE (userID, threadID) NOT IN ("
+            ."\n       SELECT utg.userID, thr.threadID"
+            ."\n         FROM wbb".WBB_N."_thread thr, wcf".WCF_N."_user_to_groups utg, wbb".WBB_N."_board_to_group btg"
+            ."\n        WHERE thr.boardID = btg.boardID"
+            ."\n          AND btg.groupID = utg.groupID"
+            ."\n          AND btg.canViewBoard = 1"
+            ."\n          AND btg.canEnterBoard = 1"
+            ."\n          AND btg.canReadThread = 1)";
+        WCF::getDB()->sendQuery($sql);
+        $cnt += WCF::getDB()->getAffectedRows();
+
+        $sql = "DELETE FROM wbb".WBB_N."_board_subscription"
+            ."\n WHERE (userID, boardID) NOT IN ("
+            ."\n       SELECT utg.userID, btg.boardID"
+            ."\n         FROM wbb".WBB_N."_board_to_group btg, wcf".WCF_N."_user_to_groups utg"
+            ."\n        WHERE btg.groupID = utg.groupID"
+            ."\n          AND btg.canViewBoard = 1"
+            ."\n          AND btg.canEnterBoard = 1"
+            ."\n          AND btg.canReadThread = 1)";
+        WCF::getDB()->sendQuery($sql);
+        $cnt += WCF::getDB()->getAffectedRows();
+        if(!$quiet) return $cnt;
     }
 
     public function cronRunJournal($pmDelCnt=0, $cLog=0, $cStat=0, $cAdminMail=0) {
@@ -375,7 +413,7 @@ class AdminTools {
 
             if(!empty($cStat)) {
                 // stats -----------------------------------
-        		$nStats = array();
+                $nStats = array();
 
                 // user
                 $sql = "SELECT COUNT(userID) AS user, MAX(userID) AS userMax FROM wcf".WCF_N."_user";
@@ -606,6 +644,35 @@ class AdminTools {
         }
     }
 
+    // languages *******************************************
+    public function getLanguages() {
+        $sql = "SELECT *"
+            ."\n  FROM wcf".WCF_N."_language"
+            ."\n ORDER BY isDefault DESC, languageCode";
+        return WCF::getDB()->getResultList($sql);
+    }
+
+    public function setLanguage($arg = array()) {
+        $langIDs = '';
+        $langID = $cnt = 0;
+        if(!empty($arg['languageID'])) $langID = intval($arg['languageID']);
+        if(!empty($arg['onlyInvalidLanguages'])) {
+            $lang = self::getLanguages();
+            foreach($lang as $v) {
+                if(!empty($langIDs)) $langIDs .= ', ';
+                $langIDs .= $v['languageID'];
+            }
+        }
+        if(!empty($langID)) {
+            $sql = "UPDATE wcf".WCF_N."_user"
+                ."\n   SET languageID = ".$langID;
+            if(!empty($langIDs)) $sql .= "\n WHERE languageID NOT IN (".$langIDs.")";
+            WCF::getDB()->sendQuery($sql);
+            $cnt = WCF::getDB()->getAffectedRows();
+        }
+        return $cnt;
+    }
+
     // cache ***********************************************
     public function cacheDel($cacheDel, $cacheTpl, $cacheLang, $cacheOpt, $cacheRSS) {
         $ret = array();
@@ -710,21 +777,21 @@ class AdminTools {
             $dh=opendir(WCF_DIR.'attachments');
             $sql = "SELECT COUNT(*) cnt FROM wcf".WCF_N."_attachment WHERE attachmentID = %d";
             while($file = readdir ($dh)) {
-            	if(preg_match("/^(attachment|thumbnail).*/",$file) && $file != '.' && $file != '..' && $file != '.htaccess' && !preg_match("/^.*\.php$/",$file)) {
-            		$cnt = 0;
-            		$attachmentID = (int) preg_replace("/.*\-(\d+)$/", "$1", $file);
-            		if($attachmentID > 0) {
+                if(preg_match("/^(attachment|thumbnail).*/",$file) && $file != '.' && $file != '..' && $file != '.htaccess' && !preg_match("/^.*\.php$/",$file)) {
+                    $cnt = 0;
+                    $attachmentID = (int) preg_replace("/.*\-(\d+)$/", "$1", $file);
+                    if($attachmentID > 0) {
                         $row = WCF::getDB()->getFirstRow(sprintf($sql,$attachmentID));
                         if($row['cnt'] == 0) {
                             $LOST[$i]['DELVAL'] = urlencode($file);
-                        	$LOST[$i]['FILE'] = $file;
-                        	$LOST[$i]['SIZE'] = round((filesize($file) / 1024),2).' kB';
-                        	$LOST[$i]['TIME'] = filemtime($file);
-                        	$LOST[$i]['USER'] = '&raquo;Unbekannt&laquo;';
-                        	$i++;
+                            $LOST[$i]['FILE'] = $file;
+                            $LOST[$i]['SIZE'] = round((filesize($file) / 1024),2).' kB';
+                            $LOST[$i]['TIME'] = filemtime($file);
+                            $LOST[$i]['USER'] = '&raquo;Unbekannt&laquo;';
+                            $i++;
                         }
                     }
-            	}
+                }
             }
             closedir($dh);
         }
@@ -732,29 +799,29 @@ class AdminTools {
             $sql = "SELECT a.*, b.username FROM wcf".WCF_N."_attachment a JOIN wcf".WCF_N."_user b ON (b.userID = a.userID) ORDER BY a.attachmentID";
             $result = WCF::getDB()->sendQuery($sql);
             while($row = WCF::getDB()->fetchArray($result)) {
-			    if(!is_file(WCF_DIR.'attachments/attachment-'.$row['attachmentID'])) {
+                if(!is_file(WCF_DIR.'attachments/attachment-'.$row['attachmentID'])) {
                     $LOST[$i]['DELVAL'] = $row['attachmentID'];
                     $LOST[$i]['FILE'] = 'attachment-'.$row["attachmentID"];
                     $LOST[$i]['SIZE'] = round(($row['attachmentSize'] / 1024),2).' kB';
                     $LOST[$i]['TIME'] = $row['uploadTime'];
-			        if(empty($row['username'])) $LOST[$i]['USER'] = '&raquo;Unbekannt&laquo;';
+                    if(empty($row['username'])) $LOST[$i]['USER'] = '&raquo;Unbekannt&laquo;';
                     else $LOST[$i]['USER'] = StringUtil::encodeHTML($row['username']);
-				    $i++;
-			    }
+                    $i++;
+                }
             }
         }
         else if($type == 'lostAndFoundWbbB') {
             chdir(WCF_DIR.'acp/backup');
             $dh=opendir(WCF_DIR.'acp/backup');
             while($file = readdir ($dh)) {
-            	if($file != '.' && $file != '..' && $file != '.htaccess' && !is_dir($file)) {
+                if($file != '.' && $file != '..' && $file != '.htaccess' && !is_dir($file)) {
                     $LOST[$i]['DELVAL'] = urlencode($file);
                     $LOST[$i]['FILE'] = '<a href="index.php?form=AdminToolsLostAndFound&amp;show=downloadFile&amp;fileName='.$file.'&amp;packageID='.PACKAGE_ID.SID_ARG_2ND_NOT_ENCODED.'">'.$file.'</a>';
                     $LOST[$i]['SIZE'] = round((filesize($file) / 1024),2).' kB';
                     $LOST[$i]['TIME'] = filemtime($file);
                     $LOST[$i]['USER'] = '&raquo;Unbekannt&laquo;';
                     $i++;
-            	}
+                }
             }
             closedir($dh);
         }
@@ -765,8 +832,8 @@ class AdminTools {
             chdir(WCF_DIR.'attachments');
             $dh=opendir(WCF_DIR.'attachments');
             foreach($del as $file) {
-            	$file = urldecode($file);
-            	unlink($file);
+                $file = urldecode($file);
+                unlink($file);
             }
             rewinddir($dh);
             closedir($dh);
@@ -780,8 +847,8 @@ class AdminTools {
             chdir(WCF_DIR.'acp/backup');
             $dh=opendir(WCF_DIR.'acp/backup');
             foreach($del as $file) {
-            	$file = urldecode($file);
-            	unlink($file);
+                $file = urldecode($file);
+                unlink($file);
             }
             rewinddir($dh);
             closedir($dh);
@@ -807,11 +874,25 @@ class AdminTools {
                 $sql .= "\n WHERE userID NOT IN (SELECT userID FROM wcf".WCF_N."_user_to_groups WHERE groupID IN (".$arg['userOptionExclUgrps']."))";
             }
             if(isset($arg['userOptionExclUgrps'])) self::saveSetting('userOptionExclUgrps', $arg['userOptionExclUgrps']);
-            WCF::getDB()->registerShutdownUpdate($sql);
+            WCF::getDB()->sendQuery($sql);
             require_once(WCF_DIR.'lib/system/session/UserSession.class.php');
             Session::resetSessions();
         }
     }
+
+    public function saveUserDefaultOptions($arg=array()) {
+        if(isset($arg['userDefaultOptionSet']) && preg_match('/^[0|1]$/',$arg['userDefaultOptionSet']) && !empty($arg['optionDefaultID'])) {
+            $id = intval($arg['optionDefaultID']);
+            $set = intval($arg['userDefaultOptionSet']);
+            $sql = "UPDATE wcf".WCF_N."_user_option"
+                ."\n   SET defaultValue = '".$set."'"
+                ."\n WHERE optionID = ".$id;
+            WCF::getDB()->sendQuery($sql);
+            require_once(WCF_DIR.'lib/system/session/UserSession.class.php');
+            Session::resetSessions();
+        }
+    }
+
 
     // spiders *********************************************
     public function getSpiders() {
@@ -970,7 +1051,7 @@ class AdminTools {
         $ret = array();
         $sql = "SELECT * FROM wcf".WCF_N."_admin_tool_setting WHERE atse_name LIKE 'linkSettings.iframe.%'";
         $result = WCF::getDB()->sendQuery($sql);
-		while($row = WCF::getDB()->fetchArray($result)) {
+        while($row = WCF::getDB()->fetchArray($result)) {
             list($d1, $d2, $idx) = preg_split('/\./', $row['atse_name'], 3);
             $ret[$idx] = $row['atse_value'];
         }
