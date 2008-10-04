@@ -5,13 +5,13 @@
 	<packageinformation>
 		<packagename>Portalbox &quot;Monatskalender&quot; [WBB Lite 2]</packagename>
         <packageDescription>Ein Monatskalender in einer Portalbox. [WBB Lite 2]</packageDescription>
-		<packagename language="en">Monthly calendar box</packagename>
+		<packagename language="en">Monthly calendar box [WBB Lite 2]</packagename>
 		<packagedescription language="en">A monthly calendar in a box. [WBB Lite 2]</packagedescription>
-		<standalone>0</standalone>
+		<!-- <standalone>0</standalone> -->
 		<isUnique>1</isUnique>
 		<plugin>com.woltlab.wbb</plugin>
-		<version>1.0.3</version>
-		<date>2008-09-20</date>
+		<version>1.0.4</version>
+		<date>2008-10-03</date>
 	</packageinformation>
 
 	<authorinformation>
@@ -39,6 +39,7 @@
 		<files>files.tar</files>
 		<templates>templates.tar</templates>
 		<options>options.xml</options>
+		<useroptions>useroptions.xml</useroptions>
 		<languages languagecode="de">de.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
@@ -47,6 +48,7 @@
 		<files>files.tar</files>
 		<templates>templates.tar</templates>
 		<options>options.xml</options>
+		<useroptions>useroptions.xml</useroptions>
 		<languages languagecode="de">de.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
@@ -55,6 +57,16 @@
 		<files>files.tar</files>
 		<templates>templates.tar</templates>
 		<options>options.xml</options>
+		<useroptions>useroptions.xml</useroptions>
+		<languages languagecode="de">de.xml</languages>
+        <languages languagecode="de-informal">de-informal.xml</languages>
+        <languages languagecode="en">en.xml</languages>
+	</instructions>
+	<instructions type="update" fromversion="1.0.3">
+		<files>files.tar</files>
+		<templates>templates.tar</templates>
+		<options>options.xml</options>
+		<useroptions>useroptions.xml</useroptions>
 		<languages languagecode="de">de.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
