@@ -36,6 +36,8 @@ class AdminToolsCronForm extends ACPForm {
     public $cronThreadArchiveExclSticky = 0;
     public $cronThreadArchiveExclClosed = 0;
     public $cronThreadArchiveExclDeleted = 0;
+    public $cronCleanUpSubscriptions = 0;
+    public $subscriptionsMsg = '';
 
 
 	/**
@@ -65,6 +67,9 @@ class AdminToolsCronForm extends ACPForm {
                 ,(isset($_REQUEST['optimize']) ? $_REQUEST['optimize'] : 0)
                 ,(isset($_REQUEST['backup']) ? $_REQUEST['backup'] : 0)
                 );
+            } else if($_REQUEST['cRun'] == 'subscriptions') {
+                $cnt = AdminTools::cronCleanUpSubscriptions(false);
+                $this->subscriptionsMsg = WCF::getLanguage()->get('wcf.acp.adminTools.cron.cronCleanUpSubscriptions.cleaned', array('$cnt' => $cnt));
             }
         }
     }
@@ -96,6 +101,7 @@ class AdminToolsCronForm extends ACPForm {
 		if(!isset($_POST['cronThreadArchiveExclSticky']))       $this->cronThreadArchiveExclSticky = 0;
 		if(!isset($_POST['cronThreadArchiveExclClosed']))       $this->cronThreadArchiveExclClosed = 0;
 		if(!isset($_POST['cronThreadArchiveExclDeleted']))      $this->cronThreadArchiveExclDeleted = 0;
+		if(!isset($_POST['cronCleanUpSubscriptions']))          $this->cronCleanUpSubscriptions = 0;
     }
 
 	/**
@@ -161,7 +167,8 @@ class AdminToolsCronForm extends ACPForm {
                 'cronThreadArchiveExclAnnouncement' => $this->cronThreadArchiveExclAnnouncement,
                 'cronThreadArchiveExclSticky'       => $this->cronThreadArchiveExclSticky,
                 'cronThreadArchiveExclClosed'       => $this->cronThreadArchiveExclClosed,
-                'cronThreadArchiveExclDeleted'      => $this->cronThreadArchiveExclDeleted
+                'cronThreadArchiveExclDeleted'      => $this->cronThreadArchiveExclDeleted,
+                'cronCleanUpSubscriptions'          => $this->cronCleanUpSubscriptions
             )
         );
         WCF::getTPL()->assign('success', true);
@@ -216,7 +223,9 @@ class AdminToolsCronForm extends ACPForm {
             'cronThreadArchiveExclAnnouncement' => $this->cronThreadArchiveExclAnnouncement,
             'cronThreadArchiveExclSticky'       => $this->cronThreadArchiveExclSticky,
             'cronThreadArchiveExclClosed'       => $this->cronThreadArchiveExclClosed,
-            'cronThreadArchiveExclDeleted'      => $this->cronThreadArchiveExclDeleted
+            'cronThreadArchiveExclDeleted'      => $this->cronThreadArchiveExclDeleted,
+            'cronCleanUpSubscriptions'          => $this->cronCleanUpSubscriptions,
+            'subscriptionsMsg'                  => $this->subscriptionsMsg
 		));
 	}
 

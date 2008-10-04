@@ -37,6 +37,9 @@ function runCron(cj) {
             alert('{lang}wcf.acp.adminTools.error.cron{/lang}');
         }
     }
+    else if(cj == 'subscriptions') {
+        window.location.href = 'index.php?form=AdminToolsCron&cRun=subscriptions&packageID={@PACKAGE_ID}{@SID_ARG_2ND_NOT_ENCODED}';
+    }
 }
 //]]>
 </script>
@@ -52,6 +55,8 @@ function runCron(cj) {
 	<p class="error">{lang}wcf.global.form.error{/lang}</p>
 {elseif !$success|empty}
     <p class="success">{lang}wcf.acp.adminTools.success.saved{/lang}</p>
+{elseif !$subscriptionsMsg|empty}
+    <p class="success">{lang}{@$subscriptionsMsg}{/lang}</p>
 {/if}
 {if !$cronActive}
     <p class="info">{lang}wcf.acp.adminTools.cron.disabled{/lang}</p>
@@ -93,11 +98,34 @@ function runCron(cj) {
 				//]]></script>
     		</fieldset>
 
+<!-- Abonnements *************************************** -->
+{if $wbbExists}
+			<fieldset>
+				<legend>{lang}wcf.acp.adminTools.cron.cronCleanUpSubscriptions.legend{/lang}</legend>
+				<div class="formElement" id="cronCleanUpSubscriptionsDiv">
+					<div class="formField">
+						<label><input type="checkbox" id="cronCleanUpSubscriptions" name="cronCleanUpSubscriptions" value="1"{if $cronCleanUpSubscriptions} checked="checked"{/if} /> {lang}wcf.acp.adminTools.cron.cronCleanUpSubscriptions{/lang}</label>
+					</div>
+					<div class="formFieldDesc hidden" id="cronCleanUpSubscriptionsHelpMessage">
+						{lang}wcf.acp.adminTools.cron.cronCleanUpSubscriptions.description{/lang}
+					</div>
+				</div>
+				<script type="text/javascript">//<![CDATA[
+					inlineHelp.register('cronCleanUpSubscriptions');
+				//]]></script>
+                <div class="smallButtons">
+                    <ul>
+        			    <li><a href="javascript:void(0);" onClick="runCron('subscriptions');"><img src="{@RELATIVE_WCF_DIR}icon/adminToolsRunCronS.png" alt="" /> <span>{lang}wcf.acp.adminTools.cron.run{/lang}</span></a></li>
+        			</ul>
+        	    </div>
+    		</fieldset>
+{/if}
+
 <!-- Verweise ****************************************** -->
 {if $wbbExists}
 			<fieldset>
 				<legend>{lang}wcf.acp.adminTools.cron.cronDelMovedThreadDays.legend{/lang}</legend>
-				<div class="formElement" id="cronDelMovedThreadDays">
+				<div class="formElement" id="cronDelMovedThreadDaysDiv">
 					<div class="formFieldLabel">
 						<label for="cronDelMovedThreadDays">{lang}wcf.acp.adminTools.cron.cronDelMovedThreadDays{/lang}</label>
 					</div>

@@ -25,6 +25,10 @@ function saveUgrps() {
     if(confirm('{lang}wcf.acp.adminTools.confirm{/lang}')) document.forms['ftbUgrp'].submit();
 }
 
+function setLanguage() {
+    if(confirm('{lang}wcf.acp.adminTools.confirm{/lang}')) document.forms['ftbUserSetLanguage'].submit();
+}
+
 function savePrefBoard() {
     if(document.forms['ftbPrefix'].elements['boardPrefSrcID'].value && document.forms['ftbPrefix'].elements['boardPrefSrcID'].value != document.forms['ftbPrefix'].elements['boardPrefTgt'].value) {
         if(confirm('{lang}wcf.acp.adminTools.confirm{/lang}')) document.forms['ftbPrefix'].submit();
@@ -33,6 +37,23 @@ function savePrefBoard() {
 
 function saveUseroptions() {
     if(confirm('{lang}wcf.acp.adminTools.confirm{/lang}')) document.forms['ftbUserOption'].submit();
+}
+
+function saveDefaultUseroptions() {
+    if(confirm('{lang}wcf.acp.adminTools.confirm{/lang}')) document.forms['ftbUserDefaultOption'].submit();
+}
+
+function selDefaultUserOption() {
+    var i = document.forms['ftbUserDefaultOption'].elements['optionDefaultID'].selectedIndex;
+    if(i > 0) {
+        var t = document.forms['ftbUserDefaultOption'].elements['optionDefaultID'].options[i].text;
+        var s = t.match(/^\[1\]/);
+        if(s) {
+            document.forms['ftbUserDefaultOption'].elements['userDefaultOptionSet'][1].checked = true;
+        } else {
+            document.forms['ftbUserDefaultOption'].elements['userDefaultOptionSet'][0].checked = true;
+        }
+    }
 }
 
 function runJob(job) {
@@ -129,11 +150,14 @@ function importSpider() {
 {if $errorField}
     <p class="error">{lang}wcf.global.form.error{/lang}</p>
 {/if}
-{if $errMsg}
-    <p class="error">{$errMsg}</p>
+{if !$errMsg|empty}
+    <p class="error">{lang}{@$errMsg}{/lang}</p>
 {/if}
-{if $sucMsg}
-    <p class="success">{$sucMsg}</p>
+{if !$sucMsg|empty}
+    <p class="success">{lang}{@$sucMsg}{/lang}</p>
+{/if}
+{if !$setLanguageMsg|empty}
+    <p class="success">{lang}{@$setLanguageMsg}{/lang}</p>
 {/if}
 
     <div class="border content">
@@ -599,6 +623,134 @@ function importSpider() {
                 </form>
             </fieldset>
 
+
+<!-- USER DEFAULT OPTIONS ****************************** -->
+            <fieldset>
+                <legend>{lang}wcf.acp.adminTools.toolBox.userDefaultOption.legend{/lang}</legend>
+                <p class="description">{lang}wcf.acp.adminTools.toolBox.userDefaultOption.legend.description{/lang}</p>
+                <form method="post" name="ftbUserDefaultOption" action="index.php?form=AdminToolsToolBox">
+                    <div class="formElement" id="optionDefaultIDDiv">
+                        <div class="formFieldLabel">
+                            <label for="optionID">{lang}wcf.acp.adminTools.toolBox.userDefaultOption.optionID{/lang}</label>
+                        </div>
+                        <div class="formField">
+                            <select name="optionDefaultID" id="optionDefaultID" onChange="selDefaultUserOption();">
+                                <option value="0"></option>
+                                {if $userOptions|count}
+                                    {foreach from=$userOptions item=option}
+                                        <option value="{$option.optionID}" title="{lang}wcf.user.option.{@$option.optionName}.description{/lang}">[{if $option.defaultValue|empty}0{else}1{/if}] {lang}wcf.user.option.{@$option.optionName}{/lang}</option>
+                                    {/foreach}
+                                {/if}
+                            </select>
+                            ({#$userOptions|count})
+                            {if $errorField == 'optionDefaultID'}
+                                <p class="innerError">
+                                    {if $errorType == 'empty'}{lang}wcf.global.error.empty{/lang}{/if}
+                                </p>
+                            {/if}
+                        </div>
+                        <div class="formFieldDesc hidden" id="optionDefaultIDHelpMessage">
+                            {lang}wcf.acp.adminTools.toolBox.userDefaultOption.optionID.description{/lang}
+                        </div>
+                    </div>
+                    <script type="text/javascript">//<![CDATA[
+                        inlineHelp.register('optionDefaultID');
+                    //]]></script>
+
+                    <div class="formElement" id="userDefaultOptionSetOffDiv">
+                        <div class="formField">
+                            <label><input type="radio" id="userDefaultOptionSetOff" name="userDefaultOptionSet" value="0" checked="checked" /> {lang}wcf.acp.adminTools.toolBox.userDefaultOption.setOff{/lang}</label>
+                        </div>
+                        <div class="formFieldDesc hidden" id="userDefaultOptionSetOffHelpMessage">
+                            {lang}wcf.acp.adminTools.toolBox.userDefaultOption.setOff.description{/lang}
+                        </div>
+                    </div>
+                    <script type="text/javascript">//<![CDATA[
+                        inlineHelp.register('userDefaultOptionSetOff');
+                    //]]></script>
+
+                    <div class="formElement" id="userDefaultOptionSetOnDiv">
+                        <div class="formField">
+                            <label><input type="radio" id="userDefaultOptionSetOn" name="userDefaultOptionSet" value="1" /> {lang}wcf.acp.adminTools.toolBox.userDefaultOption.setOn{/lang}</label>
+                        </div>
+                        <div class="formFieldDesc hidden" id="userDefaultOptionSetOnHelpMessage">
+                            {lang}wcf.acp.adminTools.toolBox.userDefaultOption.setOn.description{/lang}
+                        </div>
+                    </div>
+                    <script type="text/javascript">//<![CDATA[
+                        inlineHelp.register('userDefaultOptionSetOn');
+                    //]]></script>
+
+                    <div class="smallButtons">
+                        <ul>
+                            <li><a href="javascript:void(0);" onClick="saveDefaultUseroptions();"><img src="{@RELATIVE_WCF_DIR}icon/submitS.png" alt="" /> <span>{lang}wcf.acp.adminTools.txt.save{/lang}</span></a></li>
+                        </ul>
+                    </div>
+
+                    <input type="hidden" name="packageID" value="{@PACKAGE_ID}" />
+                    <input type="hidden" name="userDefaultOptionAction" value="1" />
+                    {@SID_INPUT_TAG}
+                </form>
+            </fieldset>
+
+
+<!-- LANGUAGE ****************************************** -->
+            <fieldset>
+                <legend>{lang}wcf.acp.adminTools.toolBox.setLanguage.legend{/lang}</legend>
+                <p class="description">{lang}wcf.acp.adminTools.toolBox.setLanguage.legend.description{/lang}</p>
+                <form method="post" name="ftbUserSetLanguage" action="index.php?form=AdminToolsToolBox">
+                    <div class="formElement" id="languageIDDiv">
+                        <div class="formFieldLabel">
+                            <label for="languageID">{lang}wcf.acp.adminTools.toolBox.setLanguage.languageID{/lang}</label>
+                        </div>
+                        <div class="formField">
+                            <select name="languageID" id="languageID">
+                                <option value="0"></option>
+                                {if $languages|count}
+                                    {foreach from=$languages item=language}
+                                        <option value="{$language.languageID}">{lang}{@$language.languageCode}{/lang}</option>
+                                    {/foreach}
+                                {/if}
+                            </select>
+                            ({#$languages|count})
+                            {if $errorField == 'languageID'}
+                                <p class="innerError">
+                                    {if $errorType == 'empty'}{lang}wcf.global.error.empty{/lang}{/if}
+                                </p>
+                            {/if}
+                        </div>
+                        <div class="formFieldDesc hidden" id="languageIDHelpMessage">
+                            {lang}wcf.acp.adminTools.toolBox.setLanguage.languageID.description{/lang}
+                        </div>
+                    </div>
+                    <script type="text/javascript">//<![CDATA[
+                        inlineHelp.register('languageID');
+                    //]]></script>
+
+                    <div class="formCheckBox formElement" id="onlyInvalidLanguagesDiv">
+                        <div class="formField">
+                            <label><input type="checkbox" id="onlyInvalidLanguages" name="onlyInvalidLanguages" value="1" checked="checked" /> {lang}wcf.acp.adminTools.toolBox.setLanguage.onlyInvalid{/lang}</label>
+                        </div>
+                        <div class="formFieldDesc hidden" id="onlyInvalidLanguagesHelpMessage">
+                            {lang}wcf.acp.adminTools.toolBox.setLanguage.onlyInvalid.description{/lang}
+                        </div>
+                    </div>
+                    <script type="text/javascript">//<![CDATA[
+                        inlineHelp.register('onlyInvalidLanguages');
+                    //]]></script>
+
+
+                    <div class="smallButtons">
+                        <ul>
+                            <li><a href="javascript:void(0);" onClick="setLanguage();"><img src="{@RELATIVE_WCF_DIR}icon/submitS.png" alt="" /> <span>{lang}wcf.acp.adminTools.txt.save{/lang}</span></a></li>
+                        </ul>
+                    </div>
+
+                    <input type="hidden" name="packageID" value="{@PACKAGE_ID}" />
+                    <input type="hidden" name="setLanguageAction" value="1" />
+                    {@SID_INPUT_TAG}
+                </form>
+            </fieldset>
 
 <!-- SPIDER ******************************************** -->
             <fieldset>
