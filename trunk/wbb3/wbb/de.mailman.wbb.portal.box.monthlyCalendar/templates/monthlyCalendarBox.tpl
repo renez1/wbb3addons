@@ -109,28 +109,41 @@
                 <div class="containerContent smallFont" id="mcbViewAppointment"{if !$mcbShowAppointmentsAsDefault} style="display:none;"{/if}>
                     {if $mcbAppointments|count}
                         {foreach from=$mcbAppointments item=app}
-                            {if $app.today}
-                                {assign var='dTime' value=$app.startTime|time:"%H.%M"}
-                                {assign var='aDate' value='<span style="font-weight:bold;">'|concat:$dTime:'</span>'}
-                                {assign var='sCut' value=MONTHLYCALENDARBOX_MAXLEN+5}
-                            {else}
-                                {assign var='aDate' value=$app.startTime|time:"%d.%m.%Y"}
-                                {assign var='sCut' value=MONTHLYCALENDARBOX_MAXLEN}
-                            {/if}
-
-                            {if MONTHLYCALENDARBOX_MAXLEN > 0 && $app.subject|strlen > MONTHLYCALENDARBOX_MAXLEN}
-                                {if USE_MBSTRING}{assign var="mcbSubject" value=$app.subject|mb_substr:0:$sCut-3|concat:'...'}
-                                {else}{assign var="mcbSubject" value=$app.subject|substr:0:$sCut-3|concat:'...'}
+                            {if $app.birthday}
+                                <p style="display:block; overflow:hidden; margin:1px 0 1px;{if !$app.color|empty} border-color:{@$app.color}; border-width:0px 0px 1px 4px; border-style:solid;{/if}">{if !$app.color|empty}&nbsp;{/if}<a href="index.php?page=User&amp;userID={$app.userID}{@SID_ARG_2ND}"{if !$app.color|empty} style="text-decoration:none;"{/if} title="">{@$app.username}</a> ({@$app.age})</p>
+                            {else if !$app.eventID|empty}
+                                {if $app.today}
+                                    {assign var='sDate' value=$app.startTime|time:"%H:%M"}
+                                    {assign var='eDate' value=$app.endTime|time:"%H.%M"}
+                                    {assign var='aDate' value='<span style="font-weight:bold;">'|concat:$sDate:'-':$eDate:'</span>'}
+                                    {assign var='sCut' value=MONTHLYCALENDARBOX_MAXLEN}
+                                {else if !$app.curYear}
+                                    {assign var='aDate' value=$app.startTime|time:"%d.%m.%y"}
+                                    {assign var='sCut' value=MONTHLYCALENDARBOX_MAXLEN+4}
+                                {else if $app.severalDays}
+                                    {assign var='sDate' value=$app.startTime|time:"%d.%m."}
+                                    {assign var='eDate' value=$app.endTime|time:"%d.%m."}
+                                    {assign var='aDate' value=$sDate|concat:'-':$eDate}
+                                    {assign var='sCut' value=MONTHLYCALENDARBOX_MAXLEN-1}
+                                {else}
+                                    {assign var='aDate' value=$app.startTime|time:"%d.%m. %H:%M"}
+                                    {assign var='sCut' value=MONTHLYCALENDARBOX_MAXLEN}
                                 {/if}
-                            {else}
-                                {assign var="mcbSubject" value=$app.subject}
-                            {/if}
-                            {if $this->user->getPermission('user.calendar.canUseCalendar')}
-                                <p><a href="index.php?page=CalendarEvent&eventID={$app.eventID}{@SID_ARG_2ND}" title="{$app.title}">{@$aDate}: {@$mcbSubject}</a></p>
-                            {else if $this->user->getPermission('user.calendar.canEnter')}
-                                <p><a href="index.php?page=CalendarViewEvent&eventID={$app.eventID}{@SID_ARG_2ND}" title="{$app.title}">{@$aDate}: {@$mcbSubject}</a></p>
-                            {else}
-                                {lang}wbb.portal.box.monthlyCalendar.noAppointments{/lang}
+                                
+                                {if MONTHLYCALENDARBOX_MAXLEN > 0 && $app.subject|strlen > MONTHLYCALENDARBOX_MAXLEN}
+                                    {if $mbSubstr}{assign var="mcbSubject" value=$app.subject|mb_substr:0:$sCut-3|concat:'...'}
+                                    {else}{assign var="mcbSubject" value=$app.subject|substr:0:$sCut-3|concat:'...'}
+                                    {/if}
+                                {else}
+                                    {assign var="mcbSubject" value=$app.subject}
+                                {/if}
+                                {if $this->user->getPermission('user.calendar.canUseCalendar')}
+                                    <p style="display:block; overflow:hidden; margin:1px 0 1px;{if !$app.color|empty} border-color:{@$app.color}; border-width:0px 0px 1px 4px; border-style:solid;{/if}">{if !$app.color|empty}&nbsp;{/if}<a href="index.php?page=CalendarEvent&eventID={$app.eventID}{@SID_ARG_2ND}"{if !$app.color|empty} style="text-decoration:none;"{/if} title="{$app.title}">{@$aDate}: {@$mcbSubject}</a></p>
+                                {else if $this->user->getPermission('user.calendar.canEnter')}
+                                    <p style="display:block; overflow:hidden; margin:1px 0 1px;"><a href="index.php?page=CalendarViewEvent&eventID={$app.eventID}{@SID_ARG_2ND}" title="{$app.title}">{@$aDate}: {@$mcbSubject}</a></p>
+                                {else}
+                                    {lang}wbb.portal.box.monthlyCalendar.noAppointments{/lang}
+                                {/if}
                             {/if}
                         {/foreach}
                     {else}

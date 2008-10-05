@@ -64,15 +64,21 @@
         <item name="wcf.user.option.category.settings.display.monthlyCalendarBox.description"><![CDATA[]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showCalendarWeeks"><![CDATA[Kalenderwochen anzeigen]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showCalendarWeeks.description"><![CDATA[Anzeige der Kalenderwochen in der Monatskalender Box.]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showAppointmentsInCalendar"><![CDATA[Termine in der Monatsansicht anzeigen]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showAppointmentsInCalendar.description"><![CDATA[Zeigt Termine, deren Startzeit auf den entsprechenden Tag fällt, auch in der Monatsansicht an.]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showAppointments"><![CDATA[Termine anzeigen]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showAppointments.description"><![CDATA[Anzeige der Termine in der Monatskalender Box.]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showAppointmentsAsDefault"><![CDATA[Terminübersicht standardmäßig anzeigen]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showAppointmentsAsDefault.description"><![CDATA[Wenn Du diese Option aktivierst, wird die Terminübersicht anstatt der Monatsübersicht standardmäßig angezeigt.]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showPublicAppointments"><![CDATA[Öffentliche Termine anzeigen]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showPublicAppointments.description"><![CDATA[Zeigt alle Termine an, zu deren Kalender Sie Zugriff haben.]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showBirthdaysInAppointments"><![CDATA[Geburtstage anzeigen]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showBirthdaysInAppointments.description"><![CDATA[Zeigt Geburtstage in der Terminübersicht an.]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_maxAppointments"><![CDATA[Max. Anzahl der anstehenden Termine]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_maxAppointments.description"><![CDATA[Wähle hier die Anzahl der anstehenden Termine aus, welche in der Box angezeigt werden sollen.]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showHolidays"><![CDATA[Feiertage anzeigen]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showHolidays.description"><![CDATA[Anzeige der Feiertage in der Monatskalender Box.]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showBirthdays"><![CDATA[Geburtstage anzeigen]]></item>
-		<item name="wcf.user.option.monthlyCalendarBox_showBirthdays.description"><![CDATA[Anzeige der Geburtstage in der Monatskalender Box.]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showBirthdays.description"><![CDATA[Zeigt Geburtstage in der Monatsansicht an.]]></item>
 	</category>
 </language>
