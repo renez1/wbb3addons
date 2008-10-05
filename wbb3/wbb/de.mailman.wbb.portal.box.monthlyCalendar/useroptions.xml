@@ -23,16 +23,31 @@
 				<optiontype>boolean</optiontype>
 				<defaultvalue>1</defaultvalue>
 			</option>
+			<option name="monthlyCalendarBox_showAppointmentsInCalendar">
+				<categoryname>settings.display.monthlyCalendarBox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
 			<option name="monthlyCalendarBox_showAppointments">
 				<categoryname>settings.display.monthlyCalendarBox</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>1</defaultvalue>
-				<enableoptions>monthlyCalendarBox_showAppointmentsAsDefault,monthlyCalendarBox_maxAppointments</enableoptions>
+				<enableoptions>monthlyCalendarBox_showAppointmentsAsDefault,monthlyCalendarBox_maxAppointments,monthlyCalendarBox_showPublicAppointments</enableoptions>
 			</option>
 			<option name="monthlyCalendarBox_showAppointmentsAsDefault">
 				<categoryname>settings.display.monthlyCalendarBox</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="monthlyCalendarBox_showPublicAppointments">
+				<categoryname>settings.display.monthlyCalendarBox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
+			<option name="monthlyCalendarBox_showBirthdaysInAppointments">
+				<categoryname>settings.display.monthlyCalendarBox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
 			</option>
 			<option name="monthlyCalendarBox_maxAppointments">
 				<categoryname>settings.display.monthlyCalendarBox</categoryname>

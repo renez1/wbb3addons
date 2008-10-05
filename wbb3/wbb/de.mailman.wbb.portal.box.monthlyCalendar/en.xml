@@ -64,15 +64,21 @@
         <item name="wcf.user.option.category.settings.display.monthlyCalendarBox.description"><![CDATA[]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showCalendarWeeks"><![CDATA[Show calendar weeks]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showCalendarWeeks.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showAppointmentsInCalendar"><![CDATA[Show appointments in the month view]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showAppointmentsInCalendar.description"><![CDATA[Shows dates in the month view, their starting time on the day falls.]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showAppointments"><![CDATA[Show appointments]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showAppointments.description"><![CDATA[]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showAppointmentsAsDefault"><![CDATA[Show appointments instead calendar]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showAppointmentsAsDefault.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showPublicAppointments"><![CDATA[Show public appointments]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showPublicAppointments.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showBirthdaysInAppointments"><![CDATA[Show birthdays]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showBirthdaysInAppointments.description"><![CDATA[Shows birthdays in the appointment view.]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_maxAppointments"><![CDATA[Maximum number of upcoming appointments]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_maxAppointments.description"><![CDATA[]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showHolidays"><![CDATA[Show holidays]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showHolidays.description"><![CDATA[]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showBirthdays"><![CDATA[Show birthdays]]></item>
-		<item name="wcf.user.option.monthlyCalendarBox_showBirthdays.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showBirthdays.description"><![CDATA[Shows birthdays in the month view.]]></item>
 	</category>
 </language>
