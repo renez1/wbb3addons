@@ -18,14 +18,14 @@
                     <a href="javascript: void(0)" onclick="switchMcbView()"><img src="{@RELATIVE_WBB_DIR}icon/mcbAppointmentS.png" alt="" title="{lang}wbb.portal.box.monthlyCalendar.switchCalendar{/lang}" /></a>
                 {/if}
                 {if $mcbTitleLinkTo == 'UserProfileEdit'}
-                    <a href="index.php?form=UserProfileEdit&amp;category=settings.display{@SID_ARG_2ND}">{@$mcbTitle}</a>
+                    <a href="index.php?form=UserProfileEdit&amp;category=settings.display{@SID_ARG_2ND}"><span id="mcbTitle">{if $mcbShowAppointments && $mcbShowAppointmentsAsDefault}{lang}wbb.portal.box.monthlyCalendar.appointments{/lang}{else}{@$mcbTitle}{/if}</span></a>
                 {else}
                     {if $this->user->getPermission('user.calendar.canUseCalendar')}
-                        <a href="index.php?page=CalendarMonth&amp;jumpToMonth={$mcM}&amp;jumpToYear={$mcY}{@SID_ARG_2ND}">{@$mcbTitle}</a>
+                        <a href="index.php?page=CalendarMonth&amp;jumpToMonth={$mcM}&amp;jumpToYear={$mcY}{@SID_ARG_2ND}"><span id="mcbTitle">{if $mcbShowAppointments && $mcbShowAppointmentsAsDefault}{lang}wbb.portal.box.monthlyCalendar.appointments{/lang}{else}{@$mcbTitle}{/if}</span></a>
                     {else if $this->user->getPermission('user.calendar.canEnter')}
-                        <a href="index.php?page=Calendar&amp;month={$mcM}&amp;year={$mcY}{@SID_ARG_2ND}">{@$mcbTitle}</a>
+                        <a href="index.php?page=Calendar&amp;month={$mcM}&amp;year={$mcY}{@SID_ARG_2ND}"><span id="mcbTitle">{if $mcbShowAppointments && $mcbShowAppointmentsAsDefault}{lang}wbb.portal.box.monthlyCalendar.appointments{/lang}{else}{@$mcbTitle}{/if}</span></a>
                     {else}
-                        {@$mcbTitle}
+                        <span id="mcbTitle">{if $mcbShowAppointments && $mcbShowAppointmentsAsDefault}{lang}wbb.portal.box.monthlyCalendar.appointments{/lang}{else}{@$mcbTitle}{/if}</span>
                     {/if}
                 {/if}
             </div>
@@ -108,10 +108,20 @@
             {if $mcbShowAppointments}
                 <div class="containerContent smallFont" id="mcbViewAppointment"{if !$mcbShowAppointmentsAsDefault} style="display:none;"{/if}>
                     {if $mcbAppointments|count}
+                        {assign var='birthdays' value=0}
                         {foreach from=$mcbAppointments item=app}
                             {if $app.birthday}
-                                <p style="display:block; overflow:hidden; margin:1px 0 1px;{if !$app.color|empty} border-color:{@$app.color}; border-width:0px 0px 1px 4px; border-style:solid;{/if}">{if !$app.color|empty}&nbsp;{/if}<a href="index.php?page=User&amp;userID={$app.userID}{@SID_ARG_2ND}"{if !$app.color|empty} style="text-decoration:none;"{/if} title="">{@$app.username}</a> ({@$app.age})</p>
+                                {if $birthdays|empty}
+                                    <p style="display:block; overflow:hidden; margin:1px 0 1px; font-weight:bold;">{lang}wbb.portal.box.monthlyCalendar.birthdays{/lang}</p>
+                                {/if}
+                                <p style="display:block; overflow:hidden; margin:1px 0 1px;{if !$app.color|empty} border-color:{@$app.color}; border-width:0px 0px 1px 4px; border-style:solid;{/if}">{if !$app.color|empty}&nbsp;{/if}<a href="index.php?page=User&amp;userID={$app.userID}{@SID_ARG_2ND}"{if !$app.color|empty} style="text-decoration:none;"{/if} title="{$app.time|time:"%d.%m."} ({@$app.age})">{@$app.username}</a> ({@$app.age})</p>
+                                {assign var='birthdays' value=1}
                             {else if !$app.eventID|empty}
+                                {if !$birthdays|empty}
+                                    <p style="display:block; overflow:hidden; margin:10px 0 1px; font-weight:bold;">{lang}wbb.portal.box.monthlyCalendar.appointments{/lang}</p>
+                                    {assign var='birthdays' value=0}
+                                {/if}
+                                {assign var='birthdayTitle' value=1}
                                 {if $app.today}
                                     {assign var='sDate' value=$app.startTime|time:"%H:%M"}
                                     {assign var='eDate' value=$app.endTime|time:"%H.%M"}
@@ -162,9 +172,12 @@
             if(document.getElementById('mcbViewCalendar').style.display == 'none') {
                 document.getElementById('mcbViewCalendar').style.display = '';
                 document.getElementById('mcbViewAppointment').style.display = 'none';
+                document.getElementById('mcbTitle').firstChild.data = '{@$mcbTitle}';
+
             } else {
                 document.getElementById('mcbViewCalendar').style.display = 'none';
                 document.getElementById('mcbViewAppointment').style.display = '';
+                document.getElementById('mcbTitle').firstChild.data = '{lang}wbb.portal.box.monthlyCalendar.appointments{/lang}';
             }
         }
     {/if}
