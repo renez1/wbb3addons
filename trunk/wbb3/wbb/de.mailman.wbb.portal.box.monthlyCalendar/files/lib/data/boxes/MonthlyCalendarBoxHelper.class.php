@@ -44,6 +44,7 @@ class MonthlyCalendarBoxHelper {
                 $ret[$i]['userID'] = $v['userID'];
                 $ret[$i]['username'] = $v['username'];
                 $ret[$i]['age'] = $v['age'];
+                $ret[$i]['time'] = $v['time'];
                 $i++;
             }
         }
@@ -272,11 +273,12 @@ class MonthlyCalendarBoxHelper {
                 $bm = intval($bm);
                 $bd = intval($bd);
                 if($y >= $by) {
-                    $age = $y - $by;
-                    if($age == 0) $age = 1;
+                    if(!$by > 0) $age = '?';
+                    else $age = $y - $by;
                     $ret[$i]['username'] = StringUtil::encodeHTML($row['username']);
                     $ret[$i]['userID'] = $row['userID'];
                     $ret[$i]['age'] = $age;
+                    $ret[$i]['time'] = mktime(0, 0, 0, $m, $d, $y);
                     $i++;
                 }
             }
@@ -311,8 +313,8 @@ class MonthlyCalendarBoxHelper {
                 $bm = intval($bm);
                 $bd = intval($bd);
                 if($y >= $by) {
-                    $age = $y - $by;
-                    if($age == 0) $age = 1;
+                    if(!$by > 0) $age = '?';
+                    else $age = $y - $by;
                     if(isset($ret[$bd])) $ret[$bd] .= ", ";
                     else $ret[$bd] = '';
                     $ret[$bd] .= StringUtil::encodeHTML($row['username']).' ('.$age.')';
