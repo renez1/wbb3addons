@@ -3,6 +3,7 @@
 <package name="de.mailman.wbb.inactiveTopicInfo">
 	<packageinformation>
 		<packagename>Inactive Thread/Post Info</packagename>
+		<packagename language="fr">Information sur les discussion/messages inactifs</packagename>
 		<packagedescription language="de">Zeigt eine Hinweismeldung an, wenn ein Thread/Post bereits geschlossen, deaktiviert oder gelöscht ist.</packagedescription>
 		<version>1.0.1</version>
 		<date>2008-03-04</date>
@@ -26,6 +27,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.0">
 	    <files>files.tar</files>
@@ -33,5 +35,6 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 </package>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language languagecode="fr">
+	<category name="wbb.thread">
+		<item name="wbb.thread.inactiveTopic.closed"><![CDATA[Attention ! Cette discussion est close.]]></item>
+		<item name="wbb.thread.inactiveTopic.disabled"><![CDATA[Attention ! Cette discussion est désactivé.]]></item>
+		<item name="wbb.thread.inactiveTopic.deleted"><![CDATA[Attention ! Cette discussion a déjà été supprimée.]]></item>
+	</category>
+	<category name="wcf.acp.option">
+	    <item name="wcf.acp.option.thread_show_closed_message_all"><![CDATA[Afficher les messages clos à tous les utilisateurs]]></item>
+	    <item name="wcf.acp.option.thread_show_closed_message_all.description"><![CDATA[]]></item>
+	</category>
+</language>
