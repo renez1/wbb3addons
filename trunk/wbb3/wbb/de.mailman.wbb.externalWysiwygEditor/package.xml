@@ -6,7 +6,9 @@
 		<packagename>Externer Wysiwyg-Editor</packagename>
 		<packagedescription>Ein Editor, den fast niemand benötigt :)</packagedescription>
 		<packagename language="en">External Wysiwyg-Editor</packagename>
+		<packagename language="fr">Éditeur Wysiwyg externe</packagename>
 		<packagedescription language="en">An editor, almost no one requires :)</packagedescription>
+		<packagedescription language="fr">Un éditeur que presque personne n’a besoin :)</packagedescription>
 		<isUnique>1</isUnique>
 		<version>1.0.0</version>
 		<date>2008-09-04</date>
@@ -30,6 +32,7 @@
         <languages languagecode="de">de.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
+        <languages languagecode="fr">fr.xml</languages>
 	</instructions>
 
 <!--

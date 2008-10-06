@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<!-- $Id: en.xml 100 2008-09-04 12:09:12Z wbb3addons $ -->
+<language languagecode="fr">
+    <category name="wbb.externalWysiwygEditor">
+        <item name="wbb.externalWysiwygEditor.title"><![CDATA[Éditeur WYSIWYG externe]]></item>
+        <item name="wbb.externalWysiwygEditor.description"><![CDATA[Cet éditeur peut être utilisé pour écrire vos messages lorsqu’il n’y a pas d’éditeur Wysiwyg de disponible.
+            Modifiez le texte dans le format souhaité, contrôlez-le avec la prévisualisation, puis copiez-le ensuite simplement dans le formulaire désiré.]]></item>
+    </category>
+</language>
