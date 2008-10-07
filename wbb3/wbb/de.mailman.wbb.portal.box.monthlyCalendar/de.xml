@@ -58,6 +58,8 @@
 		<item name="wcf.acp.option.monthlyCalendarBox_nav_bottom.description"><![CDATA[Zeigt das Navigationsmenü unterhalb des Kalenders an.]]></item>
     	<item name="wcf.acp.option.monthlyCalendarBox_maxLen"><![CDATA[Max. Länge des Termintitels]]></item>
 		<item name="wcf.acp.option.monthlyCalendarBox_maxLen.description"><![CDATA[]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_mbFunctions"><![CDATA[PHP mbstring() verwenden]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_mbFunctions.description"><![CDATA[Deaktivieren Sie diese Option nur wenn die Box Fehler aufweist!]]></item>
 	</category>
 	<category name="wcf.user.option">
         <item name="wcf.user.option.category.settings.display.monthlyCalendarBox"><![CDATA[Monatskalender Box]]></item>

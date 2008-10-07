@@ -133,8 +133,9 @@ class MonthlyCalendarBoxHelper {
                 ."\n WHERE (ce.eventTime >= ".TIME_NOW
                 ."\n    OR (ce.isFullDay = 1 AND ce.eventTime >= ".$sTimestamp.")"
                 ."\n    OR (ce.eventEndTime > ce.eventTime AND ce.eventEndTime > ".$sTimestamp."))"
-                ."\n   AND cem.userID = ".$userID
-                ."\n ORDER BY ce.eventTime"
+                ."\n   AND cem.isDeleted != 1";
+            if(empty($showPublic)) $sql .= "\n   AND cem.userID = ".$userID;
+            $sql .= "\n ORDER BY ce.eventTime"
                 ."\n LIMIT ".$limit;
             $result = WBBCore::getDB()->sendQuery($sql);
             while($row = WBBCore::getDB()->fetchArray($result)) {
@@ -233,8 +234,8 @@ class MonthlyCalendarBoxHelper {
                 ."\n  FROM wcf".WCF_N."_calendar_event ce"
                 ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ce.eventID)"
                 ."\n WHERE ce.eventTime >= ".$sTimestamp
-                ."\n   AND ce.eventTime <= ".$eTimestamp
-                ."\n   AND cem.userID = ".$userID;
+                ."\n   AND ce.eventTime <= ".$eTimestamp;
+            if(empty($showPublic)) $sql .= "\n   AND cem.userID = ".$userID;
             $result = WBBCore::getDB()->sendQuery($sql);
             while($row = WBBCore::getDB()->fetchArray($result)) {
                 $dd = date('j', $row['startTime']);

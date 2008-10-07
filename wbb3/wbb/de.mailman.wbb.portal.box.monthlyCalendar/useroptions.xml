@@ -32,7 +32,7 @@
 				<categoryname>settings.display.monthlyCalendarBox</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>1</defaultvalue>
-				<enableoptions>monthlyCalendarBox_showAppointmentsAsDefault,monthlyCalendarBox_maxAppointments,monthlyCalendarBox_showPublicAppointments</enableoptions>
+				<enableoptions>monthlyCalendarBox_showAppointmentsAsDefault,monthlyCalendarBox_showPublicAppointments,monthlyCalendarBox_showBirthdaysInAppointments,monthlyCalendarBox_maxAppointments</enableoptions>
 			</option>
 			<option name="monthlyCalendarBox_showAppointmentsAsDefault">
 				<categoryname>settings.display.monthlyCalendarBox</categoryname>
