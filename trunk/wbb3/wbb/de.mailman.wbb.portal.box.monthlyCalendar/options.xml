@@ -43,6 +43,11 @@ Right:wcf.acp.option.monthlyCalendarBox_col_align.right]]></selectoptions>
 				<optiontype>integer</optiontype>
 				<defaultvalue>22</defaultvalue>
 			</option>
+			<option name="monthlyCalendarBox_mbFunctions">
+				<categoryname>portal.box.monthlyCalendar</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
 		</options>
 	</import>
 

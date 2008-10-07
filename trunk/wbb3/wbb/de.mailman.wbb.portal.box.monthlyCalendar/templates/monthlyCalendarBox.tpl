@@ -141,8 +141,10 @@
                                 {/if}
                                 
                                 {if MONTHLYCALENDARBOX_MAXLEN > 0 && $app.subject|strlen > MONTHLYCALENDARBOX_MAXLEN}
-                                    {if $mbSubstr}{assign var="mcbSubject" value=$app.subject|mb_substr:0:$sCut-3|concat:'...'}
-                                    {else}{assign var="mcbSubject" value=$app.subject|substr:0:$sCut-3|concat:'...'}
+                                    {if !$mbSubstr|empty}
+                                        {assign var="mcbSubject" value=$app.subject|mb_substr:0:$sCut-3|concat:'...'}
+                                    {else}
+                                        {assign var="mcbSubject" value=$app.subject|substr:0:$sCut-3|concat:'...'}
                                     {/if}
                                 {else}
                                     {assign var="mcbSubject" value=$app.subject}

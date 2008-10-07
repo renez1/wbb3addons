@@ -24,8 +24,14 @@ class MonthlyCalendarBox {
         if(!defined('MONTHLYCALENDARBOX_SHOW_FORM'))    define('MONTHLYCALENDARBOX_SHOW_FORM', true);
         if(!defined('MONTHLYCALENDARBOX_NAV_BOTTOM'))   define('MONTHLYCALENDARBOX_NAV_BOTTOM', true);
         if(!defined('MONTHLYCALENDARBOX_MAXLEN'))       define('MONTHLYCALENDARBOX_MAXLEN', 22);
-        if(function_exists('mb_substr')) $mbSubstr = true;
-        else $mbSubstr = false;
+        if(!defined('MONTHLYCALENDARBOX_MBFUNCTIONS'))  define('MONTHLYCALENDARBOX_MBFUNCTIONS', true);
+        if(MONTHLYCALENDARBOX_MBFUNCTIONS && function_exists('mb_substr')) {
+            $dF = ini_get('disable_functions');
+            if(preg_match('/(mb_substr|mbstring)/', $dF)) $mbSubstr = false;
+            else $mbSubstr = true;
+        } else {
+            $mbSubstr = false;
+        }
 
         if(!empty($_REQUEST['page'])) $redirTo = $_REQUEST['page'];
         else $redirTo = 'Portal';
