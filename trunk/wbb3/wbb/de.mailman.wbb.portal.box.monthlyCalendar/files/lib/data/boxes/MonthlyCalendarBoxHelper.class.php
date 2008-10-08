@@ -53,45 +53,49 @@ class MonthlyCalendarBoxHelper {
         if(WBBCore::getUser()->getPermission('user.calendar.canUseCalendar')) {
             $sql = "SELECT cem.eventID, cem.subject AS subject, ced.startTime AS startTime, ced.endTime AS endTime, ced.isFullDay AS fullDay, IFNULL(cstu.color, cal.color) AS color, IFNULL(cstu.isEnabled,1) AS isEnabled"
                 ."\n  FROM wcf".WCF_N."_calendar_event_date ced"
-                ."\n  LEFT JOIN wcf".WCF_N."_calendar cal ON (cal.calendarID = ced.calendarID)"
-                ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID)"
+                ."\n RIGHT JOIN wcf".WCF_N."_calendar cal ON (cal.calendarID = ced.calendarID)"
+                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event ce ON (ce.eventID = ced.eventID AND ce.userID = ".$userID." AND ce.calendarID = cal.calendarID)"
+                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID AND cem.userID = ".$userID." AND cem.messageID = ce.messageID)"
                 ."\n  LEFT JOIN wcf".WCF_N."_calendar_settings_to_user cstu ON (cstu.userID = ".$userID." AND cstu.calendarID = ced.calendarID)"
                 ."\n WHERE (ced.startTime >= ".TIME_NOW
                 ."\n    OR (ced.isFullDay = 1 AND ced.startTime >= ".$sTimestamp.")"
                 ."\n    OR (ced.endTime > ced.startTime AND ced.endTime > ".$sTimestamp."))"
-                ."\n   AND cem.userID = ".$userID
                 ."\n   AND IFNULL(cstu.isEnabled,1) = 1"
+                ."\n   AND cem.eventID IS NOT NULL"
                 ."\n UNION"
                 ."\nSELECT cem.eventID, cem.subject AS subject, ced.startTime AS startTime, ced.endTime AS endTime, ced.isFullDay AS fullDay, IFNULL(cstu.color, cal.color) AS color, IFNULL(cstu.isEnabled,1) AS isEnabled"
                 ."\n  FROM wcf".WCF_N."_calendar_event_date ced"
-                ."\n  LEFT JOIN wcf".WCF_N."_calendar cal ON (cal.calendarID = ced.calendarID)"
-                ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID)"
-                ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_participation cep ON (cep.eventID = ced.eventID)"
-                ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_participation_to_user ceptu ON (ceptu.participationID = cep.participationID)"
+                ."\n RIGHT JOIN wcf".WCF_N."_calendar cal ON (cal.calendarID = ced.calendarID)"
+                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event ce ON (ce.eventID = ced.eventID AND ce.calendarID = cal.calendarID)"
+                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID AND cem.messageID = ce.messageID AND cem.userID = ce.userID)"
+                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event_participation cep ON (cep.eventID = ced.eventID)"
+                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event_participation_to_user ceptu ON (ceptu.participationID = cep.participationID AND ceptu.userID = ".$userID.")"
                 ."\n  LEFT JOIN wcf".WCF_N."_calendar_settings_to_user cstu ON (cstu.userID = ".$userID." AND cstu.calendarID = ced.calendarID)"
                 ."\n WHERE (ced.startTime >= ".TIME_NOW
                 ."\n    OR (ced.isFullDay = 1 AND ced.startTime >= ".$sTimestamp.")"
                 ."\n    OR (ced.endTime > ced.startTime AND ced.endTime > ".$sTimestamp."))"
-                ."\n   AND ceptu.userID = ".$userID
+                ."\n   AND cem.eventID IS NOT NULL"
                 ."\n   AND IFNULL(cstu.isEnabled,1) = 1";
             if(!empty($showPublic)) {
                 $sql .= "\n UNION"
                        ."\nSELECT cem.eventID, cem.subject AS subject, ced.startTime AS startTime, ced.endTime AS endTime, ced.isFullDay AS fullDay, IFNULL(cstu.color, cal.color) AS color, IFNULL(cstu.isEnabled,1) AS isEnabled"
                        ."\n  FROM wcf".WCF_N."_calendar_event_date ced"
-                       ."\n  LEFT JOIN wcf".WCF_N."_calendar cal ON (cal.calendarID = ced.calendarID)"
-                       ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID)"
-                       ."\n  LEFT JOIN wcf".WCF_N."_calendar_to_group ctg ON (ctg.calendarID = cal.calendarID)"
-                       ."\n  LEFT JOIN wcf".WCF_N."_user_to_groups utg ON (utg.groupID = ctg.groupID)"
+                       ."\n RIGHT JOIN wcf".WCF_N."_calendar cal ON (cal.calendarID = ced.calendarID)"
+                       ."\n RIGHT JOIN wcf".WCF_N."_calendar_event ce ON (ce.eventID = ced.eventID AND ce.calendarID = cal.calendarID)"
+                       ."\n RIGHT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID AND cem.messageID = ce.messageID AND cem.userID = ce.userID)"
+                       ."\n RIGHT JOIN wcf".WCF_N."_calendar_to_group ctg ON (ctg.calendarID = cal.calendarID)"
+                       ."\n RIGHT JOIN wcf".WCF_N."_user_to_groups utg ON (utg.groupID = ctg.groupID AND utg.userID = ".$userID.")"
                        ."\n  LEFT JOIN wcf".WCF_N."_calendar_settings_to_user cstu ON (cstu.userID = ".$userID." AND cstu.calendarID = ced.calendarID)"
                        ."\n WHERE (ced.startTime >= ".TIME_NOW
                        ."\n    OR (ced.isFullDay = 1 AND ced.startTime >= ".$sTimestamp.")"
                        ."\n    OR (ced.endTime > ced.startTime AND ced.endTime > ".$sTimestamp."))"
-                       ."\n   AND utg.userID = ".$userID
+                       ."\n   AND cem.eventID IS NOT NULL"
                        ."\n   AND IFNULL(cstu.isEnabled,1) = 1";
             }
             $sql .= "\n ORDER BY startTime"
                    ."\n LIMIT ".$limit;
             $result = WBBCore::getDB()->sendQuery($sql);
+//            $ret['sql'] = $sql;
             while($row = WBBCore::getDB()->fetchArray($result)) {
                 if(empty($row['isEnabled'])) continue;
                 $ret[$i]['birthday'] = false;
@@ -197,30 +201,38 @@ class MonthlyCalendarBoxHelper {
         if(WBBCore::getUser()->getPermission('user.calendar.canUseCalendar')) {
             $sql = "SELECT cem.subject AS subject, ced.startTime AS startTime"
                 ."\n  FROM wcf".WCF_N."_calendar_event_date ced"
-                ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID)"
+                ."\n RIGHT JOIN wcf".WCF_N."_calendar cal ON (cal.calendarID = ced.calendarID)"
+                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event ce ON (ce.eventID = ced.eventID AND ce.userID = ".$userID." AND ce.calendarID = cal.calendarID)"
+                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID AND cem.userID = ".$userID." AND cem.messageID = ce.messageID)"
+                ."\n  LEFT JOIN wcf".WCF_N."_calendar_settings_to_user cstu ON (cstu.userID = ".$userID." AND cstu.calendarID = ced.calendarID)"
                 ."\n WHERE ced.startTime >= ".$sTimestamp
                 ."\n   AND ced.startTime <= ".$eTimestamp
-                ."\n   AND cem.userID = ".$userID
+                ."\n   AND cem.eventID IS NOT NULL"
                 ."\n UNION"
                 ."\nSELECT cem.subject AS subject, ced.startTime AS startTime"
                 ."\n  FROM wcf".WCF_N."_calendar_event_date ced"
-                ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID)"
-                ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_participation cep ON (cep.eventID = ced.eventID)"
-                ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_participation_to_user ceptu ON (ceptu.participationID = cep.participationID)"
+                ."\n RIGHT JOIN wcf".WCF_N."_calendar cal ON (cal.calendarID = ced.calendarID)"
+                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event ce ON (ce.eventID = ced.eventID AND ce.calendarID = cal.calendarID)"
+                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID AND cem.messageID = ce.messageID AND cem.userID = ce.userID)"
+                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event_participation cep ON (cep.eventID = ced.eventID)"
+                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event_participation_to_user ceptu ON (ceptu.participationID = cep.participationID AND ceptu.userID = ".$userID.")"
+                ."\n  LEFT JOIN wcf".WCF_N."_calendar_settings_to_user cstu ON (cstu.userID = ".$userID." AND cstu.calendarID = ced.calendarID)"
                 ."\n WHERE ced.startTime >= ".$sTimestamp
                 ."\n   AND ced.startTime <= ".$eTimestamp
-                ."\n   AND ceptu.userID = ".$userID;
+                ."\n   AND cem.eventID IS NOT NULL";
             if(!empty($showPublic)) {
                 $sql .= "\n UNION"
                        ."\nSELECT cem.subject AS subject, ced.startTime AS startTime"
                        ."\n  FROM wcf".WCF_N."_calendar_event_date ced"
-                       ."\n  LEFT JOIN wcf".WCF_N."_calendar cal ON (cal.calendarID = ced.calendarID)"
-                       ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID)"
-                       ."\n  LEFT JOIN wcf".WCF_N."_calendar_to_group ctg ON (ctg.calendarID = cal.calendarID)"
-                       ."\n  LEFT JOIN wcf".WCF_N."_user_to_groups utg ON (utg.groupID = ctg.groupID)"
+                       ."\n  RIGHT JOIN wcf".WCF_N."_calendar cal ON (cal.calendarID = ced.calendarID)"
+                       ."\n  RIGHT JOIN wcf".WCF_N."_calendar_event ce ON (ce.eventID = ced.eventID AND ce.calendarID = cal.calendarID)"
+                       ."\n  RIGHT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID AND cem.messageID = ce.messageID AND cem.userID = ce.userID)"
+                       ."\n  RIGHT JOIN wcf".WCF_N."_calendar_to_group ctg ON (ctg.calendarID = cal.calendarID)"
+                       ."\n  RIGHT JOIN wcf".WCF_N."_user_to_groups utg ON (utg.groupID = ctg.groupID AND utg.userID = ".$userID.")"
+                       ."\n  LEFT JOIN wcf".WCF_N."_calendar_settings_to_user cstu ON (cstu.userID = ".$userID." AND cstu.calendarID = ced.calendarID)"
                        ."\n WHERE ced.startTime >= ".$sTimestamp
                        ."\n   AND ced.startTime <= ".$eTimestamp
-                       ."\n   AND utg.userID = ".$userID;
+                       ."\n   AND cem.eventID IS NOT NULL";
             }
             $result = WBBCore::getDB()->sendQuery($sql);
             while($row = WBBCore::getDB()->fetchArray($result)) {
