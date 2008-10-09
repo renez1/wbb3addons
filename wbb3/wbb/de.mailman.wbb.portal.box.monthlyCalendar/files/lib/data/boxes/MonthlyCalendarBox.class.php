@@ -25,6 +25,7 @@ class MonthlyCalendarBox {
         if(!defined('MONTHLYCALENDARBOX_NAV_BOTTOM'))   define('MONTHLYCALENDARBOX_NAV_BOTTOM', true);
         if(!defined('MONTHLYCALENDARBOX_MAXLEN'))       define('MONTHLYCALENDARBOX_MAXLEN', 22);
         if(!defined('MONTHLYCALENDARBOX_MBFUNCTIONS'))  define('MONTHLYCALENDARBOX_MBFUNCTIONS', true);
+        if(!defined('MONTHLYCALENDARBOX_DISABELHOLIDAYTOGUEST'))  define('MONTHLYCALENDARBOX_DISABELHOLIDAYTOGUEST', true);
         if(MONTHLYCALENDARBOX_MBFUNCTIONS && function_exists('mb_substr')) {
             $dF = ini_get('disable_functions');
             if(preg_match('/(mb_substr|mbstring)/', $dF)) $mbSubstr = false;
@@ -49,7 +50,7 @@ class MonthlyCalendarBox {
         else $mcbShowCW = false;
         if(WBBCore::getUser()->monthlyCalendarBox_showBirthdays) $mcbShowBirthdays = true;
         else $mcbShowBirthdays = false;
-        if(!WBBCore::getUser()->userID || WBBCore::getUser()->monthlyCalendarBox_showHolidays) $mcbShowHolidays = true;
+        if(WBBCore::getUser()->monthlyCalendarBox_showHolidays || (!WBBCore::getUser()->userID && !MONTHLYCALENDARBOX_DISABELHOLIDAYTOGUEST)) $mcbShowHolidays = true;
         else $mcbShowHolidays = false;
 
         $mcbShowAppointments = $mcbShowAppointmentsAsDefault = $showAppointmentsInCalendar = false;
@@ -90,7 +91,7 @@ class MonthlyCalendarBox {
         $mcbTitle = WCF::getLanguage()->get('wbb.portal.box.monthlyCalendar.month_'.$mcM).' '.$mcY;
         if($mcbShowBirthdays) $birthdays = $this->mcbHelper->getBirthdays($mcY, $mcM);
         if($showAppointmentsInCalendar) $dates = $this->mcbHelper->getAppointments($mcY, $mcM);
-        if($mcbShowHolidays && $mcY >= 1970) $holidays = $this->mcbHelper->getHolidaysDE($mcY, $mcM);
+        if($mcbShowHolidays && $mcY >= 1970) $holidays = $this->mcbHelper->getHolidays(WBBCore::getUser()->monthlyCalendarBox_showHolidaysFrom, $mcY, $mcM);
 
         if(WCF::getUser()->getPermission('user.board.canViewMonthlyCalendarBox')) {
             $cntDays = strftime('%d',gmmktime(0,0,0,$mcM+1,0,$mcY));
@@ -118,6 +119,11 @@ class MonthlyCalendarBox {
                 $mcDays[$i]['holiday'] = false;
                 if(MONTHLYCALENDARBOX_SHOW_DOY) $mcDays[$i]['title'] = WCF::getLanguage()->get('wbb.portal.box.monthlyCalendar.dayOfTheYear', array('$doy' => $doy));
                 else $mcDays[$i]['title'] = '';
+                if($mcbShowHolidays && isset($holidays[$i])) {
+                    if($mcDays[$i]['title']) $mcDays[$i]['title'] .= ' &bull; ';
+                    $mcDays[$i]['title'] .= $holidays[$i];
+                    $mcDays[$i]['holiday'] = true;
+                }
                 if($showAppointmentsInCalendar && isset($dates[$i])) {
                     if($mcDays[$i]['title']) $mcDays[$i]['title'] .= ' &bull; ';
                     $mcDays[$i]['title'] .= WCF::getLanguage()->get('wbb.portal.box.monthlyCalendar.appointments').': '.$dates[$i];
@@ -128,16 +134,11 @@ class MonthlyCalendarBox {
                     $mcDays[$i]['title'] .= WCF::getLanguage()->get('wbb.portal.box.monthlyCalendar.birthdays').': '.$birthdays[$i];
                     $mcDays[$i]['birthday'] = true;
                 }
-                if($mcbShowHolidays && isset($holidays[$i])) {
-                    if($mcDays[$i]['title']) $mcDays[$i]['title'] .= ' &bull; ';
-                    $mcDays[$i]['title'] .= $holidays[$i];
-                    $mcDays[$i]['holiday'] = true;
-                }
                 if(empty($mcDays[$i]['title'])) $mcDays[$i]['title'] = DateUtil::formatDate(null, $time);
             }
             for($i=1;$i<=12;$i++) $months[$i] = WCF::getLanguage()->get('wbb.portal.box.monthlyCalendar.month_'.$i);
             if($mcbShowAppointments) $mcbAppointments = $this->mcbHelper->getAppointmentList();
-            if(!count($mcbAppointments)) $mcbShowAppointmentsAsDefault = false;
+            if(!count($mcbAppointments) OR !empty($_REQUEST['mcM'])) $mcbShowAppointmentsAsDefault = false;
         }
         WCF::getSession()->register('monthlyCalendarBoxY', $mcY);
         WCF::getSession()->register('monthlyCalendarBoxM', $mcM);

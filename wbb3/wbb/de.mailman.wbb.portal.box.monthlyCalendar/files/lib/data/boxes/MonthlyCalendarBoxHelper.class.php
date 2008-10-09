@@ -337,25 +337,47 @@ class MonthlyCalendarBoxHelper {
         return $ret;
     }
 
+    public function getHolidays($ctryCode, $y, $m) {
+        switch($ctryCode) {
+        case 'AT':
+            return self::getHolidaysAT($y, $m);
+        case 'CH':
+            return self::getHolidaysCH($y, $m);
+        case 'FR':
+            return self::getHolidaysFR($y, $m);
+        case 'NL':
+            return self::getHolidaysNL($y, $m);
+        default:
+            return self::getHolidaysDE($y, $m);
+        }
+    }
+
     public function getHolidaysDE($y, $m) {
         $ret = array();
         $y = intval($y);
         $m = intval($m);
-        if($m == 1) {
+        switch($m) {
+        case 1:
             $ret[1] = 'Neujahr';
             $ret[6] = 'Dreik&ouml;nigstag *BW, BY, ST';
-        } else if($m == 5) {
+            break;
+        case 5:
             $ret[1] = 'Tag der Arbeit (Maifeiertag)';
-        } else if($m == 8) {
+            break;
+        case 8:
             $ret[15] = 'Mari&auml; Himmelfahrt *SL, (BY)';
-        } else if($m == 10) {
+            break;
+        case 10:
             $ret[3] = 'Tag der Deutschen Einheit';
             $ret[31] = 'Reformationstag *BB, MV, SN, ST, (TH)';
-        } else if($m == 11) {
+            break;
+        case 11:
             $ret[1] = 'Allerheiligen *BW, BY, NW, RP, SL, (TH)';
-        } else if($m == 12) {
+            break;
+        case 12:
             $ret[25] = '1. Weihnachtsfeiertag';
             $ret[26] = '2. Weihnachtsfeiertag';
+            break;
         }
         $ed = self::getEasterDate($y);
         $edY = date('Y', $ed);
@@ -385,6 +407,205 @@ class MonthlyCalendarBoxHelper {
             $tmp = mktime(0,0,0,1,$bb,$y);
             if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Bu&szlig;- und Bettag *SN';
         }
+        return $ret;
+    }
+
+    public function getHolidaysAT($y, $m) {
+        $ret = array();
+        $y = intval($y);
+        $m = intval($m);
+        switch($m) {
+        case 1:
+            $ret[1] = 'Neujahr';
+            $ret[6] = 'Heilige Drei K&ouml;nige';
+            break;
+        case 3:
+            $ret[19] = 'Josef *K&auml;rnten, Steiermark, Tirol, Vorarlberg';
+            break;
+        case 5:
+            $ret[1] = 'Staatsfeiertag (Tag der Arbeit)';
+            $ret[4] = 'Florian *Ober&ouml;sterreich';
+            break;
+        case 8:
+            $ret[15] = 'Mari&auml; Himmelfahrt';
+            break;
+        case 9:
+            $ret[24] = 'Rupert *Salzburg';
+            break;
+        case 10:
+            $ret[10] = 'Tag der Volksabstimmung *K&auml;rnten';
+            $ret[26] = 'Nationalfeiertag';
+            break;
+        case 11:
+            $ret[1] = 'Allerheiligen';
+            $ret[11] = 'Martin *Burgenland';
+            $ret[15] = 'Leopold *Nieder&ouml;sterreich, Wien';
+            break;
+        case 12:
+            $ret[8] = 'Mari&auml; Empf&auml;ngnis';
+            $ret[24] = 'Heiliger Abend';
+            $ret[25] = 'Christtag';
+            $ret[26] = 'Stefanitag';
+            $ret[31] = 'Silvester';
+            break;
+        }
+        $ed = self::getEasterDate($y);
+        $edY = date('Y', $ed);
+        $edM = date('n', $ed);
+        $edD = intval(date('d', $ed));
+        if($edM == $m) $ret[$edD] = 'Ostersonntag';
+        $tmp = $ed - (86400 * 2);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Karfreitag';
+        $tmp = $ed + (86400 * 1);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Ostermontag';
+        $tmp = $ed + (86400 * 39);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Christi Himmelfahrt';
+        $tmp = $ed + (86400 * 49);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Pfingstsonntag';
+        $tmp = $ed + (86400 * 50);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Pfingstmontag';
+        $tmp = $ed + (86400 * 60);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Fronleichnam';
+        return $ret;
+    }
+
+    public function getHolidaysCH($y, $m) {
+        $ret = array();
+        $y = intval($y);
+        $m = intval($m);
+        switch($m) {
+        case 1:
+            $ret[1] = 'Neujahrstag';
+            $ret[2] = 'Berchtoldstag';
+            $ret[6] = 'Heilige Drei K&ouml;nige';
+            break;
+        case 3:
+            $ret[19] = 'Josefstag';
+            break;
+        case 5:
+            $ret[1] = 'Tag der Arbeit';
+            break;
+        case 8:
+            $ret[1] = 'Bundesfeier';
+            $ret[15] = 'Mari&auml; Himmelfahrt';
+            break;
+        case 11:
+            $ret[1] = 'Allerheiligen';
+            break;
+        case 12:
+            $ret[8] = 'Mari&auml; Empf&auml;ngnis';
+            $ret[25] = 'Weihnachtstag';
+            $ret[26] = 'Stephanstag';
+            break;
+        }
+        $ed = self::getEasterDate($y);
+        $edY = date('Y', $ed);
+        $edM = date('n', $ed);
+        $edD = intval(date('d', $ed));
+        if($edM == $m) $ret[$edD] = 'Ostersonntag';
+        $tmp = $ed - (86400 * 2);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Karfreitag';
+        $tmp = $ed + (86400 * 1);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Ostermontag';
+        $tmp = $ed + (86400 * 39);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Auffahrt';
+        $tmp = $ed + (86400 * 49);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Pfingstsonntag';
+        $tmp = $ed + (86400 * 50);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Pfingstmontag';
+        $tmp = $ed + (86400 * 60);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Fronleichnam';
+        return $ret;
+    }
+
+    public function getHolidaysFR($y, $m) {
+        $ret = array();
+        $y = intval($y);
+        $m = intval($m);
+        switch($m) {
+        case 1:
+            $ret[1] = '	Jour de l\'An';
+            break;
+        case 5:
+            $ret[1] = 'F&ecirc;te du travail';
+            $ret[8] = 'F&ecirc;te de la Victoire';
+            $ret[22] = 'Abolition de l&acute;esclavage *Martinique';
+            $ret[27] = 'Abolition de l&acute;esclavage *Guadeloupe';
+            break;
+        case 6:
+            $ret[10] = 'Abolition de l&acute;esclavage *Guyane';
+            break;
+        case 7:
+            $ret[14] = 'F&ecirc;te Nationale de la France';
+            break;
+        case 8:
+            $ret[15] = 'Assomption';
+            break;
+        case 11:
+            $ret[1] = 'Toussaint';
+            $ret[11] = 'Armistice 1918';
+            break;
+        case 12:
+            $ret[20] = 'Abolition de l&acute;esclavage *La R&eacute;union';
+            $ret[25] = 'No&euml;l';
+            $ret[26] = 'Lendemain de No&euml;l';
+            break;
+        }
+        $ed = self::getEasterDate($y);
+        $edY = date('Y', $ed);
+        $edM = date('n', $ed);
+        $edD = intval(date('d', $ed));
+        if($edM == $m) $ret[$edD] = 'Dimanche de P&acirc;ques';
+        $tmp = $ed - (86400 * 2);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Vendredi Saint';
+        $tmp = $ed + (86400 * 1);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Lundi de P&acirc;ques';
+        $tmp = $ed + (86400 * 39);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Ascension';
+        $tmp = $ed + (86400 * 49);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Pentec&acirc;te';
+        $tmp = $ed + (86400 * 50);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Lundi de Pentec&acirc;te';
+        return $ret;
+    }
+
+    public function getHolidaysNL($y, $m) {
+        $ret = array();
+        $y = intval($y);
+        $m = intval($m);
+        switch($m) {
+        case 1:
+            $ret[1] = 'Nieuwjaar';
+            break;
+        case 4:
+            $ret[30] = 'Koninginnedag';
+            break;
+        case 5:
+            $ret[4] = 'Dodenherdenking';
+            $ret[5] = 'Bevrijdingsdag';
+            break;
+        case 12:
+            $ret[5] = 'Sinterklaasavond';
+            $ret[25] = 'Kerstmis';
+            $ret[26] = 'Kerstmis';
+            $ret[31] = 'Oudejaar';
+            break;
+        }
+        $ed = self::getEasterDate($y);
+        $edY = date('Y', $ed);
+        $edM = date('n', $ed);
+        $edD = intval(date('d', $ed));
+        if($edM == $m) $ret[$edD] = 'Pasen';
+        $tmp = $ed - (86400 * 2);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Goede Vrijdag';
+        $tmp = $ed + (86400 * 1);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Pasen';
+        $tmp = $ed + (86400 * 39);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Hemelvaartsdag';
+        $tmp = $ed + (86400 * 49);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Pinksteren';
+        $tmp = $ed + (86400 * 50);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Pinksteren';
         return $ret;
     }
 

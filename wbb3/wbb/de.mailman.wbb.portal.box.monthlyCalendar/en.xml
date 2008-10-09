@@ -43,6 +43,8 @@
 	<category name="wcf.acp.option">
 		<item name="wcf.acp.option.category.portal.box.monthlyCalendar"><![CDATA[Monthly calendar box]]></item>
 		<item name="wcf.acp.option.category.portal.box.monthlyCalendar.description"><![CDATA[]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_disabelHolidayToGuest"><![CDATA[Hide holidays to guests]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_disabelHolidayToGuest.description"><![CDATA[]]></item>
     	<item name="wcf.acp.option.monthlyCalendarBox_col_align"><![CDATA[Alignment of the days]]></item>
 		<item name="wcf.acp.option.monthlyCalendarBox_col_align.description"><![CDATA[Alignment of days (left, center, right).]]></item>
 		<item name="wcf.acp.option.monthlyCalendarBox_col_align.left"><![CDATA[Left]]></item>
@@ -80,6 +82,8 @@
 		<item name="wcf.user.option.monthlyCalendarBox_maxAppointments.description"><![CDATA[]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showHolidays"><![CDATA[Show holidays]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showHolidays.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showHolidaysFrom"><![CDATA[Holiday country]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showHolidaysFrom.description"><![CDATA[]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showBirthdays"><![CDATA[Show birthdays]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showBirthdays.description"><![CDATA[Shows birthdays in the month view.]]></item>
 	</category>

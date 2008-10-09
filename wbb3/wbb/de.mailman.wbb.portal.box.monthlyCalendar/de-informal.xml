@@ -43,6 +43,8 @@
 	<category name="wcf.acp.option">
 		<item name="wcf.acp.option.category.portal.box.monthlyCalendar"><![CDATA[Monatskalender Box]]></item>
 		<item name="wcf.acp.option.category.portal.box.monthlyCalendar.description"><![CDATA[]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_disabelHolidayToGuest"><![CDATA[Besuchern keine Feiertage anzeigen]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_disabelHolidayToGuest.description"><![CDATA[Aktiviere diese Option, wenn Du nicht registrierten Benutzer keine (deutschen) Feiertage anzeigen möchten.]]></item>
     	<item name="wcf.acp.option.monthlyCalendarBox_col_align"><![CDATA[Ausrichtung der Tage]]></item>
 		<item name="wcf.acp.option.monthlyCalendarBox_col_align.description"><![CDATA[Ausrichtung der Tage (links, mittig, rechts).]]></item>
 		<item name="wcf.acp.option.monthlyCalendarBox_col_align.left"><![CDATA[Links]]></item>
@@ -80,6 +82,8 @@
 		<item name="wcf.user.option.monthlyCalendarBox_maxAppointments.description"><![CDATA[Wähle hier die Anzahl der anstehenden Termine aus, welche in der Box angezeigt werden sollen.]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showHolidays"><![CDATA[Feiertage anzeigen]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showHolidays.description"><![CDATA[Anzeige der Feiertage in der Monatskalender Box.]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showHolidaysFrom"><![CDATA[Land]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showHolidaysFrom.description"><![CDATA[Wähle hier das Land aus, dessen Feiertage Du anzeigen möchten.]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showBirthdays"><![CDATA[Geburtstage anzeigen]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showBirthdays.description"><![CDATA[Zeigt Geburtstage in der Monatsansicht an.]]></item>
 	</category>

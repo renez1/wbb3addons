@@ -64,7 +64,17 @@
 				<categoryname>settings.display.monthlyCalendarBox</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>1</defaultvalue>
+				<enableoptions>monthlyCalendarBox_showHolidaysFrom</enableoptions>
 			</option>
+			<option name="monthlyCalendarBox_showHolidaysFrom">
+				<categoryname>settings.display.monthlyCalendarBox</categoryname>
+				<optiontype>select</optiontype>
+				<defaultvalue>DE</defaultvalue>
+				<selectoptions><![CDATA[DE
+AT
+CH
+FR
+NL]]></selectoptions>
 			<option name="monthlyCalendarBox_showBirthdays">
 				<categoryname>settings.display.monthlyCalendarBox</categoryname>
 				<optiontype>boolean</optiontype>

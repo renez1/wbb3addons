@@ -10,8 +10,8 @@
 		<standalone>0</standalone>
 		<isUnique>1</isUnique>
 		<plugin>com.woltlab.wbb</plugin>
-		<version>1.0.8</version>
-		<date>2008-10-08</date>
+		<version>1.0.9</version>
+		<date>2008-10-09</date>
 	</packageinformation>
 
 	<authorinformation>
@@ -100,5 +100,18 @@
 	</instructions>
 	<instructions type="update" fromversion="1.0.7">
 		<files>files.tar</files>
+		<options>options.xml</options>
+		<useroptions>useroptions.xml</useroptions>
+		<languages languagecode="de">de.xml</languages>
+        <languages languagecode="de-informal">de-informal.xml</languages>
+        <languages languagecode="en">en.xml</languages>
+	</instructions>
+	<instructions type="update" fromversion="1.0.8">
+		<files>files.tar</files>
+		<options>options.xml</options>
+		<useroptions>useroptions.xml</useroptions>
+		<languages languagecode="de">de.xml</languages>
+        <languages languagecode="de-informal">de-informal.xml</languages>
+        <languages languagecode="en">en.xml</languages>
 	</instructions>
 </package>
