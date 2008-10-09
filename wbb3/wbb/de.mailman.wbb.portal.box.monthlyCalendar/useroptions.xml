@@ -75,6 +75,7 @@ AT
 CH
 FR
 NL]]></selectoptions>
+			</option>
 			<option name="monthlyCalendarBox_showBirthdays">
 				<categoryname>settings.display.monthlyCalendarBox</categoryname>
 				<optiontype>boolean</optiontype>
