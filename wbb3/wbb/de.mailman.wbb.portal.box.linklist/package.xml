@@ -2,8 +2,10 @@
 <!DOCTYPE package SYSTEM "DTD/package.dtd">
 <package name="de.mailman.wbb.portal.box.linklistbox">
 	<packageinformation>
-		<packagename lang="de">Portalbox LinkList</packagename>
+		<packagename>Portalbox LinkList</packagename>
+		<packagename lang="fr">Module du portail LinkList</packagename>
         <packageDescription>Ihre Favoriten in einer Box.</packageDescription>
+        <packageDescription lang="fr">Vos liens dans une boîte.</packageDescription>
 		<standalone>0</standalone>
 		<plugin>com.woltlab.wbb</plugin>
 		<version>1.0.0</version>
@@ -27,5 +29,6 @@
 		<options>options.xml</options>
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 </package>
