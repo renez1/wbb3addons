@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="fr">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.linklistbox.title"><![CDATA[Liens]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.linklistbox"><![CDATA[LinkList]]></item>
+		<item name="wcf.acp.option.category.portal.box.linklistbox.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.linklistbox_value"><![CDATA[LinkList]]></item>
+		<item name="wcf.acp.option.linklistbox_value.description"><![CDATA[Chaque ligne définissant un lien doit être composée de cinq paramètres. Les paramètres sont séparés par des &quot;|&quot; (pipe).
+		    <br/>Paramètre 1 = Icône - Ex. : {@RELATIVE_WCF_DIR}icon/helpS.png
+		    <br/>Paramètre 2 = URL - Ex. : index.php?page=Help
+		    <br/>Paramètre 3 = Titre - Ex. : wcf.header.menu.help
+		    <br/>Paramètre 4 = Cible (dans quelle fenêtre le lien doit être ouvert) - Ex. : &quot;_self&quot; pour la fenêtre courante, ou &quot;_blank&quot; pour une nouvelle fenêtre.
+		    <br/>Paramètre 5 = Droits - Ex. : &quot;user.pm.canUsePm&quot; l’utilisateur ne voit le lien que s’il a ce droit. Peut être vide. 
+		    <br/>Exemple de lien vers la page d’aide : {@RELATIVE_WCF_DIR}icon/helpS.png|index.php?page=Help|wcf.header.menu.help|_self|
+		    <br/><br/>En plus des liens, on peut ajouter des inscriptions pour faire par exemple office de titre :
+		    <br/>{SPACER}&lt;div class=&quot;smallFont&quot; style=&quot;text-align:center; font-weight:bold; letter-spacing:.2em;&quot;&gt;&amp;raquo;Liens externes&amp;laquo;&lt;/div&gt;{/SPACER}]]></item>
+		<item name="wcf.acp.option.linklistbox_locked"><![CDATA[Boîte toujours présente]]></item>
+		<item name="wcf.acp.option.linklistbox_locked.description"><![CDATA[Activez cette option si la boîte doit rester ouverte en permanence. Les utilisateurs ne pourront alors pas la fermer.]]></item>
+		<item name="wcf.acp.option.linklistbox_spacer"><![CDATA[Distance verticale]]></item>
+		<item name="wcf.acp.option.linklistbox_spacer.description"><![CDATA[Distance verticale entre les liens, en pixels. 1 par défaut.]]></item>
+	</category>
+</language>
