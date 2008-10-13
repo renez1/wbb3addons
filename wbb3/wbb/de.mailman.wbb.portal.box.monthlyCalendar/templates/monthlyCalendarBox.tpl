@@ -17,7 +17,7 @@
                 {if $mcbShowAppointments}
                     <a href="javascript: void(0)" onclick="switchMcbView()"><img src="{@RELATIVE_WBB_DIR}icon/mcbAppointmentS.png" alt="" title="{lang}wbb.portal.box.monthlyCalendar.switchCalendar{/lang}" /></a>
                 {/if}
-                {if $mcbTitleLinkTo == 'UserProfileEdit'}
+                {if $mcbTitleLinkTo == 'UserProfileEdit' && $this->user->userID}
                     <a href="index.php?form=UserProfileEdit&amp;category=settings.display{@SID_ARG_2ND}"><span id="mcbTitle">{if $mcbShowAppointments && $mcbShowAppointmentsAsDefault}{lang}wbb.portal.box.monthlyCalendar.appointments{/lang}{else}{@$mcbTitle}{/if}</span></a>
                 {else}
                     {if $this->user->getPermission('user.calendar.canUseCalendar')}
@@ -111,13 +111,13 @@
                         {assign var='birthdays' value=0}
                         {foreach from=$mcbAppointments item=app}
                             {if $app.birthday}
-                                {if $birthdays|empty}
+                                {if $birthdays|empty && !$this->user->getPermission('user.calendar.canUseCalendar')}
                                     <p style="display:block; overflow:hidden; margin:1px 0 1px; font-weight:bold;">{lang}wbb.portal.box.monthlyCalendar.birthdays{/lang}</p>
                                 {/if}
-                                <p style="display:block; overflow:hidden; margin:1px 0 1px;{if !$app.color|empty} border-color:{@$app.color}; border-width:0px 0px 1px 4px; border-style:solid;{/if}">{if !$app.color|empty}&nbsp;{/if}<a href="index.php?page=User&amp;userID={$app.userID}{@SID_ARG_2ND}"{if !$app.color|empty} style="text-decoration:none;"{/if} title="{$app.time|time:"%d.%m."} ({@$app.age})">{@$app.username}</a> ({@$app.age})</p>
+                                <p style="display:block; overflow:hidden; margin:1px 0 1px;{if !$app.color|empty} border-color:{@$app.color}; border-width:0px 0px 1px 4px; border-style:solid;{/if}">{if !$app.color|empty}&nbsp;{/if}<a href="index.php?page=User&amp;userID={$app.userID}{@SID_ARG_2ND}"{if !$app.color|empty} style="text-decoration:none;"{/if} title="{$app.time|time:"%d.%m."}{if $app.age} ({@$app.age}){/if}">{@$app.username}</a>{if $app.age} ({@$app.age}){/if}</p>
                                 {assign var='birthdays' value=1}
                             {else if !$app.eventID|empty}
-                                {if !$birthdays|empty}
+                                {if !$birthdays|empty && !$this->user->getPermission('user.calendar.canUseCalendar')}
                                     <p style="display:block; overflow:hidden; margin:10px 0 1px; font-weight:bold;">{lang}wbb.portal.box.monthlyCalendar.appointments{/lang}</p>
                                     {assign var='birthdays' value=0}
                                 {/if}
