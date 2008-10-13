@@ -18,119 +18,104 @@ class MonthlyCalendarBoxHelper {
         $limit = intval(WBBCore::getUser()->monthlyCalendarBox_maxAppointments);
         $showPublic = intval(WBBCore::getUser()->monthlyCalendarBox_showPublicAppointments);
         $showBirthdays = intval(WBBCore::getUser()->monthlyCalendarBox_showBirthdaysInAppointments);
+        $maxDays = intval(WBBCore::getUser()->monthlyCalendarBox_maxAppointmentDays);
         $userID = intval(WCF::getUser()->userID);
-        if(!$limit > 0 || !$userID > 0) return $ret;
+        if(!$limit > 0) $limit = 10;
+        if(empty($maxDays)) $maxDays = 30;
+        if(empty($userID)) {
+            $showPublic = 1;
+            $showBirthdays = 1;
+        }
         $m = intval(date('n'));
         $y = intval(date('Y'));
         $d = intval(date('j'));
         $sTimestamp = mktime(0, 0, 0, $m, $d, $y);
         $eTimestamp = $sTimestamp + 86400;
 
-        if(!empty($showBirthdays)) {
-            $birthdays = self::getBirthdayList($y, $m, $d);
-            $color = '';
-            $isEnabled = 1;
-            if(count($birthdays) && WBBCore::getUser()->getPermission('user.calendar.canUseCalendar')) {
-                $sql = "SELECT IFNULL(cstu.color, cal.color) AS color"
-                    ."\n  FROM wcf".WCF_N."_calendar cal"
-                    ."\n  LEFT JOIN wcf".WCF_N."_calendar_settings_to_user cstu ON (cstu.userID = ".$userID." AND cstu.calendarID = cal.calendarID)"
-                    ."\n WHERE cal.title = 'wcf.calendar.birthdays'";
-                $result = WBBCore::getDB()->getFirstRow($sql);
-                $color = $result['color'];
-            }
-            foreach($birthdays as $k => $v) {
-                $ret[$i]['birthday'] = true;
-                $ret[$i]['color'] = $color;
-                $ret[$i]['userID'] = $v['userID'];
-                $ret[$i]['username'] = $v['username'];
-                $ret[$i]['age'] = $v['age'];
-                $ret[$i]['time'] = $v['time'];
-                $i++;
-            }
-        }
-
         // WoltLab Calendar...
         if(WBBCore::getUser()->getPermission('user.calendar.canUseCalendar')) {
-            $sql = "SELECT cem.eventID, cem.subject AS subject, ced.startTime AS startTime, ced.endTime AS endTime, ced.isFullDay AS fullDay, IFNULL(cstu.color, cal.color) AS color, IFNULL(cstu.isEnabled,1) AS isEnabled"
-                ."\n  FROM wcf".WCF_N."_calendar_event_date ced"
-                ."\n RIGHT JOIN wcf".WCF_N."_calendar cal ON (cal.calendarID = ced.calendarID)"
-                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event ce ON (ce.eventID = ced.eventID AND ce.userID = ".$userID." AND ce.calendarID = cal.calendarID)"
-                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID AND cem.userID = ".$userID." AND cem.messageID = ce.messageID)"
-                ."\n  LEFT JOIN wcf".WCF_N."_calendar_settings_to_user cstu ON (cstu.userID = ".$userID." AND cstu.calendarID = ced.calendarID)"
-                ."\n WHERE (ced.startTime >= ".TIME_NOW
-                ."\n    OR (ced.isFullDay = 1 AND ced.startTime >= ".$sTimestamp.")"
-                ."\n    OR (ced.endTime > ced.startTime AND ced.endTime > ".$sTimestamp."))"
-                ."\n   AND IFNULL(cstu.isEnabled,1) = 1"
-                ."\n   AND cem.eventID IS NOT NULL"
-                ."\n UNION"
-                ."\nSELECT cem.eventID, cem.subject AS subject, ced.startTime AS startTime, ced.endTime AS endTime, ced.isFullDay AS fullDay, IFNULL(cstu.color, cal.color) AS color, IFNULL(cstu.isEnabled,1) AS isEnabled"
-                ."\n  FROM wcf".WCF_N."_calendar_event_date ced"
-                ."\n RIGHT JOIN wcf".WCF_N."_calendar cal ON (cal.calendarID = ced.calendarID)"
-                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event ce ON (ce.eventID = ced.eventID AND ce.calendarID = cal.calendarID)"
-                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID AND cem.messageID = ce.messageID AND cem.userID = ce.userID)"
-                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event_participation cep ON (cep.eventID = ced.eventID)"
-                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event_participation_to_user ceptu ON (ceptu.participationID = cep.participationID AND ceptu.userID = ".$userID.")"
-                ."\n  LEFT JOIN wcf".WCF_N."_calendar_settings_to_user cstu ON (cstu.userID = ".$userID." AND cstu.calendarID = ced.calendarID)"
-                ."\n WHERE (ced.startTime >= ".TIME_NOW
-                ."\n    OR (ced.isFullDay = 1 AND ced.startTime >= ".$sTimestamp.")"
-                ."\n    OR (ced.endTime > ced.startTime AND ced.endTime > ".$sTimestamp."))"
-                ."\n   AND cem.eventID IS NOT NULL"
-                ."\n   AND IFNULL(cstu.isEnabled,1) = 1";
-            if(!empty($showPublic)) {
-                $sql .= "\n UNION"
-                       ."\nSELECT cem.eventID, cem.subject AS subject, ced.startTime AS startTime, ced.endTime AS endTime, ced.isFullDay AS fullDay, IFNULL(cstu.color, cal.color) AS color, IFNULL(cstu.isEnabled,1) AS isEnabled"
-                       ."\n  FROM wcf".WCF_N."_calendar_event_date ced"
-                       ."\n RIGHT JOIN wcf".WCF_N."_calendar cal ON (cal.calendarID = ced.calendarID)"
-                       ."\n RIGHT JOIN wcf".WCF_N."_calendar_event ce ON (ce.eventID = ced.eventID AND ce.calendarID = cal.calendarID)"
-                       ."\n RIGHT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID AND cem.messageID = ce.messageID AND cem.userID = ce.userID)"
-                       ."\n RIGHT JOIN wcf".WCF_N."_calendar_to_group ctg ON (ctg.calendarID = cal.calendarID)"
-                       ."\n RIGHT JOIN wcf".WCF_N."_user_to_groups utg ON (utg.groupID = ctg.groupID AND utg.userID = ".$userID.")"
-                       ."\n  LEFT JOIN wcf".WCF_N."_calendar_settings_to_user cstu ON (cstu.userID = ".$userID." AND cstu.calendarID = ced.calendarID)"
-                       ."\n WHERE (ced.startTime >= ".TIME_NOW
-                       ."\n    OR (ced.isFullDay = 1 AND ced.startTime >= ".$sTimestamp.")"
-                       ."\n    OR (ced.endTime > ced.startTime AND ced.endTime > ".$sTimestamp."))"
-                       ."\n   AND cem.eventID IS NOT NULL"
-                       ."\n   AND IFNULL(cstu.isEnabled,1) = 1";
-            }
-            $sql .= "\n ORDER BY startTime"
-                   ."\n LIMIT ".$limit;
-            $result = WBBCore::getDB()->sendQuery($sql);
-//            $ret['sql'] = $sql;
-            while($row = WBBCore::getDB()->fetchArray($result)) {
-                if(empty($row['isEnabled'])) continue;
-                $ret[$i]['birthday'] = false;
-                if(!empty($row['fullDay'])) {
-                    $row['startTime'] = DateUtil::getUTC($row['startTime']);
-                    $row['endTime'] = DateUtil::getUTC($row['endTime']);
+            require_once (WCF_DIR . 'lib/util/CalendarUtil.class.php');
+            require_once (WCF_DIR . 'lib/data/calendar/event/EventList.class.php');
+            $cals = Calendar::getEnabledCalendars();
+            if(empty($showBirthdays)) {
+                foreach($cals as $k => $v) {
+                    if($v->className == 'BirthdayEvent') {
+                        unset($cals[$k]);
+                        break;
+                    }
                 }
-                $ret[$i]['fullDay'] = $row['fullDay'];
-                $ret[$i]['eventID'] = $row['eventID'];
-                $ret[$i]['subject'] = $row['subject'];
-                $ret[$i]['startTime'] = $row['startTime'];
-                $ret[$i]['endTime'] = $row['endTime'];
+            }
+            if(!empty($userID) && empty($showPublic)) {
+                foreach($cals as $k => $v) {
+                    if($v->ownerID != $userID && $v->className != 'BirthdayEvent') {
+                        unset($cals[$k]);
+                    }
+                }
+            }
+            $events = new EventList($sTimestamp, $sTimestamp + 86400 * $maxDays, $cals);
+            $events->readEvents();
+            $myEvents = $events->getEvents($limit);
+//            file_put_contents('/tmp/debug.txt', print_r($myEvents, true));
+            foreach($myEvents as $event) {
+                if($showBirthdays && $event->calendar->className == 'BirthdayEvent' && $event->user && !$event->eventID) {
+                    $ret[$i]['birthday'] = true;
+                    $ret[$i]['userID'] = $event->userID;
+                    $ret[$i]['username'] = $event->user->username;
+                    $ret[$i]['age'] = $event->user->age;
+                    $ret[$i]['time'] = $event->startTime;
+                    $ret[$i]['eventID'] = null;
+                } else {
+                    $ret[$i]['birthday'] = false;
+                    $ret[$i]['eventID'] = $event->eventID;
+                }
+                if($event->isFullDay) {
+                    $ret[$i]['startTime'] = DateUtil::getUTC($event->startTime);
+                    $ret[$i]['endTime'] = DateUtil::getUTC($event->endTime);
+                } else {
+                    $ret[$i]['startTime'] = $event->startTime;
+                    $ret[$i]['endTime'] = $event->endTime;
+                }
+                $ret[$i]['fullDay'] = $event->isFullDay;
+                $ret[$i]['subject'] = $event->subject;
                 $ret[$i]['severalDays'] = false;
                 $ret[$i]['curYear'] = true;
                 $ret[$i]['sameDay'] = false;
-                $ret[$i]['color'] = $row['color'];
-                if($row['startTime'] >= $sTimestamp && $row['endTime'] <= $eTimestamp) $ret[$i]['today'] = true;
+                $ret[$i]['color'] = $event->color;
+                $ret[$i]['today'] = false;
+                $ret[$i]['title'] = '';
+
+                if($ret[$i]['startTime'] >= $sTimestamp && $ret[$i]['endTime'] < $eTimestamp) $ret[$i]['today'] = true;
                 else {
                     $ret[$i]['today'] = false;
-                    if(date('j', $row['startTime']) != date('j', $row['endTime'])) $ret[$i]['severalDays'] = true;
-                    if(date('Y', $row['startTime']) != date('Y')) $ret[$i]['curYear'] = false;
+                    if(date('j', $ret[$i]['startTime']) != date('j', $ret[$i]['endTime'])) $ret[$i]['severalDays'] = true;
+                    if(date('Y', $ret[$i]['startTime']) != date('Y')) $ret[$i]['curYear'] = false;
                 }
-
                 if($ret[$i]['severalDays']) {
-                    $ret[$i]['title'] = DateUtil::formatShortTime('%d.%m. %H:%M', $row['startTime'])
-                                . ' - '.DateUtil::formatShortTime('%d.%m. %H:%M', $row['endTime']);
+                    $ret[$i]['title'] = DateUtil::formatDate('%d.%m. %H:%M', $ret[$i]['startTime'])
+                                . ' - '.DateUtil::formatDate('%d.%m. %H:%M', $ret[$i]['endTime']);
                 } else {
-                    $ret[$i]['title'] = DateUtil::formatShortTime('%H:%M', $row['startTime'])
-                                  . '-'.DateUtil::formatShortTime('%H:%M', $row['endTime']);
+                    $ret[$i]['title'] = DateUtil::formatDate('%H:%M', $ret[$i]['startTime'])
+                                  . '-'.DateUtil::formatDate('%H:%M', $ret[$i]['endTime']);
                 }
-                $ret[$i]['title'] .= ': '.$row['subject'];
+                $ret[$i]['title'] .= ': '.$ret[$i]['subject'];
                 $i++;
             }
-
         } else if(WBBCore::getUser()->getPermission('user.calendar.canEnter')) {
+            if(!empty($showBirthdays)) {
+                $birthdays = self::getBirthdayList($y, $m, $d);
+                $color = '';
+                $isEnabled = 1;
+                foreach($birthdays as $k => $v) {
+                    $ret[$i]['birthday'] = true;
+                    $ret[$i]['color'] = $color;
+                    $ret[$i]['userID'] = $v['userID'];
+                    $ret[$i]['username'] = $v['username'];
+                    $ret[$i]['age'] = $v['age'];
+                    $ret[$i]['time'] = $v['time'];
+                    $i++;
+                }
+            }
+
             $sql = "SELECT ce.eventID, cem.subject AS subject, ce.eventTime AS startTime, ce.eventEndTime AS endTime, ce.isFullDay AS fullDay"
                 ."\n  FROM wcf".WCF_N."_calendar_event ce"
                 ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ce.eventID)"
@@ -138,7 +123,7 @@ class MonthlyCalendarBoxHelper {
                 ."\n    OR (ce.isFullDay = 1 AND ce.eventTime >= ".$sTimestamp.")"
                 ."\n    OR (ce.eventEndTime > ce.eventTime AND ce.eventEndTime > ".$sTimestamp."))"
                 ."\n   AND cem.isDeleted != 1";
-            if(empty($showPublic)) $sql .= "\n   AND cem.userID = ".$userID;
+            if(!empty($userID) && empty($showPublic)) $sql .= "\n   AND cem.userID = ".$userID;
             $sql .= "\n ORDER BY ce.eventTime"
                 ."\n LIMIT ".$limit;
             $result = WBBCore::getDB()->sendQuery($sql);
@@ -191,55 +176,29 @@ class MonthlyCalendarBoxHelper {
 
     public function getAppointments($y, $m) {
         $ret = array();
+        $i = 0;
         $month = intval($m);
         $sTimestamp = gmmktime(0, 0, 0, $m, 1, $y);
         $eTimestamp = gmmktime(0, 0, 0, $m+1, 0, $y);
         $userID = intval(WCF::getUser()->userID);
         $showPublic = intval(WBBCore::getUser()->monthlyCalendarBox_showPublicAppointments);
-        if(empty($userID)) return $ret;
-
+        if(empty($userID)) {
+            $showPublic = 1;
+        }
         if(WBBCore::getUser()->getPermission('user.calendar.canUseCalendar')) {
-            $sql = "SELECT cem.subject AS subject, ced.startTime AS startTime"
-                ."\n  FROM wcf".WCF_N."_calendar_event_date ced"
-                ."\n RIGHT JOIN wcf".WCF_N."_calendar cal ON (cal.calendarID = ced.calendarID)"
-                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event ce ON (ce.eventID = ced.eventID AND ce.userID = ".$userID." AND ce.calendarID = cal.calendarID)"
-                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID AND cem.userID = ".$userID." AND cem.messageID = ce.messageID)"
-                ."\n  LEFT JOIN wcf".WCF_N."_calendar_settings_to_user cstu ON (cstu.userID = ".$userID." AND cstu.calendarID = ced.calendarID)"
-                ."\n WHERE ced.startTime >= ".$sTimestamp
-                ."\n   AND ced.startTime <= ".$eTimestamp
-                ."\n   AND cem.eventID IS NOT NULL"
-                ."\n UNION"
-                ."\nSELECT cem.subject AS subject, ced.startTime AS startTime"
-                ."\n  FROM wcf".WCF_N."_calendar_event_date ced"
-                ."\n RIGHT JOIN wcf".WCF_N."_calendar cal ON (cal.calendarID = ced.calendarID)"
-                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event ce ON (ce.eventID = ced.eventID AND ce.calendarID = cal.calendarID)"
-                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID AND cem.messageID = ce.messageID AND cem.userID = ce.userID)"
-                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event_participation cep ON (cep.eventID = ced.eventID)"
-                ."\n RIGHT JOIN wcf".WCF_N."_calendar_event_participation_to_user ceptu ON (ceptu.participationID = cep.participationID AND ceptu.userID = ".$userID.")"
-                ."\n  LEFT JOIN wcf".WCF_N."_calendar_settings_to_user cstu ON (cstu.userID = ".$userID." AND cstu.calendarID = ced.calendarID)"
-                ."\n WHERE ced.startTime >= ".$sTimestamp
-                ."\n   AND ced.startTime <= ".$eTimestamp
-                ."\n   AND cem.eventID IS NOT NULL";
-            if(!empty($showPublic)) {
-                $sql .= "\n UNION"
-                       ."\nSELECT cem.subject AS subject, ced.startTime AS startTime"
-                       ."\n  FROM wcf".WCF_N."_calendar_event_date ced"
-                       ."\n  RIGHT JOIN wcf".WCF_N."_calendar cal ON (cal.calendarID = ced.calendarID)"
-                       ."\n  RIGHT JOIN wcf".WCF_N."_calendar_event ce ON (ce.eventID = ced.eventID AND ce.calendarID = cal.calendarID)"
-                       ."\n  RIGHT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ced.eventID AND cem.messageID = ce.messageID AND cem.userID = ce.userID)"
-                       ."\n  RIGHT JOIN wcf".WCF_N."_calendar_to_group ctg ON (ctg.calendarID = cal.calendarID)"
-                       ."\n  RIGHT JOIN wcf".WCF_N."_user_to_groups utg ON (utg.groupID = ctg.groupID AND utg.userID = ".$userID.")"
-                       ."\n  LEFT JOIN wcf".WCF_N."_calendar_settings_to_user cstu ON (cstu.userID = ".$userID." AND cstu.calendarID = ced.calendarID)"
-                       ."\n WHERE ced.startTime >= ".$sTimestamp
-                       ."\n   AND ced.startTime <= ".$eTimestamp
-                       ."\n   AND cem.eventID IS NOT NULL";
-            }
-            $result = WBBCore::getDB()->sendQuery($sql);
-            while($row = WBBCore::getDB()->fetchArray($result)) {
-                $dd = date('j', $row['startTime']);
+            require_once (WCF_DIR . 'lib/util/CalendarUtil.class.php');
+            require_once (WCF_DIR . 'lib/data/calendar/event/EventList.class.php');
+            $cals = Calendar::getEnabledCalendars();
+            $events = new EventList($sTimestamp, $eTimestamp, $cals);
+            $events->readEvents();
+            $myEvents = $events->getEvents(1000);
+            foreach($myEvents as $event) {
+                if(!$event->eventID) continue;
+                $dd = date('j', $event->startTime);
                 if(isset($ret[$dd])) $ret[$dd] .= ", ";
                 else $ret[$dd] = '';
-                $ret[$dd] .= StringUtil::encodeHTML($row['subject']);
+                $ret[$dd] .= StringUtil::encodeHTML($event->subject);
+                $i++;
             }
         } else if(WBBCore::getUser()->getPermission('user.calendar.canEnter')) {
             $sql = "SELECT cem.subject AS subject, ce.eventTime AS startTime"
@@ -247,7 +206,7 @@ class MonthlyCalendarBoxHelper {
                 ."\n  LEFT JOIN wcf".WCF_N."_calendar_event_message cem ON (cem.eventID = ce.eventID)"
                 ."\n WHERE ce.eventTime >= ".$sTimestamp
                 ."\n   AND ce.eventTime <= ".$eTimestamp;
-            if(empty($showPublic)) $sql .= "\n   AND cem.userID = ".$userID;
+            if(!empty($userID) && empty($showPublic)) $sql .= "\n   AND cem.userID = ".$userID;
             $result = WBBCore::getDB()->sendQuery($sql);
             while($row = WBBCore::getDB()->fetchArray($result)) {
                 $dd = date('j', $row['startTime']);
@@ -266,13 +225,7 @@ class MonthlyCalendarBoxHelper {
         $ret = array();
         $i = 0;
         if($month < 10) $month = '0'.$month;
-        $sql = "SELECT optionID"
-            ."\n  FROM wcf".WCF_N."_user_option"
-            ."\n WHERE optionName = 'birthday'"
-            ."\n   AND categoryName = 'profile.personal'"
-            ."\n   AND optionType = 'birthday'";
-        $result = WBBCore::getDB()->getFirstRow($sql);
-        $optionID = $result['optionID'];
+        $optionID = intval(User::getUserOptionID('birthday'));
         if(!empty($optionID)) {
             $sql = "SELECT u.userID, u.username, uov.userOption".$optionID." AS BD"
                 ."\n  FROM wcf".WCF_N."_user_option_value uov"
@@ -286,7 +239,7 @@ class MonthlyCalendarBoxHelper {
                 $bm = intval($bm);
                 $bd = intval($bd);
                 if($y >= $by) {
-                    if(!$by > 0) $age = '?';
+                    if(!$by > 0) $age = null;
                     else $age = $y - $by;
                     $ret[$i]['username'] = StringUtil::encodeHTML($row['username']);
                     $ret[$i]['userID'] = $row['userID'];
@@ -305,13 +258,7 @@ class MonthlyCalendarBoxHelper {
         if($day != 0 && $day < 10) $day = '0'.$day;
         $ret = array();
         if($month < 10) $month = '0'.$month;
-        $sql = "SELECT optionID"
-            ."\n  FROM wcf".WCF_N."_user_option"
-            ."\n WHERE optionName = 'birthday'"
-            ."\n   AND categoryName = 'profile.personal'"
-            ."\n   AND optionType = 'birthday'";
-        $result = WBBCore::getDB()->getFirstRow($sql);
-        $optionID = $result['optionID'];
+        $optionID = intval(User::getUserOptionID('birthday'));
         if(!empty($optionID)) {
             $sql = "SELECT u.userID, u.username, uov.userOption".$optionID." AS BD"
                 ."\n  FROM wcf".WCF_N."_user_option_value uov"
@@ -326,11 +273,11 @@ class MonthlyCalendarBoxHelper {
                 $bm = intval($bm);
                 $bd = intval($bd);
                 if($y >= $by) {
-                    if(!$by > 0) $age = '?';
+                    if(!$by > 0) $age = null;
                     else $age = $y - $by;
                     if(isset($ret[$bd])) $ret[$bd] .= ", ";
                     else $ret[$bd] = '';
-                    $ret[$bd] .= StringUtil::encodeHTML($row['username']).' ('.$age.')';
+                    $ret[$bd] .= StringUtil::encodeHTML($row['username']).($age ? ' ('.$age.')' : '');
                 }
             }
         }
@@ -345,6 +292,8 @@ class MonthlyCalendarBoxHelper {
             return self::getHolidaysCH($y, $m);
         case 'FR':
             return self::getHolidaysFR($y, $m);
+        case 'IT':
+            return self::getHolidaysIT($y, $m);
         case 'NL':
             return self::getHolidaysNL($y, $m);
         default:
@@ -566,6 +515,51 @@ class MonthlyCalendarBoxHelper {
         if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Pentec&acirc;te';
         $tmp = $ed + (86400 * 50);
         if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Lundi de Pentec&acirc;te';
+        return $ret;
+    }
+
+    public function getHolidaysIT($y, $m) {
+        $ret = array();
+        $y = intval($y);
+        $m = intval($m);
+        switch($m) {
+        case 1:
+            $ret[1] = 'Capodanno';
+            $ret[6] = 'Epifania';
+            break;
+        case 4:
+            $ret[25] = 'Liberazione Italia';
+            break;
+        case 5:
+            $ret[1] = 'Festa del lavoro';
+            break;
+        case 6:
+            $ret[2] = 'Festa della Repubblica Italia';
+            break;
+        case 8:
+            $ret[15] = 'Ferragosto';
+            break;
+        case 11:
+            $ret[1] = 'Ognissanti';
+            break;
+        case 12:
+            $ret[8] = 'Immacolata Concezione';
+            $ret[25] = 'Natale';
+            $ret[26] = 'Santo Stefano';
+            $ret[31] = 'San Silvestro';
+            break;
+        }
+        $ed = self::getEasterDate($y);
+        $edY = date('Y', $ed);
+        $edM = date('n', $ed);
+        $edD = intval(date('d', $ed));
+        if($edM == $m) $ret[$edD] = 'Domenica di Pasqua';
+        $tmp = $ed + (86400 * 1);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Luned&igrave; di Pasqua';
+        $tmp = $ed + (86400 * 49);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Domenica di Pentecoste';
+        $tmp = $ed + (86400 * 50);
+        if(date('n', $tmp) == $m) $ret[intval(date('d', $tmp))] = 'Luned&igrave; di Pentecoste';
         return $ret;
     }
 

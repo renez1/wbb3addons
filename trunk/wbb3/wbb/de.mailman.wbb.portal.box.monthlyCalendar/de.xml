@@ -43,8 +43,11 @@
 	<category name="wcf.acp.option">
 		<item name="wcf.acp.option.category.portal.box.monthlyCalendar"><![CDATA[Monatskalender Box]]></item>
 		<item name="wcf.acp.option.category.portal.box.monthlyCalendar.description"><![CDATA[]]></item>
-    	<item name="wcf.acp.option.monthlyCalendarBox_disabelHolidayToGuest"><![CDATA[Besuchern keine Feiertage anzeigen]]></item>
-		<item name="wcf.acp.option.monthlyCalendarBox_disabelHolidayToGuest.description"><![CDATA[Aktivieren Sie diese Option, wenn Sie nicht registrierten Benutzer keine (deutschen) Feiertage anzeigen möchten.]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_showBirthdayToGuest"><![CDATA[Gäste: Geburtstage anzeigen]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_showBirthdayToGuest.description"><![CDATA[Aktivieren Sie diese Option, wenn Sie Geburtstage auch Ihren Gästen anzeigen möchten.]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_showHolidayToGuest"><![CDATA[Gäste: Feiertage anzeigen]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_showHolidayToGuest.description"><![CDATA[Wählen Sie hier das Land aus, dessen Feiertage Sie Ihren Gästen anzeigen möchten.]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_showHolidayToGuest.disabled"><![CDATA[deaktiviert]]></item>
     	<item name="wcf.acp.option.monthlyCalendarBox_col_align"><![CDATA[Ausrichtung der Tage]]></item>
 		<item name="wcf.acp.option.monthlyCalendarBox_col_align.description"><![CDATA[Ausrichtung der Tage (links, mittig, rechts).]]></item>
 		<item name="wcf.acp.option.monthlyCalendarBox_col_align.left"><![CDATA[Links]]></item>
@@ -74,14 +77,14 @@
 		<item name="wcf.user.option.monthlyCalendarBox_showAppointments.description"><![CDATA[Aktiviert die Terminübersicht in der Monatskalender Box.]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showAppointmentsAsDefault"><![CDATA[Terminübersicht standardmäßig anzeigen]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showAppointmentsAsDefault.description"><![CDATA[Wenn Sie diese Option aktivieren, wird die Terminübersicht anstatt der Monatsansicht standardmäßig angezeigt.]]></item>
-		<item name="wcf.user.option.monthlyCalendarBox_showPublicAppointments"><![CDATA[Öffentliche Termine anzeigen]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showPublicAppointments"><![CDATA[Alle Termine anzeigen]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showPublicAppointments.description"><![CDATA[Zeigt alle Termine an, zu deren Kalender Sie Zugriff haben.]]></item>
-
 		<item name="wcf.user.option.monthlyCalendarBox_showBirthdaysInAppointments"><![CDATA[Geburtstage anzeigen]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showBirthdaysInAppointments.description"><![CDATA[Zeigt Geburtstage in der Terminübersicht an.]]></item>
-
-		<item name="wcf.user.option.monthlyCalendarBox_maxAppointments"><![CDATA[Max. Anzahl der anstehenden Termine]]></item>
-		<item name="wcf.user.option.monthlyCalendarBox_maxAppointments.description"><![CDATA[Wählen Sie hier die Anzahl der anstehenden Termine aus, welche in der Box angezeigt werden sollen.]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_maxAppointments"><![CDATA[Max. Anzahl Termine]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_maxAppointments.description"><![CDATA[Wählen Sie hier die maximale Anzahl der anstehenden Termine aus, welche in der Box angezeigt werden sollen.]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_maxAppointmentDays"><![CDATA[Max. Anzahl Tage]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_maxAppointmentDays.description"><![CDATA[Die Anzahl der Tage und die Anzahl der Termine bildet das Zeitfenster der anzuzeigenden Termine (nur WCOM Calendar).]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showHolidays"><![CDATA[Feiertage anzeigen]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showHolidays.description"><![CDATA[Anzeige der Feiertage in der Monatskalender Box.]]></item>
 		<item name="wcf.user.option.monthlyCalendarBox_showHolidaysFrom"><![CDATA[Land]]></item>

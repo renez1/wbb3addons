@@ -25,7 +25,9 @@ class MonthlyCalendarBox {
         if(!defined('MONTHLYCALENDARBOX_NAV_BOTTOM'))   define('MONTHLYCALENDARBOX_NAV_BOTTOM', true);
         if(!defined('MONTHLYCALENDARBOX_MAXLEN'))       define('MONTHLYCALENDARBOX_MAXLEN', 22);
         if(!defined('MONTHLYCALENDARBOX_MBFUNCTIONS'))  define('MONTHLYCALENDARBOX_MBFUNCTIONS', true);
-        if(!defined('MONTHLYCALENDARBOX_DISABELHOLIDAYTOGUEST'))  define('MONTHLYCALENDARBOX_DISABELHOLIDAYTOGUEST', true);
+        if(!defined('MONTHLYCALENDARBOX_SHOWBIRTHDAYTOGUEST'))  define('MONTHLYCALENDARBOX_SHOWBIRTHDAYTOGUEST', false);
+        if(!defined('MONTHLYCALENDARBOX_SHOWHOLIDAYTOGUEST'))  define('MONTHLYCALENDARBOX_SHOWHOLIDAYTOGUEST', 'DISABLED');
+
         if(MONTHLYCALENDARBOX_MBFUNCTIONS && function_exists('mb_substr')) {
             $dF = ini_get('disable_functions');
             if(preg_match('/(mb_substr|mbstring)/', $dF)) $mbSubstr = false;
@@ -37,29 +39,38 @@ class MonthlyCalendarBox {
         if(!empty($_REQUEST['page'])) $redirTo = $_REQUEST['page'];
         else $redirTo = 'Portal';
         $mcbTitleLinkTo = '';
-        if(WBBCore::getUser()->userID) {
-            if(WBBCore::getUser()->getPermission('user.calendar.canUseCalendar') || WBBCore::getUser()->getPermission('user.calendar.canEnter')) {
-                $mcbTitleLinkTo = 'Calendar';
-                $calendarInstalled = true;
-            } else {
-                $mcbTitleLinkTo = 'UserProfileEdit';
-            }
+        if(WBBCore::getUser()->getPermission('user.calendar.canUseCalendar') || WBBCore::getUser()->getPermission('user.calendar.canEnter')) {
+            $mcbTitleLinkTo = 'Calendar';
+            $calendarInstalled = true;
+        } else {
+            $mcbTitleLinkTo = 'UserProfileEdit';
         }
 
         if(!WBBCore::getUser()->userID || WBBCore::getUser()->monthlyCalendarBox_showCalendarWeeks) $mcbShowCW = true;
         else $mcbShowCW = false;
-        if(WBBCore::getUser()->monthlyCalendarBox_showBirthdays) $mcbShowBirthdays = true;
+        if(WBBCore::getUser()->monthlyCalendarBox_showBirthdays || (!WBBCore::getUser()->userID && MONTHLYCALENDARBOX_SHOWBIRTHDAYTOGUEST)) $mcbShowBirthdays = true;
         else $mcbShowBirthdays = false;
-        if(WBBCore::getUser()->monthlyCalendarBox_showHolidays || (!WBBCore::getUser()->userID && !MONTHLYCALENDARBOX_DISABELHOLIDAYTOGUEST)) $mcbShowHolidays = true;
+        if(WBBCore::getUser()->monthlyCalendarBox_showHolidays || (!WBBCore::getUser()->userID && MONTHLYCALENDARBOX_SHOWHOLIDAYTOGUEST != 'DISABLED')) $mcbShowHolidays = true;
         else $mcbShowHolidays = false;
 
         $mcbShowAppointments = $mcbShowAppointmentsAsDefault = $showAppointmentsInCalendar = false;
         if($calendarInstalled) {
-            if(WBBCore::getUser()->monthlyCalendarBox_showAppointmentsInCalendar) $showAppointmentsInCalendar = true;
-        }
-        if(WBBCore::getUser()->monthlyCalendarBox_showAppointments) {
-            $mcbShowAppointments = true;
-            if(WBBCore::getUser()->monthlyCalendarBox_showAppointmentsAsDefault) $mcbShowAppointmentsAsDefault = true;
+            if(!WBBCore::getUser()->userID || WBBCore::getUser()->monthlyCalendarBox_showAppointmentsInCalendar) {
+                if(WBBCore::getUser()->getPermission('user.calendar.canEnter') && !WBBCore::getUser()->getPermission('user.calendar.canViewEvents')) {
+                    $showAppointmentsInCalendar = false;
+                } else {
+                    $showAppointmentsInCalendar = true;
+                }
+            }
+
+            if(!WBBCore::getUser()->userID || WBBCore::getUser()->monthlyCalendarBox_showAppointments) {
+                if(WBBCore::getUser()->getPermission('user.calendar.canEnter') && !WBBCore::getUser()->getPermission('user.calendar.canViewEvents')) {
+                    $mcbShowAppointments = false;
+                } else {
+                    $mcbShowAppointments = true;
+                }
+                if(WBBCore::getUser()->monthlyCalendarBox_showAppointmentsAsDefault) $mcbShowAppointmentsAsDefault = true;
+            }
         }
 
         $mcDays = $daysBefore = $daysAfter = $calendarWeeks = $birthdays = $dates = $holidays = $months = array();
@@ -91,7 +102,11 @@ class MonthlyCalendarBox {
         $mcbTitle = WCF::getLanguage()->get('wbb.portal.box.monthlyCalendar.month_'.$mcM).' '.$mcY;
         if($mcbShowBirthdays) $birthdays = $this->mcbHelper->getBirthdays($mcY, $mcM);
         if($showAppointmentsInCalendar) $dates = $this->mcbHelper->getAppointments($mcY, $mcM);
-        if($mcbShowHolidays && $mcY >= 1970) $holidays = $this->mcbHelper->getHolidays(WBBCore::getUser()->monthlyCalendarBox_showHolidaysFrom, $mcY, $mcM);
+        if($mcbShowHolidays && $mcY >= 1970) {
+            if(WBBCore::getUser()->monthlyCalendarBox_showHolidaysFrom) $h = WBBCore::getUser()->monthlyCalendarBox_showHolidaysFrom;
+            else $h = MONTHLYCALENDARBOX_SHOWHOLIDAYTOGUEST;
+            if($h && $h != 'DISABLED') $holidays = $this->mcbHelper->getHolidays($h, $mcY, $mcM);
+        }
 
         if(WCF::getUser()->getPermission('user.board.canViewMonthlyCalendarBox')) {
             $cntDays = strftime('%d',gmmktime(0,0,0,$mcM+1,0,$mcY));

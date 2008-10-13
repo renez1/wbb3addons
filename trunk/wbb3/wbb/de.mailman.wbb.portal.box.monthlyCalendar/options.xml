@@ -10,11 +10,25 @@
 		</categories>
 
 		<options>
-			<option name="monthlyCalendarBox_disabelHolidayToGuest">
+			<option name="monthlyCalendarBox_showBirthdayToGuest">
 				<categoryname>portal.box.monthlyCalendar</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>0</defaultvalue>
 		    </option>
+
+			<option name="monthlyCalendarBox_showHolidayToGuest">
+				<categoryname>portal.box.monthlyCalendar</categoryname>
+				<optiontype>select</optiontype>
+				<defaultvalue>DISABLED</defaultvalue>
+				<selectoptions><![CDATA[DISABLED:wcf.acp.option.monthlyCalendarBox_showHolidayToGuest.disabled
+DE
+AT
+CH
+FR
+IT
+NL]]></selectoptions>
+			</option>
+
 			<option name="monthlyCalendarBox_col_align">
 				<categoryname>portal.box.monthlyCalendar</categoryname>
 				<optiontype>select</optiontype>
@@ -58,5 +72,6 @@ Right:wcf.acp.option.monthlyCalendarBox_col_align.right]]></selectoptions>
 
     <delete>
         <category name="portal.box.canViewMonthlyCalendarBox" />
+        <option name="monthlyCalendarBox_disabelHolidayToGuest" />
     </delete>
 </data>

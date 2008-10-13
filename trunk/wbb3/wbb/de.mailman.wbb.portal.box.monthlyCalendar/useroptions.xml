@@ -58,7 +58,30 @@
 15
 20
 25
-30]]></selectoptions>
+30
+50
+75
+100]]></selectoptions>
+			</option>
+			<option name="monthlyCalendarBox_maxAppointmentDays">
+				<categoryname>settings.display.monthlyCalendarBox</categoryname>
+				<optiontype>select</optiontype>
+				<defaultvalue>30</defaultvalue>
+				<selectoptions><![CDATA[1
+2
+3
+4
+5
+10
+15
+20
+25
+30
+50
+75
+100
+200
+365]]></selectoptions>
 			</option>
 			<option name="monthlyCalendarBox_showHolidays">
 				<categoryname>settings.display.monthlyCalendarBox</categoryname>
@@ -74,6 +97,7 @@
 AT
 CH
 FR
+IT
 NL]]></selectoptions>
 			</option>
 			<option name="monthlyCalendarBox_showBirthdays">
