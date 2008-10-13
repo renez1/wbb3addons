@@ -10,8 +10,8 @@
 		<!-- <standalone>0</standalone> -->
 		<isUnique>1</isUnique>
 		<plugin>com.woltlab.wbb</plugin>
-		<version>1.0.7</version>
-		<date>2008-10-07</date>
+		<version>1.0.10</version>
+		<date>2008-10-13</date>
 	</packageinformation>
 
 	<authorinformation>
@@ -20,7 +20,7 @@
 	</authorinformation>
 
 	<requiredpackages>
-		<requiredpackage minversion="0.2.3">de.wbb3mods.wbblite.portal</requiredpackage>
+		<requiredpackage minversion="1.0.0">de.wbb3mods.wbb.portal</requiredpackage>
 	</requiredpackages>
 
 	<instructions type="install">
@@ -90,6 +90,32 @@
         <languages languagecode="en">en.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.6">
+		<files>files.tar</files>
+		<templates>templates.tar</templates>
+		<options>options.xml</options>
+		<useroptions>useroptions.xml</useroptions>
+		<languages languagecode="de">de.xml</languages>
+        <languages languagecode="de-informal">de-informal.xml</languages>
+        <languages languagecode="en">en.xml</languages>
+	</instructions>
+	<instructions type="update" fromversion="1.0.7">
+		<files>files.tar</files>
+		<options>options.xml</options>
+		<useroptions>useroptions.xml</useroptions>
+		<languages languagecode="de">de.xml</languages>
+        <languages languagecode="de-informal">de-informal.xml</languages>
+        <languages languagecode="en">en.xml</languages>
+	</instructions>
+	<instructions type="update" fromversion="1.0.8">
+		<files>files.tar</files>
+		<templates>templates.tar</templates>
+		<options>options.xml</options>
+		<useroptions>useroptions.xml</useroptions>
+		<languages languagecode="de">de.xml</languages>
+        <languages languagecode="de-informal">de-informal.xml</languages>
+        <languages languagecode="en">en.xml</languages>
+	</instructions>
+	<instructions type="update" fromversion="1.0.9">
 		<files>files.tar</files>
 		<templates>templates.tar</templates>
 		<options>options.xml</options>
