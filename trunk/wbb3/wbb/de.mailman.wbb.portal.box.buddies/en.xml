@@ -16,5 +16,9 @@
         <item name="wcf.acp.option.buddiesbox_showdel_acp.description"><![CDATA[]]></item>
 		<item name="wcf.acp.option.buddiesbox_showusermarking_acp"><![CDATA[Use User Online Marking]]></item>
         <item name="wcf.acp.option.buddiesbox_showusermarking_acp.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.buddiesbox_showonlyonline_acp"><![CDATA[Show only &quot;online buddies&quot;]]></item>
+        <item name="wcf.acp.option.buddiesbox_showonlyonline_acp.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.buddiesbox_hideifempty_acp"><![CDATA[Hide box if empty]]></item>
+        <item name="wcf.acp.option.buddiesbox_hideifempty_acp.description"><![CDATA[]]></item>
 	</category>
 </language>
