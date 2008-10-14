@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE package SYSTEM "DTD/package.dtd">
 <!-- $Id$ -->
 <package name="de.mailman.wbb.portal.box.buddiesbox">
@@ -7,7 +7,7 @@
 		<packagedescription>Deine Freunde in der Box ;)</packagedescription>
 		<packagename language="en">Portal box friends</packagename>
 		<packagedescription language="en">Your friends in a box ;)</packagedescription>
-		<packagename language="fr">Fenêtre du portail &laquo; Liste d’amis &raquo;</packagename>
+		<packagename language="fr">Fenêtre du portail « Liste d’amis »</packagename>
 		<packagedescription language="fr">Vos amis dans une fenêtre ;)</packagedescription>
 		<standalone>0</standalone>
 		<plugin>com.woltlab.wbb</plugin>
