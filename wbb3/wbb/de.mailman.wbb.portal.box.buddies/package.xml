@@ -7,12 +7,12 @@
 		<packagedescription>Deine Freunde in der Box ;)</packagedescription>
 		<packagename language="en">Portal box friends</packagename>
 		<packagedescription language="en">Your friends in a box ;)</packagedescription>
-		<packagename language="fr">Fenêtre du portail « Liste d’amis »</packagename>
+		<packagename language="fr">Fenêtre du portail &laquo; Liste d’amis &raquo;</packagename>
 		<packagedescription language="fr">Vos amis dans une fenêtre ;)</packagedescription>
 		<standalone>0</standalone>
 		<plugin>com.woltlab.wbb</plugin>
-		<version>1.0.0 PL2</version>
-		<date>2008-08-18</date>
+		<version>1.0.1</version>
+		<date>2008-10-14</date>
 	</packageinformation>
 
 	<authorinformation>
@@ -37,9 +37,30 @@
 	</instructions>
 
 	<instructions type="update" fromversion="1.0.0">
+		<files>files.tar</files>
+		<templates>templates.tar</templates>
+		<options>options.xml</options>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="en">en.xml</languages>
 		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.0 PL1">
+		<files>files.tar</files>
+		<templates>templates.tar</templates>
+		<options>options.xml</options>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
+	</instructions>
+	<instructions type="update" fromversion="1.0.0 PL2">
+		<files>files.tar</files>
+		<templates>templates.tar</templates>
+		<options>options.xml</options>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="en">en.xml</languages>
 		<languages languagecode="fr">fr.xml</languages>
 	</instructions>
 </package>

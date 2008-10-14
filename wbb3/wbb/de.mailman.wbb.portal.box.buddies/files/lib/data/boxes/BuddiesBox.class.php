@@ -1,20 +1,25 @@
 <?php
-/* $Id$ */
+/**
+ * $Id$
+ * @author      MailMan (http://wbb3addons.ump2002.net)
+ * @package     de.mailman.wbb.portal.box.buddiesbox
+ */
 class BuddiesBox {
 	protected $BuddiesData = array();
 
 	public function __construct($data, $boxname = "") {
+        if(!defined('BUDDIESBOX_SBCOLOR_ACP')) define('BUDDIESBOX_SBCOLOR_ACP', 2);
+        if(!defined('BUDDIESBOX_SHOWDEL_ACP')) define('BUDDIESBOX_SHOWDEL_ACP', false);
+        if(!defined('BUDDIESBOX_SHOWUSERMARKING_ACP')) define('BUDDIESBOX_SHOWUSERMARKING_ACP', false);
+        if(!defined('BUDDIESBOX_SHOWONLYONLINE_ACP')) define('BUDDIESBOX_SHOWONLYONLINE_ACP', true);
+        if(!defined('BUDDIESBOX_HIDEIFEMPTY_ACP')) define('BUDDIESBOX_HIDEIFEMPTY_ACP', true);
 		$this->BuddiesData['templatename'] = "buddiesbox";
 		$this->getBoxStatus($data);
 		$this->BuddiesData['boxID'] = $data['boxID'];
+		$this->BuddiesData['showBuddiesBox'] = false;
 
 //        $buddies = WCF::getUser()->buddies;
 		if (WCF::getUser()->userID != 0) {
-            if(!defined('BUDDIESBOX_SBCOLOR_ACP')) define('BUDDIESBOX_SBCOLOR_ACP', 2);
-            if(!defined('BUDDIESBOX_SHOWDEL_ACP')) define('BUDDIESBOX_SHOWDEL_ACP', false);
-            if(!defined('BUDDIESBOX_SHOWUSERMARKING_ACP')) define('BUDDIESBOX_SHOWUSERMARKING_ACP', false);
-            WCF::getTPL()->assign('BUDDIESBOX_SBCOLOR_ACP', BUDDIESBOX_SBCOLOR_ACP);
-            WCF::getTPL()->assign('BUDDIESBOX_SHOWDEL_ACP', BUDDIESBOX_SHOWDEL_ACP);
 
             require_once(WCF_DIR.'lib/data/user/UserProfile.class.php');
 
@@ -29,6 +34,7 @@ class BuddiesBox {
             $result = WBBCore::getDB()->sendQuery($sql);
             while($row = WBBCore::getDB()->fetchArray($result)) {
                 $user = new UserProfile(null, $row);
+                if(BUDDIESBOX_SHOWONLYONLINE_ACP && !$user->isOnline()) continue;
                 if($user->isOnline()) {
                 	$this->BuddiesData['buddies'][$cnt]['imgTitle'] = StringUtil::decodeHTML(WCF::getLanguage()->get('wcf.user.online', array('$username' => $row['username'])));
                 	$this->BuddiesData['buddies'][$cnt]['img'] = 'onlineS.png';
@@ -47,6 +53,7 @@ class BuddiesBox {
                 }
                 $cnt++;
     		}
+    		if($cnt > 0 || !BUDDIESBOX_HIDEIFEMPTY_ACP) $this->BuddiesData['showBuddiesBox'] = true;
     	}
 	}
 

@@ -14,7 +14,11 @@
         <item name="wcf.acp.option.buddiesbox_sbcolor_acp.description"><![CDATA[Défaut = 2.]]></item>
 		<item name="wcf.acp.option.buddiesbox_showdel_acp"><![CDATA[Afficher le bouton de suppression]]></item>
         <item name="wcf.acp.option.buddiesbox_showdel_acp.description"><![CDATA[]]></item>
-		<item name="wcf.acp.option.buddiesbox_showusermarking_acp"><![CDATA[Utiliser le marqueur « Utilisateur en ligne »]]></item>
+		<item name="wcf.acp.option.buddiesbox_showusermarking_acp"><![CDATA[Utiliser le marqueur &laquo; Utilisateur en ligne &raquo;]]></item>
         <item name="wcf.acp.option.buddiesbox_showusermarking_acp.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.buddiesbox_showonlyonline_acp"><![CDATA[Seuls les amis en ligne]]></item>
+        <item name="wcf.acp.option.buddiesbox_showonlyonline_acp.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.buddiesbox_hideifempty_acp"><![CDATA[Box vides ne sont pas en]]></item>
+        <item name="wcf.acp.option.buddiesbox_hideifempty_acp.description"><![CDATA[]]></item>
 	</category>
 </language>

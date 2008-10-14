@@ -14,22 +14,28 @@
 				<optiontype>select</optiontype>
 				<defaultvalue>2</defaultvalue>
 				<selectoptions><![CDATA[1
-										2
-										3]]></selectoptions>
+2
+3]]></selectoptions>
 			</option>
 			<option name="buddiesbox_showdel_acp">
 				<categoryname>portal.box.buddiesbox</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>0</defaultvalue>
-				<visible>4</visible>
-				<editable>0</editable>
 		    </option>
 			<option name="buddiesbox_showusermarking_acp">
 				<categoryname>portal.box.buddiesbox</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>0</defaultvalue>
-				<visible>4</visible>
-				<editable>0</editable>
+		    </option>
+			<option name="buddiesbox_showonlyonline_acp">
+				<categoryname>portal.box.buddiesbox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+		    </option>
+			<option name="buddiesbox_hideifempty_acp">
+				<categoryname>portal.box.buddiesbox</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
 		    </option>
 		</options>
 	</import>

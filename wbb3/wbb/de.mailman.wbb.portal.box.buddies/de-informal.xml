@@ -16,5 +16,9 @@
         <item name="wcf.acp.option.buddiesbox_showdel_acp.description"><![CDATA[]]></item>
 		<item name="wcf.acp.option.buddiesbox_showusermarking_acp"><![CDATA[Benutzer Online-Markierung verwenden]]></item>
         <item name="wcf.acp.option.buddiesbox_showusermarking_acp.description"><![CDATA[Wenn diese Option aktiviert ist werden die Freunde in der Box mit der gleichen Markierung wie in der Online-Liste dargestellt.]]></item>
+		<item name="wcf.acp.option.buddiesbox_showonlyonline_acp"><![CDATA[Nur &quot;Online-Freunde&quot; anzeigen]]></item>
+        <item name="wcf.acp.option.buddiesbox_showonlyonline_acp.description"><![CDATA[Zeigt nur die Freunde in der Box an, die auch online sind.]]></item>
+		<item name="wcf.acp.option.buddiesbox_hideifempty_acp"><![CDATA[Leere Box nicht anzeigen]]></item>
+        <item name="wcf.acp.option.buddiesbox_hideifempty_acp.description"><![CDATA[Zeigt die Box nicht an, wenn keine Freunde eingetragen bzw. offline sind.]]></item>
 	</category>
 </language>
