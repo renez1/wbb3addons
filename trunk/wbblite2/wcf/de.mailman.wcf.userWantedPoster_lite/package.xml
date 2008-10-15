@@ -22,6 +22,10 @@
 	<requiredpackages>
         <requiredPackage minversion="1.0.5">com.woltlab.wcf</requiredPackage>
         <requiredPackage minversion="1.0.6" file="required/com.woltlab.community.acp.wysiwyg.tar">com.woltlab.community.acp.wysiwyg</requiredPackage>
+		<requiredPackage minversion="1.0.4">com.woltlab.wcf.data.page</requiredPackage>
+		<requiredPackage minversion="1.0.9">com.woltlab.wcf.page.user.profile</requiredPackage>
+		<requiredPackage minversion="1.0.6">com.woltlab.wcf.data.message.bbcode</requiredPackage>
+		<!-- <requiredPackage minversion="1.0.8">com.woltlab.wcf.data.message.pm</requiredPackage> -->
 	</requiredpackages>
 
 	<instructions type="install">
