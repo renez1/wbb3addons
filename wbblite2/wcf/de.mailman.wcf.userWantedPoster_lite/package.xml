@@ -5,11 +5,11 @@
 	<packageinformation>
 		<packagename>Benutzer-Steckbrief [WBB Lite 2]</packagename>
 		<packagedescription>Eine &quot;eigene&quot; Seite für den Benutzer. [WBB Lite 2]</packagedescription>
-		<packagename language="en">User Wanted Poster  [WBB Lite 2]</packagename>
+		<packagename language="en">User Wanted Poster [WBB Lite 2]</packagename>
 		<packagedescription language="en">A special page for the user. [WBB Lite 2]</packagedescription>
 		<isUnique>1</isUnique>
-		<version>1.0.10</version>
-		<date>2008-09-05</date>
+		<version>1.0.10 PL1</version>
+		<date>2008-10-17</date>
 		<!-- <standalone>0</standalone> -->
 		<plugin>com.woltlab.wcf</plugin>
 	</packageinformation>
@@ -20,12 +20,10 @@
 	</authorinformation>
 
 	<requiredpackages>
-        <requiredPackage minversion="1.0.5">com.woltlab.wcf</requiredPackage>
+        <requiredPackage minversion="1.0.0">com.woltlab.wcf.data.page</requiredPackage>
+        <requiredPackage minversion="1.0.0">com.woltlab.wcf.page.user.profile</requiredPackage>
+        <requiredPackage minversion="1.0.0">com.woltlab.wcf.data.message.bbcode</requiredPackage>
         <requiredPackage minversion="1.0.6" file="required/com.woltlab.community.acp.wysiwyg.tar">com.woltlab.community.acp.wysiwyg</requiredPackage>
-		<requiredPackage minversion="1.0.4">com.woltlab.wcf.data.page</requiredPackage>
-		<requiredPackage minversion="1.0.9">com.woltlab.wcf.page.user.profile</requiredPackage>
-		<requiredPackage minversion="1.0.6">com.woltlab.wcf.data.message.bbcode</requiredPackage>
-		<!-- <requiredPackage minversion="1.0.8">com.woltlab.wcf.data.message.pm</requiredPackage> -->
 	</requiredpackages>
 
 	<instructions type="install">
@@ -47,7 +45,7 @@
         <languages languagecode="en">en.xml</languages>
 	</instructions>
 
-<!--	<instructions type="update" fromversion="1.0.0">
+	<instructions type="update" fromversion="1.0.0">
 		<files>files.tar</files>
 		<templates>templates.tar</templates>
 		<acptemplates>acptemplates.tar</acptemplates>
@@ -148,7 +146,7 @@
 		<languages languagecode="de">de.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
-	</instructions> -->
+	</instructions>
 	<instructions type="update" fromversion="1.0.8">
 		<files>files.tar</files>
 		<templates>templates.tar</templates>
@@ -164,5 +162,8 @@
 		<languages languagecode="de">de.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
+	</instructions>
+	<instructions type="update" fromversion="1.0.10">
+		<languages languagecode="de">de.xml</languages>
 	</instructions>
 </package>
