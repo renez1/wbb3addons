@@ -33,6 +33,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 		<languages languagecode="it">it.xml</languages>
 	</instructions>
 
@@ -45,6 +46,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 		<languages languagecode="it">it.xml</languages>
 	</instructions>
 
@@ -57,6 +59,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 		<languages languagecode="it">it.xml</languages>
 	</instructions>
 
@@ -69,6 +72,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 		<languages languagecode="it">it.xml</languages>
 	</instructions>
 
@@ -81,6 +85,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 		<languages languagecode="it">it.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.4">
@@ -92,6 +97,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 		<languages languagecode="it">it.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.5">
@@ -103,6 +109,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 		<languages languagecode="it">it.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.6">
@@ -112,6 +119,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 		<languages languagecode="it">it.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.7">
@@ -121,6 +129,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 		<languages languagecode="it">it.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.8">
@@ -130,6 +139,7 @@
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
 		<languages languagecode="it">it.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.9">
