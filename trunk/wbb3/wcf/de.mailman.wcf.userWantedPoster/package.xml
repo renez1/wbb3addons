@@ -8,8 +8,8 @@
 		<packagename language="en">User Wanted Poster</packagename>
 		<packagedescription language="en">A special page for the user.</packagedescription>
 		<isUnique>1</isUnique>
-		<version>1.0.10</version>
-		<date>2008-09-05</date>
+		<version>1.0.10 PL1</version>
+		<date>2008-10-17</date>
 		<standalone>0</standalone>
 		<plugin>com.woltlab.wcf</plugin>
 	</packageinformation>
@@ -20,7 +20,10 @@
 	</authorinformation>
 
 	<requiredpackages>
-        <requiredPackage minversion="1.0.5">com.woltlab.wcf</requiredPackage>
+        <requiredPackage minversion="1.0.0">com.woltlab.wcf.data.page</requiredPackage>
+        <requiredPackage minversion="1.0.0">com.woltlab.wcf.page.user.profile</requiredPackage>
+        <requiredPackage minversion="1.0.0">com.woltlab.wcf.data.message.bbcode</requiredPackage>
+        <requiredPackage minversion="1.0.0">com.woltlab.wcf.data.message.pm</requiredPackage>
         <requiredPackage minversion="1.0.6" file="required/com.woltlab.community.acp.wysiwyg.tar">com.woltlab.community.acp.wysiwyg</requiredPackage>
 	</requiredpackages>
 
@@ -160,5 +163,8 @@
 		<languages languagecode="de">de.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
+	</instructions>
+	<instructions type="update" fromversion="1.0.10">
+		<languages languagecode="de">de.xml</languages>
 	</instructions>
 </package>
