@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="de">
+	<category name="wcf.user.option">
+	    <item name="wcf.user.option.category.profile.messenger"><![CDATA[Instant Messenger]]></item>
+		<item name="wcf.user.option.icq"><![CDATA[ICQ]]></item>
+		<item name="wcf.user.option.icq.description"><![CDATA[Die Nummer Ihres ICQ-Accounts]]></item> 
+		<item name="wcf.user.option.aim"><![CDATA[AIM]]></item>
+		<item name="wcf.user.option.aim.description"><![CDATA[Der Name Ihres AOL Instant Messenger-Accounts]]></item>
+		<item name="wcf.user.option.yim"><![CDATA[YIM]]></item>
+		<item name="wcf.user.option.yim.description"><![CDATA[Der Name Ihres Yahoo! Instant Messenger-Accounts]]></item>
+		<item name="wcf.user.option.msn"><![CDATA[Windows Live]]></item>
+		<item name="wcf.user.option.msn.description"><![CDATA[Der Name Ihres Windows Live Messenger-Accounts]]></item>
+		<item name="wcf.user.option.skype"><![CDATA[Skype]]></item>
+		<item name="wcf.user.option.skype.description"><![CDATA[Ihr Skype-Name]]></item>
+	</category>     
+</language>
