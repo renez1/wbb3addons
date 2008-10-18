@@ -40,7 +40,6 @@
 				<showorder>5</showorder>
 				<visible>0</visible>          
 			</option>
-			<!-- 
 			<option name="xfire">
 			    <icon>icon/xfireM.png</icon>
 				<categoryname>profile.messenger</categoryname>
@@ -48,6 +47,7 @@
 				<showorder>6</showorder>
 				<visible>0</visible>          
 			</option>
+			<!-- 
 			<option name="andere">
 			    <icon>icon/userProfileMessengerM.png</icon>
 				<categoryname>profile.messenger</categoryname>
