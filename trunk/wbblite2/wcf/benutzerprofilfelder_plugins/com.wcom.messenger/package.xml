@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+<!-- $Id$ -->
 <package name="com.wcom.messenger">
   <packageinformation>
     <packagename>Messenger Felder [WBB Lite 2]</packagename>
