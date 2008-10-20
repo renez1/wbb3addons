@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
 <!-- $Id$ -->
 <language languagecode="de">
 	<category name="wcf.user.option">
 	    <item name="wcf.user.option.category.profile.messenger"><![CDATA[Instant Messenger]]></item>
 		<item name="wcf.user.option.icq"><![CDATA[ICQ]]></item>
-		<item name="wcf.user.option.icq.description"><![CDATA[Die Nummer Ihres ICQ-Accounts]]></item> 
+		<item name="wcf.user.option.icq.description"><![CDATA[Die Nummer Ihres ICQ-Accounts]]></item>
 		<item name="wcf.user.option.aim"><![CDATA[AIM]]></item>
 		<item name="wcf.user.option.aim.description"><![CDATA[Der Name Ihres AOL Instant Messenger-Accounts]]></item>
 		<item name="wcf.user.option.yim"><![CDATA[YIM]]></item>
@@ -16,5 +16,5 @@
 		<item name="wcf.user.option.skype.description"><![CDATA[Ihr Skype-Name]]></item>
 		<item name="wcf.user.option.xfire"><![CDATA[X-Fire]]></item>
 		<item name="wcf.user.option.xfire.description"><![CDATA[Ihr X-Fire Name]]></item>
-	</category>     
+	</category>
 </language>
