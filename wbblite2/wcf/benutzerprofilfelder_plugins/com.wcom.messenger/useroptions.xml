@@ -1,11 +1,11 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/options.dtd">
 <!-- $Id$ -->
 <data>     
 	<import>               
 		<categories>
 			<category name="profile.messenger">
-				<icon>icon/userProfileMessengerM.png</icon>
+				<icon>icon/userProfileMessengerM.png</icon> -->
 				<parent>profile</parent>
 				<showorder>20</showorder>
 			</category>
@@ -13,38 +13,38 @@
 		
 		<options>                              
 			<option name="icq">
-			    <icon>icon/icqM.png</icon>
+			    <!-- <icon>icon/icqM.png</icon> -->
 				<categoryname>profile.messenger</categoryname>
 				<optiontype>text</optiontype>
 				<showorder>1</showorder>
 				<visible>0</visible>                    
 			</option>
 			<option name="aim">
-			    <icon>icon/aimM.png</icon>
+			    <!-- <icon>icon/aimM.png</icon>  -->
+				<categoryname>profile.messenger</categoryname>
+				<optiontype>text</optiontype>
+				<showorder>2</showorder>
+				<visible>0</visible>          
+			</option>
+			<option name="msn">
+			    <!-- <icon>icon/msnM.png</icon>  -->
 				<categoryname>profile.messenger</categoryname>
 				<optiontype>text</optiontype>
 				<showorder>3</showorder>
 				<visible>0</visible>          
-			</option>
-			<option name="msn">
-			    <icon>icon/msnM.png</icon>
+			</option> 
+			<option name="skype">
+			    <!-- <icon>icon/skypeM.png</icon>  -->
 				<categoryname>profile.messenger</categoryname>
 				<optiontype>text</optiontype>
 				<showorder>4</showorder>
 				<visible>0</visible>          
-			</option> 
-			<option name="skype">
-			    <icon>icon/skypeM.png</icon>
+			</option>
+			<option name="xfire">
+			   <!-- <icon>icon/xfireM.png</icon>  -->
 				<categoryname>profile.messenger</categoryname>
 				<optiontype>text</optiontype>
 				<showorder>5</showorder>
-				<visible>0</visible>          
-			</option>
-			<option name="xfire">
-			    <icon>icon/xfireM.png</icon>
-				<categoryname>profile.messenger</categoryname>
-				<optiontype>text</optiontype>
-				<showorder>6</showorder>
 				<visible>0</visible>          
 			</option>
 			<!-- 
