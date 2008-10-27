@@ -8,8 +8,8 @@
 		<packagedescription>Adds messenger Info fields</packagedescription>
 		<packagedescription language="de">Fügt die gängigsten Profilfelder für Messenger ein</packagedescription>
 		<packagedescription language="de-informal">Fügt die gängigsten Profilfelder für Messenger ein</packagedescription>
-		<version>1.0.0 Beta 2</version>
-		<date>2008-10-20</date>
+		<version>1.0.0 Beta 3</version>
+		<date>2008-10-27</date>
 		<isunique>0</isunique>
 		<standalone>0</standalone>
 		<plugin>com.woltlab.wcf</plugin>
@@ -21,6 +21,15 @@
 	<requiredpackages>
 		<requiredpackage minversion="1.0.0">com.woltlab.wcf.page.user.profile</requiredpackage>
 	</requiredpackages>
+	<optionalpackages>
+		<optionalpackage minversion="1.0.0 Beta 3" file="optionals/com.wcom.messenger.icq.tar">com.wcom.messenger.icq</optionalpackage>
+		<optionalpackage minversion="1.0.0 Beta 3" file="optionals/com.wcom.messenger.aim.tar">com.wcom.messenger.aim</optionalpackage>
+		<optionalpackage minversion="1.0.0 Beta 3" file="optionals/com.wcom.messenger.yim.tar">com.wcom.messenger.yim</optionalpackage>
+		<optionalpackage minversion="1.0.0 Beta 3" file="optionals/com.wcom.messenger.msn.tar">com.wcom.messenger.msn</optionalpackage>
+		<optionalpackage minversion="1.0.0 Beta 3" file="optionals/com.wcom.messenger.skype.tar">com.wcom.messenger.skype</optionalpackage>
+		<optionalpackage minversion="1.0.0 Beta 3" file="optionals/com.wcom.messenger.xfire.tar">com.wcom.messenger.xfire</optionalpackage>
+		<optionalpackage minversion="1.0.0 Beta 3" file="optionals/com.wcom.messenger.jabber.tar">com.wcom.messenger.jabber</optionalpackage>
+	</optionalpackages>
 	<instructions type="install">
 		<files>files.tar</files>
 		<useroptions>useroptions.xml</useroptions>
@@ -35,8 +44,8 @@
 		<languages languagecode="zh-CN">zh-CN.xml</languages>
 		<languages languagecode="zh-TW">zh-TW.xml</languages>
 	</instructions>
-	<instructions type="update" fromversion="1.0.0 Beta 1">
-		<!-- <files>files.tar</files> -->
+	<!-- <instructions type="update" fromversion="1.0.0">
+		<files>files.tar</files>
 		<useroptions>useroptions.xml</useroptions>
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
@@ -48,5 +57,5 @@
 		<languages languagecode="tr">tr.xml</languages>
 		<languages languagecode="zh-CN">zh-CN.xml</languages>
 		<languages languagecode="zh-TW">zh-TW.xml</languages>
-	</instructions>
+	</instructions> -->
 </package>

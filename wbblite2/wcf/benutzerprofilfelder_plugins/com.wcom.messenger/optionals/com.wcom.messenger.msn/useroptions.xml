@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/options.dtd">
+<!-- $Id$ -->
+<data>     
+	<import>
+		<options>      
+			<option name="msn">
+			    <!-- <icon>icon/msnM.png</icon>  -->
+				<categoryname>profile.messenger</categoryname>
+				<optiontype>text</optiontype>
+				<showorder>4</showorder>
+				<visible>0</visible>          
+			</option>
+		</options>  
+     </import>
+</data>

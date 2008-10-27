@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<!-- $Id$ -->
+<language languagecode="de-informal">
+	<category name="wcf.user.option">
+	 	<item name="wcf.user.option.msn"><![CDATA[Windows Live]]></item>
+	  	<item name="wcf.user.option.msn.description"><![CDATA[Der Name deines Windows Live Messenger-Accounts]]></item>
+	</category>
+</language>

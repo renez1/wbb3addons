@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<!-- $Id$ -->
+<language languagecode="en">
+	<category name="wcf.user.option">
+	  	<item name="wcf.user.option.yim"><![CDATA[Yahoo! Instant Messenger (YIM)]]></item>
+	  	<item name="wcf.user.option.yim.description"><![CDATA[The name of your YIM account]]></item>
+	</category>
+</language>
