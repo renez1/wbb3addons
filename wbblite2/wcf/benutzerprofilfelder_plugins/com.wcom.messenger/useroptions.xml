@@ -26,25 +26,32 @@
 				<showorder>2</showorder>
 				<visible>0</visible>          
 			</option>
+			<option name="yim">
+			    <!-- <icon>icon/yimM.png</icon>  -->
+				<categoryname>profile.messenger</categoryname>
+				<optiontype>text</optiontype>
+				<showorder>3</showorder>
+				<visible>0</visible>          
+			</option>
 			<option name="msn">
 			    <!-- <icon>icon/msnM.png</icon>  -->
 				<categoryname>profile.messenger</categoryname>
 				<optiontype>text</optiontype>
-				<showorder>3</showorder>
+				<showorder>4</showorder>
 				<visible>0</visible>          
 			</option> 
 			<option name="skype">
 			    <!-- <icon>icon/skypeM.png</icon>  -->
 				<categoryname>profile.messenger</categoryname>
 				<optiontype>text</optiontype>
-				<showorder>4</showorder>
+				<showorder>5</showorder>
 				<visible>0</visible>          
 			</option>
 			<option name="xfire">
 			   <!-- <icon>icon/xfireM.png</icon>  -->
 				<categoryname>profile.messenger</categoryname>
 				<optiontype>text</optiontype>
-				<showorder>5</showorder>
+				<showorder>6</showorder>
 				<visible>0</visible>          
 			</option>
 			<!-- 
@@ -52,7 +59,7 @@
 			    <icon>icon/userProfileMessengerM.png</icon>
 				<categoryname>profile.messenger</categoryname>
 				<optiontype>text</optiontype>
-				<showorder>6</showorder>
+				<showorder>7</showorder>
 				<visible>0</visible>          
 			</option>
 			 -->
