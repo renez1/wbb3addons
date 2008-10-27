@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<!-- $Id$ -->
+<language languagecode="de">
+	<category name="wcf.user.option">
+		<item name="wcf.user.option.jabber"><![CDATA[Jabber]]></item>
+		<item name="wcf.user.option.jabber.description"><![CDATA[Der Name Ihres Jabber Messenger-Accounts]]></item>
+	</category>
+</language>
