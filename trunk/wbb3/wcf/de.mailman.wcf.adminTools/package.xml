@@ -6,8 +6,8 @@
         <packagename>Admin-Tools</packagename>
         <packagedescription>Eine Werkzeugsammlung für den Administrator.</packagedescription>
         <isUnique>1</isUnique>
-        <version>1.2.4</version>
-        <date>2008-10-04</date>
+        <version>1.2.4 PL1</version>
+        <date>2008-11-05</date>
         <standalone>0</standalone>
         <plugin>com.woltlab.wcf</plugin>
     </packageinformation>
@@ -87,5 +87,8 @@
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
         <languages languagecode="fr">fr.xml</languages>
+    </instructions>
+    <instructions type="update" fromversion="1.2.4">
+        <files>files.tar</files>
     </instructions>
 </package>

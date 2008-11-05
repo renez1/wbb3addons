@@ -993,9 +993,26 @@ class AdminTools {
         $ret = WCF::getDB()->getFirstRow($sql);
         if(!empty($ret['menuItemLink'])) {
             $tmp = array();
+            $url = '';
+            $urlFound = false;
             parse_str($ret['menuItemLink'], $tmp);
-            if(isset($tmp['url']))      $ret['url'] = $tmp['url'];
-            if(isset($tmp['target']))   $ret['target'] = $tmp['target'];
+            foreach($tmp as $k => $v) {
+                if($k == 'target' && empty($ret['target'])) {
+                    $ret['target'] = $v;
+                } else if($k == 'url' || $urlFound) {
+                    if(!$urlFound) {
+                        $urlFound = true;
+                        $url = $v;
+                    } else if(!empty($v)) {
+                        if(!preg_match('/\?/', $url)) $p = '?';
+                        else $p = '&';
+                        $url .= $p.$k.'='.$v;
+                    }
+                }
+            }
+            $ret['url'] = $url;
+//            if(isset($tmp['url']))      $ret['url'] = $tmp['url'];
+//            if(isset($tmp['target']))   $ret['target'] = $tmp['target'];
         }
         return $ret;
     }
@@ -1018,7 +1035,8 @@ class AdminTools {
         $showOrder      = (!isset($data['showOrder']) ? 0 : $data['showOrder']);
         $linkTarget     = (empty($data['linkTarget']) ? '_iframe' : $data['linkTarget']);
         $menuItemLink   = (!empty($data['menuItemLink']) ? $data['menuItemLink'] : '');
-        $url = 'index.php?page=AdminToolsLink&url='.$menuItemLink.'&target='.$linkTarget;
+        // url at least!
+        $url = 'index.php?page=AdminToolsLink&target='.$linkTarget.'&url='.$menuItemLink;
         $url = "'".WCF::getDB()->escapeString($url)."'";
         if($menuItemID > 0) {
             $sql = "UPDATE wcf".WCF_N."_acp_menu_item"
