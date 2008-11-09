@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/options.dtd">
+<!-- $Id$ -->
+<data>     
+	<import>               
+		<categories>
+			<category name="profil.gw">
+				<icon>icon/gwprofilM.png</icon>
+				<parent>profile</parent>
+				<showorder>27</showorder>
+			</category>
+		</categories>
+        <options>                              
+			<option name="ingamename">
+				<categoryname>profil.profil.gw</categoryname>
+				<optiontype>text</optiontype>
+				<showorder>1</showorder>
+				<visible>0</visible>                    
+			</option>
+			<option name="characterclass">
+				<categoryname>profil.gw</categoryname>
+				<optiontype>multiselect</optiontype>
+				<defaultvalue>-<defaultvalue>
+				<selectoptions>Assassine</selectoptions>
+				<selectoptions>Derwisch</selectoptions>
+				<selectoptions>Elementarmagier</selectoptions>
+				<selectoptions>Krieger</selectoptions>
+				<selectoptions>Mesmer</selectoptions>
+				<selectoptions>Mönch</selectoptions>
+				<selectoptions>Nekromant</selectoptions>
+				<selectoptions>Paragon</selectoptions>
+				<selectoptions>Ritualist</selectoptions>
+				<selectoptions>Waldläufer</selectoptions>
+				<showorder>2</showorder>
+				<visible>0</visible>          
+			</option>
+			<option name="campaigns">
+				<categoryname>profil.gw</categoryname>
+				<optiontype>multiselect</optiontype>
+				<showorder>3</showorder>
+				<defaultvalue>-<defaultvalue>
+				<selectoptions>Prophecies</selectoptions>
+				<selectoptions>Factions</selectoptions>
+				<selectoptions>Nightfall</selectoptions>
+				<selectoptions>Eye of the North</selectoptions>
+				<visible>0</visible>          
+			</option>
+<!--        <option name="other">
+				<categoryname>profil.gw</categoryname>
+				<optiontype>textarea</optiontype>
+				<showorder>4</showorder>
+				<visible>0</visible>          
+            </option> -->
+			</options>
+		</categories>
+     </import>
+</data>
