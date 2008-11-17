@@ -12,7 +12,7 @@
 		</categories>
         <options>                              
 			<option name="ingamename">
-				<categoryname>profil.profil.gw</categoryname>
+				<categoryname>profil.gw</categoryname>
 				<optiontype>text</optiontype>
 				<showorder>1</showorder>
 				<visible>0</visible>                    
@@ -20,17 +20,16 @@
 			<option name="characterclass">
 				<categoryname>profil.gw</categoryname>
 				<optiontype>multiselect</optiontype>
-				<defaultvalue>-<defaultvalue>
-				<selectoptions>Assassine</selectoptions>
-				<selectoptions>Derwisch</selectoptions>
-				<selectoptions>Elementarmagier</selectoptions>
-				<selectoptions>Krieger</selectoptions>
-				<selectoptions>Mesmer</selectoptions>
-				<selectoptions>Mönch</selectoptions>
-				<selectoptions>Nekromant</selectoptions>
-				<selectoptions>Paragon</selectoptions>
-				<selectoptions>Ritualist</selectoptions>
-				<selectoptions>Waldläufer</selectoptions>
+				<selectoptions>Assassine
+				Derwisch
+				Elementarmagier
+				Krieger
+				Mesmer
+				Mönch
+				Nekromant
+				Paragon
+				Ritualist
+				Waldläufer</selectoptions>
 				<showorder>2</showorder>
 				<visible>0</visible>          
 			</option>
@@ -38,11 +37,10 @@
 				<categoryname>profil.gw</categoryname>
 				<optiontype>multiselect</optiontype>
 				<showorder>3</showorder>
-				<defaultvalue>-<defaultvalue>
-				<selectoptions>Prophecies</selectoptions>
-				<selectoptions>Factions</selectoptions>
-				<selectoptions>Nightfall</selectoptions>
-				<selectoptions>Eye of the North</selectoptions>
+				<selectoptions>Prophecies
+				Factions
+				Nightfall
+				Eye of the North</selectoptions>
 				<visible>0</visible>          
 			</option>
 <!--        <option name="other">
@@ -51,7 +49,6 @@
 				<showorder>4</showorder>
 				<visible>0</visible>          
             </option> -->
-			</options>
-		</categories>
+		</options>
      </import>
 </data>
