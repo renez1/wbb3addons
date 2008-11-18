@@ -5,12 +5,12 @@
 	<category name="wcf.user.option">
 	    <item name="wcf.user.option.category.profil.gw"><![CDATA[Guild Wars (GW)]]></item>
 	    <item name="wcf.user.option.ingamename"><![CDATA[Ingamenick]]></item>
-	    <item name="wcf.user.option.ingamename.description"><![CDATA[Tragen Sie hier Ihre(n) Spielernamen ein. Mit Komma (,) gentrennt.]]></item>
-	    <item name="wcf.user.option.characterclass"><![CDATA[Charakter-Klasse]]></item>
-	    <item name="wcf.user.option.characterclass.description"><![CDATA[Wählen Sie hier Ihre Charakter-Klasse(n) aus.]]></item>
+	    <item name="wcf.user.option.ingamename.description"><![CDATA[Tragen hier deine Spielernamen, mit Komma (,) getrennt, ein.]]></item>
+	    <item name="wcf.user.option.characterclass"><![CDATA[Charakterklassen]]></item>
+	    <item name="wcf.user.option.characterclass.description"><![CDATA[Wählen hier deine Charakterklassen aus.]]></item>
 	    <item name="wcf.user.option.campaigns"><![CDATA[Kapitel]]></item>
 	    <item name="wcf.user.option.campaigns.description"><![CDATA[Wählen Sie hier Ihre Kapitel aus.]]></item>
 	    <item name="wcf.user.option.other"><![CDATA[Info]]></item>
 	    <item name="wcf.user.option.other.description"><![CDATA[Hier könne Sie reinschreiben, was Sie wollen.]]></item>
-	</category>     
+	</category>   
 </language>
