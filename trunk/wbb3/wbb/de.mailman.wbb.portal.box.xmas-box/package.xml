@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "DTD/package.dtd">
+<!-- $Id$ -->
+<package name="de.mailman.wbb.portal.box.xmasbox">
+	<packageinformation>
+		<packagename lang="de">Portalbox &quot;Xmas-Box&quot;</packagename>
+        <packageDescription>Mit dieser Portalbox werden Ihre User in verschiedenen Sprachen weihnachtlich begrüßt.</packageDescription>
+		<standalone>0</standalone>
+		<isUnique>1</isUnique>
+		<plugin>com.woltlab.wbb</plugin>
+		<version>1.0.0</version>
+		<date>2008-11-30</date>
+	</packageinformation>
+
+	<authorinformation>
+		<author>Nendilo</author>
+		<authorurl>http://wbb3addons.ump2002.net</authorurl>
+	</authorinformation>
+
+	<requiredpackages>
+		<requiredpackage minversion="1.0.0">de.wbb3mods.wbb.portal</requiredpackage>
+	</requiredpackages>
+
+	<instructions type="install">
+		<files>files.tar</files>
+		<templates>templates.tar</templates>
+		<portalbox>portalbox.xml</portalbox>
+		<options>options.xml</options>
+		<useroptions>useroptions.xml</useroptions>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+	</instructions>
+</package>
