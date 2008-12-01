@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <!DOCTYPE package SYSTEM "DTD/package.dtd">
-<!-- $Id$ -->
 <package name="de.mailman.wbb.portal.box.xmasbox">
 	<packageinformation>
 		<packagename lang="de">Portalbox &quot;Xmas-Box&quot;</packagename>
@@ -8,8 +7,8 @@
 		<standalone>0</standalone>
 		<isUnique>1</isUnique>
 		<plugin>com.woltlab.wbb</plugin>
-		<version>1.0.0</version>
-		<date>2008-11-30</date>
+		<version>1.0.1</version>
+		<date>2008-12-01</date>
 	</packageinformation>
 
 	<authorinformation>
@@ -27,6 +26,13 @@
 		<portalbox>portalbox.xml</portalbox>
 		<options>options.xml</options>
 		<useroptions>useroptions.xml</useroptions>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+	</instructions>
+	<instructions type="update" fromversion="1.0.0">
+		<files>files.tar</files>
+		<templates>templates.tar</templates>
+		<options>options.xml</options>
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 	</instructions>
