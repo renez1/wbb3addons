@@ -1,5 +1,4 @@
 <?php
-/* $Id$ */
 class xmasBox {
 	protected $BoxData = array();
 	public function __construct($data, $boxname = "") {
@@ -13,7 +12,7 @@ class xmasBox {
 
 		if(XMASBOX_BOXOPENED == true || XMASBOX_HEADER == true) $this->BoxData['Status'] = 1;
 		
-		# Länderkürzel nach ISO 639-1
+		# Sprachkürzel nach ISO 639-1 (2-stellig), ISO 639-2 (3-stellig)
 		$xmasbox_value = array(
                                 'af',
                                 'al',
@@ -59,7 +58,27 @@ class xmasBox {
                                 'ur',
                                 'vi',
                                 'zh-guoyu',
-                                'zh'
+                                'zh',
+                                'lv',
+                                'sl',
+                                'az',
+                                'eu',
+                                'hi',
+                                'iu',
+                                'th',
+                                'sw',
+                                'cy',
+                                'gd',
+                                'jv',
+                                'ms',
+                                'lt',
+                                'fil',
+                                'bn',
+                                'nah',
+                                'nv',
+                                'ee',
+                                'rn',
+                                'as'
 		);
 	    $rand = array_rand($xmasbox_value, 1);
 	    $value = $xmasbox_value[$rand];
