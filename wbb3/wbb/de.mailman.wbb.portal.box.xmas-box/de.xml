@@ -49,7 +49,7 @@
         <item name="wbb.portal.box.xmasbox.lang_vi"><![CDATA[Vietnamesisch]]></item>
         <item name="wbb.portal.box.xmasbox.lang_by"><![CDATA[Weißrussisch]]></item>
         <item name="wbb.portal.box.xmasbox.lang_zh"><![CDATA[Chinesisch]]></item>
-        <!-- Update 1.0.1 -->
+        <!--   Update 1.0.1 -->
         <item name="wbb.portal.box.xmasbox.lang_lv"><![CDATA[Lettisch]]></item>
         <item name="wbb.portal.box.xmasbox.lang_sl"><![CDATA[Slowenisch]]></item>
         <item name="wbb.portal.box.xmasbox.lang_az"><![CDATA[Aserbaidschanisch]]></item>
@@ -71,6 +71,23 @@
         <item name="wbb.portal.box.xmasbox.lang_rn"><![CDATA[Kirundi]]></item>
         <item name="wbb.portal.box.xmasbox.lang_as"><![CDATA[Assamesisch]]></item>
         <!-- / Update 1.0.1 -->
+        <!--   Update 1.0.2 -->
+        <item name="wbb.portal.box.xmasbox.lang_yid"><![CDATA[Jiddisch]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_yor"><![CDATA[Yoruba]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_zza"><![CDATA[Zazaki]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_zia"><![CDATA[Keres]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_ypk"><![CDATA[Yupik]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_wo"><![CDATA[Wolof]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_sda"><![CDATA[Toraja]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_to"><![CDATA[Tongaisch]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_tkl"><![CDATA[Tokelauisch]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_tli"><![CDATA[Tlingit]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_pa"><![CDATA[Punjabi]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_ky"><![CDATA[Kirgisisch]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_rw"><![CDATA[Kinyarwanda]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_kk"><![CDATA[Qazax]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_per"><![CDATA[Persisch]]></item>
+        <!-- / Update 1.0.2 -->
 	</category>
 	<category name="wcf.acp.option">
 		<item name="wcf.acp.option.category.portal.box.xmasbox"><![CDATA[Xmas-Box]]></item>

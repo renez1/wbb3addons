@@ -6,13 +6,13 @@
 		        <div class="containerHead">
                     {if !XMASBOX_BOXOPENED}
         		    	<div class="containerIcon">
-        		    		<a href="javascript: void(0)" onclick="openList('xmasbox', true)"><img src="{@RELATIVE_WCF_DIR}icon/minusS.png" id="xmasBoxImage" alt="" /></a>
+        		    		<a href="javascript: void(0)" onclick="openList('xmasBox', true)"><img src="{@RELATIVE_WCF_DIR}icon/minusS.png" id="xmasBoxImage" alt="" /></a>
                         </div>
                     {/if}
                     <div class="containerContent">{lang}{XMASBOX_TITLE}{/lang}</div>
                 </div>
             {/if}
-            <div id="xmasbox" style="height: 256px; margin: 0;padding: 5px 0;position: relative;">
+            <div id="xmasBox" style="height: 256px; margin: 0;padding: 5px 0;position: relative;">
                 <img src="{@RELATIVE_WBB_DIR}images/{XMASBOX_ANSAGER}" alt="{XMASBOX_ANSAGER}" style="margin: 0;" />
                 <div id="bubble1" style="margin: 0; padding: 0;position: absolute;z-index: 999;top: 25px; left: 180px;background: transparent url({@RELATIVE_WBB_DIR}images/bubble.png) no-repeat 0 30px;opacity: .8;-moz-opacity: .8;filter:Alpha(opacity=80);">
                     <div id="bubble2" style="margin: 0 0 0 40px;color: #000;padding: 30px 15px 40px;background-color: #fff;border: 1px solid #fff;border-radius: 25px;-moz-border-radius: 25px;">
@@ -27,7 +27,7 @@
         {if !XMASBOX_BOXOPENED}
             <script type="text/javascript" >
 	        //<![CDATA[
-	        if('{@$item.Status}' != '') initList('xmasbox', {@$item.Status});
+	        if('{@$item.Status}' != '') initList('xmasBox', {@$item.Status});
 	        //]]>
 	        </script>
 	    {/if}

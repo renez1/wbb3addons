@@ -10,9 +10,9 @@ class xmasBox {
 		if(!defined('XMASBOX_BG'))          define('XMASBOX_BG', 1);
 		if(!defined('XMASBOX_SPEAKER'))     define('XMASBOX_SPEAKER', 1);
 
-		if(XMASBOX_BOXOPENED == true || XMASBOX_HEADER == true) $this->BoxData['Status'] = 1;
+		if(XMASBOX_BOXOPENED || !XMASBOX_HEADER) $this->BoxData['Status'] = 1;
 		
-		# Sprachkürzel nach ISO 639-1 (2-stellig), ISO 639-2 (3-stellig)
+		# Sprachkürzel nach ISO 639-1 (2-stellig), ISO 639-2 o. ISO 639-3 (3-stellig)
 		$xmasbox_value = array(
                                 'af',
                                 'al',
@@ -78,7 +78,22 @@ class xmasBox {
                                 'nv',
                                 'ee',
                                 'rn',
-                                'as'
+                                'as',
+                                'yid',
+                                'yor',
+                                'zza',
+                                'zia',
+                                'ypk',
+                                'wo',
+                                'sda',
+                                'to',
+                                'tkl',
+                                'tli',
+                                'pa',
+                                'ky',
+                                'rw',
+                                'kk',
+                                'per'
 		);
 	    $rand = array_rand($xmasbox_value, 1);
 	    $value = $xmasbox_value[$rand];

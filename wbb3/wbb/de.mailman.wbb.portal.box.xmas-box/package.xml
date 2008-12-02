@@ -7,8 +7,8 @@
 		<standalone>0</standalone>
 		<isUnique>1</isUnique>
 		<plugin>com.woltlab.wbb</plugin>
-		<version>1.0.1</version>
-		<date>2008-12-01</date>
+		<version>1.0.2</version>
+		<date>2008-12-02</date>
 	</packageinformation>
 
 	<authorinformation>
@@ -33,6 +33,12 @@
 		<files>files.tar</files>
 		<templates>templates.tar</templates>
 		<options>options.xml</options>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+	</instructions>
+	<instructions type="update" fromversion="1.0.1">
+		<files>files.tar</files>
+		<templates>templates.tar</templates>
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 	</instructions>
