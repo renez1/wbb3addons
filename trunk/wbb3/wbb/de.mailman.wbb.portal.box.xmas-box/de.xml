@@ -3,7 +3,7 @@
 <language languagecode="de">
 	<category name="wbb.portal">
 		<item name="wbb.portal.box.xmasBox.title"><![CDATA[Xmas-Box]]></item>
-        <item name="wbb.portal.box.xmasbox.lang"><![CDATA[„Frohe Weihnachten“ auf]]></item>
+        <item name="wbb.portal.box.xmasbox.lang"><![CDATA[&bdquo;Frohe Weihnachten&ldquo; auf]]></item>
         <item name="wbb.portal.box.xmasbox.lang_af"><![CDATA[Afrikaans]]></item>
         <item name="wbb.portal.box.xmasbox.lang_al"><![CDATA[Albanisch]]></item>
         <item name="wbb.portal.box.xmasbox.lang_am"><![CDATA[Amharisch]]></item>
@@ -88,6 +88,29 @@
         <item name="wbb.portal.box.xmasbox.lang_kk"><![CDATA[Qazax]]></item>
         <item name="wbb.portal.box.xmasbox.lang_per"><![CDATA[Persisch]]></item>
         <!-- / Update 1.0.2 -->
+        <!--   Update 1.0.3 -->
+        <item name="wbb.portal.box.xmasbox.lang_mi"><![CDATA[Maori]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_oc"><![CDATA[Okzitanisch]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_gsw"><![CDATA[Elsässisch]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_rup"><![CDATA[Aromunisch]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_alg"><![CDATA[Algonkin (Blackfoot)]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_ess"><![CDATA[Yupik (Sibirien)]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_esu"><![CDATA[Yupik (Zentral)]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_dje"><![CDATA[Zarma]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_uve"><![CDATA[Uvéa]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_umb"><![CDATA[Umbundu]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_quc"><![CDATA[Quich&Eacute;]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_ik"><![CDATA[Inupiaq]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_fur"><![CDATA[Furlanisch]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_ewo"><![CDATA[Ewondo]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_bi"><![CDATA[Bislama]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_gil"><![CDATA[Kiribati]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_nrm"><![CDATA[Jèrriais]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_nyn"><![CDATA[Nyankore]]></item>
+        <item name="wbb.portal.box.xmasbox.lang_om"><![CDATA[Oromo]]></item>
+        <!-- / Update 1.0.3 -->
+        <item name="wbb.portal.box.xmasbox_bubbleTopText"><![CDATA[Wir wünschen unseren Mitgliedern]]></item>
+        <item name="wbb.portal.box.xmasbox_bubbleBottomText"><![CDATA[und einen guten Rutsch ins Jahr 2009!!!]]></item>
 	</category>
 	<category name="wcf.acp.option">
 		<item name="wcf.acp.option.category.portal.box.xmasbox"><![CDATA[Xmas-Box]]></item>
@@ -113,5 +136,13 @@
 		<item name="wcf.acp.option.xmasbox_bg3"><![CDATA[Dekoration]]></item>
 		<item name="wcf.acp.option.xmasbox_bg4"><![CDATA[Eiskristall]]></item>
 		<item name="wcf.acp.option.xmasbox_bg5"><![CDATA[Zufällige Reihenfolge]]></item>
+		<item name="wcf.acp.option.xmasbox_combination"><![CDATA[Verknüpfung anzeigen]]></item>
+		<item name="wcf.acp.option.xmasbox_combination.description"><![CDATA[Aktivieren Sie diese Option wenn eine Verknüpfung zu Übersetzung angezeigt werden soll.]]></item>
+		<item name="wcf.acp.option.xmasbox_bubbleText"><![CDATA[Eigenen Text in der Sprechblase aktivieren]]></item>
+		<item name="wcf.acp.option.xmasbox_bubbleText.description"><![CDATA[Aktivieren Sie diese Option wenn Sie einen eigenen Text in der Sprechblase anzeigen wollen.]]></item>
+		<item name="wcf.acp.option.xmasbox_bubbleTopText"><![CDATA[Text oben]]></item>
+		<item name="wcf.acp.option.xmasbox_bubbleTopText.description"><![CDATA[Gebe Sie hier den Text oder die Sprachvariable ein der in der Sprechblase oben angezeigt werden soll. Wenn kein Text angezeigt werden soll dann leer lassen.]]></item>
+		<item name="wcf.acp.option.xmasbox_bubbleBottomText"><![CDATA[Text unten]]></item>
+		<item name="wcf.acp.option.xmasbox_bubbleBottomText.description"><![CDATA[Gebe Sie hier den Text oder die Sprachvariable ein der in der Sprechblase unten angezeigt werden soll. Wenn kein Text angezeigt werden soll dann leer lassen.]]></item>
 	</category>
 </language>

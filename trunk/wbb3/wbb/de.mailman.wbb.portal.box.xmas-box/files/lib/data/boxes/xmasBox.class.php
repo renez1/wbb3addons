@@ -93,7 +93,26 @@ class xmasBox {
                                 'ky',
                                 'rw',
                                 'kk',
-                                'per'
+                                'per',
+                                'mi',
+                                'oc',
+                                'gsw',
+                                'rup',
+                                'alg',
+                                'ess',
+                                'esu',
+                                'dje',
+                                'uve',
+                                'umb',
+                                'quc',
+                                'ik',
+                                'fur',
+                                'ewo',
+                                'bi',
+                                'gil',
+                                'nrm',
+                                'nyn',
+                                'om'
 		);
 	    $rand = array_rand($xmasbox_value, 1);
 	    $value = $xmasbox_value[$rand];
@@ -143,12 +162,7 @@ class xmasBox {
 		    shuffle($speaker);
 		    define('XMASBOX_ANSAGER', $speaker[0]);
 		}
-
-        WCF::getTPL()->assign(array(
-            'xmasBoxTitle' => XMASBOX_TITLE,
-            'xmasBoxOpened' => XMASBOX_BOXOPENED
-        ));
-	}
+    }
 
 	protected function getBoxStatus($data) {
 		// get box status

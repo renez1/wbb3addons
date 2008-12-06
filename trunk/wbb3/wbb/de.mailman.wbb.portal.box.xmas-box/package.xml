@@ -3,12 +3,12 @@
 <package name="de.mailman.wbb.portal.box.xmasbox">
 	<packageinformation>
 		<packagename lang="de">Portalbox &quot;Xmas-Box&quot;</packagename>
-        <packageDescription>Mit dieser Portalbox werden Ihre User in verschiedenen Sprachen weihnachtlich begrüßt.</packageDescription>
+        <packageDescription>Mit dieser Portalbox werden Ihre User in 99 Sprachen weihnachtlich begrüßt.</packageDescription>
 		<standalone>0</standalone>
 		<isUnique>1</isUnique>
 		<plugin>com.woltlab.wbb</plugin>
-		<version>1.0.2</version>
-		<date>2008-12-02</date>
+		<version>1.0.4</version>
+		<date>2008-12-04</date>
 	</packageinformation>
 
 	<authorinformation>
@@ -39,6 +39,21 @@
 	<instructions type="update" fromversion="1.0.1">
 		<files>files.tar</files>
 		<templates>templates.tar</templates>
+		<options>options.xml</options>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+	</instructions>
+	<instructions type="update" fromversion="1.0.2">
+		<files>files.tar</files>
+		<templates>templates.tar</templates>
+		<options>options.xml</options>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+	</instructions>
+	<instructions type="update" fromversion="1.0.3">
+		<files>files.tar</files>
+		<templates>templates.tar</templates>
+		<options>options.xml</options>
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 	</instructions>
