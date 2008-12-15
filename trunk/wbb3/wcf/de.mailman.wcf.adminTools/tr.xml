@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<!-- $Id$ -->
+<language languagecode="tr">
+	<category name="wcf.acp.menu">
+		<item name="wcf.acp.menu.link.adminTools"><![CDATA[Admin Tools]]></item>
+		<item name="wcf.acp.menu.link.adminTools.phpInfo"><![CDATA[PHP Info]]></item>
+		<item name="wcf.acp.menu.link.adminTools.cron"><![CDATA[Dönemsel Görevler]]></item>
+		<item name="wcf.acp.menu.link.adminTools.lostAndFound"><![CDATA[Lost and found]]></item>
+        <item name="wcf.acp.menu.link.adminTools.toolBox"><![CDATA[Toolbox]]></item>
+        <item name="wcf.acp.menu.link.adminTools.linkSettings"><![CDATA[Admin Linkleri]]></item>
+	</category>
+	<category name="wcf.acp.group">
+        <item name="wcf.acp.group.option.admin.system.adminTools"><![CDATA[Admin Tools]]></item>
+        <item name="wcf.acp.group.option.admin.system.adminTools.description"><![CDATA[]]></item>
+    	<item name="wcf.acp.group.option.admin.system.adminTools.canView"><![CDATA[Admin Tools Heklari]]></item>
+    	<item name="wcf.acp.group.option.admin.system.adminTools.canView.description"><![CDATA[Bu Grubun Üyeleri Admin Toolsu Kullanabilir.]]></item>
+	</category>
+
+    <category name="wcf.acp.adminTools">
+        <item name="wcf.acp.adminTools.phpinfo"><![CDATA[PHP Info]]></item>
+        <item name="wcf.acp.adminTools.cron"><![CDATA[Dönemsel Görevler]]></item>
+        <item name="wcf.acp.adminTools.lostAndFound"><![CDATA[Lost and found]]></item>
+        <item name="wcf.acp.adminTools.toolBox"><![CDATA[Toolbox]]></item>
+        <item name="wcf.acp.adminTools.diskInfo"><![CDATA[Hafıza {$totalSpace} - Boş {$freeSpace} - Kullanılan {$usedSpace}]]></item>
+
+        <item name="wcf.acp.adminTools.cron.disabled"><![CDATA[Admin Tools Dönemsel Görevi Etkin Değil.]]></item>
+        <item name="wcf.acp.adminTools.cron.run"><![CDATA[Görevi Şimdi Çaliştir]]></item>
+        <item name="wcf.acp.adminTools.cron.cronDelLogDays.legend"><![CDATA[Görev Kayıtlarını Göster]]></item>
+        <item name="wcf.acp.adminTools.cron.cronDelLogDays.legend.description"><![CDATA[]]></item>
+        <item name="wcf.acp.adminTools.cron.cronDelLogDays"><![CDATA[Otomatik Boşaltma]]></item>
+        <item name="wcf.acp.adminTools.cron.cronDelLogDays.description"><![CDATA[Görev Kayıtlarının Kaç Gün Sonra Silineceğini Giriniz. 0 = Kapalı.]]></item>
+
+        <item name="wcf.acp.adminTools.cron.cronCleanUpSubscriptions.legend"><![CDATA[Sık Kullanılanlar]]></item>
+        <item name="wcf.acp.adminTools.cron.cronCleanUpSubscriptions"><![CDATA[Geçersiz Sık Kullanılan Kayıtlarını Sil]]></item>
+        <item name="wcf.acp.adminTools.cron.cronCleanUpSubscriptions.description"><![CDATA[Silinen Üyelerın veya Grup Değiştiren Üyelerin Geçersiz Sık Kullanılan Kayıtlarını Siler.]]></item>
+        <item name="wcf.acp.adminTools.cron.cronCleanUpSubscriptions.cleaned"><![CDATA[Silinen Sık Kullanılanlar: {$cnt}]]></item>
+
+        <item name="wcf.acp.adminTools.cron.cronDelMovedThreadDays.legend"><![CDATA[Kaydırılmış Konuları Sil]]></item>
+        <item name="wcf.acp.adminTools.cron.cronDelMovedThreadDays.legend.description"><![CDATA[]]></item>
+        <item name="wcf.acp.adminTools.cron.cronDelMovedThreadDays"><![CDATA[Otomatık Silme]]></item>
+        <item name="wcf.acp.adminTools.cron.cronDelMovedThreadDays.description"><![CDATA[Iz Bırakılarak Kaydırılan Konuların Kac Gün Sonra Silineceğini Yazınız. 0 = Kapalı.]]></item>
+
+        <item name="wcf.acp.adminTools.cron.pm.legend"><![CDATA[Özel Mesajları Sil]]></item>
+        <item name="wcf.acp.adminTools.cron.pm.legend.description"><![CDATA[]]></item>
+        <item name="wcf.acp.adminTools.cron.pm.delDays"><![CDATA[Otomatik Sil]]></item>
+        <item name="wcf.acp.adminTools.cron.pm.delDays.description"><![CDATA[Özel Mesajların Kaç Gün Sonra Silineceğimi Yazınız. 0 = Kapalı.]]></item>
+        <item name="wcf.acp.adminTools.cron.pm.showUserInfo"><![CDATA[Bildiri Göster]]></item>
+        <item name="wcf.acp.adminTools.cron.pm.showUserInfo.description"><![CDATA[Özel Mesajlarda Bildiri Gösterir Pmlerin Kaç Gün Sonra Silineceği Hakkında.]]></item>
+        <item name="wcf.acp.adminTools.cron.pm.showUserInfo.message"><![CDATA[Özel Mesajlar {$cronDelPmDays} Gün Sonra Otomatik Olarak Silinecektir.]]></item>
+        <item name="wcf.acp.adminTools.cron.pm.delExclUgrps"><![CDATA[Kullanıcı Grubu Ayır]]></item>
+        <item name="wcf.acp.adminTools.cron.pm.delExclUgrps.description"><![CDATA[Ayırılacak <strong>Kullanıcı Grubu-ID</strong>sını vırgül ile Ayıyarak Yazınız.(PMleri Silinmeyecek Olan Grupları Yazınız.)]]></item>
+        <item name="wcf.acp.adminTools.cron.pm.delExclUser"><![CDATA[Kullanıcı Ayır]]></item>
+        <item name="wcf.acp.adminTools.cron.pm.delExclUser.description"><![CDATA[Ayırılacak <strong>Kullanıcı-ID</strong>sini virgül ile ayırarak yazınız.(Özel Mesajları Silinmyecek Üyeleri Yazınız).]]></item>
+        <item name="wcf.acp.adminTools.cron.pm.delExclFolder"><![CDATA[Klasör Ayır]]></item>
+        <item name="wcf.acp.adminTools.cron.pm.delExclFolder.description"><![CDATA[Kullanici PMlerini Özel Bir Klasöre Eklediyse Silinmez.]]></item>
+        <item name="wcf.acp.adminTools.cron.pm.showExclInfo"><![CDATA[Bildiri Göster]]></item>
+        <item name="wcf.acp.adminTools.cron.pm.showExclInfo.description"><![CDATA[PNlerin Kac Gün Sonra Otomatik Silinecegini Gösterir.]]></item>
+
+        <item name="wcf.acp.adminTools.cron.inActiveUser.legend"><![CDATA[Etkin Olmayan Kullanicilar]]></item>
+        <item name="wcf.acp.adminTools.cron.inActiveUser.legend.description"><![CDATA[Kayit Oldukdan Sonra Üyeligini Onaylamayan Üyeler.]]></item>
+        <item name="wcf.acp.adminTools.cron.inActiveUser.delDays"><![CDATA[Otomatik Silme]]></item>
+        <item name="wcf.acp.adminTools.cron.inActiveUser.delDays.description"><![CDATA[Etkin Olmayan Kullanicilarin Kac Gün Sonra Silinecegini Giriniz. 0 = Kapali.]]></item>
+        <item name="wcf.acp.adminTools.cron.inActiveUser.delExclUgrps"><![CDATA[Kullanici Gruplarini Ayir]]></item>
+        <item name="wcf.acp.adminTools.cron.inActiveUser.delExclUgrps.description"><![CDATA[Silinmeyecek <strong>Kullanici Gruplari-ID</strong>lerini virgül ile Ayirarak Yaziniz.]]></item>
+        <item name="wcf.acp.adminTools.cron.inActiveUser.delExclUser"><![CDATA[Kullanici Ayir]]></item>
+        <item name="wcf.acp.adminTools.cron.inActiveUser.delExclUser.description"><![CDATA[Silinmeyecek Kullanicilarin <strong>Kullanici-ID</strong>lerini virgül ile Ayirarak Yaziniz.]]></item>
+
+        <item name="wcf.acp.adminTools.cron.cronThreadArchive.legend"><![CDATA[Konulari Arsivle]]></item>
+        <item name="wcf.acp.adminTools.cron.cronThreadArchive.legend.description"><![CDATA[Eski Konulari Arsivleyebilir yada Kaydirabilirsiniz.]]></item>
+        <item name="wcf.acp.adminTools.cron.cronThreadArchiveDays"><![CDATA[Otomatik Arsivleme]]></item>
+        <item name="wcf.acp.adminTools.cron.cronThreadArchiveDays.description"><![CDATA[Kac Günlük Konularin Arsivlenecegini Yaziniz.
+            <br />&quot;0&quot; Arsivlemeyi Kapatir.]]></item>
+        <item name="wcf.acp.adminTools.cron.cronThreadArchiveSrc"><![CDATA[Kaynak-Forumlar]]></item>
+        <item name="wcf.acp.adminTools.cron.cronThreadArchiveSrc.description"><![CDATA[Konularini Arsivlemek istediginiz Forumlari Seciniz.]]></item>
+        <item name="wcf.acp.adminTools.cron.cronThreadArchiveTgt"><![CDATA[Hedef-Forum (Arsiv)]]></item>
+        <item name="wcf.acp.adminTools.cron.cronThreadArchiveTgt.description"><![CDATA[Konulari Arsivlemek Istediginiz Forumu Seciniz.
+            <strong>Dikkat:</strong> Arsiv Forumu Kaynak Forumla Ayni Olmamali.]]></item>
+        <item name="wcf.acp.adminTools.cron.cronThreadArchiveExclPolls"><![CDATA[Anketleri Ayir]]></item>
+        <item name="wcf.acp.adminTools.cron.cronThreadArchiveExclPolls.description"><![CDATA[Anketleri Arsivlemez.]]></item>
+        <item name="wcf.acp.adminTools.cron.cronThreadArchiveExclAnnouncement"><![CDATA[Duyurulari Ayir]]></item>
+        <item name="wcf.acp.adminTools.cron.cronThreadArchiveExclAnnouncement.description"><![CDATA[Duyurulu Arsivlemez.]]></item>
+        <item name="wcf.acp.adminTools.cron.cronThreadArchiveExclSticky"><![CDATA[Önemli Konulari Ayir]]></item>
+        <item name="wcf.acp.adminTools.cron.cronThreadArchiveExclSticky.description"><![CDATA[Önemli Konulari Arsivlemez.]]></item>
+        <item name="wcf.acp.adminTools.cron.cronThreadArchiveExclClosed"><![CDATA[Kapali Konulari Ayir]]></item>
+        <item name="wcf.acp.adminTools.cron.cronThreadArchiveExclClosed.description"><![CDATA[Kapali Konulari Arsivlemez.]]></item>
+        <item name="wcf.acp.adminTools.cron.cronThreadArchiveExclDeleted"><![CDATA[Silinmis Konulari Ayir]]></item>
+        <item name="wcf.acp.adminTools.cron.cronThreadArchiveExclDeleted.description"><![CDATA[Silinmis Konulari Arsivlemez.]]></item>
+
+        <item name="wcf.acp.adminTools.cron.db.legend"><![CDATA[Veri Bankasi]]></item>
+        <item name="wcf.acp.adminTools.cron.db.legend.description"><![CDATA[Bu Özellik Tabelalarin Büyüklügüne Göre Uzun Sürebilir.]]></item>
+        <item name="wcf.acp.adminTools.cron.db.analyze"><![CDATA[Analiz]]></item>
+        <item name="wcf.acp.adminTools.cron.db.analyze.description"><![CDATA[Tüm Tabelalari Analiz Eder.]]></item>
+        <item name="wcf.acp.adminTools.cron.db.optimize"><![CDATA[Optimize]]></item>
+        <item name="wcf.acp.adminTools.cron.db.optimize.description"><![CDATA[Tüm Tabelalari Optimal Yapar.]]></item>
+        <item name="wcf.acp.adminTools.cron.db.backup"><![CDATA[Yedek]]></item>
+        <item name="wcf.acp.adminTools.cron.db.backup.description"><![CDATA[<strong>Bu Özellik Tam Yedegi Garantilemez!</strong>
+            Büyük Veri Bankalarinda Gerekli Sistemle Yedek Almaniz Tavsiye Edilie.
+            Yedekler "wbb/wcf/acp/backup" Klasörüne Kayit Edilir.]]></item>
+
+        <item name="wcf.acp.adminTools.cron.mail.legend"><![CDATA[Admin Günlügü]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.legend.description"><![CDATA[Admine Günlük Bilgi Gönderir.]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.logEnabled"><![CDATA[Kayitleri Etkinlestir]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.logEnabled.description"><![CDATA[]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.statEnabled"><![CDATA[Istatistigi Etkinlestir]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.statEnabled.description"><![CDATA[Istatistik Admine Üye Sayisi Konu Sayisi vs vs Gibi Seyleri Bildirir..]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.sendLogToAdmin"><![CDATA[Admin E-Mailini Kullan]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.sendLogToAdmin.description"><![CDATA[Bu Özellik Bildiri Direk Yazilan Admin E-Mail Adresine Gönderir.]]></item>
+
+        <item name="wcf.acp.adminTools.cron.mail.subject"><![CDATA[{PAGE_TITLE}: Bildirisi {$currentDate}]]></item>
+		<item name="wcf.acp.adminTools.cron.mail.header"><![CDATA[Slm {PAGE_TITLE} Admin]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.logHeader"><![CDATA[{$logDate} Kayitlari]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.statsHeader"><![CDATA[Güncel Istatistik]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.registrations"><![CDATA[Yeni Kayitlar:]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.inactives"><![CDATA[Etkin OLmayan Kullanicilar:]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.banned"><![CDATA[Banlanmis Kullanicilar:]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.quit"><![CDATA[Üyeligi Sildirmek Icin Bekleyen Üyeler:]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.quitInfo"><![CDATA[(Silindi: {$quitStarted} - Silinme Zamani: {$quitExec})]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.statsCntDeletedPMs"><![CDATA[Silinen Özel Mesajlar:]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.diskTotalSpace"><![CDATA[Hafiza Durumu:]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.diskFreeSpace"><![CDATA[Bos Alan:]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.diskUsedSpace"><![CDATA[Kullanici Hafizasi:]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.statsCntMembers"><![CDATA[Üyeler:]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.statsCntMembersMax"><![CDATA[Baslangictan Beri Üyeler:]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.statsCntMembersLocked"><![CDATA[Banli Üyeler:]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.statsCntThreads"><![CDATA[Konular:]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.statsCntThreadsMax"><![CDATA[Baslangictan Beri Konular:]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.statsCntThreadsLocked"><![CDATA[Kapali Konular:]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.statsCntThreadsView"><![CDATA[Konu Tiklamalari:]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.statsCntPosts"><![CDATA[Mesajlar:]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.statsCntPostsMax"><![CDATA[Baslangictan Beri Mesajlar:]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.statsCntPMs"><![CDATA[Özel Mesajlar:]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.statsCntPMsMax"><![CDATA[Baslangictan Beri Özel Mesajlar:]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.statsCntPolls"><![CDATA[Anketler:]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.statsCntAttachments"><![CDATA[Ek Dosyalar:]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.statsCntAvatars"><![CDATA[Kullanici Avatarlari:]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.statsCntSignLocked"><![CDATA[Kapali Imzalar:]]></item>
+        <item name="wcf.acp.adminTools.cron.mail.statsCntRecord"><![CDATA[Rekor:]]></item>
+
+        <item name="wcf.acp.adminTools.laf.legend.fs"><![CDATA[WBB-Filesystem]]></item>
+        <item name="wcf.acp.adminTools.laf.legend.fs.description"><![CDATA[Ek Dosyalar, WBB Filesystemde Kayitli ama Veri Bankasinda Kayitli OLmayan Dosylar.]]></item>
+        <item name="wcf.acp.adminTools.laf.legend.db"><![CDATA[WBB-Veri Bankasi]]></item>
+        <item name="wcf.acp.adminTools.laf.legend.db.description"><![CDATA[Ek Dosyalar, WBB-Veri Bankasinda Olan ama WBB Filesystemde Olmayan Dosyalar.]]></item>
+        <item name="wcf.acp.adminTools.laf.legend.ba"><![CDATA[VB-Yedegi]]></item>
+        <item name="wcf.acp.adminTools.laf.legend.ba.description"><![CDATA[Kayit Edilmis Veri Bankasi Yedekleri.]]></item>
+        <item name="wcf.acp.adminTools.laf.empty"><![CDATA[&quot;Kaybolmus&quot; Dosya Yok.]]></item>
+        <item name="wcf.acp.adminTools.laf.fileName"><![CDATA[Dosya]]></item>
+        <item name="wcf.acp.adminTools.laf.fileSize"><![CDATA[Boyutu]]></item>
+        <item name="wcf.acp.adminTools.laf.fileDate"><![CDATA[Tarih]]></item>
+        <item name="wcf.acp.adminTools.laf.fileUser"><![CDATA[Kullanici]]></item>
+        <item name="wcf.acp.adminTools.backup.empty"><![CDATA[Yedek Yok.]]></item>
+
+        <item name="wcf.acp.adminTools.toolBox.cache.legend"><![CDATA[Cache]]></item>
+        <item name="wcf.acp.adminTools.toolBox.cache.del"><![CDATA[Cache-Klasörlerini Bosalt]]></item>
+        <item name="wcf.acp.adminTools.toolBox.cache.del.description"><![CDATA[wBB ve wCF Cache Klasörlerini Bosaltir.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.cache.tpl"><![CDATA[Cache-Template-Klasörünü Bosalt]]></item>
+        <item name="wcf.acp.adminTools.toolBox.cache.tpl.description"><![CDATA[Cache-Template Klasörünü Bosaltir.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.cache.lang"><![CDATA[Cache-Dil Dosyalarini Sil]]></item>
+        <item name="wcf.acp.adminTools.toolBox.cache.lang.description"><![CDATA["wcf/languages" deki Cache Dosyalarini Siler.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.cache.options"><![CDATA[Cache-Ayarlarini Sil]]></item>
+        <item name="wcf.acp.adminTools.toolBox.cache.options.description"><![CDATA[wBB Klasöründeki &quot;options.inc.php&quot; Dosyasini Siler.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.cache.rss"><![CDATA[Cache-Newsreader Sil]]></item>
+        <item name="wcf.acp.adminTools.toolBox.cache.rss.description"><![CDATA[&quot;<a href="http://community.woltlab.com/db/index.php?page=Project&projectID=359">Newsreader Box</a>&quot; Pluginin Cache Klasörünü Bosaltir.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.cache.exec"><![CDATA[Calistir]]></item>
+
+        <item name="wcf.acp.adminTools.toolBox.board.legend"><![CDATA[Forum-Izinlerini Kopyala]]></item>
+        <item name="wcf.acp.adminTools.toolBox.board.legend.description"><![CDATA[Bu Özellik ile Forum Izinlerini Üyler,Gruplar ve Moderatorler icin Kopyalabilirsiniz.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.board.source"><![CDATA[Kaynak-Forum]]></item>
+        <item name="wcf.acp.adminTools.toolBox.board.source.description"><![CDATA[Izinleri Almak istediginiz Forumu Seciniz.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.board.target"><![CDATA[Hedef-Forum]]></item>
+        <item name="wcf.acp.adminTools.toolBox.board.target.description"><![CDATA[<strong>Dikkat!</strong> Bütün Belirtilen Izinler Kopyalanir.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.board.user"><![CDATA[Kullanici Kopyala]]></item>
+        <item name="wcf.acp.adminTools.toolBox.board.user.description"><![CDATA[]]></item>
+        <item name="wcf.acp.adminTools.toolBox.board.groups"><![CDATA[Kullanici Grubu Kopyala]]></item>
+        <item name="wcf.acp.adminTools.toolBox.board.groups.description"><![CDATA[]]></item>
+        <item name="wcf.acp.adminTools.toolBox.board.mods"><![CDATA[Moderator Kopyala]]></item>
+        <item name="wcf.acp.adminTools.toolBox.board.mods.description"><![CDATA[]]></item>
+
+        <item name="wcf.acp.adminTools.toolBox.prefix.legend"><![CDATA[Forum-Sablonlarini Kopyala]]></item>
+        <item name="wcf.acp.adminTools.toolBox.prefix.source"><![CDATA[Kaynak-Forum]]></item>
+        <item name="wcf.acp.adminTools.toolBox.prefix.source.description"><![CDATA[Sablonlari Kopyalamak Istediginiz Forumu Seciniz.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.prefix.target"><![CDATA[Hedef-Forum]]></item>
+        <item name="wcf.acp.adminTools.toolBox.prefix.target.description"><![CDATA[<strong>Dikkat!</strong> Bütün Sabonlan Kopyalanir Varolanlarin Üzerine Yazilir.]]></item>
+
+        <item name="wcf.acp.adminTools.toolBox.ugrp.legend"><![CDATA[Kullanici Grubu Yetkilerini Kopyala]]></item>
+        <item name="wcf.acp.adminTools.toolBox.ugrp.legend.description"><![CDATA[Bu Özellik Ile Kullanici Grunu Yetkilerini Kopyalabilirsiniz.
+            &quot;Yönetici&quot; Grubu Kopyalanmaz.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.ugrp.source"><![CDATA[Kaynak-Kullanici Grubu]]></item>
+        <item name="wcf.acp.adminTools.toolBox.ugrp.source.description"><![CDATA[Izinlerini Almak istedigini Kullanici Grubunu Seciniz.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.ugrp.target"><![CDATA[Hedef-Kullanici Grubu]]></item>
+        <item name="wcf.acp.adminTools.toolBox.ugrp.target.description"><![CDATA[<strong>Dikkat!</strong> Bütün Olan Degerlerin Üzerine Yazilacak.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.ugrp.user"><![CDATA[Kullanici Kopyala]]></item>
+        <item name="wcf.acp.adminTools.toolBox.ugrp.user.description"><![CDATA[]]></item>
+        <item name="wcf.acp.adminTools.toolBox.ugrp.boards"><![CDATA[Forum-Izinlerini Kopyala]]></item>
+        <item name="wcf.acp.adminTools.toolBox.ugrp.boards.description"><![CDATA[]]></item>
+
+        <item name="wcf.acp.adminTools.toolBox.userOption.legend"><![CDATA[Kullanici Ayarlarini Toplu Olarak Degistir]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userOption.legend.description"><![CDATA[Bazi Kullanici Ayarlarini Buradan <strong>Herkez</strong> icin Degisebilirsiniz.
+            <br />Kullanicinin Bu Degisiklikleri Profilinden Geri Düzeltebilecegine Dikkat Edin.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userOption.optionID"><![CDATA[Secenek]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userOption.optionID.description"><![CDATA[Degistirmek Istediginiz Ayari Seciniz.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userOption.setOff"><![CDATA[Ayari Kapat]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userOption.setOff.description"><![CDATA[Ayari Bütün Kullanicilar icin Kapatir.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userOption.setOn"><![CDATA[Ayari Ac]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userOption.setOn.description"><![CDATA[Bütün Kullanicilar icin Ayari Acar.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userOption.exclUgrps"><![CDATA[Kullanici Grubu Ayir]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userOption.exclUgrps.description"><![CDATA[Ayarlari Degistirmek istemedigini <strong>Kullanici Grubu-ID</strong>lerini virgül Ile Ayirarak Yaziniz.]]></item>
+
+        <item name="wcf.acp.adminTools.toolBox.userDefaultOption.legend"><![CDATA[Standart Kullanici Ayarlari]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userDefaultOption.legend.description"><![CDATA[Yeni Üyeler icin Standart Ayar Sablonu Olusturabilirsiniz.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userDefaultOption.optionID"><![CDATA[Ayar]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userDefaultOption.optionID.description"><![CDATA[Standart Olmasini Istediginiz Ayari Seciniz.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userDefaultOption.setOff"><![CDATA[Ayari Kapat]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userDefaultOption.setOff.description"><![CDATA[Secilen Ayari Standart Olarak Kapatir.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userDefaultOption.setOn"><![CDATA[Ayari Ac]]></item>
+        <item name="wcf.acp.adminTools.toolBox.userDefaultOption.setOn.description"><![CDATA[Secilen Ayari Standart Olarak Acar.]]></item>
+
+        <item name="wcf.acp.adminTools.toolBox.spider.legend"><![CDATA[Örümcek]]></item>
+        <item name="wcf.acp.adminTools.toolBox.spider.legend.description"><![CDATA[Burada Kendi Arama Robotunuzu Ekleyebilir yada Standart Secebilirsiniz.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.spider.info"><![CDATA[Özel: {#$spiderCntOwn} &bull; Eslesmis: {#$spiderCntSyn} &bull; Etkin: {#$spiderCntAll}]]></item>
+        <item name="wcf.acp.adminTools.toolBox.spider.select"><![CDATA[Secenek]]></item>
+        <item name="wcf.acp.adminTools.toolBox.spider.select.description"><![CDATA[]]></item>
+        <item name="wcf.acp.adminTools.toolBox.spider.new"><![CDATA[----- Yeni -----]]></item>
+        <item name="wcf.acp.adminTools.toolBox.spider.identifier"><![CDATA[Browser-Tanimi]]></item>
+        <item name="wcf.acp.adminTools.toolBox.spider.identifier.description"><![CDATA[Arama Robotunun Tam Olarak Tanimi.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.spider.name"><![CDATA[Isim]]></item>
+        <item name="wcf.acp.adminTools.toolBox.spider.name.description"><![CDATA[Arama Robotunun Ismi.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.spider.url"><![CDATA[URL]]></item>
+        <item name="wcf.acp.adminTools.toolBox.spider.url.description"><![CDATA[Arama Robotu Linki.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.spider.sync"><![CDATA[Eslestir/Yenile]]></item>
+        <item name="wcf.acp.adminTools.toolBox.spider.import.legend"><![CDATA[Örümcek Ekle]]></item>
+        <item name="wcf.acp.adminTools.toolBox.spider.import"><![CDATA[Dosya Sec]]></item>
+        <item name="wcf.acp.adminTools.toolBox.spider.import.description"><![CDATA[<strong>Dikkat!</strong> Bütün Mevcut Örümcekler Silinecektir.]]></item>
+
+        <item name="wcf.acp.adminTools.toolBox.setLanguage.legend"><![CDATA[Dil]]></item>
+        <item name="wcf.acp.adminTools.toolBox.setLanguage.legend.description"><![CDATA[Buradan Kullanicilara Dil Secebilirsiniz.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.setLanguage.languageID"><![CDATA[Dil Seciniz]]></item>
+        <item name="wcf.acp.adminTools.toolBox.setLanguage.languageID.description"><![CDATA[Tüm Kullanicilarda Secili Olmasini Istediginiz Dili Seciniz.]]></item>
+        <item name="wcf.acp.adminTools.toolBox.setLanguage.onlyInvalid"><![CDATA[Sadece Dili Düzelt]]></item>
+        <item name="wcf.acp.adminTools.toolBox.setLanguage.onlyInvalid.description"><![CDATA[Sadece Kullanicilari Yenilemek Istiyorsaniz Bu Secenigi Seciniz.Belirsiz Bir Secili Olan Kullanicilar icin (<strong>Tavsiye Edilir!</strong>).]]></item>
+        <item name="wcf.acp.adminTools.toolBox.setLanguage.msg"><![CDATA[Yenilenen Üyeler: {$cnt}]]></item>
+
+        <item name="wcf.acp.adminTools.linkSettings.legend"><![CDATA[Link Ekle/Degistir]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.select"><![CDATA[Link Sec]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.select.description"><![CDATA[Degistirmek Istediginiz Linki Seciniz.]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.menuItem"><![CDATA[Link-Basligi]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.menuItem.description"><![CDATA[Buraya Istenilin Bir Baslik Yada Dil Kategorisi Ekleyebilirsiniz.]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.menuItemLink"><![CDATA[URL]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.menuItemLink.description"><![CDATA[Lütfen Erisilebilir Bir Adres Giriniz.]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.showOrder"><![CDATA[Pozisyon]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.showOrder.description"><![CDATA[]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.linkTarget"><![CDATA[Hedef Pencere]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.linkTarget.description"><![CDATA[Linkin IFrame, Yeni Pencerede Yada Ayni Penceredemi Acilacagini Giriniz.]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.new"><![CDATA[Yeni Link Ekle]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.linkTarget.iframe"><![CDATA[IFrame]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.linkTarget.self"><![CDATA[Ayni Pencere]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.linkTarget.blank"><![CDATA[Yeni Pencere]]></item>
+
+        <item name="wcf.acp.adminTools.linkSettings.iframe.legend"><![CDATA[iFrame-Ayarlari]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.iframe.width"><![CDATA[Genislik]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.iframe.width.description"><![CDATA[Pencere Genisligi, Örnegin: 1024px veya 100%]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.iframe.height"><![CDATA[Yükseklik]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.iframe.height.description"><![CDATA[Pencere Yüksekliği, Örneğin 768px.]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.iframe.borderWidth"><![CDATA[Kenar Kalınlığı]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.iframe.borderWidth.description"><![CDATA[Pencere Kenarı Kalınlığı, Örneğin 1px veya 0.]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.iframe.borderColor"><![CDATA[Kenar Rengi]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.iframe.borderColor.description"><![CDATA[Pencere Çercevesinin Rengı, Örneğin #808080.]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.iframe.borderStyle"><![CDATA[Kenar Tipi]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.iframe.borderStyle.description"><![CDATA[]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.iframe.borderStyle.solid"><![CDATA[solid - Düz Çizgi]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.iframe.borderStyle.dotted"><![CDATA[dotted - Noktalı Çiygi]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.iframe.borderStyle.dashed"><![CDATA[dashed - Çizgili]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.iframe.borderStyle.double"><![CDATA[double - İkili]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.iframe.borderStyle.groove"><![CDATA[groove - 3D-Efekti]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.iframe.borderStyle.ridge"><![CDATA[ridge - 3D-Efekti]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.iframe.borderStyle.inset"><![CDATA[inset - 3D-Efekti]]></item>
+        <item name="wcf.acp.adminTools.linkSettings.iframe.borderStyle.outset"><![CDATA[outset - 3D-Efekti]]></item>
+
+        <item name="wcf.acp.adminTools.success.saved"><![CDATA[Kayıt Başarılı Şekilde Eklendi.]]></item>
+        <item name="wcf.acp.adminTools.success.deleted"><![CDATA[Kayıt Başarılı Şekilde Silindi.]]></item>
+        <item name="wcf.acp.adminTools.success.cache"><![CDATA[Silinen Cache Dosyaları: {$cacheDel}. Silinen Cache-Templateleri: {$cacheTpl}. Silinen Cache-Dildosyaları: {$cacheLang}. Silinen Cache-RSS Dosyları: {$cacheRSS}. Cache-Ayarları: {$cacheOpt}.]]></item>
+
+        <item name="wcf.acp.adminTools.error.notNumeric"><![CDATA[Gecersiz Deger!]]></item>
+        <item name="wcf.acp.adminTools.error.commaSeparatedIntList"><![CDATA[Gecersiz Deger! Virgül Ile Ayirilmis Bir Liste Giriniz. Liste Virgül ile Baslamamli ve Virgül ile Bitmemeli, Virgüllerin Yaninda Numarada Olmamali.]]></item>
+        <item name="wcf.acp.adminTools.error.duplicateEntry"><![CDATA[Bu Kayit Zaten Var!]]></item>
+        <item name="wcf.acp.adminTools.error.cron"><![CDATA[Calistirmak icin Bir Görev Secilmedi!]]></item>
+        <item name="wcf.acp.adminTools.error.cache"><![CDATA[Hic Bir Dosya Silinmedi! Cache-Klasörleri Bos ise Bu Hatayi Dikkate Almayiniz. Yada Bu Scriptin Klasör Bilgilerini Kontrol Ediniz.]]></item>
+        <item name="wcf.acp.adminTools.error.notSelected"><![CDATA[En Azindan Bir Deger Secmelisiniz!]]></item>
+        <item name="wcf.acp.adminTools.error.equal"><![CDATA[Degerler Ayni Olmamali!]]></item>
+        <item name="wcf.acp.adminTools.error.equalTgtSrc"><![CDATA[Hedef Kaynagi Icermemeli!]]></item>
+
+        <item name="wcf.acp.adminTools.confirm"><![CDATA[Lütfen İşlemi Onaylayınız.]]></item>
+        <item name="wcf.acp.adminTools.confirm.save"><![CDATA[Lütfen Kayıt İşlemini Onaylayınız.]]></item>
+        <item name="wcf.acp.adminTools.confirm.delete"><![CDATA[Lütfen Silme İşlemini Onaylayınız.]]></item>
+        <item name="wcf.acp.adminTools.confirm.cron"><![CDATA[Lütfen Çalıstırmayı Onaylayınız.]]></item>
+        <item name="wcf.acp.adminTools.confirm.cache"><![CDATA[Cache Klasörünü Silmek İstediğinizden Eminmisiniz?]]></item>
+        <item name="wcf.acp.adminTools.confirm.importSpider"><![CDATA[Bütün Özel Örümcekler Silinecek. Lütfen Islemi Onaylayiniz.]]></item>
+
+        <item name="wcf.acp.adminTools.txt.save"><![CDATA[Kayıt Et]]></item>
+        <item name="wcf.acp.adminTools.txt.delete"><![CDATA[Sil]]></item>
+        <item name="wcf.acp.adminTools.txt.execute"><![CDATA[Çalıstır]]></item>
+        <item name="wcf.acp.adminTools.txt.export"><![CDATA[Dışarı Aktar]]></item>
+        <item name="wcf.acp.adminTools.txt.import"><![CDATA[İçeri Aktar]]></item>
+	</category>
+</language>
