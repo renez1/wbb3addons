@@ -10,15 +10,15 @@
 
  [http://community.woltlab.com/db/index.php?page=User&userID=30839 http://community.woltlab.com/woltlab.de/html/forum/wcf/images/avatars/avatar-5381.png]
 
- * *nendilo*
- "Andy", WBB3-Add-On Entwickler, Supporter und vieles mehr...
-
- [http://www.wbb3addons.de/wbb/index.php?page=User&userID=388 http://www.wbb3addons.de/wcf/images/avatars/avatar-213.jpg]
-
  * *TobiasH87*
  "Tobias", WBBLite2-Manager, Supporter und vieles mehr...
 
  [http://www.wbb3addons.de/wbb/index.php?page=User&userID=286 http://www.wbb3addons.de/wcf/images/avatars/avatar-214.jpg]
+
+ * *nendilo*
+ "Andy", WBB3-Add-On Entwickler, Supporter und vieles mehr...
+
+ [http://www.wbb3addons.de/wbb/index.php?page=User&userID=388 http://www.wbb3addons.de/wcf/images/avatars/avatar-213.jpg]
 
  * *wbb3addons*
  "Schorsch", WBB3-Add-On Entwickler, Supporter und vieles mehr...
