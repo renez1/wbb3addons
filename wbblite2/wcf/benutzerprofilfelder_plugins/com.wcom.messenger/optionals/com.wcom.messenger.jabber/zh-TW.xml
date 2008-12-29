@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
-<!-- $Id$ -->
-<language languagecode="zh-TW">
-	<category name="wcf.user.option">
-		<item name="wcf.user.option.jabber"><![CDATA[Jabber]]></item>
-		<item name="wcf.user.option.jabber.description"><![CDATA[您的Jabber帳戶]]></item>
-	</category>     
-</language>

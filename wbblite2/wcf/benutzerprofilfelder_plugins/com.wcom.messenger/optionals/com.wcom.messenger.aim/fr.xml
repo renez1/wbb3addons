@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
-<!-- $Id$ -->
-<language languagecode="fr">
-	<category name="wcf.user.option">
-		<item name="wcf.user.option.aim"><![CDATA[AOL Instant Messenger (AIM)]]></item>
-		<item name="wcf.user.option.aim.description"><![CDATA[L’identifiant de votre compte AIM ]]></item>
-	</category>     
-</language>

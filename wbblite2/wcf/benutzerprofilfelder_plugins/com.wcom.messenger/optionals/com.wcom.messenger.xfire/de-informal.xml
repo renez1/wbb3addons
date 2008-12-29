@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
-<!-- $Id$ -->
-<language languagecode="de-informal">
-	<category name="wcf.user.option">
-	  	<item name="wcf.user.option.xfire"><![CDATA[X-Fire]]></item>
-	  	<item name="wcf.user.option.xfire.description"><![CDATA[Dein X-Fire Name]]></item>
-	</category>
-</language>

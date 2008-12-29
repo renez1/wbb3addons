@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
-<!-- $Id$ -->
-<language languagecode="zh-TW">
-	<category name="wcf.user.option">
-		<item name="wcf.user.option.yim"><![CDATA[雅虎通(YIM)]]></item>
-		<item name="wcf.user.option.yim.description"><![CDATA[YIM 用戶名]]></item>
-	</category>     
-</language>
