@@ -7,8 +7,8 @@
         <packageDescription>Die letzten Profil-Besucher in einer Box</packageDescription>
         <standalone>0</standalone>
         <plugin>com.woltlab.wbb</plugin>
-        <version>1.0.3 pl 1</version>
-        <date>2008-10-05</date>
+        <version>1.0.3 pl 2</version>
+        <date>2008-12-30</date>
     </packageinformation>
 
     <authorinformation>
@@ -31,6 +31,7 @@
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
         <languages languagecode="hr">hr.xml</languages>
+        <languages languagecode="da">da.xml</languages>
     </instructions>
 
     <instructions type="update" fromversion="1.0.0">
@@ -42,6 +43,7 @@
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
         <languages languagecode="hr">hr.xml</languages>
+        <languages languagecode="da">da.xml</languages>
         <filedelete>delete.xml</filedelete>
         <sql>upd_1.0.2pl2.sql</sql>
     </instructions>
@@ -55,6 +57,7 @@
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
         <languages languagecode="hr">hr.xml</languages>
+        <languages languagecode="da">da.xml</languages>
         <filedelete>delete.xml</filedelete>
         <sql>upd_1.0.2pl2.sql</sql>
     </instructions>
@@ -64,18 +67,26 @@
         <templates>templates.tar</templates>
         <filedelete>delete.xml</filedelete>
         <sql>upd_1.0.2pl2.sql</sql>
+        <languages languagecode="da">da.xml</languages>
     </instructions>
 
     <instructions type="update" fromversion="1.0.2 pl 1">
         <files>files.tar</files>
         <sql>upd_1.0.2pl2.sql</sql>
+        <languages languagecode="da">da.xml</languages>
     </instructions>
     
     <instructions type="update" fromversion="1.0.2 pl 2">
         <files>files.tar</files>
+        <languages languagecode="da">da.xml</languages>
     </instructions>
     
     <instructions type="update" fromversion="1.0.3">
         <files>files.tar</files>
+        <languages languagecode="da">da.xml</languages>
+    </instructions>
+    
+     <instructions type="update" fromversion="1.0.3 pl 1">
+        <languages languagecode="da">da.xml</languages>
     </instructions>
 </package>
