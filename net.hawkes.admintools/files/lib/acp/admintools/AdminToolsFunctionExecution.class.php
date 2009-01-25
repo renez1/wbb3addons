@@ -94,8 +94,21 @@ class AdminToolsFunctionExecution {
 	}
 	
 	public function setValues($values) {
-		$this->values = $values;
-		$this->options = $this->getOptionTree();
+		$this->values = $values;		
+		$errorTypes = array();
+		foreach ($this->activeOptions as $key => $option) {
+			try {
+				$this->validateOption($key, $option);
+			}
+			catch (UserInputException $e) {
+				$errorTypes[$e->getField()] = $e->getType();
+			}
+		}
+		
+		if (count($errorTypes) > 0) {
+			throw new UserInputException('options', $errorTypes);
+		}		
+		$this->options = $this->getOptionTree();				
 	}
 	
 	/**
@@ -239,6 +252,33 @@ class AdminToolsFunctionExecution {
 		return $children;
 	}
 
+	/**
+	 * Validates an option.
+	 * 
+	 * @param	string		$key		name of option
+	 * @param	array		$option		option data
+	 */
+	protected function validateOption($key, $option) {
+		// get type object
+		$typeObj = $this->getTypeObject($option['optionType']);
+		
+		// get new value
+		$newValue = isset($this->values[$option['optionName']]) ? $this->values[$option['optionName']] : null;
+				
+		// get save value
+		$this->activeOptions[$key]['optionValue'] = $typeObj->getData($option, $newValue);
+				
+		// validate with pattern
+		if (!empty($option['validationPattern'])) {
+			if (!preg_match('~'.$option['validationPattern'].'~', $this->activeOptions[$key]['optionValue'])) {
+				throw new UserInputException($option['optionName'], 'validationFailed');
+			}
+		}
+		
+		// validate by type object
+		$typeObj->validate($option, $newValue);
+	}
+	
 	/**
 	 * @see OptionType::getFormElement()
 	 */
