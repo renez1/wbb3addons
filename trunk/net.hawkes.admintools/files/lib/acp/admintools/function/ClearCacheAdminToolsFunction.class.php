@@ -12,7 +12,7 @@ class ClearCacheAdminToolsFunction extends AbstractAdminToolsFunction {
 	public function execute($data) {
 		parent::execute($data);
 		
-		$parameters = $data['parameters']['clearCache'];				
+		$parameters = $data['parameters']['clearCache'];					
 		if ($parameters['clearWCFCache']) {
 			WCF::getCache()->clear(WCF_DIR.'cache', '*.php', true);
 		}

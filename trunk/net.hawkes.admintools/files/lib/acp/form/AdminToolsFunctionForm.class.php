@@ -31,8 +31,8 @@ class AdminToolsFunctionForm extends DynamicOptionListForm {
 	public function save() {
 		parent::save();
 		
-		$executor = AdminToolsFunctionExecution::getInstance();
-		$executor->setValues($this->values); 		
+		$executor = AdminToolsFunctionExecution::getInstance();		
+		$executor->setValues($this->values);		 		
 		$saveOptions = array();
 		foreach($this->options as $functionCategory) {
 			$function = $this->functions[$functionCategory['functionID']];
@@ -55,7 +55,7 @@ class AdminToolsFunctionForm extends DynamicOptionListForm {
 			WCF::getCache()->clear(WCF_DIR.'cache/', 'cache.admin_tools-option*');					
 		}				
 		
-		if($this->functionID) {			
+		if($this->functionID) {					
 			$executor->callFunction($this->functionID);			
 		}
 		
@@ -63,10 +63,7 @@ class AdminToolsFunctionForm extends DynamicOptionListForm {
 			'success' => true,
 		));
 	}
-	
-	public function setValues($values) {
-		$this->values = $values;
-	}
+
 	
 	/**
 	 * @see Page::readData()
