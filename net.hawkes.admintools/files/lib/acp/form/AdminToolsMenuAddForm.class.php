@@ -118,7 +118,7 @@ class AdminToolsMenuAddForm extends DynamicOptionListForm  {
 		
 		// create menu item
 		$sql = "INSERT INTO wcf".WCF_N."_acp_menu_item (packageID, menuItem, menuItemLink, menuItemIcon, permissions, showOrder,  parentMenuItem)
-				VALUES	(IFNULL((SELECT packageID FROM wcf".WCF_N."_package WHERE package='net.hawkes.advancedheadermenu'), 1),
+				VALUES	(1,
 				 '".escapeString($this->menuItem)."',
 				 '".escapeString($this->menuItemLink)."',
 				 '".escapeString($this->menuItemIcon)."',

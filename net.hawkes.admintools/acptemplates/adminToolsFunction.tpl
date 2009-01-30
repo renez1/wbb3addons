@@ -37,9 +37,7 @@
 		<ul><li><a href="index.php?form=AdminToolsExport&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}"><img src="{@RELATIVE_WCF_DIR}icon/adminToolsExportM.png" alt="" title="{lang}wcf.acp.menu.link.admintools.export{/lang}" /> <span>{lang}wcf.acp.menu.link.admintools.export{/lang}</span></a></li></ul>
 	</div>
 </div>
-<form enctype="multipart/form-data" method="post" name="functionForm" action="index.php?form=AdminToolsFunction">
-	<div class="border content">
-		<div class="container-1">			
+<form enctype="multipart/form-data" method="post" name="functionForm" action="index.php?form=AdminToolsFunction">		
 			
 			<div class="tabMenu">
 				<ul>
@@ -84,8 +82,6 @@
 						</div>						
 					</div>				
 			{/foreach}
-		</div>
-	</div>
 	
 	<div class="formSubmit">
 		<input type="submit" accesskey="s" value="{lang}wcf.global.button.submit{/lang}" />

@@ -1,4 +1,19 @@
 --
+-- Table structure for table 'wcf1_admin_tools_cronjob_payload'
+--
+
+DROP TABLE IF EXISTS wcf1_admin_tools_cronjob_payload;
+CREATE TABLE IF NOT EXISTS wcf1_admin_tools_cronjob_payload (
+  payloadID int(10) unsigned NOT NULL auto_increment,
+  cronjobID int(10) unsigned NOT NULL,
+  packageID int(10) unsigned NOT NULL,
+  functions text NOT NULL,
+  PRIMARY KEY  (payloadID)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table 'wcf1_admin_tools_function'
 --
 

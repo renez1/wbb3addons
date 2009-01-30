@@ -33,7 +33,7 @@
 				<li>
 					<img src="{@RELATIVE_WCF_DIR}icon/adminToolsLostNFoundXL.png" alt="" />		
 					<ul>
-						<li><a href="index.php?form=AdminToolsLostAndFound&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">{lang}wcf.acp.admintools.lostandfound{/lang}</a></li>
+						<li><a href="index.php?page=AdminToolsLostAndFound&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">{lang}wcf.acp.admintools.lostandfound{/lang}</a></li>
 					</ul>
 				</li>
 				
@@ -51,7 +51,15 @@
 					</ul>
 				</li>
 
-				{if $additionalFunctions|isset}{@$additionalFunctions}{/if}								
+				{if $additionalFunctions|isset}{@$additionalFunctions}{/if}
+				
+				<li>
+					<img src="{@RELATIVE_WCF_DIR}icon/adminToolsHelpXL.png" alt="" />				
+					<ul>
+						<li><a href="index.php?page=AdminToolsHelp&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">{lang}wcf.acp.admintools.help{/lang}</a></li>
+					</ul>
+				</li>
+												
 			</ul>
 	</div>
 </div>

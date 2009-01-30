@@ -19,6 +19,7 @@ class AdminToolsPHPInfoPage extends AbstractPage {
         $info = ob_get_clean();
         preg_match ("/.*<body>(.*)<\/body>/s", $info, $matches);
         if(isset($matches[1])) $this->phpInfoOutput = $matches[1];
+        $this->phpInfoOutput = str_replace("width=\"600\"", "width=\"795\"", $this->phpInfoOutput);
 	}
 	
 	
