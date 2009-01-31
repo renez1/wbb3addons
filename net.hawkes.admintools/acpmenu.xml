@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE import SYSTEM "DTD/import.dtd">
+<data>
+	<import>
+		<acpmenuitem name="wcf.acp.menu.link.admintools">
+			<parent>wcf.acp.menu.link.system</parent>
+			<!-- <permissions>admin.system.adminTools.canView</permissions>  -->
+		</acpmenuitem>
+		<acpmenuitem name="wcf.acp.menu.link.admintools.main">
+			<parent>wcf.acp.menu.link.admintools</parent>
+			<showorder>1</showorder>
+		</acpmenuitem>
+
+		<acpmenuitem name="wcf.acp.menu.link.admintools.index">
+			<parent>wcf.acp.menu.link.admintools</parent>
+			<link>index.php?form=AdminTools</link>
+			<icon>icon/adminToolsM.png</icon>
+			<showorder>1</showorder>			
+		</acpmenuitem>
+
+		<acpmenuitem name="wcf.acp.menu.link.admintools.functions">
+			<parent>wcf.acp.menu.link.admintools.main</parent>
+			<link>index.php?form=AdminToolsFunction</link>
+			<icon>icon/adminToolsFunctionM.png</icon>
+			<showorder>2</showorder>			
+		</acpmenuitem>
+
+		<acpmenuitem name="wcf.acp.menu.link.adminTools.cronjobs">
+			<parent>wcf.acp.menu.link.admintools.main</parent>
+			<link>index.php?page=AdminToolsCronjobsList</link>
+			<icon>icon/cronjobsM.png</icon>
+			<showorder>3</showorder>			
+		</acpmenuitem>
+
+		<acpmenuitem name="wcf.acp.menu.link.admintools.lostandfound">
+			<parent>wcf.acp.menu.link.admintools.main</parent>
+			<link>index.php?page=AdminToolsLostAndFound</link>
+			<icon>icon/adminToolsLostNFoundM.png</icon>
+			<showorder>4</showorder>			
+		</acpmenuitem>
+
+		<acpmenuitem name="wcf.acp.menu.link.adminTools.phpinfo">
+			<parent>wcf.acp.menu.link.admintools.main</parent>
+			<link>index.php?page=AdminToolsPHPInfo</link>
+			<icon>icon/adminToolsPHPInfoM.png</icon>
+			<showorder>5</showorder>			
+		</acpmenuitem>
+
+		<acpmenuitem name="wcf.acp.menu.link.admintools.menu">
+			<parent>wcf.acp.menu.link.admintools.main</parent>
+			<link>index.php?page=AdminToolsMenu</link>
+			<icon>icon/adminToolsMenuLinkM.png</icon>
+			<showorder>6</showorder>			
+		</acpmenuitem>
+	</import>
+</data>
