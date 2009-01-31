@@ -21,7 +21,7 @@
         <requiredPackage minversion="1.1.0 Alpha 1">com.woltlab.wcf</requiredPackage>
         <requiredPackage minversion="1.1.0 Alpha 1">com.woltlab.wcf.data.message.attachment</requiredPackage>
         <requiredPackage minversion="1.1.0 Alpha 1">com.woltlab.wcf.data.cronjobs</requiredPackage>
-        <requiredPackage minversion="1.1.0 Alpha 1">b.wcf.form.user</requiredPackage>
+        <requiredPackage minversion="1.1.0 Alpha 1">com.woltlab.wcf.form.user</requiredPackage>
     </requiredpackages>
 
     <instructions type="install">
