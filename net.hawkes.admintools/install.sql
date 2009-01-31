@@ -1,19 +1,4 @@
 --
--- Table structure for table 'wcf1_admin_tools_cronjob_payload'
---
-
-DROP TABLE IF EXISTS wcf1_admin_tools_cronjob_payload;
-CREATE TABLE IF NOT EXISTS wcf1_admin_tools_cronjob_payload (
-  payloadID int(10) unsigned NOT NULL auto_increment,
-  cronjobID int(10) unsigned NOT NULL,
-  packageID int(10) unsigned NOT NULL,
-  functions text NOT NULL,
-  PRIMARY KEY  (payloadID)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table 'wcf1_admin_tools_function'
 --
 
@@ -21,13 +6,26 @@ DROP TABLE IF EXISTS wcf1_admin_tools_function;
 CREATE TABLE IF NOT EXISTS wcf1_admin_tools_function (
   functionID int(10) unsigned NOT NULL auto_increment,
   packageID int(10) unsigned NOT NULL,
-  `function` varchar(255) NOT NULL,
+  functionName varchar(255) NOT NULL,
   classPath varchar(255) NOT NULL,
   executeAsCronjob tinyint(1) unsigned NOT NULL default '0',
   saveSettings tinyint(1) unsigned NOT NULL default '0',
   PRIMARY KEY  (functionID),
-  UNIQUE KEY `function` (packageID,`function`)
+  UNIQUE KEY `function` (packageID,functionName)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'wcf1_admin_tools_function_to_cronjob'
+--
+
+DROP TABLE IF EXISTS wcf1_admin_tools_function_to_cronjob;
+CREATE TABLE IF NOT EXISTS wcf1_admin_tools_function_to_cronjob (
+  functionID int(10) unsigned NOT NULL,
+  cronjobID int(10) unsigned NOT NULL,
+  PRIMARY KEY  (functionID,cronjobID)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 

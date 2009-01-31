@@ -32,8 +32,8 @@ function toggleStandaloneFunctions() {
 <div class="contentHeader">
 	<div class="largeButtons">
 		<ul>
-			<li><a href="index.php?page=CronjobsList&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" title="{lang}wcf.acp.menu.link.cronjobs.view{/lang}"><img src="{@RELATIVE_WCF_DIR}icon/cronjobsM.png" alt="" /> <span>{lang}wcf.acp.menu.link.cronjobs.view{/lang}</span></a></li>
-			{if $action == 'edit'}<li><a href="index.php?action=CronjobExecute&amp;cronjobID={@$cronjobID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" title="{lang}wcf.acp.cronjobs.execute{/lang}"><img src="{@RELATIVE_WCF_DIR}icon/cronjobExecuteM.png" alt="" /> <span>{lang}wcf.acp.cronjobs.execute{/lang}</span></a></li>{/if}
+			<li><a href="index.php?page=AdminToolsCronjobsList&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" title="{lang}wcf.acp.menu.link.cronjobs.view{/lang}"><img src="{@RELATIVE_WCF_DIR}icon/cronjobsM.png" alt="" /> <span>{lang}wcf.acp.menu.link.cronjobs.view{/lang}</span></a></li>
+			{if $action == 'edit'}<li><a href="index.php?action=AdminToolsCronjobExecute&amp;cronjobID={@$cronjobID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" title="{lang}wcf.acp.cronjobs.execute{/lang}"><img src="{@RELATIVE_WCF_DIR}icon/cronjobExecuteM.png" alt="" /> <span>{lang}wcf.acp.cronjobs.execute{/lang}</span></a></li>{/if}
 		</ul>
 	</div>
 </div>
@@ -206,16 +206,16 @@ function toggleStandaloneFunctions() {
 				{foreach from=$functions item=function}
 				{if $function.packageDir|empty}
 				{assign var=functionID value=$function.functionID}
-				<div class="formElement" id="{$function.function}Div">
+				<div class="formElement" id="{$function.functionName}Div">
 					<div class="formField">
-						<label><input type="checkbox" id="{$function.function}" name="functions[{$function.functionID}]" value="1" {if $functionID|in_array:$activeFunctions}checked="checked" {/if}/> {lang}wcf.acp.admintools.option.category.{$function.function}{/lang}</label>
+						<label><input type="checkbox" id="{$function.functionName}" name="functions[]" value="{$function.functionID}" {if $functionID|in_array:$activeFunctions}checked="checked" {/if}/> {lang}wcf.acp.admintools.option.category.{$function.functionName}{/lang}</label>
 					</div>
-					<div class="formFieldDesc hidden" id="{$function.function}HelpMessage">
-						{lang}wcf.acp.admintools.option.category.{$function.function}.description{/lang}
+					<div class="formFieldDesc hidden" id="{$function.functionName}HelpMessage">
+						{lang}wcf.acp.admintools.option.category.{$function.functionName}.description{/lang}
 					</div>
 				</div>
 				<script type="text/javascript">//<![CDATA[
-					inlineHelp.register('{$function.function}');
+					inlineHelp.register('{$function.functionName}');
 				//]]></script>
 				{/if}
 				{/foreach}
@@ -230,16 +230,16 @@ function toggleStandaloneFunctions() {
 				{foreach from=$functions item=function}
 				{if !$function.packageDir|empty}
 				{assign var=functionID value=$function.functionID}
-				<div class="formElement" id="{$function.function}Div">
+				<div class="formElement" id="{$function.functionName}Div">
 					<div class="formField">
-						<label><input type="checkbox" id="{$function.function}" name="functions[{$function.functionID}]" value="1" {if $functionID|in_array:$activeFunctions}checked="checked" {/if}/> {lang}wcf.acp.admintools.option.category.{$function.function}{/lang}</label>
+						<label><input type="checkbox" id="{$function.functionName}" name="functions[]" value="{$function.functionID}" {if $functionID|in_array:$activeFunctions}checked="checked" {/if}/> {lang}wcf.acp.admintools.option.category.{$function.functionName}{/lang}</label>
 					</div>
-					<div class="formFieldDesc hidden" id="{$function.function}HelpMessage">
-						{lang}wcf.acp.admintools.option.category.{$function.function}.description{/lang}
+					<div class="formFieldDesc hidden" id="{$function.functionName}HelpMessage">
+						{lang}wcf.acp.admintools.option.category.{$function.functionName}.description{/lang}
 					</div>
 				</div>
 				<script type="text/javascript">//<![CDATA[
-					inlineHelp.register('{$function.function}');
+					inlineHelp.register('{$function.functionName}');
 				//]]></script>
 				{/if}
 				{/foreach}

@@ -6,11 +6,11 @@ class AdminToolsLostAndFoundPage extends SortablePage  {
 	public $templateName = 'adminToolsLostAndFound';
 	public $activeTabMenuItem = 'backup';
 	public $activeSubTabMenuItem = 'database';
-	public $markedItems = array();
-	public $markedItemsData = array();		
+	public $markedItems = 0;
 	public $itemsPerPage = 10;
 	public $pageNo = 1;
-	
+	public $classname = '';
+
 	public $count = 0;
 
 
@@ -23,25 +23,21 @@ class AdminToolsLostAndFoundPage extends SortablePage  {
 		if (isset($_GET['activeSubTabMenuItem'])) $this->activeSubTabMenuItem = StringUtil::trim($_GET['activeSubTabMenuItem']);
 	}
 
-	public function readData() {		
-
-		if(is_array(WCF::getSession()->getVar('markedItems'))) {
-			$this->markedItemsData = WCF::getSession()->getVar('markedItems');
-			//var_dump($this->markedItemsData); die;
-			foreach($this->markedItemsData as $key => $data) {
-				$this->markedItems[$key] = count($data);
-			}
-		}
-
+	public function readData() {
 		$functionName = 'read'.ucfirst($this->activeTabMenuItem);
 		if(method_exists($this, $functionName)) {
 			$this->{$functionName}();
 		}
-		
+
 		parent::readData();
 	}
 
 	protected function readBackup() {
+		$this->activeSubTabMenuItem = 'filesystem';
+		require_once(WCF_DIR.'lib/acp/admintools/lostandfound/BackupFilesystemLostAndFoundItem.class.php');
+		BackupFilesystemLostAndFoundItem::createVirtualIDSpace();
+		$this->markedItems = intval(count(BackupFilesystemLostAndFoundItem::getMarkedItems('backupFilesystem')));
+		$this->classname = 'BackupFilesystemLostAndFoundItem';
 		chdir(WCF_DIR.'acp/backup');
 		$dh= opendir(WCF_DIR.'acp/backup');
 		if(!$dh) {
@@ -51,11 +47,15 @@ class AdminToolsLostAndFoundPage extends SortablePage  {
 		$i=0;
 		while($file = readdir ($dh)) {
 			if($file != '.' && $file != '..' && $file != '.htaccess' && !is_dir($file)) {
-				$this->itemData[$i] = array();
-				$this->itemData[$i]['filename'] = urlencode($file);
-				$this->itemData[$i]['filePath'] = WCF_DIR.'acp/backup/'.$file;
-				$this->itemData[$i]['filesize'] = round((filesize($file) / 1000),2).' kB';
-				$this->itemData[$i]['time'] = filemtime($file);
+				if(($i < ($this->pageNo-1)*$this->itemsPerPage) || ($i > $this->pageNo*$this->itemsPerPage)) {
+					$i++;
+					continue;
+				}
+				$backup = new BackupFilesystemLostAndFoundItem(BackupFilesystemLostAndFoundItem::getVirtualID('backupFilesystem', $file));
+				$backup->filename = $file;
+				$backup->filesize = round((filesize($file) / 1000),2).' kB';
+				$backup->fileLastModTime = filemtime($file);
+				$this->itemData[] = $backup;
 				$i++;
 			}
 		}
@@ -66,6 +66,9 @@ class AdminToolsLostAndFoundPage extends SortablePage  {
 	public function readAttachments() {
 		switch($this->activeSubTabMenuItem) {
 			case 'database' :
+				require_once(WCF_DIR.'lib/acp/admintools/lostandfound/AttachmentsDatabaseLostAndFoundItem.class.php');
+				$this->markedItems = intval(count(AttachmentsDatabaseLostAndFoundItem::getMarkedItems('attachmentsDatabase')));
+				$this->classname = 'AttachmentsDatabaseLostAndFoundItem';
 				// private attachments won't be read
 				$sql = "SELECT attachment.*, user.username FROM wcf".WCF_N."_attachment attachment
 						LEFT JOIN wcf".WCF_N."_user user
@@ -73,28 +76,29 @@ class AdminToolsLostAndFoundPage extends SortablePage  {
 						LEFT JOIN wcf".WCF_N."_attachment_container_type type
 						ON(type.containerType = attachment.containerType)
 						WHERE type.isPrivate = 0";
-				$result = WCF::getDB()->sendQuery($sql, $this->itemsPerPage, ($this->pageNo-1)*$this->itemsPerPage);
+				$result = WCF::getDB()->sendQuery($sql);
 				$i = 0;
 				while($row = WCF::getDB()->fetchArray($result)) {
 					if(!is_file(WCF_DIR.'attachments/attachment-'.$row['attachmentID'])) {
-						if($i <= ($this->pageNo-1)*$this->itemsPerPage) {
+						if(($i < ($this->pageNo-1)*$this->itemsPerPage) || ($i > $this->pageNo*$this->itemsPerPage)) {
 							$i++;
 							continue;
 						}
-						else if($i > $this->pageNo*$this->itemsPerPage) break;
-						$this->itemData[$i] = array();
-						$this->itemData[$i]['filename'] = $row['attachmentName'];
-						$this->itemData[$i]['filePath'] = WCF_DIR.'attachments/attachment-'.$row['attachmentID'];
-						$this->itemData[$i]['filesize'] = round((($row['attachmentSize']) / 1000),2).' kB';
-						$this->itemData[$i]['time'] = $row['uploadTime'];
-						$this->itemData[$i]['username'] = $row['username'];
-						$this->itemData[$i]['itemID'] = $row['attachmentID'];
-						$i++;
+						$attachment = new AttachmentsDatabaseLostAndFoundItem($row['attachmentID']);
+						$attachment->filename = $row['attachmentName'];
+						$attachment->filesize = round((($row['attachmentSize']) / 1000),2).' kB';
+						$attachment->fileLastModTime = $row['uploadTime'];
+						$attachment->user = $row['username'];
+						$this->itemData[] = $attachment;
 					}
 				}
 				$this->count = $i;
 				break;
 			case 'filesystem' :
+				require_once(WCF_DIR.'lib/acp/admintools/lostandfound/AttachmentsFilesystemLostAndFoundItem.class.php');
+				AttachmentsFilesystemLostAndFoundItem::createVirtualIDSpace();
+				$this->markedItems = intval(count(AttachmentsFilesystemLostAndFoundItem::getMarkedItems('attachmentsFilesystem')));
+				$this->classname = 'AttachmentsFilesystemLostAndFoundItem';
 				chdir(WCF_DIR.'attachments');
 				$dh=opendir(WCF_DIR.'attachments');
 				$attachmentIDs = array();
@@ -117,18 +121,16 @@ class AdminToolsLostAndFoundPage extends SortablePage  {
 					$this->count = count($physicalAttachments);
 					$i = 0;
 					foreach($physicalAttachments as $attachmentID) {
-						if($i <= ($this->pageNo-1)*$this->itemsPerPage) {
+						if(($i < ($this->pageNo-1)*$this->itemsPerPage) || ($i > $this->pageNo*$this->itemsPerPage)) {
 							$i++;
 							continue;
 						}
-						else if($i > $this->pageNo*$this->itemsPerPage) break;
 						$file = WCF_DIR.'attachments/attachment-'.$attachmentID;
-						$this->itemData[$i] = array();
-						$this->itemData[$i]['filename'] = $file;
-						$this->itemData[$i]['filePath'] = WCF_DIR.'attachments/'.$file;
-						$this->itemData[$i]['filesize'] = round((filesize($file) / 1000),2).' kB';
-						$this->itemData[$i]['time'] = filemtime($file);
-						$this->itemData[$i]['itemID'] = $attachmentID;
+						$attachment = new AttachmentsFilesystemLostAndFoundItem(AttachmentsFilesystemLostAndFoundItem::getVirtualID('attachmentsFilesystem', $file));
+						$attachment->filename = $file;
+						$attachment->filesize = round((filesize($file) / 1000),2).' kB';
+						$attachment->fileLastModTime = filemtime($file);
+						$this->itemData[] = $attachment;
 						$i++;
 					}
 				}
@@ -136,47 +138,57 @@ class AdminToolsLostAndFoundPage extends SortablePage  {
 				break;
 		}
 	}
-	
-	public function readAvatars() {		
+
+	public function readAvatars() {
 		switch($this->activeSubTabMenuItem) {
-		case 'database' :				
+			case 'database' :
+				require_once(WCF_DIR.'lib/acp/admintools/lostandfound/AvatarsDatabaseLostAndFoundItem.class.php');
+				$this->markedItems = intval(count(AvatarsDatabaseLostAndFoundItem::getMarkedItems('avatarsDatabase')));
+				$this->classname = 'AvatarsDatabaseLostAndFoundItem';
 				$sql = "SELECT avatar.*, user.username FROM wcf".WCF_N."_avatar avatar
 						LEFT JOIN wcf".WCF_N."_user user
 						ON (user.userID = avatar.userID)";
-				$result = WCF::getDB()->sendQuery($sql, $this->itemsPerPage, ($this->pageNo-1)*$this->itemsPerPage);
+				$result = WCF::getDB()->sendQuery($sql);
 				$i = 0;
 				while($row = WCF::getDB()->fetchArray($result)) {
 					if(!is_file(WCF_DIR.'images/avatars/avatar-'.$row['avatarID'])) {
-						$this->itemData[$i] = array();
-						$this->itemData[$i]['filename'] = $row['avatarName'];
-						$this->itemData[$i]['filePath'] = WCF_DIR.'images/avatars/'.$row['avatarID'];												
-						$this->itemData[$i]['username'] = $row['username'];
-						$this->itemData[$i]['itemID'] = $row['avatarID'];
+						if(($i < ($this->pageNo-1)*$this->itemsPerPage) || ($i > $this->pageNo*$this->itemsPerPage)) {
+							$i++;
+							continue;
+						}
+						$avatar = new AvatarsDatabaseLostAndFoundItem($row['avatarID']);
+						$avatar->filename = $row['avatarName'];						
+						$avatar->user = $row['username'];						
+						$this->itemData[] = $avatar;
 						$i++;
 					}
 				}
 				$this->count = $i;
 				break;
 			case 'filesystem' :
+				require_once(WCF_DIR.'lib/acp/admintools/lostandfound/AvatarsFilesystemLostAndFoundItem.class.php');
+				AvatarsFilesystemLostAndFoundItem::createVirtualIDSpace();
+				$this->markedItems = intval(count(AvatarsFilesystemLostAndFoundItem::getMarkedItems('avatarsFilesystem')));
+				$this->classname = 'AvatarsFilesystemLostAndFoundItem';
 				chdir(WCF_DIR.'images/avatars');
 				$dh=opendir(WCF_DIR.'images/avatars');
 				$avatarIDs = array();
-				$avatars = array();				
-				while($file = readdir ($dh)) {					
+				$avatars = array();
+				while($file = readdir ($dh)) {
 					if(preg_match("/^(avatar).*/",$file) && $file != '.' && $file != '..' && $file != '.htaccess' && !preg_match("/^.*\.php$/",$file)) {
 						$avatarID = (int) preg_replace("/.*\-(\d+).*/", "$1", $file);
-						$avatars[$avatarID] = preg_replace("/.*\-(\d+)(.*)/", "$2", $file);						
+						$avatars[$avatarID] = preg_replace("/.*\-(\d+)(.*)/", "$2", $file);
 						if($avatarID > 0) {
 							$avatarIDs[] = $avatarID;
 						}
 					}
-				}				
+				}
 				if (count($avatarIDs)) {
 					$sql = "SELECT avatarID, avatarExtension FROM wcf".WCF_N."_avatar WHERE avatarID IN (".implode(',', $avatarIDs).")";
 					$result = WCF::getDB()->sendQuery($sql);
-					$physicalAvatars = array_flip($avatarIDs);				
+					$physicalAvatars = array_flip($avatarIDs);
 					while($row = WCF::getDB()->fetchArray($result)) {
-						unset($physicalAvatars[$row['avatarID']]);						
+						unset($physicalAvatars[$row['avatarID']]);
 					}
 					$physicalAvatars = array_keys($physicalAvatars);
 					$this->count = count($physicalAvatars);
@@ -186,14 +198,13 @@ class AdminToolsLostAndFoundPage extends SortablePage  {
 							$i++;
 							continue;
 						}
-						else if($i > $this->pageNo*$this->itemsPerPage) break;						
+						else if($i > $this->pageNo*$this->itemsPerPage) break;
 						$file = WCF_DIR.'images/avatars/avatar-'.$avatarID.$avatars[$avatarID];
-						$this->itemData[$i] = array();
-						$this->itemData[$i]['filename'] = $file;
-						$this->itemData[$i]['filePath'] = WCF_DIR.'acp/backup/'.$file;
-						$this->itemData[$i]['filesize'] = round((filesize($file) / 1000),2).' kB';
-						$this->itemData[$i]['time'] = filemtime($file);
-						$this->itemData[$i]['itemID'] = $avatarID;
+						$avatar = new AvatarsFilesystemLostAndFoundItem(AvatarsFilesystemLostAndFoundItem::getVirtualID('avatarsFilesystem', $file)); 
+						$avatar->filename = $file;						
+						$avatar->filesize = round((filesize($file) / 1000),2).' kB';
+						$avatar->fileLastModTime = filemtime($file);
+						$this->itemData[] = $avatar;						
 						$i++;
 					}
 				}
@@ -201,17 +212,16 @@ class AdminToolsLostAndFoundPage extends SortablePage  {
 				break;
 		}
 	}
-	
+
 	public function assignVariables() {
 		parent::assignVariables();
 
 		WCF::getTPL()->assign(array('activeTabMenuItem' => $this->activeTabMenuItem,
 									'activeSubTabMenuItem' => $this->activeSubTabMenuItem,
-									'markedItems' => $this->markedItems,
-									'markedItemsData' => $this->markedItemsData,									
+									'markedItems' => $this->markedItems,									
 									'defaultSortField' => $this->defaultSortField,
 									'defaultSortOrder' => $this->defaultSortOrder,
-									'mode' => $this->activeTabMenuItem.ucfirst($this->activeSubTabMenuItem),
+									'classname' => $this->classname,
 									'itemData' => $this->itemData));
 	}
 

@@ -21,15 +21,11 @@
 	
 	
 	// item editing	
-	permissions['canMarkItem'] = 1;	
-	{if $markedItemsData.$activeTabMenuItem|isset}
-	var markedItems = {$markedItems.$activeTabMenuItem};
-	{else}
-	var markedItems = 0;
-	{/if}
+	permissions['canMarkItem'] = 1;		
+	
 	// init
 	onloadEvents.push(function() {
-		itemListEdit = new LostAndFoundListEdit(itemData, markedItems, '{$activeTabMenuItem}', '{$mode}');		
+		itemListEdit = new LostAndFoundListEdit(itemData, {$markedItems}, '{$jsname}', '{$classname}');		
 	});
 	//]]>
 </script>
