@@ -1,54 +1,74 @@
 <?php
-require_once(WCF_DIR.'lib/acp/form/CronjobsAddForm.class.php');
+require_once(WCF_DIR.'lib/acp/form/CronjobsEditForm.class.php');
 
 
-class AdminToolsCronjobsAddForm extends CronjobsAddForm {		
+class AdminToolsCronjobsEditForm extends CronjobsEditForm {
 	public $templateName = 'adminToolsCronjobsAdd';
 	public $activeMenuItem = 'wcf.acp.menu.link.admintools.cronjobs';
 	public $functions = array();
 	public $activeFunctions = array();
 	public $wcfCronjob = 0;
-	
+
+	/**
+	 * @see Page::readParameters()
+	 */
+	public function readParameters() {
+		parent::readParameters();
+
+	}
+
 	/**
 	 * @see Form::readFormParameters()
 	 */
 	public function readFormParameters() {
 		parent::readFormParameters();
-				
+
 		if (isset($_POST['wcfCronjob'])) {
 			$this->wcfCronjob = intval($_POST['wcfCronjob']);
 			if($this->wcfCronjob) {
 				$this->packageID = 1;
 			}
 		}
-		
-		if(isset($_POST['functions']) && is_array($_POST['functions'])) $this->activeFunctions = ArrayUtil::toIntegerArray($_POST['functions']);
+
+		if(isset($_POST['functions']) && is_array($_POST['functions'])) $this->activeFunctions = ArrayUtil::toIntegerArray($_POST['functions']);		
 	}
-	
+
 	/**
 	 * @see Page::readData()
 	 */
 	public function readData() {
 		parent::readData();
-		
+
 		WCF::getCache()->addResource('admin_tools_functions-'.PACKAGE_ID, WCF_DIR.'cache/cache.admin_tools_functions-'.PACKAGE_ID.'.php', WCF_DIR.'lib/system/cache/CacheBuilderAdminToolsFunction.class.php');
-		$this->functions = WCF::getCache()->get('admin_tools_functions-'.PACKAGE_ID);		
+		$this->functions = WCF::getCache()->get('admin_tools_functions-'.PACKAGE_ID);
 		foreach($this->functions as $key => $function) {
 			if(!$function['executeAsCronjob']) unset($this->functions[$key]);
 		}
+		
+		if(!count($_POST)) {
+			$sql = "SELECT functionID FROM wcf".WCF_N."_admin_tools_function_to_cronjob
+				WHERE cronjobID = ".$this->cronjobID;
+			$result = WCF::getDB()->sendQuery($sql);
+			while($row = WCF::getDB()->fetchArray($result)) {
+				$this->activeFunctions[] = $row['functionID'];
+			}
+		}
+		if($this->cronjob->packageID == 1) {
+			$this->wcfCronjob = 1;
+		}
 	}
-	
+
 	/**
 	 * @see Page::assignVariables()
 	 */
 	public function assignVariables() {
 		parent::assignVariables();
-		
+
 		WCF::getTPL()->assign(array('functions' => $this->functions,
 									'activeFunctions' => $this->activeFunctions,
 									'wcfCronjob' => $this->wcfCronjob));
 	}
-	
+
 	/**
 	 * @see Form::validate()
 	 */
@@ -59,75 +79,67 @@ class AdminToolsCronjobsAddForm extends CronjobsAddForm {
 		catch(UserInputException $e) {
 			$errorField = $e->getField();
 			$errorType = $e->getType();
-			
+
 			if($errorField != 'classPath') {
 				throw new UserInputException($errorField, $errorType);
 			}
 		}
-		
+
 		if($this->wcfCronjob) {
 			foreach($this->activeFunctions as &$functionID) {
 				if(!empty($this->functions[$functionID]['packageDir'])) unset($functionID);
-			}			
+			}
 		}
-		
+
 		if(!count($this->activeFunctions)) {
 			throw new UserInputException();
 		}
-		
+
+
 	}
-	
+
+
 	/**
 	 * @see Form::save()
 	 */
-	public function save() {		
+	public function save() {
 		ACPForm::save();
-		
-		// save cronjob
-		CronjobEditor::create($this->classPath, $this->packageID, $this->description, $this->execMultiple, $this->startMinute, $this->startHour, $this->startDom, $this->startMonth, $this->startDow);		
-		
-		$sql = "SELECT cronjobs.cronjobID, package.packageDir FROM wcf".WCF_N."_cronjobs cronjobs
-				LEFT JOIN wcf".WCF_N."_package package
-				ON (package.packageID = cronjobs.packageID)
-				 WHERE cronjobs.classPath = '".$this->classPath."'				 
-				 AND cronjobs.packageID = ".$this->packageID;
-		$row = WCF::getDB()->getFirstRow($sql);
-		$cronjobID = $row['cronjobID'];
-		$cronjob = new CronjobEditor($cronjobID);		
-		$cronjob->update($row['packageDir'].'lib/system/cronjob/AdminToolsCronjob'.$cronjobID.'.class.php', $this->packageID, $this->description, $this->execMultiple, $this->startMinute, $this->startHour, $this->startDom, $this->startMonth, $this->startDow);
-		
+
+		// update cronjob
+		$this->cronjob->update($this->classPath, $this->packageID, $this->description, $this->execMultiple, $this->startMinute, $this->startHour, $this->startDom, $this->startMonth, $this->startDow);
+		$this->saved();
+
+		// delete old entries
+		$sql = "DELETE FROM wcf".WCF_N."_admin_tools_function_to_cronjob
+				WHERE cronjobID = ".$this->cronjobID;
+		WCF::getDB()->sendQuery($sql);
+
 		$inserts = '';
 		foreach($this->activeFunctions as $functionID) {
 			if(!empty($inserts)) $inserts .= ',';
-			$inserts .= '('.$functionID.', '.$cronjobID.')';
+			$inserts .= '('.$functionID.', '.$this->cronjobID.')';
 		}
 		$sql = "INSERT IGNORE INTO wcf".WCF_N."_admin_tools_function_to_cronjob
 					(functionID, cronjobID)
 					VALUES ".$inserts;
-		WCF::getDB()->sendQuery($sql);		
-		$path = FileUtil::getRealPath(WCF_DIR.$row['packageDir']);
-		$fileName = $path.'lib/system/cronjob/AdminToolsCronjob'.$cronjobID.'.class.php';
-		$this->writeCronjob($cronjobID, $fileName);
-		
+		WCF::getDB()->sendQuery($sql);
+		$package = new Package($this->packageID);
+		$path = FileUtil::getRealPath(WCF_DIR.$package->getDir());
+		$fileName = $path.'lib/system/cronjob/AdminToolsCronjob'.$this->cronjobID.'.class.php';
+		if(file_exists($fileName)) unlink($fileName);
+		$this->writeCronjob($this->cronjobID, $fileName);
+
 		$this->saved();
-		
-		// reset values
-		$this->classPath = $this->description = '';
-		$this->execMultiple = 0;
-		$this->startMinute = $this->startHour = $this->startDom = $this->startMonth = $this->startDow = '*';
-		
+
 		// show success.
 		WCF::getTPL()->assign(array(
 			'success' => true
 		));
-		
-		$this->activeFunctions = array();
-		$this->wcfCronjob = 0;
 	}
-	
+
 	/**
 	 * Writes the cronjob to the file system
-	 * 
+	 *
 	 * @param Integer $cronjobID
 	 * @param String  $filename
 	 */
@@ -148,7 +160,7 @@ class AdminToolsCronjobsAddForm extends CronjobsAddForm {
 		$output .=" \t}\n";
 		$output .="}\n";
 		$output .="?>";
-		
+
 		require_once(WCF_DIR.'lib/system/io/File.class.php');
 		$file = new File($filename);
 		$file->write($output);

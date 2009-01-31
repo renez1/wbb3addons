@@ -5,37 +5,34 @@
                             </tr>
                           </thead>
                           <tbody>
-                		{foreach from=$itemData key=key item=item}								
-                              	<tr class="{cycle}" id="attachmentsRow{$key}">                              	  
+                		{foreach from=$itemData item=item}								
+                              	<tr class="{cycle}" id="{$jsname}Row{$item->objectID}">                              	  
                               	<td class="columnMarkItems">
-									<label><input id="attachmentsMark{$key}" type="checkbox" /></label>
+									<label><input id="{$jsname}Mark{$item->objectID}" type="checkbox" /></label>
 								</td>								
 								<td class="columnIcon">
-									<img id="attachmentsEdit{$key}" src="{@RELATIVE_WCF_DIR}icon/lostAndFoundAttachmentItemM.png" alt="" />									
+									<img id="{$jsname}Edit{$item->objectID}" src="{@RELATIVE_WCF_DIR}icon/lostAndFoundAttachmentItemM.png" alt="" />									
 									{cycle print=false}
 										<script type="text/javascript">
 									//<![CDATA[
-									itemData[{@$key}] = new Object();
-									{if $markedItemsData.$key|isset}																																				
-										itemData[{@$key}]['isMarked'] = 1;
-									{/if}
-									itemData[{@$key}]['class'] = '{cycle}';									
-									itemData[{@$key}]['filename'] = '{@$item.filename}';
+									itemData[{$item->objectID}] = new Object();																																										
+									itemData[{$item->objectID}]['isMarked'] = {$item->isMarked()};									
+									itemData[{$item->objectID}]['class'] = '{cycle}';																		
 									//]]>									
 								</script>
 								</td>     								               
 								<td class="columnFilename">																
-									{@$item.filename}
+									{@$item->filename}
 								</td>
 								<td class="columnFilesize">
-									{$item.filesize}
+									{$item->filesize}
 								</td>
 								<td class="columnTime">
-									{$item.time|date}
+									{$item->fileLastModTime|date}
 								</td>
 								{if $activeSubTabMenuItem == 'database'}
 								<td class="columnUsername">
-									{$item.username}
+									{$item->user}
 								</td>
 								{/if}
                                 </tr>

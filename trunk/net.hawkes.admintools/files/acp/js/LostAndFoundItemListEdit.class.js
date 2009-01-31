@@ -1,16 +1,16 @@
 
-function LostAndFoundListEdit(data, count, page, mode) {
+function LostAndFoundListEdit(data, count, page, classname) {
 	this.data = data;
 	this.count = count;
 	this.page = page;	
-	this.mode = mode;
+	this.classname = classname;
 	
 	/**
 	 * Saves the marked status.
 	 */
 	this.saveMarkedStatus = function(data) {
 		var ajaxRequest = new AjaxRequest();		
-		ajaxRequest.openPost('index.php?page=AdminToolsLostAndFoundAction&type='+this.mode+'&packageID='+PACKAGE_ID+SID_ARG_2ND, data);
+		ajaxRequest.openPost('index.php?page=AdminToolsLostAndFoundAction&pagename='+this.page+'&classname='+this.classname+'&packageID='+PACKAGE_ID+SID_ARG_2ND, data);
 	}
 	
 	/**
@@ -81,7 +81,7 @@ function LostAndFoundListEdit(data, count, page, mode) {
 	 */
 	this.remove = function(id) {
 		if (confirm(language['wcf.acp.admintools.delete.sure'])) {
-				document.location.href = fixURL('index.php?page=AdminToolsLostAndFoundAction&action=delete&itemID='+id+'&url='+encodeURIComponent(url)+SID_ARG_2ND);
+				document.location.href = fixURL('index.php?page=AdminToolsLostAndFoundAction&pagename='+this.page+'&classname='+this.classname+'&action=delete&itemID='+id+'&url='+encodeURIComponent(url)+SID_ARG_2ND);
 		}
 	}
 	
@@ -91,22 +91,22 @@ function LostAndFoundListEdit(data, count, page, mode) {
 	 */
 	this.removeAll = function() {
 		if (confirm(language['wcf.acp.admintools.delete.sure'])) {
-			document.location.href = fixURL('index.php?page=AdminToolsLostAndFoundAction&&action=deleteAll&url='+encodeURIComponent(url)+SID_ARG_2ND);
+			document.location.href = fixURL('index.php?page=AdminToolsLostAndFoundAction&pagename='+this.page+'&classname='+this.classname+'&action=deleteAll&url='+encodeURIComponent(url)+SID_ARG_2ND);
 		}
 	}	
 	
 	/**
-	 * Ummarked all marked threads.
+	 * Ummarked all marked items.
 	 */
 	this.unmarkAll = function() {
 		var ajaxRequest = new AjaxRequest();
-		ajaxRequest.openGet('index.php?page=AdminToolsLostAndFoundAction&type='+this.mode+'&action=unmarkAll'+SID_ARG_2ND);
+		ajaxRequest.openGet('index.php?page=AdminToolsLostAndFoundAction&pagename='+this.page+'&classname='+this.classname+'&action=unmarkAll'+SID_ARG_2ND);
 		
 		// checkboxes
 		this.count = 0;
 		for (var id in this.data) {
 			this.data[id]['isMarked'] = 0;
-			var checkbox = document.getElementById(this.type + 'Mark' + id);
+			var checkbox = document.getElementById(this.page + 'Mark' + id);
 			if (checkbox) {
 				checkbox.checked = false;
 			}
@@ -127,7 +127,7 @@ function LostAndFoundListEdit(data, count, page, mode) {
 	 */
 	this.showStatus = function(id) {
 		// get row
-		var row = document.getElementById(this.type + 'Row'+id);
+		var row = document.getElementById(this.page + 'Row'+id);
 		
 		// update css class
 		if (row) {

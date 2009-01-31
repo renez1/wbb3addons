@@ -74,7 +74,7 @@ class AdminToolsFunctionPackageInstallationPlugin extends AbstractOptionPackageI
 								if (isset($function['executeascronjob'])) $executeAsCronjob =  intval($function['executeascronjob']);														
 
 								$functionData = array(
-										'function' => $functionName,
+										'functionName' => $functionName,
 										'classPath' => $classPath,
 										'saveSettings' => $saveSettings,
 										'executeAsCronjob' => $executeAsCronjob
@@ -274,9 +274,9 @@ class AdminToolsFunctionPackageInstallationPlugin extends AbstractOptionPackageI
 		if (empty($row['functionID'])) {
 			// insert new functiom
 			$sql = "INSERT INTO wcf".WCF_N."_admin_tools_function
-											(packageID, function, classPath, saveSettings, executeAsCronjob)
+											(packageID, functionName, classPath, saveSettings, executeAsCronjob)
 											VALUES (".$this->installation->getPackageID().",
-													'".$function['function']."',
+													'".$function['functionName']."',
 													'".$function['classPath']."',
 													".$function['saveSettings'].",
 													".$function['executeAsCronjob'].")";

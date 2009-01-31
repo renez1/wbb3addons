@@ -20,7 +20,8 @@
 	{if $sortOrder != $defaultSortOrder}{assign var=multiplePagesLink value=$multiplePagesLink|concat:'&sortOrder=':$sortOrder}{/if}
 	{assign var=multiplePagesLink value=$multiplePagesLink|concat:'&packageID=':PACKAGE_ID}	
 	{assign var=multiplePagesLink value=$multiplePagesLink|concat:SID_ARG_2ND_NOT_ENCODED}
-
+	{assign var=tempSuffix value=$activeSubTabMenuItem|ucfirst}
+	{assign var=jsname value=$activeTabMenuItem|concat:$tempSuffix}
 			<div class="tabMenu">
 				<ul>					
 					<li{if $activeTabMenuItem == 'backup'} class="activeTabMenu"{/if}><a href="index.php?page=AdminToolsLostAndFound&amp;activeTabMenuItem=backup&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}"><span>{lang}wcf.acp.admintools.lostandfound.backup{/lang}</span></a></li>
@@ -44,7 +45,7 @@
 			<script type="text/javascript">
 				//<![CDATA[	
 				var language = new Object();				
-				var url = 'index.php?page=AdminToolsLostAndFound&pageNo={$pageNo}&action={$action}&activeTabMenuItem={$activeTabMenuItem}&activeSubTabMenuItem={$activeSubTabMenuItem}&sortField={$sortField}&sortOrder={$sortOrder}{SID_ARG_2ND_NOT_ENCODED}';				
+				var url = 'index.php?page=AdminToolsLostAndFound&pageNo={$pageNo}&action={$action}&activeTabMenuItem={$activeTabMenuItem}&activeSubTabMenuItem={$activeSubTabMenuItem}&sortField={$sortField}&sortOrder={$sortOrder}&packageID={@PACKAGE_ID}{@SID_ARG_2ND_NOT_ENCODED}';				
 				//]]>				
 			</script>
 			{include file='adminToolsLostAndFoundInlineEdit'}
@@ -57,7 +58,7 @@
 								<th class="columnMarkItems" style="width: 24px;">
 									<div>
 										<label class="emptyHead">
-											<input name="{$activeTabMenuItem}MarkAll" type="checkbox" />
+											<input name="{$jsname}MarkAll" type="checkbox" />
 										</label>
 									</div>
 								</th>
@@ -69,5 +70,5 @@
 	<div class="contentFooter">
 			{pages link=$multiplePagesLink}
 			
-			<div id="{$activeTabMenuItem}EditMarked" class="optionButtons"></div>
+			<div id="{$jsname}EditMarked" class="optionButtons"></div>
 	</div>                  
