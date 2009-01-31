@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language languagecode="de">
+<category name="wcf.acp.admintools">
+		<item name="wcf.acp.admintools.acpmenu.add"><![CDATA[Menüeintrag hinzufügen]]></item>
+		<item name="wcf.acp.admintools.acpmenu.editinfo"><![CDATA[Klicken sie in der Menükarte auf den Text eines Menüeintrages, um diesen zu bearbeiten]]></item>
+		<item name="wcf.acp.admintools.cronjob"><![CDATA[Cronjob]]></item>
+		<item name="wcf.acp.admintools.diskinformation"><![CDATA[Speicherkapazität {#$diskInformation.totalSpace} MB - frei {#$diskInformation.freeSpace}  MB - benutzt {#$diskInformation.usedSpace} MB]]></item>
+		<item name="wcf.acp.admintools.function.run"><![CDATA[Ausführen]]></item>
+		<item name="wcf.acp.admintools.functions"><![CDATA[Funktionen]]></item>
+		<item name="wcf.acp.admintools.lostandfound"><![CDATA[Lost and Found]]></item>
+		<item name="wcf.acp.admintools.lostandfound.attachments"><![CDATA[Anhänge]]></item>
+		<item name="wcf.acp.admintools.lostandfound.avatars"><![CDATA[Avatare]]></item>
+		<item name="wcf.acp.admintools.lostandfound.backup"><![CDATA[Backups]]></item>
+		<item name="wcf.acp.admintools.lostandfound.database"><![CDATA[Datenbank]]></item>
+		<item name="wcf.acp.admintools.lostandfound.filename"><![CDATA[Dateiname]]></item>
+		<item name="wcf.acp.admintools.lostandfound.filesize"><![CDATA[Größe]]></item>
+		<item name="wcf.acp.admintools.lostandfound.filesystem"><![CDATA[Dateisystem]]></item>
+		<item name="wcf.acp.admintools.lostandfound.markedItems"><![CDATA[this.count == 1 ? "Ein Eintrag markiert" : this.count+" Einträge markiert"]]></item>
+		<item name="wcf.acp.admintools.lostandfound.time"><![CDATA[Zeit]]></item>
+		<item name="wcf.acp.admintools.lostandfound.username"><![CDATA[Benutzername]]></item>
+		<item name="wcf.acp.admintools.menulink"><![CDATA[Admin Links]]></item>
+		<item name="wcf.acp.admintools.phpinfo"><![CDATA[PHP Info]]></item>
+	</category>
+	<category name="wcf.acp.admintools.option">
+		<item name="wcf.acp.admintools.option.category.clearCache"><![CDATA[Cacheleerung]]></item>
+		<item name="wcf.acp.admintools.option.category.clearCache.description"><![CDATA[Diese Funktion kann Caches löschen, um eine Aktualisierung zu erzwingen.]]></item>
+		<item name="wcf.acp.admintools.option.category.copyUserGroups"><![CDATA[Benutzergruppen kopieren]]></item>
+		<item name="wcf.acp.admintools.option.clearCache.clearLanguageCache"><![CDATA[Sprachcache leeren]]></item>
+		<item name="wcf.acp.admintools.option.clearCache.clearLanguageCache.description"><![CDATA[Ist diese Einstellung aktiviert, werden alle gecachten Sprachdateien beim Ausführen dieser Funktion gelöscht.]]></item>
+		<item name="wcf.acp.admintools.option.clearCache.clearStandaloneCache"><![CDATA[Cacheverzeichnis der Endanwendung {@PACKAGE_NAME} leeren]]></item>
+		<item name="wcf.acp.admintools.option.clearCache.clearStandaloneCache.description"><![CDATA[Ist diese Einstellung aktiviert, wird das Cache Verzeichnis der Endanwendung {@PACKAGE_NAME} beim Ausführen der Funktion geleert.]]></item>
+		<item name="wcf.acp.admintools.option.clearCache.clearStandaloneOptions"><![CDATA[Optionscache der Endanwendung {@PACKAGE_NAME} löschen]]></item>
+		<item name="wcf.acp.admintools.option.clearCache.clearStandaloneOptions.description"><![CDATA[Ist diese Einstellung aktiviert, wird der Optionscache und die Optionsdatei der Endanwendung {@PACKAGE_NAME} beim Ausführen dieser Funktion gelöscht.]]></item>
+		<item name="wcf.acp.admintools.option.clearCache.clearTemplateCache"><![CDATA[Templatecache leeren]]></item>
+		<item name="wcf.acp.admintools.option.clearCache.clearTemplateCache.description"><![CDATA[Ist diese Einstellung aktiviert, werden alle kompilierten Template beim Ausführen dieser Funktion gelöscht.]]></item>
+		<item name="wcf.acp.admintools.option.clearCache.clearWCFCache"><![CDATA[Cacheverzeichnis des WoltLab Community Framework leeren]]></item>
+		<item name="wcf.acp.admintools.option.clearCache.clearWCFCache.description"><![CDATA[Ist diese Einstellung aktiviert, wird das Cache Verzeichnis des WoltLab Community Frameworks beim Ausführen der Funktion geleert.]]></item>
+	</category>
+	<category name="wcf.acp.menu">
+		<item name="wcf.acp.menu.link.admintools"><![CDATA[Admin Tools]]></item>
+		<item name="wcf.acp.menu.link.admintools.cronjobs"><![CDATA[Cronjobs]]></item>
+		<item name="wcf.acp.menu.link.admintools.export"><![CDATA[Exportieren]]></item>
+		<item name="wcf.acp.menu.link.admintools.functions"><![CDATA[Funktionen]]></item>
+		<item name="wcf.acp.menu.link.admintools.index"><![CDATA[Übersicht]]></item>
+		<item name="wcf.acp.menu.link.admintools.lostandfound"><![CDATA[Lost and Found]]></item>
+		<item name="wcf.acp.menu.link.admintools.menu"><![CDATA[Admin Links]]></item>
+		<item name="wcf.acp.menu.link.admintools.phpinfo"><![CDATA[PHP Info]]></item>
+	</category>
+	
+</language>

@@ -1,1 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+<package name="net.hawkes.admintools">
+    <packageinformation>
+        <packagename>AdminTools 2</packagename>
+        <packagedescription>An advanced toolbox for administrators.</packagedescription>        
+        <version>2.0.0 dev 1</version>
+        <date>2009-01-31</date>
+        <standalone>0</standalone>
+        <isUnique>1</isUnique>
+        <plugin>com.woltlab.wcf</plugin>
+        <pluginurl>http://www.wbb3addons.de</pluginurl>
+    </packageinformation>
+
+    <authorinformation>
+        <author>Oliver Kliebisch</author>
+        <authorurl>http://www.oliver-kliebisch.de</authorurl>
+    </authorinformation>
+
+    <requiredpackages>
+        <requiredPackage minversion="1.1.0 Alpha 1">com.woltlab.wcf</requiredPackage>
+        <requiredPackage minversion="1.1.0 Alpha 1">com.woltlab.wcf.data.message.attachment</requiredPackage>
+        <requiredPackage minversion="1.1.0 Alpha 1">com.woltlab.wcf.data.cronjobs</requiredPackage>
+        <requiredPackage minversion="1.1.0 Alpha 1">b.wcf.form.user</requiredPackage>
+    </requiredpackages>
+
+    <instructions type="install">
+        <files>files.tar</files>
+        <sql>install.sql</sql>
+        <acptemplates>acptemplates.tar</acptemplates>
+        <!-- <groupoptions>groupoptions.xml</groupoptions> -->
+        <acpmenu>acpmenu.xml</acpmenu>        
+        <languages languagecode="de">de.xml</languages>
+        <languages languagecode="de-informal">de-informal.xml</languages>
+        <languages languagecode="en">en.xml</languages>        
+    </instructions>
+
+</package>
