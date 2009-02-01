@@ -29,7 +29,9 @@
         <sql>install.sql</sql>
         <acptemplates>acptemplates.tar</acptemplates>
         <!-- <groupoptions>groupoptions.xml</groupoptions> -->
-        <acpmenu>acpmenu.xml</acpmenu>        
+        <acpmenu>acpmenu.xml</acpmenu>
+        <packageinstallationplugins>pip.tar</packageinstallationplugins>
+        <admintoolsfunction>admintools.xml</admintoolsfunction>        
         <languages languagecode="de">de.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>        
