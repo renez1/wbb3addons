@@ -1,6 +1,34 @@
 <?php
+/**
+ *   This file is part of Admin Tools 2.
+ *
+ *   Admin Tools 2 is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   Admin Tools 2 is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Admin Tools 2.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * 
+ */
 require_once(WCF_DIR.'lib/page/SortablePage.class.php');
 
+/**
+ * The page for handling lost and found items. Backups, attachments and avatars are harcodet. Further functions can be used via event listeners
+ * 
+ * @author	Oliver Kliebisch
+ * @copyright	2009 Oliver Kliebisch
+ * @license	GNU General Public License <http://www.gnu.org/licenses/>
+ * @package	net.hawkes.admintools
+ * @subpackage acp.page
+ * @category WCF 
+ */
 class AdminToolsLostAndFoundPage extends SortablePage  {
 	public $activeMenuItem = 'wcf.acp.menu.link.admintools.lostandfound';
 	public $templateName = 'adminToolsLostAndFound';
@@ -12,17 +40,27 @@ class AdminToolsLostAndFoundPage extends SortablePage  {
 	public $classname = '';
 
 	public $count = 0;
-
-
+	
+	/**
+	 * The object array storing the lost and found items
+	 * 
+	 * @var array<MarkableLostAndFoundItem> 
+	 */
 	public $itemData = array();
 
+	/**
+	 * @see Page::readParameters() 
+	 */
 	public function readParameters() {
 		parent::readParameters();
 
 		if (isset($_GET['activeTabMenuItem'])) $this->activeTabMenuItem = StringUtil::trim($_GET['activeTabMenuItem']);
 		if (isset($_GET['activeSubTabMenuItem'])) $this->activeSubTabMenuItem = StringUtil::trim($_GET['activeSubTabMenuItem']);
 	}
-
+	
+	/**
+	 * @see Page::readData() 
+	 */
 	public function readData() {
 		$functionName = 'read'.ucfirst($this->activeTabMenuItem);
 		if(method_exists($this, $functionName)) {
@@ -32,6 +70,9 @@ class AdminToolsLostAndFoundPage extends SortablePage  {
 		parent::readData();
 	}
 
+	/**
+	 * Reads the backup items
+	 */ 
 	protected function readBackup() {
 		$this->activeSubTabMenuItem = 'filesystem';
 		require_once(WCF_DIR.'lib/acp/admintools/lostandfound/BackupFilesystemLostAndFoundItem.class.php');
@@ -63,6 +104,9 @@ class AdminToolsLostAndFoundPage extends SortablePage  {
 		$this->count = $i;
 	}
 
+	/**
+	 * Reads attachment items
+	 */ 
 	public function readAttachments() {
 		switch($this->activeSubTabMenuItem) {
 			case 'database' :
@@ -138,7 +182,10 @@ class AdminToolsLostAndFoundPage extends SortablePage  {
 				break;
 		}
 	}
-
+	
+	/**
+	 * Reads avatar items
+	 */ 
 	public function readAvatars() {
 		switch($this->activeSubTabMenuItem) {
 			case 'database' :
@@ -213,6 +260,9 @@ class AdminToolsLostAndFoundPage extends SortablePage  {
 		}
 	}
 
+	/**
+	 * @see Page::assignVariables()	 
+	 */
 	public function assignVariables() {
 		parent::assignVariables();
 
@@ -225,18 +275,23 @@ class AdminToolsLostAndFoundPage extends SortablePage  {
 									'itemData' => $this->itemData));
 	}
 
+	/**
+	 * @see Page::show()	
+	 */
 	public function show() {
 
 		WCFACP::getMenu()->setActiveMenuItem($this->activeMenuItem);
 
 		parent::show();
 	}
-
+	
+	/**
+	 * @see MultipleLinkPage::countItems()	 	 
+	 */
 	public function countItems() {
 		parent::countItems();
 
 		return $this->count;
 	}
 }
-
 ?>

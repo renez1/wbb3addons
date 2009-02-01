@@ -1,22 +1,43 @@
 <?php
+/**
+ *   This file is part of Admin Tools 2.
+ *
+ *   Admin Tools 2 is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   Admin Tools 2 is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Admin Tools 2.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * 
+ */
 require_once(WCF_DIR.'lib/acp/form/AdminToolsMenuAddForm.class.php');
 
 /**
- * Edits menu items
+ * Edits acp menu items
  *
- * @package	net.hawkes.admintools
  * @author	Oliver Kliebisch
  * @copyright	2009 Oliver Kliebisch
- * @license	Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported <http://creativecommons.org/licenses/by-nc-nd/3.0/>
+ * @license	GNU General Public License <http://www.gnu.org/licenses/>
+ * @package	net.hawkes.admintools
+ * @subpackage acp.form
+ * @category WCF 
  */
-
-
 class AdminToolsMenuEditForm extends AdminToolsMenuAddForm {
 	public $action = 'edit';
 	public $menuItemID;
 	public $iframeID = 0;
 	public $deleteItem = false;
-
+	
+	/**
+	 * @see Page::readParameters()	 
+	 */
 	public function readParameters() {
 		parent::readParameters();
 
@@ -45,6 +66,9 @@ class AdminToolsMenuEditForm extends AdminToolsMenuAddForm {
 		}
 	}
 	
+	/**
+	 * @see Form::readFormParamerters()	 
+	 */
 	public function readFormParameters() {
 		parent::readFormParameters();
 		
@@ -66,6 +90,9 @@ class AdminToolsMenuEditForm extends AdminToolsMenuAddForm {
 		}
 	}
 
+	/**
+	 * @see Page::readData()	 
+	 */
 	public function readData() {
 		parent::readData();
 
@@ -98,9 +125,16 @@ class AdminToolsMenuEditForm extends AdminToolsMenuAddForm {
 			require_once(WCF_DIR.'lib/system/exception/IllegalLinkException.class.php');
 			throw new IllegalLinkException();
 		}
+		
+		if(isset($this->menuItemSelect[$this->menuItem])) {
+			unset($this->menuItemSelect[$this->menuItem]);
+		}
 
 	}
 
+	/**
+	 * @see Form::save()	 
+	 */
 	public function save() {
 		AbstractForm::save();
 		$this->showOrder = $this->getShowOrder($this->showOrder, $this->parentMenuItem, 'parentMenuItem');
@@ -166,6 +200,9 @@ class AdminToolsMenuEditForm extends AdminToolsMenuAddForm {
 
 	}
 
+	/**
+	 * @see Page::assignVariables()	 
+	 */
 	public function assignVariables() {
 		parent::assignVariables();
 
@@ -173,9 +210,12 @@ class AdminToolsMenuEditForm extends AdminToolsMenuAddForm {
 									'iframeID' => $this->iframeID));
 	}
 
+	/**
+	 * @see Page::show()	 
+	 */
 	public function show() {
 
-		WCF::getUser()->checkPermission('admin.headermenu.canEditItem');
+		//WCF::getUser()->checkPermission('admin.headermenu.canEditItem');
 
 		parent::show();
 	}
