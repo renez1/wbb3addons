@@ -13,7 +13,7 @@
 
 		<acpmenuitem name="wcf.acp.menu.link.admintools.index">
 			<parent>wcf.acp.menu.link.admintools</parent>
-			<link>index.php?form=AdminTools</link>
+			<link>index.php?page=AdminTools</link>
 			<icon>icon/adminToolsM.png</icon>
 			<showorder>1</showorder>			
 		</acpmenuitem>
@@ -25,7 +25,7 @@
 			<showorder>2</showorder>			
 		</acpmenuitem>
 
-		<acpmenuitem name="wcf.acp.menu.link.adminTools.cronjobs">
+		<acpmenuitem name="wcf.acp.menu.link.admintools.cronjobs">
 			<parent>wcf.acp.menu.link.admintools.main</parent>
 			<link>index.php?page=AdminToolsCronjobsList</link>
 			<icon>icon/cronjobsM.png</icon>
@@ -39,7 +39,7 @@
 			<showorder>4</showorder>			
 		</acpmenuitem>
 
-		<acpmenuitem name="wcf.acp.menu.link.adminTools.phpinfo">
+		<acpmenuitem name="wcf.acp.menu.link.admintools.phpinfo">
 			<parent>wcf.acp.menu.link.admintools.main</parent>
 			<link>index.php?page=AdminToolsPHPInfo</link>
 			<icon>icon/adminToolsPHPInfoM.png</icon>
