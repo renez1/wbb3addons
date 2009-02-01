@@ -65,6 +65,8 @@ CREATE TABLE IF NOT EXISTS wcf1_admin_tools_option (
   enableOptions mediumtext,
   showOrder int(10) unsigned NOT NULL default '0',
   hidden tinyint(1) unsigned NOT NULL default '0',
+  permissions text,
+  options text,
   PRIMARY KEY  (optionID),
   UNIQUE KEY optionName (optionName,packageID)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
