@@ -1,19 +1,36 @@
 <?php
-
+/**
+ *   This file is part of Admin Tools 2.
+ *
+ *   Admin Tools 2 is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   Admin Tools 2 is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Admin Tools 2.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * 
+ */
 require_once(WCF_DIR.'lib/system/exception/SystemException.class.php');
 require_once(WCF_DIR.'lib/system/template/TemplatePluginFunction.class.php');
 require_once(WCF_DIR.'lib/system/template/Template.class.php');
 
-
 /**
  * Outputs a group options multi select
- *
- * @package	net.hawkes.admintools
+ * 
  * @author	Oliver Kliebisch
- * @copyright	2008 Oliver Kliebisch
- * @license	Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported <http://creativecommons.org/licenses/by-nc-nd/3.0/>
+ * @copyright	2009 Oliver Kliebisch
+ * @license	GNU General Public License <http://www.gnu.org/licenses/>
+ * @package	net.hawkes.admintools
+ * @subpackage system.template.plugin
+ * @category WCF 
  */
-
 class TemplatePluginFunctionAcpmenugroupoptions implements TemplatePluginFunction {
 	public $html = '';
 	public $selected = array();
@@ -51,6 +68,12 @@ class TemplatePluginFunctionAcpmenugroupoptions implements TemplatePluginFunctio
 		return $this->html;
 	}
 
+	/**
+	 * builds the HTML output
+	 *
+	 * @param string $item
+	 * @param integer $depth
+	 */
 	protected function buildHtml($item, $depth=0) {		
 		if(isset($item['categoryID'])) {
 			$first = false;

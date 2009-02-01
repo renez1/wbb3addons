@@ -1,6 +1,29 @@
 <?php
-
-
+/**
+ *   This file is part of Admin Tools 2.
+ *
+ *   Admin Tools 2 is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   Admin Tools 2 is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Admin Tools 2.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * This is the central class for executing functions
+ *
+ * @author	Oliver Kliebisch
+ * @copyright	2009 Oliver Kliebisch
+ * @license	GNU General Public License <http://www.gnu.org/licenses/>
+ * @package	net.hawkes.admintools
+ * @subpackage acp.admintools
+ * @category WCF 
+ */
 class AdminToolsFunctionExecution {
 	protected static $instance = null;
 
@@ -34,12 +57,20 @@ class AdminToolsFunctionExecution {
 	public $typeObjects = array();
 
 
-
+	/**
+	 * Constructs the object(singleton) and reads the option tree
+	 *
+	 */
 	protected function __construct() {
 		$this->readCache();
 		$this->options = $this->getOptionTree();		
 	}
-
+	
+	/**
+	 * Returns the active instance
+	 *
+	 * @return AdminToolsFunctionExecution
+	 */
 	public static function getInstance() {
 		if(!self::$instance instanceof self) {
 			self::$instance = new self();
@@ -48,6 +79,12 @@ class AdminToolsFunctionExecution {
 		return self::$instance;
 	}
 
+	/**
+	 * Calls a function
+	 *
+	 * @param integer $functionID
+	 * @param array<mixed> $additionalParameters
+	 */
 	public function callFunction($functionID, $additionalParameters = array()) {
 		$function = $this->cachedFunctions[$functionID];		
 		$data = $function;
@@ -93,6 +130,11 @@ class AdminToolsFunctionExecution {
 		$object->execute($data);
 	}
 	
+	/**
+	 * Sets the read values of a DynamicOptionListForm and reloads the options
+	 *
+	 * @param unknown_type $values
+	 */
 	public function setValues($values) {
 		$this->values = $values;		
 		$errorTypes = array();

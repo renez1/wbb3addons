@@ -1,17 +1,36 @@
 <?php
+/**
+ *   This file is part of Admin Tools 2.
+ *
+ *   Admin Tools 2 is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   Admin Tools 2 is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Admin Tools 2.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * 
+ */
 require_once(WCF_DIR.'lib/system/exception/SystemException.class.php');
 require_once(WCF_DIR.'lib/system/template/TemplatePluginFunction.class.php');
 require_once(WCF_DIR.'lib/system/template/Template.class.php');
 
 /**
- * Builds the javascript menu items
- *
- * @package	net.hawkes.advancedheadermenu
+ * Outputs the acp menu sitemap
+ * 
  * @author	Oliver Kliebisch
- * @copyright	2008 Oliver Kliebisch
- * @license	Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported <http://creativecommons.org/licenses/by-nc-nd/3.0/>
+ * @copyright	2009 Oliver Kliebisch
+ * @license	GNU General Public License <http://www.gnu.org/licenses/>
+ * @package	net.hawkes.admintools
+ * @subpackage system.template.plugin
+ * @category WCF 
  */
-
 class TemplatePluginFunctionAcpmenumap implements TemplatePluginFunction {
 	protected $output = "";	
 	protected $menuItems = array();
@@ -40,6 +59,12 @@ class TemplatePluginFunctionAcpmenumap implements TemplatePluginFunction {
 		return $this->output;
 	}
 
+	/**
+	 * Makes sitemap containers
+	 *
+	 * @param string $parentItem
+	 * @param integer $depth
+	 */
 	protected function makeSiteMap($parentItem = '', $depth = 0) {
 		if (!isset($this->menuItems[$parentItem])) return;
 		
@@ -62,6 +87,12 @@ class TemplatePluginFunctionAcpmenumap implements TemplatePluginFunction {
 		$this->output .= "</ul>\n";	
 	}
 	
+	/**
+	 * Makes a sitemap node
+	 *
+	 * @param string $item
+	 * @param integer $depth
+	 */
 	protected function makeSiteMapItem($item, $depth = 0) {
 		if (!empty($item['menuItemLink']) || $depth < 2) {
 			$itemTitle = $item['menuItemName'];

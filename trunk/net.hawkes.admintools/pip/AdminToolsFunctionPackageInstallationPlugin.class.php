@@ -1,4 +1,22 @@
 <?php
+/**
+ *   This file is part of Admin Tools 2.
+ *
+ *   Admin Tools 2 is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   Admin Tools 2 is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Admin Tools 2.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * 
+ */
 require_once(WCF_DIR.'lib/acp/package/plugin/AbstractOptionPackageInstallationPlugin.class.php');
 
 /**
@@ -6,14 +24,19 @@ require_once(WCF_DIR.'lib/acp/package/plugin/AbstractOptionPackageInstallationPl
  * 
  * @author	Oliver Kliebisch
  * @copyright	2009 Oliver Kliebisch
- * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
- * @package	de.wbb3addons.admintools
+ * @license	GNU General Public License <http://www.gnu.org/licenses/>
+ * @package	net.hawkes.admintools
+ * @subpackage acp.package.plugin
+ * @category WCF 
  */
 class AdminToolsFunctionPackageInstallationPlugin extends AbstractOptionPackageInstallationPlugin {
 	public $tagName = 'admintoolsfunction';
 	public $tableName = 'admin_tools_option';
 	public $functions = array();
 	
+	/**
+	 * @see PackageInstallationPlugin::update()	 
+	 */
 	public function update() {
 		$sql = "SELECT		function.functionID, function.functionName,  package.packageDir						
 			FROM		wcf".WCF_N."_package_dependency package_dependency,
@@ -247,6 +270,9 @@ class AdminToolsFunctionPackageInstallationPlugin extends AbstractOptionPackageI
 		}
 	}
 
+	/**
+	 * @see PackageInstallationPlugin::hasUninstall()	 
+	 */
 	public function hasUninstall() {
 		$hasUninstallOptions = parent::hasUninstall();
 		$sql = "SELECT 	COUNT(functionID) AS count
@@ -256,6 +282,9 @@ class AdminToolsFunctionPackageInstallationPlugin extends AbstractOptionPackageI
 		return ($hasUninstallOptions || $categoryCount['count'] > 0);
 	}
 	
+	/**
+	 * @see PackageInstallationPlugin::uninstall()	 
+	 */
 	public function uninstall() {
 		parent::uninstall();
 		
@@ -396,6 +425,11 @@ class AdminToolsFunctionPackageInstallationPlugin extends AbstractOptionPackageI
 		WCF::getDB()->sendQuery($sql);
 	}
 	
+	/**
+	 * Deletes functions
+	 *
+	 * @param string $functionNames
+	 */
 	protected function deleteFunctions($functionNames) {
 		// delete functions
 		$sql = "DELETE FROM	wcf".WCF_N."_admin_tools_function

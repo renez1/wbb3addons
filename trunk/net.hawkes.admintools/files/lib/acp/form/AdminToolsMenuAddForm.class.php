@@ -1,17 +1,35 @@
 <?php
+/**
+ *   This file is part of Admin Tools 2.
+ *
+ *   Admin Tools 2 is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   Admin Tools 2 is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Admin Tools 2.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * 
+ */
 require_once(WCF_DIR.'lib/acp/form/DynamicOptionListForm.class.php');
 require_once(WCF_DIR.'lib/system/language/LanguageEditor.class.php');
 
 /**
- * Adds menu items
+ * Adds acp menu items
  *
- * @package	net.hawkes.advancedheadermenu
  * @author	Oliver Kliebisch
- * @copyright	2008 Oliver Kliebisch
- * @license	Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported <http://creativecommons.org/licenses/by-nc-nd/3.0/>
+ * @copyright	2009 Oliver Kliebisch
+ * @license	GNU General Public License <http://www.gnu.org/licenses/>
+ * @package	net.hawkes.admintools
+ * @subpackage acp.form
+ * @category WCF 
  */
-
-
 class AdminToolsMenuAddForm extends DynamicOptionListForm  {
 	public $templateName = 'adminToolsAcpMenuAdd';
 	public $activeMenuItem = 'wcf.acp.menu.link.admintools.menu';
@@ -39,7 +57,10 @@ class AdminToolsMenuAddForm extends DynamicOptionListForm  {
 	public $borderStyles = array('solid', 'dotted', 'dashed', 'double', 'groove', 'ridge', 'inset', 'outset');
 
 	public $createLangVar = false;
-
+	
+	/**
+	 * @see Page::readData()	 
+	 */
 	public function readData() {
 		parent::readData();
 
@@ -48,7 +69,9 @@ class AdminToolsMenuAddForm extends DynamicOptionListForm  {
 		$this->makeItemSelect();
 	}
 
-
+	/**
+	 * @see Form::readFormParameters()	 
+	 */
 	public function readFormParameters() {
 		parent::readFormParameters();
 
@@ -69,6 +92,12 @@ class AdminToolsMenuAddForm extends DynamicOptionListForm  {
 		if (isset($_POST['borderStyle'])) $this->borderStyle = $this->borderStyles[intval($_POST['borderStyle'])];		
 	}
 
+	/**
+	 * Creates the selection for parent menu items
+	 *
+	 * @param string $parentMenuItem
+	 * @param integer $depth
+	 */
 	public function makeItemSelect($parentMenuItem='', $depth=0) {
 		$acpMenu = WCFACP::getMenu();
 		foreach($acpMenu->getMenuItems($parentMenuItem) as $item) {
@@ -81,6 +110,9 @@ class AdminToolsMenuAddForm extends DynamicOptionListForm  {
 		}
 	}
 
+	/**
+	 * @see Form::validate()	 
+	 */
 	public function validate() {
 		AbstractForm::validate();
 
@@ -91,12 +123,20 @@ class AdminToolsMenuAddForm extends DynamicOptionListForm  {
 		$this->validateMenuitem();
 	}
 
+	/**
+	 * Validates if the title of the menu item is valid. If not it triggers the dynamic
+	 * creation of a language variable
+	 *
+	 */
 	protected function validateMenuItem() {
 		if(WCF::getLanguage()->get($this->menuItem) == $this->menuItem) {
 			$this->createLangVar = true;
 		}
 	}
 
+	/**
+	 * @see Form::save()	 
+	 */
 	public function save() {
 		parent::save();
 		$this->showOrder = $this->getShowOrder($this->showOrder, $this->parentMenuItem, 'parentMenuItem');
@@ -199,6 +239,9 @@ class AdminToolsMenuAddForm extends DynamicOptionListForm  {
 		}
 	}
 
+	/**
+	 * @see Page::assignVariables()	 
+	 */
 	public function assignVariables() {
 		parent::assignVariables();
 
@@ -220,6 +263,9 @@ class AdminToolsMenuAddForm extends DynamicOptionListForm  {
 									'options' => $this->options));
 	}
 
+	/**
+	 * @see Page::show()	 
+	 */
 	public function show() {
 		WCFACP::getMenu()->setActiveMenuItem($this->activeMenuItem);
 
@@ -228,7 +274,6 @@ class AdminToolsMenuAddForm extends DynamicOptionListForm  {
 		//WCF::getUser()->checkPermission('admin.headermenu.canAddItem');
 		parent::show();
 	}
-
 
 	/**
 	 * Returns a list with the options of a specific option category.
