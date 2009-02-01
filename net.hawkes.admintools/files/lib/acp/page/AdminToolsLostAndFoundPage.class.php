@@ -198,7 +198,7 @@ class AdminToolsLostAndFoundPage extends SortablePage  {
 				$result = WCF::getDB()->sendQuery($sql);
 				$i = 0;
 				while($row = WCF::getDB()->fetchArray($result)) {
-					if(!is_file(WCF_DIR.'images/avatars/avatar-'.$row['avatarID'])) {
+					if(!is_file(WCF_DIR.'images/avatars/avatar-'.$row['avatarID'].'.'.$row['avatarExtension'])) {
 						if(($i < ($this->pageNo-1)*$this->itemsPerPage) || ($i > $this->pageNo*$this->itemsPerPage)) {
 							$i++;
 							continue;
