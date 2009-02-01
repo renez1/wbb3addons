@@ -13,15 +13,22 @@ class AdminToolsFunctionPackageInstallationPlugin extends AbstractOptionPackageI
 	public $tagName = 'admintoolsfunction';
 	public $tableName = 'admin_tools_option';
 	public $functions = array();
-
-	public function __construct(PackageInstallationQueue $installation) {
-		parent::__construct($installation);
-		
-		WCF::getCache()->addResource('admin_tools_functions-'.PACKAGE_ID, WCF_DIR.'cache/cache.admin_tools_functions-'.PACKAGE_ID.'.php', WCF_DIR.'lib/system/cache/CacheBuilderAdminToolsFunction.class.php');
-		$functions = WCF::getCache()->get('admin_tools_functions-'.PACKAGE_ID);
-		foreach($functions as $ID => $function) {
-			$this->functions[$function['function']] = $ID;
+	
+	public function update() {
+		$sql = "SELECT		function.functionID, function.functionName,  package.packageDir						
+			FROM		wcf".WCF_N."_package_dependency package_dependency,
+						wcf".WCF_N."_admin_tools_function function					
+			LEFT JOIN	wcf".WCF_N."_package package
+			ON			(package.packageID = function.packageID)
+			WHERE 		function.packageID = package_dependency.dependency
+					AND package_dependency.packageID = ".$installation->getPackageID()."
+			ORDER BY	package_dependency.priority";
+		$result = WCF::getDB()->sendQuery($sql);		
+		while($row = WCF::getDB()->fetchArray($result)) {
+			$this->functions[$function['functionName']] = $row['functionID'];
 		}
+		
+		parent::update();
 	}
 	
 	/**
@@ -268,11 +275,11 @@ class AdminToolsFunctionPackageInstallationPlugin extends AbstractOptionPackageI
 	// 	search existing function
 		$sql = "SELECT	functionID
 			FROM	wcf".WCF_N."_admin_tools_function
-			WHERE	function = '".escapeString($function['function'])."'
+			WHERE	functionName = '".escapeString($function['functionName'])."'
 				AND packageID = ".$this->installation->getPackageID();
 		$row = WCF::getDB()->getFirstRow($sql);
 		if (empty($row['functionID'])) {
-			// insert new functiom
+			// insert new function
 			$sql = "INSERT INTO wcf".WCF_N."_admin_tools_function
 											(packageID, functionName, classPath, saveSettings, executeAsCronjob)
 											VALUES (".$this->installation->getPackageID().",
@@ -281,7 +288,7 @@ class AdminToolsFunctionPackageInstallationPlugin extends AbstractOptionPackageI
 													".$function['saveSettings'].",
 													".$function['executeAsCronjob'].")";
 			WCF::getDB()->sendQuery($sql);
-			$this->functions[$functionName] = WCF::getDB()->getInsertID();
+			$this->functions[$function['functionName']] = WCF::getDB()->getInsertID();
 		}
 		else {
 			// update existing function
@@ -392,7 +399,7 @@ class AdminToolsFunctionPackageInstallationPlugin extends AbstractOptionPackageI
 	protected function deleteFunctions($functionNames) {
 		// delete functions
 		$sql = "DELETE FROM	wcf".WCF_N."_admin_tools_function
-			WHERE		function IN (".$functionNames.")
+			WHERE		functionName IN (".$functionNames.")
 			AND 		packageID = ".$this->installation->getPackageID();
 		WCF::getDB()->sendQuery($sql);
 	}
