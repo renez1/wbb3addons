@@ -26,7 +26,7 @@
 				<li>
 					<img src="{@RELATIVE_WCF_DIR}icon/adminToolsCronjobXL.png" alt="" />				
 					<ul>
-						<li><a href="index.php?form=AdminToolsCronjob&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">{lang}wcf.acp.admintools.cronjob{/lang}</a></li>
+						<li><a href="index.php?page=AdminToolsCronjobsList&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">{lang}wcf.acp.admintools.cronjob{/lang}</a></li>
 					</ul>
 				</li>
 				

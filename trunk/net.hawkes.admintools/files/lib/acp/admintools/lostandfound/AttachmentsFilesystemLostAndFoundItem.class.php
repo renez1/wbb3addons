@@ -15,10 +15,9 @@
  *   You should have received a copy of the GNU General Public License
  *   along with Admin Tools 2.  If not, see <http://www.gnu.org/licenses/>.
  *
- * 
+ *
  */
 require_once(WCF_DIR.'lib/acp/admintools/lostandfound/AbstractLostAndFoundFileSystemItem.class.php');
-require_once(WCF_DIR.'lib/data/attachment/AttachmentEditor.class.php');
 
 /**
  * Attachments Filesystem Item
@@ -28,21 +27,21 @@ require_once(WCF_DIR.'lib/data/attachment/AttachmentEditor.class.php');
  * @license	GNU General Public License <http://www.gnu.org/licenses/>
  * @package	net.hawkes.admintools
  * @subpackage acp.admintools.lostandfound
- * @category WCF 
+ * @category WCF
  */
 class AttachmentsFilesystemLostAndFoundItem extends AbstractLostAndFoundFileSystemItem {
 
 	/**
-	 * Cronstructs the object by passing the objectID 
+	 * Cronstructs the object by passing the objectID
 	 *
 	 * @param integer $attachmentID
 	 */
 	public function __construct($attachmentID) {
 		parent::__construct('attachmentsFilesystem', $attachmentID);
 	}
-	
+
 	/**
-	 * @see AbstractLostAndFoundFileSystemItem::createVirtualIDSpace() 
+	 * @see AbstractLostAndFoundFileSystemItem::createVirtualIDSpace()
 	 */
 	public static function createVirtualIDSpace() {
 		$attachments = array();
@@ -64,7 +63,7 @@ class AttachmentsFilesystemLostAndFoundItem extends AbstractLostAndFoundFileSyst
 			while($row = WCF::getDB()->fetchArray($result)) {
 				unset($physicalAttachments[$row['attachmentID']]);
 			}
-			$physicalAttachments = array_keys($physicalAttachments);			
+			$physicalAttachments = array_keys($physicalAttachments);
 			foreach($physicalAttachments as $attachmentID) {
 				$file = WCF_DIR.'attachments/attachment-'.$attachmentID;
 				$attachments[] = $file;
@@ -76,17 +75,22 @@ class AttachmentsFilesystemLostAndFoundItem extends AbstractLostAndFoundFileSyst
 	}
 
 	/**
-	 * @see AbstractLostAndFounDatabaseItem::delete()	 
+	 * @see AbstractLostAndFounDatabaseItem::delete()
 	 */
 	public function delete() {
 		if (isset(self::$virtualFileIDs['attachmentsFilesystem'][$this->objectID])) {
-			$editor = new AttachmentEditor(null, array('avatarID' => $this->objectID));
-			$editor->delete();
+			$file = self::$virtualFileIDs['attachmentsFilesystem'][$this->objectID];
+			$attachmentID = (int) preg_replace("/.*\-(\d+)$/", "$1", $file);
+			// delete attachment file
+			if (file_exists(WCF_DIR.'attachments/attachment-'.$attachmentID)) @unlink(WCF_DIR.'attachments/attachment-'.$attachmentID);
+
+			// delete thumbnail, if exists
+			if (file_exists(WCF_DIR.'attachments/thumbnail-'.$attachmentID)) @unlink(WCF_DIR.'attachments/thumbnail-'.$attachmentID);
 		}
 	}
 
 	/**
-	 * @see AbstractLostAndFounDatabaseItem::deleteAll()	 
+	 * @see AbstractLostAndFounDatabaseItem::deleteAll()
 	 */
 	public static function deleteAll() {
 		$itemIDs = self::getMarkedItems('attachmentsFilesystem');
