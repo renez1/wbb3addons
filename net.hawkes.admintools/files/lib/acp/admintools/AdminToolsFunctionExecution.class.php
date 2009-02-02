@@ -22,7 +22,7 @@
  * @license	GNU General Public License <http://www.gnu.org/licenses/>
  * @package	net.hawkes.admintools
  * @subpackage acp.admintools
- * @category WCF 
+ * @category WCF
  */
 class AdminToolsFunctionExecution {
 	protected static $instance = null;
@@ -63,9 +63,9 @@ class AdminToolsFunctionExecution {
 	 */
 	protected function __construct() {
 		$this->readCache();
-		$this->options = $this->getOptionTree();		
+		$this->options = $this->getOptionTree();
 	}
-	
+
 	/**
 	 * Returns the active instance
 	 *
@@ -80,29 +80,43 @@ class AdminToolsFunctionExecution {
 	}
 
 	/**
+	 * Returns the data of a function
+	 *
+	 * @param integer $functionID
+	 * @return array
+	 */
+	protected function getFunctionData($functionID) {
+		foreach($this->options as $superCategory) {			
+			foreach($superCategory['categories'] as $functionCategory) {							
+				if($functionCategory['functionID'] == $functionID) {
+					$this->activeOptions = array();
+					$this->loadActiveOptions($functionCategory['categoryName']);					
+					$options = $this->activeOptions;					
+					$params = array();
+					foreach($options as $option) {
+						if(!isset($params[$option['categoryName']])) {
+							$params[$option['categoryName']] = array();
+						}
+						$params[$option['categoryName']][str_ireplace($option['categoryName'].'.', '', $option['optionName'])] = $option['optionValue'];
+					}
+					return $params;
+				}
+			}
+		}
+		return array();
+	}
+
+	/**
 	 * Calls a function
 	 *
 	 * @param integer $functionID
 	 * @param array<mixed> $additionalParameters
 	 */
 	public function callFunction($functionID, $additionalParameters = array()) {
-		$function = $this->cachedFunctions[$functionID];		
+		$function = $this->cachedFunctions[$functionID];
 		$data = $function;
-		$data['parameters'] = array();
-		if(isset($this->options[$functionID])) {
-			$this->loadActiveOptions($this->options[$functionID]['categoryName']);
-			$options = $this->activeOptions;
-			$params = array();
-			foreach($options as $option) {
-				if(!isset($params[$option['categoryName']])) {
-					$params[$option['categoryName']] = array();					
-				}
-				$params[$option['categoryName']][str_ireplace($option['categoryName'].'.', '', $option['optionName'])] = $option['optionValue'];				
-			}
-			$data['parameters'] = $params;
-		}
-
-		$data['parameters'] = array_merge($data['parameters'], $additionalParameters);		
+		$data['parameters'] = $this->getFunctionData($functionID);		
+		$data['parameters'] = array_merge($data['parameters'], $additionalParameters);
 		// get path to class file
 		if (empty($function['packageDir'])) {
 			$path = WCF_DIR;
@@ -129,14 +143,14 @@ class AdminToolsFunctionExecution {
 		$object = new $function['functionClassName'];
 		$object->execute($data);
 	}
-	
+
 	/**
 	 * Sets the read values of a DynamicOptionListForm and reloads the options
 	 *
 	 * @param unknown_type $values
 	 */
 	public function setValues($values) {
-		$this->values = $values;		
+		$this->values = $values;
 		$errorTypes = array();
 		foreach ($this->activeOptions as $key => $option) {
 			try {
@@ -146,13 +160,13 @@ class AdminToolsFunctionExecution {
 				$errorTypes[$e->getField()] = $e->getType();
 			}
 		}
-		
+
 		if (count($errorTypes) > 0) {
 			throw new UserInputException('options', $errorTypes);
-		}		
-		$this->options = $this->getOptionTree();				
+		}
+		$this->options = $this->getOptionTree();
 	}
-	
+
 	/**
 	 * Gets all options, option categories and functions from cache.
 	 */
@@ -167,7 +181,7 @@ class AdminToolsFunctionExecution {
 
 		WCF::getCache()->addResource('admin_tools_functions-'.PACKAGE_ID, WCF_DIR.'cache/cache.admin_tools_functions-'.PACKAGE_ID.'.php', WCF_DIR.'lib/system/cache/CacheBuilderAdminToolsFunction.class.php');
 		$this->cachedFunctions = WCF::getCache()->get('admin_tools_functions-'.PACKAGE_ID);
-		
+
 		$this->loadActiveOptions('');
 	}
 
@@ -197,7 +211,7 @@ class AdminToolsFunctionExecution {
 				}
 
 				if ((isset($superCategory['categories']) && count($superCategory['categories']) > 0) || (isset($superCategory['options']) && count($superCategory['options']) > 0)) {
-					$options[$superCategory['functionID']] = $superCategory;
+					$options[] = $superCategory;
 				}
 			}
 		}
@@ -213,15 +227,15 @@ class AdminToolsFunctionExecution {
 	protected function loadActiveOptions($parentCategoryName) {
 		if (isset($this->cachedOptionToCategories[$parentCategoryName])) {
 			foreach ($this->cachedOptionToCategories[$parentCategoryName] as $optionName) {
-				if (!$this->checkOption($optionName)) continue;
-				$this->activeOptions[$optionName] =& $this->cachedOptions[$optionName];
-			}
+				if (!$this->checkOption($optionName)) continue;				
+				$this->activeOptions[$optionName] =& $this->cachedOptions[$optionName];				
+			}			
 		}
 		if (isset($this->cachedCategoryStructure[$parentCategoryName])) {
 			foreach ($this->cachedCategoryStructure[$parentCategoryName] as $categoryName) {
 				$this->loadActiveOptions($categoryName);
 			}
-		}
+		}		
 	}
 
 	/**
@@ -275,7 +289,7 @@ class AdminToolsFunctionExecution {
 			foreach ($this->cachedOptionToCategories[$categoryName] as $optionName) {
 				if (!$this->checkOption($optionName)) continue;
 
-				// get option data				
+				// get option data
 				$option = $this->activeOptions[$optionName];
 
 				// set default values
@@ -296,31 +310,31 @@ class AdminToolsFunctionExecution {
 
 	/**
 	 * Validates an option.
-	 * 
+	 *
 	 * @param	string		$key		name of option
 	 * @param	array		$option		option data
 	 */
 	protected function validateOption($key, $option) {
 		// get type object
 		$typeObj = $this->getTypeObject($option['optionType']);
-		
+
 		// get new value
 		$newValue = isset($this->values[$option['optionName']]) ? $this->values[$option['optionName']] : null;
-				
+
 		// get save value
 		$this->activeOptions[$key]['optionValue'] = $typeObj->getData($option, $newValue);
-				
+
 		// validate with pattern
 		if (!empty($option['validationPattern'])) {
 			if (!preg_match('~'.$option['validationPattern'].'~', $this->activeOptions[$key]['optionValue'])) {
 				throw new UserInputException($option['optionName'], 'validationFailed');
 			}
 		}
-		
+
 		// validate by type object
 		$typeObj->validate($option, $newValue);
 	}
-	
+
 	/**
 	 * @see OptionType::getFormElement()
 	 */

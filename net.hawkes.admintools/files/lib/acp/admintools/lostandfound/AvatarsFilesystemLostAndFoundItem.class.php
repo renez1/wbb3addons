@@ -78,12 +78,12 @@ class AvatarsFilesystemLostAndFoundItem extends AbstractLostAndFoundFileSystemIt
 	}
 	
 	/**
-	 * @see AbstractLostAndFounDatabaseItem::delete()	 
+	 * @see AbstractLostAndFoundDatabaseItem::delete()	 
 	 */
 	public function delete() {
 		if (isset(self::$virtualFileIDs['avatarsFilesystem'][$this->objectID])) {
-			$editor = new AvatarEditor(null, array('avatarID' => $this->objectID));
-			$editor->delete();
+			$file = self::$virtualFileIDs['avatarsFilesystem'][$this->objectID];			
+			@unlink($file);
 		}
 	}
 
