@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language languagecode="de">
+<category name="wcf.acp.admintools">		
+		<item name="wcf.acp.admintools.function.cache.clearCache"><![CDATA[Caches leeren]]></item>
+		<item name="wcf.acp.admintools.function.database.optimize"><![CDATA[Datenbank optimieren]]></item>
+	</category>
+	<category name="wcf.acp.admintools.option">
+		<item name="wcf.acp.admintools.option.category.cache"><![CDATA[Cache]]></item>
+		<item name="wcf.acp.admintools.option.category.database"><![CDATA[Datenbank]]></item>
+		<item name="wcf.acp.admintools.option.category.cache.clearCache"><![CDATA[Cacheleerung]]></item>
+		<item name="wcf.acp.admintools.option.category.cache.clearCache.description"><![CDATA[Diese Funktion kann Caches löschen, um eine Aktualisierung zu erzwingen.]]></item>		
+		<item name="wcf.acp.admintools.option.cache.clearCache.clearLanguageCache"><![CDATA[Sprachcache leeren]]></item>
+		<item name="wcf.acp.admintools.option.cache.clearCache.clearLanguageCache.description"><![CDATA[Ist diese Einstellung aktiviert, werden alle gecachten Sprachdateien beim Ausführen dieser Funktion gelöscht.]]></item>
+		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneCache"><![CDATA[Cacheverzeichnis der Endanwendung {@PACKAGE_NAME} leeren]]></item>
+		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneCache.description"><![CDATA[Ist diese Einstellung aktiviert, wird das Cache Verzeichnis der Endanwendung {@PACKAGE_NAME} beim Ausführen der Funktion geleert.]]></item>
+		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneOptions"><![CDATA[Optionscache der Endanwendung {@PACKAGE_NAME} löschen]]></item>
+		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneOptions.description"><![CDATA[Ist diese Einstellung aktiviert, wird der Optionscache und die Optionsdatei der Endanwendung {@PACKAGE_NAME} beim Ausführen dieser Funktion gelöscht.]]></item>
+		<item name="wcf.acp.admintools.option.cache.clearCache.clearTemplateCache"><![CDATA[Templatecache leeren]]></item>
+		<item name="wcf.acp.admintools.option.cache.clearCache.clearTemplateCache.description"><![CDATA[Ist diese Einstellung aktiviert, werden alle kompilierten Template beim Ausführen dieser Funktion gelöscht.]]></item>
+		<item name="wcf.acp.admintools.option.cache.clearCache.clearWCFCache"><![CDATA[Cacheverzeichnis des WoltLab Community Framework leeren]]></item>
+		<item name="wcf.acp.admintools.option.cache.clearCache.clearWCFCache.description"><![CDATA[Ist diese Einstellung aktiviert, wird das Cache Verzeichnis des WoltLab Community Frameworks beim Ausführen der Funktion geleert.]]></item>
+		<item name="wcf.acp.admintools.option.category.database.optimize"><![CDATA[Datenbankoptimierung]]></item>
+		<item name="wcf.acp.admintools.option.category.database.optimize.description"><![CDATA[Diese Funktion dient zum Optimieren der Datenbank. Per Cronjob kann die Optimierung auch regelmäßig ausgeführt werden.]]></item>
+		<item name="wcf.acp.admintools.option.database.optimize.analyze"><![CDATA[Datenbank analysieren]]></item>
+		<item name="wcf.acp.admintools.option.database.optimize.analyze.description"><![CDATA[Lesen sie im <a href="http://dev.mysql.com/doc/refman/5.1/de/analyze-table.html">MySQL</a> Referenzhandbuch über die ANALYZE Funktion, um mehr zu erfahren.]]></item>
+		<item name="wcf.acp.admintools.option.database.optimize.optimize"><![CDATA[Datenbank optimieren]]></item>
+		<item name="wcf.acp.admintools.option.database.optimize.analyze.description"><![CDATA[Lesen sie im <a href="http://dev.mysql.com/doc/refman/5.1/de/optimize-table.html">MySQL</a> Referenzhandbuch über die OPTIMIZE Funktion, um mehr zu erfahren.]]></item>
+	</category>
+</language>

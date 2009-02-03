@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTD/options.dtd">
+<data>
+    <import>
+			<functions>
+				<function name="cache.clearCache">
+					<classpath>lib/acp/admintools/function/ClearCacheAdminToolsFunction.class.php</classpath>
+				</function>
+				<function name="database.optimize">
+					<classpath>lib/acp/admintools/function/DatabaseOptimizeAdminToolsFunction.class.php</classpath>
+					<savesettings>1</savesettings>
+					<executeascronjob>1</executeascronjob>
+				</function>
+			</functions>
+	    
+	    <categories>
+	    	<category name="cache">
+			</category>
+	    	
+	    	<category name="cache.clearCache">
+	    		<function>cache.clearCache</function>
+	    		<parent>cache</parent>
+			</category>
+	    	
+			<category name="database">
+			</category>
+
+			<category name="database.optimize">
+				<function>database.optimize</function>
+				<parent>database</parent>
+			</category>
+	    </categories>
+	    
+	    <options>
+	    	<option name="cache.clearCache.clearWCFCache">
+    			<categoryname>cache.clearCache</categoryname>
+    			<optiontype>boolean</optiontype>
+    			<defaultvalue>0</defaultvalue>
+    			<showorder>1</showorder>
+    		</option>
+    		
+    		<option name="cache.clearCache.clearStandaloneCache">
+    			<categoryname>cache.clearCache</categoryname>
+    			<optiontype>boolean</optiontype>
+    			<defaultvalue>0</defaultvalue>
+    			<showorder>2</showorder>
+    		</option>
+    		
+    		<option name="cache.clearCache.clearTemplateCache">
+    			<categoryname>cache.clearCache</categoryname>
+    			<optiontype>boolean</optiontype>
+    			<defaultvalue>0</defaultvalue>
+    			<showorder>3</showorder>
+    		</option>
+    		
+    		<option name="cache.clearCache.clearLanguageCache">
+    			<categoryname>cache.clearCache</categoryname>
+    			<optiontype>boolean</optiontype>
+    			<defaultvalue>0</defaultvalue>
+    			<showorder>4</showorder>
+    		</option>
+    		
+    		<option name="cache.clearCache.clearStandaloneOptions">
+    			<categoryname>cache.clearCache</categoryname>
+    			<optiontype>boolean</optiontype>
+    			<defaultvalue>0</defaultvalue>
+    			<showorder>5</showorder>
+    		</option>
+    		
+			<option name="database.optimize.analyze">
+				<categoryname>database.optimize</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+				<showorder>1</showorder>
+			</option>
+			
+			<option name="database.optimize.optimize">
+				<categoryname>database.optimize</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+				<showorder>2</showorder>
+			</option>
+		</options>
+    </import>
+</data>
