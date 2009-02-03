@@ -3,6 +3,7 @@
 <language languagecode="de">
 <category name="wcf.acp.admintools">
 		<item name="wcf.acp.admintools.acpmenu.add"><![CDATA[Menüeintrag hinzufügen]]></item>		
+		<item name="wcf.acp.admintools.acpmenu.edit"><![CDATA[Menüeintrag bearbeiten]]></item>
 		<item name="wcf.acp.admintools.acpmenu.delete"><![CDATA[Menüeintrag löschen]]></item>
 		<item name="wcf.acp.admintools.acpmenu.deleteItem"><![CDATA[Diesen Menüeintrag löschen]]></item>
 		<item name="wcf.acp.admintools.acpmenu.deleteItem.description"><![CDATA[Bestätigen sie, dass sie diesen Menüeintrag dauerhaft und endültig entfernen möchten.]]></item>
@@ -32,7 +33,7 @@
 		<item name="wcf.acp.admintools.acpmenu.borderColor"><![CDATA[Farbe des Rahmens]]></item>
 		<item name="wcf.acp.admintools.acpmenu.borderColor.description"><![CDATA[Geben sie die Farbe des Rahmens um den iFrame an. Es können englische Farbnamen oder Farbhashes (Hex-RGB) verwendet werden.]]></item>
 		<item name="wcf.acp.admintools.acpmenu.borderStyle"><![CDATA[Stil des Rahmens]]></item>
-		<item name="wcf.acp.admintools.acpmenu.borderStyle.descriptions"><![CDATA[Wählen sie einen Rahmenstil aus.]]></item>  
+		<item name="wcf.acp.admintools.acpmenu.borderStyle.description"><![CDATA[Wählen sie einen Rahmenstil aus.]]></item>  
 		<item name="wcf.acp.admintools.cronjob"><![CDATA[Cronjob]]></item>
 		<item name="wcf.acp.admintools.diskinformation"><![CDATA[Speicherkapazität {#$diskInformation.totalSpace} MB - frei {#$diskInformation.freeSpace}  MB - benutzt {#$diskInformation.usedSpace} MB]]></item>
 		<item name="wcf.acp.admintools.function.run"><![CDATA[Ausführen]]></item>
@@ -50,19 +51,31 @@
 		<item name="wcf.acp.admintools.lostandfound.username"><![CDATA[Benutzername]]></item>
 		<item name="wcf.acp.admintools.menulink"><![CDATA[Admin Links]]></item>
 		<item name="wcf.acp.admintools.phpinfo"><![CDATA[PHP Info]]></item>
-		<item name="wcf.acp.admintools.function.execute.confirm"><![CDATA["Möchten sie wirklich die Funktion "+functionName+" ausführen?"]]></item>
+		<item name="wcf.acp.admintools.function.execute.confirm"><![CDATA['Möchten sie wirklich die Funktion ' + functionName + ' ausführen?']]></item>
 		<item name="wcf.acp.admintools.functions.success"><![CDATA[Die Einstellungen wurden erfolgreich gespeichert.]]></item>
+		<item name="wcf.acp.admintools.function.success"><![CDATA[Die Funktion &raquo;{$functionName}&laquo; wurde erfolgreich ausgeführt.]]></item>
+		<item name="wcf.acp.admintools.importAndExport"><![CDATA[Admin Tools Optionen sichern & wiederherstellten]]></item>
+		<item name="wcf.acp.admintools.cronjobs.wcffunctions"><![CDATA[WCF Funktionen]]></item>
+		<item name="wcf.acp.admintools.cronjobs.wcffunctions.description"><![CDATA[Alle WCF Funktionen, die von Endanwendungen unabhängig sind.]]></item>
+		<item name="wcf.acp.admintools.cronjobs.standalonefunctions"><![CDATA[Endanwendungsfunktionen]]></item>
+		<item name="wcf.acp.admintools.cronjobs.standalonefunctions.description"><![CDATA[Alle Funktionen, die zur aktuell aktiven Endanwendung ({PACKAGE_NAME}) gehören.]]></item>
+		<item name="wcf.acp.admintools.cronjobs.wcfCronjob"><![CDATA[WCF Cronjob]]></item>
+		<item name="wcf.acp.admintools.cronjobs.wcfCronjob.description"><![CDATA[Aktivieren sie diese Einstellung, wenn sie wollen, dass dieser Cronjob dem WCF zugeordnet werden soll. Mit der Aktivierung ist es nichtmehr möglich Funktionen, die Endanwendungen zugeordnet sind, zu verwenden.]]></item>
 	</category>
 	<category name="wcf.acp.menu">
 		<item name="wcf.acp.menu.link.admintools"><![CDATA[Admin Tools]]></item>
 		<item name="wcf.acp.menu.link.admintools.cronjobs"><![CDATA[Cronjobs]]></item>
 		<item name="wcf.acp.menu.link.admintools.export"><![CDATA[Exportieren]]></item>
-		<item name="wcf.acp.menu.link.admintools.importandexport"><![CDATA[Sichern & Wiederherstellen]]></item>
+		<item name="wcf.acp.menu.link.admintools.importandexport"><![CDATA[Sichern & wiederherstellen]]></item>
 		<item name="wcf.acp.menu.link.admintools.functions"><![CDATA[Funktionen]]></item>
 		<item name="wcf.acp.menu.link.admintools.index"><![CDATA[Übersicht]]></item>
 		<item name="wcf.acp.menu.link.admintools.lostandfound"><![CDATA[Lost and Found]]></item>
 		<item name="wcf.acp.menu.link.admintools.menu"><![CDATA[Admin Links]]></item>
 		<item name="wcf.acp.menu.link.admintools.phpinfo"><![CDATA[PHP Info]]></item>
 	</category>
-	
+	<category name="wcf.acp.package">
+		<item name="wcf.acp.package.step.install.AdminToolsFunctionInstallationPlugin"><![CDATA[Admin Tools Funktionen werden installiert ...]]></item>
+		<item name="wcf.acp.package.step.uninstall.AdminToolsFunctionPackageInstallationPlugin"><![CDATA[Admin Tools Funktionen werden deinstalliert ...]]></item>
+		<item name="wcf.acp.package.step.update.AdminToolsFunctionPackageInstallationPlugin"><![CDATA[Admin Tools Funktionen werden aktualisiert ...]]></item>
+	</category>
 </language>

@@ -47,7 +47,7 @@ class AdminToolsFunctionPackageInstallationPlugin extends AbstractOptionPackageI
 			LEFT JOIN	wcf".WCF_N."_package package
 			ON			(package.packageID = function.packageID)
 			WHERE 		function.packageID = package_dependency.dependency
-					AND package_dependency.packageID = ".$installation->getPackageID()."
+					AND package_dependency.packageID = ".$this->installation->getPackageID()."
 			ORDER BY	package_dependency.priority";
 			$result = WCF::getDB()->sendQuery($sql);
 			while($row = WCF::getDB()->fetchArray($result)) {

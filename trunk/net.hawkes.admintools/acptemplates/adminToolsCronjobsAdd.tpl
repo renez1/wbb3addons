@@ -86,7 +86,7 @@ function toggleStandaloneFunctions() {
 						<label><input type="checkbox" id="wcfCronjob" name="wcfCronjob" value="1" onclick="toggleStandaloneFunctions();" {if $wcfCronjob == 1}checked="checked" {/if}/> {lang}wcf.acp.admintools.cronjobs.wcfCronjob{/lang}</label>
 					</div>
 					<div class="formFieldDesc hidden" id="wcfCronjobHelpMessage">
-						{lang}wcf.acp.admintoolscronjobs.wcfCronjob.description{/lang}
+						{lang}wcf.acp.admintools.cronjobs.wcfCronjob.description{/lang}
 					</div>
 				</div>
 				<script type="text/javascript">//<![CDATA[

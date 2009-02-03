@@ -5,7 +5,7 @@
         <packagename>AdminTools 2</packagename>
         <packagedescription>An advanced toolbox for administrators.</packagedescription>        
         <version>2.0.0 dev 2</version>
-        <date>2009-02-03/date>
+        <date>2009-02-03</date>
         <standalone>0</standalone>
         <isunique>1</isunique>
         <plugin>com.woltlab.wcf</plugin>
@@ -21,9 +21,12 @@
         <requiredpackage minversion="1.1.0 Alpha 1">com.woltlab.wcf</requiredpackage>
         <requiredpackage minversion="1.1.0 Alpha 1">com.woltlab.wcf.data.message.attachment</requiredpackage>
         <requiredpackage minversion="1.1.0 Alpha 1">com.woltlab.wcf.data.cronjobs</requiredpackage>
-        <requiredpackage minversion="1.1.0 Alpha 1">com.woltlab.wcf.form.user</requiredpackage>
-        <requiredpackage minversion="1.0.0 dev 1" file="requirements/net.hawkes.admintools.wcf.functions.tar.gz">net.hawkes.admintools.wcf.functions</requiredpackage>
+        <requiredpackage minversion="1.1.0 Alpha 1">com.woltlab.wcf.form.user</requiredpackage>       
     </requiredpackages>
+    
+    <optionalpackages>
+    	 <optionalpackage minversion="1.0.0 dev 1" file="optionals/net.hawkes.admintools.wcf.functions.tar.gz">net.hawkes.admintools.wcf.functions</optionalpackage>
+    </optionalpackages>
 
     <instructions type="install">
         <files>files.tar</files>
@@ -31,8 +34,7 @@
         <acptemplates>acptemplates.tar</acptemplates>
         <!-- <groupoptions>groupoptions.xml</groupoptions> -->
         <acpmenu>acpmenu.xml</acpmenu>
-        <packageinstallationplugins>pip.tar</packageinstallationplugins>
-        <admintoolsfunction>admintools.xml</admintoolsfunction>        
+        <packageinstallationplugins>pip.tar</packageinstallationplugins>                
         <languages languagecode="de">de.xml</languages>
         <!-- <languages languagecode="de-informal">de-informal.xml</languages>  -->
         <!-- <languages languagecode="en">en.xml</languages>  -->        
