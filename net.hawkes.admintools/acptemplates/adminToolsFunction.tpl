@@ -1,13 +1,12 @@
 {include file='header'}
 <script type="text/javascript" src="{@RELATIVE_WCF_DIR}js/TabMenu.class.js"></script>
 <script type="text/javascript">
-	//<![CDATA[
-	language['wcf.acp.admintools.function.execute.confirm'] = '{lang}wcf.acp.admintools.function.execute.confirm{/lang}';
+	//<![CDATA[	
 	var tabMenu = new TabMenu();
 	onloadEvents.push(function() { tabMenu.showSubTabMenu("{$activeTabMenuItem}", "{$activeSubTabMenuItem}"); });
 	function callFunction(functionID, functionName) {
-		var string = eval(language['wcf.acp.admintools.function.execute.confirm']);
-		if(confirm(string)) {
+		var confirmMessage = {lang}wcf.acp.admintools.function.execute.confirm{/lang};		
+		if(confirm(confirmMessage)) {
         document.forms['functionForm'].elements['functionID'].value = functionID;
         document.forms['functionForm'].submit();
   		}
@@ -61,7 +60,7 @@
 					{foreach from=$options item=categoryLevel1}
 						<ul class="hidden" id="{@$categoryLevel1.categoryName}-categories">
 							{foreach from=$categoryLevel1.categories item=categoryLevel2}
-								<li id="{@$categoryLevel1.categoryName}-{@$categoryLevel2.categoryName}"><a onclick="tabMenu.showTabMenuContent('{@$categoryLevel1.categoryName}-{@$categoryLevel2.categoryName}');"><span>{lang}wcf.acp.group.option.category.{@$categoryLevel2.categoryName}{/lang}</span></a></li>
+								<li id="{@$categoryLevel1.categoryName}-{@$categoryLevel2.categoryName}"><a onclick="tabMenu.showTabMenuContent('{@$categoryLevel1.categoryName}-{@$categoryLevel2.categoryName}');"><span>{lang}wcf.acp.admintools.option.category.{@$categoryLevel2.categoryName}{/lang}</span></a></li>
 							{/foreach}
 						</ul>
 					{/foreach}			
@@ -72,21 +71,21 @@
 				{foreach from=$categoryLevel1.categories item=categoryLevel2}
 					<div class="border tabMenuContent hidden" id="{@$categoryLevel1.categoryName}-{@$categoryLevel2.categoryName}-content">
 						<div class="container-1">
-							<h3 class="subHeadline">{lang}wcf.acp.group.option.category.{@$categoryLevel2.categoryName}{/lang}</h3>
-							<p class="description">{lang}wcf.acp.group.option.category.{@$categoryLevel2.categoryName}.description{/lang}</p>
+							<h3 class="subHeadline">{lang}wcf.acp.admintools.option.category.{@$categoryLevel2.categoryName}{/lang}</h3>
+							<p class="description">{lang}wcf.acp.admintools.option.category.{@$categoryLevel2.categoryName}.description{/lang}</p>
 							
 							{if $categoryLevel2.options|isset && $categoryLevel2.options|count}
-								{include file='optionFieldList' options=$categoryLevel2.options langPrefix='wcf.acp.group.option.'}
+								{include file='optionFieldList' options=$categoryLevel2.options langPrefix='wcf.acp.admintools.option.'}
 							{/if}
 							
 							{if $categoryLevel2.categories|isset}
 								{foreach from=$categoryLevel2.categories item=categoryLevel3}
 									<fieldset>
-										<legend>{lang}wcf.acp.group.option.category.{@$categoryLevel3.categoryName}{/lang}</legend>
-										<p class="description">{lang}wcf.acp.group.option.category.{@$categoryLevel3.categoryName}.description{/lang}</p>
+										<legend>{lang}wcf.acp.admintools.option.category.{@$categoryLevel3.categoryName}{/lang}</legend>
+										<p class="description">{lang}wcf.acp.admintools.option.category.{@$categoryLevel3.categoryName}.description{/lang}</p>
 									
 										<div>
-											{include file='optionFieldList' options=$categoryLevel3.options langPrefix='wcf.acp.group.option.'}
+											{include file='optionFieldList' options=$categoryLevel3.options langPrefix='wcf.acp.admintools.option.'}
 										</div>
 									</fieldset>
 								{/foreach}
