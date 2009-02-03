@@ -40,7 +40,7 @@ class AdminToolsExportAction extends AbstractAction {
 		@header('Content-type: text/xml');
 
 		// file name
-		@header('Content-disposition: attachment; filename="options.xml"');
+		@header('Content-disposition: attachment; filename="admintools.xml"');
 			
 		// no cache headers
 		@header('Pragma: no-cache');

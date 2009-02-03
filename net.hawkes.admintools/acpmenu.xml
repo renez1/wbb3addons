@@ -5,11 +5,7 @@
 		<acpmenuitem name="wcf.acp.menu.link.admintools">
 			<parent>wcf.acp.menu.link.system</parent>
 			<!-- <permissions>admin.system.adminTools.canView</permissions>  -->
-		</acpmenuitem>
-		<acpmenuitem name="wcf.acp.menu.link.admintools.main">
-			<parent>wcf.acp.menu.link.admintools</parent>
-			<showorder>1</showorder>
-		</acpmenuitem>
+		</acpmenuitem>						
 
 		<acpmenuitem name="wcf.acp.menu.link.admintools.index">
 			<parent>wcf.acp.menu.link.admintools</parent>
@@ -17,40 +13,56 @@
 			<icon>icon/adminToolsM.png</icon>
 			<showorder>1</showorder>			
 		</acpmenuitem>
+		
+		<acpmenuitem name="wcf.acp.menu.link.admintools.main">
+			<parent>wcf.acp.menu.link.admintools</parent>
+			<showorder>2</showorder>
+		</acpmenuitem>
+		
+		<acpmenuitem name="wcf.acp.menu.link.admintools.miscellanious">
+			<parent>wcf.acp.menu.link.admintools</parent>
+			<showorder>3</showorder>
+		</acpmenuitem>
 
 		<acpmenuitem name="wcf.acp.menu.link.admintools.functions">
 			<parent>wcf.acp.menu.link.admintools.main</parent>
 			<link>index.php?form=AdminToolsFunction</link>
 			<icon>icon/adminToolsFunctionM.png</icon>
-			<showorder>2</showorder>			
+			<showorder>1</showorder>			
 		</acpmenuitem>
 
 		<acpmenuitem name="wcf.acp.menu.link.admintools.cronjobs">
 			<parent>wcf.acp.menu.link.admintools.main</parent>
 			<link>index.php?page=AdminToolsCronjobsList</link>
 			<icon>icon/cronjobsM.png</icon>
-			<showorder>3</showorder>			
+			<showorder>2</showorder>			
 		</acpmenuitem>
 
 		<acpmenuitem name="wcf.acp.menu.link.admintools.lostandfound">
 			<parent>wcf.acp.menu.link.admintools.main</parent>
 			<link>index.php?page=AdminToolsLostAndFound</link>
 			<icon>icon/adminToolsLostNFoundM.png</icon>
-			<showorder>4</showorder>			
+			<showorder>3</showorder>			
 		</acpmenuitem>
 
 		<acpmenuitem name="wcf.acp.menu.link.admintools.phpinfo">
 			<parent>wcf.acp.menu.link.admintools.main</parent>
 			<link>index.php?page=AdminToolsPHPInfo</link>
 			<icon>icon/adminToolsPHPInfoM.png</icon>
-			<showorder>5</showorder>			
+			<showorder>4</showorder>			
 		</acpmenuitem>
 
 		<acpmenuitem name="wcf.acp.menu.link.admintools.menu">
 			<parent>wcf.acp.menu.link.admintools.main</parent>
 			<link>index.php?page=AdminToolsMenu</link>
 			<icon>icon/adminToolsMenuLinkM.png</icon>
-			<showorder>6</showorder>			
+			<showorder>5</showorder>			
+		</acpmenuitem>
+		
+		<acpmenuitem name="wcf.acp.menu.link.admintools.importandexport">
+			<parent>wcf.acp.menu.link.admintools.miscellanious</parent>
+			<link>index.php?form=AdminToolsImportAndExport</link>			
+			<showorder>1</showorder>			
 		</acpmenuitem>
 	</import>
 </data>

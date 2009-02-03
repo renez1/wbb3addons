@@ -55,7 +55,7 @@ class AdminToolsFunctionForm extends DynamicOptionListForm {
 
 	/**
 	 * Returns an array with all options that have to be saved
-	 *	 
+	 *
 	 * @return	array
 	 */
 	protected function getSaveOptions() {
@@ -63,17 +63,17 @@ class AdminToolsFunctionForm extends DynamicOptionListForm {
 		$oldOptions = $this->activeOptions;
 		foreach($this->options as $category) {
 			foreach($category['categories'] as $functionCategory) {
-				$function = $this->functions[$functionCategory['functionID']];				
+				$function = $this->functions[$functionCategory['functionID']];
 				if(!$function['saveSettings']) continue;
 				$this->activeOptions = array();
 				$this->loadActiveOptions($functionCategory['categoryName']);
 				$options = array_merge($options, $this->activeOptions);
 			}
 		}
-		$this->activeOptions = $oldOptions; 
+		$this->activeOptions = $oldOptions;
 		return $options;
 	}
-	
+
 	/**
 	 * @see Form::save()
 	 */
@@ -82,7 +82,7 @@ class AdminToolsFunctionForm extends DynamicOptionListForm {
 
 		$executor = AdminToolsFunctionExecution::getInstance();
 		$executor->setValues($this->values);
-		$saveOptions = $this->getSaveOptions();		
+		$saveOptions = $this->getSaveOptions();
 		$inserts = '';
 		foreach ($saveOptions as $option) {
 			if (!empty($inserts)) $inserts .= ',';
@@ -100,11 +100,34 @@ class AdminToolsFunctionForm extends DynamicOptionListForm {
 
 		if($this->functionID) {
 			$executor->callFunction($this->functionID);
-		}
 
-		WCF::getTPL()->assign(array(
+			foreach($this->options as $superCategory) {
+				foreach($superCategory['categories'] as $functionCategory) {
+					if($functionCategory['functionID'] == $this->functionID) {
+						$this->activeTabMenuItem = $superCategory['categoryName'];
+						$this->activeSubTabMenuItem = $this->activeTabMenuItem.'-'.$functionCategory['categoryName'];
+					}
+				}
+			}
+
+			$returnMessages = WCF::getSession()->getVar('functionReturnMessage');
+			if(isset($returnMessages[$this->functionID])) {
+				$functionMessage = $returnMessages[$this->functionID];
+				unset($returnMessages[$this->functionID]);
+				WCF::getSession()->register('functionReturnMessage', $returnMessages);
+				WCF::getTPL()->assign($functionMessage);
+			}
+			else {
+				WCF::getTPL()->assign(array(
+					'success' => true,
+				));
+			}
+		}
+		else {
+			WCF::getTPL()->assign(array(
 			'success' => true,
-		));
+			));
+		}
 	}
 
 	/**
@@ -119,6 +142,9 @@ class AdminToolsFunctionForm extends DynamicOptionListForm {
 		}
 	}
 
+	/**
+	 * @see Form::submit()
+	 */
 	public function submit() {
 		$this->options = $this->getOptionTree();
 		WCF::getCache()->addResource('admin_tools_functions-'.PACKAGE_ID, WCF_DIR.'cache/cache.admin_tools_functions-'.PACKAGE_ID.'.php', WCF_DIR.'lib/system/cache/CacheBuilderAdminToolsFunction.class.php');
@@ -146,7 +172,7 @@ class AdminToolsFunctionForm extends DynamicOptionListForm {
 	public function show() {
 		// set active menu item
 		WCFACP::getMenu()->setActiveMenuItem($this->activeMenuItem);
-
+		
 		// check permission
 		//WCF::getUser()->checkPermission($this->permission);
 
@@ -187,7 +213,7 @@ class AdminToolsFunctionForm extends DynamicOptionListForm {
 		$options = array();
 
 		if (isset($this->cachedCategoryStructure[$parentCategoryName])) {
-				
+
 			// get super categories
 			foreach ($this->cachedCategoryStructure[$parentCategoryName] as $superCategoryName) {
 				$superCategory = $this->cachedCategories[$superCategoryName];
@@ -220,13 +246,13 @@ class AdminToolsFunctionForm extends DynamicOptionListForm {
 		if (!isset($this->typeObjects[$type])) {
 			$className = 'OptionType'.ucfirst(strtolower($type));
 			$classPath = WCF_DIR.'lib/acp/option/'.$className.'.class.php';
-				
+
 			// include class file
 			if (!file_exists($classPath)) {
 				throw new SystemException("unable to find class file '".$classPath."'", 11000);
 			}
 			require_once($classPath);
-				
+
 			// create instance
 			if (!class_exists($className)) {
 				throw new SystemException("unable to find class '".$className."'", 11001);

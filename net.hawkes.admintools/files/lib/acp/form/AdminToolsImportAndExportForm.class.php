@@ -68,5 +68,6 @@ class AdminToolsImportAndExportForm extends OptionImportAndExportForm {
 		// show success message
 		WCF::getTPL()->assign('success', true);
 	}
+
 }
 ?>

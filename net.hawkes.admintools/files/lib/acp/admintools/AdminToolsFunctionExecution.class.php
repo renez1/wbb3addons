@@ -39,6 +39,7 @@ class AdminToolsFunctionExecution {
 
 	//cached functions
 	public $cachedFunctions = array();
+	public $functionObjects = array();
 
 	public $options;
 
@@ -86,12 +87,12 @@ class AdminToolsFunctionExecution {
 	 * @return array
 	 */
 	protected function getFunctionData($functionID) {
-		foreach($this->options as $superCategory) {			
-			foreach($superCategory['categories'] as $functionCategory) {							
+		foreach($this->options as $superCategory) {
+			foreach($superCategory['categories'] as $functionCategory) {
 				if($functionCategory['functionID'] == $functionID) {
 					$this->activeOptions = array();
-					$this->loadActiveOptions($functionCategory['categoryName']);					
-					$options = $this->activeOptions;					
+					$this->loadActiveOptions($functionCategory['categoryName']);
+					$options = $this->activeOptions;
 					$params = array();
 					foreach($options as $option) {
 						if(!isset($params[$option['categoryName']])) {
@@ -115,7 +116,7 @@ class AdminToolsFunctionExecution {
 	public function callFunction($functionID, $additionalParameters = array()) {
 		$function = $this->cachedFunctions[$functionID];
 		$data = $function;
-		$data['parameters'] = $this->getFunctionData($functionID);		
+		$data['parameters'] = $this->getFunctionData($functionID);
 		$data['parameters'] = array_merge($data['parameters'], $additionalParameters);
 		// get path to class file
 		if (empty($function['packageDir'])) {
@@ -137,11 +138,24 @@ class AdminToolsFunctionExecution {
 			
 		// instance action object
 		if (!class_exists($function['functionClassName'])) {
-			throw new SystemException("Unable to find class '".$action['listenerClassName']."'", 11001);
+			throw new SystemException("Unable to find class '".$function['functionClassName']."'", 11001);
 		}
 
 		$object = new $function['functionClassName'];
-		$object->execute($data);
+		try {
+			$object->execute($data);
+		}
+		catch(SystemException $e) {
+			$object->setReturnMessage('error', WCF::getLanguage()->get('wcf.acp.admintools.function.uncatchederror'));
+		}
+
+		// check for a return message. assume successful execution if no message is returned.
+		$returnMessages = WCF::getSession()->getVar('functionReturnMessage');
+		if(!isset($returnMessages[$functionID])) {
+			$object->setReturnMessage('success', WCF::getLanguage()->get('wcf.acp.admintools.function.success', array('$functionName' => WCF::getLanguage()->get('wcf.acp.admintools.function.'.$data['functionName']))));				
+		}
+
+		$this->functionObjects[$functionID] = $object;
 	}
 
 	/**
@@ -227,15 +241,15 @@ class AdminToolsFunctionExecution {
 	protected function loadActiveOptions($parentCategoryName) {
 		if (isset($this->cachedOptionToCategories[$parentCategoryName])) {
 			foreach ($this->cachedOptionToCategories[$parentCategoryName] as $optionName) {
-				if (!$this->checkOption($optionName)) continue;				
-				$this->activeOptions[$optionName] =& $this->cachedOptions[$optionName];				
-			}			
+				if (!$this->checkOption($optionName)) continue;
+				$this->activeOptions[$optionName] =& $this->cachedOptions[$optionName];
+			}
 		}
 		if (isset($this->cachedCategoryStructure[$parentCategoryName])) {
 			foreach ($this->cachedCategoryStructure[$parentCategoryName] as $categoryName) {
 				$this->loadActiveOptions($categoryName);
 			}
-		}		
+		}
 	}
 
 	/**
