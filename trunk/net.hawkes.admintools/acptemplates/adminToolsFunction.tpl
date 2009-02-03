@@ -2,15 +2,15 @@
 <script type="text/javascript" src="{@RELATIVE_WCF_DIR}js/TabMenu.class.js"></script>
 <script type="text/javascript">
 	//<![CDATA[
+	language['wcf.acp.admintools.function.execute.confirm'] = '{lang}wcf.acp.admintools.function.execute.confirm{/lang}';
 	var tabMenu = new TabMenu();
 	onloadEvents.push(function() { tabMenu.showSubTabMenu("{$activeTabMenuItem}", "{$activeSubTabMenuItem}"); });
 	function callFunction(functionID, functionName) {
-		if(confirm('Möchten sie wirklich die Funktion' + functionName + 'ausführen?')) {
+		var string = eval(language['wcf.acp.admintools.function.execute.confirm']);
+		if(confirm(string)) {
         document.forms['functionForm'].elements['functionID'].value = functionID;
         document.forms['functionForm'].submit();
-  		} else {
-        	return false;
-    	}
+  		}
     }			
 	//]]>
 </script>
@@ -26,10 +26,20 @@
 	<p class="error">{lang}wcf.global.form.error{/lang}</p>
 {/if}
 
-{if $success|isset}
-	<p class="success">{lang}wcf.acp.admintools.functions.success{/lang}</p>	
+{if $success|isset && $success === true}
+	<p class="success">{lang}wcf.acp.admintools.functions.success{/lang}</p>
+{elseif $success|isset}	
+	<div class="success">{@$success}</div>
 {/if}
-
+{if $info|isset}
+	<div class="info">{@$info}</div>
+{/if}
+{if $warning|isset}
+	<div class="warning">{@$warning}</div>
+{/if}
+{if $error|isset}
+	<div class="error">{@$error}</div>
+{/if}
 
 <div class="contentHeader">
 	<div class="largeButtons">

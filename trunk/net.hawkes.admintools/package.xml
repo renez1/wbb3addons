@@ -4,10 +4,10 @@
     <packageinformation>
         <packagename>AdminTools 2</packagename>
         <packagedescription>An advanced toolbox for administrators.</packagedescription>        
-        <version>2.0.0 dev 1</version>
-        <date>2009-01-31</date>
+        <version>2.0.0 dev 2</version>
+        <date>2009-02-03/date>
         <standalone>0</standalone>
-        <isUnique>1</isUnique>
+        <isunique>1</isunique>
         <plugin>com.woltlab.wcf</plugin>
         <pluginurl>http://www.wbb3addons.de</pluginurl>
     </packageinformation>
@@ -18,10 +18,11 @@
     </authorinformation>
 
     <requiredpackages>
-        <requiredPackage minversion="1.1.0 Alpha 1">com.woltlab.wcf</requiredPackage>
-        <requiredPackage minversion="1.1.0 Alpha 1">com.woltlab.wcf.data.message.attachment</requiredPackage>
-        <requiredPackage minversion="1.1.0 Alpha 1">com.woltlab.wcf.data.cronjobs</requiredPackage>
-        <requiredPackage minversion="1.1.0 Alpha 1">com.woltlab.wcf.form.user</requiredPackage>
+        <requiredpackage minversion="1.1.0 Alpha 1">com.woltlab.wcf</requiredpackage>
+        <requiredpackage minversion="1.1.0 Alpha 1">com.woltlab.wcf.data.message.attachment</requiredpackage>
+        <requiredpackage minversion="1.1.0 Alpha 1">com.woltlab.wcf.data.cronjobs</requiredpackage>
+        <requiredpackage minversion="1.1.0 Alpha 1">com.woltlab.wcf.form.user</requiredpackage>
+        <requiredpackage minversion="1.0.0 dev 1" file="requirements/net.hawkes.admintools.wcf.functions.tar.gz">net.hawkes.admintools.wcf.functions</requiredpackage>
     </requiredpackages>
 
     <instructions type="install">
@@ -33,8 +34,8 @@
         <packageinstallationplugins>pip.tar</packageinstallationplugins>
         <admintoolsfunction>admintools.xml</admintoolsfunction>        
         <languages languagecode="de">de.xml</languages>
-        <languages languagecode="de-informal">de-informal.xml</languages>
-        <languages languagecode="en">en.xml</languages>        
+        <!-- <languages languagecode="de-informal">de-informal.xml</languages>  -->
+        <!-- <languages languagecode="en">en.xml</languages>  -->        
     </instructions>
 
 </package>

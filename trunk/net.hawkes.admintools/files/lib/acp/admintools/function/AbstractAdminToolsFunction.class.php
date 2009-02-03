@@ -51,17 +51,26 @@ abstract class AbstractAdminToolsFunction implements AdminToolsFunction {
 	}
 	
 	/**
-	 * May be called from inside the function to set return messages that will be displayed on the functions page
+	 * Function to set return messages that will be displayed on the functions page
 	 * 
 	 * @param string $type The return message type
 	 * @param string $message The return message
 	 */
-	protected function setReturnMessage($type = 'success', $message) {
+	public function setReturnMessage($type = 'success', $messageText, $override = false) {
 		$message = array();
 		if(is_array(WCF::getSession()->getVar('functionReturnMessage'))) {
 			$message = WCF::getSession()->getVar('functionReturnMessage');
 		}
-		$message[$this->data['functionID']] = array($type => $message);
+		if($override) {
+			$message[$this->data['functionID']] = array($type => $messageText);
+		}
+		else {
+			if(!isset($message[$this->data['functionID']])) $message[$this->data['functionID']] = array();
+			if(!isset($message[$this->data['functionID']][$type])) {
+				$message[$this->data['functionID']][$type] = $messageText;			
+			}
+			else $message[$this->data['functionID']][$type] .= $messageText;
+		}
 		WCF::getSession()->register('functionReturnMessage', $message);
 	}		
 	
