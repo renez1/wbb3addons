@@ -61,6 +61,7 @@
 		<item name="wcf.acp.admintools.cronjobs.standalonefunctions.description"><![CDATA[Alle Funktionen, die zur aktuell aktiven Endanwendung ({PACKAGE_NAME}) gehören.]]></item>
 		<item name="wcf.acp.admintools.cronjobs.wcfCronjob"><![CDATA[WCF Cronjob]]></item>
 		<item name="wcf.acp.admintools.cronjobs.wcfCronjob.description"><![CDATA[Aktivieren sie diese Einstellung, wenn sie wollen, dass dieser Cronjob dem WCF zugeordnet werden soll. Mit der Aktivierung ist es nichtmehr möglich Funktionen, die Endanwendungen zugeordnet sind, zu verwenden.]]></item>
+		<item name="wcf.acp.admintools.function.checkall"><![CDATA[Alle Optionen aktivieren/deaktivieren.]]></item>
 	</category>
 	<category name="wcf.acp.menu">
 		<item name="wcf.acp.menu.link.admintools"><![CDATA[Admin Tools]]></item>

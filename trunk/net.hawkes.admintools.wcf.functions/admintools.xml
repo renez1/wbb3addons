@@ -11,6 +11,12 @@
 					<savesettings>1</savesettings>
 					<executeascronjob>1</executeascronjob>
 				</function>
+				<function name="language.defaults">
+					<classpath>lib/acp/admintools/function/LanguageDefaultsAdminToolsFunction.class.php</classpath>
+				</function>
+				<function name="user.usergroupcopy">
+					<classpath>lib/acp/admintools/function/CopyUserGroupsAdminToolsFunction.class.php</classpath>
+				</function>
 			</functions>
 	    
 	    <categories>
@@ -28,6 +34,22 @@
 			<category name="database.optimize">
 				<function>database.optimize</function>
 				<parent>database</parent>
+			</category>
+			
+			<category name="language">
+			</category>
+			
+			<category name="language.defaults">
+				<function>language.defaults</function>
+				<parent>language</parent>
+			</category>
+			
+			<category name="user">
+			</category>
+			
+			<category name="user.usergroupcopy">
+				<function>user.usergroupcopy</function>
+				<parent>user</parent>
 			</category>
 	    </categories>
 	    
@@ -79,6 +101,38 @@
 				<optiontype>boolean</optiontype>
 				<defaultvalue>1</defaultvalue>
 				<showorder>2</showorder>
+			</option>
+			
+			<option name="language.defaults.languageID">
+				<categoryname>language.defaults</categoryname>
+				<optiontype>languageselect</optiontype>				
+				<showorder>1</showorder>
+			</option>
+			
+			<option name="language.defaults.correctonly">
+				<categoryname>language.defaults</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>				
+				<showorder>2</showorder>
+			</option>
+			
+			<option name="user.usergroupcopy.sourceGroup">
+				<categoryname>user.usergroupcopy</categoryname>
+				<optiontype>groupsingleselect</optiontype>				
+				<showorder>1</showorder>
+			</option>
+			
+			<option name="user.usergroupcopy.targetGroup">
+				<categoryname>user.usergroupcopy</categoryname>
+				<optiontype>groupsingleselect</optiontype>				
+				<showorder>2</showorder>
+			</option>
+			
+			<option name="user.usergroupcopy.copyUsers">
+				<categoryname>user.usergroupcopy</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>								
+				<showorder>3</showorder>
 			</option>
 		</options>
     </import>

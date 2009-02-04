@@ -4,12 +4,31 @@
 	//<![CDATA[	
 	var tabMenu = new TabMenu();
 	onloadEvents.push(function() { tabMenu.showSubTabMenu("{$activeTabMenuItem}", "{$activeSubTabMenuItem}"); });
+	
 	function callFunction(functionID, functionName) {
 		var confirmMessage = {lang}wcf.acp.admintools.function.execute.confirm{/lang};		
 		if(confirm(confirmMessage)) {
         document.forms['functionForm'].elements['functionID'].value = functionID;
         document.forms['functionForm'].submit();
   		}
+    }
+    
+    function toggleAll(categoryName) {
+    	var state=false;
+		var formLength=document.forms['functionForm'].length;
+ 			for(i=0;i<formLength;i++) {
+ 				if(document.forms['functionForm'].elements[i].type == 'checkbox' && !document.forms['functionForm'].elements[i].disabled && document.forms['functionForm'].elements[i].name.indexOf(categoryName) != -1) {
+ 					if(!document.forms['functionForm'].elements[i].checked) {
+ 						state = true;
+ 						break;
+ 					}
+ 				}
+ 			}
+ 			for(i=0;i<formLength;i++) {
+ 				if(document.forms['functionForm'].elements[i].type == 'checkbox' && !document.forms['functionForm'].elements[i].disabled && document.forms['functionForm'].elements[i].name.indexOf(categoryName) != -1) {
+ 					document.forms['functionForm'].elements[i].checked = state;
+ 				}
+ 			}
     }			
 	//]]>
 </script>
@@ -87,6 +106,11 @@
 										<div>
 											{include file='optionFieldList' options=$categoryLevel3.options langPrefix='wcf.acp.admintools.option.'}
 										</div>
+										{if $categoryLevel3.showCheckall}
+											<div class="smallButtons">
+												<ul><li><a href="javascript: toggleAll('{$categoryLevel3.categoryName}');"><img src="{@RELATIVE_WCF_DIR}icon/adminToolsCheckallM.png" alt="" title="{lang}wcf.acp.admintools.function.checkall{/lang}" /></a></li></ul>
+											</div>			
+										{/if}
 									</fieldset>
 								{/foreach}
 							{/if}
@@ -96,6 +120,7 @@
 								{/capture}
 								{if $additionalFunctionButtons|isset && $additionalFunctionButtons.functionID|isset}{@$additionalFunctionButtons.functionID}{/if}
 								<ul><li><a href="javascript: callFunction({$categoryLevel2.functionID}, '{@$functionName|encodeJS}');"><img src="{@RELATIVE_WCF_DIR}icon/adminToolsRunM.png" alt="" title="{lang}wcf.acp.admintools.function.run{/lang}" /> <span>{lang}wcf.acp.admintools.function.run{/lang}</span></a></li></ul>								
+								{if $categoryLevel2.showCheckall}<ul><li><a href="javascript: toggleAll('{$categoryLevel2.categoryName}');"><img src="{@RELATIVE_WCF_DIR}icon/adminToolsCheckallM.png" alt="" title="{lang}wcf.acp.admintools.function.checkall{/lang}" /></a></li></ul>{/if}
 							</div>
 						</div>
 					</div>
@@ -108,9 +133,7 @@
 		<input type="hidden" name="packageID" value="{@PACKAGE_ID}" />
 		<input type="hidden" name="functionID" value="0" />
  		{@SID_INPUT_TAG}
- 		<input type="hidden" name="action" value="{@$action}" />
- 		{if $groupID|isset}<input type="hidden" name="groupID" value="{@$groupID}" />{/if}
- 		
+ 		<input type="hidden" name="action" value="{@$action}" /> 		 		
  		<input type="hidden" id="activeTabMenuItem" name="activeTabMenuItem" value="{$activeTabMenuItem}" /> 		
  	</div>
 </form>

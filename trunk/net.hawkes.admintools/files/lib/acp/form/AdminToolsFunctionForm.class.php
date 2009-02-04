@@ -41,6 +41,8 @@ class AdminToolsFunctionForm extends DynamicOptionListForm {
 	public $functionID = 0;
 	public $activeTabMenuItem = '';
 	public $activeSubTabMenuItem = '';
+	
+	const CHECKALL_LOWER_LIMIT = 1;
 
 	/**
 	 * @see Form::readFormParameters()
@@ -224,9 +226,11 @@ class AdminToolsFunctionForm extends DynamicOptionListForm {
 
 				if ($level > 1 || count($superCategory['categories']) == 0) {
 					$superCategory['options'] = $this->getCategoryOptions($superCategoryName);
+					$superCategory['showCheckall'] = $this->showCheckAllButton($superCategory);
 				}
 				else {
 					$superCategory['options'] = $this->getCategoryOptions($superCategoryName, false);
+					$superCategory['showCheckall'] = $this->showCheckAllButton($superCategory);
 				}
 
 
@@ -237,6 +241,26 @@ class AdminToolsFunctionForm extends DynamicOptionListForm {
 		}
 
 		return $options;
+	}
+	
+	/**
+	 * Determines if the passed category is a checkbox category and displays a 'check all' button
+	 *
+	 * @param array $category
+	 * @return boolean
+	 */
+	protected function showCheckAllButton($category) {
+		if (!count($category['options'])) return false;
+		
+		$countBoxes = 0;
+		foreach($category['options'] as $option) {
+			if($option['optionType'] == 'boolean') {
+				$countBoxes++;
+			}			
+		}		
+		if ($countBoxes > self::CHECKALL_LOWER_LIMIT) return true;
+		
+		return false;
 	}
 
 	/**

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+<package name="net.hawkes.optiontype.groupsingleselect">
+    <packageinformation>
+        <packagename>Option Type: Group Single Select</packagename>                
+        <version>1.0.0</version>
+        <date>2009-02-04</date>
+        <standalone>0</standalone>
+        <isUnique>1</isUnique>                
+    </packageinformation>
+
+    <authorinformation>
+        <author>Oliver Kliebisch</author>
+        <authorurl>http://www.oliver-kliebisch.de</authorurl>
+    </authorinformation>
+
+    <requiredpackages>
+        <requiredPackage minversion="1.0.0">com.woltlab.wcf</requiredPackage>                
+    </requiredpackages>
+
+    <instructions type="install">
+        <files>files.tar</files>                                  
+    </instructions>
+
+</package>
