@@ -74,7 +74,7 @@
 		<item name="wcf.acp.menu.link.admintools.phpinfo"><![CDATA[PHP Info]]></item>
 	</category>
 	<category name="wcf.acp.package">
-		<item name="wcf.acp.package.step.install.AdminToolsFunctionInstallationPlugin"><![CDATA[Admin Tools Funktionen werden installiert ...]]></item>
+		<item name="wcf.acp.package.step.install.AdminToolsFunctionPackageInstallationPlugin"><![CDATA[Admin Tools Funktionen werden installiert ...]]></item>
 		<item name="wcf.acp.package.step.uninstall.AdminToolsFunctionPackageInstallationPlugin"><![CDATA[Admin Tools Funktionen werden deinstalliert ...]]></item>
 		<item name="wcf.acp.package.step.update.AdminToolsFunctionPackageInstallationPlugin"><![CDATA[Admin Tools Funktionen werden aktualisiert ...]]></item>
 	</category>
