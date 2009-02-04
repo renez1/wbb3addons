@@ -4,8 +4,8 @@
     <packageinformation>
         <packagename>AdminTools 2 WCF LGPL Functions</packagename>
         <packagedescription>This is a core set of functions for the WCF. This package requires the LGPL licensed packages of WoltLab only.</packagedescription>        
-        <version>1.0.0 dev 1</version>
-        <date>2009-02-03</date>
+        <version>1.0.0 dev 2</version>
+        <date>2009-02-04</date>
         <standalone>0</standalone>
         <isUnique>1</isUnique>
         <plugin>com.woltlab.wcf</plugin>
@@ -19,7 +19,9 @@
 
     <requiredpackages>
         <requiredPackage minversion="1.1.0 Alpha 1">com.woltlab.wcf</requiredPackage>
-        <requiredPackage minversion="2.0.0 dev 2">net.hawkes.admintools</requiredPackage>        
+        <requiredPackage minversion="2.0.0 dev 2">net.hawkes.admintools</requiredPackage>
+        <requiredPackage minversion="1.0.0" file="requirements/net.hawkes.optiontype.groupsingleselect.tar.gz">net.hawkes.optiontype.groupsingleselect</requiredPackage>
+        <requiredPackage minversion="1.0.0" file="requirements/net.hawkes.optiontype.languageselect.tar.gz">net.hawkes.optiontype.languageselect</requiredPackage>        
     </requiredpackages>
 
     <instructions type="install">

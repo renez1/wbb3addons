@@ -199,8 +199,6 @@ function toggleStandaloneFunctions() {
 			
 			<fieldset>
 				<legend>{lang}wcf.acp.admintools.cronjobs.wcffunctions{/lang}</legend>
-				
-				<h3 class="subHeadline">{lang}wcf.acp.admintools.cronjobs.wcffunctions{/lang}</h3>
 				<p class="description">{lang}wcf.acp.admintools.cronjobs.wcffunctions.description{/lang}</p>
 				
 				{foreach from=$functions item=function}
@@ -223,8 +221,6 @@ function toggleStandaloneFunctions() {
 			
 			<fieldset id="standaloneFieldset">
 				<legend>{lang}wcf.acp.admintools.cronjobs.standalonefunctions{/lang}</legend>
-				
-				<h3 class="subHeadline">{lang}wcf.acp.admintools.cronjobs.standalonefunctions{/lang}</h3>
 				<p class="description">{lang}wcf.acp.admintools.cronjobs.standalonefunctions.description{/lang}</p>
 				
 				{foreach from=$functions item=function}
