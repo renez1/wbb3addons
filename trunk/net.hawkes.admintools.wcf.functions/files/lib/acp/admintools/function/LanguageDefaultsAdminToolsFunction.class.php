@@ -35,7 +35,7 @@ class LanguageDefaultsAdminToolsFunction extends AbstractAdminToolsFunction {
 	public function execute($data) {
 		parent::execute($data);
 
-		$parameters = $data['parameters']['language.defaults'];
+		$parameters = $data['parameters']['user.languagedefaults'];
 		$condition = '';
 		if($parameters['correctonly']) {
 			$languages = array_keys(LanguageEditor::getLanguages());			

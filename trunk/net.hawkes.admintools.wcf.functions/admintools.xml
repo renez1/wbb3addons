@@ -11,7 +11,7 @@
 					<savesettings>1</savesettings>
 					<executeascronjob>1</executeascronjob>
 				</function>
-				<function name="language.defaults">
+				<function name="user.languagedefaults">
 					<classpath>lib/acp/admintools/function/LanguageDefaultsAdminToolsFunction.class.php</classpath>
 				</function>
 				<function name="user.usergroupcopy">
@@ -34,21 +34,18 @@
 			<category name="database.optimize">
 				<function>database.optimize</function>
 				<parent>database</parent>
-			</category>
-			
-			<category name="language">
-			</category>
-			
-			<category name="language.defaults">
-				<function>language.defaults</function>
-				<parent>language</parent>
-			</category>
+			</category>							
 			
 			<category name="user">
 			</category>
 			
 			<category name="user.usergroupcopy">
 				<function>user.usergroupcopy</function>
+				<parent>user</parent>
+			</category>
+			
+			<category name="user.languagedefaults">
+				<function>user.languagedefaults</function>
 				<parent>user</parent>
 			</category>
 	    </categories>

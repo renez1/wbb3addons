@@ -7,8 +7,9 @@
 		<item name="wcf.acp.admintools.function.database.optimize.optimize.success"><![CDATA[<li>{$tableCount} Tabellen wurden erfolgreich optimiert.</li>]]></item>
 		<item name="wcf.acp.admintools.function.database.optimize.analyze.success"><![CDATA[<li>{$tableCount} Tabellen wurden erfolgreich analysiert.</li>]]></item>
 		<item name="wcf.acp.admintools.function.user.usergroupcopy"><![CDATA[Benutzergruppen kopieren]]></item>
-		<item name="wcf.acp.admintools.function.language.defaults"><![CDATA[Standardspache]]></item>
-		<item name="wcf.acp.admintools.function.language.defaults.affectedUsers"><![CDATA[<p>{$affectedUsers} Benutzer wurden aktualisiert.</p>]]></item>		
+		<item name="wcf.acp.admintools.function.user.usergroupcopy.sourceEqualsTarget"><![CDATA[Die Quell- und Zielgruppe dürfen nicht identisch sein.]]></item>
+		<item name="wcf.acp.admintools.function.user.languagedefaults"><![CDATA[Standardspache]]></item>
+		<item name="wcf.acp.admintools.function.user.languagedefaults.affectedUsers"><![CDATA[<p>{$affectedUsers} Benutzer wurden aktualisiert.</p>]]></item>		
 	</category>
 	<category name="wcf.acp.admintools.option">
 		<item name="wcf.acp.admintools.option.category.cache"><![CDATA[Cache]]></item>
@@ -37,10 +38,10 @@
 		<item name="wcf.acp.admintools.option.database.optimize.analyze.description"><![CDATA[Lesen sie im <a href="http://dev.mysql.com/doc/refman/5.1/de/analyze-table.html">MySQL Referenzhandbuch</a> über die ANALYZE Funktion, um mehr zu erfahren.]]></item>
 		<item name="wcf.acp.admintools.option.database.optimize.optimize"><![CDATA[Datenbank optimieren]]></item>
 		<item name="wcf.acp.admintools.option.database.optimize.optimize.description"><![CDATA[Lesen sie im <a href="http://dev.mysql.com/doc/refman/5.1/de/optimize-table.html">MySQL Referenzhandbuch</a> über die OPTIMIZE Funktion, um mehr zu erfahren.]]></item>		
-		<item name="wcf.acp.admintools.option.language.defaults.languageID"><![CDATA[Sprache]]></item>
-		<item name="wcf.acp.admintools.option.language.defaults.languageID.description"><![CDATA[Wählen sie die Sprache aus, die für alle Benutzer ausgewählt werden soll.]]></item>
-		<item name="wcf.acp.admintools.option.language.defaults.correctonly"><![CDATA[Sprachen nur korrigieren]]></item>
-		<item name="wcf.acp.admintools.option.language.defaults.correctonly.description"><![CDATA[Wählen Sie diese Option aus, wenn Sie nur die Benutzer aktualisieren möchten, deren keine oder eine ungültige Sprache zugeordnet ist (<strong>empfohlen!</strong>). ]]></item>
+		<item name="wcf.acp.admintools.option.user.languagedefaults.languageID"><![CDATA[Sprache]]></item>
+		<item name="wcf.acp.admintools.option.user.languagedefaults.languageID.description"><![CDATA[Wählen sie die Sprache aus, die für alle Benutzer ausgewählt werden soll.]]></item>
+		<item name="wcf.acp.admintools.option.user.languagedefaults.correctonly"><![CDATA[Sprachen nur korrigieren]]></item>
+		<item name="wcf.acp.admintools.option.user.languagedefaults.correctonly.description"><![CDATA[Wählen Sie diese Option aus, wenn Sie nur die Benutzer aktualisieren möchten, deren keine oder eine ungültige Sprache zugeordnet ist (<strong>empfohlen!</strong>). ]]></item>
 		<item name="wcf.acp.admintools.option.user.usergroupcopy.sourceGroup"><![CDATA[Quell-Benutzergruppe]]></item>
 		<item name="wcf.acp.admintools.option.user.usergroupcopy.sourceGroup.description"><![CDATA[Wählen Sie hier die Benutzergruppe aus, deren Rechte Sie kopieren möchten.]]></item>
 		<item name="wcf.acp.admintools.option.user.usergroupcopy.targetGroup"><![CDATA[Ziel-Benutzergruppe]]></item>

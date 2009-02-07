@@ -3,8 +3,11 @@
 <language languagecode="de">
 <category name="wcf.acp.admintools">
 		<item name="wcf.acp.admintools.acpmenu.add"><![CDATA[Menüeintrag hinzufügen]]></item>		
+		<item name="wcf.acp.admintools.acpmenu.add.success"><![CDATA[Der Menüeintrag wurde erfolgreich hinzugefügt.]]></item>
 		<item name="wcf.acp.admintools.acpmenu.edit"><![CDATA[Menüeintrag bearbeiten]]></item>
+		<item name="wcf.acp.admintools.acpmenu.edit.success"><![CDATA[Der Menüeintrag wurde erfolreich gespeichert.]]></item>
 		<item name="wcf.acp.admintools.acpmenu.delete"><![CDATA[Menüeintrag löschen]]></item>
+		<item name="wcf.acp.admintools.acpmenu.delete.success"><![CDATA[Der Menüeintrag wurde erfolgreich gelöscht.]]></item>
 		<item name="wcf.acp.admintools.acpmenu.deleteItem"><![CDATA[Diesen Menüeintrag löschen]]></item>
 		<item name="wcf.acp.admintools.acpmenu.deleteItem.description"><![CDATA[Bestätigen sie, dass sie diesen Menüeintrag dauerhaft und endültig entfernen möchten.]]></item>
 		<item name="wcf.acp.admintools.acpmenu.editinfo"><![CDATA[Klicken sie in der Menükarte auf den Text eines Menüeintrages, um diesen zu bearbeiten]]></item>
@@ -78,5 +81,8 @@
 		<item name="wcf.acp.package.step.install.AdminToolsFunctionPackageInstallationPlugin"><![CDATA[Admin Tools Funktionen werden installiert ...]]></item>
 		<item name="wcf.acp.package.step.uninstall.AdminToolsFunctionPackageInstallationPlugin"><![CDATA[Admin Tools Funktionen werden deinstalliert ...]]></item>
 		<item name="wcf.acp.package.step.update.AdminToolsFunctionPackageInstallationPlugin"><![CDATA[Admin Tools Funktionen werden aktualisiert ...]]></item>
+	</category>
+	<category name="wcf.global">
+		<item name="wcf.global.button.saveSettings"><![CDATA[Einstellungen speichern]]></item>
 	</category>
 </language>
