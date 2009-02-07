@@ -23,7 +23,7 @@
 				</function>
 				
 				<function name="user.inactiveUsers">
-					<classpath>lib/acp/admintools/function/InactiveUsersGroupsAdminToolsFunction.class.php</classpath>
+					<classpath>lib/acp/admintools/function/InactiveUsersAdminToolsFunction.class.php</classpath>
 					<savesettings>1</savesettings>
 					<executeascronjob>1</executeascronjob>
 				</function>
