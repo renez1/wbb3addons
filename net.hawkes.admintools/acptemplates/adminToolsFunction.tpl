@@ -128,7 +128,7 @@
 			{/foreach}
 						
 	<div class="formSubmit">
-		<input type="submit" accesskey="s" value="{lang}wcf.global.button.submit{/lang}" />
+		<input type="submit" accesskey="s" value="{lang}wcf.global.button.saveSettings{/lang}" />
 		<input type="reset" accesskey="r" value="{lang}wcf.global.button.reset{/lang}" />
 		<input type="hidden" name="packageID" value="{@PACKAGE_ID}" />
 		<input type="hidden" name="functionID" value="0" />
