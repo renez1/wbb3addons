@@ -65,7 +65,7 @@
 		<item name="wcf.acp.admintools.cronjobs.wcfCronjob"><![CDATA[WCF Cronjob]]></item>
 		<item name="wcf.acp.admintools.cronjobs.wcfCronjob.description"><![CDATA[Aktivieren sie diese Einstellung, wenn sie wollen, dass dieser Cronjob dem WCF zugeordnet werden soll. Mit der Aktivierung ist es nichtmehr möglich Funktionen, die Endanwendungen zugeordnet sind, zu verwenden.]]></item>
 		<item name="wcf.acp.admintools.function.checkall"><![CDATA[Alle Optionen aktivieren/deaktivieren.]]></item>
-		<item name="wcf.acp.admintools.spider.list"><![CDATA[Spider]]></item>
+		<item name="wcf.acp.admintools.spider"><![CDATA[Spider]]></item>
 		<item name="wcf.acp.admintools.spider.list"><![CDATA[Eigene Spider]]></item>
 		<item name="wcf.acp.admintools.spider.list.count"><![CDATA[Insgesamt {#$items} eigene{if $items == 1}r{/if} Spider]]></item>
 		<item name="wcf.acp.admintools.spider.synchronize"><![CDATA[Synchronisieren]]></item>
