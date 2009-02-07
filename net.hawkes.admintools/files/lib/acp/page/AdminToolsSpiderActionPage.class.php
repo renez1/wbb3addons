@@ -1,26 +1,24 @@
 <?php
-/**
- *   This file is part of Admin Tools 2.
- *
- *   Admin Tools 2 is free software: you can redistribute it and/or modify
- *   it under the terms of the GNU General Public License as published by
- *   the Free Software Foundation, either version 3 of the License, or
- *   (at your option) any later version.
- *
- *   Admin Tools 2 is distributed in the hope that it will be useful,
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *   GNU General Public License for more details.
- *
- *   You should have received a copy of the GNU General Public License
- *   along with Admin Tools 2.  If not, see <http://www.gnu.org/licenses/>.
- *
- * 
- */
 require_once(WCF_DIR.'lib/page/AbstractPage.class.php');
+require_once(WCF_DIR.'lib/acp/admintools/spider/SpiderEditor.class.php');
 
 /**
- * Performs AJAX actions for the lost and found page
+ * Performs AJAX actions for the spider page
+ * 
+ * This file is part of Admin Tools 2.
+ *
+ * Admin Tools 2 is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Admin Tools 2 is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Admin Tools 2.  If not, see <http://www.gnu.org/licenses/>.
  * 
  * @author	Oliver Kliebisch
  * @copyright	2009 Oliver Kliebisch
@@ -29,13 +27,11 @@ require_once(WCF_DIR.'lib/page/AbstractPage.class.php');
  * @subpackage acp.page
  * @category WCF 
  */
-class AdminToolsLostAndFoundActionPage extends AbstractPage {	
+class AdminToolsSpiderActionPage extends AbstractPage {	
 	public $itemID = 0;
 	public $item;
 	public $items = array();
 	public $url = '';
-	public $classname = '';
-	public $pagename = '';	
 	public static $validFunctions = array('mark', 'unmark', 'delete', 'unmarkAll', 'deleteAll');
 	
 	/**
@@ -46,9 +42,9 @@ class AdminToolsLostAndFoundActionPage extends AbstractPage {
 		
 		if (isset($_REQUEST['classname'])) $this->classname = $_REQUEST['classname'];
 		if (isset($_REQUEST['pagename'])) $this->pagename = $_REQUEST['pagename'];
-		if (isset($_REQUEST[$this->pagename.'ID'])) $this->itemID = ArrayUtil::toIntegerArray($_REQUEST[$this->pagename.'ID']);
+		if (isset($_REQUEST['spiderID'])) $this->itemID = ArrayUtil::toIntegerArray($_REQUEST['spiderID']);
 		if (isset($_REQUEST['itemID'])) $this->itemID = ArrayUtil::toIntegerArray($_REQUEST['itemID']);
-		if (isset($_REQUEST['url'])) $this->url = $_REQUEST['url'];						
+		if (isset($_REQUEST['url'])) $this->url = $_REQUEST['url'];							
 	}
 	
 	/**
@@ -56,14 +52,13 @@ class AdminToolsLostAndFoundActionPage extends AbstractPage {
 	 */
 	public function show() {
 		parent::show();
-			
-		require_once(WCF_DIR.'lib/acp/admintools/lostandfound/'.$this->classname.'.class.php');
+					
 		if(is_array($this->itemID)) {
 			foreach($this->itemID as $itemID) {				
-				$this->items[] = new $this->classname($itemID);
+				$this->items[] = new SpiderEditor($itemID);
 			}
 		}
-		else $this->item = new $this->classname($this->itemID);		
+		else $this->item = new SpiderEditor($this->itemID);		
 		if (in_array($this->action, self::$validFunctions)) {			
 			$this->{$this->action}();
 		}					
@@ -98,10 +93,7 @@ class AdminToolsLostAndFoundActionPage extends AbstractPage {
 	 * Unmarks all items	 
 	 */
 	public function unmarkAll() {
-		if(version_compare(PHP_VERSION, "5.2.3") < 0) {
-			call_user_func($this->classname, 'unmarkAll', $this->pagename);
-		}
-		else call_user_func($this->classname.'::unmarkAll', $this->pagename);
+		SpiderEditor::unmarkAll();
 	}
 	
 	/**
@@ -119,10 +111,8 @@ class AdminToolsLostAndFoundActionPage extends AbstractPage {
 	 * Deletes all items	 
 	 */
 	public function deleteAll() {
-		if(version_compare(PHP_VERSION, "5.2.3") < 0) {
-			call_user_func($this->classname, 'deleteAll', $this->pagename);
-		}
-		else call_user_func($this->classname.'::deleteAll', $this->pagename);
+		$spiders = SpiderEditor::getMarkedSpiders();
+		SpiderEditor::deleteAll($spiders);
 		$this->unmarkAll();
 		if(!empty($this->url)) {
 			HeaderUtil::redirect($this->url);

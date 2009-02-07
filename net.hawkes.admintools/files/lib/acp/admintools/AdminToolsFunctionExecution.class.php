@@ -142,15 +142,16 @@ class AdminToolsFunctionExecution {
 		}
 
 		$object = new $function['functionClassName'];
-		try {
+//		try {
 			$object->execute($data);
-		}
-		catch(SystemException $e) {
-			$object->setReturnMessage('error', WCF::getLanguage()->get('wcf.acp.admintools.function.uncatchederror'));
-		}
+//		}
+//		catch(SystemException $e) {
+			//$object->setReturnMessage('error', WCF::getLanguage()->get('wcf.acp.admintools.function.uncatchederror'));
+//		}
 
 		// check for a return message. assume successful execution if no message is returned.
 		$returnMessages = WCF::getSession()->getVar('functionReturnMessage');
+		
 		if(!isset($returnMessages[$functionID])) {
 			$object->setReturnMessage('success', WCF::getLanguage()->get('wcf.acp.admintools.function.success', array('$functionName' => WCF::getLanguage()->get('wcf.acp.admintools.function.'.$data['functionName']))));				
 		}
