@@ -46,8 +46,7 @@ class InactiveUsersAdminToolsFunction extends AbstractAdminToolsFunction {
 		$this->ignoreCondition = new ConditionBuilder(false);
 		$this->ignoreCondition->add('user.userID NOT IN ('.$generalOptions['ignoredUserIDs'].')');
 		$this->ignoreCondition->add('user_to_group.groupID NOT IN ('.$generalOptions['ignoredUsergroupIDs'].')');
-		$this->ignoreCondition->add('user.registrationDate > '.(TIME_NOW - $generalOptions['periodOfGrace'] * 86400));
-
+		$this->ignoreCondition->add('user.registrationDate < '.(TIME_NOW - $generalOptions['periodOfGrace'] * 86400));		
 		$this->handleUserDelete($generalOptions);
 		if($generalOptions['sendProtocol']) {
 			$this->sendProtocol();
@@ -133,7 +132,7 @@ class InactiveUsersAdminToolsFunction extends AbstractAdminToolsFunction {
 				AND ".$this->ignoreCondition->get()."
 				GROUP BY user.userID";
 		$result = WCF::getDB()->sendQuery($sql);
-
+		var_dump($sql); die;
 		$userIDs = array();
 
 		while($row = WCF::getDB()->fetchArray($result)) {
