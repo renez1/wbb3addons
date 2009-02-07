@@ -7,9 +7,9 @@
         <version>1.0.0 dev 2</version>
         <date>2009-02-04</date>
         <standalone>0</standalone>
-        <isUnique>1</isUnique>
-        <plugin>com.woltlab.wcf</plugin>
-        <pluginurl>http://www.wbb3addons.de</pluginurl>
+        <isUnique>1</isUnique> 
+        <plugin>com.woltlab.wcf</plugin>              
+        <packageurl>http://www.wbb3addons.de</packageurl>
     </packageinformation>
 
     <authorinformation>

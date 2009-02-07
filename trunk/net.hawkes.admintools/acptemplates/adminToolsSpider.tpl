@@ -43,7 +43,7 @@
 {if !$spiders}
 	<div class="border content">
 		<div class="container-1">
-			{lang}wcf.acp.adminstools.spider.noneAvailable{/lang}
+			{lang}wcf.acp.admintools.spider.noneAvailable{/lang}
 		</div>
 	</div>
 {else}
@@ -55,7 +55,7 @@
 		<table class="tableList">
 			<thead>
 				<tr class="tableHead">		
-					<th class="columnMarkSpiders"><div><label class="emptyHead"><input name="spiderMarkAll" type="checkbox" /></label></div></th>
+					<th class="columnMarkSpiders" style="width: 24px;"><div><label class="emptyHead"><input name="spiderMarkAll" type="checkbox" /></label></div></th>
 					<th class="columnSpiderID{if $sortField == 'spiderID'} active{/if}" colspan="2"><div><a href="index.php?page=AdminToolsSpiderList&amp;pageNo={@$pageNo}&amp;sortField=spiderID&amp;sortOrder={if $sortField == 'spiderID' && $sortOrder == 'ASC'}DESC{else}ASC{/if}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">{lang}wcf.acp.admintools.spider.spiderid{/lang}{if $sortField == 'spiderID'} <img src="{@RELATIVE_WCF_DIR}icon/sort{@$sortOrder}S.png" alt="" />{/if}</a></div></th>
 					<th class="columnSpiderName{if $sortField == 'spiderName'} active{/if}"><div><a href="index.php?page=AdminToolsSpiderList&amp;pageNo={@$pageNo}&amp;sortField=spiderName&amp;sortOrder={if $sortField == 'spiderName' && $sortOrder == 'ASC'}DESC{else}ASC{/if}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">{lang}wcf.acp.admintools.spider.spidername{/lang}{if $sortField == 'spiderName'} <img src="{@RELATIVE_WCF_DIR}icon/sort{@$sortOrder}S.png" alt="" />{/if}</a></div></th>
 					<th class="columnSpiderIdentifier{if $sortField == 'spiderIdentifier'} active{/if}"><div><a href="index.php?page=AdminToolsSpiderList&amp;pageNo={@$pageNo}&amp;sortField=spiderIdentifier&amp;sortOrder={if $sortField == 'spiderIdentifier' && $sortOrder == 'ASC'}DESC{else}ASC{/if}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">{lang}wcf.acp.admintools.spider.spideridentifier{/lang}{if $sortField == 'spiderIdentifier'} <img src="{@RELATIVE_WCF_DIR}icon/sort{@$sortOrder}S.png" alt="" />{/if}</a></div></th>
@@ -67,7 +67,10 @@
 			<tbody>
 			{foreach from=$spiders item=spider}
 				<tr class="{cycle values="container-1,container-2" advance=false}" id="spiderRow{@$spider->spiderID}">
-					<td class="columnMarkSpiders"><input id="spiderMark{@$spider->spiderID}" type="checkbox" value="{@$spider->spiderID}" /></td>
+					<td class="columnMarkSpiders">
+						<label>
+							<input id="spiderMark{@$spider->spiderID}" type="checkbox" value="{@$spider->spiderID}" /></td>
+						</label>
 					<td class="columnIcon">
 						<script type="text/javascript">
 							//<![CDATA[

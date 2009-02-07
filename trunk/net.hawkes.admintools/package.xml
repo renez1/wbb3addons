@@ -7,7 +7,8 @@
         <version>2.0.0 dev 4</version>
         <date>2009-02-06</date>
         <standalone>0</standalone>
-        <isunique>1</isunique>        
+        <isunique>1</isunique>
+        <plugin>com.woltlab.wcf</plugin>        
         <packageurl>http://www.wbb3addons.de</packageurl>
     </packageinformation>
 
