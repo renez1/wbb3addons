@@ -29,7 +29,7 @@ require_once(WCF_DIR.'lib/acp/admintools/spider/SpiderEditor.class.php');
  * @subpackage acp.action
  * @category WCF
  */
-class AdminToolsSpiderSynchronize extends AbstractAction {
+class AdminToolsSpiderSynchronizeAction extends AbstractAction {
 
 	/**
 	 * @see Action::execute();

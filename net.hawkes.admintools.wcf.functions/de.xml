@@ -51,7 +51,7 @@ nachfolgend erhalten Sie die Benutzerübersicht vom {$actionDate}.]]></item>
 		<item name="wcf.acp.admintools.option.category.user.inactiveUsers.general"><![CDATA[Allgemeine Einstellungen]]></item>		
 		<item name="wcf.acp.admintools.option.category.user.inactiveUsers.general.description"><![CDATA[]]></item>
 		<item name="wcf.acp.admintools.option.category.user.inactiveUsers.inactive"><![CDATA[Einstellungen für inaktive Benutzer]]></item>
-		<item name="wcf.acp.admintools.option.category.user.inactiveUsers.inactive.description"><![CDATA[Einstellungen für inaktive Benutzer]]></item>
+		<item name="wcf.acp.admintools.option.category.user.inactiveUsers.inactive.description"><![CDATA[]]></item>
 		<item name="wcf.acp.admintools.option.cache.clearCache.clearLanguageCache"><![CDATA[Sprachcache leeren]]></item>
 		<item name="wcf.acp.admintools.option.cache.clearCache.clearLanguageCache.description"><![CDATA[Ist diese Einstellung aktiviert, werden alle gecachten Sprachdateien beim Ausführen dieser Funktion gelöscht.]]></item>
 		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneCache"><![CDATA[Cacheverzeichnis der Endanwendung {@PACKAGE_NAME} leeren]]></item>
