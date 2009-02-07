@@ -65,6 +65,24 @@
 		<item name="wcf.acp.admintools.cronjobs.wcfCronjob"><![CDATA[WCF Cronjob]]></item>
 		<item name="wcf.acp.admintools.cronjobs.wcfCronjob.description"><![CDATA[Aktivieren sie diese Einstellung, wenn sie wollen, dass dieser Cronjob dem WCF zugeordnet werden soll. Mit der Aktivierung ist es nichtmehr möglich Funktionen, die Endanwendungen zugeordnet sind, zu verwenden.]]></item>
 		<item name="wcf.acp.admintools.function.checkall"><![CDATA[Alle Optionen aktivieren/deaktivieren.]]></item>
+		<item name="wcf.acp.admintools.spider.list"><![CDATA[Eigene Spider]]></item>
+		<item name="wcf.acp.admintools.spider.list.count"><![CDATA[Insgesamt {#$items} eigene{if $items == 1}r{/if} Spider]]></item>
+		<item name="wcf.acp.admintools.spider.synchronize"><![CDATA[Synchronisieren]]></item>
+		<item name="wcf.acp.admintools.spider.add"><![CDATA[Spider hinzufügen]]></item>
+		<item name="wcf.acp.admintools.spider.add.success"><![CDATA[Spider erfolgreich hinzugefügt]]></item>
+		<item name="wcf.acp.admintools.spider.edit"><![CDATA[Spider bearbeiten]]></item>
+		<item name="wcf.acp.admintools.spider.edit.success"><![CDATA[Spider erfolgreich bearbeitet]]></item>
+		<item name="wcf.acp.admintools.spider.delete"><![CDATA[Spider löschen]]></item>
+		<item name="wcf.acp.admintools.spider.delete.sure"><![CDATA[Möchten sie diesen Spider wirklich löschen?]]></item>
+		<item name="wcf.acp.admintools.spider.delete.success"><![CDATA[Spider erfolgreich gelöscht]]></item>
+		<item name="wcf.acp.admintools.spider.spiderid"><![CDATA[ID]]></item>		 	
+		<item name="wcf.acp.admintools.spider.spidername"><![CDATA[Name]]></item>
+		<item name="wcf.acp.admintools.spider.spidername.description"><![CDATA[Geben sie den Namen des Spiders ein.]]></item>
+		<item name="wcf.acp.admintools.spider.spideridentifier"><![CDATA[Browserkennung]]></item>
+		<item name="wcf.acp.admintools.spider.spideridentifier.description"><![CDATA[Geben sie die Browserkennung an, die der Spider übermittelt. Nur wenn diese korrekt angegeben ist, wird der Spider auch als solcher erkannt.]]></item>
+		<item name="wcf.acp.admintools.spider.spiderurl"><![CDATA[Website]]></item>
+		<item name="wcf.acp.admintools.spider.spiderurl.description"><![CDATA[Hier können sie einen Link zur Website des Spiders angeben. [optional]]]></item>
+		<item name="wcf.acp.admintools.spider.data"><![CDATA[Daten]]></item>
 	</category>
 	<category name="wcf.acp.menu">
 		<item name="wcf.acp.menu.link.admintools"><![CDATA[Admin Tools]]></item>
@@ -76,6 +94,7 @@
 		<item name="wcf.acp.menu.link.admintools.lostandfound"><![CDATA[Lost and Found]]></item>
 		<item name="wcf.acp.menu.link.admintools.menu"><![CDATA[Admin Links]]></item>
 		<item name="wcf.acp.menu.link.admintools.phpinfo"><![CDATA[PHP Info]]></item>
+		<item name="wcf.acp.menu.link.admintools.spider"><![CDATA[Spider]]></item>
 	</category>
 	<category name="wcf.acp.package">
 		<item name="wcf.acp.package.step.install.AdminToolsFunctionPackageInstallationPlugin"><![CDATA[Admin Tools Funktionen werden installiert ...]]></item>

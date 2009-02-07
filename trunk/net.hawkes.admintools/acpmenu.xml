@@ -44,19 +44,26 @@
 			<icon>icon/adminToolsLostNFoundM.png</icon>
 			<showorder>3</showorder>			
 		</acpmenuitem>
+		
+		<acpmenuitem name="wcf.acp.menu.link.admintools.spider">
+			<parent>wcf.acp.menu.link.admintools.main</parent>
+			<link>index.php?page=AdminToolsSpiderList</link>
+			<icon>icon/adminToolsSpiderM.png</icon>
+			<showorder>4</showorder>			
+		</acpmenuitem>
 
 		<acpmenuitem name="wcf.acp.menu.link.admintools.phpinfo">
 			<parent>wcf.acp.menu.link.admintools.main</parent>
 			<link>index.php?page=AdminToolsPHPInfo</link>
 			<icon>icon/adminToolsPHPInfoM.png</icon>
-			<showorder>4</showorder>			
+			<showorder>5</showorder>			
 		</acpmenuitem>
 
 		<acpmenuitem name="wcf.acp.menu.link.admintools.menu">
 			<parent>wcf.acp.menu.link.admintools.main</parent>
 			<link>index.php?page=AdminToolsMenu</link>
 			<icon>icon/adminToolsMenuLinkM.png</icon>
-			<showorder>5</showorder>			
+			<showorder>6</showorder>			
 		</acpmenuitem>
 		
 		<acpmenuitem name="wcf.acp.menu.link.admintools.importandexport">

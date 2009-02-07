@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS wcf1_admin_tools_function (
   executeAsCronjob tinyint(1) unsigned NOT NULL default '0',
   saveSettings tinyint(1) unsigned NOT NULL default '0',
   PRIMARY KEY  (functionID),
-  UNIQUE KEY `function` (packageID,functionName)
+  UNIQUE KEY functionName (packageID,functionName)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -89,4 +89,18 @@ CREATE TABLE IF NOT EXISTS wcf1_admin_tools_option_category (
   options text,
   PRIMARY KEY  (categoryID),
   UNIQUE KEY categoryName (categoryName,packageID)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+--
+-- Table structure for table 'wcf1_admin_tools_spider'
+--
+
+DROP TABLE IF EXISTS wcf1_admin_tools_spider;
+CREATE TABLE IF NOT EXISTS wcf1_admin_tools_spider (
+  spiderID int(10) unsigned NOT NULL auto_increment,
+  spiderIdentifier varchar(255) default '',
+  spiderName varchar(255) default '',
+  spiderURL varchar(255) default '',
+  PRIMARY KEY  (spiderID),
+  UNIQUE KEY spiderIdentifier (spiderIdentifier)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
