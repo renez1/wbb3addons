@@ -5,9 +5,9 @@
 		<cronjob>
 			<classPath>lib/system/cronjob/AdminToolsSpiderSynchronizeCronjob.class.php</classPath>
 			<description>Admin Tools Spider Synchronization</description>
-			<startMinute>0</startMinute>
-			<startHour>0</startHour>
-			<startDom>*</startDom>
+			<startMinute>*</startMinute>
+			<startHour>*</startHour>
+			<startDom>1</startDom>
 			<startMonth>*</startMonth>
 			<startDow>*</startDow>
 			<execMultiple>0</execMultiple>
