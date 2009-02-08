@@ -15,6 +15,7 @@
 	language['wcf.global.button.unmark'] 				= '{lang}wcf.global.button.unmark{/lang}';
 	language['wcf.global.button.delete'] 				= '{lang}wcf.global.button.delete{/lang}';		
 	language['wcf.acp.admintools.lostandfound.markedItems'] 		= '{lang}wcf.acp.admintools.lostandfound.markedItems{/lang}';	
+	language['wcf.acp.admintools.delete.sure'] 		= '{lang}wcf.acp.admintools.delete.sure{/lang}';
 	
 	// permissions
 	var permissions = new Object();

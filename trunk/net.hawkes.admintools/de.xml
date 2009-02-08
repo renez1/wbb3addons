@@ -86,6 +86,7 @@
 		<item name="wcf.acp.admintools.spider.data"><![CDATA[Daten]]></item>
 		<item name="wcf.acp.admintools.spider.noneAvailable"><![CDATA[Derzeit sind keine eigenen Spider verfügbar.]]></item> 
 		<item name="wcf.acp.admintools.spider.markedSpiders"><![CDATA[this.count == 1 ? "Ein Spider markiert" : this.count+" Spider markiert"]]></item>
+		<item name="wcf.acp.admintools.delete.sure"><![CDATA[Möchten sie den Eintrag wirklich löschen?]]></item>
 	</category>
 	<category name="wcf.acp.menu">
 		<item name="wcf.acp.menu.link.admintools"><![CDATA[Admin Tools]]></item>

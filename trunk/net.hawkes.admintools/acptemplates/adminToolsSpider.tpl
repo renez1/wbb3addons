@@ -15,6 +15,7 @@
 	language['wcf.global.button.unmark']		= '{lang}wcf.global.button.unmark{/lang}';
 	language['wcf.global.button.delete']		= '{lang}wcf.global.button.delete{/lang}';	
 	language['wcf.acp.admintools.spider.markedSpiders']		= '{lang}wcf.acp.admintools.spider.markedSpiders{/lang}';		
+	language['wcf.acp.admintools.delete.sure'] 		= '{lang}wcf.acp.admintools.delete.sure{/lang}';
 	
 	onloadEvents.push(function() { spiderListEdit = new SpiderListEdit(spiderData, {@$markedSpiders}); });
 	//]]>
@@ -94,7 +95,7 @@
 			</tbody>
 		</table>
 	</div>
-{/if}
+
 	<div class="contentFooter">
 		{@$pagesLinks} <div id="spiderEditMarked" class="optionButtons"></div>
 		
@@ -106,5 +107,5 @@
 			</ul>
 		</div>
 	</div>
-
+{/if}
 {include file='footer'}
