@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE import SYSTEM "DTD/import.dtd">
+<data>
+	<import>
+		<cronjob>
+			<classPath>lib/system/cronjob/AdminToolsSpiderSynchronizeCronjob.class.php</classPath>
+			<description>Admin Tools Spider Synchronization</description>
+			<startMinute>*</startMinute>
+			<startHour>*</startHour>
+			<startDom>1</startDom>
+			<startMonth>*</startMonth>
+			<startDow>*</startDow>
+			<execMultiple>0</execMultiple>
+			<canbeedited>1</canbeedited>
+			<canbedisabled>1</canbedisabled>
+			<active>1</active>
+		</cronjob>
+	</import>
+</data>
