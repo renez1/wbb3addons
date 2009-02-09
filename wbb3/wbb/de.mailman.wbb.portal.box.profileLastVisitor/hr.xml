@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE language SYSTEM "DTD/language.dtd">
-<!-- $Id: de.xml 76 2008-08-17 16:53:11Z wbb3addons $ -->
-<language languagecode="hr">
-    <category name="wbb.portal">
-        <item name="wbb.portal.box.profileLastVisitors.title"><![CDATA[Zadnji Posjetitelji Profila]]></item>
-        <item name="wbb.portal.box.profileLastVisitors.noVisitors"><![CDATA[Ne Postoje Posjetitelji Profila]]></item>
-    </category>
-</language>

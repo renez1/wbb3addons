@@ -67,6 +67,7 @@
 			</thead>
 			<tbody>
 			{foreach from=$spiders item=spider}
+				{assign var=spiderID value=$spider->spiderID}
 				<tr class="{cycle values="container-1,container-2" advance=false}" id="spiderRow{@$spider->spiderID}">
 					<td class="columnMarkSpiders">
 						<label>
@@ -83,13 +84,13 @@
 						<a href="index.php?form=AdminToolsSpiderEdit&amp;spiderID={@$spider->spiderID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}"><img src="{@RELATIVE_WCF_DIR}icon/editS.png" alt="" title="{lang}wcf.acp.admintools.spider.edit{/lang}" /></a>												
 						<a onclick="return confirm('{lang}wcf.acp.admintools.spider.delete.sure{/lang}')" href="index.php?page=AdminToolsSpiderAction&amp;spiderID={@$spider->spiderID}&amp;action=delete&amp;url={@$encodedURL}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}"><img src="{@RELATIVE_WCF_DIR}icon/deleteS.png" alt="" title="{lang}wcf.acp.admintools.spider.delete{/lang}" /></a>
 						
-						{if $additionalButtons[$spider->spiderID]|isset}{@$additionalButtons[$spider->spiderID]}{/if}
+						{if $additionalButtons.$spiderID|isset}{@$additionalButtons.$spiderID}{/if}
 					</td>
 					<td class="columnSpiderID columnID">{@$spider->spiderID}</td>
 					<td class="columnSpiderName columnText"><a title="{lang}wcf.acp.admintools.spider.edit{/lang}" href="index.php?form=AdminToolsSpiderEdit&amp;spiderID={@$spider->spiderID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">{$spider->spiderName}</a></td>
 					<td class="columnSpiderIdentifier columnText">{@$spider->spiderIdentifier}</td>
 					<td class="columnSpiderURL columnText">{if $spider->spiderURL}<a href="{@RELATIVE_WCF_DIR}acp/dereferrer.php?url={$spider->spiderURL|rawurlencode}" class="externalURL">{$spider->spiderURL}</a>{else}-{/if}</td>					
-					{if $additionalColumns[$spider->spiderID]|isset}{@$additionalColumns[$spider->spiderID]}{/if}
+					{if $additionalColumns.$spiderID|isset}{@$additionalColumns.$spiderID}{/if}
 				</tr>
 			{/foreach}
 			</tbody>

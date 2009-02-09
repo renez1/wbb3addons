@@ -61,8 +61,7 @@
 
 <div class="contentHeader">
 	<div class="largeButtons">
-		<ul><li><a href="index.php?page=AdminTools&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}"><img src="{@RELATIVE_WCF_DIR}icon/adminToolsM.png" alt="" title="{lang}wcf.acp.menu.link.admintools.index{/lang}" /> <span>{lang}wcf.acp.menu.link.admintools.index{/lang}</span></a></li></ul>
-		<ul><li><a href="index.php?form=AdminToolsImportAndExport&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}"><img src="{@RELATIVE_WCF_DIR}icon/adminToolsExportM.png" alt="" title="{lang}wcf.acp.menu.link.admintools.export{/lang}" /> <span>{lang}wcf.acp.menu.link.admintools.export{/lang}</span></a></li></ul>
+		<ul><li><a href="index.php?page=AdminTools&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}"><img src="{@RELATIVE_WCF_DIR}icon/adminToolsM.png" alt="" title="{lang}wcf.acp.menu.link.admintools.index{/lang}" /> <span>{lang}wcf.acp.menu.link.admintools.index{/lang}</span></a></li></ul>		
 	</div>
 </div>
 <form enctype="multipart/form-data" method="post" name="functionForm" action="index.php?form=AdminToolsFunction">		

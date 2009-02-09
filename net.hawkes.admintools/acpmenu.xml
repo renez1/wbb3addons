@@ -66,10 +66,5 @@
 			<showorder>6</showorder>			
 		</acpmenuitem>
 		
-		<acpmenuitem name="wcf.acp.menu.link.admintools.importandexport">
-			<parent>wcf.acp.menu.link.admintools.miscellanious</parent>
-			<link>index.php?form=AdminToolsImportAndExport</link>			
-			<showorder>1</showorder>			
-		</acpmenuitem>
 	</import>
 </data>
