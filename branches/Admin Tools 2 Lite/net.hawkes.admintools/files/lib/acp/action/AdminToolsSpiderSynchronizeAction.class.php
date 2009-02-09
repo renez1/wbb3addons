@@ -39,7 +39,7 @@ class AdminToolsSpiderSynchronizeAction extends AbstractAction {
 		
 		SpiderEditor::synchronize();
 		
-		HeaderUtil::redirect('index.php?page=AdminToolsSpiderList&packageID='.PACKAGE_ID.SID_ARG_2ND);
+		HeaderUtil::redirect('index.php?page=AdminToolsSpiderList&packageID='.PACKAGE_ID.SID_ARG_2ND_NOT_ENCODED);
 		exit;
 	}
 		

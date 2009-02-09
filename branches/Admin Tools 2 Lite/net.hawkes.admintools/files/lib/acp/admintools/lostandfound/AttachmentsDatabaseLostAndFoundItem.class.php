@@ -18,7 +18,7 @@
  * 
  */
 require_once(WCF_DIR.'lib/acp/admintools/lostandfound/AbstractLostAndFoundDatabaseItem.class.php');
-require_once(WCF_DIR.'lib/data/attachment/AttachmentEditor.class.php');
+require_once(WCF_DIR.'lib/data/message/attachment/AttachmentsEditor.class.php');
 
 /**
  * Attachments Database Item
@@ -45,8 +45,8 @@ class AttachmentsDatabaseLostAndFoundItem extends AbstractLostAndFoundDatabaseIt
 	 * @see AbstractLostAndFounDatabaseItem::delete	 
 	 */
 	public function delete() {
-		$editor = new AttachmentEditor($this->objectID);
-		$editor->delete();
+		$editor = new AttachmentsEditor();
+		$editor->delete($this->objectID);
 	}
 	
 	/**

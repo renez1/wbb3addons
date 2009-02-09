@@ -113,13 +113,9 @@ class AdminToolsLostAndFoundPage extends SortablePage  {
 				require_once(WCF_DIR.'lib/acp/admintools/lostandfound/AttachmentsDatabaseLostAndFoundItem.class.php');
 				$this->markedItems = intval(count(AttachmentsDatabaseLostAndFoundItem::getMarkedItems('attachmentsDatabase')));
 				$this->classname = 'AttachmentsDatabaseLostAndFoundItem';
-				// private attachments won't be read
 				$sql = "SELECT attachment.*, user.username FROM wcf".WCF_N."_attachment attachment
 						LEFT JOIN wcf".WCF_N."_user user
-						ON (user.userID = attachment.userID)
-						LEFT JOIN wcf".WCF_N."_attachment_container_type type
-						ON(type.containerType = attachment.containerType)
-						WHERE type.isPrivate = 0";
+						ON (user.userID = attachment.userID)";
 				$result = WCF::getDB()->sendQuery($sql);
 				$i = 0;
 				while($row = WCF::getDB()->fetchArray($result)) {
