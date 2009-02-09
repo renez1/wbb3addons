@@ -39,11 +39,10 @@ nachfolgend erhalten Sie die Benutzerübersicht vom {$actionDate}.]]></item>
 		<item name="wcf.acp.admintools.option.category.cache"><![CDATA[Cache]]></item>
 		<item name="wcf.acp.admintools.option.category.database"><![CDATA[Datenbank]]></item>
 		<item name="wcf.acp.admintools.option.category.cache.clearCache"><![CDATA[Cacheleerung]]></item>
-		<item name="wcf.acp.admintools.option.category.cache.clearCache.description"><![CDATA[Diese Funktion kann Caches löschen, um eine Aktualisierung zu erzwingen.]]></item>
-		<item name="wcf.acp.admintools.option.category.language"><![CDATA[Sprachen]]></item>
-		<item name="wcf.acp.admintools.option.category.language.defaults"><![CDATA[Standardsprachen]]></item>
-		<item name="wcf.acp.admintools.option.category.language.defaults.description"><![CDATA[Diese Funktion kann die Sprache von Benutzer überschreiben oder korrigieren. Dies kann hilfreich sein, wenn eine Sprache gelöscht oder hinzugefügt wurde.]]></item>
+		<item name="wcf.acp.admintools.option.category.cache.clearCache.description"><![CDATA[Diese Funktion kann Caches löschen, um eine Aktualisierung zu erzwingen.]]></item>				
 		<item name="wcf.acp.admintools.option.category.user"><![CDATA[Benutzer]]></item>
+		<item name="wcf.acp.admintools.option.category.user.languagedefaults"><![CDATA[Standardsprachen]]></item>
+		<item name="wcf.acp.admintools.option.category.user.languagedefaults.description"><![CDATA[Diese Funktion kann die Sprache von Benutzer überschreiben oder korrigieren. Dies kann hilfreich sein, wenn eine Sprache gelöscht oder hinzugefügt wurde.]]></item>
 		<item name="wcf.acp.admintools.option.category.user.usergroupcopy"><![CDATA[Benutzergruppen kopieren]]></item>
 		<item name="wcf.acp.admintools.option.category.user.usergroupcopy.description"><![CDATA[Diese Funktion kann Benutzergruppenrechte und Benutzer zwischen Gruppen hin und her kopieren.]]></item>
 		<item name="wcf.acp.admintools.option.category.user.inactiveUsers"><![CDATA[Inaktive Benutzer]]></item>
