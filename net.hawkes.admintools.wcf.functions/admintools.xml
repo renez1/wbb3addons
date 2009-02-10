@@ -128,13 +128,13 @@
 			</option>
 			
 			<option name="user.languagedefaults.languageID">
-				<categoryname>language.defaults</categoryname>
+				<categoryname>user.languagedefaults</categoryname>
 				<optiontype>languageselect</optiontype>				
 				<showorder>1</showorder>
 			</option>
 			
 			<option name="user.languagedefaults.correctonly">
-				<categoryname>language.defaults</categoryname>
+				<categoryname>user.languagedefaults</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>1</defaultvalue>				
 				<showorder>2</showorder>

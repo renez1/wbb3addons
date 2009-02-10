@@ -19,7 +19,7 @@
 
     <requiredpackages>
         <requiredPackage minversion="1.0.0">com.woltlab.wcf</requiredPackage>
-        <requiredPackage minversion="2.0.0 dev 2">net.hawkes.admintools</requiredPackage>
+        <requiredPackage>net.hawkes.admintools</requiredPackage>
         <requiredPackage minversion="1.0.0" file="requirements/net.hawkes.optiontype.groupsingleselect.tar.gz">net.hawkes.optiontype.groupsingleselect</requiredPackage>
         <requiredPackage minversion="1.0.0" file="requirements/net.hawkes.optiontype.languageselect.tar.gz">net.hawkes.optiontype.languageselect</requiredPackage>        
     </requiredpackages>
