@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+<package name="net.hawkes.admintools.wcf.functions">
+    <packageinformation>
+        <packagename>AdminTools 2 WCF LGPL Functions</packagename>
+        <packagedescription>This is a core set of functions for the WCF. This package requires the LGPL licensed packages of WoltLab only.</packagedescription>        
+        <version>1.0.0 dev 2</version>
+        <date>2009-02-04</date>
+        <standalone>0</standalone>
+        <isUnique>1</isUnique> 
+        <plugin>com.woltlab.wcf</plugin>              
+        <packageurl>http://www.wbb3addons.de</packageurl>
+    </packageinformation>
+
+    <authorinformation>
+        <author>Oliver Kliebisch</author>
+        <authorurl>http://www.oliver-kliebisch.de</authorurl>
+    </authorinformation>
+
+    <requiredpackages>
+        <requiredPackage minversion="1.0.0">com.woltlab.wcf</requiredPackage>
+        <requiredPackage minversion="2.0.0 dev 2">net.hawkes.admintools</requiredPackage>
+        <requiredPackage minversion="1.0.0" file="requirements/net.hawkes.optiontype.groupsingleselect.tar.gz">net.hawkes.optiontype.groupsingleselect</requiredPackage>
+        <requiredPackage minversion="1.0.0" file="requirements/net.hawkes.optiontype.languageselect.tar.gz">net.hawkes.optiontype.languageselect</requiredPackage>        
+    </requiredpackages>
+
+    <instructions type="install">
+        <files>files.tar</files>                
+        <admintoolsfunction>admintools.xml</admintoolsfunction>        
+        <languages languagecode="de">de.xml</languages>               
+    </instructions>
+
+</package>
