@@ -43,11 +43,14 @@ class BoardPrefixesAdminToolsFunction extends AbstractAdminToolsFunction {
 		}
 		
 		$sql = "SELECT prefixes FROM wbb".WBB_N."_board WHERE boardID = ".$sourceBoardID;
-		$result = WCF::getDB()->getFirstRow($sql);
+		$row = WCF::getDB()->getFirstRow($sql);
 		if (!empty($row['prefixes'])) {
 			$sql = "UPDATE wbb".WBB_N."_board SET prefixes = '".escapeString($row['prefixes'])."'
 					WHERE boardID IN (".implode(',', $targetBoardIDs).")";
 			WCF::getDB()->sendQuery($sql);
+			
+			// reset cache
+			WCF::getCache()->clear(WBB_DIR.'cache/', 'cache.board*', true);
 		}
 		else {
 			$this->setReturnMessage('warning', WCF::getLanguage()->get('wbb.acp.admintools.function.wbb.boardPrefixes.noPrefixesInSource'));

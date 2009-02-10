@@ -4,8 +4,8 @@
     <packageinformation>
         <packagename>AdminTools 2 Lite</packagename>
         <packagedescription>An advanced toolbox for administrators. Lite version.</packagedescription>        
-        <version>1.0.0 alpha 1</version>
-        <date>2009-02-08</date>
+        <version>1.0.0 alpha 3</version>
+        <date>2009-02-11</date>
         <standalone>0</standalone>
         <isunique>1</isunique>
         <plugin>com.woltlab.wcf</plugin>        
@@ -26,6 +26,8 @@
     
     <optionalpackages>
     	 <optionalpackage minversion="1.0.0 dev 1" file="optionals/net.hawkes.admintools.wcf.functions.tar.gz">net.hawkes.admintools.wcf.functions</optionalpackage>
+    	 <optionalpackage minversion="1.0.0 alpha 1" file="optionals/net.hawkes.admintools.wbb.functions.tar.gz">net.hawkes.admintools.wbb.functions</optionalpackage>
+    	 <optionalpackage minversion="1.0.0 alpha 1" file="optionals/net.hawkes.admintools.wbb3.functions.tar.gz">net.hawkes.admintools.wbb3.functions</optionalpackage>
     </optionalpackages>
 
     <instructions type="install">
