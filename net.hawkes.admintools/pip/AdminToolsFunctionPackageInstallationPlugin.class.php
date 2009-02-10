@@ -51,7 +51,7 @@ class AdminToolsFunctionPackageInstallationPlugin extends AbstractOptionPackageI
 			ORDER BY	package_dependency.priority";
 			$result = WCF::getDB()->sendQuery($sql);
 			while($row = WCF::getDB()->fetchArray($result)) {
-				$this->functions[$function['functionName']] = $row['functionID'];
+				$this->functions[$row['functionName']] = $row['functionID'];
 			}
 		}
 		catch(DatabaseException $e) {
