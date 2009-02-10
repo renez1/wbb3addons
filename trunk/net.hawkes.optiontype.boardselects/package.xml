@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+<package name="net.hawkes.optiontype.boardselects">
+    <packageinformation>
+        <packagename>Option Type: Board Selects</packagename>                
+        <version>1.0.0</version>
+        <date>2009-02-11</date>
+        <standalone>0</standalone>
+        <isUnique>1</isUnique>                
+    </packageinformation>
+
+    <authorinformation>
+        <author>Oliver Kliebisch</author>
+        <authorurl>http://www.oliver-kliebisch.de</authorurl>
+    </authorinformation>
+
+    <requiredpackages>
+        <requiredPackage minversion="1.0.0">com.woltlab.wcf</requiredPackage>
+        <!-- To be honest: It also requires the WBB but as WBB specific option types are not supported I've got to ignore the WBB requirement -->                
+    </requiredpackages>
+
+    <instructions type="install">
+        <files>files.tar</files>                                  
+        <acptemplates>acptemplates.tar</acptemplates>
+    </instructions>
+
+</package>
