@@ -28,12 +28,14 @@ require_once(WCF_DIR.'lib/acp/admintools/function/AbstractAdminToolsFunction.cla
  */
 class BoardPermissionsAdminToolsFunction extends AbstractAdminToolsFunction {
 	public $permissionSettings = array();
+	public $moderatorSettings = array();
 
 	/**
 	 * Prepares the permission list
 	 */
 	public function __construct() {
 		$this->readPermissionSettings();
+		$this->readModeratorPermissionSettings();
 	}
 
 	/**
@@ -51,15 +53,15 @@ class BoardPermissionsAdminToolsFunction extends AbstractAdminToolsFunction {
 		}
 
 		if ($parameters['copyUsers']) {
-			$this->copyAllocations('userID', 'board_to_user', $sourceBoardID, $targetBoardIDs);
+			$this->copyAllocations('userID', 'board_to_user', $sourceBoardID, $targetBoardIDs, $this->permissionSettings);
 		}
 
 		if ($parameters['copyUsergroups']) {
-			$this->copyAllocations('groupID', 'board_to_group', $sourceBoardID, $targetBoardIDs);
+			$this->copyAllocations('groupID', 'board_to_group', $sourceBoardID, $targetBoardIDs, $this->permissionSettings);
 		}
 
 		if ($parameters['copyModerators']) {
-			$this->copyAllocations('userID, groupID', 'board_moderator', $sourceBoardID, $targetBoardIDs);
+			$this->copyAllocations('userID, groupID', 'board_moderator', $sourceBoardID, $targetBoardIDs, $this->moderatorSettings);
 		}
 
 		// reset cache
@@ -76,12 +78,12 @@ class BoardPermissionsAdminToolsFunction extends AbstractAdminToolsFunction {
 	 * @param $sourceID
 	 * @param $targetIDs
 	 */
-	protected function copyAllocations($IDfield, $tableName, $sourceID, $targetIDs) {
+	protected function copyAllocations($IDfield, $tableName, $sourceID, $targetIDs, $fields) {
 		$sql = "DELETE FROM wbb".WBB_N."_".$tableName." WHERE boardID IN (".implode(',', $targetIDs).")";
 		WCF::getDB()->sendQuery($sql);
 		foreach($targetIDs as $targetID) {
-			$sql = "INSERT INTO wbb".WBB_N."_".$tableName." (boardID, ".$IDfield.", ".implode(',', $this->permissionSettings).")
-					SELECT ".$targetID.", ".$IDfield.", ".implode(',', $this->permissionSettings)."
+			$sql = "INSERT INTO wbb".WBB_N."_".$tableName." (boardID, ".$IDfield.", ".implode(',', $fields).")
+					SELECT ".$targetID.", ".$IDfield.", ".implode(',', $fields)."
 					FROM wbb".WBB_N."_".$tableName."
 					WHERE boardID = ".$sourceID;
 			WCF::getDB()->sendQuery($sql);
@@ -96,6 +98,19 @@ class BoardPermissionsAdminToolsFunction extends AbstractAdminToolsFunction {
 		$result = WCF::getDB()->sendQuery($sql);
 		while ($row = WCF::getDB()->fetchArray($result)) {
 			if ($row['Field'] != 'boardID' && $row['Field'] != 'groupID') {
+				$this->moderatorSettings[] = $row['Field'];
+			}
+		}
+	}
+	
+	/**
+	 * Gets available permission settings.
+	 */
+	protected function readModeratorPermissionSettings() {
+		$sql = "SHOW COLUMNS FROM wbb".WBB_N."_moderator";
+		$result = WCF::getDB()->sendQuery($sql);
+		while ($row = WCF::getDB()->fetchArray($result)) {
+			if ($row['Field'] != 'boardID' && $row['Field'] != 'groupID' && $row['Field'] != 'userID') {
 				$this->permissionSettings[] = $row['Field'];
 			}
 		}
