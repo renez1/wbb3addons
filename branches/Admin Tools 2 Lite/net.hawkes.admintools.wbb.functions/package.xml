@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+<package name="net.hawkes.admintools.wbb.functions">
+    <packageinformation>
+        <packagename>AdminTools 2 WBB Functions</packagename>
+        <packagedescription>This is a set of functions for the WoltLab Burning Board. Included Functions: Copy board permissions</packagedescription>        
+        <version>1.0.0 alpha 1</version>
+        <date>2009-02-11</date>
+        <standalone>0</standalone>
+        <isUnique>1</isUnique> 
+        <plugin>com.woltlab.wbb</plugin>              
+        <packageurl>http://www.wbb3addons.de</packageurl>
+    </packageinformation>
+
+    <authorinformation>
+        <author>Oliver Kliebisch</author>
+        <authorurl>http://www.oliver-kliebisch.de</authorurl>
+    </authorinformation>
+
+    <requiredpackages>
+        <requiredPackage>com.woltlab.wcf</requiredPackage>
+        <requiredPackage>net.hawkes.admintools</requiredPackage>
+        <requiredPackage minversion="1.0.0" file="requirements/net.hawkes.optiontype.boardselects.tar.gz">net.hawkes.optiontype.boardselects</requiredPackage>         
+    </requiredpackages>
+
+    <instructions type="install">
+        <files>files.tar</files>                
+        <admintoolsfunction>admintools.xml</admintoolsfunction>        
+        <languages languagecode="de">de.xml</languages>               
+    </instructions>
+
+</package>

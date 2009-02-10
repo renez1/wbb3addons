@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTD/options.dtd">
+<data>
+    <import>
+			<functions>
+				
+				<function name="wbb.boardPrefixes">
+					<classpath>lib/acp/admintools/function/BoardPrefixesAdminToolsFunction.class.php</classpath>
+				</function>
+				
+			</functions>
+	    
+	    <categories>
+			
+			<category name="wbb">
+			</category>
+			
+			<category name="wbb.boardPrefixes">
+				<function>wbb.boardPrefixes</function>
+				<parent>wbb</parent>
+			</category>			
+			
+	    </categories>
+	    
+	    <options>
+	    	<option name="wbb.boardPrefixes.sourceBoard">
+    			<categoryname>wbb.boardPrefixes</categoryname>
+    			<optiontype>boardsingleselect</optiontype>    			
+    			<showorder>1</showorder>
+    		</option>
+    		
+    		<option name="wbb.boardPrefixes.targetBoards">
+    			<categoryname>wbb.boardPrefixes</categoryname>
+    			<optiontype>boardmultiselect</optiontype>    			
+    			<showorder>2</showorder>
+    		</option>
+    		    		
+		</options>
+    </import>
+</data>
