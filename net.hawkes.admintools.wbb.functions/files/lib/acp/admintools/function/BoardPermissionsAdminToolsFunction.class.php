@@ -98,7 +98,7 @@ class BoardPermissionsAdminToolsFunction extends AbstractAdminToolsFunction {
 		$result = WCF::getDB()->sendQuery($sql);
 		while ($row = WCF::getDB()->fetchArray($result)) {
 			if ($row['Field'] != 'boardID' && $row['Field'] != 'groupID') {
-				$this->moderatorSettings[] = $row['Field'];
+				$this->permissionSettings[] = $row['Field'];
 			}
 		}
 	}
@@ -107,11 +107,11 @@ class BoardPermissionsAdminToolsFunction extends AbstractAdminToolsFunction {
 	 * Gets available permission settings.
 	 */
 	protected function readModeratorPermissionSettings() {
-		$sql = "SHOW COLUMNS FROM wbb".WBB_N."_moderator";
+		$sql = "SHOW COLUMNS FROM wbb".WBB_N."_board_moderator";
 		$result = WCF::getDB()->sendQuery($sql);
 		while ($row = WCF::getDB()->fetchArray($result)) {
 			if ($row['Field'] != 'boardID' && $row['Field'] != 'groupID' && $row['Field'] != 'userID') {
-				$this->permissionSettings[] = $row['Field'];
+				$this->moderatorSettings[] = $row['Field'];
 			}
 		}
 	}
