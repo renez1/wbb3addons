@@ -308,10 +308,10 @@ class AdminToolsFunctionExecution {
 				$option = $this->activeOptions[$optionName];
 
 				// set default values
-				$option['beforeLabel'] = false;
+		//		$option['beforeLabel'] = false;
 
 				// get form element htlm
-				$option['html'] = $this->getFormElement($option['optionType'], $option);
+		//		$option['html'] = $this->getFormElement($option['optionType'], $option);
 
 				// add option to list
 				$children[] = $option;

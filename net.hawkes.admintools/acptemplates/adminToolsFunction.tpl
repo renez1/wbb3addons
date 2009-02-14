@@ -113,7 +113,7 @@
 									</fieldset>
 								{/foreach}
 							{/if}
-							<div class="smallButtons">
+							<div class="smallButtons formElement">
 								{capture assign=functionName}
 								{lang}wcf.acp.admintools.option.category.{@$categoryLevel2.categoryName}{/lang}
 								{/capture}
@@ -127,7 +127,7 @@
 			{/foreach}
 						
 	<div class="formSubmit">
-		<input type="submit" accesskey="s" value="{lang}wcf.global.button.submit{/lang}" />
+		<input type="submit" accesskey="s" value="{lang}wcf.global.button.saveSettings{/lang}" />
 		<input type="reset" accesskey="r" value="{lang}wcf.global.button.reset{/lang}" />
 		<input type="hidden" name="packageID" value="{@PACKAGE_ID}" />
 		<input type="hidden" name="functionID" value="0" />

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/eventListeners.dtd">
+<data>
+	<import>
+ 		<eventlistener>
+  			<eventClassName>PMListPage</eventClassName>
+  			<eventName>assignVariables</eventName>
+  			<listenerClassFile>lib/system/event/listener/PMPruneInfoListener.class.php</listenerClassFile>  			
+ 		</eventlistener> 		
+	</import>
+</data>
