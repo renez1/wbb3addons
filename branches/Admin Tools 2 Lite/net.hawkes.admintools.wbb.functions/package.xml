@@ -3,7 +3,11 @@
 <package name="net.hawkes.admintools.wbb.functions">
     <packageinformation>
         <packagename>AdminTools 2 WBB Functions</packagename>
-        <packagedescription>This is a set of functions for the WoltLab Burning Board. Included Functions: Copy board permissions</packagedescription>        
+        <packagename language="de">AdminTools 2 WBB Funktionen</packagename>
+        <packagename language="de-informal">AdminTools 2 WBB Funktionen</packagename>
+        <packagedescription>This is a set of functions for every Community Framework based version of the WoltLab Burning Board. Included Functions: Copy board permissions</packagedescription>
+        <packagedescription language="de"><![CDATA[Dieses Paket beinhaltet Funktionen für jede Version des WoltLab Burning Boards, die auf dem Woltlab Community Framework basiert. Enthaltene Funktionen: Forenrechte kopieren]]></packagedescription>        
+        <packagedescription language="de-informal"><![CDATA[Dieses Paket beinhaltet Funktionen für jede Version des WoltLab Burning Boards, die auf dem Woltlab Community Framework basiert. Enthaltene Funktionen: Forenrechte kopieren]]></packagedescription>
         <version>1.0.0 alpha 1</version>
         <date>2009-02-11</date>
         <standalone>0</standalone>
@@ -27,6 +31,7 @@
         <files>files.tar</files>                
         <admintoolsfunction>admintools.xml</admintoolsfunction>        
         <languages languagecode="de">de.xml</languages>               
+        <languages languagecode="de-informal">de-informal.xml</languages>        
     </instructions>
 
 </package>
