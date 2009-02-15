@@ -93,6 +93,8 @@ nachfolgend erhalten Sie die Benutzerübersicht vom {$actionDate}.]]></item>
 		<item name="wcf.acp.admintools.option.user.inactiveUsers.general.appendNewUsers.description"><![CDATA[Ergänzt das E-Mail Protokoll um die Neuanmeldungen des Vortages.]]></item>
 		<item name="wcf.acp.admintools.option.user.inactiveUsers.inactive.time"><![CDATA[Inaktiv ab]]></item>
 		<item name="wcf.acp.admintools.option.user.inactiveUsers.inactive.time.description"><![CDATA[Tragen Sie hier die Zeit in Tagen ein, ab der ein Benutzer als inaktiv gewertet und gelöscht wird.]]></item>
+		<item name="wcf.acp.admintools.option.user.inactiveUsers.inactive.notActivated"><![CDATA[Nur deaktivierte Benutzer löschen]]></item>
+		<item name="wcf.acp.admintools.option.user.inactiveUsers.inactive.notActivated.description"><![CDATA[Ist diese Option aktiviert, werden nur Benutzer gelöscht, die ihren Account nie aktiviert haben.]]></item>
 		<item name="wcf.acp.admintools.option.user.inactiveUsers.inactive.action"><![CDATA[Aktion]]></item>
 		<item name="wcf.acp.admintools.option.user.inactiveUsers.inactive.action.description"><![CDATA[Geben sie an wie mit inaktiven Benutzern verfahren werden soll.]]></item>
 	</category>

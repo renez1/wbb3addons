@@ -53,10 +53,10 @@ class AdminToolsCronjobsAddForm extends CronjobsAddForm {
 	}
 	
 	/**
-	 * @see Page::readData()
+	 * @see Page::readParameters()
 	 */
-	public function readData() {
-		parent::readData();
+	public function readParameters() {
+		parent::readParameters();
 		
 		WCF::getCache()->addResource('admin_tools_functions-'.PACKAGE_ID, WCF_DIR.'cache/cache.admin_tools_functions-'.PACKAGE_ID.'.php', WCF_DIR.'lib/system/cache/CacheBuilderAdminToolsFunction.class.php');
 		$this->functions = WCF::getCache()->get('admin_tools_functions-'.PACKAGE_ID);		
@@ -92,11 +92,11 @@ class AdminToolsCronjobsAddForm extends CronjobsAddForm {
 			}
 		}
 		
-		if($this->wcfCronjob) {
-			foreach($this->activeFunctions as &$functionID) {
-				if(!empty($this->functions[$functionID]['packageDir'])) unset($functionID);
-			}			
-		}
+		if($this->wcfCronjob) {			
+			foreach($this->activeFunctions as $functionID) {							
+				if(!empty($this->functions[$functionID]['packageDir'])) unset($this->activeFunctions[$functionID]);
+			}
+		}				
 		
 		if(!count($this->activeFunctions)) {
 			throw new UserInputException();
