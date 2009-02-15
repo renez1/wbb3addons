@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<!-- $Id: $ -->
+<language languagecode="da">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.linklistbox.title"><![CDATA[Linkliste]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.linklistbox"><![CDATA[Linkliste]]></item>
+		<item name="wcf.acp.option.category.portal.box.linklistbox.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.linklistbox_value"><![CDATA[Linkliste]]></item>
+		<item name="wcf.acp.option.linklistbox_value.description"><![CDATA[Hver del er en fuldstændig linkangivelse, der skal bestå af <strong>5 felter</strong>! Hvert felt adskilles med en &quot;|&quot; (Pipe)!
+		    <br/>1. Felt = Grafik - fx {@RELATIVE_WCF_DIR}icon/helpS.png
+		    <br/>2. Felt = URL - fx. index.php?page=Help
+		    <br/>3. Felt = Titel - fx wcf.header.menu.help
+		    <br/>4. Felt = Mål (i hvilket vindue skal linket åbnes i) - fx &quot;_self&quot; for det nuværende eller &quot;_blank&quot; for et nyt vindue
+		    <br/>5. Felt = Rettigheder - fx &quot;user.pm.canUsePm&quot; hvis brugeren kun må se linket, hvis vedkommende har lov til at benytte forummets &quot;Private besked&quot;-system.
+		    <br/>Eksempel-link: {@RELATIVE_WCF_DIR}icon/helpS.png|index.php?page=Help|wcf.header.menu.help|_self|
+		    <br/><br/>Derudover kan der anføres tekstangivelser, der fx kan fungere som overskrift:
+		    <br/>{SPACER}&lt;div class=&quot;smallFont&quot; style=&quot;text-align:center; font-weight:bold; letter-spacing:.2em;&quot;&gt;&amp;raquo;eksterne links&amp;laquo;&lt;/div&gt;{/SPACER}]]></item>
+		<item name="wcf.acp.option.linklistbox_locked"><![CDATA[Boks permanent åben]]></item>
+		<item name="wcf.acp.option.linklistbox_locked.description"><![CDATA[Aktivieren Sie diese Option wenn die Box permanent aufgeklappt sein soll (Benutzer können die Box dann nicht mehr schließen).]]></item>
+		<item name="wcf.acp.option.linklistbox_spacer"><![CDATA[Vertikal afstand]]></item>
+		<item name="wcf.acp.option.linklistbox_spacer.description"><![CDATA[Vertikal afstand mellem links angivet i pixel. Standard = 1.]]></item>
+	</category>
+</language>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<!-- $Id: $ -->
+<language languagecode="da">
+  <category name="wbb.portal">
+    <item name="wbb.portal.box.buddiesbox.title"><![CDATA[Venner]]></item>
+    <item name="wbb.portal.box.buddiesbox.nouser"><![CDATA[Ingen brugere i listen]]></item>
+    <item name="wbb.portal.box.buddiesbox.pm"><![CDATA[Send besked til ven]]></item>
+  </category>
+  <category name="wcf.acp.option">
+    <item name="wcf.acp.option.category.portal.box.buddiesbox"><![CDATA[Venner]]></item>
+    <item name="wcf.acp.option.category.portal.box.buddiesbox.description"><![CDATA[]]></item>
+    <item name="wcf.acp.option.buddiesbox_sbcolor_acp"><![CDATA[Anden baggrundsfarve]]></item>
+    <item name="wcf.acp.option.buddiesbox_sbcolor_acp.description"><![CDATA[Standard = 2.]]></item>
+    <item name="wcf.acp.option.buddiesbox_showdel_acp"><![CDATA[Vis slette knap]]></item>
+    <item name="wcf.acp.option.buddiesbox_showdel_acp.description"><![CDATA[]]></item>
+    <item name="wcf.acp.option.buddiesbox_showusermarking_acp"><![CDATA[Brug bruger online markering]]></item>
+    <item name="wcf.acp.option.buddiesbox_showusermarking_acp.description"><![CDATA[]]></item>
+    <item name="wcf.acp.option.buddiesbox_showonlyonline_acp"><![CDATA[Vis kun &quot;venner online&quot;]]></item>
+    <item name="wcf.acp.option.buddiesbox_showonlyonline_acp.description"><![CDATA[]]></item>
+    <item name="wcf.acp.option.buddiesbox_hideifempty_acp"><![CDATA[Skjul boks hvis tom]]></item>
+    <item name="wcf.acp.option.buddiesbox_hideifempty_acp.description"><![CDATA[]]></item>
+  </category>
+</language>

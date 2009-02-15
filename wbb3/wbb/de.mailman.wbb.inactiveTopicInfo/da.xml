@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language languagecode="da">
+	<category name="wbb.thread">
+		<item name="wbb.thread.inactiveTopic.closed"><![CDATA[Bemærk! Dette emne er lukket.]]></item>
+		<item name="wbb.thread.inactiveTopic.disabled"><![CDATA[Bemærk! Dette emner er deaktiveret.]]></item>
+		<item name="wbb.thread.inactiveTopic.deleted"><![CDATA[Bemærk! Dette emne er allerede slettet.]]></item>
+	</category>
+	<category name="wcf.acp.option">
+	    <item name="wcf.acp.option.thread_show_closed_message_all"><![CDATA[Vis lukkede beskeder til alle brugere]]></item>
+	    <item name="wcf.acp.option.thread_show_closed_message_all.description"><![CDATA[]]></item>
+	</category>
+</language>

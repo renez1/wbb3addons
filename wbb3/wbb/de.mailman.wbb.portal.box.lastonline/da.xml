@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<!-- $Id: $ -->
+<language languagecode="da">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.lastonlinebox.title"><![CDATA[Senest online]]></item>
+		<item name="wbb.portal.box.lastonlinebox.nouser"><![CDATA[Ingen brugere i listen]]></item>
+		<item name="wbb.portal.box.lastonlinebox.onlineinfo"><![CDATA[...fra i dag {#$cntTodayOnline} bruger{if $cntTodayOnline != 1}e{/if}]]></item>
+		<item name="wbb.portal.box.lastonlinebox.onlineinfotitle"><![CDATA[vis alle]]></item>
+		<item name="wbb.portal.box.lastonlinebox.sortinfo"><![CDATA[Sorter]]></item>
+	</category>
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.user.board.canSeeLastOnlineBox"><![CDATA[Kan se &raquo;Senest online&laquo; boksen]]></item>
+		<item name="wcf.acp.group.option.user.board.canSeeLastOnlineBox.description"><![CDATA[Medlemmer af denne gruppe kan se &raquo;Senest online&laquo; boksen.]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.lastonlinebox"><![CDATA[Senest online]]></item>
+		<item name="wcf.acp.option.category.portal.box.lastonlinebox.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.lastonlinebox_showusermarking_acp"><![CDATA[Vis bruger online markering]]></item>
+		<item name="wcf.acp.option.lastonlinebox_showusermarking_acp.description"><![CDATA[Hvis aktiveret, vil brugeren blive vist med samme markering som i online oplistningen.]]></item>
+		<item name="wcf.acp.option.lastonlinebox_numofuser_acp"><![CDATA[Antal brugere]]></item>
+		<item name="wcf.acp.option.lastonlinebox_numofuser_acp.description"><![CDATA[Antallet af brugere, der skal anføres i boksen.]]></item>
+		<item name="wcf.acp.option.lastonlinebox_maxheight"><![CDATA[Maks. højde på boksen.]]></item>
+		<item name="wcf.acp.option.lastonlinebox_maxheight.description"><![CDATA[Standard 300.]]></item>
+		<item name="wcf.acp.option.lastonlinebox_sbcolor_acp"><![CDATA[Anden baggrundsfarve]]></item>
+        <item name="wcf.acp.option.lastonlinebox_sbcolor_acp.description"><![CDATA[Standar = 2.]]></item>
+		<item name="wcf.acp.option.lastonlinebox_showTime_acp"><![CDATA[Vis klokkeslet]]></item>
+        <item name="wcf.acp.option.lastonlinebox_showTime_acp.description"><![CDATA[]]></item>
+	</category>
+</language>

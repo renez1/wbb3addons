@@ -1,9 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE package SYSTEM "DTD/package.dtd">
+<!-- $Id$ -->
 <package name="de.mailman.wbb.portal.box.downloadDatabase">
 	<packageinformation>
 		<packagename lang="de">Portalbox &quot;Top Downloads&quot;</packagename>
+		<packagename lang="da">Portalboks &quot;Mest downloadet&quot;</packagename>
         <packageDescription>Die Top 5 Downloads und die 5 neuesten Downloads der Download Database in einer Portalbox.</packageDescription>
+	<packageDescription>De 5 mest downloadede og de 5 nyeste downloads fra download databasen vist i en portalboks.</packageDescription>
 		<standalone>0</standalone>
 		<isUnique>1</isUnique>
 		<plugin>com.woltlab.wbb</plugin>
@@ -30,6 +33,7 @@
 		<groupoptions>groupoptions.xml</groupoptions>
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="da">da.xml</languages>
 		<languages languagecode="en">en.xml</languages>
 	</instructions>
 </package>

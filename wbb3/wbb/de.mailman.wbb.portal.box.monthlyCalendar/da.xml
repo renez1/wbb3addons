@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<!-- $Id: $ -->
+<language languagecode="da">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.monthlyCalendar.title"><![CDATA[Månedskalender]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.monday"><![CDATA[Ma]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.tuesday"><![CDATA[Ti]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.wednesday"><![CDATA[On]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.thursday"><![CDATA[To]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.friday"><![CDATA[Fr]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.saturday"><![CDATA[Lø]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.sunday"><![CDATA[Sø]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_1"><![CDATA[Januar]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_2"><![CDATA[Februar]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_3"><![CDATA[Marts]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_4"><![CDATA[April]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_5"><![CDATA[Maj]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_6"><![CDATA[Juni]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_7"><![CDATA[Juli]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_8"><![CDATA[August]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_9"><![CDATA[September]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_10"><![CDATA[Oktober]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_11"><![CDATA[November]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.month_12"><![CDATA[December]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.cw"><![CDATA[KU]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.dayOfTheYear"><![CDATA[Dag {$doy}]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.birthdays"><![CDATA[Fødselsdage]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.appointments"><![CDATA[Aftaler]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.holidays"><![CDATA[Helligdage]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.nextMonth"><![CDATA[Næste måned]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.prevMonth"><![CDATA[Forrige måned]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.curMonth"><![CDATA[Indeværende måned]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.switchCalendar"><![CDATA[Skift mellem kalender og aftaler]]></item>
+		<item name="wbb.portal.box.monthlyCalendar.noAppointments"><![CDATA[Ingen anførte aftale]]></item>
+	</category>
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.category.user.board.general"><![CDATA[Generelt]]></item>
+		<item name="wcf.acp.group.option.category.user.board.general.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.board.canViewMonthlyCalendarBox"><![CDATA[Kan se &raquo;Månedskalender&laquo; boksen]]></item>
+		<item name="wcf.acp.group.option.user.board.canViewMonthlyCalendarBox.description"><![CDATA[]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.monthlyCalendar"><![CDATA[Månedskalender boks]]></item>
+		<item name="wcf.acp.option.category.portal.box.monthlyCalendar.description"><![CDATA[]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_showBirthdayToGuest"><![CDATA[Gæster: Vis fødselsdage]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_showBirthdayToGuest.description"><![CDATA[]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_showHolidayToGuest"><![CDATA[Gæster: Vis helligdage]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_showHolidayToGuest.description"><![CDATA[]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_showHolidayToGuest.disabled"><![CDATA[deaktiveret]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_col_align"><![CDATA[Justering af dage]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_col_align.description"><![CDATA[Justering af dage (venstre, centreret, højre).]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_col_align.left"><![CDATA[Venstre]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_col_align.center"><![CDATA[Centreret]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_col_align.right"><![CDATA[Højre]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_show_doy"><![CDATA[Vis dag i året]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_show_doy.description"><![CDATA[]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_show_nav"><![CDATA[Vis måneds navigator]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_show_nav.description"><![CDATA[]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_show_form"><![CDATA[Vis måneds-/år-vælger]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_show_form.description"><![CDATA[]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_nav_bottom"><![CDATA[Vis navigator nedenfor]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_nav_bottom.description"><![CDATA[Viser kalenderens navigeringsmenu nedenfor.]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_maxLen"><![CDATA[Maksimal længde på aftale navne]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_maxLen.description"><![CDATA[]]></item>
+    	<item name="wcf.acp.option.monthlyCalendarBox_mbFunctions"><![CDATA[Benyt PHP mbstring()]]></item>
+		<item name="wcf.acp.option.monthlyCalendarBox_mbFunctions.description"><![CDATA[Deaktiver kun denne funktion, hvis boksen vises med fejl!]]></item>
+	</category>
+	<category name="wcf.user.option">
+        <item name="wcf.user.option.category.settings.display.monthlyCalendarBox"><![CDATA[Månedskalender boks]]></item>
+        <item name="wcf.user.option.category.settings.display.monthlyCalendarBox.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showCalendarWeeks"><![CDATA[Vis kalender uger]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showCalendarWeeks.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showAppointmentsInCalendar"><![CDATA[Vis aftaler i månedsoversigten]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showAppointmentsInCalendar.description"><![CDATA[Viser data i månedsoversigten, starttidspunktet på den dag de falder.]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showAppointments"><![CDATA[Vis aftaler]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showAppointments.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showAppointmentsAsDefault"><![CDATA[Vis aftaler i stedet for kalender]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showAppointmentsAsDefault.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showPublicAppointments"><![CDATA[Vis alle aftaler]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showPublicAppointments.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showBirthdaysInAppointments"><![CDATA[Vis fødselsdage]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showBirthdaysInAppointments.description"><![CDATA[Vis fødselsdage i aftaleoversigten.]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_maxAppointments"><![CDATA[Maksimale antal aftaler]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_maxAppointments.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_maxAppointmentDays"><![CDATA[Maksimale antal dage]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_maxAppointmentDays.description"><![CDATA[(kun WCOM kalender).]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showHolidays"><![CDATA[Vis helligdage]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showHolidays.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showHolidaysFrom"><![CDATA[Lands helligdage]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showHolidaysFrom.description"><![CDATA[Vælg det land, som du ønsker at vise helligdage fra]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showBirthdays"><![CDATA[Vis fødselsdage]]></item>
+		<item name="wcf.user.option.monthlyCalendarBox_showBirthdays.description"><![CDATA[Vis fødselsdage i månedsoversigten.]]></item>
+	</category>
+</language>
