@@ -6,7 +6,9 @@
 		<packagename>Portalbox Freunde-Liste</packagename>
 		<packagedescription>Deine Freunde in der Box ;)</packagedescription>
 		<packagename language="en">Portal box friends</packagename>
+		<packagename language="da">Portal boks venner</packagename>
 		<packagedescription language="en">Your friends in a box ;)</packagedescription>
+		<packagedescription language="da">Dine venner i en boks ;)</packagedescription>
 		<packagename language="fr">Fenêtre du portail « Liste d’amis »</packagename>
 		<packagedescription language="fr">Vos amis dans une fenêtre ;)</packagedescription>
 		<standalone>0</standalone>
@@ -31,6 +33,7 @@
 		<useroptions>useroptions.xml</useroptions>
 		<options>options.xml</options>
 		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="da">da.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
 		<languages languagecode="fr">fr.xml</languages>

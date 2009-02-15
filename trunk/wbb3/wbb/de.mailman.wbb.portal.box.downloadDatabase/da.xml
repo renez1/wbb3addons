@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<!-- $Id: $ -->
+<language languagecode="da">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.downloadDatabase.title"><![CDATA[Mest downloadet]]></item>
+		<item name="wbb.portal.box.downloadDatabase.recentTitle"><![CDATA[&raquo;Seneste download&laquo;]]></item>
+		<item name="wbb.portal.box.downloadDatabase.topTitle"><![CDATA[&raquo;Mest downloadet&laquo;]]></item>
+        <item name="wbb.portal.box.downloadDatabase.toolTip"><![CDATA[Download: {#$file.downloads} - Upload: {@$file.datum|time:"%d.%m.%Y %H:%M"}]]></item>
+	</category>
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.user.board.canViewDownloadDatabaseBox"><![CDATA[Kan se &raquo;Mest downloadet&laquo; boksen]]></item>
+		<item name="wcf.acp.group.option.user.board.canViewDownloadDatabaseBox.description"><![CDATA[]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.downloadDatabase"><![CDATA[Mest downloadet boks]]></item>
+		<item name="wcf.acp.option.category.portal.box.downloadDatabase.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.downloadDatabaseBox_boxOpened"><![CDATA[Boks permanent åben]]></item>
+		<item name="wcf.acp.option.downloadDatabaseBox_boxOpened.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.downloadDatabaseBox_title_length"><![CDATA[Maks. længde på filnavne]]></item>
+		<item name="wcf.acp.option.downloadDatabaseBox_title_length.description"><![CDATA[Standard = 24 (0 = deaktiveret)]]></item>
+		<item name="wcf.acp.option.downloadDatabaseBox_sbcolor"><![CDATA[Anden baggrundsfarve]]></item>
+        <item name="wcf.acp.option.downloadDatabaseBox_sbcolor.description"><![CDATA[Standard 2.]]></item>
+	</category>
+</language>

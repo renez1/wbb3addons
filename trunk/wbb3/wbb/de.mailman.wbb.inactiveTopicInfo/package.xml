@@ -4,6 +4,7 @@
 	<packageinformation>
 		<packagename>Inactive Thread/Post Info</packagename>
 		<packagename language="fr">Information sur les discussion/messages inactifs</packagename>
+		<packagename language="da">Viser meddelelse om hvorvidt en tråd/et indlæg er lukket, deaktiveret eller slettet.</packagename>
 		<packagedescription language="de">Zeigt eine Hinweismeldung an, wenn ein Thread/Post bereits geschlossen, deaktiviert oder gelöscht ist.</packagedescription>
 		<version>1.0.1</version>
 		<date>2008-03-04</date>
@@ -25,6 +26,7 @@
 	    <options>options.xml</options>
 	    <eventlistener>eventlistener.xml</eventlistener>
 		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="da">da.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
 		<languages languagecode="fr">fr.xml</languages>
@@ -33,6 +35,7 @@
 	    <files>files.tar</files>
 	    <options>options.xml</options>
 		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="da">da.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
 		<languages languagecode="fr">fr.xml</languages>

@@ -6,7 +6,9 @@
 		<packagename>Portalbox &quot;Monatskalender&quot;</packagename>
         <packageDescription>Ein Monatskalender in einer Portalbox.</packageDescription>
 		<packagename language="en">Monthly calendar box</packagename>
+		<packagename language="da">Portalboksen &quot;Månedskalender&quot;</packagename>
 		<packagedescription language="en">A monthly calendar in a box.</packagedescription>
+		<packagedescription language="da">Månedskalender i en boks.</packagedescription>
 		<standalone>0</standalone>
 		<isUnique>1</isUnique>
 		<plugin>com.woltlab.wbb</plugin>
@@ -31,6 +33,7 @@
 		<useroptions>useroptions.xml</useroptions>
 		<groupoptions>groupoptions.xml</groupoptions>
 		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="da">da.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
 	</instructions>
@@ -41,6 +44,7 @@
 		<options>options.xml</options>
 		<useroptions>useroptions.xml</useroptions>
 		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="da">da.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
 	</instructions>
@@ -50,6 +54,7 @@
 		<options>options.xml</options>
 		<useroptions>useroptions.xml</useroptions>
 		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="da">da.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
 	</instructions>
@@ -59,6 +64,7 @@
 		<options>options.xml</options>
 		<useroptions>useroptions.xml</useroptions>
 		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="da">da.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
 	</instructions>
@@ -68,6 +74,7 @@
 		<options>options.xml</options>
 		<useroptions>useroptions.xml</useroptions>
 		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="da">da.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
 	</instructions>
@@ -77,6 +84,7 @@
 		<options>options.xml</options>
 		<useroptions>useroptions.xml</useroptions>
 		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="da">da.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
 	</instructions>
@@ -86,6 +94,7 @@
 		<options>options.xml</options>
 		<useroptions>useroptions.xml</useroptions>
 		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="da">da.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
 	</instructions>
@@ -95,6 +104,7 @@
 		<options>options.xml</options>
 		<useroptions>useroptions.xml</useroptions>
 		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="da">da.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
 	</instructions>
@@ -103,6 +113,7 @@
 		<options>options.xml</options>
 		<useroptions>useroptions.xml</useroptions>
 		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="da">da.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
 	</instructions>
@@ -112,6 +123,7 @@
 		<options>options.xml</options>
 		<useroptions>useroptions.xml</useroptions>
 		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="da">da.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
 	</instructions>
@@ -121,6 +133,7 @@
 		<options>options.xml</options>
 		<useroptions>useroptions.xml</useroptions>
 		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="da">da.xml</languages>
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>
 	</instructions>

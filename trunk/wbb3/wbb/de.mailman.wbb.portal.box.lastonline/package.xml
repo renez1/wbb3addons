@@ -1,9 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE package SYSTEM "DTD/package.dtd">
+<!-- $Id$ -->
 <package name="de.mailman.wbb.portal.box.lastonlinebox">
 	<packageinformation>
 		<packagename lang="de">Portalbox &quot;Zuletzt online&quot;</packagename>
+		<packagename lang="da">Portalboksen &quot;Senest online&quot;</packagename>
 		<packageDescription>Zeigt die Benutzer von &quot;heute&quot; in einer Box an.</packageDescription>
+		<packageDescription lang="da">Vise de besøgende fra &quot;i dag&quot; i en boks.</packageDescription>
 		<standalone>0</standalone>
 		<plugin>com.woltlab.wbb</plugin>
 		<version>1.0.1</version>
@@ -27,6 +30,7 @@
 		<useroptions>useroptions.xml</useroptions>
         <groupoptions>groupoptions.xml</groupoptions>
 		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="da">da.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
 	</instructions>
@@ -35,6 +39,7 @@
 		<files>files.tar</files>
         <options>options.xml</options>
 		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="da">da.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
 	</instructions>

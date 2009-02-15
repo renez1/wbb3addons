@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<!-- $Id: $ -->
+<language languagecode="da">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.listboards.title"><![CDATA[Forum oversigt]]></item>
+        <item name="wbb.portal.box.listboards.noboards"><![CDATA[Ingen tilgængelige fora]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.listboards"><![CDATA[Forum oversigt]]></item>
+		<item name="wcf.acp.option.category.portal.box.listboards.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.listboards_show_newposts_acp"><![CDATA[Vis nye indlæg]]></item>
+		<item name="wcf.acp.option.listboards_show_newposts_acp.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.listboards_mainboard_fontsize_acp"><![CDATA[Skriftstørrelse for hovedefora]]></item>
+		<item name="wcf.acp.option.listboards_mainboard_fontsize_acp.description"><![CDATA[Standard 1.2em]]></item>
+		<item name="wcf.acp.option.listboards_mainboard_spacer_acp"><![CDATA[Mellemrum mellem hovedfora]]></item>
+		<item name="wcf.acp.option.listboards_mainboard_spacer_acp.description"><![CDATA[Værdi i pixels. Standard 5.]]></item>
+		<item name="wcf.acp.option.listboards_subboard_indent_acp"><![CDATA[Indrykning af underfora]]></item>
+		<item name="wcf.acp.option.listboards_subboard_indent_acp.description"><![CDATA[Standard &amp;nbsp;&amp;raquo;&amp;nbsp;.]]></item>
+		<item name="wcf.acp.option.listboards_newpost_indent_acp"><![CDATA[Indrykning af underfora med ulæste indlæg]]></item>
+		<item name="wcf.acp.option.listboards_newpost_indent_acp.description"><![CDATA[Standard &lt;span style=&quot;font-weight:bold; color:Red;&quot;&gt;&amp;nbsp;&amp;raquo;&amp;nbsp;&lt;/span&gt;.]]></item>
+		<item name="wcf.acp.option.listboards_length_acp"><![CDATA[Maks. længde på forumnavne]]></item>
+		<item name="wcf.acp.option.listboards_length_acp.description"><![CDATA[Standard = 30 (0 = deaktiveret)]]></item>
+		<item name="wcf.acp.option.listboards_levelcut_acp"><![CDATA[Afkortning for hver underfora]]></item>
+		<item name="wcf.acp.option.listboards_levelcut_acp.description"><![CDATA[Standard = 2.]]></item>
+		<item name="wcf.acp.option.listboards_maxheight_acp"><![CDATA[Maks. højde på boksen]]></item>
+		<item name="wcf.acp.option.listboards_maxheight_acp.description"><![CDATA[Standard = 0 (deaktiveret)]]></item>
+		<item name="wcf.acp.option.listboardsbox_sbcolor_acp"><![CDATA[Anden baggrundsfarve]]></item>
+		<item name="wcf.acp.option.listboardsbox_sbcolor_acp.description"><![CDATA[Standard = 2.]]></item>
+	</category>
+
+	<category name="wcf.user.option">
+        <item name="wcf.user.option.category.settings.display.listboards"><![CDATA[Forum oversigt]]></item>
+
+		<item name="wcf.user.option.listboards_maxheight"><![CDATA[Maks. højde på boksen]]></item>
+		<item name="wcf.user.option.listboards_maxheight.description"><![CDATA[Maksimal højde på boksen. Min. 100 eller 0 for admin standard eller 1 for fuld højde).]]></item>
+	</category>
+</language>

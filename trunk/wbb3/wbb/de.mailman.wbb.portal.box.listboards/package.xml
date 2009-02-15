@@ -1,9 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE package SYSTEM "DTD/package.dtd">
+<!-- $Id$ -->
 <package name="de.mailman.wbb.portal.box.listboards">
 	<packageinformation>
 		<packagename lang="de">Portalbox Foren-Übersicht</packagename>
+		<packagename lang="da">Portalboksen Forum oversigt</packagename>
 		<packageDescription>Alle Foren in einer Box.</packageDescription>
+		<packageDescription lang="da">Alle fora i en boks.</packageDescription>
 		<standalone>0</standalone>
 		<plugin>com.woltlab.wbb</plugin>
 		<version>1.0.1</version>
@@ -26,6 +29,7 @@
 		<useroptions>useroptions.xml</useroptions>
 		<options>options.xml</options>
 		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="da">da.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
 	</instructions>
