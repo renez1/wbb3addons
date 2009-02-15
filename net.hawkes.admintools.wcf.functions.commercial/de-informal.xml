@@ -20,7 +20,7 @@
 		<item name="wcf.acp.admintools.option.messages.prunePMs.ignoredUsergroupIDs.description"><![CDATA[Gib hier die <strong>Benutzergruppen-IDs</strong> per Komma getrennt an, deren PNs nicht gelöscht werden sollen.]]></item>
 		<item name="wcf.acp.admintools.option.messages.prunePMs.showInfoBox"><![CDATA[Information anzeigen]]></item>
 		<item name="wcf.acp.admintools.option.messages.prunePMs.showInfoBox.description"><![CDATA[Zeigt eine Information in den privaten Nachrichten an, dass PNs nach der oben eingestellten Zahl an Tagen gelöscht werden.]]></item>
-		<item name="wcf.acp.admintools.option.messages.prunePMs.showInfoBox"><![CDATA[Information immer anzeigen]]></item>
-		<item name="wcf.acp.admintools.option.messages.prunePMs.showInfoBox.description"><![CDATA[Zeigt die Information auch Benutzer an, die von der Löschung nicht betroffen sind.]]></item>
+		<item name="wcf.acp.admintools.option.messages.prunePMs.showInfoBoxToAll"><![CDATA[Information immer anzeigen]]></item>
+		<item name="wcf.acp.admintools.option.messages.prunePMs.showInfoBoxToAll.description"><![CDATA[Zeigt die Information auch Benutzer an, die von der Löschung nicht betroffen sind.]]></item>
 	</category>
 </language>

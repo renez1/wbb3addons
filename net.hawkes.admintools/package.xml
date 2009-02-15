@@ -8,8 +8,8 @@
         <packagedescription>The Admin Tools 2 are a large collection of useful tools for administrators. It can be extended with new functions by using the functions interface.</packagedescription>
         <packagedescription language="de"><![CDATA[Die Admin Tools 2 sind eine große Sammlung von nützlichen Werkzeugen für Administratotren. Über die Funktionsschnittstelle kann es einfach um neue Funktionen erweitert werden.]]></packagedescription>        
         <packagedescription language="de-informal"><![CDATA[Die Admin Tools 2 sind eine große Sammlung von nützlichen Werkzeugen für Administratotren. Über die Funktionsschnittstelle kann es einfach um neue Funktionen erweitert werden.]]></packagedescription>
-        <version>1.0.0 alpha 4</version>
-        <date>2009-02-14</date>
+        <version>1.0.0 beta 1</version>
+        <date>2009-02-15</date>
         <standalone>0</standalone>
         <isunique>1</isunique>
         <plugin>com.woltlab.wcf</plugin>        
@@ -29,9 +29,10 @@
     </requiredpackages>
     
     <optionalpackages>
-    	 <optionalpackage minversion="1.0.0 alpha 1" file="optionals/net.hawkes.admintools.wcf.functions.tar.gz">net.hawkes.admintools.wcf.functions</optionalpackage>
-    	 <optionalpackage minversion="1.0.0 alpha 1" file="optionals/net.hawkes.admintools.wbb.functions.tar.gz">net.hawkes.admintools.wbb.functions</optionalpackage>
-    	 <optionalpackage minversion="1.0.0 alpha 1" file="optionals/net.hawkes.admintools.wbb3.functions.tar.gz">net.hawkes.admintools.wbb3.functions</optionalpackage>
+    	 <optionalpackage minversion="1.0.0 alpha 2" file="optionals/net.hawkes.admintools.wcf.functions.tar.gz">net.hawkes.admintools.wcf.functions</optionalpackage>
+    	 <optionalpackage minversion="1.0.0 alpha 1" file="optionals/net.hawkes.admintools.wcf.functions.commercial.tar.gz">net.hawkes.admintools.wcf.functions.commercial</optionalpackage>
+    	 <optionalpackage minversion="1.0.0 alpha 2" file="optionals/net.hawkes.admintools.wbb.functions.tar.gz">net.hawkes.admintools.wbb.functions</optionalpackage>
+    	 <optionalpackage minversion="1.0.0 alpha 2" file="optionals/net.hawkes.admintools.wbb3.functions.tar.gz">net.hawkes.admintools.wbb3.functions</optionalpackage>
     </optionalpackages>
 
     <instructions type="install">
@@ -45,7 +46,7 @@
         <languages languagecode="de-informal">de-informal.xml</languages>               
     </instructions>
     
-    <instructions type="update" fromversion="1.0.0 alpha 3">
+    <instructions type="update" fromversion="1.0.0 alpha*">
         <files>files.tar</files>        
         <acptemplates>acptemplates.tar</acptemplates>                               
         <languages languagecode="de">de.xml</languages>

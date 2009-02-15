@@ -8,10 +8,9 @@
         <packagedescription>This is a set of functions for every Community Framework based version of the WoltLab Burning Board. Included Functions: Copy board permissions</packagedescription>
         <packagedescription language="de"><![CDATA[Dieses Paket beinhaltet Funktionen für jede Version des WoltLab Burning Boards, die auf dem Woltlab Community Framework basiert. Enthaltene Funktionen: Forenrechte kopieren]]></packagedescription>        
         <packagedescription language="de-informal"><![CDATA[Dieses Paket beinhaltet Funktionen für jede Version des WoltLab Burning Boards, die auf dem Woltlab Community Framework basiert. Enthaltene Funktionen: Forenrechte kopieren]]></packagedescription>
-        <version>1.0.0 alpha 1</version>
-        <date>2009-02-11</date>
-        <standalone>0</standalone>
-        <isUnique>1</isUnique> 
+        <version>1.0.0 alpha 2</version>
+        <date>2009-02-15</date>
+        <standalone>0</standalone>        
         <plugin>com.woltlab.wbb</plugin>              
         <packageurl>http://www.wbb3addons.de</packageurl>
     </packageinformation>
@@ -32,6 +31,13 @@
         <admintoolsfunction>admintools.xml</admintoolsfunction>        
         <languages languagecode="de">de.xml</languages>               
         <languages languagecode="de-informal">de-informal.xml</languages>        
+    </instructions>
+    
+    <instructions type="update" fromversion="*">
+        <files>files.tar</files>                
+        <admintoolsfunction>admintools.xml</admintoolsfunction>        
+        <languages languagecode="de">de.xml</languages>               
+        <languages languagecode="de-informal">de-informal.xml</languages>                       
     </instructions>
 
 </package>
