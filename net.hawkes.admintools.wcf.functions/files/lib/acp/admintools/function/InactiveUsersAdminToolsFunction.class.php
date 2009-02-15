@@ -52,7 +52,7 @@ class InactiveUsersAdminToolsFunction extends AbstractAdminToolsFunction {
 			$this->sendProtocol();
 		}
 		
-		$this->setReturnMessage('success', WCF::getLanguage()->get('wcf.acp.admintools.function.user.inactiveUsers.success', array('countDeleted' => count($this->deletedInactiveUsers), 'countWarned' => count($this->warnedInactiveUsers))));
+		$this->setReturnMessage('success', WCF::getLanguage()->get('wcf.acp.admintools.function.user.inactiveUsers.success', array('$countDeleted' => count($this->deletedInactiveUsers), '$countWarned' => count($this->warnedInactiveUsers))));
 		
 		$this->executed();
 	}
