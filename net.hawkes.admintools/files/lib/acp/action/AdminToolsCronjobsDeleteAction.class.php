@@ -46,6 +46,19 @@ class AdminToolsCronjobsDeleteAction extends CronjobsDeleteAction {
 				WHERE cronjobID = ".$this->cronjobID;
 		WCF::getDB()->sendQuery($sql);
 		
+		$sql = "SELECT packageDir FROM wcf".WCF_N."_package package
+				LEFT JOIN wcf".WCF_N."_cronjobs cronjob
+				ON (cronjob.packageID = package.packageID)
+				WHERE cronjob.cronjobID = ".$this->cronjobID;
+		$row = WCF::getDB()->getFirstRow($sql);
+		if (empty($row['packageDir'])) {
+			$path = WCF_DIR;
+		}
+		else {
+			$path = FileUtil::getRealPath(WCF_DIR.$row['packageDir']);
+		}
+		@unlink($path.'lib/system/cronjob/AdminToolsCronjob'.$this->cronjobID.'.class.php');		
+		
 		parent::execute();
 	}
 	

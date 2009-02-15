@@ -87,6 +87,19 @@
 		<item name="wcf.acp.admintools.spider.noneAvailable"><![CDATA[Derzeit sind keine eigenen Spider verfügbar.]]></item> 
 		<item name="wcf.acp.admintools.spider.markedSpiders"><![CDATA[this.count == 1 ? "Ein Spider markiert" : this.count+" Spider markiert"]]></item>
 		<item name="wcf.acp.admintools.delete.sure"><![CDATA[Möchtest du den Eintrag wirklich löschen?]]></item>
+		<item name="wcf.acp.admintools.spider.importandexport"><![CDATA[Sichern & wiederherstellen]]></item>
+		<item name="wcf.acp.admintools.spider.spider.importAndExport"><![CDATA[Spider exportieren & importieren]]></item>
+		<item name="wcf.acp.admintools.spider.import"><![CDATA[Spider wiederherstellen]]></item>
+		<item name="wcf.acp.admintools.spider.export"><![CDATA[Spider sichern]]></item>
+		<item name="wcf.acp.admintools.spider.export.download"><![CDATA[Sicherung der Spider herunterladen]]></item>
+		<item name="wcf.acp.admintools.spider.import.upload"><![CDATA[Sicherung der Spider vom lokalen Computer hochladen]]></item>
+		<item name="wcf.acp.admintools.spider.import.upload.description"><![CDATA[Gib eine Sicherung der Spider von Deinem lokalen Rechner an.]]></item>
+		<item name="wcf.acp.admintools.spider.export.download.description"><![CDATA[Lade eine Sicherung der Spider auf Deinen lokalen Rechner herunter.]]></item>
+		<item name="wcf.acp.admintools.spider.import.success"><![CDATA[Die Spider wurden erfolgreich importiert.]]></item>
+		<item name="wcf.acp.admintools.spider.import.error.importFailed"><![CDATA[Die Spider konnten nicht wiederhergestellt werden. Die angegebene Datei enthält keine gültige Spiderliste.]]></item>
+		<item name="wcf.acp.admintools.spider.import.error.uploadFailed"><![CDATA[Das Hochladen der Datei ist fehlgeschlagen.]]></item>
+		<item name="wcf.acp.admintools.spider.oldAdminTools"><![CDATA[Alte Admin Tools Spiderdatei]]></item>
+		<item name="wcf.acp.admintools.spider.oldAdminTools.description"><![CDATA[Wenn diese Option aktiviert ist, können Spiderexporte der alten Admin Tools verarbeitet werden.]]></item>
 	</category>
 	<category name="wcf.acp.menu">
 		<item name="wcf.acp.menu.link.admintools"><![CDATA[Admin Tools]]></item>

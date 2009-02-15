@@ -46,7 +46,7 @@ class InactiveUsersAdminToolsFunction extends AbstractAdminToolsFunction {
 		$this->ignoreCondition = new ConditionBuilder(false);
 		$this->ignoreCondition->add('user.userID NOT IN ('.$generalOptions['ignoredUserIDs'].')');
 		$this->ignoreCondition->add('user.userID NOT IN (SELECT userID FROM wcf'.WCF_N.'_user_to_groups WHERE groupID IN ('.$generalOptions['ignoredUsergroupIDs'].'))');
-		$this->ignoreCondition->add('user.registrationDate < '.(TIME_NOW - $generalOptions['periodOfGrace'] * 86400));		
+		$this->ignoreCondition->add('user.registrationDate < '.(TIME_NOW - $generalOptions['periodOfGrace'] * 86400));				
 		$this->handleUserDelete($generalOptions);
 		if($generalOptions['sendProtocol']) {
 			$this->sendProtocol();
@@ -90,6 +90,7 @@ class InactiveUsersAdminToolsFunction extends AbstractAdminToolsFunction {
 		$sql = "SELECT user.* FROM wcf".WCF_N."_user user
 				LEFT JOIN wcf".WCF_N."_user_option_value user_option ON (user_option.userID = user.userID)				
 				WHERE user_option.useroption".WCF::getUser()->getUserOptionID('adminCanMail')." = 1
+				".($deleteOptions['notActivated'] ? " AND user.activationCode > 0" : "")." 
 				AND user.lastActivityTime < ".(TIME_NOW - ($deleteOptions['time'] - $generalOptions['warnTime']) * 86400)."
 				AND user.lastActivityTime > ".(TIME_NOW - ($deleteOptions['time'] - $generalOptions['warnTime'] + 1) * 86400)."
 				AND ".$this->ignoreCondition->get()."
@@ -126,7 +127,8 @@ class InactiveUsersAdminToolsFunction extends AbstractAdminToolsFunction {
 
 		$sql = "SELECT user.* FROM wcf".WCF_N."_user user
 				LEFT JOIN wcf".WCF_N."_user_option_value user_option ON (user_option.userID = user.userID)				
-				WHERE user.lastActivityTime < ".(TIME_NOW - ($deleteOptions['time'] * 86400))."				
+				WHERE user.lastActivityTime < ".(TIME_NOW - ($deleteOptions['time'] * 86400))."	
+				".($deleteOptions['notActivated'] ? " AND user.activationCode > 0" : "")."			
 				AND ".$this->ignoreCondition->get()."
 				GROUP BY user.userID";		
 		$result = WCF::getDB()->sendQuery($sql);		
