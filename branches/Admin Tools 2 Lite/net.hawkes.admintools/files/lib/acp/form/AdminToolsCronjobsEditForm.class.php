@@ -112,9 +112,9 @@ class AdminToolsCronjobsEditForm extends CronjobsEditForm {
 			}
 		}
 
-		if($this->wcfCronjob) {
-			foreach($this->activeFunctions as &$functionID) {
-				if(!empty($this->functions[$functionID]['packageDir'])) unset($functionID);
+		if($this->wcfCronjob) {			
+			foreach($this->activeFunctions as $functionID) {
+				if(!empty($this->functions[$functionID]['packageDir'])) unset($this->activeFunctions[$functionID]);
 			}
 		}
 

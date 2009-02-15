@@ -8,6 +8,12 @@
 					<classpath>lib/acp/admintools/function/BoardPrefixesAdminToolsFunction.class.php</classpath>
 				</function>
 				
+				<function name="wbb.subscriptionCleanup">
+					<classpath>lib/acp/admintools/function/SubscriptionCleanupAdminToolsFunction.class.php</classpath>
+					<savesettings>1</savesettings>
+					<executeascronjob>1</executeascronjob>
+				</function>
+				
 			</functions>
 	    
 	    <categories>
@@ -18,7 +24,12 @@
 			<category name="wbb.boardPrefixes">
 				<function>wbb.boardPrefixes</function>
 				<parent>wbb</parent>
-			</category>			
+			</category>
+			
+			<category name="wbb.subscriptionCleanup">
+				<function>wbb.subscriptionCleanup</function>
+				<parent>wbb</parent>
+			</category>					
 			
 	    </categories>
 	    
@@ -33,6 +44,12 @@
     			<categoryname>wbb.boardPrefixes</categoryname>
     			<optiontype>boardmultiselect</optiontype>    			
     			<showorder>2</showorder>
+    		</option>
+    		
+    		<option name="wbb.subscriptionCleanup.active">
+    			<categoryname>wbb.subscriptionCleanup</categoryname>
+    			<optiontype>boolean</optiontype>    			
+    			<showorder>1</showorder>
     		</option>
     		    		
 		</options>

@@ -5,13 +5,12 @@
         <packagename>AdminTools 2 WBB 3 Functions</packagename>
         <packagename language="de">AdminTools 2 WBB 3 Funktionen</packagename>
         <packagename language="de-informal">AdminTools 2 WBB 3 Funktionen</packagename>
-        <packagedescription>This is a set of functions for the WoltLab Burning Board 3. Included Functions: Copy board prefixes</packagedescription>        
-        <packagedescription language="de"><![CDATA[Dieses Paket beinhaltet Funktionen, die ausschließlich im WoltLab Burning Board 3 funktionieren. Enthaltene Funktionen: Forenpräfixe kopieren]]></packagedescription>
-        <packagedescription language="de-informal"><![CDATA[Dieses Paket beinhaltet Funktionen, die ausschließlich im WoltLab Burning Board 3 funktionieren. Enthaltene Funktionen: Forenpräfixe kopieren]]></packagedescription>
-        <version>1.0.0 alpha 1</version>
-        <date>2009-02-11</date>
-        <standalone>0</standalone>
-        <isUnique>1</isUnique> 
+        <packagedescription>This is a set of functions for the WoltLab Burning Board 3. Included Functions: Copy board prefixes, Cleanup subscriptions</packagedescription>        
+        <packagedescription language="de"><![CDATA[Dieses Paket beinhaltet Funktionen, die ausschließlich im WoltLab Burning Board 3 funktionieren. Enthaltene Funktionen: Forenpräfixe kopieren, Abonnements löschen]]></packagedescription>
+        <packagedescription language="de-informal"><![CDATA[Dieses Paket beinhaltet Funktionen, die ausschließlich im WoltLab Burning Board 3 funktionieren. Enthaltene Funktionen: Forenpräfixe kopieren, Abonnements löschen]]></packagedescription>
+        <version>1.0.0 alpha 2</version>
+        <date>2009-02-15</date>
+        <standalone>0</standalone>        
         <plugin>com.woltlab.wbb</plugin>              
         <packageurl>http://www.wbb3addons.de</packageurl>
     </packageinformation>
@@ -34,5 +33,11 @@
         <languages languagecode="de">de.xml</languages>               
         <languages languagecode="de-informal">de-informal.xml</languages>                       
     </instructions>
-
+	
+	<instructions type="update" fromversion="*">
+        <files>files.tar</files>                
+        <admintoolsfunction>admintools.xml</admintoolsfunction>        
+        <languages languagecode="de">de.xml</languages>               
+        <languages languagecode="de-informal">de-informal.xml</languages>                       
+    </instructions>
 </package>
