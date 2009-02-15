@@ -28,7 +28,7 @@ Wenn Sie kein Interesse mehr daran haben unserer Community beizuwohnen, dann ign
 ------------------------------------------------------------
 Diese E-Mail wurde automatisch versendet.]]></item>
 		<item name="wcf.acp.admintools.function.user.inactiveUsers.mailsubject"><![CDATA[{PAGE_TITLE}: Benutzerübersicht {$actionDate}]]></item>
-		<item name="wcf.acp.admintools.function.user.inactiveUsers.mailmessage"><![CDATA[Hallo {PAGE_TITLE} Admin,
+		<item name="wcf.acp.admintools.function.user.inactiveUsers.message"><![CDATA[Hallo {PAGE_TITLE} Admin,
 
 nachfolgend erhalten Sie die Benutzerübersicht vom {$actionDate}.]]></item>
 		<item name="wcf.acp.admintools.function.user.inactiveUsers.newUsers"><![CDATA[{$count} Neuanmeldungen vom Vortag ({$registrationDate}):]]></item>

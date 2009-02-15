@@ -3,9 +3,13 @@
 <package name="net.hawkes.admintools.wcf.functions">
     <packageinformation>
         <packagename>AdminTools 2 WCF LGPL Functions</packagename>
-        <packagedescription>This is a core set of functions for the WCF. This package requires the LGPL licensed packages of WoltLab only.</packagedescription>        
-        <version>1.0.0 dev 2</version>
-        <date>2009-02-04</date>
+        <packagename language="de">AdminTools 2 WCF LGPL Funktionen</packagename>
+        <packagename language="de-informal">AdminTools 2 WCF LGPL Funktionen</packagename>
+        <packagedescription>This is a core set of functions for the WCF. This package requires the LGPL licensed packages of WoltLab only. Included functions: Clear Caches, Copy user group rights, Optimize database, Delete inactive users, Override Language Settings</packagedescription>        
+        <packagedescription language="de"><![CDATA[Dieses Paket liefert einige Grundfunktionen für die Admin Tools. Es ist nur von den LGPL Pakete von WoltLab abhängig. Enthaltene Funktionen: Cacheleerung, Benutzergruppenrechte kopieren, Inaktive Benutzer löschen, Spracheinstellungen überschreiben.]]></packagedescription>
+        <packagedescription language="de-informal"><![CDATA[Dieses Paket liefert einige Grundfunktionen für die Admin Tools. Es ist nur von den LGPL Pakete von WoltLab abhängig. Enthaltene Funktionen: Cacheleerung, Benutzergruppenrechte kopieren, Inaktive Benutzer löschen, Spracheinstellungen überschreiben.]]></packagedescription>
+        <version>1.0.0 alpha 2</version>
+        <date>2009-02-14</date>
         <standalone>0</standalone>
         <isUnique>1</isUnique> 
         <plugin>com.woltlab.wcf</plugin>              
@@ -28,6 +32,11 @@
         <files>files.tar</files>                
         <admintoolsfunction>admintools.xml</admintoolsfunction>        
         <languages languagecode="de">de.xml</languages>               
+        <languages languagecode="de-informal">de-informal.xml</languages>        
+    </instructions>
+    
+    <instructions type="update" fromversion="1.0.0 alpha 1">
+        <files>files.tar</files>                                
     </instructions>
 
 </package>
