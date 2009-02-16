@@ -8,8 +8,8 @@
         <packagedescription>The Admin Tools 2 are a large collection of useful tools for administrators. It can be extended with new functions by using the functions interface.</packagedescription>
         <packagedescription language="de"><![CDATA[Die Admin Tools 2 sind eine große Sammlung von nützlichen Werkzeugen für Administratotren. Über die Funktionsschnittstelle kann es einfach um neue Funktionen erweitert werden.]]></packagedescription>        
         <packagedescription language="de-informal"><![CDATA[Die Admin Tools 2 sind eine große Sammlung von nützlichen Werkzeugen für Administratotren. Über die Funktionsschnittstelle kann es einfach um neue Funktionen erweitert werden.]]></packagedescription>
-        <version>1.0.0 beta 2</version>
-        <date>2009-02-15</date>
+        <version>1.0.0 beta 3</version>
+        <date>2009-02-17</date>
         <standalone>0</standalone>
         <isunique>1</isunique>
         <plugin>com.woltlab.wcf</plugin>        
