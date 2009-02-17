@@ -46,13 +46,13 @@ this is your overview about the users registered until {$actionDate}.]]></item>
 		<item name="wcf.acp.admintools.option.category.user.usergroupcopy"><![CDATA[Copy usergroups]]></item>
 		<item name="wcf.acp.admintools.option.category.user.usergroupcopy.description"><![CDATA[This function can copy grouprights from a group to an other group.]]></item>
 		<item name="wcf.acp.admintools.option.category.user.inactiveUsers"><![CDATA[Inactive users]]></item>
-		<item name="wcf.acp.admintools.option.category.user.inactiveUsers.description"><![CDATA[This function can delete inakcive users and/or imform them about their inactivity. Note, this option can be executed by a cronjob.]]></item>
+		<item name="wcf.acp.admintools.option.category.user.inactiveUsers.description"><![CDATA[This function can delete inactive users and/or inform them about their inactivity. Note, this option can be executed by a cronjob.]]></item>
 		<item name="wcf.acp.admintools.option.category.user.inactiveUsers.general"><![CDATA[general settings]]></item>		
 		<item name="wcf.acp.admintools.option.category.user.inactiveUsers.general.description"><![CDATA[]]></item>
 		<item name="wcf.acp.admintools.option.category.user.inactiveUsers.inactive"><![CDATA[Settings for inactive users]]></item>
 		<item name="wcf.acp.admintools.option.category.user.inactiveUsers.inactive.description"><![CDATA[]]></item>
 		<item name="wcf.acp.admintools.option.cache.clearCache.clearLanguageCache"><![CDATA[Clear language cache]]></item>
-		<item name="wcf.acp.admintools.option.cache.clearCache.clearLanguageCache.description"><![CDATA[If this function is activated, the cached languagefiles will be deleted by initiating it.]]></item>
+		<item name="wcf.acp.admintools.option.cache.clearCache.clearLanguageCache.description"><![CDATA[If this function is activated, the cached language files will be deleted by initiating it.]]></item>
 		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneCache"><![CDATA[Clear cache of the end-application: {@PACKAGE_NAME}]]></item>
 		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneCache.description"><![CDATA[If activated, the cache folder of {@PACKAGE_NAME} will be emptied.]]></item>
 		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneOptions"><![CDATA[Delete ptions cache of {@PACKAGE_NAME}]]></item>
