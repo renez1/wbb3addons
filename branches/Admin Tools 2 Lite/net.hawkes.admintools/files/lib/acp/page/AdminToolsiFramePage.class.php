@@ -70,5 +70,14 @@ class AdminToolsiFramePage extends AbstractPage {
 		
 		WCF::getTPL()->assign(array('iFrameData' => $this->iFrameData));
 	}
+
+	/**
+	 * @see Page::show()	 
+	 */
+	public function show() {
+		WCF::getUser()->checkPermission('admin.system.admintools.canView');
+
+		parent::show();
+	}
 }
 ?>

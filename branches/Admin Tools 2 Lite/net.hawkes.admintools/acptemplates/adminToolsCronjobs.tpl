@@ -30,7 +30,7 @@
 	</div>
 {else}
 	<div class="border">
-		<div class="containerHead"><h3>{lang}wcf.acp.cronjobs.list.count{/lang}</h3></div>
+		<div class="containerHead"><h3>{lang}wcf.acp.admintools.cronjobs.list.count{/lang}</h3></div>
 	</div>
 	<div class="border borderMarginRemove">
 		<table class="tableList">
@@ -51,11 +51,7 @@
 			<tbody>
 			{foreach from=$cronjobs item=cronjob}
 				<tr class="{cycle values="container-1,container-2"}">
-					<td class="columnIcon">
-						{if $this->user->getPermission('admin.system.cronjobs.canEditCronjob')}
-							<a href="index.php?action=AdminToolsCronjobExecute&amp;cronjobID={@$cronjob.cronjobID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}"><img src="{@RELATIVE_WCF_DIR}icon/cronjobExecuteS.png" alt="" title="{lang}wcf.acp.cronjobs.execute{/lang}" /></a>
-						{/if}
-						
+					<td class="columnIcon">						
 						{if $cronjob.enableDisable}
 							{if $cronjob.active}
 								<a href="index.php?action=AdminToolsCronjobsDisable&amp;cronjobID={@$cronjob.cronjobID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}"><img src="{@RELATIVE_WCF_DIR}icon/enabledS.png" alt="" title="{lang}wcf.acp.cronjobs.disable{/lang}" /></a>

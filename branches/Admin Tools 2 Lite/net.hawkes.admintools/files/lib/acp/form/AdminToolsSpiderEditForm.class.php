@@ -29,6 +29,7 @@ require_once(WCF_DIR.'lib/acp/form/AdminToolsSpiderAddForm.class.php');
  */
 class AdminToolsSpiderEditForm extends AdminToolsSpiderAddForm  {	
 	public $action = 'edit';
+	public $neededPermissions = 'admin.system.admintools.canView';
 	
 	public $spider;
 	public $spiderID = 0;

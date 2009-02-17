@@ -32,8 +32,7 @@ function toggleStandaloneFunctions() {
 <div class="contentHeader">
 	<div class="largeButtons">
 		<ul>
-			<li><a href="index.php?page=AdminToolsCronjobsList&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" title="{lang}wcf.acp.menu.link.cronjobs.view{/lang}"><img src="{@RELATIVE_WCF_DIR}icon/cronjobsM.png" alt="" /> <span>{lang}wcf.acp.menu.link.cronjobs.view{/lang}</span></a></li>
-			{if $action == 'edit'}<li><a href="index.php?action=AdminToolsCronjobExecute&amp;cronjobID={@$cronjobID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" title="{lang}wcf.acp.cronjobs.execute{/lang}"><img src="{@RELATIVE_WCF_DIR}icon/cronjobExecuteM.png" alt="" /> <span>{lang}wcf.acp.cronjobs.execute{/lang}</span></a></li>{/if}
+			<li><a href="index.php?page=AdminToolsCronjobsList&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" title="{lang}wcf.acp.menu.link.cronjobs.view{/lang}"><img src="{@RELATIVE_WCF_DIR}icon/cronjobsM.png" alt="" /> <span>{lang}wcf.acp.menu.link.cronjobs.view{/lang}</span></a></li>			
 		</ul>
 	</div>
 </div>

@@ -30,7 +30,8 @@ require_once(WCF_DIR.'lib/acp/form/OptionImportAndExportForm.class.php');
  */
 class AdminToolsImportAndExportForm extends OptionImportAndExportForm {
 	public $templateName = 'adminToolsImportAndExport';
-	public $activeMenuItem = 'wcf.acp.menu.link.admintools.importandexport';	
+	public $activeMenuItem = 'wcf.acp.menu.link.admintools.importandexport';
+	public $neededPermissions = 'admin.system.admintools.canView';	
 	
 	/**
 	 * @see Form::save()

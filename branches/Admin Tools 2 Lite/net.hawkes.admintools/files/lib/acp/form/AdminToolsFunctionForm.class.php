@@ -33,6 +33,7 @@ require_once(WCF_DIR.'lib/acp/admintools/AdminToolsFunctionExecution.class.php')
 class AdminToolsFunctionForm extends DynamicOptionListForm {
 	public $templateName = 'adminToolsFunction';
 	public $activeMenuItem = 'wcf.acp.menu.link.admintools.functions';
+	public $neededPermissions = 'admin.system.admintools.canView';
 	public $cacheName = 'admin_tools-option-';
 	public $options;
 	public $functions;
@@ -176,7 +177,7 @@ class AdminToolsFunctionForm extends DynamicOptionListForm {
 		WCFACP::getMenu()->setActiveMenuItem($this->activeMenuItem);
 		
 		// check permission
-		//WCF::getUser()->checkPermission($this->permission);
+		WCF::getUser()->checkPermission('admin.system.admintools.canView');
 
 		// get user options and categories from cache
 		$this->readCache();

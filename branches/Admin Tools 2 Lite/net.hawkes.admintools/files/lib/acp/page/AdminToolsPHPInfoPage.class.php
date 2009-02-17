@@ -77,6 +77,8 @@ class AdminToolsPHPInfoPage extends AbstractPage {
 		// enable menu item
 		WCFACP::getMenu()->setActiveMenuItem('wcf.acp.menu.link.admintools.phpinfo');
 
+		WCF::getUser()->checkPermission('admin.system.admintools.canView');
+		
 		// show page
 		parent::show();
 	}

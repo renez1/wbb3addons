@@ -268,7 +268,9 @@ class AdminToolsMenuAddForm extends DynamicOptionListForm  {
 	 */
 	public function show() {
 		WCFACP::getMenu()->setActiveMenuItem($this->activeMenuItem);
-
+		
+		WCF::getUser()->checkPermission('admin.system.admintools.canView');
+		
 		$this->readCache();
 
 		//WCF::getUser()->checkPermission('admin.headermenu.canAddItem');

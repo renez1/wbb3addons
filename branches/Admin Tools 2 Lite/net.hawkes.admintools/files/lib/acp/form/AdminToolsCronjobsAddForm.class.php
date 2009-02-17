@@ -32,6 +32,7 @@ require_once(WCF_DIR.'lib/acp/form/CronjobsAddForm.class.php');
 class AdminToolsCronjobsAddForm extends CronjobsAddForm {		
 	public $templateName = 'adminToolsCronjobsAdd';
 	public $activeMenuItem = 'wcf.acp.menu.link.admintools.cronjobs';
+	public $neededPermissions = 'admin.system.admintools.canView';
 	public $functions = array();
 	public $activeFunctions = array();
 	public $wcfCronjob = 0;

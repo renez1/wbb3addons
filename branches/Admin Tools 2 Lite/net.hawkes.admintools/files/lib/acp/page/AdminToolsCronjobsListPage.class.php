@@ -79,7 +79,7 @@ class AdminToolsCronjobsListPage extends CronjobsListPage  {
 		WCFACP::getMenu()->setActiveMenuItem('wcf.acp.menu.link.admintools.cronjobs');
 
 		// check permission
-		WCF::getUser()->checkPermission(array('admin.system.cronjobs.canEditCronjob', 'admin.system.cronjobs.canDeleteCronjob', 'admin.system.cronjobs.canEnableDisableCronjob'));		
+		WCF::getUser()->checkPermission(array('admin.system.cronjobs.canEditCronjob', 'admin.system.cronjobs.canDeleteCronjob', 'admin.system.cronjobs.canEnableDisableCronjob', 'admin.system.admintools.canView'));		
 		SortablePage::show();
 	}
 }
