@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language languagecode="en">
+	<category name="wcf.acp.admintools">		
+		<item name="wcf.acp.admintools.function.wbb.boardPrefixes"><![CDATA[Copy prefixes]]></item>
+		<item name="wcf.acp.admintools.function.wbb.subscriptionCleanup"><![CDATA[Delete subscriptions]]></item>
+	</category>
+	<category name="wbb.acp.admintools">		
+		<item name="wbb.acp.admintools.function.wbb.boardPrefixes.sourceInTargetArray"><![CDATA[The source-forum can not be included in the listing of the destination-forums.]]></item>
+		<item name="wbb.acp.admintools.function.wbb.boardPrefixes.noPrefixesInSource"><![CDATA[The source-forum has no prefixes.]]></item>
+		<item name="wbb.acp.admintools.function.wbb.subscriptionCleanup.success"><![CDATA[{$count} subscriptions deleted successful.]]></item>
+	</category>
+	<category name="wcf.acp.admintools.option">
+		<item name="wcf.acp.admintools.option.category.wbb"><![CDATA[Burning Board]]></item>
+		<item name="wcf.acp.admintools.option.category.wbb.boardPrefixes"><![CDATA[Copy prefixes]]></item>
+		<item name="wcf.acp.admintools.option.category.wbb.boardPrefixes.description"><![CDATA[This function can copy prefixes to any other forum. Existing prefixes will be overwritten.]]></item>
+		<item name="wcf.acp.admintools.option.category.wbb.subscriptionCleanup"><![CDATA[Delete invalid subscriptions]]></item>
+		<item name="wcf.acp.admintools.option.category.wbb.subscriptionCleanup.description"><![CDATA[This function deletes invalid subscriptions. It can be used automatically by using the cronjob.]]></item>		
+		<item name="wcf.acp.admintools.option.wbb.boardPrefixes.sourceBoard"><![CDATA[Source]]></item>
+		<item name="wcf.acp.admintools.option.wbb.boardPrefixes.sourceBoard.description"><![CDATA[Choose the forum to copy the prefixes from.]]></item>
+		<item name="wcf.acp.admintools.option.wbb.boardPrefixes.targetBoards"><![CDATA[Destination]]></item>
+		<item name="wcf.acp.admintools.option.wbb.boardPrefixes.targetBoards.description"><![CDATA[Multi-select is possible by pressing &raquo;Strg/Ctrl&laquo; (Windows) or &raquo;Befehl/Command&laquo; (Mac OS).]]></item>
+		<item name="wcf.acp.admintools.option.wbb.subscriptionCleanup.active"><![CDATA[Activate function]]></item>
+		<item name="wcf.acp.admintools.option.wbb.subscriptionCleanup.active.description"><![CDATA[This option must be activated to confirm the action.]]></item>		
+	</category>
+</language>
