@@ -8,7 +8,7 @@
         <packagedescription>This is a core of functions for the commercial WCF packages. This package requires some commercial WCF packages. Included functions: Prune PMs</packagedescription>        
         <packagedescription language="de"><![CDATA[Dieses Paket liefert einige WCF Funktionen für die Admin Tools. Es ist sind kommerzielle WCF Pakete erforderlich. Enthaltene Funktionen: PN Löschung.]]></packagedescription>
         <packagedescription language="de-informal"><![CDATA[Dieses Paket einige WCF Funktionen für die Admin Tools. Es ist sind kommerzielle WCF Pakete erforderlich. Enthaltene Funktionen: PN Löschung.]]></packagedescription>
-        <version>1.0.0 beta 1</version>
+        <version>1.0.0 RC 1</version>
         <date>2009-02-17</date>
         <standalone>0</standalone>
         <isUnique>1</isUnique> 
@@ -33,6 +33,10 @@
         <eventlistener>eventlistener.xml</eventlistener>
         <languages languagecode="de">de.xml</languages>               
         <languages languagecode="de-informal">de-informal.xml</languages>
+        <languages languagecode="en">en.xml</languages>        
+    </instructions>
+    
+    <instructions type="update" fromversion="*">        
         <languages languagecode="en">en.xml</languages>        
     </instructions>
 
