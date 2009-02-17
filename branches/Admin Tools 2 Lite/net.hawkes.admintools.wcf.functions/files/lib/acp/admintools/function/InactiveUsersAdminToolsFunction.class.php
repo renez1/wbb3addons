@@ -33,7 +33,9 @@ class InactiveUsersAdminToolsFunction extends AbstractAdminToolsFunction {
 	public $ignoreCondition;
 	public $warnedInactiveUsers = array();
 	public $deletedInactiveUsers = array();
-
+	public $message = '';
+	public $messageTableHeader = '';
+	
 	/**
 	 * @see AdminToolsFunction::execute($data)
 	 */
@@ -207,7 +209,12 @@ class InactiveUsersAdminToolsFunction extends AbstractAdminToolsFunction {
 			}
 			else $message .= "\n-";
 		}		
-		$mail = new Mail(array(MAIL_FROM_NAME => MAIL_FROM_ADDRESS), $subject, $message);
+		
+		$this->message = $message;
+		$this->messageTableHeader = $mailUserTableHeader;
+		EventHandler::fireAction($this, 'generateMessage');
+		
+		$mail = new Mail(array(MAIL_FROM_NAME => MAIL_FROM_ADDRESS), $subject, $this->message);
         $mail->send();
 	}
 }

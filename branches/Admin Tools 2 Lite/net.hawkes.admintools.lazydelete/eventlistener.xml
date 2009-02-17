@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/eventListeners.dtd">
+<data>
+	<import>
+ 		<eventlistener>
+  			<eventClassName>InactiveUsersAdminToolsFunction</eventClassName>
+  			<eventName>execute</eventName>
+  			<listenerClassFile>lib/system/event/listener/DeleteLazyUsersListener.class.php</listenerClassFile>
+  			<environment>admin</environment>  			
+ 		</eventlistener>
+ 		<eventlistener>
+  			<eventClassName>InactiveUsersAdminToolsFunction</eventClassName>
+  			<eventName>generateMessage</eventName>
+  			<listenerClassFile>lib/system/event/listener/DeleteLazyUsersListener.class.php</listenerClassFile>
+  			<environment>admin</environment>  			
+ 		</eventlistener> 		
+	</import>
+</data>

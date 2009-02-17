@@ -8,7 +8,7 @@
         <packagedescription>This is a set of functions for the WoltLab Burning Board 3. Included Functions: Copy board prefixes, Cleanup subscriptions</packagedescription>        
         <packagedescription language="de"><![CDATA[Dieses Paket beinhaltet Funktionen, die ausschließlich im WoltLab Burning Board 3 funktionieren. Enthaltene Funktionen: Forenpräfixe kopieren, Abonnements löschen]]></packagedescription>
         <packagedescription language="de-informal"><![CDATA[Dieses Paket beinhaltet Funktionen, die ausschließlich im WoltLab Burning Board 3 funktionieren. Enthaltene Funktionen: Forenpräfixe kopieren, Abonnements löschen]]></packagedescription>
-        <version>1.0.0 alpha 2</version>
+        <version>1.0.0 RC 1</version>
         <date>2009-02-15</date>
         <standalone>0</standalone>        
         <plugin>com.woltlab.wbb</plugin>              
