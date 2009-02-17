@@ -215,8 +215,6 @@ class AdminToolsMenuEditForm extends AdminToolsMenuAddForm {
 	 */
 	public function show() {
 
-		//WCF::getUser()->checkPermission('admin.headermenu.canEditItem');
-
 		parent::show();
 	}
 }

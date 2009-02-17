@@ -275,7 +275,8 @@ class AdminToolsLostAndFoundPage extends SortablePage  {
 	 * @see Page::show()	
 	 */
 	public function show() {
-
+		WCF::getUser()->checkPermission('admin.system.admintools.canView');
+		
 		WCFACP::getMenu()->setActiveMenuItem($this->activeMenuItem);
 
 		parent::show();

@@ -105,7 +105,7 @@ class AdminToolsMenuPage extends AbstractPage {
 		// enable menu item
 		WCFACP::getMenu()->setActiveMenuItem('wcf.acp.menu.link.admintools.menu');
 
-		//WCF::getUser()->checkPermission(array('admin.headermenu.canAddItem', 'admin.headermenu.canEditItem', 'admin.headermenu.canDeleteItem'));
+		WCF::getUser()->checkPermission('admin.system.admintools.canView');
 
 		parent::show();
 	}

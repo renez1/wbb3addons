@@ -58,6 +58,7 @@
 		<item name="wcf.acp.admintools.functions.success"><![CDATA[Die Einstellungen wurden erfolgreich gespeichert.]]></item>
 		<item name="wcf.acp.admintools.function.success"><![CDATA[Die Funktion &raquo;{$functionName}&laquo; wurde erfolgreich ausgeführt.]]></item>
 		<item name="wcf.acp.admintools.importAndExport"><![CDATA[Admin Tools Optionen sichern & wiederherstellten]]></item>
+		<item name="wcf.acp.admintools.cronjobs.list.count"><![CDATA[Insgesamt {#$items} Cronjobs]]></item>
 		<item name="wcf.acp.admintools.cronjobs.wcffunctions"><![CDATA[WCF Funktionen]]></item>
 		<item name="wcf.acp.admintools.cronjobs.wcffunctions.description"><![CDATA[Alle WCF Funktionen, die von Endanwendungen unabhängig sind.]]></item>
 		<item name="wcf.acp.admintools.cronjobs.standalonefunctions"><![CDATA[Endanwendungsfunktionen]]></item>
@@ -120,5 +121,11 @@
 	</category>
 	<category name="wcf.global">
 		<item name="wcf.global.button.saveSettings"><![CDATA[Einstellungen speichern]]></item>
+	</category>
+	<category name="wcf.acp.group">
+        <item name="wcf.acp.group.option.admin.system.admintools"><![CDATA[Admin Tools]]></item>
+        <item name="wcf.acp.group.option.admin.system.admintools.description"><![CDATA[]]></item>
+    	<item name="wcf.acp.group.option.admin.system.admintools.canView"><![CDATA[Admin Tools Rechte]]></item>
+    	<item name="wcf.acp.group.option.admin.system.admintools.canView.description"><![CDATA[Benutzer dieser Benutzergruppe können die Admin Tools verwenden.]]></item>
 	</category>
 </language>

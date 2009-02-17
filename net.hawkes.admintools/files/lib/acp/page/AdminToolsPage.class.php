@@ -39,6 +39,8 @@ class AdminToolsPage extends AbstractPage {
 		// set active menu item
 		WCFACP::getMenu()->setActiveMenuItem('wcf.acp.menu.link.admintools.index');
 		
+		WCF::getUser()->checkPermission('admin.system.admintools.canView');
+		
 		parent::show();
 	}
 }

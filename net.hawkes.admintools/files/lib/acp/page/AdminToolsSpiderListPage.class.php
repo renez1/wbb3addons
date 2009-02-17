@@ -88,6 +88,8 @@ class AdminToolsSpiderListPage extends SortablePage {
 		// enable menu item
 		WCFACP::getMenu()->setActiveMenuItem('wcf.acp.menu.link.admintools.spider');
 
+		WCF::getUser()->checkPermission('admin.system.admintools.canView');
+		
 		// show page
 		parent::show();
 	}

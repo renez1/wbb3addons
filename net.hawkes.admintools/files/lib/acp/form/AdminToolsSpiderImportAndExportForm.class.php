@@ -31,6 +31,7 @@ require_once(WCF_DIR.'lib/acp/form/ACPForm.class.php');
 class AdminToolsSpiderImportAndExportForm extends ACPForm {
 	public $templateName = 'adminToolsSpiderImportAndExport';
 	public $activeMenuItem = 'wcf.acp.menu.link.admintools.spider';
+	public $neededPermissions = 'admin.system.admintools.canView';
 
 	// parameters
 	public $spiderImport = null;

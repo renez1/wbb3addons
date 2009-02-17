@@ -31,6 +31,7 @@ require_once(WCF_DIR.'lib/acp/admintools/spider/SpiderEditor.class.php');
 class AdminToolsSpiderAddForm extends ACPForm  {
 	public $templateName = 'adminToolsSpiderAdd';
 	public $activeMenuItem = 'wcf.acp.menu.link.admintools.spider';
+	public $neededPermissions = 'admin.system.admintools.canView';
 	public $action = 'add';
 	
 	public $spiderName = '';
