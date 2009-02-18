@@ -9,7 +9,7 @@
         <packagedescription language="de"><![CDATA[Dieses Paket erweitert die Funktion Inaktive Benutzer löschen um eine Funktion mit der schreibfaule Benutzer gelöscht werden können.]]></packagedescription>
         <packagedescription language="de-informal"><![CDATA[Dieses Paket erweitert die Funktion Inaktive Benutzer löschen um eine Funktion mit der schreibfaule Benutzer gelöscht werden können.]]></packagedescription>
         <version>1.0.0 RC 1</version>
-        <date>2009-02-17</date>
+        <date>2009-02-18</date>
         <standalone>0</standalone>
         <isUnique>1</isUnique> 
         <plugin>com.woltlab.wbb</plugin>              
