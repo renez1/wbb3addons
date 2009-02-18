@@ -9,7 +9,7 @@
         <packagedescription language="de"><![CDATA[Dieses Paket liefert einige Grundfunktionen für die Admin Tools. Es ist nur von den LGPL Pakete von WoltLab abhängig. Enthaltene Funktionen: Cacheleerung, Benutzergruppenrechte kopieren, Inaktive Benutzer löschen, Spracheinstellungen überschreiben.]]></packagedescription>
         <packagedescription language="de-informal"><![CDATA[Dieses Paket liefert einige Grundfunktionen für die Admin Tools. Es ist nur von den LGPL Pakete von WoltLab abhängig. Enthaltene Funktionen: Cacheleerung, Benutzergruppenrechte kopieren, Inaktive Benutzer löschen, Spracheinstellungen überschreiben.]]></packagedescription>
         <version>1.0.0 RC 1</version>
-        <date>2009-02-17</date>
+        <date>2009-02-18</date>
         <standalone>0</standalone>
         <isUnique>1</isUnique> 
         <plugin>com.woltlab.wcf</plugin>              

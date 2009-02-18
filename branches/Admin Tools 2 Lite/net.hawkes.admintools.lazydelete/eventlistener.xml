@@ -13,6 +13,18 @@
   			<eventName>generateMessage</eventName>
   			<listenerClassFile>lib/system/event/listener/DeleteLazyUsersListener.class.php</listenerClassFile>
   			<environment>admin</environment>  			
- 		</eventlistener> 		
+ 		</eventlistener> 
+ 		<eventlistener>
+  			<eventClassName>InactiveUsersAdminToolsFunction</eventClassName>
+  			<eventName>execute</eventName>
+  			<listenerClassFile>lib/system/event/listener/DeleteLazyUsersListener.class.php</listenerClassFile>
+  			<environment>user</environment>  			
+ 		</eventlistener>
+ 		<eventlistener>
+  			<eventClassName>InactiveUsersAdminToolsFunction</eventClassName>
+  			<eventName>generateMessage</eventName>
+  			<listenerClassFile>lib/system/event/listener/DeleteLazyUsersListener.class.php</listenerClassFile>
+  			<environment>user</environment>  			
+ 		</eventlistener> 			
 	</import>
 </data>

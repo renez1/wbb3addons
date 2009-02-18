@@ -2,6 +2,7 @@
 <!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
 <language languagecode="de-informal">
 <category name="wcf.acp.admintools">
+		<item name="wcf.acp.admintools.about"><![CDATA[Über Admin Tools 2]]></item>
 		<item name="wcf.acp.admintools.acpmenu.add"><![CDATA[Menüeintrag hinzufügen]]></item>		
 		<item name="wcf.acp.admintools.acpmenu.add.success"><![CDATA[Der Menüeintrag wurde erfolgreich hinzugefügt.]]></item>
 		<item name="wcf.acp.admintools.acpmenu.edit"><![CDATA[Menüeintrag bearbeiten]]></item>
@@ -38,6 +39,14 @@
 		<item name="wcf.acp.admintools.acpmenu.borderStyle"><![CDATA[Stil des Rahmens]]></item>
 		<item name="wcf.acp.admintools.acpmenu.borderStyle.description"><![CDATA[Wähle einen Rahmenstil aus.]]></item>  
 		<item name="wcf.acp.admintools.cronjob"><![CDATA[Cronjob]]></item>
+		<item name="wcf.acp.admintools.credits"><![CDATA[Über Admin Tools 2]]></item>
+		<item name="wcf.acp.admintools.credits.developedFor"><![CDATA[Entwickelt für]]></item>
+		<item name="wcf.acp.admintools.credits.developer"><![CDATA[Programmierung]]></item>
+		<item name="wcf.acp.admintools.credits.icons"><![CDATA[Icons & Grafiken]]></item>
+		<item name="wcf.acp.admintools.credits.contributor"><![CDATA[Mitwirkende]]></item>
+		<item name="wcf.acp.admintools.credits.translators"><![CDATA[Übersetzung]]></item>
+		<item name="wcf.acp.admintools.credits.donate"><![CDATA[Spenden]]></item>
+		<item name="wcf.acp.admintools.credits.donate.description"><![CDATA[Die Entwicklung dieses Plugins hat eine sehr hohe Entwicklungszeit gehabt. Wer die weitere Entwicklung unterstützen möchte oder sich bedanken möchte kann dies hier mit einer kleinen Spende tun.]]></item>
 		<item name="wcf.acp.admintools.diskinformation"><![CDATA[Speicherkapazität {#$diskInformation.totalSpace} MB - frei {#$diskInformation.freeSpace}  MB - benutzt {#$diskInformation.usedSpace} MB]]></item>
 		<item name="wcf.acp.admintools.function.run"><![CDATA[Ausführen]]></item>
 		<item name="wcf.acp.admintools.functions"><![CDATA[Funktionen]]></item>
@@ -113,6 +122,7 @@
 		<item name="wcf.acp.menu.link.admintools.menu"><![CDATA[Admin Links]]></item>
 		<item name="wcf.acp.menu.link.admintools.phpinfo"><![CDATA[PHP Info]]></item>
 		<item name="wcf.acp.menu.link.admintools.spider"><![CDATA[Spider]]></item>
+		<item name="wcf.acp.menu.link.admintools.about"><![CDATA[Über Admin Tools 2]]></item>
 	</category>
 	<category name="wcf.acp.package">
 		<item name="wcf.acp.package.step.install.AdminToolsFunctionPackageInstallationPlugin"><![CDATA[Admin Tools Funktionen werden installiert ...]]></item>
