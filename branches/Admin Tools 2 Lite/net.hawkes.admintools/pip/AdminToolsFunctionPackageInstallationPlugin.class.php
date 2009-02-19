@@ -290,7 +290,7 @@ class AdminToolsFunctionPackageInstallationPlugin extends AbstractOptionPackageI
 
 		// delete functions
 		$sql = "DELETE FROM	wcf".WCF_N."_admin_tools_function
-			WHERE		packageID = ".$this->installation->getpackageID();
+			WHERE		packageID = ".$this->installation->getPackageID();
 		WCF::getDB()->sendQuery($sql);
 	}
 

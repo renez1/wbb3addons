@@ -2,7 +2,7 @@
 require_once(WCF_DIR.'lib/acp/admintools/function/AbstractAdminToolsFunction.class.php');
 
 /**
- * Copies board prefixes
+ * This function assigns boards as subscriptions to user groups
  *
  * This file is part of Admin Tools 2.
  *
@@ -26,7 +26,7 @@ require_once(WCF_DIR.'lib/acp/admintools/function/AbstractAdminToolsFunction.cla
  * @subpackage acp.admintools.function
  * @category WBB
  */
-class BoardPrefixesAdminToolsFunction extends AbstractAdminToolsFunction {
+class AssignSubscriptionAdminToolsFunction extends AbstractAdminToolsFunction {
 	
 	/**
 	 * @see AdminToolsFunction::execute($data)
@@ -34,27 +34,35 @@ class BoardPrefixesAdminToolsFunction extends AbstractAdminToolsFunction {
 	public function execute($data) {
 		parent::execute($data);
 		
-		$parameters = $data['parameters']['wbb.boardPrefixes'];
-		$sourceBoardID = intval($parameters['sourceBoard']);		
-		$targetBoardIDs = ArrayUtil::toIntegerArray(explode(',', $parameters['targetBoards']));
-		if (in_array($sourceBoardID, $targetBoardIDs)) {
-			$this->setReturnMessage('error', WCF::getLanguage()->get('wbb.acp.admintools.function.wbb.boardPrefixes.sourceInTargetArray'));
-			return;
+		$parameters = $data['parameters']['wbb.assignSubscription'];			
+		$boardIDs = ArrayUtil::toIntegerArray(explode(',', $parameters['boards']));
+		$usergroup = $parameters['usergroup'];		
+								
+		$sql = "SELECT user.userID, user_option.userOption".WCF::getUser()->getUserOptionID('enableEmailNotification')." AS notify FROM wcf".WCF_N."_user user
+				LEFT JOIN wcf".WCF_N."_user_option_value user_option
+				ON (user_option.userID = user.userID)
+				LEFT JOIN wcf".WCF_N."_user_to_groups user_to_group
+				ON (user_to_group.userID = user.userID)
+				WHERE user_to_group.groupID = ".$usergroup;
+		$result = WCF::getDB()->sendQuery($sql);
+		
+		$inserts = '';
+		while ($row = WCF::getDB()->fetchArray($result)) {
+			foreach($boardIDs as $boardID) {
+				if (!empty($inserts)) $inserts .= ',';
+				$inserts .= '('.$row['userID'].', '.$boardID.', '.$row['notify'].')';
+			}
 		}
 		
-		$sql = "SELECT prefixes FROM wbb".WBB_N."_board WHERE boardID = ".$sourceBoardID;
-		$row = WCF::getDB()->getFirstRow($sql);
-		if (!empty($row['prefixes'])) {
-			$sql = "UPDATE wbb".WBB_N."_board SET prefixes = '".escapeString($row['prefixes'])."'
-					WHERE boardID IN (".implode(',', $targetBoardIDs).")";
+		if (!empty($inserts)) {
+			$sql = "INSERT IGNORE INTO wbb".WBB_N."_board_subscription
+						( userID, boardID, enableNotification)
+						VALUES "
+						.$inserts;
 			WCF::getDB()->sendQuery($sql);
-			
-			// reset cache
-			WCF::getCache()->clear(WBB_DIR.'cache/', 'cache.board*', true);
 		}
-		else {
-			$this->setReturnMessage('warning', WCF::getLanguage()->get('wbb.acp.admintools.function.wbb.boardPrefixes.noPrefixesInSource'));
-		}
+		
+		$this->executed();
 	}
 }
 

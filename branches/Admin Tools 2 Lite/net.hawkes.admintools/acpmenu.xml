@@ -78,7 +78,7 @@
 		<acpmenuitem name="wcf.acp.menu.link.admintools.about">
 			<parent>wcf.acp.menu.link.admintools.miscellanious</parent>
 			<link>index.php?page=AdminToolsAbout</link>
-			<icon>icon/adminToolsMenuAboutM.png</icon>
+			<icon>icon/adminToolsAboutM.png</icon>
 			<showorder>2</showorder>		
 			<permissions>admin.system.admintools.canView</permissions>	
 		</acpmenuitem>

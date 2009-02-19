@@ -46,7 +46,7 @@
 		<item name="wcf.acp.admintools.credits.contributor"><![CDATA[Mitwirkende]]></item>
 		<item name="wcf.acp.admintools.credits.translators"><![CDATA[Übersetzung]]></item>
 		<item name="wcf.acp.admintools.credits.donate"><![CDATA[Spenden]]></item>
-		<item name="wcf.acp.admintools.credits.donate.description"><![CDATA[Die Entwicklung dieses Plugins hat eine sehr hohe Entwicklungszeit gehabt. Wer die weitere Entwicklung unterstützen möchte oder sich bedanken möchte kann dies hier mit einer kleinen Spende tun.]]></item>
+		<item name="wcf.acp.admintools.credits.donate.description"><![CDATA[Dieses Plugins hat eine sehr lange Entwicklungszeit benötigt. Wer die weitere Entwicklung unterstützen möchte oder sich bedanken möchte kann dies hier mit einer kleinen Spende tun.]]></item>
 		<item name="wcf.acp.admintools.diskinformation"><![CDATA[Speicherkapazität {#$diskInformation.totalSpace} MB - frei {#$diskInformation.freeSpace}  MB - benutzt {#$diskInformation.usedSpace} MB]]></item>
 		<item name="wcf.acp.admintools.function.run"><![CDATA[Ausführen]]></item>
 		<item name="wcf.acp.admintools.functions"><![CDATA[Funktionen]]></item>
