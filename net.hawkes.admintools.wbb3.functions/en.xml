@@ -16,7 +16,9 @@
 		<item name="wcf.acp.admintools.option.category.wbb.boardPrefixes"><![CDATA[Copy prefixes]]></item>
 		<item name="wcf.acp.admintools.option.category.wbb.boardPrefixes.description"><![CDATA[This function can copy prefixes to any other forum. Existing prefixes will be overwritten.]]></item>
 		<item name="wcf.acp.admintools.option.category.wbb.subscriptionCleanup"><![CDATA[Delete invalid subscriptions]]></item>
-		<item name="wcf.acp.admintools.option.category.wbb.subscriptionCleanup.description"><![CDATA[This function deletes invalid subscriptions. It can be used automatically by using the cronjob.]]></item>		
+		<item name="wcf.acp.admintools.option.category.wbb.subscriptionCleanup.description"><![CDATA[This function deletes invalid subscriptions. It can be used automatically by using the cronjob.]]></item>
+		<item name="wcf.acp.admintools.option.category.wbb.assignSubscription"><![CDATA[Assign subscriptions]]></item>
+		<item name="wcf.acp.admintools.option.category.wbb.assignSubscription.description"><![CDATA[This function allows you to assign boards to a usergroup as subscription.]]></item>		
 		<item name="wcf.acp.admintools.option.wbb.boardPrefixes.sourceBoard"><![CDATA[Source]]></item>
 		<item name="wcf.acp.admintools.option.wbb.boardPrefixes.sourceBoard.description"><![CDATA[Choose the forum to copy the prefixes from.]]></item>
 		<item name="wcf.acp.admintools.option.wbb.boardPrefixes.targetBoards"><![CDATA[Destination]]></item>
