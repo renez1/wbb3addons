@@ -66,6 +66,11 @@ class AdminToolsSpiderListPage extends SortablePage {
 		
 		// build page url
 		$this->url = 'index.php?page=AdminToolsSpiderList&pageNo='.$this->pageNo.'&sortField='.$this->sortField.'&sortOrder='.$this->sortOrder.'&packageID='.PACKAGE_ID.SID_ARG_2ND_NOT_ENCODED;
+		
+		$sessionVars = WCF::getSession()->getVars();
+		if (isset($sessionVars['markedSpiders'])) {
+			$this->markedSpiders = count($sessionVars['markedSpiders']);
+		}
 	}
 	
 	/**

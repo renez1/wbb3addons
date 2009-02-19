@@ -66,6 +66,8 @@ class BoardPermissionsAdminToolsFunction extends AbstractAdminToolsFunction {
 		WCF::getCache()->clear(WBB_DIR.'cache/', 'cache.board*', true);
 		// reset all sessions
 		Session::resetSessions();
+		
+		$this->executed();
 	}
 
 	/**
