@@ -4,6 +4,7 @@
 	<category name="wcf.acp.admintools">		
 		<item name="wcf.acp.admintools.function.wbb.boardPrefixes"><![CDATA[Copy prefixes]]></item>
 		<item name="wcf.acp.admintools.function.wbb.subscriptionCleanup"><![CDATA[Delete subscriptions]]></item>
+		<item name="wcf.acp.admintools.function.wbb.assignSubscripion"><![CDATA[Assign subscriptions]]></item>
 	</category>
 	<category name="wbb.acp.admintools">		
 		<item name="wbb.acp.admintools.function.wbb.boardPrefixes.sourceInTargetArray"><![CDATA[The source-forum can not be included in the listing of the destination-forums.]]></item>
@@ -21,6 +22,10 @@
 		<item name="wcf.acp.admintools.option.wbb.boardPrefixes.targetBoards"><![CDATA[Destination]]></item>
 		<item name="wcf.acp.admintools.option.wbb.boardPrefixes.targetBoards.description"><![CDATA[Multi-select is possible by pressing &raquo;Strg/Ctrl&laquo; (Windows) or &raquo;Befehl/Command&laquo; (Mac OS).]]></item>
 		<item name="wcf.acp.admintools.option.wbb.subscriptionCleanup.active"><![CDATA[Activate function]]></item>
-		<item name="wcf.acp.admintools.option.wbb.subscriptionCleanup.active.description"><![CDATA[This option must be activated to confirm the action.]]></item>		
+		<item name="wcf.acp.admintools.option.wbb.subscriptionCleanup.active.description"><![CDATA[This option must be activated to confirm the action.]]></item>
+		<item name="wcf.acp.admintools.option.wbb.assignSubscription.boards"><![CDATA[Boards]]></item>
+		<item name="wcf.acp.admintools.option.wbb.assignSubscription.boards.description"><![CDATA[Choose the boards which will be assigned to the users of the selected usergroup below.]]></item>
+		<item name="wcf.acp.admintools.option.wbb.assignSubscription.usergroup"><![CDATA[Usergroup]]></item>
+		<item name="wcf.acp.admintools.option.wbb.assignSubscription.usergroup.description"><![CDATA[The usergroup's users will get the above selected boards assigned as subscription.]]></item>		
 	</category>
 </language>
