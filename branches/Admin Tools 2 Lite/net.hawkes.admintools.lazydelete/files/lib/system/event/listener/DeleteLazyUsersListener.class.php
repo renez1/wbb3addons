@@ -41,19 +41,18 @@ class DeleteLazyUsersListener implements EventListener {
 		$this->data = $eventObj->data;
 		$generalOptions = $this->data['parameters']['user.inactiveUsers.general'];
 		$this->ignoreCondition = new ConditionBuilder(false);
-		$this->ignoreCondition->add('user.userID NOT IN ('.$generalOptions['ignoredUserIDs'].')');
-		$this->ignoreCondition->add('user.userID NOT IN (SELECT userID FROM wcf'.WCF_N.'_user_to_groups WHERE groupID IN ('.$generalOptions['ignoredUsergroupIDs'].'))');
+		if (!empty($generalOptions['ignoredUserIDs'])) $this->ignoreCondition->add('user.userID NOT IN ('.$generalOptions['ignoredUserIDs'].')');
+		if (!empty($generalOptions['ignoredUsergroupIDs'])) $this->ignoreCondition->add('user.userID NOT IN (SELECT userID FROM wcf'.WCF_N.'_user_to_groups WHERE groupID IN ('.$generalOptions['ignoredUsergroupIDs'].'))');
 		$this->ignoreCondition->add('user.registrationDate < '.(TIME_NOW - $generalOptions['periodOfGrace'] * 86400));
 		switch($eventName) {
 			case 'execute' :
 				$this->handleLazyUsers($this->data['parameters']['user.inactiveUsers.general']);
+				$eventObj->setReturnMessage('success',  WCF::getLanguage()->get('wbb.acp.admintools.function.user.inactiveUsers.lazy.success', array('$countDeleted' => count($this->deletedLazyUsers), '$countWarned' => count($this->warnedLazyUsers))));
 				break;
 			case 'generateMessage' :
 				$this->appendMessage($eventObj);
 				break;
-		}
-		
-		$eventObj->setReturnMessage('success',  WCF::getLanguage()->get('wbb.acp.admintools.function.user.inactiveUsers.lazy.success', array('$countDeleted' => count($this->deletedLazyUsers), '$countWarned' => count($this->warnedLazyUsers))));
+		}				
 	}
 
 	/**

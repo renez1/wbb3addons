@@ -8,10 +8,10 @@
         <packagedescription>This plugin extends inactive users delete function by an option to delete users who are alzy at posting.</packagedescription>        
         <packagedescription language="de"><![CDATA[Dieses Paket erweitert die Funktion Inaktive Benutzer löschen um eine Funktion mit der schreibfaule Benutzer gelöscht werden können.]]></packagedescription>
         <packagedescription language="de-informal"><![CDATA[Dieses Paket erweitert die Funktion Inaktive Benutzer löschen um eine Funktion mit der schreibfaule Benutzer gelöscht werden können.]]></packagedescription>
-        <version>1.0.0 RC 1</version>
-        <date>2009-02-18</date>
+        <version>1.0.0</version>
+        <date>2009-02-22</date>
         <standalone>0</standalone>
-        <isUnique>1</isUnique> 
+        <isUnique>0</isUnique> 
         <plugin>com.woltlab.wbb</plugin>              
         <packageurl>http://www.wbb3addons.de</packageurl>
     </packageinformation>
@@ -28,6 +28,15 @@
     </requiredpackages>
 
     <instructions type="install">
+        <files>files.tar</files>                
+        <admintoolsfunction>admintools.xml</admintoolsfunction>     
+        <eventlistener>eventlistener.xml</eventlistener>   
+        <languages languagecode="de">de.xml</languages>               
+        <languages languagecode="de-informal">de-informal.xml</languages>
+        <languages languagecode="en">en.xml</languages>        
+    </instructions>
+    
+    <instructions type="update" fromversion="1.0.0*">
         <files>files.tar</files>                
         <admintoolsfunction>admintools.xml</admintoolsfunction>     
         <eventlistener>eventlistener.xml</eventlistener>   
