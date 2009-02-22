@@ -46,8 +46,8 @@ class InactiveUsersAdminToolsFunction extends AbstractAdminToolsFunction {
 
 		// initalize the default condition to filter certain users
 		$this->ignoreCondition = new ConditionBuilder(false);
-		$this->ignoreCondition->add('user.userID NOT IN ('.$generalOptions['ignoredUserIDs'].')');
-		$this->ignoreCondition->add('user.userID NOT IN (SELECT userID FROM wcf'.WCF_N.'_user_to_groups WHERE groupID IN ('.$generalOptions['ignoredUsergroupIDs'].'))');
+		if (!empty($generalOptions['ignoredUserIDs'])) $this->ignoreCondition->add('user.userID NOT IN ('.$generalOptions['ignoredUserIDs'].')');
+		if (!empty($generalOptions['ignoredUsergroupIDs'])) $this->ignoreCondition->add('user.userID NOT IN (SELECT userID FROM wcf'.WCF_N.'_user_to_groups WHERE groupID IN ('.$generalOptions['ignoredUsergroupIDs'].'))');
 		$this->ignoreCondition->add('user.registrationDate < '.(TIME_NOW - $generalOptions['periodOfGrace'] * 86400));				
 		$this->handleUserDelete($generalOptions);
 		if($generalOptions['sendProtocol']) {
