@@ -55,7 +55,7 @@ class AdminToolsFunctionPackageInstallationPlugin extends AbstractOptionPackageI
 			}
 		}
 		catch(DatabaseException $e) {
-			// do nothing. this should only crash if this is the installation of the admin tools itself. 
+			// do nothing. this should only crash if this is the installation of the admin tools itself.
 		}
 		if (!$xml = $this->getXML()) {
 			return;
@@ -274,12 +274,17 @@ class AdminToolsFunctionPackageInstallationPlugin extends AbstractOptionPackageI
 	 * @see PackageInstallationPlugin::hasUninstall()
 	 */
 	public function hasUninstall() {
-		$hasUninstallOptions = parent::hasUninstall();
-		$sql = "SELECT 	COUNT(functionID) AS count
+		try {
+			$hasUninstallOptions = parent::hasUninstall();
+			$sql = "SELECT 	COUNT(functionID) AS count
 			FROM 	wcf".WCF_N."_admin_tools_function
 			WHERE	packageID = ".$this->installation->getPackageID();
-		$categoryCount = WCF::getDB()->getFirstRow($sql);
-		return ($hasUninstallOptions || $categoryCount['count'] > 0);
+			$categoryCount = WCF::getDB()->getFirstRow($sql);
+			return ($hasUninstallOptions || $categoryCount['count'] > 0);
+		}
+		catch (DatabaseException $ex) {
+			return 0;
+		}
 	}
 
 	/**

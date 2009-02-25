@@ -53,10 +53,10 @@ this is your overview about the users registered until {$actionDate}.]]></item>
 		<item name="wcf.acp.admintools.option.category.user.inactiveUsers.inactive.description"><![CDATA[]]></item>
 		<item name="wcf.acp.admintools.option.cache.clearCache.clearLanguageCache"><![CDATA[Clear language cache]]></item>
 		<item name="wcf.acp.admintools.option.cache.clearCache.clearLanguageCache.description"><![CDATA[If this function is activated, the cached language files will be deleted by initiating it.]]></item>
-		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneCache"><![CDATA[Clear cache of the end-application: {@PACKAGE_NAME}]]></item>
-		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneCache.description"><![CDATA[If activated, the cache folder of {@PACKAGE_NAME} will be emptied.]]></item>
-		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneOptions"><![CDATA[Delete ptions cache of {@PACKAGE_NAME}]]></item>
-		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneOptions.description"><![CDATA[If activated, the options cache and the optionsfile of {@PACKAGE_NAME} will be deleted.]]></item>
+		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneCache"><![CDATA[Clear cache of the standalone application]]></item>
+		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneCache.description"><![CDATA[If activated, the cache folder of the standalone application will be emptied.]]></item>
+		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneOptions"><![CDATA[Delete ptions cache of the standalone application]]></item>
+		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneOptions.description"><![CDATA[If activated, the options cache and the options file of the standalone application will be deleted.]]></item>
 		<item name="wcf.acp.admintools.option.cache.clearCache.clearTemplateCache"><![CDATA[Clear template cache]]></item>
 		<item name="wcf.acp.admintools.option.cache.clearCache.clearTemplateCache.description"><![CDATA[If activated, the compiled templates will be deleted.]]></item>
 		<item name="wcf.acp.admintools.option.cache.clearCache.clearWCFCache"><![CDATA[Clear cache of the WoltLab Community Framework]]></item>
