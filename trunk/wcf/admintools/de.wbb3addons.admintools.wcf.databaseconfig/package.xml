@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+<package name="de.wbb3addons.admintools.wcf.databaseconfig">
+	<packageinformation>
+		<packagename>AdminTools 2 DatabaseConfig</packagename>
+		<packagedescription>Ändern der WCF-Datenbankangaben direkt aus dem ACP.</packagedescription>        
+		<version>1.0.2</version>
+		<date>2009-02-22</date>
+		<standalone>0</standalone>
+		<isUnique>1</isUnique> 
+		<plugin>com.woltlab.wcf</plugin>              
+		<packageurl>http://www.wbb3addons.de</packageurl>
+	</packageinformation>
+
+	<authorinformation>
+		<author>Nendilo</author>
+		<authorurl>http://www.wbb3addons.de</authorurl>
+	</authorinformation>
+
+	<requiredpackages>
+		<requiredPackage>com.woltlab.wcf</requiredPackage>
+		<requiredPackage>net.hawkes.admintools</requiredPackage>
+		<requiredPackage minversion="1.0.0" file="requirements/de.wbb3plugins.optiontype.charsetselects.tar.gz">de.wbb3plugins.optiontype.charsetselects</requiredPackage>         
+	</requiredpackages>
+
+	<instructions type="install">
+		<files>files.tar</files>
+		<admintoolsfunction>admintools.xml</admintoolsfunction>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="en">en.xml</languages>
+	</instructions>
+	<instructions type="update" fromversion="1.0.0">
+		<files>files.tar</files>
+		<admintoolsfunction>admintools.xml</admintoolsfunction>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="en">en.xml</languages>
+	</instructions>
+
+	<instructions type="update" fromversion="1.0.1">
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="en">en.xml</languages>
+	</instructions>
+
+</package>

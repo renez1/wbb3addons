@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTD/options.dtd">
+<data>
+    <import>
+			<functions>
+				
+				<function name="database.config">
+					<classpath>lib/acp/admintools/function/DatabaseConfigAdminToolsFunction.class.php</classpath>
+					<savesettings>1</savesettings>
+					<executeascronjob>0</executeascronjob>
+				</function>
+				
+			</functions>
+	    
+	    <categories>
+        
+	    	<category name="database">
+			</category>
+
+			<category name="database.config">
+				<function>database.config</function>
+				<parent>database</parent>
+			</category>
+			
+	    </categories>
+	    
+	    <options>
+        
+	    	<option name="database.config.dbHost">
+				<categoryname>database.config</categoryname>
+				<optiontype>text</optiontype>
+				<showorder>1</showorder>
+			</option>
+        
+	    	<option name="database.config.dbUser">
+				<categoryname>database.config</categoryname>
+				<optiontype>text</optiontype>
+				<showorder>2</showorder>
+			</option>
+        
+	    	<option name="database.config.dbPassword1">
+				<categoryname>database.config</categoryname>
+				<optiontype>password</optiontype>
+				<showorder>3</showorder>
+			</option>
+        
+	    	<option name="database.config.dbPassword2">
+				<categoryname>database.config</categoryname>
+				<optiontype>password</optiontype>
+				<showorder>4</showorder>
+			</option>
+        
+	    	<option name="database.config.dbName">
+				<categoryname>database.config</categoryname>
+				<optiontype>text</optiontype>
+				<showorder>5</showorder>
+			</option>
+        
+	    	<option name="database.config.dbCharset">
+				<categoryname>database.config</categoryname>
+				<optiontype>charsetsingleselect</optiontype>
+				<showorder>6</showorder>
+			</option>
+        
+	    	<option name="database.config.wcfNumber">
+				<categoryname>database.config</categoryname>
+				<optiontype>integer</optiontype>
+                <defaultvalue></defaultvalue>
+				<showorder>7</showorder>
+			</option>
+        
+	    	<option name="database.config.checkConnect">
+				<categoryname>database.config</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+                <enableoptions>database.config.checkTables</enableoptions>
+				<showorder>8</showorder>
+			</option>
+        
+	    	<option name="database.config.checkTables">
+				<categoryname>database.config</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+				<showorder>9</showorder>
+			</option>
+        
+	    	<option name="database.config.oldDbPassword">
+				<categoryname>database.config</categoryname>
+				<optiontype>password</optiontype>
+				<showorder>10</showorder>
+			</option>
+            
+		</options>
+        
+    </import>
+</data>
