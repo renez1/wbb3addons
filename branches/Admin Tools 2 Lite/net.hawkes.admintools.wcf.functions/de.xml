@@ -53,10 +53,10 @@ nachfolgend erhalten Sie die Benutzerübersicht vom {$actionDate}.]]></item>
 		<item name="wcf.acp.admintools.option.category.user.inactiveUsers.inactive.description"><![CDATA[]]></item>
 		<item name="wcf.acp.admintools.option.cache.clearCache.clearLanguageCache"><![CDATA[Sprachcache leeren]]></item>
 		<item name="wcf.acp.admintools.option.cache.clearCache.clearLanguageCache.description"><![CDATA[Ist diese Einstellung aktiviert, werden alle gecachten Sprachdateien beim Ausführen dieser Funktion gelöscht.]]></item>
-		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneCache"><![CDATA[Cacheverzeichnis der Endanwendung {@PACKAGE_NAME} leeren]]></item>
-		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneCache.description"><![CDATA[Ist diese Einstellung aktiviert, wird das Cache Verzeichnis der Endanwendung {@PACKAGE_NAME} beim Ausführen der Funktion geleert.]]></item>
-		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneOptions"><![CDATA[Optionscache der Endanwendung {@PACKAGE_NAME} löschen]]></item>
-		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneOptions.description"><![CDATA[Ist diese Einstellung aktiviert, wird der Optionscache und die Optionsdatei der Endanwendung {@PACKAGE_NAME} beim Ausführen dieser Funktion gelöscht.]]></item>
+		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneCache"><![CDATA[Cacheverzeichnis der Endanwendung leeren]]></item>
+		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneCache.description"><![CDATA[Ist diese Einstellung aktiviert, wird das Cache Verzeichnis der Endanwendung beim Ausführen der Funktion geleert.]]></item>
+		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneOptions"><![CDATA[Optionscache der Endanwendung löschen]]></item>
+		<item name="wcf.acp.admintools.option.cache.clearCache.clearStandaloneOptions.description"><![CDATA[Ist diese Einstellung aktiviert, wird der Optionscache und die Optionsdatei der Endanwendung beim Ausführen dieser Funktion gelöscht.]]></item>
 		<item name="wcf.acp.admintools.option.cache.clearCache.clearTemplateCache"><![CDATA[Templatecache leeren]]></item>
 		<item name="wcf.acp.admintools.option.cache.clearCache.clearTemplateCache.description"><![CDATA[Ist diese Einstellung aktiviert, werden alle kompilierten Template beim Ausführen dieser Funktion gelöscht.]]></item>
 		<item name="wcf.acp.admintools.option.cache.clearCache.clearWCFCache"><![CDATA[Cacheverzeichnis des WoltLab Community Framework leeren]]></item>
