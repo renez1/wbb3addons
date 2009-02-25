@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+<package name="de.wbb3plugins.optiontype.charsetselects">
+    <packageinformation>
+        <packagename>Option Type: Charset Selects</packagename>                
+        <version>1.0.0</version>
+        <date>2009-02-14</date>
+        <standalone>0</standalone>
+        <isUnique>1</isUnique>                
+    </packageinformation>
+
+    <authorinformation>
+        <author>Nendilo</author>
+        <authorurl>http://www.wbb3plugins.de</authorurl>
+    </authorinformation>
+
+    <requiredpackages>
+        <requiredPackage minversion="1.0.0">com.woltlab.wcf</requiredPackage>
+        <!-- To be honest: It also requires the WBB but as WBB specific option types are not supported I've got to ignore the WBB requirement -->                
+    </requiredpackages>
+
+    <instructions type="install">
+        <files>files.tar</files>
+    </instructions>
+
+</package>

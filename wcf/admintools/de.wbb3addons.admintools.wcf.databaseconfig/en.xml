@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language languagecode="en">
+<category name="wcf.acp.admintools">
+		<item name="wcf.acp.admintools.function.database.config"><![CDATA[Database configuration]]></item>
+		<item name="wcf.acp.admintools.function.database.config.errorDbHostEmpty"><![CDATA[<li>No server given.</li>]]></item>
+		<item name="wcf.acp.admintools.function.database.config.errorDbUserEmpty"><![CDATA[<li>No username given.</li>]]></item>
+		<item name="wcf.acp.admintools.function.database.config.errorDbPassword1Empty"><![CDATA[<li>No password given.</li>]]></item>
+		<item name="wcf.acp.admintools.function.database.config.errorDbPassword2Empty"><![CDATA[<li>You must repeat the password.</li>]]></item>
+		<item name="wcf.acp.admintools.function.database.config.errorDbPasswordsUnequal"><![CDATA[<li>The given passwords are ill-matched.</li>]]></item>
+		<item name="wcf.acp.admintools.function.database.config.errorDbNameEmpty"><![CDATA[<li>No database-name given.</li>]]></item>
+		<item name="wcf.acp.admintools.function.database.config.errorDbCharsetEmpty"><![CDATA[<li>No charset selected.</li>]]></item>
+		<item name="wcf.acp.admintools.function.database.config.errorWcfNumberEmpty"><![CDATA[<li>No installation-number selected.</li>]]></item>
+		<item name="wcf.acp.admintools.function.database.config.errorWcfNumberNOTint"><![CDATA[<li>The installation-number must be a number.</li>]]></item>
+		<item name="wcf.acp.admintools.function.database.config.errorOldDbPasswordEmpty"><![CDATA[<li>You must type in the old password for confirmation.</li>]]></item>
+		<item name="wcf.acp.admintools.function.database.config.errorOldDbPasswordUnequal"><![CDATA[<li>The given password don't matches the old password.</li>]]></item>
+		<item name="wcf.acp.admintools.function.database.config.errorNoConnect"><![CDATA[<li>Connection to Database failed. Please check your given statements.</li>]]></item>
+		<item name="wcf.acp.admintools.function.database.config.errorNoDatabase"><![CDATA[<li>Can find the given database. Please check your statements.</li>]]></item>
+		<item name="wcf.acp.admintools.function.database.config.errorTablesFailing"><![CDATA[<li>Unable to find the needed WCF database tables.</li>]]></item>
+		<item name="wcf.acp.admintools.function.database.config.errorTablesIncompleted"><![CDATA[<li>Unable to find the needed database tables. <span style="color: blue;cursor: pointer;" onclick="openList('availableTables', false);">List of missing tables</span><ul id="availableTables" style="list-style-type: square;display: none;">{$availableTables}</ul><script type="text/javascript">initList('availableTables', 0);</script></li>]]></item>
+		<item name="wcf.acp.admintools.function.database.config.errorBackupFailed"><![CDATA[<li>Das Backup konnte nicht erstellt werden. Aktion abgebrochen!</li>]]></item>
+		<item name="wcf.acp.admintools.function.database.config.errorCanNOTWrite"><![CDATA[<li>Unable to write the config file. Please check the CHMOD settings on your FTP-Server.</li>]]></item>
+    </category>
+	<category name="wcf.acp.admintools.option">
+		<item name="wcf.acp.admintools.option.category.database.config"><![CDATA[Database settings]]></item>
+		<item name="wcf.acp.admintools.option.category.database.config.description"><![CDATA[This function can help you to setup your Database settings..
+        <p><img src="../wcf/icon/warningS.png" alt="Caution:"/> <strong style="color: red;">Use this function with the needed extremely caution! It may only used if the selected database contains WCF-tables only. Incorrect settings may crash your System!</strong></p>]]></item>
+		<item name="wcf.acp.admintools.option.database.config.dbHost"><![CDATA[Database server]]></item>
+		<item name="wcf.acp.admintools.option.database.config.dbHost.description"><![CDATA[Type in your database server adress. Mostly <samp>localhost</samp> will be the correct setting.]]></item>
+		<item name="wcf.acp.admintools.option.database.config.dbUser"><![CDATA[Database username]]></item>
+		<item name="wcf.acp.admintools.option.database.config.dbUser.description"><![CDATA[The database username]]></item>
+		<item name="wcf.acp.admintools.option.database.config.dbPassword1"><![CDATA[Database password]]></item>
+		<item name="wcf.acp.admintools.option.database.config.dbPassword1.description"><![CDATA[The database password.]]></item>
+		<item name="wcf.acp.admintools.option.database.config.dbPassword2"><![CDATA[Re-type password (for confirmation)]]></item>
+		<item name="wcf.acp.admintools.option.database.config.dbPassword2.description"><![CDATA[Confirm the password given above]]></item>
+		<item name="wcf.acp.admintools.option.database.config.dbName"><![CDATA[Database name]]></item>
+		<item name="wcf.acp.admintools.option.database.config.dbName.description"><![CDATA[The database name]]></item>
+		<item name="wcf.acp.admintools.option.database.config.dbCharset"><![CDATA[Charset]]></item>
+		<item name="wcf.acp.admintools.option.database.config.dbCharset.description"><![CDATA[Charset settings]]></item>
+		<item name="wcf.acp.admintools.option.database.config.wcfNumber"><![CDATA[Installation number (WCF)]]></item>
+		<item name="wcf.acp.admintools.option.database.config.wcfNumber.description"><![CDATA[The installation Number of the Woltlab Community Framework.]]></item>
+		<item name="wcf.acp.admintools.option.database.config.oldDbPassword"><![CDATA[Confirm]]></item>
+		<item name="wcf.acp.admintools.option.database.config.oldDbPassword.description"><![CDATA[Type in the old database password due to security reasons.]]></item>
+		<item name="wcf.acp.admintools.option.database.config.checkConnect"><![CDATA[Check connection]]></item>
+		<item name="wcf.acp.admintools.option.database.config.checkConnect.description"><![CDATA[Do you want to check the connection to the database server?]]></item>
+		<item name="wcf.acp.admintools.option.database.config.checkTables"><![CDATA[Check tables]]></item>
+		<item name="wcf.acp.admintools.option.database.config.checkTables.description"><![CDATA[Do you want to check the database for the needed WCF tables?]]></item>
+		<item name="wcf.acp.admintools.option.database.config.pleaseSelect"><![CDATA[----- Select -----]]></item>
+	</category>
+</language>
