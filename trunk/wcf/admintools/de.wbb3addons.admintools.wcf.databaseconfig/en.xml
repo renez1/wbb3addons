@@ -22,6 +22,7 @@
 		<item name="wcf.acp.admintools.function.database.config.errorCanNOTWrite"><![CDATA[<li>Unable to write the config file. Please check the CHMOD settings on your FTP-Server.</li>]]></item>
     </category>
 	<category name="wcf.acp.admintools.option">
+        <item name="wcf.acp.admintools.option.category.database"><![CDATA[Database]]></item>
 		<item name="wcf.acp.admintools.option.category.database.config"><![CDATA[Database settings]]></item>
 		<item name="wcf.acp.admintools.option.category.database.config.description"><![CDATA[This function can help you to setup your Database settings..
         <p><img src="../wcf/icon/warningS.png" alt="Caution:"/> <strong style="color: red;">Use this function with the needed extremely caution! It may only used if the selected database contains WCF-tables only. Incorrect settings may crash your System!</strong></p>]]></item>
