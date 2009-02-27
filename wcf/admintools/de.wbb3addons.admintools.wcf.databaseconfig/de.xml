@@ -22,7 +22,8 @@
 		<item name="wcf.acp.admintools.function.database.config.errorCanNOTWrite"><![CDATA[<li>Die Konfigurationsdatei konnte nicht geschrieben werden. Überprüfen Sie die Dateirechte.</li>]]></item>
     </category>
 	<category name="wcf.acp.admintools.option">
-		<item name="wcf.acp.admintools.option.category.database.config"><![CDATA[Datenbankkonfiguration]]></item>
+        <item name="wcf.acp.admintools.option.category.database"><![CDATA[Datenbank]]></item>
+        <item name="wcf.acp.admintools.option.category.database.config"><![CDATA[Datenbankkonfiguration]]></item>
 		<item name="wcf.acp.admintools.option.category.database.config.description"><![CDATA[Diese Funktion dient zum Konfigurieren der Datenbank.
         <p><img src="../wcf/icon/warningS.png" alt="Achtung:"/> <strong style="color: red;">Verwenden Sie diese Funktion mit Bedacht und nur wenn sich in der angegebenen Datenbank Tabellen für das WCF befinden. Bei inkorrekten Angaben kann die komplette Software außer Kraft gesetzt werden!</strong></p>]]></item>
 		<item name="wcf.acp.admintools.option.database.config.dbHost"><![CDATA[Datenbankserver]]></item>
