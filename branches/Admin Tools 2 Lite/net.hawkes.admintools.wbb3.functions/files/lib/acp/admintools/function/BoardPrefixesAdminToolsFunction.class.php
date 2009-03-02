@@ -53,6 +53,8 @@ class BoardPrefixesAdminToolsFunction extends AbstractAdminToolsFunction {
 			$this->setReturnMessage('warning', WCF::getLanguage()->get('wbb.acp.admintools.function.wbb.boardPrefixes.noPrefixesInSource'));
 		}
 		
+		WCF::getCache()->clearResource('board', true);
+		
 		$this->executed();
 	}
 }
