@@ -122,7 +122,7 @@ class AdminToolsCronjobsAddForm extends CronjobsAddForm {
 		$row = WCF::getDB()->getFirstRow($sql);
 		$cronjobID = $row['cronjobID'];
 		$cronjob = new CronjobEditor($cronjobID);		
-		$cronjob->update($row['packageDir'].'lib/system/cronjob/AdminToolsCronjob'.$cronjobID.'.class.php', $this->packageID, $this->description, $this->execMultiple, $this->startMinute, $this->startHour, $this->startDom, $this->startMonth, $this->startDow);
+		$cronjob->update('lib/system/cronjob/AdminToolsCronjob'.$cronjobID.'.class.php', $this->packageID, $this->description, $this->execMultiple, $this->startMinute, $this->startHour, $this->startDom, $this->startMonth, $this->startDow);
 		
 		$inserts = '';
 		foreach($this->activeFunctions as $functionID) {
