@@ -103,7 +103,6 @@ class InactiveUsersAdminToolsFunction extends AbstractAdminToolsFunction {
 		while($row = WCF::getDB()->fetchArray($result)) {
 			$users[] = new User(null, $row);
 		}
-		$from = MAIL_FROM_NAME." <".MAIL_FROM_ADDRESS.">";		
 		foreach($users as $user) {
 			$messageData = array('$username' => $user->username,
 								 '$pagetitle' => PAGE_TITLE,
@@ -113,7 +112,7 @@ class InactiveUsersAdminToolsFunction extends AbstractAdminToolsFunction {
 
 			$languageID = $user->languageID;
 			if (!$languageID > 0) $languageID = '';			
-			$mail = new Mail(array($user->username => $user->email), WCF::getLanguage($languageID)->get('wcf.acp.admintools.function.user.inactiveUsers.inactive.mailsubject', array('$pagetitle' => PAGE_TITLE)), WCF::getLanguage($languageID)->get('wcf.acp.admintools.function.user.inactiveUsers.inactive.mailmessage', $messageData), $from);
+			$mail = new Mail(array($user->username => $user->email), WCF::getLanguage($languageID)->get('wcf.acp.admintools.function.user.inactiveUsers.inactive.mailsubject', array('$pagetitle' => PAGE_TITLE)), WCF::getLanguage($languageID)->get('wcf.acp.admintools.function.user.inactiveUsers.inactive.mailmessage', $messageData));
 			$mail->send();
 			$this->warnedInactiveUsers[] = $user;
 		}
