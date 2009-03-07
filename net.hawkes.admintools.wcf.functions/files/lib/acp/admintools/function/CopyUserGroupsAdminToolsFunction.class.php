@@ -62,7 +62,12 @@ class CopyUserGroupsAdminToolsFunction extends AbstractAdminToolsFunction {
                       	FROM wcf".WCF_N."_user_to_groups
                      	WHERE groupID = ".$parameters['sourceGroup'];
 			WCF::getDB()->sendQuery($sql);
-        }        
+        }
+        
+        WCF::getCache()->clear(WCF_DIR.'cache', 'cache.groups*.php', true);
+
+        // reset all sessions
+        Session::resetSessions();
 
 		$this->executed();
 	}

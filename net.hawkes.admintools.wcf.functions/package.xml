@@ -8,8 +8,8 @@
         <packagedescription>This is a core set of functions for the WCF. This package requires the LGPL licensed packages of WoltLab only. Included functions: Clear Caches, Copy user group rights, Optimize database, Delete inactive users, Override Language Settings</packagedescription>        
         <packagedescription language="de"><![CDATA[Dieses Paket liefert einige Grundfunktionen für die Admin Tools. Es ist nur von den LGPL Pakete von WoltLab abhängig. Enthaltene Funktionen: Cacheleerung, Benutzergruppenrechte kopieren, Inaktive Benutzer löschen, Spracheinstellungen überschreiben.]]></packagedescription>
         <packagedescription language="de-informal"><![CDATA[Dieses Paket liefert einige Grundfunktionen für die Admin Tools. Es ist nur von den LGPL Pakete von WoltLab abhängig. Enthaltene Funktionen: Cacheleerung, Benutzergruppenrechte kopieren, Inaktive Benutzer löschen, Spracheinstellungen überschreiben.]]></packagedescription>
-        <version>1.0.0</version>
-        <date>2009-02-22</date>
+        <version>1.0.1</version>
+        <date>2009-03-07</date>
         <standalone>0</standalone>
         <isUnique>1</isUnique> 
         <plugin>com.woltlab.wcf</plugin>              
@@ -30,6 +30,7 @@
     
     <optionalpackages>
     	<optionalpackage file="optionals/net.hawkes.admintools.lazydelete.tar.gz">net.hawkes.admintools.lazydelete</optionalpackage>
+    	<optionalpackage file="optionals/net.hawkes.admintools.groupboardpermissions.tar.gz">net.hawkes.admintools.groupboardpermissions</optionalpackage>
     </optionalpackages>
 
     <instructions type="install">

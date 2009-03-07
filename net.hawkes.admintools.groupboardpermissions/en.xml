@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language languagecode="en">
+	<category name="wcf.acp.admintools.option">		
+		<item name="wcf.acp.admintools.option.user.usergroupcopy.copyBoardPermissions"><![CDATA[Copy board permissions]]></item>
+		<item name="wcf.acp.admintools.option.user.usergroupcopy.copyBoardPermissions.description"><![CDATA[Activate this option if you want to copy all board permissions from the source group to the target group.]]></item>		
+	</category>
+</language>

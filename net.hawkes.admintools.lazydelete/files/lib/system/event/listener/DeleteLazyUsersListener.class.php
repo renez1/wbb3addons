@@ -33,6 +33,7 @@ class DeleteLazyUsersListener implements EventListener {
 	protected $deletedLazyUsers = array();
 	protected $warnedLazyUsers = array();
 	protected $ignoreCondition;
+	protected $timeField = 'lastActivityTime';
 
 	/**
 	 * @see EventListener::execute()
@@ -42,8 +43,11 @@ class DeleteLazyUsersListener implements EventListener {
 		$generalOptions = $this->data['parameters']['user.inactiveUsers.general'];
 		$this->ignoreCondition = new ConditionBuilder(false);
 		if (!empty($generalOptions['ignoredUserIDs'])) $this->ignoreCondition->add('user.userID NOT IN ('.$generalOptions['ignoredUserIDs'].')');
-		if (!empty($generalOptions['ignoredUsergroupIDs'])) $this->ignoreCondition->add('user.userID NOT IN (SELECT userID FROM wcf'.WCF_N.'_user_to_groups WHERE groupID IN ('.$generalOptions['ignoredUsergroupIDs'].'))');
+		if (!empty($generalOptions['ignoredUsergroupIDs'])) $this->ignoreCondition->add('user.userID NOT IN (SELECT userID FROM wcf'.WCF_N.'_user_to_groups WHERE groupID IN ('.$generalOptions['ignoredUsergroupIDs'].'))');		
 		$this->ignoreCondition->add('user.registrationDate < '.(TIME_NOW - $generalOptions['periodOfGrace'] * 86400));
+		if ($this->data['postSinceRegistration']) {
+			$this->timeField = 'registrationDate';
+		}
 		switch($eventName) {
 			case 'execute' :
 				$this->handleLazyUsers($this->data['parameters']['user.inactiveUsers.general']);
@@ -89,8 +93,8 @@ class DeleteLazyUsersListener implements EventListener {
 				LEFT JOIN wbb".WBB_N."_user wbb_user ON (wbb_user.userID = user.userID)				
 				WHERE user_option.useroption".WCF::getUser()->getUserOptionID('adminCanMail')." = 1
 				AND wbb_user.posts < ".$deleteOptions['postThreshold']."
-				AND user.lastActivityTime < ".(TIME_NOW - ($deleteOptions['time'] - $generalOptions['warnTime']) * 86400)."
-				AND user.lastActivityTime > ".(TIME_NOW - ($deleteOptions['time'] - $generalOptions['warnTime'] + 1) * 86400)."
+				AND user.".$this->timeField." < ".(TIME_NOW - ($deleteOptions['time'] - $generalOptions['warnTime']) * 86400)."
+				AND user.".$this->timeField." > ".(TIME_NOW - ($deleteOptions['time'] - $generalOptions['warnTime'] + 1) * 86400)."
 				AND ".$this->ignoreCondition->get()."
 				GROUP BY user.userID";
 		$result = WCF::getDB()->sendQuery($sql);
@@ -127,7 +131,7 @@ class DeleteLazyUsersListener implements EventListener {
 		$sql = "SELECT user.* FROM wcf".WCF_N."_user user
 				LEFT JOIN wcf".WCF_N."_user_option_value user_option ON (user_option.userID = user.userID)
 				LEFT JOIN wbb".WBB_N."_user wbb_user ON (wbb_user.userID = user.userID)				
-				WHERE user.lastActivityTime < ".(TIME_NOW - ($deleteOptions['time'] * 86400))."
+				WHERE user.".$this->timeField." < ".(TIME_NOW - ($deleteOptions['time'] * 86400))."
 				AND wbb_user.posts < ".$deleteOptions['postThreshold']."								
 				AND ".$this->ignoreCondition->get()."
 				GROUP BY user.userID";		
