@@ -28,6 +28,13 @@
 				<showorder>2</showorder>
 			</option>
 			
+			<option name="user.inactiveUsers.lazy.postSinceRegistration">
+				<categoryname>user.inactiveUsers.lazy</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>								
+				<showorder>3</showorder>
+			</option>
+			
 			<option name="user.inactiveUsers.lazy.action">
 				<categoryname>user.inactiveUsers.lazy</categoryname>
 				<optiontype>radiobuttons</optiontype>
@@ -36,7 +43,7 @@
 warn:wcf.acp.admintools.function.user.inactiveUsers.warn
 delete:wcf.acp.admintools.function.user.inactiveUsers.delete
 warnanddelete:wcf.acp.admintools.function.user.inactiveUsers.warnanddelete]]></selectoptions>								
-				<showorder>3</showorder>
+				<showorder>4</showorder>
 			</option>
 		</options>
     </import>

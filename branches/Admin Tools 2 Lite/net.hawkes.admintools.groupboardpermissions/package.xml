@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+<package name="net.hawkes.admintools.groupboardpermissions">
+    <packageinformation>
+        <packagename>AdminTools 2 Copy group board permissions</packagename>
+        <packagename language="de">AdminTools 2 Benutzgruppen Forenzugriffsrechte kopieren</packagename>
+        <packagename language="de-informal">AdminTools 2 Benutzgruppen Forenzugriffsrechte kopieren</packagename>
+        <packagedescription>This package extends the copy user groups functions with an option to copy the board permissions</packagedescription>        
+        <packagedescription language="de"><![CDATA[Dieses Paket erweitert die Funktion "Benutzergruppen kopieren" um eine Option, die es ermöglicht die Forenzugriffsrechte zu kopieren.]]></packagedescription>
+        <packagedescription language="de-informal"><![CDATA[Dieses Paket erweitert die Funktion "Benutzergruppen kopieren" um eine Option, die es ermöglicht die Forenzugriffsrechte zu kopieren.]]></packagedescription>
+        <version>1.0.0</version>
+        <date>2009-03-07</date>
+        <standalone>0</standalone>
+        <isUnique>0</isUnique> 
+        <plugin>com.woltlab.wbb</plugin>              
+        <packageurl>http://www.wbb3addons.de</packageurl>
+    </packageinformation>
+
+    <authorinformation>
+        <author>Oliver Kliebisch</author>
+        <authorurl>http://www.oliver-kliebisch.de</authorurl>
+    </authorinformation>
+
+    <requiredpackages>
+        <requiredPackage>com.woltlab.wcf</requiredPackage>
+        <requiredPackage>com.woltlab.wbb</requiredPackage>
+        <requiredPackage>net.hawkes.admintools</requiredPackage>
+        <requiredPackage>net.hawkes.admintools.wcf.functions</requiredPackage>                
+    </requiredpackages>    
+
+    <instructions type="install">
+        <files>files.tar</files>                
+        <admintoolsfunction>admintools.xml</admintoolsfunction>        
+        <languages languagecode="de">de.xml</languages>               
+        <languages languagecode="de-informal">de-informal.xml</languages>
+        <languages languagecode="en">en.xml</languages>        
+    </instructions>        
+
+</package>

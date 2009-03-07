@@ -21,6 +21,8 @@ This mail has been generated automatically.]]></item>
 		<item name="wcf.acp.admintools.option.category.user.inactiveUsers.lazy.description"><![CDATA[]]></item>		
 		<item name="wcf.acp.admintools.option.user.inactiveUsers.lazy.time"><![CDATA[Lazy with]]></item>
 		<item name="wcf.acp.admintools.option.user.inactiveUsers.lazy.time.description"><![CDATA[Enter the number of days after which users with lesser posts than the above configured threshold will be deleted.]]></item>
+		<item name="wcf.acp.admintools.option.user.inactiveUsers.lazy.postSinceRegistration"><![CDATA[Calculate lazyness by registration date]]></item>		
+		<item name="wcf.acp.admintools.option.user.inactiveUsers.lazy.postSinceRegistration.description"><![CDATA[Activate this option if you want to calculate the post lazyness by registration date instead of the last activity time.]]></item>
 		<item name="wcf.acp.admintools.option.user.inactiveUsers.lazy.postThreshold"><![CDATA[Lazy with]]></item>
 		<item name="wcf.acp.admintools.option.user.inactiveUsers.lazy.postThreshold.description"><![CDATA[Enter the post treshold. Users with less posts than the entered number will be deleted after the configured time below.]]></item>
 		<item name="wcf.acp.admintools.option.user.inactiveUsers.lazy.action"><![CDATA[Action]]></item>

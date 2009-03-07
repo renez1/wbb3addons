@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language languagecode="de-informal">
+	<category name="wcf.acp.admintools.option">		
+		<item name="wcf.acp.admintools.option.user.usergroupcopy.copyBoardPermissions"><![CDATA[Forenzugriffsrechte kopieren]]></item>
+		<item name="wcf.acp.admintools.option.user.usergroupcopy.copyBoardPermissions.description"><![CDATA[Ist diese Option aktiviert, werden alle Forenzugriffsrechte von der Quell- in die Zielgruppe kopiert.]]></item>		
+	</category>
+</language>
