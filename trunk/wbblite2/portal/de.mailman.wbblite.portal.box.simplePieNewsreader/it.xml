@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<!-- $Id$ -->
+<language languagecode="it">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.simplePieNewsreader.title"><![CDATA[Newsreader]]></item>
+		<item name="wbb.portal.box.simplePieNewsreader.feedAdd"><![CDATA[sottoscrivi]]></item>
+		<item name="wbb.portal.box.simplePieNewsreader.emptyNews"><![CDATA[Feed vuoti.]]></item>
+	</category>
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.category.user.board.general"><![CDATA[Generale]]></item>
+		<item name="wcf.acp.group.option.category.user.board.general.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.board.canViewSimplePieNewsreaderBox"><![CDATA[E' possibile vedere il &raquo;SimplePie Newsreader&laquo; Box]]></item>
+		<item name="wcf.acp.group.option.user.board.canViewSimplePieNewsreaderBox.description"><![CDATA[]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.simplePieNewsreader"><![CDATA[SimplePie Newsreader Box]]></item>
+		<item name="wcf.acp.option.category.portal.box.simplePieNewsreader.description"><![CDATA[http://simplepie.org/]]></item>
+
+		<item name="wcf.acp.option.spnrbox_feeds"><![CDATA[Feed-URLs]]></item>
+		<item name="wcf.acp.option.spnrbox_feeds.description"><![CDATA[Un URL per linea, es. http://wbb3addons.ump2002.net/wbb/index.php?page=Feed&amp;type=Atom]]></item>
+
+		<item name="wcf.acp.option.spnrbox_charset"><![CDATA[Charset]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.default"><![CDATA[Predefinito]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.utf8"><![CDATA[UTF-8]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.iso88591"><![CDATA[ISO-8859-1]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.iso885915"><![CDATA[ISO-8859-15]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.cp866"><![CDATA[cp866]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.cp1251"><![CDATA[cp1251]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.cp1252"><![CDATA[cp1252]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.koi8r"><![CDATA[KOI8-R]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.big5"><![CDATA[BIG5]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.gb2312"><![CDATA[GB2312]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.big5hkscs"><![CDATA[BIG5-HKSCS]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.shiftjis"><![CDATA[Shift_JIS]]></item>
+		<item name="wcf.acp.option.spnrbox_charset.eucjp"><![CDATA[EUC-JP]]></item>
+
+		<item name="wcf.acp.option.spnrbox_filter"><![CDATA[Attiva filtro]]></item>
+		<item name="wcf.acp.option.spnrbox_filter.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.spnrbox_filterWords"><![CDATA[Cerca Parole]]></item>
+		<item name="wcf.acp.option.spnrbox_filterWords.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.spnrbox_filterMode"><![CDATA[Modalità filtro]]></item>
+		<item name="wcf.acp.option.spnrbox_filterMode.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.spnrbox_filterMode.or"><![CDATA[o]]></item>
+		<item name="wcf.acp.option.spnrbox_filterMode.and"><![CDATA[e]]></item>
+		<item name="wcf.acp.option.spnrbox_filterClass"><![CDATA[Classe CSS]]></item>
+		<item name="wcf.acp.option.spnrbox_filterClass.description"><![CDATA[]]></item>
+
+		<item name="wcf.acp.option.spnrbox_numOfFeeds"><![CDATA[Feeds]]></item>
+		<item name="wcf.acp.option.spnrbox_numOfFeeds.description"><![CDATA[Numero di voci per feed. Predefinito 5.]]></item>
+		<item name="wcf.acp.option.spnrbox_cacheMin"><![CDATA[Cache min.]]></item>
+		<item name="wcf.acp.option.spnrbox_cacheMin.description"><![CDATA[Imposta il tempo minimo(in secondi) per il quale un feed sarà in cache. Predefinito 3600.]]></item>
+		<item name="wcf.acp.option.spnrbox_cacheMax"><![CDATA[Cache max.]]></item>
+		<item name="wcf.acp.option.spnrbox_cacheMax.description"><![CDATA[Imposta il tempo massimo (in secondi) per i quali uno URL feed autorivelato sarà in cache. Predefinito 604800 (7 giorni).]]></item>
+		<item name="wcf.acp.option.spnrbox_maxLenFeedTitle"><![CDATA[Max. lunghezza del titolo del feed]]></item>
+		<item name="wcf.acp.option.spnrbox_maxLenFeedTitle.description"><![CDATA[Predefinito = 64.]]></item>
+		<item name="wcf.acp.option.spnrbox_showDateNextTitle"><![CDATA[Mostra la data del feed vicino al titolo del feed]]></item>
+		<item name="wcf.acp.option.spnrbox_showDateNextTitle.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.spnrbox_boxOpened"><![CDATA[Box permanentemente aperto]]></item>
+		<item name="wcf.acp.option.spnrbox_boxOpened.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.spnrbox_feedOpened"><![CDATA[Feed permanentemente aperto]]></item>
+		<item name="wcf.acp.option.spnrbox_feedOpened.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.spnrbox_feednewsOpened"><![CDATA[Feednews permenentemente aperto]]></item>
+		<item name="wcf.acp.option.spnrbox_feednewsOpened.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.spnrbox_boxMaxHeight"><![CDATA[Max. altezza del box]]></item>
+		<item name="wcf.acp.option.spnrbox_boxMaxHeight.description"><![CDATA[Altezza Max. del box in PX. 0 (Predefinito) = disabilitato]]></item>
+		<item name="wcf.acp.option.spnrbox_feedAbo"><![CDATA[Mostra Url diretto a XML]]></item>
+		<item name="wcf.acp.option.spnrbox_feedAbo.description"><![CDATA[]]></item>
+		
+		<item name="wcf.acp.option.spnrbox_feedToThread"><![CDATA[Aggiung una discussione del Feed]]></item>
+		<item name="wcf.acp.option.spnrbox_feedToThread.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.spnrbox_feedToThreadBoardID"><![CDATA[Forum:]]></item>
+		<item name="wcf.acp.option.spnrbox_feedToThreadBoardID.description"><![CDATA[]]></item>
+		
+		<item name="wcf.acp.option.spnrbox_showSocialBookmarks"><![CDATA[Abilita Bookmarks Sociale]]></item>
+		<item name="wcf.acp.option.spnrbox_showSocialBookmarks.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.spnrbox_socialBookmarks"><![CDATA[Social Bookmarks - Provider:]]></item>
+		<item name="wcf.acp.option.spnrbox_socialBookmarks.description"><![CDATA[]]></item>
+		
+		<item name="wcf.acp.option.spnrbox_sbcolor"><![CDATA[Colore di sfondo seconda]]></item>
+        <item name="wcf.acp.option.spnrbox_sbcolor.description"><![CDATA[Predefinito = 1.]]></item>
+	</category>
+</language>
