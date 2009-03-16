@@ -8,8 +8,8 @@
 		<standalone>0</standalone>
 		<isUnique>1</isUnique>
 		<plugin>com.woltlab.wbb</plugin>
-		<version>1.0.3 PL2</version>
-		<date>2008-08-17</date>
+		<version>1.0.3 PL3</version>
+		<date>2009-03-16</date>
 	</packageinformation>
 
 	<authorinformation>
@@ -89,6 +89,9 @@
 		<languages languagecode="it">it.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.3 PL1">
+		<files>files.tar</files>
+	</instructions>
+	<instructions type="update" fromversion="1.0.3 PL2">
 		<languages languagecode="it">it.xml</languages>
 	</instructions>
 </package>
