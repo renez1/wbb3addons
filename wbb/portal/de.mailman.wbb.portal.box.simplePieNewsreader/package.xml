@@ -90,6 +90,7 @@
 	</instructions>
 	<instructions type="update" fromversion="1.0.3 PL1">
 		<files>files.tar</files>
+		<languages languagecode="it">it.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.3 PL2">
 		<languages languagecode="it">it.xml</languages>
