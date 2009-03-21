@@ -45,7 +45,8 @@ class DeleteLazyUsersListener implements EventListener {
 		if (!empty($generalOptions['ignoredUserIDs'])) $this->ignoreCondition->add('user.userID NOT IN ('.$generalOptions['ignoredUserIDs'].')');
 		if (!empty($generalOptions['ignoredUsergroupIDs'])) $this->ignoreCondition->add('user.userID NOT IN (SELECT userID FROM wcf'.WCF_N.'_user_to_groups WHERE groupID IN ('.$generalOptions['ignoredUsergroupIDs'].'))');		
 		$this->ignoreCondition->add('user.registrationDate < '.(TIME_NOW - $generalOptions['periodOfGrace'] * 86400));
-		if ($this->data['postSinceRegistration']) {
+		$deleteOptions = $this->data['parameters']['user.inactiveUsers.lazy'];	
+		if ($deleteOptions['postSinceRegistration']) {
 			$this->timeField = 'registrationDate';
 		}
 		switch($eventName) {
