@@ -30,7 +30,8 @@
 
     <instructions type="install">
         <files>files.tar</files>                
-        <admintoolsfunction>admintools.xml</admintoolsfunction>        
+        <admintoolsfunction>admintools.xml</admintoolsfunction>     
+        <eventlistener>eventlistener.xml</eventlistener>   
         <languages languagecode="de">de.xml</languages>               
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>        

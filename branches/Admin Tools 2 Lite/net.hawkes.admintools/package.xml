@@ -8,8 +8,8 @@
         <packagedescription>The Admin Tools 2 are a large collection of useful tools for administrators. It can be extended with new functions by using the functions interface.</packagedescription>
         <packagedescription language="de"><![CDATA[Die Admin Tools 2 sind eine große Sammlung von nützlichen Werkzeugen für Administratoren. Über die Funktionsschnittstelle kann es einfach um neue Funktionen erweitert werden.]]></packagedescription>        
         <packagedescription language="de-informal"><![CDATA[Die Admin Tools 2 sind eine große Sammlung von nützlichen Werkzeugen für Administratoren. Über die Funktionsschnittstelle kann es einfach um neue Funktionen erweitert werden.]]></packagedescription>
-        <version>1.0.1</version>
-        <date>2009-03-02</date>
+        <version>1.0.2</version>
+        <date>2009-03-12</date>
         <standalone>0</standalone>
         <isunique>1</isunique>
         <plugin>com.woltlab.wcf</plugin>        
@@ -48,7 +48,7 @@
         <languages languagecode="en">en.xml</languages>               
     </instructions>
     
-    <instructions type="update" fromversion="1.0.0*">
+    <instructions type="update" fromversion="1.0.*">
     	<files>files.tar</files>
         <packageinstallationplugins>pip.tar</packageinstallationplugins>                                    
     </instructions>

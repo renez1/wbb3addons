@@ -143,7 +143,7 @@ class AdminToolsMenuEditForm extends AdminToolsMenuAddForm {
 			$sql = "UPDATE wcf".WCF_N."_admin_tools_iframe SET
 						url = '".$this->menuItemLink."',
 						width = '".escapeString($this->iframeWidth)."',
-						height = '".escapeString($this->iframeWidth)."',
+						height = '".escapeString($this->iframeHeight)."',
 						borderWidth = '".escapeString($this->borderWidth)."',
 						borderColor = '".escapeString($this->borderColor)."',
 						borderStyle = '".escapeString($this->borderStyle)."'
