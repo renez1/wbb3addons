@@ -3,7 +3,7 @@
 <data>
 	<import>
  		<eventlistener>
-  			<eventClassName>InactiveUsersAdminToolsFunction</eventClassName>
+  			<eventClassName>CopyUserGroupsAdminToolsFunction</eventClassName>
   			<eventName>execute</eventName>
   			<listenerClassFile>lib/system/event/listener/GroupCopyBoardPermissionsListener.class.php</listenerClassFile>
   			<environment>admin</environment>  			
@@ -15,4 +15,12 @@
   			<environment>user</environment>  			
  		</eventlistener>			
 	</import>
+	<delete>
+ 		<eventlistener>
+  			<eventClassName>InactiveUsersAdminToolsFunction</eventClassName>
+  			<eventName>execute</eventName>
+  			<listenerClassFile>lib/system/event/listener/GroupCopyBoardPermissionsListener.class.php</listenerClassFile>
+  			<environment>admin</environment>  			
+ 		</eventlistener> 				
+	</delete>
 </data>

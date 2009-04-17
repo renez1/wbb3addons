@@ -8,8 +8,8 @@
         <packagedescription>This package extends the copy user groups functions with an option to copy the board permissions</packagedescription>        
         <packagedescription language="de"><![CDATA[Dieses Paket erweitert die Funktion "Benutzergruppen kopieren" um eine Option, die es ermöglicht die Forenzugriffsrechte zu kopieren.]]></packagedescription>
         <packagedescription language="de-informal"><![CDATA[Dieses Paket erweitert die Funktion "Benutzergruppen kopieren" um eine Option, die es ermöglicht die Forenzugriffsrechte zu kopieren.]]></packagedescription>
-        <version>1.0.0</version>
-        <date>2009-03-07</date>
+        <version>1.0.1</version>
+        <date>2009-04-03</date>
         <standalone>0</standalone>
         <isUnique>0</isUnique> 
         <plugin>com.woltlab.wbb</plugin>              
@@ -35,6 +35,10 @@
         <languages languagecode="de">de.xml</languages>               
         <languages languagecode="de-informal">de-informal.xml</languages>
         <languages languagecode="en">en.xml</languages>        
-    </instructions>        
+    </instructions>     
+    
+    <instructions type="update" fromversion="1.0.0">            
+        <eventlistener>eventlistener.xml</eventlistener>                   
+    </instructions>    
 
 </package>
