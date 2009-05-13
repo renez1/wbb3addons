@@ -73,7 +73,7 @@ abstract class AbstractLostAndFoundFileSystemItem extends AbstractLostAndFoundDa
 	/**
 	 * Creates the virtual ID filespace. This has to be implemented by subclasses	 
 	 */
-	public static abstract function createVirtualIDSpace();
+	public static function createVirtualIDSpace() { }
 	
 	/**
 	 * Returns all virtualIDs of a certain ressource type

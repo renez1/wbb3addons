@@ -146,7 +146,7 @@ abstract class AbstractLostAndFoundDatabaseItem implements MarkableLostAndFoundI
 	/**
 	 * Deletes all items of the current type	 
 	 */
-	public static abstract function deleteAll();			
+	public static function deleteAll() { }			
 	
 	/**
 	 * @see MarkableLostAndFoundItem::mark()	 
