@@ -8,8 +8,8 @@
         <isUnique>1</isUnique>
 		<standalone>0</standalone>
 		<plugin>com.woltlab.wbb</plugin>
-		<version>1.0.10 PL1</version>
-		<date>2008-09-21</date>
+		<version>1.0.11</version>
+		<date>2009-06-13</date>
 	</packageinformation>
 
 	<authorinformation>
@@ -145,19 +145,47 @@
 	<instructions type="update" fromversion="1.0.9">
 	    <files>files.tar</files>
 		<templates>templates.tar</templates>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
+		<languages languagecode="it">it.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.9 PL1">
 	    <files>files.tar</files>
 		<templates>templates.tar</templates>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
+		<languages languagecode="it">it.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.9 PL2">
 	    <files>files.tar</files>
 		<templates>templates.tar</templates>
 		<options>options.xml</options>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
+		<languages languagecode="it">it.xml</languages>
 	</instructions>
 	<instructions type="update" fromversion="1.0.10">
 	    <files>files.tar</files>
 		<templates>templates.tar</templates>
 		<options>options.xml</options>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
+		<languages languagecode="it">it.xml</languages>
+	</instructions>
+	<instructions type="update" fromversion="1.0.10 PL1">
+		<templates>templates.tar</templates>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
+		<languages languagecode="it">it.xml</languages>
 	</instructions>
 </package>
