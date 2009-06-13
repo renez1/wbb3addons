@@ -270,19 +270,28 @@
                         <div style="font-size:1px; height:{$pbCatVertOffset}px; float:none;">&nbsp;</div>
                         <div style="float:none; text-align:center;">
                             <table style="border:0; margin-left:auto; margin-right:auto;">
-                                {if $pbWeatherComDay == 'Z'}
+                                {assign var='pbZipCode' value=$pbWeatherComZipCode|substr:0:5}
+                                {if $pbZipCode != 'DEPLZ' && $pbZipCode != 'ATPLZ' && $pbZipCode != 'CHPLZ'}
                                     <tr>
                                         <td class="smallFont">
-                                            <a href="http://www.wetter.com" target="_blank"><img src="http://www.wetter.com/home/woys/woys.php?,C,{$pbWeatherComStyle},{@$pbWeatherComZipCode}" alt=""{if $pbWeatherWidth > 0} style="max-width:{$pbWeatherWidth}"{/if} /></a>
+                                            {lang}wbb.portal.box.personalbox.weathercom.zipError{/lang}
                                         </td>
                                     </tr>
-                                    {assign var='pbWeatherComDay' value='F'}
+                                {else}
+                                    {if $pbWeatherComDay == 'Z'}
+                                        <tr>
+                                            <td class="smallFont">
+                                                <a href="http://www.wetter.com" target="_blank"><img src="http://www.wetter.com/home/woys/woys.php?,C,{$pbWeatherComStyle},{@$pbWeatherComZipCode}" alt=""{if $pbWeatherWidth > 0} style="max-width:{$pbWeatherWidth}"{/if} /></a>
+                                            </td>
+                                        </tr>
+                                        {assign var='pbWeatherComDay' value='F'}
+                                    {/if}
+                                    <tr>
+                                        <td class="smallFont">
+                                          <a href="http://www.wetter.com" target="_blank"><img src="http://www.wetter.com/home/woys/woys.php?,{$pbWeatherComDay},{$pbWeatherComStyle},{@$pbWeatherComZipCode}" alt=""{if $pbWeatherWidth > 0} style="max-width:{$pbWeatherWidth}"{/if} /></a>
+                                        </td>
+                                    </tr>
                                 {/if}
-                                <tr>
-                                    <td class="smallFont">
-                                      <a href="http://www.wetter.com" target="_blank"><img src="http://www.wetter.com/home/woys/woys.php?,{$pbWeatherComDay},{$pbWeatherComStyle},{@$pbWeatherComZipCode}" alt=""{if $pbWeatherWidth > 0} style="max-width:{$pbWeatherWidth}"{/if} /></a>
-                                    </td>
-                                </tr>
                             </table>
                         </div>
                     {/if}

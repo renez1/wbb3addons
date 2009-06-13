@@ -15,6 +15,7 @@
         <item name="wbb.portal.box.personalbox.default"><![CDATA[Standard]]></item>
         <item name="wbb.portal.box.personalbox.disabled"><![CDATA[Désactivé]]></item>
         <item name="wbb.portal.box.personalbox.enabled"><![CDATA[Activé]]></item>
+        <item name="wbb.portal.box.personalbox.weathercom.zipError"><![CDATA[Invalid zip code!]]></item>
         <item name="wbb.portal.box.personalbox.weathercom.today"><![CDATA[aujourd’hui]]></item>
         <item name="wbb.portal.box.personalbox.weathercom.tomorrow"><![CDATA[demain]]></item>
         <item name="wbb.portal.box.personalbox.weathercom.alldays"><![CDATA[aujourd’hui et demain]]></item>
@@ -114,8 +115,8 @@
 		<item name="wcf.acp.option.personalbox_weathercom_show_acp"><![CDATA[set wetter.com as default.]]></item>
 		<item name="wcf.acp.option.personalbox_weathercom_show_acp.description"><![CDATA[Infos at <a href="http://www.wetter.com/" target="_blank">www.wetter.com</a>]]></item>
 		<item name="wcf.acp.option.personalbox_weathercom_zipcode_acp"><![CDATA[wetter.com standard code]]></item>
-		<item name="wcf.acp.option.personalbox_weathercom_zipcode_acp.description"><![CDATA[Zip-Code, World-ID or WMO-ID.
-		    <br />Examples: &quot;DEPLZ (zip-code),60329&quot; for Frankfurt/Main (Germany), or &quot;WORLD,50143&quot; for Vienna, or &quot;ADD,15&quot; for New York City, or &quot;WMO,711&quot; for Rhodos.
+		<item name="wcf.acp.option.personalbox_weathercom_zipcode_acp.description"><![CDATA[Zip-Code.
+		    <br />Examples: &quot;DEPLZ,60329&quot; for Frankfurt/Main, or &quot;ATPLZ,1010&quot; for Vienna, oder &quot;CHPLZ,8000&quot; for Zurich.
 		    <strong>Important! Keep in mind to set the comma between number and destination!</strong>]]></item>
 		<item name="wcf.acp.option.personalbox_weathercom_day_acp"><![CDATA[wetter.com data for]]></item>
 		<item name="wcf.acp.option.personalbox_weathercom_day_acp.description"><![CDATA[Data depends on the selected destination. Maybe limited data available for &quot;tomorrow&quot; or &quot;today&quot; only.]]></item>
@@ -219,8 +220,8 @@
 		<item name="wcf.user.option.personalbox_weathercom_enabled"><![CDATA[Show wetter.com]]></item>
 		<item name="wcf.user.option.personalbox_weathercom_enabled.description"><![CDATA[Show weatherinformations from <a href="http://www.wetter.com/" target="_blank">wetter.com</a>.]]></item>
 		<item name="wcf.user.option.personalbox_weathercom_zipcode"><![CDATA[wetter.com standard code]]></item>
-		<item name="wcf.user.option.personalbox_weathercom_zipcode.description"><![CDATA[Zip-code, World-ID oder WMO-ID.
-		    <br />Examples: &quot;DEPLZ,60329&quot; for Frankfurt/Main (Germany), or &quot;WORLD,50143&quot; for Vienna, or &quot;ADD,15&quot; for New York City, or &quot;WMO,711&quot; for Rhodos.
+		<item name="wcf.user.option.personalbox_weathercom_zipcode.description"><![CDATA[Zip-code.
+		    <br />Examples: &quot;DEPLZ,60329&quot; for Frankfurt/Main, or &quot;ATPLZ,1010&quot; for Vienna, oder &quot;CHPLZ,8000&quot; for Zurich.
 		    <strong>Important! Keep in mind to set the comma between number and destination!</strong>
 		    <br />Search for the correct settings at <a href="http://www.wetter.com/" target="_blank">wetter.com</a>. Select your destination (city) and watch the -in your browser.]]></item>
 		<item name="wcf.user.option.personalbox_weathercom_day"><![CDATA[wetter.com data for]]></item>

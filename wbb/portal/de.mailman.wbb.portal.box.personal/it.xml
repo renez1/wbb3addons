@@ -15,6 +15,7 @@
         <item name="wbb.portal.box.personalbox.default"><![CDATA[Standard]]></item>
         <item name="wbb.portal.box.personalbox.disabled"><![CDATA[Disabili]]></item>
         <item name="wbb.portal.box.personalbox.enabled"><![CDATA[Attivato]]></item>
+        <item name="wbb.portal.box.personalbox.weathercom.zipError"><![CDATA[Invalid zip code!]]></item>
         <item name="wbb.portal.box.personalbox.weathercom.today"><![CDATA[oggi]]></item>
         <item name="wbb.portal.box.personalbox.weathercom.tomorrow"><![CDATA[mattina]]></item>
         <item name="wbb.portal.box.personalbox.weathercom.alldays"><![CDATA[Oggi e di domani]]></item>
@@ -111,9 +112,9 @@ Se questa opzione è anche il link nella casella.]]></item>
         <item name="wcf.acp.option.personalbox_weathercom_show_acp"><![CDATA[wetter.com mappa predefinita]]></item>
         <item name="wcf.acp.option.personalbox_weathercom_show_acp.description"><![CDATA[Info at <a href="http://www.wetter.com/" target="_blank">www.wetter.com</a>]]></item>
         <item name="wcf.acp.option.personalbox_weathercom_zipcode_acp"><![CDATA[wetter.com standard Code]]></item>
-        <item name="wcf.acp.option.personalbox_weathercom_zipcode_acp.description"><![CDATA[CAP, WMO World-ID o ID.
-<br /> Esempi: "DEPLZ, 60329" per Frankfurt am Main, o "mondo, 50143" di Vienna, o aggiungere, 15 "di New York, o WMO, 711" per Rodi.
-<strong> attento necessariamente la virgola! </strong>]]></item>
+        <item name="wcf.acp.option.personalbox_weathercom_zipcode_acp.description"><![CDATA[CAP.
+            <br />Esempi: &quot;DEPLZ,60329&quot; per Frankfurt am Main, o &quot;ATPLZ,1010&quot; di Vienna, o &quot;CHPLZ,8000&quot; di Zurigo.
+            <strong>attento necessariamente la virgola! </strong>]]></item>
         <item name="wcf.acp.option.personalbox_weathercom_day_acp"><![CDATA[wetter.com Dati per]]></item>
         <item name="wcf.acp.option.personalbox_weathercom_day_acp.description"><![CDATA[I dati sono in funzione della città selezionata, può solo per il "domani" o &quot;oggi&quot;.]]></item>
         <item name="wcf.acp.option.personalbox_weathercom_style_acp"><![CDATA[wetter.com Stile]]></item>
@@ -217,10 +218,10 @@ Se questa opzione è anche il link nella casella.]]></item>
         <item name="wcf.user.option.personalbox_weathercom_enabled"><![CDATA[wetter.com vista]]></item>
         <item name="wcf.user.option.personalbox_weathercom_enabled.description"><![CDATA[Informazioni meteo da <a href="http://www.wetter.com/" target="_blank">wetter.com</a> annunci.]]></item>
         <item name="wcf.user.option.personalbox_weathercom_zipcode"><![CDATA[wetter.com standard Code]]></item>
-        <item name="wcf.user.option.personalbox_weathercom_zipcode.description"><![CDATA[CAP, WMO World-ID o ID.
-<br /> Esempi: "DEPLZ, 60329" per Frankfurt am Main, o "mondo, 50143" di Vienna, o aggiungere, 15 "di New York, o WMO, 711" per Rodi.
-<strong> Verificare che il virgole! </strong>
-<br /> Trova il diritto atteggiamento all'indirizzo <a href="http://www.wetter.com/" wetter.com target="_blank"> </ a>. Cercando la tua città e guardare nella barra degli indirizzi del browser.]]></item>
+        <item name="wcf.user.option.personalbox_weathercom_zipcode.description"><![CDATA[CAP.
+            <br />Esempi: &quot;DEPLZ,60329&quot; per Frankfurt am Main, o &quot;ATPLZ,1010&quot; di Vienna, o &quot;CHPLZ,8000&quot; di Zurigo.
+            <strong> Verificare che il virgole! </strong>
+            <br /> Trova il diritto atteggiamento all'indirizzo <a href="http://www.wetter.com/" wetter.com target="_blank"> </ a>. Cercando la tua città e guardare nella barra degli indirizzi del browser.]]></item>
         <item name="wcf.user.option.personalbox_weathercom_day"><![CDATA[wetter.com Dati per]]></item>
         <item name="wcf.user.option.personalbox_weathercom_day.description"><![CDATA[I dati sono in funzione della città selezionata solo per maggi &quot;mattina&quot; o &quot;oggi&quot; disponibile.]]></item>
         <item name="wcf.user.option.personalbox_weathercom_style"><![CDATA[wetter.com Stile]]></item>
