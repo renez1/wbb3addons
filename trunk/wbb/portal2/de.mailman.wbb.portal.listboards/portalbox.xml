@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "DTD/package.dtd">
+<data>
+    <import>
+        <portalboxitem name="listboards">
+            <className>ListBoardsBox</className>
+            <boxType>2</boxType>
+            <sortOrder>2</sortOrder>
+            <boxActivation>1</boxActivation>
+        </portalboxitem>
+    </import>
+</data>
