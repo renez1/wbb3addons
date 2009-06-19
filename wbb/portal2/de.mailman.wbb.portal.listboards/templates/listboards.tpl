@@ -1,3 +1,4 @@
+{* $Id$ *}
 {if $lbSBColor}
     {assign var='lbSecondBoxColor' value=$lbSBColor}
 {else}
