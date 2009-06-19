@@ -19,6 +19,10 @@ class ListBoardsBox extends PortalBox implements StandardPortalBox {
     public $BoardlistData = array();
 
     public function readData() {
+        // DEFAULTS
+        $lbMaxHeight        = 0;
+        $lbFontsize         = '1.2em';
+
         // Boxen Hoehe
         if(WCF::getUser()->userID) {
             if(WCF::getUser()->listboards_maxheight >= 100) $lbMaxHeight = intval(WCF::getUser()->listboards_maxheight);
