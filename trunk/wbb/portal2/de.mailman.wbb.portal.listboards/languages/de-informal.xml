@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "DTD/language.dtd">
+<!-- $Id$ -->
 <language languagecode="de-informal">
 	<category name="wbb.portal">
 		<item name="wbb.portal.box.listboards.title"><![CDATA[Foren-Übersicht]]></item>

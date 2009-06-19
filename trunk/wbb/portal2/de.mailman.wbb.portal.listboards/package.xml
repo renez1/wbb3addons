@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE package SYSTEM "DTD/package.dtd">
+<!-- $Id$ -->
 <package name="de.mailman.wbb.portal.listboards">
     <packageinformation>
         <packageName>Portalbox Foren-Übersicht</packageName>
@@ -7,8 +8,8 @@
         <standalone>0</standalone>
         <isunique>1</isunique>
         <plugin>com.woltlab.wbb</plugin>
-        <version>2.0.0 Beta 1</version>
-        <date>2009-06-16</date>
+        <version>2.0.0</version>
+        <date>2009-06-19</date>
     </packageinformation>
 
     <authorinformation>
