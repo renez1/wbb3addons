@@ -12,7 +12,7 @@
 			<option name="listboards_show_newposts">
 				<categoryname>portal.box.listboards</categoryname>
 				<optiontype>boolean</optiontype>
-				<defaultvalue>1</defaultvalue>
+				<defaultvalue>0</defaultvalue>
 			</option>
 			<option name="listboards_mainboard_fontsize">
 				<categoryname>portal.box.listboards</categoryname>
