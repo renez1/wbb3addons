@@ -1,12 +1,12 @@
 {* $Id$ *}
-{if $lbSBColor}
-    {assign var='lbSecondBoxColor' value=$lbSBColor}
+{if LISTBOARDSBOX_SBCOLOR}
+    {assign var='secondBoxColor' value=LISTBOARDSBOX_SBCOLOR}
 {else}
-    {assign var='lbSecondBoxColor' value=2}
+    {assign var='secondBoxColor' value=2}
 {/if}
-{assign var='lbFirstBoxColor' value=1}
-{cycle values="$lbFirstBoxColor,$lbSecondBoxColor" print=false advance=false reset=true}
-		<div class="border" id="box{$box->boxID}">
+{assign var='firstBoxColor' value=1}
+{cycle values="$firstBoxColor,$secondBoxColor" print=false advance=false reset=true}
+		<div class="border titleBarPanel" id="box{$box->boxID}">
 		    <div class="containerHead">
         		<div class="containerIcon">
             		<a href="javascript: void(0)" onclick="openList('{@$box->getStatusVariable()}', { save:true })">
@@ -14,66 +14,56 @@
         			</a>
                 </div>
                 <div class="containerContent">
-                    {if $this->user->userID}
-                        <a href="index.php?page=Index{@SID_ARG_2ND}">{lang}wbb.portal.box.listboards.title{/lang}</a>
-                    {else}
-                        {lang}wbb.portal.box.listboards.title{/lang}
-                    {/if}
+					<a href="index.php?page=Index{@SID_ARG_2ND}">{lang}wbb.portal.box.listboards.title{/lang}</a>
                 </div>
             </div>
 
             <div class="container-1" id="{@$box->getStatusVariable()}">
-            	<div class="containerContent">
-                    {if $boards|isset && $boards|count > 0}
-                        <div class="containerContent smallFont"{if $lbMaxHeight > 0} style="max-height:{$lbMaxHeight}px; overflow:auto;"{/if}>
-                            <div id="dummy" style="padding:0; margin:0;">
-                            {foreach from=$boards item=child}
+            	<div class="containerContent"{if $box->maxHeight > 0} style="max-height: {@$box->maxHeight}px; overflow:auto;"{/if}>
+                    {if $box->data|count > 0}                    		                                                  
+                            {foreach from=$box->data.boards item=child}
                                 {assign var="board" value=$child.board}
-                                {assign var="boardID" value=$board->boardID}
-                                {assign var="lbIndentRepeat" value=$child.depth-1}
-                                {if $lbShowNewPosts && !$unreadThreadsCount.$boardID|empty}
-                                    {assign var="utcLength" value=$unreadThreadsCount.$boardID|strlen}
+                                {assign var="boardID" value=$board->boardID}                                
+								{assign var="openParents" value=$child.openParents}
+                                {assign var="indentRepeat" value=$child.depth-1}
+                                {if LISTBOARDS_SHOW_NEWPOSTS && !$box->data.unreadThreadsCount.$boardID|empty}
+                                    {assign var="unreadThreadsCountLength" value=$box->data.unreadThreadsCount.$boardID|strlen}
                                 {else}
-                                    {assign var="utcLength" value=0}
+                                    {assign var="unreadThreadsCountLength" value=0}
                                 {/if}
-                                {if $lbLength > 0 && $lbIndentRepeat > 0}
-                                    {if $lbShowNewPosts && $utcLength}
-                                        {assign var="lbMaxLength" value=$lbLength-$lbIndentRepeat-$utcLength-2*$lbLevelCut}
+                                {if LISTBOARDS_LENGTH > 0 && $indentRepeat > 0}
+                                    {if LISTBOARDS_SHOW_NEWPOSTS && $unreadThreadsCountLength}
+                                        {assign var="maxLength" value=LISTBOARDS_LENGTH-$indentRepeat-$unreadThreadsCountLength-2*LISTBOARDS_LEVELCUT}
                                     {else}
-                                        {assign var="lbMaxLength" value=$lbLength-$lbIndentRepeat*$lbLevelCut}
+                                        {assign var="maxLength" value=LISTBOARDS_LENGTH-$indentRepeat*LISTBOARDS_LEVELCUT}
                                     {/if}
                                 {else}
-                                    {assign var="lbMaxLength" value=$lbLength}
+                                    {assign var="maxLength" value=LISTBOARDS_LENGTH}
                                 {/if}
-                                {if $lbMaxLength > 0 && $board->title|strlen > $lbMaxLength}
-                                    {if USE_MBSTRING}{assign var="bTitle" value=$board->title|mb_substr:0:$lbMaxLength-3|concat:'...'}
-                                    {else}{assign var="bTitle" value=$board->title|substr:0:$lbMaxLength-3|concat:'...'}
-                                    {/if}
-                                {else}
-                                    {assign var="bTitle" value=$board->title}
-                                {/if}
-                                {if $board->isCategory() && $child.depth < 2}
-                                    </div>
-                                    <div class="container-{cycle values="$lbFirstBoxColor,$lbSecondBoxColor"}" style="margin-bottom:{$lbSpacer}px;">
-                                        <a href="index.php?page=Board&amp;boardID={@$boardID}{@SID_ARG_2ND}" title="{lang}{$board->title|strip_tags}{/lang}{if $board->description} &raquo; {lang}{$board->description|strip_tags}{/lang}{/if}" style="font-weight:bold; font-size:{$lbFontsize};">{lang}{$bTitle}{/lang}</a>
-                                {else}
-                                    <br />
-                                    {if $lbShowNewPosts && !$unreadThreadsCount.$boardID|empty}
-                                        {@$lbIndentNewPosts|str_repeat:$lbIndentRepeat}
-                                        <a href="index.php?page=Board&amp;boardID={@$boardID}{@SID_ARG_2ND}" title="{lang}{$board->title|strip_tags}{/lang}{if $board->description} &raquo; {lang}{$board->description|strip_tags}{/lang}{/if}" class="new">{lang}{$bTitle}{/lang} ({#$unreadThreadsCount.$boardID})</a>
+                                {capture assign="boardTitle"}{lang}{$board->title}{/lang}{/capture}
+                                {capture assign="boardDescription"}{lang}{if $board->allowDescriptionHtml}{@$board->description}{else}{$board->description}{/if}{/lang}{/capture}
+                                {if $maxLength > 0 && $boardTitle|strlen > $maxLength}                                	                                    
+                                    {assign var="boardTitle" value=$boardTitle|truncate:$maxLength}                                
+                                {/if}                                
+                                {if $board->isCategory() && $child.depth < 2}                                	                                	
+                                    <div class="container-{cycle values="$firstBoxColor,$secondBoxColor"}" style="margin-bottom: {LISTBOARDS_MAINBOARD_SPACER}px;">
+                                        <a href="index.php?page=Board&amp;boardID={@$boardID}{@SID_ARG_2ND}" title="{lang}{$board->title}{/lang}{if $boardDescription} &raquo; {$boardDescription|strip_tags}{/if}" style="font-weight:bold; font-size:{$box->fontsize};">{$boardTitle}</a>
+                                {else}                                                                 
+                                    {if LISTBOARDS_SHOW_NEWPOSTS && !$box->data.unreadThreadsCount.$boardID|empty}
+                                        <p>{@LISTBOARDS_NEWPOST_INDENT|str_repeat:$indentRepeat}
+                                        <a href="index.php?page=Board&amp;boardID={@$boardID}{@SID_ARG_2ND}" title="{lang}{$board->title}{/lang}{if $boardDescription} &raquo; {$boardDescription|strip_tags}{/if}" class="new">{$boardTitle} ({#$box->dataunreadThreadsCount.$boardID})</a></p>
                                     {else}
-                                        {@$lbIndent|str_repeat:$lbIndentRepeat}
-                                        <a href="index.php?page=Board&amp;boardID={@$boardID}{@SID_ARG_2ND}" title="{lang}{$board->title|strip_tags}{/lang}{if $board->description} &raquo; {lang}{$board->description|strip_tags}{/lang}{/if}"{if $child.hasChildren > 0} style="font-weight:bold;"{/if}>{lang}{$bTitle}{/lang}</a>
+                                        <p>{@LISTBOARDS_SUBBOARD_INDENT|str_repeat:$indentRepeat}
+                                        <a href="index.php?page=Board&amp;boardID={@$boardID}{@SID_ARG_2ND}" title="{lang}{$board->title}{/lang}{if $boardDescription} &raquo; {$boardDescription|strip_tags}{/if}"{if $child.hasChildren > 0} style="font-weight:bold;"{/if}>{$boardTitle}</a></p>
                                     {/if}
                                 {/if}
-                            {/foreach}
-                            </div>
-                        </div>
+                                {if $openParents > 0}{@"</div>"|str_repeat:$openParents}{/if}                                	
+                            {/foreach}                                                    
                     {else}
                     	<p class="smallFont">
                         	{lang}wbb.portal.box.listboards.noboards{/lang}
                         </p>
-                    {/if}
-                </div>
+                    {/if}                                
             </div>
         </div>
+	</div>
