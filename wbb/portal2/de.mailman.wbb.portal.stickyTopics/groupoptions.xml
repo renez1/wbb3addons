@@ -4,13 +4,13 @@
 <data>	
 	<import>
 		<categories>
-			<category name="user.board.general">
+			<category name="user.board.portal">
 				<parent>user.board</parent>
 			</category>
 		</categories>
 		<options>
 			<option name="user.board.canViewStickyTopicsBox">
-				<categoryname>user.board.general</categoryname>
+				<categoryname>user.board.portal</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>1</defaultvalue>
 			</option>
