@@ -19,12 +19,15 @@ class StickyTopicsBox extends PortalBox implements StandardPortalBox {
     /**
      * @see StandardPortalBox::readData()
      */
-    public function readData() {
-        if(WCF::getUser()->getPermission('user.board.canViewStickyTopicsBox')) {
-    		foreach($this->cacheData as $key => $item) {
-    		    $this->data['topics'][] = $item;
-    		}
-        }
+    public function readData() {        
+    	foreach($this->cacheData as $key => $item) {
+    	    $this->data['topics'][] = $item;
+    	}
+
+    	// save memory
+    	$this->cacheData = array();
+    	
+    	if (!count($this->data['topics'])) $this->empty = true;
 	}
 
     /**
