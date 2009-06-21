@@ -6,7 +6,7 @@
 		<packagename lang="de">Portalbox &quot;Wichtige Themen&quot;</packagename>
         <packageDescription>Zeigt die wichtigsten Themen in einer Portalbox an.</packageDescription>
 		<standalone>0</standalone>
-		<isUnique>1</isUnique>
+		<isunique>0</isunique>
 		<plugin>com.woltlab.wbb</plugin>
 		<version>2.0.0 Beta1</version>
 		<date>2009-09-21</date>
