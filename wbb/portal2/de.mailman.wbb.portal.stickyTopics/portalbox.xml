@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "DTD/package.dtd">
+<!-- $Id$ -->
+<data>
+	<import>
+		<portalboxitem name="stickyTopics">
+			<className>StickyTopicsBox</className>
+			<cacheBuilderClass>CacheBuilderStickyTopicsBox</cacheBuilderClass>
+			<boxType>2</boxType>
+			<useCache>1</useCache>
+			<cacheType>default</cacheType>
+			<sortOrder>3</sortOrder>
+			<boxActivation>1</boxActivation>
+		</portalboxitem>
+	</import>
+</data>

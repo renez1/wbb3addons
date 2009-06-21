@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<!-- $Id$ -->
+<language languagecode="en">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.stickyTopics.title"><![CDATA[Important Topics]]></item>
+		<item name="wbb.portal.box.stickyTopics.toolTip"><![CDATA[Last change: {@$topic.lastPostTime|time:"%d.%m.%Y %H:%M"} - views: {#$topic.views}]]></item>
+		<item name="wbb.portal.box.stickyTopics.sortBy.lastPostTime"><![CDATA[Last post]]></item>
+		<item name="wbb.portal.box.stickyTopics.sortBy.time"><![CDATA[Creation date]]></item>
+		<item name="wbb.portal.box.stickyTopics.sortBy.views"><![CDATA[Views]]></item>
+		<item name="wbb.portal.box.stickyTopics.sortBy.replies"><![CDATA[Answers]]></item>
+	</category>
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.category.user.board.portal"><![CDATA[Portal]]></item>
+		<item name="wcf.acp.group.option.category.user.board.portal.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.board.canViewStickyTopicsBox"><![CDATA[Can view the &raquo;Important Topics&laquo; Box]]></item>
+		<item name="wcf.acp.group.option.user.board.canViewStickyTopicsBox.description"><![CDATA[]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.stickyTopics"><![CDATA[Important Topics Box]]></item>
+		<item name="wcf.acp.option.category.portal.box.stickyTopics.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_boardIDs"><![CDATA[Boards]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_boardIDs.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_sortField"><![CDATA[Order by]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_sortField.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_numOfEntries"><![CDATA[Number of topics]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_numOfEntries.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_title_length"><![CDATA[Max. length of the topic title]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_title_length.description"><![CDATA[Default = 32.]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_showClosed"><![CDATA[Show closed topics]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_showClosed.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_showIcon"><![CDATA[Show icon]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_showIcon.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_boxOpened"><![CDATA[Box permanently opened]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_boxOpened.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_sbcolor"><![CDATA[Second backgroundcolor]]></item>
+        <item name="wcf.acp.option.stickyTopicsBox_sbcolor.description"><![CDATA[Default = 2.]]></item>
+	</category>
+</language>
