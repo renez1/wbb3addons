@@ -4,7 +4,7 @@ require_once(WBB_DIR.'lib/data/board/BoardList.class.php');
 
 /**
  * This class extends the board list by portal specific functionality
- *
+ * $Id$
  * @package     de.mailman.wbb.portal.listboards
  * @author      Oliver Kliebisch
  * @copyright   2009 Oliver Kliebisch
