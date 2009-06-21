@@ -9,6 +9,10 @@ class CacheBuilderStickyTopicsBox implements CacheBuilder {
 	 */
 	public function getData($cacheResource) {
 		$data           = array();
+		/**
+		 * FIXME: This is horrible wrong. This way the cached data depends on the user who triggers
+		 * the cache loader.
+		 */
         $permBoardIDs   = Board::getAccessibleBoards();
 		if(!STICKYTOPICSBOX_BOARDIDS || empty($permBoardIDs)) return $data;
 		$boardIDs = explode(',', $permBoardIDs);
@@ -22,10 +26,9 @@ class CacheBuilderStickyTopicsBox implements CacheBuilder {
                AND isDisabled = 0
                AND movedThreadID = 0";
         if(!STICKYTOPICSBOX_SHOWCLOSED) $sql .= " AND isClosed = 0";
-        $sql .= " ORDER BY ".STICKYTOPICSBOX_SORTFIELD." DESC
-              LIMIT ".STICKYTOPICSBOX_NUMOFENTRIES;
+        $sql .= " ORDER BY ".STICKYTOPICSBOX_SORTFIELD." DESC";              
 
-		$result = WCF::getDB()->sendQuery($sql);
+		$result = WCF::getDB()->sendQuery($sql, STICKYTOPICSBOX_NUMOFENTRIES);
 		while ($row = WCF::getDB()->fetchArray($result)) $data[] = $row;
         return $data;
 	}
