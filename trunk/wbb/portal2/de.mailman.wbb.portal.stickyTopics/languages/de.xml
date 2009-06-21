@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<!-- $Id$ -->
+<language languagecode="de">
+	<category name="wbb.portal">
+		<item name="wbb.portal.box.stickyTopics.title"><![CDATA[Wichtige Themen]]></item>
+		<item name="wbb.portal.box.stickyTopics.toolTip"><![CDATA[Letzte Änderung: {@$topic.lastPostTime|time:"%d.%m.%Y %H:%M"} - Ansichten: {#$topic.views}]]></item>
+		<item name="wbb.portal.box.stickyTopics.sortBy.lastPostTime"><![CDATA[Letzter Beitrag]]></item>
+		<item name="wbb.portal.box.stickyTopics.sortBy.time"><![CDATA[Erstellungsdatum]]></item>
+		<item name="wbb.portal.box.stickyTopics.sortBy.views"><![CDATA[Ansichten]]></item>
+		<item name="wbb.portal.box.stickyTopics.sortBy.replies"><![CDATA[Antworten]]></item>
+	</category>
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.category.user.board.portal"><![CDATA[Portal]]></item>
+		<item name="wcf.acp.group.option.category.user.board.portal.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.board.canViewStickyTopicsBox"><![CDATA[Kann die &raquo;Wichtige Themen&laquo; Box sehen]]></item>
+		<item name="wcf.acp.group.option.user.board.canViewStickyTopicsBox.description"><![CDATA[Mitglieder dieser Benutzergruppe können die &raquo;Wichtige Themen&laquo; Box sehen.]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.portal.box.stickyTopics"><![CDATA[Wichtige Themen Box]]></item>
+		<item name="wcf.acp.option.category.portal.box.stickyTopics.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_boardIDs"><![CDATA[Foren]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_boardIDs.description"><![CDATA[Wählen Sie hier die Foren aus, deren wichtigsten Themen Sie anzeigen möchten.]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_sortField"><![CDATA[Sortierung nach]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_sortField.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_numOfEntries"><![CDATA[Anzahl der Themen]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_numOfEntries.description"><![CDATA[Geben Sie hier an, wieviel Themen in der Box angezeigt werden sollen.]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_title_length"><![CDATA[Max. Zeichenlänge des Thementitels]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_title_length.description"><![CDATA[0 = ungekürzter Titel (deaktiviert). Standard = 32.]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_showClosed"><![CDATA[Geschlossene Themen anzeigen]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_showClosed.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_showIcon"><![CDATA[Icon anzeigen]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_showIcon.description"><![CDATA[Zeigt das Sticky-Icon neben dem Thementitel an.]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_boxOpened"><![CDATA[Box permanent geöffnet]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_boxOpened.description"><![CDATA[Aktivieren Sie diese Option wenn die Box permanent geöffnet sein soll (Benutzer können die Box dann nicht mehr schließen).]]></item>
+		<item name="wcf.acp.option.stickyTopicsBox_sbcolor"><![CDATA[Zweite Hintergrundfarbe]]></item>
+        <item name="wcf.acp.option.stickyTopicsBox_sbcolor.description"><![CDATA[Farbe &quot;1&quot; zum Deaktivieren. Standard = 2.]]></item>
+	</category>
+</language>
