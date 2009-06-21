@@ -8,8 +8,8 @@
         <standalone>0</standalone>
         <isunique>1</isunique>
         <plugin>com.woltlab.wbb</plugin>
-        <version>2.0.0</version>
-        <date>2009-06-19</date>
+        <version>2.0.0 PL1</version>
+        <date>2009-06-21</date>
     </packageinformation>
 
     <authorinformation>
@@ -33,4 +33,10 @@
         <options>options.xml</options>
 		<useroptions>useroptions.xml</useroptions>
     </instructions>
+
+	<instructions type="update" fromversion="2.0.0">
+        <files>files.tar</files>
+        <templates>templates.tar</templates>
+        <options>options.xml</options>
+	</instructions>
 </package>
