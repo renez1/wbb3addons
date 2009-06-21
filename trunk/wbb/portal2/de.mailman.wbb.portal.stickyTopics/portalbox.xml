@@ -11,6 +11,7 @@
 			<cacheType>default</cacheType>
 			<sortOrder>3</sortOrder>
 			<boxActivation>1</boxActivation>
+			<permissions>user.board.canViewStickyTopicsBox</permissions>
 		</portalboxitem>
 	</import>
 </data>
