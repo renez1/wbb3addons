@@ -4,12 +4,6 @@
 <data>	
 	<import>
 		<eventlistener>
-			<eventClassName>OptionForm</eventClassName>
-			<eventName>saved</eventName>
-			<environment>admin</environment>
-			<listenerClassFile>lib/system/event/listener/PortalStickyTopicsBoxListener.class.php</listenerClassFile>
-		</eventlistener>
-		<eventlistener>
 			<eventClassName>PostEditForm</eventClassName>
 			<eventName>saved</eventName>
 			<listenerClassFile>lib/system/event/listener/PortalStickyTopicsBoxListener.class.php</listenerClassFile>

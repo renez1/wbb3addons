@@ -12,20 +12,20 @@ class CacheBuilderStickyTopicsBox implements CacheBuilder {
         $permBoardIDs   = Board::getAccessibleBoards();
 		if(!STICKYTOPICSBOX_BOARDIDS || empty($permBoardIDs)) return $data;
 
-		$sql = "SELECT *"
-		    ."\n  FROM wbb".WBB_N."_thread"
-            ."\n WHERE isSticky = 1"
-            ."\n   AND boardID IN(".STICKYTOPICSBOX_BOARDIDS.")"
-            ."\n   AND boardID IN(".$permBoardIDs.")"
-            ."\n   AND isDeleted = 0"
-            ."\n   AND isDisabled = 0"
-            ."\n   AND movedThreadID = 0";
-        if(!STICKYTOPICSBOX_SHOWCLOSED) $sql .= "\n   AND isClosed = 0";
-        $sql .= " ORDER BY ".STICKYTOPICSBOX_SORTFIELD." DESC"
-             ."\n LIMIT ".STICKYTOPICSBOX_NUMOFENTRIES;
+		$sql = "SELECT *
+		      FROM wbb".WBB_N."_thread
+             WHERE isSticky = 1
+               AND boardID IN(".STICKYTOPICSBOX_BOARDIDS.")
+               AND boardID IN(".$permBoardIDs.")
+               AND isDeleted = 0
+               AND isDisabled = 0
+               AND movedThreadID = 0";
+        if(!STICKYTOPICSBOX_SHOWCLOSED) $sql .= " AND isClosed = 0";
+        $sql .= " ORDER BY ".STICKYTOPICSBOX_SORTFIELD." DESC
+              LIMIT ".STICKYTOPICSBOX_NUMOFENTRIES;
 
-		$result = WBBCore::getDB()->sendQuery($sql);
-		while ($row = WBBCore::getDB()->fetchArray($result)) $data[] = $row;
+		$result = WCF::getDB()->sendQuery($sql);
+		while ($row = WCF::getDB()->fetchArray($result)) $data[] = $row;
         return $data;
 	}
 }
