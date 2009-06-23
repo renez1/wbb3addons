@@ -2,6 +2,7 @@
 // wbb imports
 require_once(WBB_DIR.'lib/data/boxes/PortalBox.class.php');
 require_once(WBB_DIR.'lib/data/boxes/StandardPortalBox.class.php');
+require_once(WBB_DIR.'lib/data/board/Board.class.php');
 
 /**
  * Shows sticky topics in a box
@@ -13,22 +14,30 @@ require_once(WBB_DIR.'lib/data/boxes/StandardPortalBox.class.php');
  * @subpackage  data.boxes
  * @category    Portal
  */
+
 class StickyTopicsBox extends PortalBox implements StandardPortalBox {
-	public $data = array();
+    public $data = array();
 
     /**
      * @see StandardPortalBox::readData()
      */
-    public function readData() {        
-    	foreach($this->cacheData as $key => $item) {
-    	    $this->data['topics'][] = $item;
-    	}
+    public function readData() {
+        $this->data['topics'] = array();
+        $boardIDs = Board::getAccessibleBoards();
 
-    	// save memory
-    	$this->cacheData = array();
-    	
-    	if (!count($this->data['topics'])) $this->empty = true;
-	}
+        if(!empty($boardIDs)) {
+            $boardIDs = explode(',', $boardIDs);
+            foreach($this->cacheData as $key => $item) {
+                if(isset($item['boardID']) && in_array($item['boardID'], $boardIDs)) $this->data['topics'][] = $item;
+            }
+        }
+
+        // save memory
+        $this->cacheData = array();
+        unset($boardIDs);
+
+        if(!count($this->data['topics'])) $this->empty = true;
+    }
 
     /**
      * @see StandardPortalBox::getTemplateName()

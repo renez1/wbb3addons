@@ -9,6 +9,7 @@
 		<item name="wbb.portal.box.stickyTopics.sortBy.time"><![CDATA[Gönderilis Zamani]]></item>
 		<item name="wbb.portal.box.stickyTopics.sortBy.views"><![CDATA[Görünüm]]></item>
 		<item name="wbb.portal.box.stickyTopics.sortBy.replies"><![CDATA[Cevapla]]></item>
+		<item name="wbb.portal.box.stickyTopics.isEmpty"><![CDATA[No topics available]]></item>
 	</category>
 	<category name="wcf.acp.group">
 		<item name="wcf.acp.group.option.category.user.board.portal"><![CDATA[Portal]]></item>

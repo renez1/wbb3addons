@@ -35,6 +35,10 @@
                             <a href="index.php?page=Thread&threadID={$topic.threadID}{@SID_ARG_2ND}" title="{lang}wbb.portal.box.stickyTopics.toolTip{/lang}">{lang}{$fTitle}{/lang}</a>
                         </div>
                     {/foreach}
+                {else}
+                    <div class="container-{cycle name='stickyTopicsBoxCycle'} smallFont" style="float:none; margin-right:6px;">
+                        {lang}wbb.portal.box.stickyTopics.isEmpty{/lang}
+                    </div>
                 {/if}
             </div>
         </div>
