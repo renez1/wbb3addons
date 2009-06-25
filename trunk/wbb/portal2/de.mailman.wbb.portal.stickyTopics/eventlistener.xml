@@ -4,6 +4,11 @@
 <data>	
 	<import>
 		<eventlistener>
+			<eventClassName>ThreadActionPage</eventClassName>
+			<eventName>show</eventName>
+			<listenerClassFile>lib/system/event/listener/PortalStickyTopicsBoxListener.class.php</listenerClassFile>
+		</eventlistener>
+		<eventlistener>
 			<eventClassName>ThreadAddForm</eventClassName>
 			<eventName>saved</eventName>
 			<listenerClassFile>lib/system/event/listener/PortalStickyTopicsBoxListener.class.php</listenerClassFile>
