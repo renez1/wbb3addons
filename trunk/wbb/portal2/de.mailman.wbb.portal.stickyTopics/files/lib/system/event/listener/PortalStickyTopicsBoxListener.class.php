@@ -22,9 +22,7 @@ class PortalStickyTopicsBoxListener implements EventListener {
             } else if($eventObj->action == 'stick') {
                 $clearCache = true;
             }
-        } else if($className == 'ThreadAddForm' && $eventName == 'saved' && $eventObj->isImportant == 1) {
-			$clearCache = true;
-        } else if($className == 'PostEditForm' && $eventName == 'saved' && $eventObj->isImportant == 1) {
+        } else if(($className == 'ThreadAddForm' || $className == 'PostEditForm') && $eventName == 'saved' && $eventObj->isImportant == 1) {
 			$clearCache = true;
 		}
 
