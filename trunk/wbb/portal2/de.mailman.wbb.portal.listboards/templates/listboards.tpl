@@ -20,7 +20,8 @@
 
             <div class="container-1" id="{@$box->getStatusVariable()}">
                 <div class="containerContent smallFont"{if $box->maxHeight > 0} style="max-height: {@$box->maxHeight}px; overflow:auto;"{/if}>
-                    {if $box->data.boards|isset && $box->data.boards|count > 0}                        
+                    {if $box->data.boards|isset && $box->data.boards|count > 0}
+                        <div id="dummy" style="padding:0; margin:0;">
                         {foreach from=$box->data.boards item=child}
                             {assign var="board" value=$child.board}
                             {assign var="boardID" value=$board->boardID}
@@ -45,19 +46,19 @@
                             {if $maxLength > 0 && $boardTitle|strlen > $maxLength}
                                 {assign var="boardTitle" value=$boardTitle|truncate:$maxLength}
                             {/if}
-                            {if $board->isCategory() && $child.depth < 2}                                
+                            {if $board->isCategory() && $child.depth < 2}
+                                </div>
                                 <div class="container-{cycle values="$firstBoxColor,$secondBoxColor"}" style="margin-bottom: {LISTBOARDS_MAINBOARD_SPACER}px;">
                                     <a href="index.php?page=Board&amp;boardID={@$boardID}{@SID_ARG_2ND}" title="{$boardTitle}{if $boardDescription} &raquo; {$boardDescription|strip_tags}{/if}" style="font-weight:bold; font-size:{$box->fontSize};">{$boardTitle}</a>
                             {else}
                                 {if LISTBOARDS_SHOW_NEWPOSTS && !$box->data.unreadThreadsCount.$boardID|empty}
                                     <p>{@LISTBOARDS_NEWPOST_INDENT|str_repeat:$indentRepeat}
-                                    <a href="index.php?page=Board&amp;boardID={@$boardID}{@SID_ARG_2ND}" title="{$boardTitle}{if $boardDescription} &raquo; {$boardDescription|strip_tags}{/if}" class="new">{$boardTitle} ({#$box->dataunreadThreadsCount.$boardID})</a></p>
+                                    <a href="index.php?page=Board&amp;boardID={@$boardID}{@SID_ARG_2ND}" title="{$boardTitle}{if $boardDescription} &raquo; {$boardDescription|strip_tags}{/if}" class="new">{$boardTitle} ({#$box->unreadThreadsCount.$boardID})</a></p>
                                 {else}
                                     <p>{@LISTBOARDS_SUBBOARD_INDENT|str_repeat:$indentRepeat}
                                     <a href="index.php?page=Board&amp;boardID={@$boardID}{@SID_ARG_2ND}" title="{$boardTitle}{if $boardDescription} &raquo; {$boardDescription|strip_tags}{/if}"{if $child.hasChildren > 0} style="font-weight:bold;"{/if}>{$boardTitle}</a></p>
                                 {/if}
                             {/if}
-                            {if $openParents > 0 && $child.depth < 2}{@"</div>"|str_repeat:$openParents}{/if}
                         {/foreach}
                         </div>
                     {else}
