@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<holidays countrycode="am">
+<!-- jährlich -->
+	<annual>
+	    <holiday>
+	        <month>1</month>
+	        <day>1</day>
+	        <summary>Ամանոր</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>1</month>
+	        <day>2</day>
+	        <summary>Ամանոր</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>1</month>
+	        <day>6</day>
+	        <summary>Սուրբ ծնունդ և Հայտնություն</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>1</month>
+	        <day>28</day>
+	        <summary>Բանակի օր</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>3</month>
+	        <day>8</day>
+	        <summary>Կանանց տոն</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>4</month>
+	        <day>7</day>
+	        <summary>Մայրության, գեղեցկության և սիրո տոն</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>4</month>
+	        <day>24</day>
+	        <summary>Ցեղասպանության զոհերի հիշատակի օր</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>5</month>
+	        <day>1</day>
+	        <summary>Աշխատանքի օր</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>5</month>
+	        <day>9</day>
+	        <summary>Հաղթանակի և խաղաղության տոն</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>5</month>
+	        <day>28</day>
+	        <summary>Հանրապետության տոն</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>7</month>
+	        <day>5</day>
+	        <summary>Սահմանադրության օր</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>9</month>
+	        <day>21</day>
+	        <summary>Անկախության տոն</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>12</month>
+	        <day>7</day>
+	        <summary>Երկրաշարժի զոհերի հիշատակի օր</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>12</month>
+	        <day>31</day>
+	        <summary>Ամանոր</summary>
+	        <description></description>
+        </holiday>
+	</annual>
+</holidays>

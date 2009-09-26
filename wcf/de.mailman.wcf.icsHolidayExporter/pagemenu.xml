@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/pageMenu.dtd">
+<!-- $Id$ -->
+<data>	
+	<import>
+		<pagemenuitem name="wcf.header.menu.icsHolidayExporter">
+			<iconmedium>icsHolidayExportM.png</iconmedium>
+			<iconsmall>icsHolidayExportS.png</iconsmall>
+			<position>header</position>
+			<permissions>user.managepages.canUseIHE</permissions>
+			<link>index.php?form=IcsHolidayExporter</link>
+		</pagemenuitem>
+	</import>
+</data>

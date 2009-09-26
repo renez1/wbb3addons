@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<holidays countrycode="it">
+<!-- jährlich -->
+	<annual>
+	    <holiday>
+	        <month>1</month>
+	        <day>1</day>
+	        <summary>Capodanno</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>1</month>
+	        <day>6</day>
+	        <summary>Epifania</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>4</month>
+	        <day>25</day>
+	        <summary>Liberazione Italia</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>5</month>
+	        <day>1</day>
+	        <summary>Festa del lavoro</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>6</month>
+	        <day>2</day>
+	        <summary>Festa della Repubblica Italia</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>8</month>
+	        <day>15</day>
+	        <summary>Ferragosto</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>11</month>
+	        <day>1</day>
+	        <summary>Ognissanti</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>12</month>
+	        <day>8</day>
+	        <summary>Immacolata Concezione</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>12</month>
+	        <day>25</day>
+	        <summary>Natale</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>12</month>
+	        <day>26</day>
+	        <summary>Santo Stefano</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>12</month>
+	        <day>31</day>
+	        <summary>San Silvestro</summary>
+	        <description></description>
+        </holiday>
+	</annual>
+
+<!-- Ostern, bzw. osternabhängig -->
+    <eastern>
+        <eastermonday>
+            <summary>Lunedì di Pasqua</summary>
+            <description></description>
+        </eastermonday>
+        <whitmonday>
+            <summary>Lunedì di Pentecoste</summary>
+            <description></description>
+        </whitmonday>
+    </eastern>
+</holidays>

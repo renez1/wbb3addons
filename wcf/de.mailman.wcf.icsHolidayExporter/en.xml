@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<!-- $Id$ -->
+<language languagecode="en">
+	<category name="wcf.icsHolidayExporter">
+		<item name="wcf.icsHolidayExporter.title"><![CDATA[ICS Holiday Exporter]]></item>
+		<item name="wcf.icsHolidayExporter.description"><![CDATA[We do not guarantee the correctness and completeness of the files!]]></item>
+		<item name="wcf.icsHolidayExporter.legend"><![CDATA[IHE]]></item>
+		<item name="wcf.icsHolidayExporter.settings"><![CDATA[Einstellungen]]></item>
+		<item name="wcf.icsHolidayExporter.year"><![CDATA[Year]]></item>
+		<item name="wcf.icsHolidayExporter.fromYear"><![CDATA[from:]]></item>
+		<item name="wcf.icsHolidayExporter.toYear"><![CDATA[to:]]></item>
+		<item name="wcf.icsHolidayExporter.country"><![CDATA[Country:]]></item>
+		<item name="wcf.icsHolidayExporter.countryCode"><![CDATA[Country code]]></item>
+		<item name="wcf.icsHolidayExporter.exports"><![CDATA[Exports:]]></item>
+	</category>
+	
+	<category name="wcf.global">
+		<item name="wcf.global.icsHolidayExporter.copyright"><![CDATA[<a href="http://www.wbb3addons.de" style="font-size: x-small; text-decoration: none;">IHE developed by Mailman</a>]]></item>
+	</category>
+	
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.category.managepages"><![CDATA[Manage Pages]]></item>
+		<item name="wcf.acp.group.option.category.managepages.description"><![CDATA[To manage your pages.]]></item>
+		<item name="wcf.acp.group.option.user.managepages.canUseIHE"><![CDATA[ICS Holiday Exporter]]></item>
+		<item name="wcf.acp.group.option.user.managepages.canUseIHE.description"><![CDATA[Can see ICS Holiday Exporter.]]></item>
+	</category>
+	
+    <category name="wcf.header.menu">
+        <item name="wcf.header.menu.icsHolidayExporter"><![CDATA[IHE]]></item>
+    </category>
+    <category name="wcf.usersOnline">
+        <item name="wcf.usersOnline.location.icsHolidayExporter"><![CDATA[ICS Holiday Exporter]]></item>
+    </category>
+</language>

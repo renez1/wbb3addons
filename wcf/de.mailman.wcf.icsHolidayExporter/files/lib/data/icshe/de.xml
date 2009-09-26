@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<holidays countrycode="de">
+<!-- jährlich -->
+    <annual>
+        <holiday>
+            <month>1</month>
+            <day>1</day>
+            <summary>Neujahrstag</summary>
+            <description></description>
+        </holiday>
+        <holiday>
+            <month>1</month>
+            <day>6</day>
+            <summary>Heilige Drei Könige *BW, BY, ST</summary>
+            <description>Gesetzlicher Feiertag in Baden-Württemberg, Bayern und Sachsen-Anhalt.</description>
+        </holiday>
+        <holiday>
+            <month>5</month>
+            <day>1</day>
+            <summary>Tag der Arbeit (Maifeiertag)</summary>
+            <description>Gesetzlicher Feiertag.</description>
+        </holiday>
+        <holiday>
+            <month>8</month>
+            <day>15</day>
+            <summary>Mariä Himmelfahrt *SL, (BY)</summary>
+            <description>Gesetzlicher Feiertag im Saarland und in den meisten Gemeinden Bayerns.</description>
+        </holiday>
+        <holiday>
+            <month>10</month>
+            <day>3</day>
+            <summary>Tag der Deutschen Einheit</summary>
+            <description>Gesetzlicher Feiertag.</description>
+        </holiday>
+        <holiday>
+            <month>10</month>
+            <day>31</day>
+            <summary>Reformationstag *BB, MV, SN, ST, TH, (BW)</summary>
+            <description>Gesetzlicher Feiertag in Brandenburg, Mecklenburg-Vorpommern, Sachsen, Sachsen-Anhalt und Thüringen. Teilweise schulfrei in Baden-Württemberg.</description>
+        </holiday>
+        <holiday>
+            <month>11</month>
+            <day>1</day>
+            <summary>Allerheiligen *BW, BY, NW, RP, SL</summary>
+            <description>Gesetzlicher Feiertag in Baden-Württemberg, Bayern, Nordrhein-Westfalen, Rheinland-Pfalz und Saarland.</description>
+        </holiday>
+        <holiday>
+            <month>12</month>
+            <day>25</day>
+            <summary>1. Weihnachtsfeiertag</summary>
+            <description>Gesetzlicher Feiertag.</description>
+        </holiday>
+        <holiday>
+            <month>12</month>
+            <day>26</day>
+            <summary>2. Weihnachtsfeiertag</summary>
+            <description>Gesetzlicher Feiertag.</description>
+        </holiday>
+    </annual>
+
+<!-- Ostern, bzw. osternabhängig -->
+    <eastern>
+        <goodfriday>
+            <summary>Karfreitag</summary>
+            <description></description>
+        </goodfriday>
+        <eastersunday>
+            <summary>Ostersonntag</summary>
+            <description></description>
+        </eastersunday>
+        <eastermonday>
+            <summary>Ostermontag</summary>
+            <description></description>
+        </eastermonday>
+        <ascension>
+            <summary>Christi Himmelfahrt</summary>
+            <description></description>
+        </ascension>
+        <whitsunday>
+            <summary>Pfingstsonntag</summary>
+            <description></description>
+        </whitsunday>
+        <whitmonday>
+            <summary>Pfingstmontag</summary>
+            <description></description>
+        </whitmonday>
+        <corpuschristi>
+            <summary>Fronleichnam *BW, BY, HE, NW, RP, SL, (SN, TH)</summary>
+            <description></description>
+        </corpuschristi>
+    </eastern>
+
+<!-- Buß und Bettag -->
+    <penanceday>
+        <summary>Buß- und Bettag *SN (BY)</summary>
+        <description>Gesetzlicher Feiertag in Sachsen und zum Teil schulfrei in Bayern.</description>
+    </penanceday>
+</holidays>

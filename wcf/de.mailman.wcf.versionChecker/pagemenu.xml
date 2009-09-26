@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/pageMenu.dtd">
+<!-- $Id$ -->
+<data>	
+	<import>
+		<pagemenuitem name="wcf.header.menu.versionChecker">
+			<iconmedium>packageM.png</iconmedium>
+			<iconsmall>packageS.png</iconsmall>
+			<position>header</position>
+			<permissions>user.managepages.canViewversionChecker</permissions>
+			<link>index.php?page=versionChecker</link>
+		</pagemenuitem>
+	</import>
+</data>
