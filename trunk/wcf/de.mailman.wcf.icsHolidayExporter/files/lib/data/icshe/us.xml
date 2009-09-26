@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<holidays countrycode="us">
+<!-- jährlich -->
+	<annual>
+	    <holiday>
+	        <month>1</month>
+	        <day>1</day>
+	        <summary>New Year's Day</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>7</month>
+	        <day>4</day>
+	        <summary>Independence Day</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>11</month>
+	        <day>11</day>
+	        <summary>Veterans Day</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>12</month>
+	        <day>25</day>
+	        <summary>Christmas Day</summary>
+	        <description></description>
+        </holiday>
+	</annual>
+
+<!-- tagesabhängig -->
+    <daydepending>
+	    <holiday>
+	        <month>1</month>
+	        <day>3:1</day>
+	        <summary>Martin Luther King Day</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>2</month>
+	        <day>3:1</day>
+	        <summary>Washington’s Birthday</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>5</month>
+	        <day>-1:1</day>
+	        <summary>Memorial Day</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>9</month>
+	        <day>1:1</day>
+	        <summary>Labor Day</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>10</month>
+	        <day>2:1</day>
+	        <summary>Columbus Day</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>11</month>
+	        <day>4:4</day>
+	        <summary>Thanksgiving</summary>
+	        <description></description>
+        </holiday>
+    </daydepending>
+</holidays>

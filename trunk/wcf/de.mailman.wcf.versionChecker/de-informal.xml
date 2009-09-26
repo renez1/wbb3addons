@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<!-- $Id$ -->
+<language languagecode="de-informal">
+	<category name="wcf.versionChecker">
+		<item name="wcf.versionChecker.title"><![CDATA[Version Checker]]></item>
+		<item name="wcf.versionChecker.description"><![CDATA[]]></item>
+		<item name="wcf.versionChecker.legend"><![CDATA[Versionsprüfung]]></item>
+		<item name="wcf.versionChecker.version1"><![CDATA[Version 1]]></item>
+		<item name="wcf.versionChecker.version1.description"><![CDATA[]]></item>
+		<item name="wcf.versionChecker.version2"><![CDATA[Version 2]]></item>
+		<item name="wcf.versionChecker.version2.description"><![CDATA[]]></item>
+		<item name="wcf.versionChecker.lower"><![CDATA[<strong>&quot;{@$version1}&quot;</strong> <span style="text-decoration:underline;">ist kleiner als</span> <strong>&quot;{@$version2}&quot;]]></item>
+		<item name="wcf.versionChecker.equal"><![CDATA[<strong>&quot;{@$version1}&quot;</strong> <span style="text-decoration:underline;">ist gleich</span> <strong>&quot;{@$version2}&quot;]]></item>
+		<item name="wcf.versionChecker.greater"><![CDATA[<strong>&quot;{@$version1}&quot;</strong> <span style="text-decoration:underline;">ist größer als</span> <strong>&quot;{@$version2}&quot;</strong>]]></item>
+	</category>
+	
+	<category name="wcf.usersOnline">
+		<item name="wcf.usersOnline.location.versionChecker"><![CDATA[<a href="index.php?page=VersionChecker">Version Checker</a>]]></item>
+	</category>
+	
+	<category name="wcf.global">
+		<item name="wcf.global.versionChecker.copyright"><![CDATA[<a href="http://www.wbb3addons.de" style="font-size: x-small; text-decoration: none;">"Version Checker" developed by Mailman</a>]]></item>
+	</category>
+	
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.category.managepages"><![CDATA[Seitenverwaltung]]></item>
+		<item name="wcf.acp.group.option.category.managepages.description"><![CDATA[Zum Verwalten Ihrer Seiten.]]></item>
+		<item name="wcf.acp.group.option.user.managepages.canViewversionChecker"><![CDATA[Version Checker]]></item>
+		<item name="wcf.acp.group.option.user.managepages.canViewversionChecker.description"><![CDATA[Kann Version Checker sehen.]]></item>
+	</category>
+	
+	<category name="wcf.header.menu">
+		<item name="wcf.header.menu.versionChecker"><![CDATA[Version Checker]]></item>
+	</category>
+</language>

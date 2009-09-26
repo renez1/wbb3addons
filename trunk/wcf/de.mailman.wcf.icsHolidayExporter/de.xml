@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<!-- $Id$ -->
+<language languagecode="de">
+	<category name="wcf.icsHolidayExporter">
+		<item name="wcf.icsHolidayExporter.title"><![CDATA[ICS Holiday Exporter]]></item>
+		<item name="wcf.icsHolidayExporter.description"><![CDATA[Wir übernehmen keine Gewähr auf Richtigkeit und Vollständigkeit der Ausgaben!]]></item>
+		<item name="wcf.icsHolidayExporter.legend"><![CDATA[IHE]]></item>
+		<item name="wcf.icsHolidayExporter.settings"><![CDATA[Einstellungen]]></item>
+		<item name="wcf.icsHolidayExporter.year"><![CDATA[Jahr]]></item>
+		<item name="wcf.icsHolidayExporter.fromYear"><![CDATA[von:]]></item>
+		<item name="wcf.icsHolidayExporter.toYear"><![CDATA[bis:]]></item>
+		<item name="wcf.icsHolidayExporter.country"><![CDATA[Land:]]></item>
+		<item name="wcf.icsHolidayExporter.countryCode"><![CDATA[Landescode]]></item>
+		<item name="wcf.icsHolidayExporter.exports"><![CDATA[Exports:]]></item>
+	</category>
+	
+	<category name="wcf.global">
+		<item name="wcf.global.icsHolidayExporter.copyright"><![CDATA[<a href="http://www.wbb3addons.de" style="font-size: x-small; text-decoration: none;">IHE developed by Mailman</a>]]></item>
+	</category>
+	
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.category.managepages"><![CDATA[Seitenverwaltung]]></item>
+		<item name="wcf.acp.group.option.category.managepages.description"><![CDATA[Zum Verwalten Ihrer Seiten.]]></item>
+		<item name="wcf.acp.group.option.user.managepages.canUseIHE"><![CDATA[ICS Holiday Exporter]]></item>
+		<item name="wcf.acp.group.option.user.managepages.canUseIHE.description"><![CDATA[Kann ICS Holiday Exporter sehen.]]></item>
+	</category>
+
+    <category name="wcf.header.menu">
+        <item name="wcf.header.menu.icsHolidayExporter"><![CDATA[IHE]]></item>
+    </category>
+    <category name="wcf.usersOnline">
+        <item name="wcf.usersOnline.location.icsHolidayExporter"><![CDATA[ICS Holiday Exporter]]></item>
+    </category>
+</language>

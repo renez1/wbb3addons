@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<holidays countrycode="gb">
+<!-- jährlich -->
+	<annual>
+	    <holiday>
+	        <month>1</month>
+	        <day>1</day>
+	        <summary>New Year's Day</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>1</month>
+	        <day>2</day>
+	        <summary>New Year's Day *SC</summary>
+	        <description>Scotland</description>
+        </holiday>
+	    <holiday>
+	        <month>3</month>
+	        <day>17</day>
+	        <summary>Saint Patrick's Day *NI</summary>
+	        <description>Northern Ireland</description>
+        </holiday>
+	    <holiday>
+	        <month>5</month>
+	        <day>9</day>
+	        <summary>Liberation Day *GU, JE</summary>
+	        <description>Guernsey, Jersey</description>
+        </holiday>
+	    <holiday>
+	        <month>7</month>
+	        <day>5</day>
+	        <summary>Tynwald Day *IM</summary>
+	        <description>Isle of Man</description>
+        </holiday>
+	    <holiday>
+	        <month>7</month>
+	        <day>12</day>
+	        <summary>Battle of the Boyne *NI</summary>
+	        <description>Northern Ireland</description>
+        </holiday>
+	    <holiday>
+	        <month>12</month>
+	        <day>15</day>
+	        <summary>Homecoming Day *AL</summary>
+	        <description>Alderney</description>
+        </holiday>
+	    <holiday>
+	        <month>12</month>
+	        <day>25</day>
+	        <summary>Christmas Day</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>12</month>
+	        <day>26</day>
+	        <summary>Boxing Day</summary>
+	        <description></description>
+        </holiday>
+	</annual>
+
+<!-- Ostern, bzw. osternabhängig -->
+    <eastern>
+        <goodfriday>
+            <summary>Good Friday</summary>
+            <description></description>
+        </goodfriday>
+        <eastersunday>
+            <summary>Easter Sunday</summary>
+            <description></description>
+        </eastersunday>
+        <eastermonday>
+            <summary>Easter Monday</summary>
+            <description></description>
+        </eastermonday>
+    </eastern>
+
+<!-- tagesabhängig -->
+    <daydepending>
+	    <holiday>
+	        <month>5</month>
+	        <day>1:1</day>
+	        <summary>Early May Bank Holiday</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>5</month>
+	        <day>-1:1</day>
+	        <summary>Spring Bank Holiday</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>6</month>
+	        <day>2:5</day>
+	        <summary>Tourist Trophy *IM</summary>
+	        <description>Isle of Man</description>
+        </holiday>
+	    <holiday>
+	        <month>8</month>
+	        <day>1:1</day>
+	        <summary>August Bank Holiday *SC</summary>
+	        <description>Scotland</description>
+        </holiday>
+	    <holiday>
+	        <month>8</month>
+	        <day>-1:1</day>
+	        <summary>August Bank Holiday *EN, WA</summary>
+	        <description>England, Wales</description>
+        </holiday>
+    </daydepending>
+</holidays>

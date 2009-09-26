@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<holidays countrycode="fr">
+<!-- jährlich -->
+	<annual>
+	    <holiday>
+	        <month>1</month>
+	        <day>1</day>
+	        <summary>Jour de l'An</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>5</month>
+	        <day>1</day>
+	        <summary>Fête du travail</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>5</month>
+	        <day>8</day>
+	        <summary>Fête de la Victoire</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>5</month>
+	        <day>22</day>
+	        <summary>Abolition de l’esclavage</summary>
+	        <description>Martinique.</description>
+        </holiday>
+	    <holiday>
+	        <month>5</month>
+	        <day>27</day>
+	        <summary>Abolition de l’esclavage</summary>
+	        <description>Guadeloupe.</description>
+        </holiday>
+	    <holiday>
+	        <month>6</month>
+	        <day>10</day>
+	        <summary>Abolition de l’esclavage</summary>
+	        <description>Guyane.</description>
+        </holiday>
+	    <holiday>
+	        <month>7</month>
+	        <day>14</day>
+	        <summary>Fête Nationale de la France</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>8</month>
+	        <day>15</day>
+	        <summary>Assomption</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>11</month>
+	        <day>1</day>
+	        <summary>Toussaint</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>11</month>
+	        <day>11</day>
+	        <summary>Armistice 1918</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>12</month>
+	        <day>20</day>
+	        <summary>Abolition de l’esclavage</summary>
+	        <description>La Réunion.</description>
+        </holiday>
+	    <holiday>
+	        <month>12</month>
+	        <day>25</day>
+	        <summary>Noël</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>12</month>
+	        <day>26</day>
+	        <summary>Lendemain de Noël</summary>
+	        <description></description>
+        </holiday>
+	</annual>
+
+<!-- Ostern, bzw. osternabhängig -->
+    <eastern>
+        <goodfriday>
+            <summary>Vendredi Saint</summary>
+            <description></description>
+        </goodfriday>
+        <eastersunday>
+            <summary>Dimanche de Pâques</summary>
+            <description></description>
+        </eastersunday>
+        <eastermonday>
+            <summary>Lundi de Pâques</summary>
+            <description></description>
+        </eastermonday>
+        <ascension>
+            <summary>Ascension</summary>
+            <description></description>
+        </ascension>
+        <whitsunday>
+            <summary>Pentecôte</summary>
+            <description></description>
+        </whitsunday>
+        <whitmonday>
+            <summary>Lundi de Pentecôte</summary>
+            <description></description>
+        </whitmonday>
+    </eastern>
+</holidays>

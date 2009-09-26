@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<holidays countrycode="at">
+<!-- jährlich -->
+	<annual>
+	    <holiday>
+	        <month>1</month>
+	        <day>1</day>
+	        <summary>Neujahr</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>1</month>
+	        <day>6</day>
+	        <summary>Heilige Drei Könige</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>3</month>
+	        <day>19</day>
+	        <summary>Josef *K, ST, T, V</summary>
+	        <description>Feiertag nach Landesrecht, betrifft oft nur Schulen, Ämter und Behörden in Kärnten, Steiermark, Tirol und Vorarlberg.</description>
+        </holiday>
+	    <holiday>
+	        <month>5</month>
+	        <day>1</day>
+	        <summary>Staatsfeiertag (Tag der Arbeit)</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>5</month>
+	        <day>4</day>
+	        <summary>Florian *OÖ</summary>
+	        <description>Feiertag nach Landesrecht, betrifft oft nur Schulen, Ämter und Behörden in Oberösterreich.</description>
+        </holiday>
+	    <holiday>
+	        <month>8</month>
+	        <day>15</day>
+	        <summary>Mariä Himmelfahrt</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>9</month>
+	        <day>24</day>
+	        <summary>Rupert *S</summary>
+	        <description>Feiertag nach Landesrecht, betrifft oft nur Schulen, Ämter und Behörden in Salzburg.</description>
+        </holiday>
+	    <holiday>
+	        <month>10</month>
+	        <day>10</day>
+	        <summary>Tag der Volksabstimmung *K</summary>
+	        <description>Feiertag nach Landesrecht, betrifft oft nur Schulen, Ämter und Behörden in Kärnten.</description>
+        </holiday>
+	    <holiday>
+	        <month>10</month>
+	        <day>26</day>
+	        <summary>Nationalfeiertag</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>11</month>
+	        <day>1</day>
+	        <summary>Allerheiligen</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>11</month>
+	        <day>11</day>
+	        <summary>Martin *B</summary>
+	        <description>Feiertag nach Landesrecht, betrifft oft nur Schulen, Ämter und Behörden im Burgenland</description>
+        </holiday>
+	    <holiday>
+	        <month>11</month>
+	        <day>15</day>
+	        <summary>Leopold *NÖ, W</summary>
+	        <description>Feiertag nach Landesrecht, betrifft oft nur Schulen, Ämter und Behörden in Niederösterreich und Wien.</description>
+        </holiday>
+	    <holiday>
+	        <month>12</month>
+	        <day>8</day>
+	        <summary>Mariä Empfängnis</summary>
+	        <description>Wenn der 8. Dezember auf einen Werktag fällt, dürfen Arbeitnehmer in Verkaufsstellen beschäftigt werden.</description>
+        </holiday>
+	    <holiday>
+	        <month>12</month>
+	        <day>24</day>
+	        <summary>Heiliger Abend</summary>
+	        <description>Arbeitsfrei oder teilweise arbeitsfrei nach Kollektivvertrag.</description>
+        </holiday>
+	    <holiday>
+	        <month>12</month>
+	        <day>25</day>
+	        <summary>Christtag</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>12</month>
+	        <day>26</day>
+	        <summary>Stefanitag</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>12</month>
+	        <day>31</day>
+	        <summary>Silvester</summary>
+	        <description>Arbeitsfrei oder teilweise arbeitsfrei nach Kollektivvertrag.</description>
+        </holiday>
+	</annual>
+
+<!-- Ostern, bzw. osternabhängig -->
+    <eastern>
+        <goodfriday>
+            <summary>Karfreitag</summary>
+            <description>Feiertag nach Arbeitsruhegesetz nur für Angehörige der Evangelischen Kirche A.B., Evangelischen Kirche H.B., der Altkatholischen Kirche und der Evangelisch-methodistischen Kirche.</description>
+        </goodfriday>
+        <eastersunday>
+            <summary>Ostersonntag</summary>
+            <description></description>
+        </eastersunday>
+        <eastermonday>
+            <summary>Ostermontag</summary>
+            <description></description>
+        </eastermonday>
+        <ascension>
+            <summary>Christi Himmelfahrt</summary>
+            <description></description>
+        </ascension>
+        <whitsunday>
+            <summary>Pfingstsonntag</summary>
+            <description></description>
+        </whitsunday>
+        <whitmonday>
+            <summary>Pfingstmontag</summary>
+            <description></description>
+        </whitmonday>
+        <corpuschristi>
+            <summary>Fronleichnam</summary>
+            <description></description>
+        </corpuschristi>
+    </eastern>
+
+</holidays>

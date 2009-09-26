@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<holidays countrycode="li">
+<!-- jährlich -->
+	<annual>
+	    <holiday>
+	        <month>1</month>
+	        <day>1</day>
+	        <summary>Neujahr</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>1</month>
+	        <day>6</day>
+	        <summary>Heilige Drei Könige</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>2</month>
+	        <day>2</day>
+	        <summary>Lichtmess</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>3</month>
+	        <day>19</day>
+	        <summary>Josefi</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>5</month>
+	        <day>1</day>
+	        <summary>Tag der Arbeit</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>8</month>
+	        <day>15</day>
+	        <summary>Staatsfeiertag (Mariä Himmelfahrt)</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>9</month>
+	        <day>8</day>
+	        <summary>Maria Geburt</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>11</month>
+	        <day>1</day>
+	        <summary>Allerheiligen</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>12</month>
+	        <day>8</day>
+	        <summary>Maria Empfängnis</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>12</month>
+	        <day>25</day>
+	        <summary>Weihnachten</summary>
+	        <description></description>
+        </holiday>
+	    <holiday>
+	        <month>12</month>
+	        <day>26</day>
+	        <summary>Stephanstag</summary>
+	        <description></description>
+        </holiday>
+	</annual>
+
+<!-- Ostern, bzw. osternabhängig -->
+    <eastern>
+        <eastermonday>
+            <summary>Ostermontag</summary>
+            <description></description>
+        </eastermonday>
+        <ascension>
+            <summary>Christi Himmelfahrt</summary>
+            <description></description>
+        </ascension>
+        <whitmonday>
+            <summary>Pfingstmontag</summary>
+            <description></description>
+        </whitmonday>
+        <corpuschristi>
+            <summary>Fronleichnam</summary>
+            <description></description>
+        </corpuschristi>
+    </eastern>
+</holidays>
