@@ -8,7 +8,7 @@
 			<iconsmall>packageS.png</iconsmall>
 			<position>header</position>
 			<permissions>user.managepages.canViewversionChecker</permissions>
-			<link>index.php?page=versionChecker</link>
+			<link>index.php?page=VersionChecker</link>
 		</pagemenuitem>
 	</import>
 </data>
