@@ -108,12 +108,14 @@
             <input type="reset" accesskey="r" value="{lang}wcf.global.button.reset{/lang}" />
         </div>
     </form>
-	
+
+	{if 'ICSHOLIDAYEXPORTER_BRANDINGFREE'|defined == false}
 	<div> 
 		<div>
 			<div align="center">{lang}wcf.global.icsHolidayExporter.copyright{/lang}</div>
 		</div>
 	</div>
+	{/if}
 </div>
 
 {include file='footer' sandbox=false}

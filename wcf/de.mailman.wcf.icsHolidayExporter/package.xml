@@ -1,41 +1,66 @@
-﻿<?xml version="1.0"?>
-<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- $Id$ -->
 <package name="de.mailman.wcf.icsHolidayExporter">
 	<packageinformation>
-		<packagename>ICS Holiday Exporter</packagename>
-		<packagedescription>Exportiert Feiertage div. Länder für Ihren Kalender.</packagedescription>
-		<version>1.1.0</version>
-		<date>2009-09-26</date>
-		<plugin>com.woltlab.wcf</plugin>
+		<packagename><![CDATA[ICS Holiday Exporter (IHE)]]></packagename>
+		<packagename language="de"><![CDATA[ICS Holiday Exporter (IHE)]]></packagename>
+		<packagename language="de-informal"><![CDATA[ICS Holiday Exporter (IHE)]]]></packagename>
+		<packagedescription><![CDATA[Holidays export various countries for your calendar.]]></packagedescription>
+		<packagedescription language="de"><![CDATA[Exportiert Feiertage div. Länder für Ihren Kalender.]]></packagedescription>
+		<packagedescription language="de-informal"><![CDATA[Exportiert Feiertage div. Länder für Ihren Kalender.]]></packagedescription>
+		<version>1.1.0</version> <!-- codename: IHE -->
+		<packageurl><![CDATA[http://www.wbb3addons.de]]></packageurl>
+		<date>2009-11-15</date>
+		<isunique>1</isunique>
+		<standalone>0</standalone>
+		<plugin>com.woltlab.wcf.data.page</plugin>
 	</packageinformation>
-	
+
+	<!-- Icons: ......  -->
+
+	<licenseinformation>
+		<license><![CDATA[ ? ]]></license>
+		<licenseURL><![CDATA[http:// ]]></licenseURL>
+	</licenseinformation>
 	<authorinformation>
-		<author>MailMan</author>
-		<authorurl>http://www.wbb3addons.de</authorurl>
+		<author><![CDATA[MailMan]]></author>
+		<authorURL><![CDATA[http://community.woltlab.com/db/index.php?page=User&userID=21018]]></authorURL>
 	</authorinformation>
 
 	<requiredpackages>
-		<requiredpackage minversion="1.1.0 Beta 5">com.woltlab.wcf</requiredpackage>
+		<!-- WoltLab Community Framework -->
+		<requiredpackage minversion="1.1.0">com.woltlab.wcf</requiredpackage>
+		<!-- Page System -->
+		<requiredpackage>com.woltlab.wcf.data.page</requiredpackage>
 	</requiredpackages>
-	
+	<!--
+	<optionalpackages>
+		<optionalpackage file="optionals/de.mailman.wcf.icsHolidayExporter.brandingfree.tar">de.mailman.wcf.icsHolidayExporter.brandingfree</optionalpackage>
+	</optionalpackages>
+	-->
+
 	<instructions type="install">
+		<!-- files -->
 		<sql>install.sql</sql>
 		<files>files.tar</files>
 		<templates>templates.tar</templates>
+		<!-- config -->
         <pagelocation>pagelocation.xml</pagelocation>
         <pagemenu>pagemenu.xml</pagemenu>
 		<groupoptions>groupoptions.xml</groupoptions>
+		<!-- languages -->
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
 	</instructions>
-	
 	<instructions type="update" fromversion="1.0.*">
+		<!-- files -->
 		<files>files.tar</files>
 		<templates>templates.tar</templates>
+		<!-- config -->
 		<pagemenu>pagemenu.xml</pagemenu>
 		<groupoptions>groupoptions.xml</groupoptions>
+		<!-- languages -->
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="de-informal">de-informal.xml</languages>
 		<languages languagecode="en">en.xml</languages>
