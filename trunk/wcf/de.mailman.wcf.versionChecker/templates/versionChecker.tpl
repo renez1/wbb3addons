@@ -63,11 +63,14 @@
             </fieldset>
         </div>
     </div>
+
+	{if 'VERSIONCHECKER_BRANDINGFREE'|defined == false}
 	<div> 
 		<div>
 			<div align="center">{lang}wcf.global.versionChecker.copyright{/lang}</div>
 		</div>
 	</div>
+	{/if}
 </div>
 {include file='footer' sandbox=false}
 </body>
